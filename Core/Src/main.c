@@ -203,6 +203,7 @@ int main(void)
   
   if(gDate.Year == 0){
     Show_Message("SET UP RTC!", 1000);
+    // RTC SETUP MENU
   }
 
   
@@ -216,6 +217,8 @@ int main(void)
   FR_Status = f_mount(&FatFs, "", 1);
   if (FR_Status == FR_OK){
     isSDInitialised = true;
+  }else{
+    Show_Message("Problem with SD card!", 1000);
   }
 
 
