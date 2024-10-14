@@ -1,0 +1,183 @@
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccqCQaxq.s 			page 1
+
+
+   1              		.cpu cortex-m4
+   2              		.arch armv7e-m
+   3              		.fpu fpv4-sp-d16
+   4              		.eabi_attribute 27, 1
+   5              		.eabi_attribute 28, 1
+   6              		.eabi_attribute 20, 1
+   7              		.eabi_attribute 21, 1
+   8              		.eabi_attribute 23, 3
+   9              		.eabi_attribute 24, 1
+  10              		.eabi_attribute 25, 1
+  11              		.eabi_attribute 26, 1
+  12              		.eabi_attribute 30, 1
+  13              		.eabi_attribute 34, 1
+  14              		.eabi_attribute 18, 4
+  15              		.file	"font.c"
+  16              		.text
+  17              	.Ltext0:
+  18              		.cfi_sections	.debug_frame
+  19              		.file 1 "Core/Src/font.c"
+  20              		.section	.text.font_GetFontStruct,"ax",%progbits
+  21              		.align	1
+  22              		.global	font_GetFontStruct
+  23              		.syntax unified
+  24              		.thumb
+  25              		.thumb_func
+  27              	font_GetFontStruct:
+  28              	.LVL0:
+  29              	.LFB3:
+   1:Core/Src/font.c **** #include "font.h"
+   2:Core/Src/font.c **** #include "f6x8m.h"
+   3:Core/Src/font.c **** #include "f16f.h"
+   4:Core/Src/font.c **** #include "f24f.h"
+   5:Core/Src/font.c **** #include "f32f.h"
+   6:Core/Src/font.c **** 
+   7:Core/Src/font.c **** const t_font_getchar font_table_funcs[] = 
+   8:Core/Src/font.c **** {
+   9:Core/Src/font.c ****   f6x8m_GetCharTable,
+  10:Core/Src/font.c ****   f10x16f_GetCharTable,
+  11:Core/Src/font.c ****   f24f_GetCharTable,
+  12:Core/Src/font.c ****   f32f_GetCharTable
+  13:Core/Src/font.c **** };
+  14:Core/Src/font.c **** 
+  15:Core/Src/font.c **** 
+  16:Core/Src/font.c **** //==============================================================================
+  17:Core/Src/font.c **** uint8_t *font_GetFontStruct(uint8_t FontID, char Char)
+  18:Core/Src/font.c **** {
+  30              		.loc 1 18 1 view -0
+  31              		.cfi_startproc
+  32              		@ args = 0, pretend = 0, frame = 0
+  33              		@ frame_needed = 0, uses_anonymous_args = 0
+  34              		.loc 1 18 1 is_stmt 0 view .LVU1
+  35 0000 08B5     		push	{r3, lr}
+  36              		.cfi_def_cfa_offset 8
+  37              		.cfi_offset 3, -8
+  38              		.cfi_offset 14, -4
+  19:Core/Src/font.c ****   return font_table_funcs[FontID](Char);
+  39              		.loc 1 19 3 is_stmt 1 view .LVU2
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccqCQaxq.s 			page 2
+
+
+  40              		.loc 1 19 26 is_stmt 0 view .LVU3
+  41 0002 034B     		ldr	r3, .L3
+  42 0004 53F82030 		ldr	r3, [r3, r0, lsl #2]
+  43              		.loc 1 19 10 view .LVU4
+  44 0008 0846     		mov	r0, r1
+  45              	.LVL1:
+  46              		.loc 1 19 10 view .LVU5
+  47 000a 9847     		blx	r3
+  48              	.LVL2:
+  20:Core/Src/font.c **** }
+  49              		.loc 1 20 1 view .LVU6
+  50 000c 08BD     		pop	{r3, pc}
+  51              	.L4:
+  52 000e 00BF     		.align	2
+  53              	.L3:
+  54 0010 00000000 		.word	font_table_funcs
+  55              		.cfi_endproc
+  56              	.LFE3:
+  58              		.section	.text.font_GetCharWidth,"ax",%progbits
+  59              		.align	1
+  60              		.global	font_GetCharWidth
+  61              		.syntax unified
+  62              		.thumb
+  63              		.thumb_func
+  65              	font_GetCharWidth:
+  66              	.LVL3:
+  67              	.LFB4:
+  21:Core/Src/font.c **** //==============================================================================
+  22:Core/Src/font.c **** 
+  23:Core/Src/font.c **** 
+  24:Core/Src/font.c **** //==============================================================================
+  25:Core/Src/font.c **** uint8_t font_GetCharWidth(uint8_t *pCharTable)
+  26:Core/Src/font.c **** {
+  68              		.loc 1 26 1 is_stmt 1 view -0
+  69              		.cfi_startproc
+  70              		@ args = 0, pretend = 0, frame = 0
+  71              		@ frame_needed = 0, uses_anonymous_args = 0
+  72              		@ link register save eliminated.
+  27:Core/Src/font.c ****   return *pCharTable;
+  73              		.loc 1 27 3 view .LVU8
+  28:Core/Src/font.c **** }
+  74              		.loc 1 28 1 is_stmt 0 view .LVU9
+  75 0000 0078     		ldrb	r0, [r0]	@ zero_extendqisi2
+  76              	.LVL4:
+  77              		.loc 1 28 1 view .LVU10
+  78 0002 7047     		bx	lr
+  79              		.cfi_endproc
+  80              	.LFE4:
+  82              		.section	.text.font_GetCharHeight,"ax",%progbits
+  83              		.align	1
+  84              		.global	font_GetCharHeight
+  85              		.syntax unified
+  86              		.thumb
+  87              		.thumb_func
+  89              	font_GetCharHeight:
+  90              	.LVL5:
+  91              	.LFB5:
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccqCQaxq.s 			page 3
+
+
+  29:Core/Src/font.c **** //==============================================================================
+  30:Core/Src/font.c **** 
+  31:Core/Src/font.c **** 
+  32:Core/Src/font.c **** //==============================================================================
+  33:Core/Src/font.c **** uint8_t font_GetCharHeight(uint8_t *pCharTable)
+  34:Core/Src/font.c **** {
+  92              		.loc 1 34 1 is_stmt 1 view -0
+  93              		.cfi_startproc
+  94              		@ args = 0, pretend = 0, frame = 0
+  95              		@ frame_needed = 0, uses_anonymous_args = 0
+  96              		@ link register save eliminated.
+  35:Core/Src/font.c ****   pCharTable++;
+  97              		.loc 1 35 3 view .LVU12
+  36:Core/Src/font.c ****   return *pCharTable;
+  98              		.loc 1 36 3 view .LVU13
+  37:Core/Src/font.c **** }
+  99              		.loc 1 37 1 is_stmt 0 view .LVU14
+ 100 0000 4078     		ldrb	r0, [r0, #1]	@ zero_extendqisi2
+ 101              	.LVL6:
+ 102              		.loc 1 37 1 view .LVU15
+ 103 0002 7047     		bx	lr
+ 104              		.cfi_endproc
+ 105              	.LFE5:
+ 107              		.global	font_table_funcs
+ 108              		.section	.rodata.font_table_funcs,"a"
+ 109              		.align	2
+ 112              	font_table_funcs:
+ 113 0000 00000000 		.word	f6x8m_GetCharTable
+ 114 0004 00000000 		.word	f10x16f_GetCharTable
+ 115 0008 00000000 		.word	f24f_GetCharTable
+ 116 000c 00000000 		.word	f32f_GetCharTable
+ 117              		.text
+ 118              	.Letext0:
+ 119              		.file 2 "C:/Users/kroko/AppData/Roaming/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-to
+ 120              		.file 3 "C:/Users/kroko/AppData/Roaming/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-to
+ 121              		.file 4 "Core/Inc/font.h"
+ 122              		.file 5 "Core/Inc/f32f.h"
+ 123              		.file 6 "Core/Inc/f24f.h"
+ 124              		.file 7 "Core/Inc/f16f.h"
+ 125              		.file 8 "Core/Inc/f6x8m.h"
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccqCQaxq.s 			page 4
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 font.c
+C:\Users\kroko\AppData\Local\Temp\ccqCQaxq.s:21     .text.font_GetFontStruct:00000000 $t
+C:\Users\kroko\AppData\Local\Temp\ccqCQaxq.s:27     .text.font_GetFontStruct:00000000 font_GetFontStruct
+C:\Users\kroko\AppData\Local\Temp\ccqCQaxq.s:54     .text.font_GetFontStruct:00000010 $d
+C:\Users\kroko\AppData\Local\Temp\ccqCQaxq.s:112    .rodata.font_table_funcs:00000000 font_table_funcs
+C:\Users\kroko\AppData\Local\Temp\ccqCQaxq.s:59     .text.font_GetCharWidth:00000000 $t
+C:\Users\kroko\AppData\Local\Temp\ccqCQaxq.s:65     .text.font_GetCharWidth:00000000 font_GetCharWidth
+C:\Users\kroko\AppData\Local\Temp\ccqCQaxq.s:83     .text.font_GetCharHeight:00000000 $t
+C:\Users\kroko\AppData\Local\Temp\ccqCQaxq.s:89     .text.font_GetCharHeight:00000000 font_GetCharHeight
+C:\Users\kroko\AppData\Local\Temp\ccqCQaxq.s:109    .rodata.font_table_funcs:00000000 $d
+
+UNDEFINED SYMBOLS
+f6x8m_GetCharTable
+f10x16f_GetCharTable
+f24f_GetCharTable
+f32f_GetCharTable

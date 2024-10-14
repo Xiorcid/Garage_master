@@ -1,0 +1,470 @@
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccyYbVys.s 			page 1
+
+
+   1              		.cpu cortex-m4
+   2              		.arch armv7e-m
+   3              		.fpu fpv4-sp-d16
+   4              		.eabi_attribute 27, 1
+   5              		.eabi_attribute 28, 1
+   6              		.eabi_attribute 20, 1
+   7              		.eabi_attribute 21, 1
+   8              		.eabi_attribute 23, 3
+   9              		.eabi_attribute 24, 1
+  10              		.eabi_attribute 25, 1
+  11              		.eabi_attribute 26, 1
+  12              		.eabi_attribute 30, 1
+  13              		.eabi_attribute 34, 1
+  14              		.eabi_attribute 18, 4
+  15              		.file	"gpio.c"
+  16              		.text
+  17              	.Ltext0:
+  18              		.cfi_sections	.debug_frame
+  19              		.file 1 "Core/Src/gpio.c"
+  20              		.section	.text.gpio_PortClockStart,"ax",%progbits
+  21              		.align	1
+  22              		.global	gpio_PortClockStart
+  23              		.syntax unified
+  24              		.thumb
+  25              		.thumb_func
+  27              	gpio_PortClockStart:
+  28              	.LVL0:
+  29              	.LFB136:
+   1:Core/Src/gpio.c **** #include <stm32f4xx_hal_gpio.h>
+   2:Core/Src/gpio.c **** #include <stm32f4xx_hal_rcc.h>
+   3:Core/Src/gpio.c **** #include "gpio.h"
+   4:Core/Src/gpio.c **** 
+   5:Core/Src/gpio.c **** 
+   6:Core/Src/gpio.c **** void gpio_SetGPIOmode_In(GPIO_TypeDef *GPIOx, uint16_t Mask, uint8_t PullMode) {
+   7:Core/Src/gpio.c **** 	gpio_PortClockStart(GPIOx);
+   8:Core/Src/gpio.c **** 
+   9:Core/Src/gpio.c **** 	GPIO_InitTypeDef InitStruct;
+  10:Core/Src/gpio.c **** 	InitStruct.Pin = Mask;
+  11:Core/Src/gpio.c **** 	InitStruct.Speed = GPIO_SPEED_FREQ_HIGH;
+  12:Core/Src/gpio.c **** 	InitStruct.Mode = GPIO_MODE_INPUT;
+  13:Core/Src/gpio.c **** 	InitStruct.Alternate = 0;
+  14:Core/Src/gpio.c **** 
+  15:Core/Src/gpio.c **** 	switch (PullMode) {
+  16:Core/Src/gpio.c **** 	case gpio_NoPull:
+  17:Core/Src/gpio.c **** 		InitStruct.Pull = GPIO_NOPULL;
+  18:Core/Src/gpio.c **** 		break;
+  19:Core/Src/gpio.c **** 	case gpio_PullUp:
+  20:Core/Src/gpio.c **** 		InitStruct.Pull = GPIO_PULLUP;
+  21:Core/Src/gpio.c **** 		break;
+  22:Core/Src/gpio.c **** 	case gpio_PullDown:
+  23:Core/Src/gpio.c **** 		InitStruct.Pull = GPIO_PULLDOWN;
+  24:Core/Src/gpio.c **** 		break;
+  25:Core/Src/gpio.c **** 	}
+  26:Core/Src/gpio.c **** 
+  27:Core/Src/gpio.c **** 	HAL_GPIO_Init(GPIOx, &InitStruct);
+  28:Core/Src/gpio.c **** }
+  29:Core/Src/gpio.c **** 
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccyYbVys.s 			page 2
+
+
+  30:Core/Src/gpio.c **** void gpio_SetGPIOmode_Out(GPIO_TypeDef *GPIOx, uint16_t Mask) {
+  31:Core/Src/gpio.c **** 	gpio_PortClockStart(GPIOx);
+  32:Core/Src/gpio.c **** 
+  33:Core/Src/gpio.c **** 	GPIO_InitTypeDef InitStruct;
+  34:Core/Src/gpio.c **** 	InitStruct.Pin = Mask;
+  35:Core/Src/gpio.c **** 	InitStruct.Speed = GPIO_SPEED_FREQ_HIGH;
+  36:Core/Src/gpio.c **** 	InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
+  37:Core/Src/gpio.c **** 	HAL_GPIO_Init(GPIOx, &InitStruct);
+  38:Core/Src/gpio.c **** }
+  39:Core/Src/gpio.c **** 
+  40:Core/Src/gpio.c **** void gpio_PortClockStart(GPIO_TypeDef *GPIOx) {
+  30              		.loc 1 40 47 view -0
+  31              		.cfi_startproc
+  32              		@ args = 0, pretend = 0, frame = 24
+  33              		@ frame_needed = 0, uses_anonymous_args = 0
+  34              		@ link register save eliminated.
+  35              		.loc 1 40 47 is_stmt 0 view .LVU1
+  36 0000 86B0     		sub	sp, sp, #24
+  37              		.cfi_def_cfa_offset 24
+  41:Core/Src/gpio.c **** 	if (GPIOx == GPIOA)
+  38              		.loc 1 41 2 is_stmt 1 view .LVU2
+  39              		.loc 1 41 5 is_stmt 0 view .LVU3
+  40 0002 284B     		ldr	r3, .L12
+  41 0004 9842     		cmp	r0, r3
+  42 0006 18D0     		beq	.L8
+  42:Core/Src/gpio.c **** 		__HAL_RCC_GPIOA_CLK_ENABLE();
+  43:Core/Src/gpio.c **** 	else if (GPIOx == GPIOB)
+  43              		.loc 1 43 7 is_stmt 1 view .LVU4
+  44              		.loc 1 43 10 is_stmt 0 view .LVU5
+  45 0008 274B     		ldr	r3, .L12+4
+  46 000a 9842     		cmp	r0, r3
+  47 000c 23D0     		beq	.L9
+  44:Core/Src/gpio.c **** 		__HAL_RCC_GPIOB_CLK_ENABLE();
+  45:Core/Src/gpio.c **** 	else if (GPIOx == GPIOC)
+  48              		.loc 1 45 7 is_stmt 1 view .LVU6
+  49              		.loc 1 45 10 is_stmt 0 view .LVU7
+  50 000e 274B     		ldr	r3, .L12+8
+  51 0010 9842     		cmp	r0, r3
+  52 0012 2DD0     		beq	.L10
+  46:Core/Src/gpio.c **** 		__HAL_RCC_GPIOC_CLK_ENABLE();
+  47:Core/Src/gpio.c **** 	else if (GPIOx == GPIOD)
+  53              		.loc 1 47 7 is_stmt 1 view .LVU8
+  54              		.loc 1 47 10 is_stmt 0 view .LVU9
+  55 0014 264B     		ldr	r3, .L12+12
+  56 0016 9842     		cmp	r0, r3
+  57 0018 37D0     		beq	.L11
+  48:Core/Src/gpio.c **** 		__HAL_RCC_GPIOD_CLK_ENABLE();
+  49:Core/Src/gpio.c **** 	else if (GPIOx == GPIOE)
+  58              		.loc 1 49 7 is_stmt 1 view .LVU10
+  59              		.loc 1 49 10 is_stmt 0 view .LVU11
+  60 001a 264B     		ldr	r3, .L12+16
+  61 001c 9842     		cmp	r0, r3
+  62 001e 18D1     		bne	.L1
+  50:Core/Src/gpio.c **** 		__HAL_RCC_GPIOE_CLK_ENABLE();
+  63              		.loc 1 50 3 is_stmt 1 view .LVU12
+  64              	.LBB2:
+  65              		.loc 1 50 3 view .LVU13
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccyYbVys.s 			page 3
+
+
+  66 0020 0023     		movs	r3, #0
+  67 0022 0593     		str	r3, [sp, #20]
+  68              		.loc 1 50 3 view .LVU14
+  69 0024 244B     		ldr	r3, .L12+20
+  70 0026 1A6B     		ldr	r2, [r3, #48]
+  71 0028 42F01002 		orr	r2, r2, #16
+  72 002c 1A63     		str	r2, [r3, #48]
+  73              		.loc 1 50 3 view .LVU15
+  74 002e 1B6B     		ldr	r3, [r3, #48]
+  75 0030 03F01003 		and	r3, r3, #16
+  76 0034 0593     		str	r3, [sp, #20]
+  77              		.loc 1 50 3 view .LVU16
+  78 0036 059B     		ldr	r3, [sp, #20]
+  79              	.LBE2:
+  80              		.loc 1 50 3 discriminator 1 view .LVU17
+  51:Core/Src/gpio.c **** }
+  81              		.loc 1 51 1 is_stmt 0 view .LVU18
+  82 0038 0BE0     		b	.L1
+  83              	.L8:
+  42:Core/Src/gpio.c **** 	else if (GPIOx == GPIOB)
+  84              		.loc 1 42 3 is_stmt 1 view .LVU19
+  85              	.LBB3:
+  42:Core/Src/gpio.c **** 	else if (GPIOx == GPIOB)
+  86              		.loc 1 42 3 view .LVU20
+  87 003a 0023     		movs	r3, #0
+  88 003c 0193     		str	r3, [sp, #4]
+  42:Core/Src/gpio.c **** 	else if (GPIOx == GPIOB)
+  89              		.loc 1 42 3 view .LVU21
+  90 003e 1E4B     		ldr	r3, .L12+20
+  91 0040 1A6B     		ldr	r2, [r3, #48]
+  92 0042 42F00102 		orr	r2, r2, #1
+  93 0046 1A63     		str	r2, [r3, #48]
+  42:Core/Src/gpio.c **** 	else if (GPIOx == GPIOB)
+  94              		.loc 1 42 3 view .LVU22
+  95 0048 1B6B     		ldr	r3, [r3, #48]
+  96 004a 03F00103 		and	r3, r3, #1
+  97 004e 0193     		str	r3, [sp, #4]
+  42:Core/Src/gpio.c **** 	else if (GPIOx == GPIOB)
+  98              		.loc 1 42 3 view .LVU23
+  99 0050 019B     		ldr	r3, [sp, #4]
+ 100              	.LBE3:
+  42:Core/Src/gpio.c **** 	else if (GPIOx == GPIOB)
+ 101              		.loc 1 42 3 view .LVU24
+ 102              	.L1:
+ 103              		.loc 1 51 1 is_stmt 0 view .LVU25
+ 104 0052 06B0     		add	sp, sp, #24
+ 105              		.cfi_remember_state
+ 106              		.cfi_def_cfa_offset 0
+ 107              		@ sp needed
+ 108 0054 7047     		bx	lr
+ 109              	.L9:
+ 110              		.cfi_restore_state
+  44:Core/Src/gpio.c **** 	else if (GPIOx == GPIOC)
+ 111              		.loc 1 44 3 is_stmt 1 view .LVU26
+ 112              	.LBB4:
+  44:Core/Src/gpio.c **** 	else if (GPIOx == GPIOC)
+ 113              		.loc 1 44 3 view .LVU27
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccyYbVys.s 			page 4
+
+
+ 114 0056 0023     		movs	r3, #0
+ 115 0058 0293     		str	r3, [sp, #8]
+  44:Core/Src/gpio.c **** 	else if (GPIOx == GPIOC)
+ 116              		.loc 1 44 3 view .LVU28
+ 117 005a 174B     		ldr	r3, .L12+20
+ 118 005c 1A6B     		ldr	r2, [r3, #48]
+ 119 005e 42F00202 		orr	r2, r2, #2
+ 120 0062 1A63     		str	r2, [r3, #48]
+  44:Core/Src/gpio.c **** 	else if (GPIOx == GPIOC)
+ 121              		.loc 1 44 3 view .LVU29
+ 122 0064 1B6B     		ldr	r3, [r3, #48]
+ 123 0066 03F00203 		and	r3, r3, #2
+ 124 006a 0293     		str	r3, [sp, #8]
+  44:Core/Src/gpio.c **** 	else if (GPIOx == GPIOC)
+ 125              		.loc 1 44 3 view .LVU30
+ 126 006c 029B     		ldr	r3, [sp, #8]
+ 127              	.LBE4:
+  44:Core/Src/gpio.c **** 	else if (GPIOx == GPIOC)
+ 128              		.loc 1 44 3 view .LVU31
+ 129 006e F0E7     		b	.L1
+ 130              	.L10:
+  46:Core/Src/gpio.c **** 	else if (GPIOx == GPIOD)
+ 131              		.loc 1 46 3 view .LVU32
+ 132              	.LBB5:
+  46:Core/Src/gpio.c **** 	else if (GPIOx == GPIOD)
+ 133              		.loc 1 46 3 view .LVU33
+ 134 0070 0023     		movs	r3, #0
+ 135 0072 0393     		str	r3, [sp, #12]
+  46:Core/Src/gpio.c **** 	else if (GPIOx == GPIOD)
+ 136              		.loc 1 46 3 view .LVU34
+ 137 0074 104B     		ldr	r3, .L12+20
+ 138 0076 1A6B     		ldr	r2, [r3, #48]
+ 139 0078 42F00402 		orr	r2, r2, #4
+ 140 007c 1A63     		str	r2, [r3, #48]
+  46:Core/Src/gpio.c **** 	else if (GPIOx == GPIOD)
+ 141              		.loc 1 46 3 view .LVU35
+ 142 007e 1B6B     		ldr	r3, [r3, #48]
+ 143 0080 03F00403 		and	r3, r3, #4
+ 144 0084 0393     		str	r3, [sp, #12]
+  46:Core/Src/gpio.c **** 	else if (GPIOx == GPIOD)
+ 145              		.loc 1 46 3 view .LVU36
+ 146 0086 039B     		ldr	r3, [sp, #12]
+ 147              	.LBE5:
+  46:Core/Src/gpio.c **** 	else if (GPIOx == GPIOD)
+ 148              		.loc 1 46 3 view .LVU37
+ 149 0088 E3E7     		b	.L1
+ 150              	.L11:
+  48:Core/Src/gpio.c **** 	else if (GPIOx == GPIOE)
+ 151              		.loc 1 48 3 view .LVU38
+ 152              	.LBB6:
+  48:Core/Src/gpio.c **** 	else if (GPIOx == GPIOE)
+ 153              		.loc 1 48 3 view .LVU39
+ 154 008a 0023     		movs	r3, #0
+ 155 008c 0493     		str	r3, [sp, #16]
+  48:Core/Src/gpio.c **** 	else if (GPIOx == GPIOE)
+ 156              		.loc 1 48 3 view .LVU40
+ 157 008e 0A4B     		ldr	r3, .L12+20
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccyYbVys.s 			page 5
+
+
+ 158 0090 1A6B     		ldr	r2, [r3, #48]
+ 159 0092 42F00802 		orr	r2, r2, #8
+ 160 0096 1A63     		str	r2, [r3, #48]
+  48:Core/Src/gpio.c **** 	else if (GPIOx == GPIOE)
+ 161              		.loc 1 48 3 view .LVU41
+ 162 0098 1B6B     		ldr	r3, [r3, #48]
+ 163 009a 03F00803 		and	r3, r3, #8
+ 164 009e 0493     		str	r3, [sp, #16]
+  48:Core/Src/gpio.c **** 	else if (GPIOx == GPIOE)
+ 165              		.loc 1 48 3 view .LVU42
+ 166 00a0 049B     		ldr	r3, [sp, #16]
+ 167              	.LBE6:
+  48:Core/Src/gpio.c **** 	else if (GPIOx == GPIOE)
+ 168              		.loc 1 48 3 view .LVU43
+ 169 00a2 D6E7     		b	.L1
+ 170              	.L13:
+ 171              		.align	2
+ 172              	.L12:
+ 173 00a4 00000240 		.word	1073872896
+ 174 00a8 00040240 		.word	1073873920
+ 175 00ac 00080240 		.word	1073874944
+ 176 00b0 000C0240 		.word	1073875968
+ 177 00b4 00100240 		.word	1073876992
+ 178 00b8 00380240 		.word	1073887232
+ 179              		.cfi_endproc
+ 180              	.LFE136:
+ 182              		.section	.text.gpio_SetGPIOmode_In,"ax",%progbits
+ 183              		.align	1
+ 184              		.global	gpio_SetGPIOmode_In
+ 185              		.syntax unified
+ 186              		.thumb
+ 187              		.thumb_func
+ 189              	gpio_SetGPIOmode_In:
+ 190              	.LVL1:
+ 191              	.LFB134:
+   6:Core/Src/gpio.c **** 	gpio_PortClockStart(GPIOx);
+ 192              		.loc 1 6 80 view -0
+ 193              		.cfi_startproc
+ 194              		@ args = 0, pretend = 0, frame = 24
+ 195              		@ frame_needed = 0, uses_anonymous_args = 0
+   6:Core/Src/gpio.c **** 	gpio_PortClockStart(GPIOx);
+ 196              		.loc 1 6 80 is_stmt 0 view .LVU45
+ 197 0000 70B5     		push	{r4, r5, r6, lr}
+ 198              		.cfi_def_cfa_offset 16
+ 199              		.cfi_offset 4, -16
+ 200              		.cfi_offset 5, -12
+ 201              		.cfi_offset 6, -8
+ 202              		.cfi_offset 14, -4
+ 203 0002 86B0     		sub	sp, sp, #24
+ 204              		.cfi_def_cfa_offset 40
+ 205 0004 0546     		mov	r5, r0
+ 206 0006 0E46     		mov	r6, r1
+ 207 0008 1446     		mov	r4, r2
+   7:Core/Src/gpio.c **** 
+ 208              		.loc 1 7 2 is_stmt 1 view .LVU46
+ 209 000a FFF7FEFF 		bl	gpio_PortClockStart
+ 210              	.LVL2:
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccyYbVys.s 			page 6
+
+
+   9:Core/Src/gpio.c **** 	InitStruct.Pin = Mask;
+ 211              		.loc 1 9 2 view .LVU47
+  10:Core/Src/gpio.c **** 	InitStruct.Speed = GPIO_SPEED_FREQ_HIGH;
+ 212              		.loc 1 10 2 view .LVU48
+  10:Core/Src/gpio.c **** 	InitStruct.Speed = GPIO_SPEED_FREQ_HIGH;
+ 213              		.loc 1 10 17 is_stmt 0 view .LVU49
+ 214 000e 0196     		str	r6, [sp, #4]
+  11:Core/Src/gpio.c **** 	InitStruct.Mode = GPIO_MODE_INPUT;
+ 215              		.loc 1 11 2 is_stmt 1 view .LVU50
+  11:Core/Src/gpio.c **** 	InitStruct.Mode = GPIO_MODE_INPUT;
+ 216              		.loc 1 11 19 is_stmt 0 view .LVU51
+ 217 0010 0223     		movs	r3, #2
+ 218 0012 0493     		str	r3, [sp, #16]
+  12:Core/Src/gpio.c **** 	InitStruct.Alternate = 0;
+ 219              		.loc 1 12 2 is_stmt 1 view .LVU52
+  12:Core/Src/gpio.c **** 	InitStruct.Alternate = 0;
+ 220              		.loc 1 12 18 is_stmt 0 view .LVU53
+ 221 0014 0023     		movs	r3, #0
+ 222 0016 0293     		str	r3, [sp, #8]
+  13:Core/Src/gpio.c **** 
+ 223              		.loc 1 13 2 is_stmt 1 view .LVU54
+  13:Core/Src/gpio.c **** 
+ 224              		.loc 1 13 23 is_stmt 0 view .LVU55
+ 225 0018 0593     		str	r3, [sp, #20]
+  15:Core/Src/gpio.c **** 	case gpio_NoPull:
+ 226              		.loc 1 15 2 is_stmt 1 view .LVU56
+ 227 001a 012C     		cmp	r4, #1
+ 228 001c 09D0     		beq	.L15
+ 229 001e 022C     		cmp	r4, #2
+ 230 0020 0AD0     		beq	.L16
+ 231 0022 04B9     		cbnz	r4, .L17
+  17:Core/Src/gpio.c **** 		break;
+ 232              		.loc 1 17 3 view .LVU57
+  17:Core/Src/gpio.c **** 		break;
+ 233              		.loc 1 17 19 is_stmt 0 view .LVU58
+ 234 0024 0393     		str	r3, [sp, #12]
+  18:Core/Src/gpio.c **** 	case gpio_PullUp:
+ 235              		.loc 1 18 3 is_stmt 1 view .LVU59
+ 236              	.L17:
+  27:Core/Src/gpio.c **** }
+ 237              		.loc 1 27 2 view .LVU60
+ 238 0026 01A9     		add	r1, sp, #4
+ 239 0028 2846     		mov	r0, r5
+ 240 002a FFF7FEFF 		bl	HAL_GPIO_Init
+ 241              	.LVL3:
+  28:Core/Src/gpio.c **** 
+ 242              		.loc 1 28 1 is_stmt 0 view .LVU61
+ 243 002e 06B0     		add	sp, sp, #24
+ 244              		.cfi_remember_state
+ 245              		.cfi_def_cfa_offset 16
+ 246              		@ sp needed
+ 247 0030 70BD     		pop	{r4, r5, r6, pc}
+ 248              	.LVL4:
+ 249              	.L15:
+ 250              		.cfi_restore_state
+  20:Core/Src/gpio.c **** 		break;
+ 251              		.loc 1 20 3 is_stmt 1 view .LVU62
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccyYbVys.s 			page 7
+
+
+  20:Core/Src/gpio.c **** 		break;
+ 252              		.loc 1 20 19 is_stmt 0 view .LVU63
+ 253 0032 0123     		movs	r3, #1
+ 254 0034 0393     		str	r3, [sp, #12]
+  21:Core/Src/gpio.c **** 	case gpio_PullDown:
+ 255              		.loc 1 21 3 is_stmt 1 view .LVU64
+ 256 0036 F6E7     		b	.L17
+ 257              	.L16:
+  23:Core/Src/gpio.c **** 		break;
+ 258              		.loc 1 23 3 view .LVU65
+  23:Core/Src/gpio.c **** 		break;
+ 259              		.loc 1 23 19 is_stmt 0 view .LVU66
+ 260 0038 0223     		movs	r3, #2
+ 261 003a 0393     		str	r3, [sp, #12]
+  24:Core/Src/gpio.c **** 	}
+ 262              		.loc 1 24 3 is_stmt 1 view .LVU67
+ 263 003c F3E7     		b	.L17
+ 264              		.cfi_endproc
+ 265              	.LFE134:
+ 267              		.section	.text.gpio_SetGPIOmode_Out,"ax",%progbits
+ 268              		.align	1
+ 269              		.global	gpio_SetGPIOmode_Out
+ 270              		.syntax unified
+ 271              		.thumb
+ 272              		.thumb_func
+ 274              	gpio_SetGPIOmode_Out:
+ 275              	.LVL5:
+ 276              	.LFB135:
+  30:Core/Src/gpio.c **** 	gpio_PortClockStart(GPIOx);
+ 277              		.loc 1 30 63 view -0
+ 278              		.cfi_startproc
+ 279              		@ args = 0, pretend = 0, frame = 24
+ 280              		@ frame_needed = 0, uses_anonymous_args = 0
+  30:Core/Src/gpio.c **** 	gpio_PortClockStart(GPIOx);
+ 281              		.loc 1 30 63 is_stmt 0 view .LVU69
+ 282 0000 30B5     		push	{r4, r5, lr}
+ 283              		.cfi_def_cfa_offset 12
+ 284              		.cfi_offset 4, -12
+ 285              		.cfi_offset 5, -8
+ 286              		.cfi_offset 14, -4
+ 287 0002 87B0     		sub	sp, sp, #28
+ 288              		.cfi_def_cfa_offset 40
+ 289 0004 0446     		mov	r4, r0
+ 290 0006 0D46     		mov	r5, r1
+  31:Core/Src/gpio.c **** 
+ 291              		.loc 1 31 2 is_stmt 1 view .LVU70
+ 292 0008 FFF7FEFF 		bl	gpio_PortClockStart
+ 293              	.LVL6:
+  33:Core/Src/gpio.c **** 	InitStruct.Pin = Mask;
+ 294              		.loc 1 33 2 view .LVU71
+  34:Core/Src/gpio.c **** 	InitStruct.Speed = GPIO_SPEED_FREQ_HIGH;
+ 295              		.loc 1 34 2 view .LVU72
+  34:Core/Src/gpio.c **** 	InitStruct.Speed = GPIO_SPEED_FREQ_HIGH;
+ 296              		.loc 1 34 17 is_stmt 0 view .LVU73
+ 297 000c 0195     		str	r5, [sp, #4]
+  35:Core/Src/gpio.c **** 	InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
+ 298              		.loc 1 35 2 is_stmt 1 view .LVU74
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccyYbVys.s 			page 8
+
+
+  35:Core/Src/gpio.c **** 	InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
+ 299              		.loc 1 35 19 is_stmt 0 view .LVU75
+ 300 000e 0223     		movs	r3, #2
+ 301 0010 0493     		str	r3, [sp, #16]
+  36:Core/Src/gpio.c **** 	HAL_GPIO_Init(GPIOx, &InitStruct);
+ 302              		.loc 1 36 2 is_stmt 1 view .LVU76
+  36:Core/Src/gpio.c **** 	HAL_GPIO_Init(GPIOx, &InitStruct);
+ 303              		.loc 1 36 18 is_stmt 0 view .LVU77
+ 304 0012 0123     		movs	r3, #1
+ 305 0014 0293     		str	r3, [sp, #8]
+  37:Core/Src/gpio.c **** }
+ 306              		.loc 1 37 2 is_stmt 1 view .LVU78
+ 307 0016 01A9     		add	r1, sp, #4
+ 308 0018 2046     		mov	r0, r4
+ 309 001a FFF7FEFF 		bl	HAL_GPIO_Init
+ 310              	.LVL7:
+  38:Core/Src/gpio.c **** 
+ 311              		.loc 1 38 1 is_stmt 0 view .LVU79
+ 312 001e 07B0     		add	sp, sp, #28
+ 313              		.cfi_def_cfa_offset 12
+ 314              		@ sp needed
+ 315 0020 30BD     		pop	{r4, r5, pc}
+  38:Core/Src/gpio.c **** 
+ 316              		.loc 1 38 1 view .LVU80
+ 317              		.cfi_endproc
+ 318              	.LFE135:
+ 320              		.text
+ 321              	.Letext0:
+ 322              		.file 2 "C:/Users/kroko/AppData/Roaming/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-to
+ 323              		.file 3 "C:/Users/kroko/AppData/Roaming/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-to
+ 324              		.file 4 "Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f413xx.h"
+ 325              		.file 5 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h"
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccyYbVys.s 			page 9
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 gpio.c
+C:\Users\kroko\AppData\Local\Temp\ccyYbVys.s:21     .text.gpio_PortClockStart:00000000 $t
+C:\Users\kroko\AppData\Local\Temp\ccyYbVys.s:27     .text.gpio_PortClockStart:00000000 gpio_PortClockStart
+C:\Users\kroko\AppData\Local\Temp\ccyYbVys.s:173    .text.gpio_PortClockStart:000000a4 $d
+C:\Users\kroko\AppData\Local\Temp\ccyYbVys.s:183    .text.gpio_SetGPIOmode_In:00000000 $t
+C:\Users\kroko\AppData\Local\Temp\ccyYbVys.s:189    .text.gpio_SetGPIOmode_In:00000000 gpio_SetGPIOmode_In
+C:\Users\kroko\AppData\Local\Temp\ccyYbVys.s:268    .text.gpio_SetGPIOmode_Out:00000000 $t
+C:\Users\kroko\AppData\Local\Temp\ccyYbVys.s:274    .text.gpio_SetGPIOmode_Out:00000000 gpio_SetGPIOmode_Out
+
+UNDEFINED SYMBOLS
+HAL_GPIO_Init

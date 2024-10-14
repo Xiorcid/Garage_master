@@ -1,0 +1,1046 @@
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccY3Ja5j.s 			page 1
+
+
+   1              		.cpu cortex-m4
+   2              		.arch armv7e-m
+   3              		.fpu fpv4-sp-d16
+   4              		.eabi_attribute 27, 1
+   5              		.eabi_attribute 28, 1
+   6              		.eabi_attribute 20, 1
+   7              		.eabi_attribute 21, 1
+   8              		.eabi_attribute 23, 3
+   9              		.eabi_attribute 24, 1
+  10              		.eabi_attribute 25, 1
+  11              		.eabi_attribute 26, 1
+  12              		.eabi_attribute 30, 1
+  13              		.eabi_attribute 34, 1
+  14              		.eabi_attribute 18, 4
+  15              		.file	"f32f.c"
+  16              		.text
+  17              	.Ltext0:
+  18              		.cfi_sections	.debug_frame
+  19              		.file 1 "Core/Src/f32f.c"
+  20              		.section	.text.f32f_GetCharTable,"ax",%progbits
+  21              		.align	1
+  22              		.global	f32f_GetCharTable
+  23              		.syntax unified
+  24              		.thumb
+  25              		.thumb_func
+  27              	f32f_GetCharTable:
+  28              	.LVL0:
+  29              	.LFB3:
+   1:Core/Src/f32f.c **** #include "font.h"
+   2:Core/Src/f32f.c **** #include "f32f.h"
+   3:Core/Src/f32f.c **** 
+   4:Core/Src/f32f.c **** 
+   5:Core/Src/f32f.c **** const uint8_t f32f_table[f32f_NOFCHARS][64 + 2] = {       
+   6:Core/Src/f32f.c ****   // 0x30
+   7:Core/Src/f32f.c ****   {
+   8:Core/Src/f32f.c ****     15,
+   9:Core/Src/f32f.c ****     f32_FLOAT_HEIGHT,
+  10:Core/Src/f32f.c ****     ________,________,
+  11:Core/Src/f32f.c ****     ________,________,
+  12:Core/Src/f32f.c ****     ________,________,
+  13:Core/Src/f32f.c ****     ________,________,
+  14:Core/Src/f32f.c ****     ________,________,
+  15:Core/Src/f32f.c ****     _____XXX,XX______,
+  16:Core/Src/f32f.c ****     ___XXXXX,XXXX____,
+  17:Core/Src/f32f.c ****     ___XXXXX,XXXX____,
+  18:Core/Src/f32f.c ****     __XXXX__,_XXXX___,
+  19:Core/Src/f32f.c ****     __XXXX__,_XXXX___,
+  20:Core/Src/f32f.c ****     _XXXX___,__XXXX__,
+  21:Core/Src/f32f.c ****     _XXXX___,__XXXX__,
+  22:Core/Src/f32f.c ****     _XXXX___,__XXXX__,
+  23:Core/Src/f32f.c ****     _XXXX___,__XXXX__,
+  24:Core/Src/f32f.c ****     _XXXX___,__XXXX__,
+  25:Core/Src/f32f.c ****     _XXXX___,__XXXX__,
+  26:Core/Src/f32f.c ****     _XXXX___,__XXXX__,
+  27:Core/Src/f32f.c ****     _XXXX___,__XXXX__,
+  28:Core/Src/f32f.c ****     _XXXX___,__XXXX__,
+  29:Core/Src/f32f.c ****     _XXXX___,__XXXX__,
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccY3Ja5j.s 			page 2
+
+
+  30:Core/Src/f32f.c ****     __XXXX__,_XXXX___,
+  31:Core/Src/f32f.c ****     __XXXX__,_XXXX___,
+  32:Core/Src/f32f.c ****     ___XXXXX,XXXX____,
+  33:Core/Src/f32f.c ****     ___XXXXX,XXXX____,
+  34:Core/Src/f32f.c ****     _____XXX,XX______,
+  35:Core/Src/f32f.c ****     ________,________,
+  36:Core/Src/f32f.c ****     ________,________,
+  37:Core/Src/f32f.c ****     ________,________,
+  38:Core/Src/f32f.c ****     ________,________,
+  39:Core/Src/f32f.c ****     ________,________,
+  40:Core/Src/f32f.c ****     ________,________,
+  41:Core/Src/f32f.c ****     ________,________}
+  42:Core/Src/f32f.c ****   // 0x31
+  43:Core/Src/f32f.c ****   ,{
+  44:Core/Src/f32f.c ****     12,
+  45:Core/Src/f32f.c ****     f32_FLOAT_HEIGHT,
+  46:Core/Src/f32f.c ****     ________,________,
+  47:Core/Src/f32f.c ****     ________,________,
+  48:Core/Src/f32f.c ****     ________,________,
+  49:Core/Src/f32f.c ****     ________,________,
+  50:Core/Src/f32f.c ****     ________,________,
+  51:Core/Src/f32f.c ****     ________,XXX_____,
+  52:Core/Src/f32f.c ****     _______X,XXX_____,
+  53:Core/Src/f32f.c ****     ______XX,XXX_____,
+  54:Core/Src/f32f.c ****     _____XXX,XXX_____,
+  55:Core/Src/f32f.c ****     ___XXXXX,XXX_____,
+  56:Core/Src/f32f.c ****     __XXXXXX,XXX_____,
+  57:Core/Src/f32f.c ****     __XXXX_X,XXX_____,
+  58:Core/Src/f32f.c ****     __XXX__X,XXX_____,
+  59:Core/Src/f32f.c ****     __X____X,XXX_____,
+  60:Core/Src/f32f.c ****     _______X,XXX_____,
+  61:Core/Src/f32f.c ****     _______X,XXX_____,
+  62:Core/Src/f32f.c ****     _______X,XXX_____,
+  63:Core/Src/f32f.c ****     _______X,XXX_____,
+  64:Core/Src/f32f.c ****     _______X,XXX_____,
+  65:Core/Src/f32f.c ****     _______X,XXX_____,
+  66:Core/Src/f32f.c ****     _______X,XXX_____,
+  67:Core/Src/f32f.c ****     _______X,XXX_____,
+  68:Core/Src/f32f.c ****     _______X,XXX_____,
+  69:Core/Src/f32f.c ****     _______X,XXX_____,
+  70:Core/Src/f32f.c ****     _______X,XXX_____,
+  71:Core/Src/f32f.c ****     ________,________,
+  72:Core/Src/f32f.c ****     ________,________,
+  73:Core/Src/f32f.c ****     ________,________,
+  74:Core/Src/f32f.c ****     ________,________,
+  75:Core/Src/f32f.c ****     ________,________,
+  76:Core/Src/f32f.c ****     ________,________,
+  77:Core/Src/f32f.c ****     ________,________}
+  78:Core/Src/f32f.c ****   // 0x32
+  79:Core/Src/f32f.c ****   ,{
+  80:Core/Src/f32f.c ****     15,
+  81:Core/Src/f32f.c ****     f32_FLOAT_HEIGHT,
+  82:Core/Src/f32f.c ****     ________,________,
+  83:Core/Src/f32f.c ****     ________,________,
+  84:Core/Src/f32f.c ****     ________,________,
+  85:Core/Src/f32f.c ****     ________,________,
+  86:Core/Src/f32f.c ****     ________,________,
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccY3Ja5j.s 			page 3
+
+
+  87:Core/Src/f32f.c ****     _____XXX,XXX_____,
+  88:Core/Src/f32f.c ****     ___XXXXX,XXXX____,
+  89:Core/Src/f32f.c ****     __XXXXXX,XXXXX___,
+  90:Core/Src/f32f.c ****     __XXXX__,_XXXXX__,
+  91:Core/Src/f32f.c ****     _XXXX___,__XXXX__,
+  92:Core/Src/f32f.c ****     _XXXX___,__XXXX__,
+  93:Core/Src/f32f.c ****     ________,__XXXX__,
+  94:Core/Src/f32f.c ****     ________,__XXXX__,
+  95:Core/Src/f32f.c ****     ________,_XXXX___,
+  96:Core/Src/f32f.c ****     ________,XXXXX___,
+  97:Core/Src/f32f.c ****     _______X,XXXX____,
+  98:Core/Src/f32f.c ****     ______XX,XXX_____,
+  99:Core/Src/f32f.c ****     _____XXX,XX______,
+ 100:Core/Src/f32f.c ****     ____XXXX,X_______,
+ 101:Core/Src/f32f.c ****     ___XXXXX,________,
+ 102:Core/Src/f32f.c ****     ___XXXX_,________,
+ 103:Core/Src/f32f.c ****     __XXXX__,________,
+ 104:Core/Src/f32f.c ****     __XXXXXX,XXXXXX__,
+ 105:Core/Src/f32f.c ****     _XXXXXXX,XXXXXX__,
+ 106:Core/Src/f32f.c ****     _XXXXXXX,XXXXXX__,
+ 107:Core/Src/f32f.c ****     ________,________,
+ 108:Core/Src/f32f.c ****     ________,________,
+ 109:Core/Src/f32f.c ****     ________,________,
+ 110:Core/Src/f32f.c ****     ________,________,
+ 111:Core/Src/f32f.c ****     ________,________,
+ 112:Core/Src/f32f.c ****     ________,________,
+ 113:Core/Src/f32f.c ****     ________,________}
+ 114:Core/Src/f32f.c ****   // 0x33
+ 115:Core/Src/f32f.c ****   ,{
+ 116:Core/Src/f32f.c ****     15,
+ 117:Core/Src/f32f.c ****     f32_FLOAT_HEIGHT,
+ 118:Core/Src/f32f.c ****     ________,________,
+ 119:Core/Src/f32f.c ****     ________,________,
+ 120:Core/Src/f32f.c ****     ________,________,
+ 121:Core/Src/f32f.c ****     ________,________,
+ 122:Core/Src/f32f.c ****     ________,________,
+ 123:Core/Src/f32f.c ****     ____XXXX,XX______,
+ 124:Core/Src/f32f.c ****     ___XXXXX,XXX_____,
+ 125:Core/Src/f32f.c ****     __XXXXXX,XXXX____,
+ 126:Core/Src/f32f.c ****     _XXXXX__,XXXXX___,
+ 127:Core/Src/f32f.c ****     _XXXX___,_XXXX___,
+ 128:Core/Src/f32f.c ****     ________,_XXXX___,
+ 129:Core/Src/f32f.c ****     ________,XXXX____,
+ 130:Core/Src/f32f.c ****     ______XX,XXXX____,
+ 131:Core/Src/f32f.c ****     ______XX,XX______,
+ 132:Core/Src/f32f.c ****     ______XX,XXXX____,
+ 133:Core/Src/f32f.c ****     ________,_XXXX___,
+ 134:Core/Src/f32f.c ****     ________,__XXXX__,
+ 135:Core/Src/f32f.c ****     ________,__XXXX__,
+ 136:Core/Src/f32f.c ****     ________,__XXXX__,
+ 137:Core/Src/f32f.c ****     _XXXX___,__XXXX__,
+ 138:Core/Src/f32f.c ****     _XXXX___,__XXXX__,
+ 139:Core/Src/f32f.c ****     __XXXX__,_XXXX___,
+ 140:Core/Src/f32f.c ****     __XXXXXX,XXXXX___,
+ 141:Core/Src/f32f.c ****     ___XXXXX,XXXX____,
+ 142:Core/Src/f32f.c ****     _____XXX,XX______,
+ 143:Core/Src/f32f.c ****     ________,________,
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccY3Ja5j.s 			page 4
+
+
+ 144:Core/Src/f32f.c ****     ________,________,
+ 145:Core/Src/f32f.c ****     ________,________,
+ 146:Core/Src/f32f.c ****     ________,________,
+ 147:Core/Src/f32f.c ****     ________,________,
+ 148:Core/Src/f32f.c ****     ________,________,
+ 149:Core/Src/f32f.c ****     ________,________}
+ 150:Core/Src/f32f.c ****   // 0x34
+ 151:Core/Src/f32f.c ****   ,{
+ 152:Core/Src/f32f.c ****     16,
+ 153:Core/Src/f32f.c ****     f32_FLOAT_HEIGHT,
+ 154:Core/Src/f32f.c ****     ________,________,
+ 155:Core/Src/f32f.c ****     ________,________,
+ 156:Core/Src/f32f.c ****     ________,________,
+ 157:Core/Src/f32f.c ****     ________,________,
+ 158:Core/Src/f32f.c ****     ________,________,
+ 159:Core/Src/f32f.c ****     ________,_XXXX___,
+ 160:Core/Src/f32f.c ****     ________,_XXXX___,
+ 161:Core/Src/f32f.c ****     ________,XXXXX___,
+ 162:Core/Src/f32f.c ****     _______X,XXXXX___,
+ 163:Core/Src/f32f.c ****     _______X,XXXXX___,
+ 164:Core/Src/f32f.c ****     ______XX,XXXXX___,
+ 165:Core/Src/f32f.c ****     _____XXX,_XXXX___,
+ 166:Core/Src/f32f.c ****     _____XXX,_XXXX___,
+ 167:Core/Src/f32f.c ****     ____XXX_,_XXXX___,
+ 168:Core/Src/f32f.c ****     ___XXX__,_XXXX___,
+ 169:Core/Src/f32f.c ****     ___XXX__,_XXXX___,
+ 170:Core/Src/f32f.c ****     __XXX___,_XXXX___,
+ 171:Core/Src/f32f.c ****     _XXX____,_XXXX___,
+ 172:Core/Src/f32f.c ****     _XXXXXXX,XXXXXXX_,
+ 173:Core/Src/f32f.c ****     _XXXXXXX,XXXXXXX_,
+ 174:Core/Src/f32f.c ****     _XXXXXXX,XXXXXXX_,
+ 175:Core/Src/f32f.c ****     ________,_XXXX___,
+ 176:Core/Src/f32f.c ****     ________,_XXXX___,
+ 177:Core/Src/f32f.c ****     ________,_XXXX___,
+ 178:Core/Src/f32f.c ****     ________,_XXXX___,
+ 179:Core/Src/f32f.c ****     ________,________,
+ 180:Core/Src/f32f.c ****     ________,________,
+ 181:Core/Src/f32f.c ****     ________,________,
+ 182:Core/Src/f32f.c ****     ________,________,
+ 183:Core/Src/f32f.c ****     ________,________,
+ 184:Core/Src/f32f.c ****     ________,________,
+ 185:Core/Src/f32f.c ****     ________,________}
+ 186:Core/Src/f32f.c ****   // 0x35
+ 187:Core/Src/f32f.c ****   ,{
+ 188:Core/Src/f32f.c ****     15,
+ 189:Core/Src/f32f.c ****     f32_FLOAT_HEIGHT,
+ 190:Core/Src/f32f.c ****     ________,________,
+ 191:Core/Src/f32f.c ****     ________,________,
+ 192:Core/Src/f32f.c ****     ________,________,
+ 193:Core/Src/f32f.c ****     ________,________,
+ 194:Core/Src/f32f.c ****     ________,________,
+ 195:Core/Src/f32f.c ****     ___XXXXX,XXXXX___,
+ 196:Core/Src/f32f.c ****     ___XXXXX,XXXXX___,
+ 197:Core/Src/f32f.c ****     __XXXXXX,XXXXX___,
+ 198:Core/Src/f32f.c ****     __XXXX__,________,
+ 199:Core/Src/f32f.c ****     __XXX___,________,
+ 200:Core/Src/f32f.c ****     __XXX___,________,
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccY3Ja5j.s 			page 5
+
+
+ 201:Core/Src/f32f.c ****     __XXX_XX,XXX_____,
+ 202:Core/Src/f32f.c ****     _XXXXXXX,XXXX____,
+ 203:Core/Src/f32f.c ****     _XXXXXXX,XXXXX___,
+ 204:Core/Src/f32f.c ****     _XXXX___,_XXXX___,
+ 205:Core/Src/f32f.c ****     ________,__XXXX__,
+ 206:Core/Src/f32f.c ****     ________,__XXXX__,
+ 207:Core/Src/f32f.c ****     ________,__XXXX__,
+ 208:Core/Src/f32f.c ****     ________,__XXXX__,
+ 209:Core/Src/f32f.c ****     ________,__XXXX__,
+ 210:Core/Src/f32f.c ****     _XXXX___,__XXXX__,
+ 211:Core/Src/f32f.c ****     _XXXXX__,_XXXX___,
+ 212:Core/Src/f32f.c ****     __XXXXXX,XXXX____,
+ 213:Core/Src/f32f.c ****     ___XXXXX,XXXX____,
+ 214:Core/Src/f32f.c ****     ____XXXX,XX______,
+ 215:Core/Src/f32f.c ****     ________,________,
+ 216:Core/Src/f32f.c ****     ________,________,
+ 217:Core/Src/f32f.c ****     ________,________,
+ 218:Core/Src/f32f.c ****     ________,________,
+ 219:Core/Src/f32f.c ****     ________,________,
+ 220:Core/Src/f32f.c ****     ________,________,
+ 221:Core/Src/f32f.c ****     ________,________}
+ 222:Core/Src/f32f.c ****   // 0x36
+ 223:Core/Src/f32f.c ****   ,{
+ 224:Core/Src/f32f.c ****     15,
+ 225:Core/Src/f32f.c ****     f32_FLOAT_HEIGHT,
+ 226:Core/Src/f32f.c ****     ________,________,
+ 227:Core/Src/f32f.c ****     ________,________,
+ 228:Core/Src/f32f.c ****     ________,________,
+ 229:Core/Src/f32f.c ****     ________,________,
+ 230:Core/Src/f32f.c ****     ________,________,
+ 231:Core/Src/f32f.c ****     ______XX,XXX_____,
+ 232:Core/Src/f32f.c ****     ____XXXX,XXXX____,
+ 233:Core/Src/f32f.c ****     ___XXXXX,XXXXX___,
+ 234:Core/Src/f32f.c ****     __XXXX__,_XXXXX__,
+ 235:Core/Src/f32f.c ****     __XXXX__,__XXXX__,
+ 236:Core/Src/f32f.c ****     __XXX___,________,
+ 237:Core/Src/f32f.c ****     _XXXX___,________,
+ 238:Core/Src/f32f.c ****     _XXXX_XX,XXX_____,
+ 239:Core/Src/f32f.c ****     _XXXXXXX,XXXX____,
+ 240:Core/Src/f32f.c ****     _XXXXXXX,XXXXX___,
+ 241:Core/Src/f32f.c ****     _XXXXX__,_XXXX___,
+ 242:Core/Src/f32f.c ****     _XXXX___,__XXXX__,
+ 243:Core/Src/f32f.c ****     _XXXX___,__XXXX__,
+ 244:Core/Src/f32f.c ****     _XXXX___,__XXXX__,
+ 245:Core/Src/f32f.c ****     _XXXX___,__XXXX__,
+ 246:Core/Src/f32f.c ****     __XXX___,__XXXX__,
+ 247:Core/Src/f32f.c ****     __XXXX__,_XXXX___,
+ 248:Core/Src/f32f.c ****     ___XXXXX,XXXXX___,
+ 249:Core/Src/f32f.c ****     ____XXXX,XXXX____,
+ 250:Core/Src/f32f.c ****     _____XXX,XX______,
+ 251:Core/Src/f32f.c ****     ________,________,
+ 252:Core/Src/f32f.c ****     ________,________,
+ 253:Core/Src/f32f.c ****     ________,________,
+ 254:Core/Src/f32f.c ****     ________,________,
+ 255:Core/Src/f32f.c ****     ________,________,
+ 256:Core/Src/f32f.c ****     ________,________,
+ 257:Core/Src/f32f.c ****     ________,________}
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccY3Ja5j.s 			page 6
+
+
+ 258:Core/Src/f32f.c ****   // 0x37
+ 259:Core/Src/f32f.c ****   ,{
+ 260:Core/Src/f32f.c ****     15,
+ 261:Core/Src/f32f.c ****     f32_FLOAT_HEIGHT,
+ 262:Core/Src/f32f.c ****     ________,________,
+ 263:Core/Src/f32f.c ****     ________,________,
+ 264:Core/Src/f32f.c ****     ________,________,
+ 265:Core/Src/f32f.c ****     ________,________,
+ 266:Core/Src/f32f.c ****     ________,________,
+ 267:Core/Src/f32f.c ****     _XXXXXXX,XXXXXX__,
+ 268:Core/Src/f32f.c ****     _XXXXXXX,XXXXXX__,
+ 269:Core/Src/f32f.c ****     _XXXXXXX,XXXXXX__,
+ 270:Core/Src/f32f.c ****     ________,_XXXXX__,
+ 271:Core/Src/f32f.c ****     ________,XXXXX___,
+ 272:Core/Src/f32f.c ****     ________,XXXX____,
+ 273:Core/Src/f32f.c ****     _______X,XXX_____,
+ 274:Core/Src/f32f.c ****     ______XX,XXX_____,
+ 275:Core/Src/f32f.c ****     ______XX,XX______,
+ 276:Core/Src/f32f.c ****     _____XXX,XX______,
+ 277:Core/Src/f32f.c ****     _____XXX,X_______,
+ 278:Core/Src/f32f.c ****     _____XXX,X_______,
+ 279:Core/Src/f32f.c ****     ____XXXX,________,
+ 280:Core/Src/f32f.c ****     ____XXXX,________,
+ 281:Core/Src/f32f.c ****     ____XXXX,________,
+ 282:Core/Src/f32f.c ****     ____XXXX,________,
+ 283:Core/Src/f32f.c ****     ___XXXX_,________,
+ 284:Core/Src/f32f.c ****     ___XXXX_,________,
+ 285:Core/Src/f32f.c ****     ___XXXX_,________,
+ 286:Core/Src/f32f.c ****     ___XXXX_,________,
+ 287:Core/Src/f32f.c ****     ________,________,
+ 288:Core/Src/f32f.c ****     ________,________,
+ 289:Core/Src/f32f.c ****     ________,________,
+ 290:Core/Src/f32f.c ****     ________,________,
+ 291:Core/Src/f32f.c ****     ________,________,
+ 292:Core/Src/f32f.c ****     ________,________,
+ 293:Core/Src/f32f.c ****     ________,________}
+ 294:Core/Src/f32f.c ****   // 0x38
+ 295:Core/Src/f32f.c ****   ,{
+ 296:Core/Src/f32f.c ****     15,
+ 297:Core/Src/f32f.c ****     f32_FLOAT_HEIGHT,
+ 298:Core/Src/f32f.c ****     ________,________,
+ 299:Core/Src/f32f.c ****     ________,________,
+ 300:Core/Src/f32f.c ****     ________,________,
+ 301:Core/Src/f32f.c ****     ________,________,
+ 302:Core/Src/f32f.c ****     ________,________,
+ 303:Core/Src/f32f.c ****     ____XXXX,XXX_____,
+ 304:Core/Src/f32f.c ****     ___XXXXX,XXXX____,
+ 305:Core/Src/f32f.c ****     __XXXXXX,XXXXX___,
+ 306:Core/Src/f32f.c ****     _XXXXX__,_XXXXX__,
+ 307:Core/Src/f32f.c ****     _XXXX___,__XXXX__,
+ 308:Core/Src/f32f.c ****     _XXXX___,__XXXX__,
+ 309:Core/Src/f32f.c ****     _XXXX___,__XXXX__,
+ 310:Core/Src/f32f.c ****     __XXXX__,_XXXX___,
+ 311:Core/Src/f32f.c ****     ___XXXXX,XXXX____,
+ 312:Core/Src/f32f.c ****     ____XXXX,XXX_____,
+ 313:Core/Src/f32f.c ****     ___XXXXX,XXXX____,
+ 314:Core/Src/f32f.c ****     __XXXX__,_XXXX___,
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccY3Ja5j.s 			page 7
+
+
+ 315:Core/Src/f32f.c ****     _XXXX___,__XXXX__,
+ 316:Core/Src/f32f.c ****     _XXXX___,__XXXX__,
+ 317:Core/Src/f32f.c ****     _XXXX___,__XXXX__,
+ 318:Core/Src/f32f.c ****     _XXXX___,__XXXX__,
+ 319:Core/Src/f32f.c ****     _XXXXX__,_XXXXX__,
+ 320:Core/Src/f32f.c ****     __XXXXXX,XXXXX___,
+ 321:Core/Src/f32f.c ****     ___XXXXX,XXXX____,
+ 322:Core/Src/f32f.c ****     _____XXX,XX______,
+ 323:Core/Src/f32f.c ****     ________,________,
+ 324:Core/Src/f32f.c ****     ________,________,
+ 325:Core/Src/f32f.c ****     ________,________,
+ 326:Core/Src/f32f.c ****     ________,________,
+ 327:Core/Src/f32f.c ****     ________,________,
+ 328:Core/Src/f32f.c ****     ________,________,
+ 329:Core/Src/f32f.c ****     ________,________}
+ 330:Core/Src/f32f.c ****   // 0x39
+ 331:Core/Src/f32f.c ****   ,{
+ 332:Core/Src/f32f.c ****     15,
+ 333:Core/Src/f32f.c ****     f32_FLOAT_HEIGHT,
+ 334:Core/Src/f32f.c ****     ________,________,
+ 335:Core/Src/f32f.c ****     ________,________,
+ 336:Core/Src/f32f.c ****     ________,________,
+ 337:Core/Src/f32f.c ****     ________,________,
+ 338:Core/Src/f32f.c ****     ________,________,
+ 339:Core/Src/f32f.c ****     _____XXX,XX______,
+ 340:Core/Src/f32f.c ****     ___XXXXX,XXX_____,
+ 341:Core/Src/f32f.c ****     __XXXXXX,XXXX____,
+ 342:Core/Src/f32f.c ****     __XXXX__,_XXXX___,
+ 343:Core/Src/f32f.c ****     _XXXX___,__XXX___,
+ 344:Core/Src/f32f.c ****     _XXXX___,__XXXX__,
+ 345:Core/Src/f32f.c ****     _XXXX___,__XXXX__,
+ 346:Core/Src/f32f.c ****     _XXXX___,__XXXX__,
+ 347:Core/Src/f32f.c ****     _XXXX___,__XXXX__,
+ 348:Core/Src/f32f.c ****     __XXXX__,_XXXXX__,
+ 349:Core/Src/f32f.c ****     __XXXXXX,XXXXXX__,
+ 350:Core/Src/f32f.c ****     ___XXXXX,XXXXXX__,
+ 351:Core/Src/f32f.c ****     ____XXXX,X_XXXX__,
+ 352:Core/Src/f32f.c ****     ________,__XXXX__,
+ 353:Core/Src/f32f.c ****     ________,__XXX___,
+ 354:Core/Src/f32f.c ****     _XXXX___,_XXXX___,
+ 355:Core/Src/f32f.c ****     _XXXXX__,_XXXX___,
+ 356:Core/Src/f32f.c ****     __XXXXXX,XXXX____,
+ 357:Core/Src/f32f.c ****     __XXXXXX,XXX_____,
+ 358:Core/Src/f32f.c ****     ____XXXX,X_______,
+ 359:Core/Src/f32f.c ****     ________,________,
+ 360:Core/Src/f32f.c ****     ________,________,
+ 361:Core/Src/f32f.c ****     ________,________,
+ 362:Core/Src/f32f.c ****     ________,________,
+ 363:Core/Src/f32f.c ****     ________,________,
+ 364:Core/Src/f32f.c ****     ________,________,
+ 365:Core/Src/f32f.c ****     ________,________}
+ 366:Core/Src/f32f.c **** };
+ 367:Core/Src/f32f.c **** 
+ 368:Core/Src/f32f.c **** const uint8_t f32f_table2[64 + 2] =
+ 369:Core/Src/f32f.c **** // 0x20
+ 370:Core/Src/f32f.c **** {
+ 371:Core/Src/f32f.c ****   8,
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccY3Ja5j.s 			page 8
+
+
+ 372:Core/Src/f32f.c ****   f32_FLOAT_HEIGHT,
+ 373:Core/Src/f32f.c ****   ________,________,
+ 374:Core/Src/f32f.c ****   ________,________,
+ 375:Core/Src/f32f.c ****   ________,________,
+ 376:Core/Src/f32f.c ****   ________,________,
+ 377:Core/Src/f32f.c ****   ________,________,
+ 378:Core/Src/f32f.c ****   ________,________,
+ 379:Core/Src/f32f.c ****   ________,________,
+ 380:Core/Src/f32f.c ****   ________,________,
+ 381:Core/Src/f32f.c ****   ________,________,
+ 382:Core/Src/f32f.c ****   ________,________,
+ 383:Core/Src/f32f.c ****   ________,________,
+ 384:Core/Src/f32f.c ****   ________,________,
+ 385:Core/Src/f32f.c ****   ________,________,
+ 386:Core/Src/f32f.c ****   ________,________,
+ 387:Core/Src/f32f.c ****   ________,________,
+ 388:Core/Src/f32f.c ****   ________,________,
+ 389:Core/Src/f32f.c ****   ________,________,
+ 390:Core/Src/f32f.c ****   ________,________,
+ 391:Core/Src/f32f.c ****   ________,________,
+ 392:Core/Src/f32f.c ****   ________,________,
+ 393:Core/Src/f32f.c ****   ________,________,
+ 394:Core/Src/f32f.c ****   ________,________,
+ 395:Core/Src/f32f.c ****   ________,________,
+ 396:Core/Src/f32f.c ****   ________,________,
+ 397:Core/Src/f32f.c ****   ________,________,
+ 398:Core/Src/f32f.c ****   ________,________,
+ 399:Core/Src/f32f.c ****   ________,________,
+ 400:Core/Src/f32f.c ****   ________,________,
+ 401:Core/Src/f32f.c ****   ________,________,
+ 402:Core/Src/f32f.c ****   ________,________,
+ 403:Core/Src/f32f.c ****   ________,________,
+ 404:Core/Src/f32f.c ****   ________,________
+ 405:Core/Src/f32f.c **** };
+ 406:Core/Src/f32f.c **** 
+ 407:Core/Src/f32f.c **** const uint8_t f32f_table3[64 + 2] =
+ 408:Core/Src/f32f.c **** // 0x2E
+ 409:Core/Src/f32f.c **** {
+ 410:Core/Src/f32f.c ****   8,
+ 411:Core/Src/f32f.c ****   f32_FLOAT_HEIGHT,
+ 412:Core/Src/f32f.c ****   ________,________,
+ 413:Core/Src/f32f.c ****   ________,________,
+ 414:Core/Src/f32f.c ****   ________,________,
+ 415:Core/Src/f32f.c ****   ________,________,
+ 416:Core/Src/f32f.c ****   ________,________,
+ 417:Core/Src/f32f.c ****   ________,________,
+ 418:Core/Src/f32f.c ****   ________,________,
+ 419:Core/Src/f32f.c ****   ________,________,
+ 420:Core/Src/f32f.c ****   ________,________,
+ 421:Core/Src/f32f.c ****   ________,________,
+ 422:Core/Src/f32f.c ****   ________,________,
+ 423:Core/Src/f32f.c ****   ________,________,
+ 424:Core/Src/f32f.c ****   ________,________,
+ 425:Core/Src/f32f.c ****   ________,________,
+ 426:Core/Src/f32f.c ****   ________,________,
+ 427:Core/Src/f32f.c ****   ________,________,
+ 428:Core/Src/f32f.c ****   ________,________,
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccY3Ja5j.s 			page 9
+
+
+ 429:Core/Src/f32f.c ****   ________,________,
+ 430:Core/Src/f32f.c ****   ________,________,
+ 431:Core/Src/f32f.c ****   __XXXX__,________,
+ 432:Core/Src/f32f.c ****   _XXXXXX_,________,
+ 433:Core/Src/f32f.c ****   _XXXXXX_,________,
+ 434:Core/Src/f32f.c ****   _XXXXXX_,________,
+ 435:Core/Src/f32f.c ****   _XXXXXX_,________,
+ 436:Core/Src/f32f.c ****   __XXXX__,________,
+ 437:Core/Src/f32f.c ****   ________,________,
+ 438:Core/Src/f32f.c ****   ________,________,
+ 439:Core/Src/f32f.c ****   ________,________,
+ 440:Core/Src/f32f.c ****   ________,________,
+ 441:Core/Src/f32f.c ****   ________,________,
+ 442:Core/Src/f32f.c ****   ________,________,
+ 443:Core/Src/f32f.c ****   ________,________
+ 444:Core/Src/f32f.c **** };
+ 445:Core/Src/f32f.c **** 
+ 446:Core/Src/f32f.c **** const uint8_t f32f_table4[64 + 2] =
+ 447:Core/Src/f32f.c **** // 0xB0
+ 448:Core/Src/f32f.c **** {
+ 449:Core/Src/f32f.c ****   15,
+ 450:Core/Src/f32f.c ****   f32_FLOAT_HEIGHT,
+ 451:Core/Src/f32f.c ****   ________,________,
+ 452:Core/Src/f32f.c ****   ________,________,
+ 453:Core/Src/f32f.c ****   ________,________,
+ 454:Core/Src/f32f.c ****   ________,________,
+ 455:Core/Src/f32f.c ****   _____XXX,XX______,
+ 456:Core/Src/f32f.c ****   ___XXXXX,XXXX____,
+ 457:Core/Src/f32f.c ****   __XXXXXX,XXXXX___,
+ 458:Core/Src/f32f.c ****   __XXXX__,_XXXX___,
+ 459:Core/Src/f32f.c ****   _XXXX___,__XXXX__,
+ 460:Core/Src/f32f.c ****   _XXXX___,__XXXX__,
+ 461:Core/Src/f32f.c ****   _XXXX___,__XXXX__,
+ 462:Core/Src/f32f.c ****   _XXXX___,__XXXX__,
+ 463:Core/Src/f32f.c ****   __XXXX__,_XXXX___,
+ 464:Core/Src/f32f.c ****   __XXXXXX,XXXXX___,
+ 465:Core/Src/f32f.c ****   ___XXXXX,XXXX____,
+ 466:Core/Src/f32f.c ****   _____XXX,XXX_____,
+ 467:Core/Src/f32f.c ****   ________,________,
+ 468:Core/Src/f32f.c ****   ________,________,
+ 469:Core/Src/f32f.c ****   ________,________,
+ 470:Core/Src/f32f.c ****   ________,________,
+ 471:Core/Src/f32f.c ****   ________,________,
+ 472:Core/Src/f32f.c ****   ________,________,
+ 473:Core/Src/f32f.c ****   ________,________,
+ 474:Core/Src/f32f.c ****   ________,________,
+ 475:Core/Src/f32f.c ****   ________,________,
+ 476:Core/Src/f32f.c ****   ________,________,
+ 477:Core/Src/f32f.c ****   ________,________,
+ 478:Core/Src/f32f.c ****   ________,________,
+ 479:Core/Src/f32f.c ****   ________,________,
+ 480:Core/Src/f32f.c ****   ________,________,
+ 481:Core/Src/f32f.c ****   ________,________,
+ 482:Core/Src/f32f.c ****   ________,________
+ 483:Core/Src/f32f.c **** };
+ 484:Core/Src/f32f.c **** 
+ 485:Core/Src/f32f.c **** const uint8_t f32f_table5[64 + 2] =
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccY3Ja5j.s 			page 10
+
+
+ 486:Core/Src/f32f.c **** // 0x25
+ 487:Core/Src/f32f.c **** {
+ 488:Core/Src/f32f.c ****   15,
+ 489:Core/Src/f32f.c ****   f32_FLOAT_HEIGHT,
+ 490:Core/Src/f32f.c ****   ________,________,
+ 491:Core/Src/f32f.c ****   ________,________,
+ 492:Core/Src/f32f.c ****   __XXXX__,_____XX_,
+ 493:Core/Src/f32f.c ****   _XX__XX_,_____XX_,
+ 494:Core/Src/f32f.c ****   XX____XX,____XX__,
+ 495:Core/Src/f32f.c ****   XX____XX,____XX__,
+ 496:Core/Src/f32f.c ****   XX____XX,___XX___,
+ 497:Core/Src/f32f.c ****   XX____XX,___XX___,
+ 498:Core/Src/f32f.c ****   _XX__XX_,__XX____,
+ 499:Core/Src/f32f.c ****   __XXXX__,__XX____,
+ 500:Core/Src/f32f.c ****   ________,_XX_____,
+ 501:Core/Src/f32f.c ****   ________,_XX_____,
+ 502:Core/Src/f32f.c ****   ________,XX______,
+ 503:Core/Src/f32f.c ****   ________,XX______,
+ 504:Core/Src/f32f.c ****   _______X,X_______,
+ 505:Core/Src/f32f.c ****   _______X,X_______,
+ 506:Core/Src/f32f.c ****   ______XX,________,
+ 507:Core/Src/f32f.c ****   ______XX,________,
+ 508:Core/Src/f32f.c ****   _____XX_,________,
+ 509:Core/Src/f32f.c ****   _____XX_,________,
+ 510:Core/Src/f32f.c ****   ____XX__,________,
+ 511:Core/Src/f32f.c ****   ____XX__,________,
+ 512:Core/Src/f32f.c ****   ___XX___,__XXX___,
+ 513:Core/Src/f32f.c ****   ___XX___,_XX_XX__,
+ 514:Core/Src/f32f.c ****   __XX____,XX___XX_,
+ 515:Core/Src/f32f.c ****   __XX____,XX___XX_,
+ 516:Core/Src/f32f.c ****   _XX_____,XX___XX_,
+ 517:Core/Src/f32f.c ****   _XX_____,XX___XX_,
+ 518:Core/Src/f32f.c ****   XX______,_XX_XX__,
+ 519:Core/Src/f32f.c ****   XX______,__XXX___,
+ 520:Core/Src/f32f.c ****   ________,________,
+ 521:Core/Src/f32f.c ****   ________,________
+ 522:Core/Src/f32f.c **** };
+ 523:Core/Src/f32f.c **** 
+ 524:Core/Src/f32f.c **** //==============================================================================
+ 525:Core/Src/f32f.c **** 
+ 526:Core/Src/f32f.c **** uint8_t *f32f_GetCharTable(char Char)
+ 527:Core/Src/f32f.c **** {
+  30              		.loc 1 527 1 view -0
+  31              		.cfi_startproc
+  32              		@ args = 0, pretend = 0, frame = 0
+  33              		@ frame_needed = 0, uses_anonymous_args = 0
+  34              		@ link register save eliminated.
+ 528:Core/Src/f32f.c ****   // ������ �����
+ 529:Core/Src/f32f.c ****   if ((Char >= 0x30) && (Char <= 0x39))
+  35              		.loc 1 529 3 view .LVU1
+  36 0000 3928     		cmp	r0, #57
+  37 0002 16D8     		bhi	.L2
+  38 0004 2028     		cmp	r0, #32
+  39 0006 23D3     		bcc	.L9
+  40 0008 A0F12003 		sub	r3, r0, #32
+  41 000c 192B     		cmp	r3, #25
+  42 000e 0ED8     		bhi	.L4
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccY3Ja5j.s 			page 11
+
+
+  43 0010 DFE803F0 		tbb	[pc, r3]
+  44              	.L6:
+  45 0014 20       		.byte	(.L10-.L6)/2
+  46 0015 0D       		.byte	(.L4-.L6)/2
+  47 0016 0D       		.byte	(.L4-.L6)/2
+  48 0017 0D       		.byte	(.L4-.L6)/2
+  49 0018 0D       		.byte	(.L4-.L6)/2
+  50 0019 1C       		.byte	(.L8-.L6)/2
+  51 001a 0D       		.byte	(.L4-.L6)/2
+  52 001b 0D       		.byte	(.L4-.L6)/2
+  53 001c 0D       		.byte	(.L4-.L6)/2
+  54 001d 0D       		.byte	(.L4-.L6)/2
+  55 001e 0D       		.byte	(.L4-.L6)/2
+  56 001f 0D       		.byte	(.L4-.L6)/2
+  57 0020 0D       		.byte	(.L4-.L6)/2
+  58 0021 0D       		.byte	(.L4-.L6)/2
+  59 0022 1A       		.byte	(.L7-.L6)/2
+  60 0023 0D       		.byte	(.L4-.L6)/2
+  61 0024 13       		.byte	(.L5-.L6)/2
+  62 0025 13       		.byte	(.L5-.L6)/2
+  63 0026 13       		.byte	(.L5-.L6)/2
+  64 0027 13       		.byte	(.L5-.L6)/2
+  65 0028 13       		.byte	(.L5-.L6)/2
+  66 0029 13       		.byte	(.L5-.L6)/2
+  67 002a 13       		.byte	(.L5-.L6)/2
+  68 002b 13       		.byte	(.L5-.L6)/2
+  69 002c 13       		.byte	(.L5-.L6)/2
+  70 002d 13       		.byte	(.L5-.L6)/2
+  71              		.p2align 1
+  72              	.L4:
+ 530:Core/Src/f32f.c ****     return (uint8_t *)(&f32f_table[Char - 0x30][0]);
+ 531:Core/Src/f32f.c ****   if (Char == 0x20)
+ 532:Core/Src/f32f.c **** 	  return (uint8_t *) f32f_table2;
+ 533:Core/Src/f32f.c ****   if (Char == 0x2E)
+ 534:Core/Src/f32f.c **** 	  return (uint8_t *) f32f_table3;
+ 535:Core/Src/f32f.c ****   if (Char == 0xB0)
+ 536:Core/Src/f32f.c **** 	  return (uint8_t *) f32f_table4;
+ 537:Core/Src/f32f.c ****   if (Char == 0x25)
+ 538:Core/Src/f32f.c **** 	  return (uint8_t *) f32f_table5;
+  73              		.loc 1 538 11 is_stmt 0 view .LVU2
+  74 002e 0020     		movs	r0, #0
+  75              	.LVL1:
+  76              		.loc 1 538 11 view .LVU3
+  77 0030 7047     		bx	lr
+  78              	.LVL2:
+  79              	.L2:
+  80              		.loc 1 538 11 view .LVU4
+  81 0032 B028     		cmp	r0, #176
+  82 0034 10D1     		bne	.L11
+ 536:Core/Src/f32f.c ****   if (Char == 0x25)
+  83              		.loc 1 536 11 view .LVU5
+  84 0036 0948     		ldr	r0, .L12
+  85              	.LVL3:
+ 536:Core/Src/f32f.c ****   if (Char == 0x25)
+  86              		.loc 1 536 11 view .LVU6
+  87 0038 7047     		bx	lr
+  88              	.LVL4:
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccY3Ja5j.s 			page 12
+
+
+  89              	.L5:
+ 530:Core/Src/f32f.c ****     return (uint8_t *)(&f32f_table[Char - 0x30][0]);
+  90              		.loc 1 530 5 is_stmt 1 view .LVU7
+ 530:Core/Src/f32f.c ****     return (uint8_t *)(&f32f_table[Char - 0x30][0]);
+  91              		.loc 1 530 41 is_stmt 0 view .LVU8
+  92 003a 3038     		subs	r0, r0, #48
+  93              	.LVL5:
+ 530:Core/Src/f32f.c ****     return (uint8_t *)(&f32f_table[Char - 0x30][0]);
+  94              		.loc 1 530 12 view .LVU9
+  95 003c 00EB4010 		add	r0, r0, r0, lsl #5
+  96 0040 074B     		ldr	r3, .L12+4
+  97 0042 03EB4000 		add	r0, r3, r0, lsl #1
+  98 0046 7047     		bx	lr
+  99              	.LVL6:
+ 100              	.L7:
+ 534:Core/Src/f32f.c ****   if (Char == 0xB0)
+ 101              		.loc 1 534 4 is_stmt 1 view .LVU10
+ 534:Core/Src/f32f.c ****   if (Char == 0xB0)
+ 102              		.loc 1 534 11 is_stmt 0 view .LVU11
+ 103 0048 0648     		ldr	r0, .L12+8
+ 104              	.LVL7:
+ 534:Core/Src/f32f.c ****   if (Char == 0xB0)
+ 105              		.loc 1 534 11 view .LVU12
+ 106 004a 7047     		bx	lr
+ 107              	.LVL8:
+ 108              	.L8:
+ 109              		.loc 1 538 4 is_stmt 1 view .LVU13
+ 110              		.loc 1 538 11 is_stmt 0 view .LVU14
+ 111 004c 0648     		ldr	r0, .L12+12
+ 112              	.LVL9:
+ 113              		.loc 1 538 11 view .LVU15
+ 114 004e 7047     		bx	lr
+ 115              	.LVL10:
+ 116              	.L9:
+ 117              		.loc 1 538 11 view .LVU16
+ 118 0050 0020     		movs	r0, #0
+ 119              	.LVL11:
+ 120              		.loc 1 538 11 view .LVU17
+ 121 0052 7047     		bx	lr
+ 122              	.LVL12:
+ 123              	.L10:
+ 532:Core/Src/f32f.c ****   if (Char == 0x2E)
+ 124              		.loc 1 532 11 view .LVU18
+ 125 0054 0548     		ldr	r0, .L12+16
+ 126              	.LVL13:
+ 532:Core/Src/f32f.c ****   if (Char == 0x2E)
+ 127              		.loc 1 532 11 view .LVU19
+ 128 0056 7047     		bx	lr
+ 129              	.LVL14:
+ 130              	.L11:
+ 131              		.loc 1 538 11 view .LVU20
+ 132 0058 0020     		movs	r0, #0
+ 133              	.LVL15:
+ 539:Core/Src/f32f.c **** 
+ 540:Core/Src/f32f.c ****   return 0;
+ 541:Core/Src/f32f.c **** }
+ 134              		.loc 1 541 1 view .LVU21
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccY3Ja5j.s 			page 13
+
+
+ 135 005a 7047     		bx	lr
+ 136              	.L13:
+ 137              		.align	2
+ 138              	.L12:
+ 139 005c 00000000 		.word	f32f_table4
+ 140 0060 00000000 		.word	f32f_table
+ 141 0064 00000000 		.word	f32f_table3
+ 142 0068 00000000 		.word	f32f_table5
+ 143 006c 00000000 		.word	f32f_table2
+ 144              		.cfi_endproc
+ 145              	.LFE3:
+ 147              		.global	f32f_table5
+ 148              		.section	.rodata.f32f_table5,"a"
+ 149              		.align	2
+ 152              	f32f_table5:
+ 153 0000 0F200000 		.ascii	"\017 \000\000\000\000<\006f\006\303\014\303\014\303"
+ 153      00003C06 
+ 153      6606C30C 
+ 153      C30CC3
+ 154 000f 18C31866 		.ascii	"\030\303\030f0<0\000`\000`\000\300\000\300\001\200\001"
+ 154      303C3000 
+ 154      60006000 
+ 154      C000C001 
+ 154      8001
+ 155 0021 80030003 		.ascii	"\200\003\000\003\000\006\000\006\000\014\000\014\000"
+ 155      00060006 
+ 155      000C000C 
+ 155      00
+ 156 002e 1838186C 		.ascii	"\0308\030l0\3060\306`\306`\306\300l\3008\000\000\000"
+ 156      30C630C6 
+ 156      60C660C6 
+ 156      C06CC038 
+ 156      000000
+ 157 0041 00       		.ascii	"\000"
+ 158              		.global	f32f_table4
+ 159              		.section	.rodata.f32f_table4,"a"
+ 160              		.align	2
+ 163              	f32f_table4:
+ 164 0000 0F200000 		.ascii	"\017 \000\000\000\000\000\000\000\000\007\300\037\360"
+ 164      00000000 
+ 164      000007C0 
+ 164      1FF0
+ 165 000e 3FF83C78 		.ascii	"?\370<xx<x<x<x<<x?\370\037\360\007\340\000\000\000\000"
+ 165      783C783C 
+ 165      783C783C 
+ 165      3C783FF8 
+ 165      1FF007E0 
+ 166 0026 00000000 		.ascii	"\000\000\000\000\000\000\000\000\000\000\000\000\000"
+ 166      00000000 
+ 166      00000000 
+ 166      00
+ 167 0033 00000000 		.ascii	"\000\000\000\000\000\000\000\000\000\000\000\000\000"
+ 167      00000000 
+ 167      00000000 
+ 167      00
+ 168 0040 0000     		.ascii	"\000\000"
+ 169              		.global	f32f_table3
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccY3Ja5j.s 			page 14
+
+
+ 170              		.section	.rodata.f32f_table3,"a"
+ 171              		.align	2
+ 174              	f32f_table3:
+ 175 0000 08200000 		.ascii	"\010 \000\000\000\000\000\000\000\000\000\000\000\000"
+ 175      00000000 
+ 175      00000000 
+ 175      0000
+ 176 000e 00000000 		.ascii	"\000\000\000\000\000\000\000\000\000\000\000\000\000"
+ 176      00000000 
+ 176      00000000 
+ 176      00
+ 177 001b 00000000 		.ascii	"\000\000\000\000\000\000\000\000\000\000\000\000\000"
+ 177      00000000 
+ 177      00000000 
+ 177      00
+ 178 0028 3C007E00 		.ascii	"<\000~\000~\000~\000~\000<\000\000\000\000\000\000\000"
+ 178      7E007E00 
+ 178      7E003C00 
+ 178      00000000 
+ 178      0000
+ 179 003a 00000000 		.ascii	"\000\000\000\000\000\000\000\000"
+ 179      00000000 
+ 180              		.global	f32f_table2
+ 181              		.section	.rodata.f32f_table2,"a"
+ 182              		.align	2
+ 185              	f32f_table2:
+ 186 0000 08200000 		.ascii	"\010 \000\000\000\000\000\000\000\000\000\000\000\000"
+ 186      00000000 
+ 186      00000000 
+ 186      0000
+ 187 000e 00000000 		.ascii	"\000\000\000\000\000\000\000\000\000\000\000\000\000"
+ 187      00000000 
+ 187      00000000 
+ 187      00
+ 188 001b 00000000 		.ascii	"\000\000\000\000\000\000\000\000\000\000\000\000\000"
+ 188      00000000 
+ 188      00000000 
+ 188      00
+ 189 0028 00000000 		.ascii	"\000\000\000\000\000\000\000\000\000\000\000\000\000"
+ 189      00000000 
+ 189      00000000 
+ 189      00
+ 190 0035 00000000 		.ascii	"\000\000\000\000\000\000\000\000\000\000\000\000\000"
+ 190      00000000 
+ 190      00000000 
+ 190      00
+ 191              		.global	f32f_table
+ 192              		.section	.rodata.f32f_table,"a"
+ 193              		.align	2
+ 196              	f32f_table:
+ 197 0000 0F200000 		.ascii	"\017 \000\000\000\000\000\000\000\000\000\000\007\300"
+ 197      00000000 
+ 197      00000000 
+ 197      07C0
+ 198 000e 1FF01FF0 		.ascii	"\037\360\037\360<x<xx<x<x<x<x<x<x<x<x<x<<x<x\037\360"
+ 198      3C783C78 
+ 198      783C783C 
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccY3Ja5j.s 			page 15
+
+
+ 198      783C783C 
+ 198      783C783C 
+ 199 0030 1FF007C0 		.ascii	"\037\360\007\300\000\000\000\000\000\000\000\000\000"
+ 199      00000000 
+ 199      00000000 
+ 199      00
+ 200 003d 00000000 		.ascii	"\000\000\000\000\000"
+ 200      00
+ 201 0042 0C200000 		.ascii	"\014 \000\000\000\000\000\000\000\000\000\000\000\340"
+ 201      00000000 
+ 201      00000000 
+ 201      00E0
+ 202 0050 01E003E0 		.ascii	"\001\340\003\340\007\340\037\340?\340=\3409\340!\340"
+ 202      07E01FE0 
+ 202      3FE03DE0 
+ 202      39E021E0 
+ 203 0060 01E001E0 		.ascii	"\001\340\001\340\001\340\001\340\001\340\001\340\001"
+ 203      01E001E0 
+ 203      01E001E0 
+ 203      01
+ 204 006d E001E001 		.ascii	"\340\001\340\001\340\001\340\001\340\000\000\000\000"
+ 204      E001E001 
+ 204      E0000000 
+ 204      00
+ 205 007a 00000000 		.ascii	"\000\000\000\000\000\000\000\000\000\000"
+ 205      00000000 
+ 205      0000
+ 206 0084 0F200000 		.ascii	"\017 \000\000\000\000\000\000\000\000\000\000\007\340"
+ 206      00000000 
+ 206      00000000 
+ 206      07E0
+ 207 0092 1FF03FF8 		.ascii	"\037\360?\370<|x<x<\000<\000<\000x\000\370\001\360\003"
+ 207      3C7C783C 
+ 207      783C003C 
+ 207      003C0078 
+ 207      00F801F0 
+ 208 00a7 E007C00F 		.ascii	"\340\007\300\017\200\037\000\036\000<\000?\374\177\374"
+ 208      801F001E 
+ 208      003C003F 
+ 208      FC7FFC
+ 209 00b6 7FFC0000 		.ascii	"\177\374\000\000\000\000\000\000\000\000\000\000\000"
+ 209      00000000 
+ 209      00000000 
+ 209      00
+ 210 00c3 000000   		.ascii	"\000\000\000"
+ 211 00c6 0F200000 		.ascii	"\017 \000\000\000\000\000\000\000\000\000\000\017\300"
+ 211      00000000 
+ 211      00000000 
+ 211      0FC0
+ 212 00d4 1FE03FF0 		.ascii	"\037\340?\360|\370xx\000x\000\360\003\360\003\300\003"
+ 212      7CF87878 
+ 212      007800F0 
+ 212      03F003C0 
+ 212      03
+ 213 00e5 F0007800 		.ascii	"\360\000x\000<\000<\000<x<x<<x?\370\037\360\007\300"
+ 213      3C003C00 
+ 213      3C783C78 
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccY3Ja5j.s 			page 16
+
+
+ 213      3C3C783F 
+ 213      F81FF007 
+ 214 00fa 00000000 		.ascii	"\000\000\000\000\000\000\000\000\000\000\000\000\000"
+ 214      00000000 
+ 214      00000000 
+ 214      00
+ 215 0107 00       		.ascii	"\000"
+ 216 0108 10200000 		.ascii	"\020 \000\000\000\000\000\000\000\000\000\000\000x\000"
+ 216      00000000 
+ 216      00000000 
+ 216      007800
+ 217 0117 7800F801 		.ascii	"x\000\370\001\370\001\370\003\370\007x\007x\016x\034"
+ 217      F801F803 
+ 217      F8077807 
+ 217      780E781C 
+ 218 0127 781C7838 		.ascii	"x\034x8xpx\177\376\177\376\177\376\000x\000x\000x\000"
+ 218      7870787F 
+ 218      FE7FFE7F 
+ 218      FE007800 
+ 218      78007800 
+ 219 013b 78000000 		.ascii	"x\000\000\000\000\000\000\000\000\000\000\000\000\000"
+ 219      00000000 
+ 219      00000000 
+ 219      0000
+ 220 0149 00       		.ascii	"\000"
+ 221 014a 0F200000 		.ascii	"\017 \000\000\000\000\000\000\000\000\000\000\037\370"
+ 221      00000000 
+ 221      00000000 
+ 221      1FF8
+ 222 0158 1FF83FF8 		.ascii	"\037\370?\370<\0008\0008\000;\340\177\360\177\370xx"
+ 222      3C003800 
+ 222      38003BE0 
+ 222      7FF07FF8 
+ 222      7878
+ 223 016a 003C003C 		.ascii	"\000<\000<\000<\000<\000<x<|x?\360\037\360\017\300\000"
+ 223      003C003C 
+ 223      003C783C 
+ 223      7C783FF0 
+ 223      1FF00FC0 
+ 224 017f 00000000 		.ascii	"\000\000\000\000\000\000\000\000\000\000\000\000\000"
+ 224      00000000 
+ 224      00000000 
+ 224      00
+ 225 018c 0F200000 		.ascii	"\017 \000\000\000\000\000\000\000\000\000\000\003\340"
+ 225      00000000 
+ 225      00000000 
+ 225      03E0
+ 226 019a 0FF01FF8 		.ascii	"\017\360\037\370<|<<8\000x\000{\340\177\360\177\370"
+ 226      3C7C3C3C 
+ 226      38007800 
+ 226      7BE07FF0 
+ 226      7FF8
+ 227 01ac 7C78783C 		.ascii	"|xx<x<x<x<8<<x\037\370\017\360\007\300\000\000\000\000"
+ 227      783C783C 
+ 227      783C383C 
+ 227      3C781FF8 
+ 227      0FF007C0 
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccY3Ja5j.s 			page 17
+
+
+ 228 01c4 00000000 		.ascii	"\000\000\000\000\000\000\000\000\000\000"
+ 228      00000000 
+ 228      0000
+ 229 01ce 0F200000 		.ascii	"\017 \000\000\000\000\000\000\000\000\000\000\177\374"
+ 229      00000000 
+ 229      00000000 
+ 229      7FFC
+ 230 01dc 7FFC7FFC 		.ascii	"\177\374\177\374\000|\000\370\000\360\001\340\003\340"
+ 230      007C00F8 
+ 230      00F001E0 
+ 230      03E0
+ 231 01ea 03C007C0 		.ascii	"\003\300\007\300\007\200\007\200\017\000\017\000\017"
+ 231      07800780 
+ 231      0F000F00 
+ 231      0F
+ 232 01f7 000F001E 		.ascii	"\000\017\000\036\000\036\000\036\000\036\000\000\000"
+ 232      001E001E 
+ 232      001E0000 
+ 232      00
+ 233 0204 00000000 		.ascii	"\000\000\000\000\000\000\000\000\000\000\000\000"
+ 233      00000000 
+ 233      00000000 
+ 234 0210 0F200000 		.ascii	"\017 \000\000\000\000\000\000\000\000\000\000\017\340"
+ 234      00000000 
+ 234      00000000 
+ 234      0FE0
+ 235 021e 1FF03FF8 		.ascii	"\037\360?\370||x<x<x<<x\037\360\017\340\037\360<xx<"
+ 235      7C7C783C 
+ 235      783C783C 
+ 235      3C781FF0 
+ 235      0FE01FF0 
+ 236 0236 783C783C 		.ascii	"x<x<x<||?\370\037\360\007\300\000\000\000\000\000\000"
+ 236      783C7C7C 
+ 236      3FF81FF0 
+ 236      07C00000 
+ 236      00000000 
+ 237 024a 00000000 		.ascii	"\000\000\000\000\000\000\000\000"
+ 237      00000000 
+ 238 0252 0F200000 		.ascii	"\017 \000\000\000\000\000\000\000\000\000\000\007\300"
+ 238      00000000 
+ 238      00000000 
+ 238      07C0
+ 239 0260 1FE03FF0 		.ascii	"\037\340?\360<xx8x<x<x<x<<|?\374\037\374\017\274\000"
+ 239      3C787838 
+ 239      783C783C 
+ 239      783C783C 
+ 239      3C7C3FFC 
+ 240 0279 3C003878 		.ascii	"<\0008xx|x?\360?\340\017\200\000\000\000\000\000\000"
+ 240      787C783F 
+ 240      F03FE00F 
+ 240      80000000 
+ 240      000000
+ 241 028c 00000000 		.ascii	"\000\000\000\000\000\000\000\000"
+ 241      00000000 
+ 242              		.text
+ 243              	.Letext0:
+ 244              		.file 2 "C:/Users/kroko/AppData/Roaming/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-to
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccY3Ja5j.s 			page 18
+
+
+ 245              		.file 3 "C:/Users/kroko/AppData/Roaming/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-to
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccY3Ja5j.s 			page 19
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 f32f.c
+C:\Users\kroko\AppData\Local\Temp\ccY3Ja5j.s:21     .text.f32f_GetCharTable:00000000 $t
+C:\Users\kroko\AppData\Local\Temp\ccY3Ja5j.s:27     .text.f32f_GetCharTable:00000000 f32f_GetCharTable
+C:\Users\kroko\AppData\Local\Temp\ccY3Ja5j.s:45     .text.f32f_GetCharTable:00000014 $d
+C:\Users\kroko\AppData\Local\Temp\ccY3Ja5j.s:71     .text.f32f_GetCharTable:0000002e $t
+C:\Users\kroko\AppData\Local\Temp\ccY3Ja5j.s:139    .text.f32f_GetCharTable:0000005c $d
+C:\Users\kroko\AppData\Local\Temp\ccY3Ja5j.s:163    .rodata.f32f_table4:00000000 f32f_table4
+C:\Users\kroko\AppData\Local\Temp\ccY3Ja5j.s:196    .rodata.f32f_table:00000000 f32f_table
+C:\Users\kroko\AppData\Local\Temp\ccY3Ja5j.s:174    .rodata.f32f_table3:00000000 f32f_table3
+C:\Users\kroko\AppData\Local\Temp\ccY3Ja5j.s:152    .rodata.f32f_table5:00000000 f32f_table5
+C:\Users\kroko\AppData\Local\Temp\ccY3Ja5j.s:185    .rodata.f32f_table2:00000000 f32f_table2
+C:\Users\kroko\AppData\Local\Temp\ccY3Ja5j.s:149    .rodata.f32f_table5:00000000 $d
+C:\Users\kroko\AppData\Local\Temp\ccY3Ja5j.s:160    .rodata.f32f_table4:00000000 $d
+C:\Users\kroko\AppData\Local\Temp\ccY3Ja5j.s:171    .rodata.f32f_table3:00000000 $d
+C:\Users\kroko\AppData\Local\Temp\ccY3Ja5j.s:182    .rodata.f32f_table2:00000000 $d
+C:\Users\kroko\AppData\Local\Temp\ccY3Ja5j.s:193    .rodata.f32f_table:00000000 $d
+
+NO UNDEFINED SYMBOLS

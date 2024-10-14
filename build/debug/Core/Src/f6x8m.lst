@@ -1,0 +1,4136 @@
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\cci4qmtn.s 			page 1
+
+
+   1              		.cpu cortex-m4
+   2              		.arch armv7e-m
+   3              		.fpu fpv4-sp-d16
+   4              		.eabi_attribute 27, 1
+   5              		.eabi_attribute 28, 1
+   6              		.eabi_attribute 20, 1
+   7              		.eabi_attribute 21, 1
+   8              		.eabi_attribute 23, 3
+   9              		.eabi_attribute 24, 1
+  10              		.eabi_attribute 25, 1
+  11              		.eabi_attribute 26, 1
+  12              		.eabi_attribute 30, 1
+  13              		.eabi_attribute 34, 1
+  14              		.eabi_attribute 18, 4
+  15              		.file	"f6x8m.c"
+  16              		.text
+  17              	.Ltext0:
+  18              		.cfi_sections	.debug_frame
+  19              		.file 1 "Core/Src/f6x8m.c"
+  20              		.section	.text.f6x8m_GetCharTable,"ax",%progbits
+  21              		.align	1
+  22              		.global	f6x8m_GetCharTable
+  23              		.syntax unified
+  24              		.thumb
+  25              		.thumb_func
+  27              	f6x8m_GetCharTable:
+  28              	.LVL0:
+  29              	.LFB3:
+   1:Core/Src/f6x8m.c **** #include "font.h"
+   2:Core/Src/f6x8m.c **** #include "f6x8m.h"
+   3:Core/Src/f6x8m.c **** 
+   4:Core/Src/f6x8m.c **** const uint8_t f6x8m_table[f6x8m_NOFCHARS][8 + 2] = {       
+   5:Core/Src/f6x8m.c **** // 0x00
+   6:Core/Src/f6x8m.c ****   {
+   7:Core/Src/f6x8m.c ****    f6x8_MONO_WIDTH,
+   8:Core/Src/f6x8m.c ****    f6x8_MONO_HEIGHT,
+   9:Core/Src/f6x8m.c ****    ________,
+  10:Core/Src/f6x8m.c ****    ________,
+  11:Core/Src/f6x8m.c ****    ________,
+  12:Core/Src/f6x8m.c ****    ________,
+  13:Core/Src/f6x8m.c ****    ________,
+  14:Core/Src/f6x8m.c ****    ________,
+  15:Core/Src/f6x8m.c ****    ________,
+  16:Core/Src/f6x8m.c ****    ________}
+  17:Core/Src/f6x8m.c **** // 0x01
+  18:Core/Src/f6x8m.c ****  ,{
+  19:Core/Src/f6x8m.c ****    f6x8_MONO_WIDTH,
+  20:Core/Src/f6x8m.c ****    f6x8_MONO_HEIGHT,
+  21:Core/Src/f6x8m.c ****    ________,
+  22:Core/Src/f6x8m.c ****    ________,
+  23:Core/Src/f6x8m.c ****    ________,
+  24:Core/Src/f6x8m.c ****    ________,
+  25:Core/Src/f6x8m.c ****    ________,
+  26:Core/Src/f6x8m.c ****    ________,
+  27:Core/Src/f6x8m.c ****    ________,
+  28:Core/Src/f6x8m.c ****    ________}
+  29:Core/Src/f6x8m.c **** // 0x02
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\cci4qmtn.s 			page 2
+
+
+  30:Core/Src/f6x8m.c ****  ,{
+  31:Core/Src/f6x8m.c ****    f6x8_MONO_WIDTH,
+  32:Core/Src/f6x8m.c ****    f6x8_MONO_HEIGHT,
+  33:Core/Src/f6x8m.c ****    ________,
+  34:Core/Src/f6x8m.c ****    ________,
+  35:Core/Src/f6x8m.c ****    ________,
+  36:Core/Src/f6x8m.c ****    ________,
+  37:Core/Src/f6x8m.c ****    ________,
+  38:Core/Src/f6x8m.c ****    ________,
+  39:Core/Src/f6x8m.c ****    ________,
+  40:Core/Src/f6x8m.c ****    ________}
+  41:Core/Src/f6x8m.c **** // 0x03
+  42:Core/Src/f6x8m.c ****  ,{
+  43:Core/Src/f6x8m.c ****    f6x8_MONO_WIDTH,
+  44:Core/Src/f6x8m.c ****    f6x8_MONO_HEIGHT,
+  45:Core/Src/f6x8m.c ****    ________,
+  46:Core/Src/f6x8m.c ****    ________,
+  47:Core/Src/f6x8m.c ****    ________,
+  48:Core/Src/f6x8m.c ****    ________,
+  49:Core/Src/f6x8m.c ****    ________,
+  50:Core/Src/f6x8m.c ****    ________,
+  51:Core/Src/f6x8m.c ****    ________,
+  52:Core/Src/f6x8m.c ****    ________}
+  53:Core/Src/f6x8m.c **** // 0x04
+  54:Core/Src/f6x8m.c ****  ,{
+  55:Core/Src/f6x8m.c ****    f6x8_MONO_WIDTH,
+  56:Core/Src/f6x8m.c ****    f6x8_MONO_HEIGHT,
+  57:Core/Src/f6x8m.c ****    ________,
+  58:Core/Src/f6x8m.c ****    ________,
+  59:Core/Src/f6x8m.c ****    ________,
+  60:Core/Src/f6x8m.c ****    ________,
+  61:Core/Src/f6x8m.c ****    ________,
+  62:Core/Src/f6x8m.c ****    ________,
+  63:Core/Src/f6x8m.c ****    ________,
+  64:Core/Src/f6x8m.c ****    ________}
+  65:Core/Src/f6x8m.c **** // 0x05
+  66:Core/Src/f6x8m.c ****  ,{
+  67:Core/Src/f6x8m.c ****    f6x8_MONO_WIDTH,
+  68:Core/Src/f6x8m.c ****    f6x8_MONO_HEIGHT,
+  69:Core/Src/f6x8m.c ****    ________,
+  70:Core/Src/f6x8m.c ****    ________,
+  71:Core/Src/f6x8m.c ****    ________,
+  72:Core/Src/f6x8m.c ****    ________,
+  73:Core/Src/f6x8m.c ****    ________,
+  74:Core/Src/f6x8m.c ****    ________,
+  75:Core/Src/f6x8m.c ****    ________,
+  76:Core/Src/f6x8m.c ****    ________}
+  77:Core/Src/f6x8m.c **** // 0x06
+  78:Core/Src/f6x8m.c ****  ,{
+  79:Core/Src/f6x8m.c ****    f6x8_MONO_WIDTH,
+  80:Core/Src/f6x8m.c ****    f6x8_MONO_HEIGHT,
+  81:Core/Src/f6x8m.c ****    ________,
+  82:Core/Src/f6x8m.c ****    ________,
+  83:Core/Src/f6x8m.c ****    ________,
+  84:Core/Src/f6x8m.c ****    ________,
+  85:Core/Src/f6x8m.c ****    ________,
+  86:Core/Src/f6x8m.c ****    ________,
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\cci4qmtn.s 			page 3
+
+
+  87:Core/Src/f6x8m.c ****    ________,
+  88:Core/Src/f6x8m.c ****    ________}
+  89:Core/Src/f6x8m.c **** // 0x07
+  90:Core/Src/f6x8m.c ****  ,{
+  91:Core/Src/f6x8m.c ****    f6x8_MONO_WIDTH,
+  92:Core/Src/f6x8m.c ****    f6x8_MONO_HEIGHT,
+  93:Core/Src/f6x8m.c ****    ________,
+  94:Core/Src/f6x8m.c ****    ________,
+  95:Core/Src/f6x8m.c ****    ________,
+  96:Core/Src/f6x8m.c ****    ________,
+  97:Core/Src/f6x8m.c ****    ________,
+  98:Core/Src/f6x8m.c ****    ________,
+  99:Core/Src/f6x8m.c ****    ________,
+ 100:Core/Src/f6x8m.c ****    ________}
+ 101:Core/Src/f6x8m.c **** // 0x08
+ 102:Core/Src/f6x8m.c ****  ,{
+ 103:Core/Src/f6x8m.c ****    f6x8_MONO_WIDTH,
+ 104:Core/Src/f6x8m.c ****    f6x8_MONO_HEIGHT,
+ 105:Core/Src/f6x8m.c ****    ________,
+ 106:Core/Src/f6x8m.c ****    ________,
+ 107:Core/Src/f6x8m.c ****    ________,
+ 108:Core/Src/f6x8m.c ****    ________,
+ 109:Core/Src/f6x8m.c ****    ________,
+ 110:Core/Src/f6x8m.c ****    ________,
+ 111:Core/Src/f6x8m.c ****    ________,
+ 112:Core/Src/f6x8m.c ****    ________}
+ 113:Core/Src/f6x8m.c **** // 0x09
+ 114:Core/Src/f6x8m.c ****  ,{
+ 115:Core/Src/f6x8m.c ****    f6x8_MONO_WIDTH,
+ 116:Core/Src/f6x8m.c ****    f6x8_MONO_HEIGHT,
+ 117:Core/Src/f6x8m.c ****    ________,
+ 118:Core/Src/f6x8m.c ****    ________,
+ 119:Core/Src/f6x8m.c ****    ________,
+ 120:Core/Src/f6x8m.c ****    ________,
+ 121:Core/Src/f6x8m.c ****    ________,
+ 122:Core/Src/f6x8m.c ****    ________,
+ 123:Core/Src/f6x8m.c ****    ________,
+ 124:Core/Src/f6x8m.c ****    ________}
+ 125:Core/Src/f6x8m.c **** // 0x0A
+ 126:Core/Src/f6x8m.c ****  ,{
+ 127:Core/Src/f6x8m.c ****    f6x8_MONO_WIDTH,
+ 128:Core/Src/f6x8m.c ****    f6x8_MONO_HEIGHT,
+ 129:Core/Src/f6x8m.c ****    ________,
+ 130:Core/Src/f6x8m.c ****    ________,
+ 131:Core/Src/f6x8m.c ****    ________,
+ 132:Core/Src/f6x8m.c ****    ________,
+ 133:Core/Src/f6x8m.c ****    ________,
+ 134:Core/Src/f6x8m.c ****    ________,
+ 135:Core/Src/f6x8m.c ****    ________,
+ 136:Core/Src/f6x8m.c ****    ________}
+ 137:Core/Src/f6x8m.c **** // 0x0B
+ 138:Core/Src/f6x8m.c ****  ,{
+ 139:Core/Src/f6x8m.c ****    f6x8_MONO_WIDTH,
+ 140:Core/Src/f6x8m.c ****    f6x8_MONO_HEIGHT,
+ 141:Core/Src/f6x8m.c ****    ________,
+ 142:Core/Src/f6x8m.c ****    ________,
+ 143:Core/Src/f6x8m.c ****    ________,
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\cci4qmtn.s 			page 4
+
+
+ 144:Core/Src/f6x8m.c ****    ________,
+ 145:Core/Src/f6x8m.c ****    ________,
+ 146:Core/Src/f6x8m.c ****    ________,
+ 147:Core/Src/f6x8m.c ****    ________,
+ 148:Core/Src/f6x8m.c ****    ________}
+ 149:Core/Src/f6x8m.c **** // 0x0C
+ 150:Core/Src/f6x8m.c ****  ,{
+ 151:Core/Src/f6x8m.c ****    f6x8_MONO_WIDTH,
+ 152:Core/Src/f6x8m.c ****    f6x8_MONO_HEIGHT,
+ 153:Core/Src/f6x8m.c ****    ________,
+ 154:Core/Src/f6x8m.c ****    ________,
+ 155:Core/Src/f6x8m.c ****    ________,
+ 156:Core/Src/f6x8m.c ****    ________,
+ 157:Core/Src/f6x8m.c ****    ________,
+ 158:Core/Src/f6x8m.c ****    ________,
+ 159:Core/Src/f6x8m.c ****    ________,
+ 160:Core/Src/f6x8m.c ****    ________}
+ 161:Core/Src/f6x8m.c **** // 0x0D
+ 162:Core/Src/f6x8m.c ****  ,{
+ 163:Core/Src/f6x8m.c ****    f6x8_MONO_WIDTH,
+ 164:Core/Src/f6x8m.c ****    f6x8_MONO_HEIGHT,
+ 165:Core/Src/f6x8m.c ****    ________,
+ 166:Core/Src/f6x8m.c ****    ________,
+ 167:Core/Src/f6x8m.c ****    ________,
+ 168:Core/Src/f6x8m.c ****    ________,
+ 169:Core/Src/f6x8m.c ****    ________,
+ 170:Core/Src/f6x8m.c ****    ________,
+ 171:Core/Src/f6x8m.c ****    ________,
+ 172:Core/Src/f6x8m.c ****    ________}
+ 173:Core/Src/f6x8m.c **** // 0x0E
+ 174:Core/Src/f6x8m.c ****  ,{
+ 175:Core/Src/f6x8m.c ****    f6x8_MONO_WIDTH,
+ 176:Core/Src/f6x8m.c ****    f6x8_MONO_HEIGHT,
+ 177:Core/Src/f6x8m.c ****    ________,
+ 178:Core/Src/f6x8m.c ****    ________,
+ 179:Core/Src/f6x8m.c ****    ________,
+ 180:Core/Src/f6x8m.c ****    ________,
+ 181:Core/Src/f6x8m.c ****    ________,
+ 182:Core/Src/f6x8m.c ****    ________,
+ 183:Core/Src/f6x8m.c ****    ________,
+ 184:Core/Src/f6x8m.c ****    ________}
+ 185:Core/Src/f6x8m.c **** // 0x0F
+ 186:Core/Src/f6x8m.c ****  ,{
+ 187:Core/Src/f6x8m.c ****    f6x8_MONO_WIDTH,
+ 188:Core/Src/f6x8m.c ****    f6x8_MONO_HEIGHT,
+ 189:Core/Src/f6x8m.c ****    ________,
+ 190:Core/Src/f6x8m.c ****    ________,
+ 191:Core/Src/f6x8m.c ****    ________,
+ 192:Core/Src/f6x8m.c ****    ________,
+ 193:Core/Src/f6x8m.c ****    ________,
+ 194:Core/Src/f6x8m.c ****    ________,
+ 195:Core/Src/f6x8m.c ****    ________,
+ 196:Core/Src/f6x8m.c ****    ________}
+ 197:Core/Src/f6x8m.c **** // 0x10
+ 198:Core/Src/f6x8m.c ****  ,{
+ 199:Core/Src/f6x8m.c ****    f6x8_MONO_WIDTH,
+ 200:Core/Src/f6x8m.c ****    f6x8_MONO_HEIGHT,
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\cci4qmtn.s 			page 5
+
+
+ 201:Core/Src/f6x8m.c ****    ________,
+ 202:Core/Src/f6x8m.c ****    ________,
+ 203:Core/Src/f6x8m.c ****    ________,
+ 204:Core/Src/f6x8m.c ****    ________,
+ 205:Core/Src/f6x8m.c ****    ________,
+ 206:Core/Src/f6x8m.c ****    ________,
+ 207:Core/Src/f6x8m.c ****    ________,
+ 208:Core/Src/f6x8m.c ****    ________}
+ 209:Core/Src/f6x8m.c **** // 0x11
+ 210:Core/Src/f6x8m.c ****  ,{
+ 211:Core/Src/f6x8m.c ****    f6x8_MONO_WIDTH,
+ 212:Core/Src/f6x8m.c ****    f6x8_MONO_HEIGHT,
+ 213:Core/Src/f6x8m.c ****    ________,
+ 214:Core/Src/f6x8m.c ****    ________,
+ 215:Core/Src/f6x8m.c ****    ________,
+ 216:Core/Src/f6x8m.c ****    ________,
+ 217:Core/Src/f6x8m.c ****    ________,
+ 218:Core/Src/f6x8m.c ****    ________,
+ 219:Core/Src/f6x8m.c ****    ________,
+ 220:Core/Src/f6x8m.c ****    ________}
+ 221:Core/Src/f6x8m.c **** // 0x12
+ 222:Core/Src/f6x8m.c ****  ,{
+ 223:Core/Src/f6x8m.c ****    f6x8_MONO_WIDTH,
+ 224:Core/Src/f6x8m.c ****    f6x8_MONO_HEIGHT,
+ 225:Core/Src/f6x8m.c ****    ________,
+ 226:Core/Src/f6x8m.c ****    ________,
+ 227:Core/Src/f6x8m.c ****    ________,
+ 228:Core/Src/f6x8m.c ****    ________,
+ 229:Core/Src/f6x8m.c ****    ________,
+ 230:Core/Src/f6x8m.c ****    ________,
+ 231:Core/Src/f6x8m.c ****    ________,
+ 232:Core/Src/f6x8m.c ****    ________}
+ 233:Core/Src/f6x8m.c **** // 0x13
+ 234:Core/Src/f6x8m.c ****  ,{
+ 235:Core/Src/f6x8m.c ****    f6x8_MONO_WIDTH,
+ 236:Core/Src/f6x8m.c ****    f6x8_MONO_HEIGHT,
+ 237:Core/Src/f6x8m.c ****    ________,
+ 238:Core/Src/f6x8m.c ****    ________,
+ 239:Core/Src/f6x8m.c ****    ________,
+ 240:Core/Src/f6x8m.c ****    ________,
+ 241:Core/Src/f6x8m.c ****    ________,
+ 242:Core/Src/f6x8m.c ****    ________,
+ 243:Core/Src/f6x8m.c ****    ________,
+ 244:Core/Src/f6x8m.c ****    ________}
+ 245:Core/Src/f6x8m.c **** // 0x14
+ 246:Core/Src/f6x8m.c ****  ,{
+ 247:Core/Src/f6x8m.c ****    f6x8_MONO_WIDTH,
+ 248:Core/Src/f6x8m.c ****    f6x8_MONO_HEIGHT,
+ 249:Core/Src/f6x8m.c ****    ________,
+ 250:Core/Src/f6x8m.c ****    ________,
+ 251:Core/Src/f6x8m.c ****    ________,
+ 252:Core/Src/f6x8m.c ****    ________,
+ 253:Core/Src/f6x8m.c ****    ________,
+ 254:Core/Src/f6x8m.c ****    ________,
+ 255:Core/Src/f6x8m.c ****    ________,
+ 256:Core/Src/f6x8m.c ****    ________}
+ 257:Core/Src/f6x8m.c **** // 0x15
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\cci4qmtn.s 			page 6
+
+
+ 258:Core/Src/f6x8m.c ****  ,{
+ 259:Core/Src/f6x8m.c ****    f6x8_MONO_WIDTH,
+ 260:Core/Src/f6x8m.c ****    f6x8_MONO_HEIGHT,
+ 261:Core/Src/f6x8m.c ****    ________,
+ 262:Core/Src/f6x8m.c ****    ________,
+ 263:Core/Src/f6x8m.c ****    ________,
+ 264:Core/Src/f6x8m.c ****    ________,
+ 265:Core/Src/f6x8m.c ****    ________,
+ 266:Core/Src/f6x8m.c ****    ________,
+ 267:Core/Src/f6x8m.c ****    ________,
+ 268:Core/Src/f6x8m.c ****    ________}
+ 269:Core/Src/f6x8m.c **** // 0x16
+ 270:Core/Src/f6x8m.c ****  ,{
+ 271:Core/Src/f6x8m.c ****    f6x8_MONO_WIDTH,
+ 272:Core/Src/f6x8m.c ****    f6x8_MONO_HEIGHT,
+ 273:Core/Src/f6x8m.c ****    ________,
+ 274:Core/Src/f6x8m.c ****    ________,
+ 275:Core/Src/f6x8m.c ****    ________,
+ 276:Core/Src/f6x8m.c ****    ________,
+ 277:Core/Src/f6x8m.c ****    ________,
+ 278:Core/Src/f6x8m.c ****    ________,
+ 279:Core/Src/f6x8m.c ****    ________,
+ 280:Core/Src/f6x8m.c ****    ________}
+ 281:Core/Src/f6x8m.c **** // 0x17
+ 282:Core/Src/f6x8m.c ****  ,{
+ 283:Core/Src/f6x8m.c ****    f6x8_MONO_WIDTH,
+ 284:Core/Src/f6x8m.c ****    f6x8_MONO_HEIGHT,
+ 285:Core/Src/f6x8m.c ****    ________,
+ 286:Core/Src/f6x8m.c ****    ________,
+ 287:Core/Src/f6x8m.c ****    ________,
+ 288:Core/Src/f6x8m.c ****    ________,
+ 289:Core/Src/f6x8m.c ****    ________,
+ 290:Core/Src/f6x8m.c ****    ________,
+ 291:Core/Src/f6x8m.c ****    ________,
+ 292:Core/Src/f6x8m.c ****    ________}
+ 293:Core/Src/f6x8m.c **** // 0x18
+ 294:Core/Src/f6x8m.c ****  ,{
+ 295:Core/Src/f6x8m.c ****    f6x8_MONO_WIDTH,
+ 296:Core/Src/f6x8m.c ****    f6x8_MONO_HEIGHT,
+ 297:Core/Src/f6x8m.c ****    ________,
+ 298:Core/Src/f6x8m.c ****    ________,
+ 299:Core/Src/f6x8m.c ****    ________,
+ 300:Core/Src/f6x8m.c ****    ________,
+ 301:Core/Src/f6x8m.c ****    ________,
+ 302:Core/Src/f6x8m.c ****    ________,
+ 303:Core/Src/f6x8m.c ****    ________,
+ 304:Core/Src/f6x8m.c ****    ________}
+ 305:Core/Src/f6x8m.c **** // 0x19
+ 306:Core/Src/f6x8m.c ****  ,{
+ 307:Core/Src/f6x8m.c ****    f6x8_MONO_WIDTH,
+ 308:Core/Src/f6x8m.c ****    f6x8_MONO_HEIGHT,
+ 309:Core/Src/f6x8m.c ****    ________,
+ 310:Core/Src/f6x8m.c ****    ________,
+ 311:Core/Src/f6x8m.c ****    ________,
+ 312:Core/Src/f6x8m.c ****    ________,
+ 313:Core/Src/f6x8m.c ****    ________,
+ 314:Core/Src/f6x8m.c ****    ________,
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\cci4qmtn.s 			page 7
+
+
+ 315:Core/Src/f6x8m.c ****    ________,
+ 316:Core/Src/f6x8m.c ****    ________}
+ 317:Core/Src/f6x8m.c **** // 0x1A
+ 318:Core/Src/f6x8m.c ****  ,{
+ 319:Core/Src/f6x8m.c ****    f6x8_MONO_WIDTH,
+ 320:Core/Src/f6x8m.c ****    f6x8_MONO_HEIGHT,
+ 321:Core/Src/f6x8m.c ****    ________,
+ 322:Core/Src/f6x8m.c ****    ________,
+ 323:Core/Src/f6x8m.c ****    ________,
+ 324:Core/Src/f6x8m.c ****    ________,
+ 325:Core/Src/f6x8m.c ****    ________,
+ 326:Core/Src/f6x8m.c ****    ________,
+ 327:Core/Src/f6x8m.c ****    ________,
+ 328:Core/Src/f6x8m.c ****    ________}
+ 329:Core/Src/f6x8m.c **** // 0x1B
+ 330:Core/Src/f6x8m.c ****  ,{
+ 331:Core/Src/f6x8m.c ****    f6x8_MONO_WIDTH,
+ 332:Core/Src/f6x8m.c ****    f6x8_MONO_HEIGHT,
+ 333:Core/Src/f6x8m.c ****    ________,
+ 334:Core/Src/f6x8m.c ****    ________,
+ 335:Core/Src/f6x8m.c ****    ________,
+ 336:Core/Src/f6x8m.c ****    ________,
+ 337:Core/Src/f6x8m.c ****    ________,
+ 338:Core/Src/f6x8m.c ****    ________,
+ 339:Core/Src/f6x8m.c ****    ________,
+ 340:Core/Src/f6x8m.c ****    ________}
+ 341:Core/Src/f6x8m.c **** // 0x1C
+ 342:Core/Src/f6x8m.c ****  ,{
+ 343:Core/Src/f6x8m.c ****    f6x8_MONO_WIDTH,
+ 344:Core/Src/f6x8m.c ****    f6x8_MONO_HEIGHT,
+ 345:Core/Src/f6x8m.c ****    ________,
+ 346:Core/Src/f6x8m.c ****    ________,
+ 347:Core/Src/f6x8m.c ****    ________,
+ 348:Core/Src/f6x8m.c ****    ________,
+ 349:Core/Src/f6x8m.c ****    ________,
+ 350:Core/Src/f6x8m.c ****    ________,
+ 351:Core/Src/f6x8m.c ****    ________,
+ 352:Core/Src/f6x8m.c ****    ________}
+ 353:Core/Src/f6x8m.c **** // 0x1D
+ 354:Core/Src/f6x8m.c ****  ,{
+ 355:Core/Src/f6x8m.c ****    f6x8_MONO_WIDTH,
+ 356:Core/Src/f6x8m.c ****    f6x8_MONO_HEIGHT,
+ 357:Core/Src/f6x8m.c ****    ________,
+ 358:Core/Src/f6x8m.c ****    ________,
+ 359:Core/Src/f6x8m.c ****    ________,
+ 360:Core/Src/f6x8m.c ****    ________,
+ 361:Core/Src/f6x8m.c ****    ________,
+ 362:Core/Src/f6x8m.c ****    ________,
+ 363:Core/Src/f6x8m.c ****    ________,
+ 364:Core/Src/f6x8m.c ****    ________}
+ 365:Core/Src/f6x8m.c **** // 0x1E
+ 366:Core/Src/f6x8m.c ****  ,{
+ 367:Core/Src/f6x8m.c ****    f6x8_MONO_WIDTH,
+ 368:Core/Src/f6x8m.c ****    f6x8_MONO_HEIGHT,
+ 369:Core/Src/f6x8m.c ****    ________,
+ 370:Core/Src/f6x8m.c ****    ________,
+ 371:Core/Src/f6x8m.c ****    ________,
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\cci4qmtn.s 			page 8
+
+
+ 372:Core/Src/f6x8m.c ****    ________,
+ 373:Core/Src/f6x8m.c ****    ________,
+ 374:Core/Src/f6x8m.c ****    ________,
+ 375:Core/Src/f6x8m.c ****    ________,
+ 376:Core/Src/f6x8m.c ****    ________}
+ 377:Core/Src/f6x8m.c **** // 0x1F
+ 378:Core/Src/f6x8m.c ****  ,{
+ 379:Core/Src/f6x8m.c ****    f6x8_MONO_WIDTH,
+ 380:Core/Src/f6x8m.c ****    f6x8_MONO_HEIGHT,
+ 381:Core/Src/f6x8m.c ****    ________,
+ 382:Core/Src/f6x8m.c ****    ________,
+ 383:Core/Src/f6x8m.c ****    ________,
+ 384:Core/Src/f6x8m.c ****    ________,
+ 385:Core/Src/f6x8m.c ****    ________,
+ 386:Core/Src/f6x8m.c ****    ________,
+ 387:Core/Src/f6x8m.c ****    ________,
+ 388:Core/Src/f6x8m.c ****    ________}
+ 389:Core/Src/f6x8m.c **** // 0x20
+ 390:Core/Src/f6x8m.c ****   ,{
+ 391:Core/Src/f6x8m.c ****    f6x8_MONO_WIDTH,
+ 392:Core/Src/f6x8m.c ****    f6x8_MONO_HEIGHT,
+ 393:Core/Src/f6x8m.c ****    ________,
+ 394:Core/Src/f6x8m.c ****    ________,
+ 395:Core/Src/f6x8m.c ****    ________,
+ 396:Core/Src/f6x8m.c ****    ________,
+ 397:Core/Src/f6x8m.c ****    ________,
+ 398:Core/Src/f6x8m.c ****    ________,
+ 399:Core/Src/f6x8m.c ****    ________,
+ 400:Core/Src/f6x8m.c ****    ________}
+ 401:Core/Src/f6x8m.c **** // 0x21
+ 402:Core/Src/f6x8m.c ****  ,{
+ 403:Core/Src/f6x8m.c ****    f6x8_MONO_WIDTH,
+ 404:Core/Src/f6x8m.c ****    f6x8_MONO_HEIGHT,
+ 405:Core/Src/f6x8m.c ****    __X_____,
+ 406:Core/Src/f6x8m.c ****    __X_____,
+ 407:Core/Src/f6x8m.c ****    __X_____,
+ 408:Core/Src/f6x8m.c ****    __X_____,
+ 409:Core/Src/f6x8m.c ****    __X_____,
+ 410:Core/Src/f6x8m.c ****    ________,
+ 411:Core/Src/f6x8m.c ****    __X_____,
+ 412:Core/Src/f6x8m.c ****    ________}
+ 413:Core/Src/f6x8m.c **** // 0x22
+ 414:Core/Src/f6x8m.c ****  ,{
+ 415:Core/Src/f6x8m.c ****    f6x8_MONO_WIDTH,
+ 416:Core/Src/f6x8m.c ****    f6x8_MONO_HEIGHT,
+ 417:Core/Src/f6x8m.c ****    _X__X___,
+ 418:Core/Src/f6x8m.c ****    _X__X___,
+ 419:Core/Src/f6x8m.c ****    _X__X___,
+ 420:Core/Src/f6x8m.c ****    ________,
+ 421:Core/Src/f6x8m.c ****    ________,
+ 422:Core/Src/f6x8m.c ****    ________,
+ 423:Core/Src/f6x8m.c ****    ________,
+ 424:Core/Src/f6x8m.c ****    ________}
+ 425:Core/Src/f6x8m.c **** 
+ 426:Core/Src/f6x8m.c **** // 0x23
+ 427:Core/Src/f6x8m.c ****  ,{
+ 428:Core/Src/f6x8m.c ****    f6x8_MONO_WIDTH,
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\cci4qmtn.s 			page 9
+
+
+ 429:Core/Src/f6x8m.c ****    f6x8_MONO_HEIGHT,
+ 430:Core/Src/f6x8m.c ****    _X_X____,
+ 431:Core/Src/f6x8m.c ****    _X_X____,
+ 432:Core/Src/f6x8m.c ****    XXXXX___,
+ 433:Core/Src/f6x8m.c ****    _X_X____,
+ 434:Core/Src/f6x8m.c ****    XXXXX___,
+ 435:Core/Src/f6x8m.c ****    _X_X____,
+ 436:Core/Src/f6x8m.c ****    _X_X____,
+ 437:Core/Src/f6x8m.c ****    ________}
+ 438:Core/Src/f6x8m.c **** 
+ 439:Core/Src/f6x8m.c **** // 0x24
+ 440:Core/Src/f6x8m.c ****  ,{
+ 441:Core/Src/f6x8m.c ****    f6x8_MONO_WIDTH,
+ 442:Core/Src/f6x8m.c ****    f6x8_MONO_HEIGHT,
+ 443:Core/Src/f6x8m.c ****    __X_____,
+ 444:Core/Src/f6x8m.c ****    _XXXX___,
+ 445:Core/Src/f6x8m.c ****    X_X_____,
+ 446:Core/Src/f6x8m.c ****    _XXX____,
+ 447:Core/Src/f6x8m.c ****    __X_X___,
+ 448:Core/Src/f6x8m.c ****    XXXX____,
+ 449:Core/Src/f6x8m.c ****    __X_____}
+ 450:Core/Src/f6x8m.c **** 
+ 451:Core/Src/f6x8m.c **** // 0x25
+ 452:Core/Src/f6x8m.c ****  ,{
+ 453:Core/Src/f6x8m.c ****    f6x8_MONO_WIDTH,
+ 454:Core/Src/f6x8m.c ****    f6x8_MONO_HEIGHT,
+ 455:Core/Src/f6x8m.c ****    XX______,
+ 456:Core/Src/f6x8m.c ****    XX__X___,
+ 457:Core/Src/f6x8m.c ****    ___X____,
+ 458:Core/Src/f6x8m.c ****    __X_____,
+ 459:Core/Src/f6x8m.c ****    _X______,
+ 460:Core/Src/f6x8m.c ****    X__XX___,
+ 461:Core/Src/f6x8m.c ****    ___XX___,
+ 462:Core/Src/f6x8m.c ****    ________}
+ 463:Core/Src/f6x8m.c **** 
+ 464:Core/Src/f6x8m.c **** // 0x26
+ 465:Core/Src/f6x8m.c ****  ,{
+ 466:Core/Src/f6x8m.c ****    f6x8_MONO_WIDTH,
+ 467:Core/Src/f6x8m.c ****    f6x8_MONO_HEIGHT,
+ 468:Core/Src/f6x8m.c ****    _XX_____,
+ 469:Core/Src/f6x8m.c ****    X__X____,
+ 470:Core/Src/f6x8m.c ****    X_X_____,
+ 471:Core/Src/f6x8m.c ****    _X______,
+ 472:Core/Src/f6x8m.c ****    X_X_X___,
+ 473:Core/Src/f6x8m.c ****    X__X____,
+ 474:Core/Src/f6x8m.c ****    _XX_X___,
+ 475:Core/Src/f6x8m.c ****    ________}
+ 476:Core/Src/f6x8m.c **** 
+ 477:Core/Src/f6x8m.c **** // 0x27
+ 478:Core/Src/f6x8m.c ****  ,{
+ 479:Core/Src/f6x8m.c ****    f6x8_MONO_WIDTH,
+ 480:Core/Src/f6x8m.c ****    f6x8_MONO_HEIGHT,
+ 481:Core/Src/f6x8m.c ****    _XX_____,
+ 482:Core/Src/f6x8m.c ****    __X_____,
+ 483:Core/Src/f6x8m.c ****    _X______,
+ 484:Core/Src/f6x8m.c ****    ________,
+ 485:Core/Src/f6x8m.c ****    ________,
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\cci4qmtn.s 			page 10
+
+
+ 486:Core/Src/f6x8m.c ****    ________,
+ 487:Core/Src/f6x8m.c ****    ________,
+ 488:Core/Src/f6x8m.c ****    ________}
+ 489:Core/Src/f6x8m.c **** 
+ 490:Core/Src/f6x8m.c **** // 0x28
+ 491:Core/Src/f6x8m.c ****  ,{
+ 492:Core/Src/f6x8m.c ****    f6x8_MONO_WIDTH,
+ 493:Core/Src/f6x8m.c ****    f6x8_MONO_HEIGHT,
+ 494:Core/Src/f6x8m.c ****    ___X____,
+ 495:Core/Src/f6x8m.c ****    __X_____,
+ 496:Core/Src/f6x8m.c ****    _X______,
+ 497:Core/Src/f6x8m.c ****    _X______,
+ 498:Core/Src/f6x8m.c ****    _X______,
+ 499:Core/Src/f6x8m.c ****    __X_____,
+ 500:Core/Src/f6x8m.c ****    ___X____,
+ 501:Core/Src/f6x8m.c ****    ________}
+ 502:Core/Src/f6x8m.c **** // 0x29
+ 503:Core/Src/f6x8m.c ****  ,{
+ 504:Core/Src/f6x8m.c ****    f6x8_MONO_WIDTH,
+ 505:Core/Src/f6x8m.c ****    f6x8_MONO_HEIGHT,
+ 506:Core/Src/f6x8m.c ****    _X______,
+ 507:Core/Src/f6x8m.c ****    __X_____,
+ 508:Core/Src/f6x8m.c ****    ___X____,
+ 509:Core/Src/f6x8m.c ****    ___X____,
+ 510:Core/Src/f6x8m.c ****    ___X____,
+ 511:Core/Src/f6x8m.c ****    __X_____,
+ 512:Core/Src/f6x8m.c ****    _X______,
+ 513:Core/Src/f6x8m.c ****    ________}
+ 514:Core/Src/f6x8m.c **** // 0x2A
+ 515:Core/Src/f6x8m.c ****  ,{
+ 516:Core/Src/f6x8m.c ****    f6x8_MONO_WIDTH,
+ 517:Core/Src/f6x8m.c ****    f6x8_MONO_HEIGHT,
+ 518:Core/Src/f6x8m.c ****    ________,
+ 519:Core/Src/f6x8m.c ****    _X_X____,
+ 520:Core/Src/f6x8m.c ****    __X_____,
+ 521:Core/Src/f6x8m.c ****    XXXXX___,
+ 522:Core/Src/f6x8m.c ****    __X_____,
+ 523:Core/Src/f6x8m.c ****    _X_X____,
+ 524:Core/Src/f6x8m.c ****    ________,
+ 525:Core/Src/f6x8m.c ****    ________}
+ 526:Core/Src/f6x8m.c **** // 0x2B
+ 527:Core/Src/f6x8m.c ****  ,{
+ 528:Core/Src/f6x8m.c ****    f6x8_MONO_WIDTH,
+ 529:Core/Src/f6x8m.c ****    f6x8_MONO_HEIGHT,
+ 530:Core/Src/f6x8m.c ****    ________,
+ 531:Core/Src/f6x8m.c ****    __X_____,
+ 532:Core/Src/f6x8m.c ****    __X_____,
+ 533:Core/Src/f6x8m.c ****    XXXXX___,
+ 534:Core/Src/f6x8m.c ****    __X_____,
+ 535:Core/Src/f6x8m.c ****    __X_____,
+ 536:Core/Src/f6x8m.c ****    ________,
+ 537:Core/Src/f6x8m.c ****    ________}
+ 538:Core/Src/f6x8m.c **** // 0x2C
+ 539:Core/Src/f6x8m.c ****  ,{
+ 540:Core/Src/f6x8m.c ****    f6x8_MONO_WIDTH,
+ 541:Core/Src/f6x8m.c ****    f6x8_MONO_HEIGHT,
+ 542:Core/Src/f6x8m.c ****    ________,
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\cci4qmtn.s 			page 11
+
+
+ 543:Core/Src/f6x8m.c ****    ________,
+ 544:Core/Src/f6x8m.c ****    ________,
+ 545:Core/Src/f6x8m.c ****    ________,
+ 546:Core/Src/f6x8m.c ****    ________,
+ 547:Core/Src/f6x8m.c ****    _XX_____,
+ 548:Core/Src/f6x8m.c ****    __X_____,
+ 549:Core/Src/f6x8m.c ****    _X______}
+ 550:Core/Src/f6x8m.c **** // 0x2D
+ 551:Core/Src/f6x8m.c ****  ,{
+ 552:Core/Src/f6x8m.c ****    f6x8_MONO_WIDTH,
+ 553:Core/Src/f6x8m.c ****    f6x8_MONO_HEIGHT,
+ 554:Core/Src/f6x8m.c ****    ________,
+ 555:Core/Src/f6x8m.c ****    ________,
+ 556:Core/Src/f6x8m.c ****    ________,
+ 557:Core/Src/f6x8m.c ****    XXXXX___,
+ 558:Core/Src/f6x8m.c ****    ________,
+ 559:Core/Src/f6x8m.c ****    ________,
+ 560:Core/Src/f6x8m.c ****    ________,
+ 561:Core/Src/f6x8m.c ****    ________}
+ 562:Core/Src/f6x8m.c **** // 0x2E
+ 563:Core/Src/f6x8m.c ****  ,{
+ 564:Core/Src/f6x8m.c ****    f6x8_MONO_WIDTH,
+ 565:Core/Src/f6x8m.c ****    f6x8_MONO_HEIGHT,
+ 566:Core/Src/f6x8m.c ****    ________,
+ 567:Core/Src/f6x8m.c ****    ________,
+ 568:Core/Src/f6x8m.c ****    ________,
+ 569:Core/Src/f6x8m.c ****    ________,
+ 570:Core/Src/f6x8m.c ****    ________,
+ 571:Core/Src/f6x8m.c ****    _XX_____,
+ 572:Core/Src/f6x8m.c ****    _XX_____,
+ 573:Core/Src/f6x8m.c ****    ________}
+ 574:Core/Src/f6x8m.c **** // 0x2F
+ 575:Core/Src/f6x8m.c ****  ,{
+ 576:Core/Src/f6x8m.c ****    f6x8_MONO_WIDTH,
+ 577:Core/Src/f6x8m.c ****    f6x8_MONO_HEIGHT,
+ 578:Core/Src/f6x8m.c ****    ________,
+ 579:Core/Src/f6x8m.c ****    ____X___,
+ 580:Core/Src/f6x8m.c ****    ___X____,
+ 581:Core/Src/f6x8m.c ****    __X_____,
+ 582:Core/Src/f6x8m.c ****    _X______,
+ 583:Core/Src/f6x8m.c ****    X_______,
+ 584:Core/Src/f6x8m.c ****    ________,
+ 585:Core/Src/f6x8m.c ****    ________}
+ 586:Core/Src/f6x8m.c **** 
+ 587:Core/Src/f6x8m.c **** // 0x30
+ 588:Core/Src/f6x8m.c ****  ,{
+ 589:Core/Src/f6x8m.c ****    f6x8_MONO_WIDTH,
+ 590:Core/Src/f6x8m.c ****    f6x8_MONO_HEIGHT,
+ 591:Core/Src/f6x8m.c ****    _XXX____,
+ 592:Core/Src/f6x8m.c ****    X___X___,
+ 593:Core/Src/f6x8m.c ****    X__XX___,
+ 594:Core/Src/f6x8m.c ****    X_X_X___,
+ 595:Core/Src/f6x8m.c ****    XX__X___,
+ 596:Core/Src/f6x8m.c ****    X___X___,
+ 597:Core/Src/f6x8m.c ****    _XXX____,
+ 598:Core/Src/f6x8m.c ****    ________}
+ 599:Core/Src/f6x8m.c **** 
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\cci4qmtn.s 			page 12
+
+
+ 600:Core/Src/f6x8m.c **** // 0x31
+ 601:Core/Src/f6x8m.c ****  ,{
+ 602:Core/Src/f6x8m.c ****    f6x8_MONO_WIDTH,
+ 603:Core/Src/f6x8m.c ****    f6x8_MONO_HEIGHT,
+ 604:Core/Src/f6x8m.c ****    __X_____,
+ 605:Core/Src/f6x8m.c ****    _XX_____,
+ 606:Core/Src/f6x8m.c ****    __X_____,
+ 607:Core/Src/f6x8m.c ****    __X_____,
+ 608:Core/Src/f6x8m.c ****    __X_____,
+ 609:Core/Src/f6x8m.c ****    __X_____,
+ 610:Core/Src/f6x8m.c ****    _XXX____,
+ 611:Core/Src/f6x8m.c ****    ________}
+ 612:Core/Src/f6x8m.c **** 
+ 613:Core/Src/f6x8m.c **** // 0x32
+ 614:Core/Src/f6x8m.c ****  ,{
+ 615:Core/Src/f6x8m.c ****    f6x8_MONO_WIDTH,
+ 616:Core/Src/f6x8m.c ****    f6x8_MONO_HEIGHT,
+ 617:Core/Src/f6x8m.c ****    _XXX____,
+ 618:Core/Src/f6x8m.c ****    X___X___,
+ 619:Core/Src/f6x8m.c ****    ____X___,
+ 620:Core/Src/f6x8m.c ****    __XX____,
+ 621:Core/Src/f6x8m.c ****    _X______,
+ 622:Core/Src/f6x8m.c ****    X_______,
+ 623:Core/Src/f6x8m.c ****    XXXXX___,
+ 624:Core/Src/f6x8m.c ****    ________}
+ 625:Core/Src/f6x8m.c **** 
+ 626:Core/Src/f6x8m.c **** // 0x33
+ 627:Core/Src/f6x8m.c ****  ,{
+ 628:Core/Src/f6x8m.c ****    f6x8_MONO_WIDTH,
+ 629:Core/Src/f6x8m.c ****    f6x8_MONO_HEIGHT,
+ 630:Core/Src/f6x8m.c ****    _XXX____,
+ 631:Core/Src/f6x8m.c ****    X___X___,
+ 632:Core/Src/f6x8m.c ****    ____X___,
+ 633:Core/Src/f6x8m.c ****    __XX____,
+ 634:Core/Src/f6x8m.c ****    ____X___,
+ 635:Core/Src/f6x8m.c ****    X___X___,
+ 636:Core/Src/f6x8m.c ****    _XXX____,
+ 637:Core/Src/f6x8m.c ****    ________}
+ 638:Core/Src/f6x8m.c **** // 0x34
+ 639:Core/Src/f6x8m.c ****  ,{
+ 640:Core/Src/f6x8m.c ****    f6x8_MONO_WIDTH,
+ 641:Core/Src/f6x8m.c ****    f6x8_MONO_HEIGHT,
+ 642:Core/Src/f6x8m.c ****    ___X____,
+ 643:Core/Src/f6x8m.c ****    __XX____,
+ 644:Core/Src/f6x8m.c ****    _X_X____,
+ 645:Core/Src/f6x8m.c ****    X__X____,
+ 646:Core/Src/f6x8m.c ****    XXXXX___,
+ 647:Core/Src/f6x8m.c ****    ___X____,
+ 648:Core/Src/f6x8m.c ****    ___X____,
+ 649:Core/Src/f6x8m.c ****    ________}
+ 650:Core/Src/f6x8m.c **** // 0x35
+ 651:Core/Src/f6x8m.c ****  ,{
+ 652:Core/Src/f6x8m.c ****    f6x8_MONO_WIDTH,
+ 653:Core/Src/f6x8m.c ****    f6x8_MONO_HEIGHT,
+ 654:Core/Src/f6x8m.c ****    XXXXX___,
+ 655:Core/Src/f6x8m.c ****    X_______,
+ 656:Core/Src/f6x8m.c ****    XXXX____,
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\cci4qmtn.s 			page 13
+
+
+ 657:Core/Src/f6x8m.c ****    ____X___,
+ 658:Core/Src/f6x8m.c ****    ____X___,
+ 659:Core/Src/f6x8m.c ****    X___X___,
+ 660:Core/Src/f6x8m.c ****    _XXX____,
+ 661:Core/Src/f6x8m.c ****    ________}
+ 662:Core/Src/f6x8m.c **** // 0x36
+ 663:Core/Src/f6x8m.c ****  ,{
+ 664:Core/Src/f6x8m.c ****    f6x8_MONO_WIDTH,
+ 665:Core/Src/f6x8m.c ****    f6x8_MONO_HEIGHT,
+ 666:Core/Src/f6x8m.c ****    __XX____,
+ 667:Core/Src/f6x8m.c ****    _X______,
+ 668:Core/Src/f6x8m.c ****    X_______,
+ 669:Core/Src/f6x8m.c ****    XXXX____,
+ 670:Core/Src/f6x8m.c ****    X___X___,
+ 671:Core/Src/f6x8m.c ****    X___X___,
+ 672:Core/Src/f6x8m.c ****    _XXX____,
+ 673:Core/Src/f6x8m.c ****    ________}
+ 674:Core/Src/f6x8m.c **** // 0x37
+ 675:Core/Src/f6x8m.c ****  ,{
+ 676:Core/Src/f6x8m.c ****    f6x8_MONO_WIDTH,
+ 677:Core/Src/f6x8m.c ****    f6x8_MONO_HEIGHT,
+ 678:Core/Src/f6x8m.c ****    XXXXX___,
+ 679:Core/Src/f6x8m.c ****    ____X___,
+ 680:Core/Src/f6x8m.c ****    ___X____,
+ 681:Core/Src/f6x8m.c ****    __X_____,
+ 682:Core/Src/f6x8m.c ****    _X______,
+ 683:Core/Src/f6x8m.c ****    _X______,
+ 684:Core/Src/f6x8m.c ****    _X______,
+ 685:Core/Src/f6x8m.c ****    ________}
+ 686:Core/Src/f6x8m.c **** // 0x38
+ 687:Core/Src/f6x8m.c ****  ,{
+ 688:Core/Src/f6x8m.c ****    f6x8_MONO_WIDTH,
+ 689:Core/Src/f6x8m.c ****    f6x8_MONO_HEIGHT,
+ 690:Core/Src/f6x8m.c ****    _XXX____,
+ 691:Core/Src/f6x8m.c ****    X___X___,
+ 692:Core/Src/f6x8m.c ****    X___X___,
+ 693:Core/Src/f6x8m.c ****    _XXX____,
+ 694:Core/Src/f6x8m.c ****    X___X___,
+ 695:Core/Src/f6x8m.c ****    X___X___,
+ 696:Core/Src/f6x8m.c ****    _XXX____,
+ 697:Core/Src/f6x8m.c ****    ________}
+ 698:Core/Src/f6x8m.c **** // 0x39
+ 699:Core/Src/f6x8m.c ****  ,{
+ 700:Core/Src/f6x8m.c ****    f6x8_MONO_WIDTH,
+ 701:Core/Src/f6x8m.c ****    f6x8_MONO_HEIGHT,
+ 702:Core/Src/f6x8m.c ****    _XXX____,
+ 703:Core/Src/f6x8m.c ****    X___X___,
+ 704:Core/Src/f6x8m.c ****    X___X___,
+ 705:Core/Src/f6x8m.c ****    _XXXX___,
+ 706:Core/Src/f6x8m.c ****    ____X___,
+ 707:Core/Src/f6x8m.c ****    ___X____,
+ 708:Core/Src/f6x8m.c ****    _XX_____,
+ 709:Core/Src/f6x8m.c ****    ________}
+ 710:Core/Src/f6x8m.c **** // 0x3A
+ 711:Core/Src/f6x8m.c ****  ,{
+ 712:Core/Src/f6x8m.c ****    f6x8_MONO_WIDTH,
+ 713:Core/Src/f6x8m.c ****    f6x8_MONO_HEIGHT,
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\cci4qmtn.s 			page 14
+
+
+ 714:Core/Src/f6x8m.c ****    ________,
+ 715:Core/Src/f6x8m.c ****    _XX_____,
+ 716:Core/Src/f6x8m.c ****    _XX_____,
+ 717:Core/Src/f6x8m.c ****    ________,
+ 718:Core/Src/f6x8m.c ****    _XX_____,
+ 719:Core/Src/f6x8m.c ****    _XX_____,
+ 720:Core/Src/f6x8m.c ****    ________,
+ 721:Core/Src/f6x8m.c ****    ________}
+ 722:Core/Src/f6x8m.c **** // 0x3B
+ 723:Core/Src/f6x8m.c ****  ,{
+ 724:Core/Src/f6x8m.c ****    f6x8_MONO_WIDTH,
+ 725:Core/Src/f6x8m.c ****    f6x8_MONO_HEIGHT,
+ 726:Core/Src/f6x8m.c ****    ________,
+ 727:Core/Src/f6x8m.c ****    ________,
+ 728:Core/Src/f6x8m.c ****    _XX_____,
+ 729:Core/Src/f6x8m.c ****    _XX_____,
+ 730:Core/Src/f6x8m.c ****    ________,
+ 731:Core/Src/f6x8m.c ****    _XX_____,
+ 732:Core/Src/f6x8m.c ****    __X_____,
+ 733:Core/Src/f6x8m.c ****    _X______}
+ 734:Core/Src/f6x8m.c **** // 0x3C
+ 735:Core/Src/f6x8m.c ****  ,{
+ 736:Core/Src/f6x8m.c ****    f6x8_MONO_WIDTH,
+ 737:Core/Src/f6x8m.c ****    f6x8_MONO_HEIGHT,
+ 738:Core/Src/f6x8m.c ****    ___X____,
+ 739:Core/Src/f6x8m.c ****    __X_____,
+ 740:Core/Src/f6x8m.c ****    _X______,
+ 741:Core/Src/f6x8m.c ****    X_______,
+ 742:Core/Src/f6x8m.c ****    _X______,
+ 743:Core/Src/f6x8m.c ****    __X_____,
+ 744:Core/Src/f6x8m.c ****    ___X____,
+ 745:Core/Src/f6x8m.c ****    ________}
+ 746:Core/Src/f6x8m.c **** // 0x3D
+ 747:Core/Src/f6x8m.c ****  ,{
+ 748:Core/Src/f6x8m.c ****    f6x8_MONO_WIDTH,
+ 749:Core/Src/f6x8m.c ****    f6x8_MONO_HEIGHT,
+ 750:Core/Src/f6x8m.c ****    ________,
+ 751:Core/Src/f6x8m.c ****    ________,
+ 752:Core/Src/f6x8m.c ****    XXXXX___,
+ 753:Core/Src/f6x8m.c ****    ________,
+ 754:Core/Src/f6x8m.c ****    XXXXX___,
+ 755:Core/Src/f6x8m.c ****    ________,
+ 756:Core/Src/f6x8m.c ****    ________,
+ 757:Core/Src/f6x8m.c ****    ________}
+ 758:Core/Src/f6x8m.c **** // 0x3E
+ 759:Core/Src/f6x8m.c ****  ,{
+ 760:Core/Src/f6x8m.c ****    f6x8_MONO_WIDTH,
+ 761:Core/Src/f6x8m.c ****    f6x8_MONO_HEIGHT,
+ 762:Core/Src/f6x8m.c ****    X_______,
+ 763:Core/Src/f6x8m.c ****    _X______,
+ 764:Core/Src/f6x8m.c ****    __X_____,
+ 765:Core/Src/f6x8m.c ****    ___X____,
+ 766:Core/Src/f6x8m.c ****    __X_____,
+ 767:Core/Src/f6x8m.c ****    _X______,
+ 768:Core/Src/f6x8m.c ****    X_______,
+ 769:Core/Src/f6x8m.c ****    ________}
+ 770:Core/Src/f6x8m.c **** // 0x3F
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\cci4qmtn.s 			page 15
+
+
+ 771:Core/Src/f6x8m.c ****  ,{
+ 772:Core/Src/f6x8m.c ****    f6x8_MONO_WIDTH,
+ 773:Core/Src/f6x8m.c ****    f6x8_MONO_HEIGHT,
+ 774:Core/Src/f6x8m.c ****    _XXX____,
+ 775:Core/Src/f6x8m.c ****    X___X___,
+ 776:Core/Src/f6x8m.c ****    ____X___,
+ 777:Core/Src/f6x8m.c ****    ___X____,
+ 778:Core/Src/f6x8m.c ****    __X_____,
+ 779:Core/Src/f6x8m.c ****    ________,
+ 780:Core/Src/f6x8m.c ****    __X_____,
+ 781:Core/Src/f6x8m.c ****    ________}
+ 782:Core/Src/f6x8m.c **** // 0x40
+ 783:Core/Src/f6x8m.c ****  ,{
+ 784:Core/Src/f6x8m.c ****    f6x8_MONO_WIDTH,
+ 785:Core/Src/f6x8m.c ****    f6x8_MONO_HEIGHT,
+ 786:Core/Src/f6x8m.c ****    _XXX____,
+ 787:Core/Src/f6x8m.c ****    X___X___,
+ 788:Core/Src/f6x8m.c ****    ____X___,
+ 789:Core/Src/f6x8m.c ****    _XX_X___,
+ 790:Core/Src/f6x8m.c ****    X_X_X___,
+ 791:Core/Src/f6x8m.c ****    X_X_X___,
+ 792:Core/Src/f6x8m.c ****    _XXX____,
+ 793:Core/Src/f6x8m.c ****    ________}
+ 794:Core/Src/f6x8m.c **** // 0x41
+ 795:Core/Src/f6x8m.c ****  ,{
+ 796:Core/Src/f6x8m.c ****    f6x8_MONO_WIDTH,
+ 797:Core/Src/f6x8m.c ****    f6x8_MONO_HEIGHT,
+ 798:Core/Src/f6x8m.c ****    _XXX____,
+ 799:Core/Src/f6x8m.c ****    X___X___,
+ 800:Core/Src/f6x8m.c ****    X___X___,
+ 801:Core/Src/f6x8m.c ****    XXXXX___,
+ 802:Core/Src/f6x8m.c ****    X___X___,
+ 803:Core/Src/f6x8m.c ****    X___X___,
+ 804:Core/Src/f6x8m.c ****    X___X___,
+ 805:Core/Src/f6x8m.c ****    ________}
+ 806:Core/Src/f6x8m.c **** // 0x42
+ 807:Core/Src/f6x8m.c ****  ,{
+ 808:Core/Src/f6x8m.c ****    f6x8_MONO_WIDTH,
+ 809:Core/Src/f6x8m.c ****    f6x8_MONO_HEIGHT,
+ 810:Core/Src/f6x8m.c ****    XXXX____,
+ 811:Core/Src/f6x8m.c ****    X___X___,
+ 812:Core/Src/f6x8m.c ****    X___X___,
+ 813:Core/Src/f6x8m.c ****    XXXX____,
+ 814:Core/Src/f6x8m.c ****    X___X___,
+ 815:Core/Src/f6x8m.c ****    X___X___,
+ 816:Core/Src/f6x8m.c ****    XXXX____,
+ 817:Core/Src/f6x8m.c ****    ________}
+ 818:Core/Src/f6x8m.c **** // 0x43
+ 819:Core/Src/f6x8m.c ****  ,{
+ 820:Core/Src/f6x8m.c ****    f6x8_MONO_WIDTH,
+ 821:Core/Src/f6x8m.c ****    f6x8_MONO_HEIGHT,
+ 822:Core/Src/f6x8m.c ****    _XXX____,
+ 823:Core/Src/f6x8m.c ****    X___X___,
+ 824:Core/Src/f6x8m.c ****    X_______,
+ 825:Core/Src/f6x8m.c ****    X_______,
+ 826:Core/Src/f6x8m.c ****    X_______,
+ 827:Core/Src/f6x8m.c ****    X___X___,
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\cci4qmtn.s 			page 16
+
+
+ 828:Core/Src/f6x8m.c ****    _XXX____,
+ 829:Core/Src/f6x8m.c ****    ________}
+ 830:Core/Src/f6x8m.c **** // 0x44
+ 831:Core/Src/f6x8m.c ****  ,{
+ 832:Core/Src/f6x8m.c ****    f6x8_MONO_WIDTH,
+ 833:Core/Src/f6x8m.c ****    f6x8_MONO_HEIGHT,
+ 834:Core/Src/f6x8m.c ****    XXX_____,
+ 835:Core/Src/f6x8m.c ****    X__X____,
+ 836:Core/Src/f6x8m.c ****    X___X___,
+ 837:Core/Src/f6x8m.c ****    X___X___,
+ 838:Core/Src/f6x8m.c ****    X___X___,
+ 839:Core/Src/f6x8m.c ****    X__X____,
+ 840:Core/Src/f6x8m.c ****    XXX_____,
+ 841:Core/Src/f6x8m.c ****    ________}
+ 842:Core/Src/f6x8m.c **** // 0x45
+ 843:Core/Src/f6x8m.c ****  ,{
+ 844:Core/Src/f6x8m.c ****    f6x8_MONO_WIDTH,
+ 845:Core/Src/f6x8m.c ****    f6x8_MONO_HEIGHT,
+ 846:Core/Src/f6x8m.c ****    XXXXX___,
+ 847:Core/Src/f6x8m.c ****    X_______,
+ 848:Core/Src/f6x8m.c ****    X_______,
+ 849:Core/Src/f6x8m.c ****    XXXX____,
+ 850:Core/Src/f6x8m.c ****    X_______,
+ 851:Core/Src/f6x8m.c ****    X_______,
+ 852:Core/Src/f6x8m.c ****    XXXXX___,
+ 853:Core/Src/f6x8m.c ****    ________}
+ 854:Core/Src/f6x8m.c **** // 0x46
+ 855:Core/Src/f6x8m.c ****  ,{
+ 856:Core/Src/f6x8m.c ****    f6x8_MONO_WIDTH,
+ 857:Core/Src/f6x8m.c ****    f6x8_MONO_HEIGHT,
+ 858:Core/Src/f6x8m.c ****    XXXXX___,
+ 859:Core/Src/f6x8m.c ****    X_______,
+ 860:Core/Src/f6x8m.c ****    X_______,
+ 861:Core/Src/f6x8m.c ****    XXXX____,
+ 862:Core/Src/f6x8m.c ****    X_______,
+ 863:Core/Src/f6x8m.c ****    X_______,
+ 864:Core/Src/f6x8m.c ****    X_______,
+ 865:Core/Src/f6x8m.c ****    ________}
+ 866:Core/Src/f6x8m.c **** // 0x47
+ 867:Core/Src/f6x8m.c ****  ,{
+ 868:Core/Src/f6x8m.c ****    f6x8_MONO_WIDTH,
+ 869:Core/Src/f6x8m.c ****    f6x8_MONO_HEIGHT,
+ 870:Core/Src/f6x8m.c ****    _XXX____,
+ 871:Core/Src/f6x8m.c ****    X___X___,
+ 872:Core/Src/f6x8m.c ****    X_______,
+ 873:Core/Src/f6x8m.c ****    X_______,
+ 874:Core/Src/f6x8m.c ****    X__XX___,
+ 875:Core/Src/f6x8m.c ****    X___X___,
+ 876:Core/Src/f6x8m.c ****    _XXXX___,
+ 877:Core/Src/f6x8m.c ****    ________}
+ 878:Core/Src/f6x8m.c **** // 0x48
+ 879:Core/Src/f6x8m.c ****  ,{
+ 880:Core/Src/f6x8m.c ****    f6x8_MONO_WIDTH,
+ 881:Core/Src/f6x8m.c ****    f6x8_MONO_HEIGHT,
+ 882:Core/Src/f6x8m.c ****    X___X___,
+ 883:Core/Src/f6x8m.c ****    X___X___,
+ 884:Core/Src/f6x8m.c ****    X___X___,
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\cci4qmtn.s 			page 17
+
+
+ 885:Core/Src/f6x8m.c ****    XXXXX___,
+ 886:Core/Src/f6x8m.c ****    X___X___,
+ 887:Core/Src/f6x8m.c ****    X___X___,
+ 888:Core/Src/f6x8m.c ****    X___X___,
+ 889:Core/Src/f6x8m.c ****    ________}
+ 890:Core/Src/f6x8m.c **** // 0x49
+ 891:Core/Src/f6x8m.c ****  ,{
+ 892:Core/Src/f6x8m.c ****    f6x8_MONO_WIDTH,
+ 893:Core/Src/f6x8m.c ****    f6x8_MONO_HEIGHT,
+ 894:Core/Src/f6x8m.c ****    _XXX____,
+ 895:Core/Src/f6x8m.c ****    __X_____,
+ 896:Core/Src/f6x8m.c ****    __X_____,
+ 897:Core/Src/f6x8m.c ****    __X_____,
+ 898:Core/Src/f6x8m.c ****    __X_____,
+ 899:Core/Src/f6x8m.c ****    __X_____,
+ 900:Core/Src/f6x8m.c ****    _XXX____,
+ 901:Core/Src/f6x8m.c ****    ________}
+ 902:Core/Src/f6x8m.c **** // 0x4A
+ 903:Core/Src/f6x8m.c ****  ,{
+ 904:Core/Src/f6x8m.c ****    f6x8_MONO_WIDTH,
+ 905:Core/Src/f6x8m.c ****    f6x8_MONO_HEIGHT,
+ 906:Core/Src/f6x8m.c ****    __XXX___,
+ 907:Core/Src/f6x8m.c ****    ___X____,
+ 908:Core/Src/f6x8m.c ****    ___X____,
+ 909:Core/Src/f6x8m.c ****    ___X____,
+ 910:Core/Src/f6x8m.c ****    ___X____,
+ 911:Core/Src/f6x8m.c ****    X__X____,
+ 912:Core/Src/f6x8m.c ****    _XX_____,
+ 913:Core/Src/f6x8m.c ****    ________}
+ 914:Core/Src/f6x8m.c **** // 0x4B
+ 915:Core/Src/f6x8m.c ****  ,{
+ 916:Core/Src/f6x8m.c ****    f6x8_MONO_WIDTH,
+ 917:Core/Src/f6x8m.c ****    f6x8_MONO_HEIGHT,
+ 918:Core/Src/f6x8m.c ****    X___X___,
+ 919:Core/Src/f6x8m.c ****    X__X____,
+ 920:Core/Src/f6x8m.c ****    X_X_____,
+ 921:Core/Src/f6x8m.c ****    XX______,
+ 922:Core/Src/f6x8m.c ****    X_X_____,
+ 923:Core/Src/f6x8m.c ****    X__X____,
+ 924:Core/Src/f6x8m.c ****    X___X___,
+ 925:Core/Src/f6x8m.c ****    ________}
+ 926:Core/Src/f6x8m.c **** // 0x4C
+ 927:Core/Src/f6x8m.c ****  ,{
+ 928:Core/Src/f6x8m.c ****    f6x8_MONO_WIDTH,
+ 929:Core/Src/f6x8m.c ****    f6x8_MONO_HEIGHT,
+ 930:Core/Src/f6x8m.c ****    X_______,
+ 931:Core/Src/f6x8m.c ****    X_______,
+ 932:Core/Src/f6x8m.c ****    X_______,
+ 933:Core/Src/f6x8m.c ****    X_______,
+ 934:Core/Src/f6x8m.c ****    X_______,
+ 935:Core/Src/f6x8m.c ****    X_______,
+ 936:Core/Src/f6x8m.c ****    XXXXX___,
+ 937:Core/Src/f6x8m.c ****    ________}
+ 938:Core/Src/f6x8m.c **** // 0x4D
+ 939:Core/Src/f6x8m.c ****  ,{
+ 940:Core/Src/f6x8m.c ****    f6x8_MONO_WIDTH,
+ 941:Core/Src/f6x8m.c ****    f6x8_MONO_HEIGHT,
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\cci4qmtn.s 			page 18
+
+
+ 942:Core/Src/f6x8m.c ****    X___X___,
+ 943:Core/Src/f6x8m.c ****    XX_XX___,
+ 944:Core/Src/f6x8m.c ****    X_X_X___,
+ 945:Core/Src/f6x8m.c ****    X_X_X___,
+ 946:Core/Src/f6x8m.c ****    X___X___,
+ 947:Core/Src/f6x8m.c ****    X___X___,
+ 948:Core/Src/f6x8m.c ****    X___X___,
+ 949:Core/Src/f6x8m.c ****    ________}
+ 950:Core/Src/f6x8m.c **** // 0x4E
+ 951:Core/Src/f6x8m.c ****  ,{
+ 952:Core/Src/f6x8m.c ****    f6x8_MONO_WIDTH,
+ 953:Core/Src/f6x8m.c ****    f6x8_MONO_HEIGHT,
+ 954:Core/Src/f6x8m.c ****    X___X___,
+ 955:Core/Src/f6x8m.c ****    X___X___,
+ 956:Core/Src/f6x8m.c ****    XX__X___,
+ 957:Core/Src/f6x8m.c ****    X_X_X___,
+ 958:Core/Src/f6x8m.c ****    X__XX___,
+ 959:Core/Src/f6x8m.c ****    X___X___,
+ 960:Core/Src/f6x8m.c ****    X___X___,
+ 961:Core/Src/f6x8m.c ****    ________}
+ 962:Core/Src/f6x8m.c **** // 0x4F
+ 963:Core/Src/f6x8m.c ****  ,{
+ 964:Core/Src/f6x8m.c ****    f6x8_MONO_WIDTH,
+ 965:Core/Src/f6x8m.c ****    f6x8_MONO_HEIGHT,
+ 966:Core/Src/f6x8m.c ****    _XXX____,
+ 967:Core/Src/f6x8m.c ****    X___X___,
+ 968:Core/Src/f6x8m.c ****    X___X___,
+ 969:Core/Src/f6x8m.c ****    X___X___,
+ 970:Core/Src/f6x8m.c ****    X___X___,
+ 971:Core/Src/f6x8m.c ****    X___X___,
+ 972:Core/Src/f6x8m.c ****    _XXX____,
+ 973:Core/Src/f6x8m.c ****    ________}
+ 974:Core/Src/f6x8m.c **** // 0x50
+ 975:Core/Src/f6x8m.c ****  ,{
+ 976:Core/Src/f6x8m.c ****    f6x8_MONO_WIDTH,
+ 977:Core/Src/f6x8m.c ****    f6x8_MONO_HEIGHT,
+ 978:Core/Src/f6x8m.c ****    XXXX____,
+ 979:Core/Src/f6x8m.c ****    X___X___,
+ 980:Core/Src/f6x8m.c ****    X___X___,
+ 981:Core/Src/f6x8m.c ****    XXXX____,
+ 982:Core/Src/f6x8m.c ****    X_______,
+ 983:Core/Src/f6x8m.c ****    X_______,
+ 984:Core/Src/f6x8m.c ****    X_______,
+ 985:Core/Src/f6x8m.c ****    ________}
+ 986:Core/Src/f6x8m.c **** // 0x51
+ 987:Core/Src/f6x8m.c ****  ,{
+ 988:Core/Src/f6x8m.c ****    f6x8_MONO_WIDTH,
+ 989:Core/Src/f6x8m.c ****    f6x8_MONO_HEIGHT,
+ 990:Core/Src/f6x8m.c ****    _XXX____,
+ 991:Core/Src/f6x8m.c ****    X___X___,
+ 992:Core/Src/f6x8m.c ****    X___X___,
+ 993:Core/Src/f6x8m.c ****    X___X___,
+ 994:Core/Src/f6x8m.c ****    X_X_X___,
+ 995:Core/Src/f6x8m.c ****    X__X____,
+ 996:Core/Src/f6x8m.c ****    _XX_X___,
+ 997:Core/Src/f6x8m.c ****    ________}
+ 998:Core/Src/f6x8m.c **** // 0x52
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\cci4qmtn.s 			page 19
+
+
+ 999:Core/Src/f6x8m.c ****  ,{
+1000:Core/Src/f6x8m.c ****    f6x8_MONO_WIDTH,
+1001:Core/Src/f6x8m.c ****    f6x8_MONO_HEIGHT,
+1002:Core/Src/f6x8m.c ****    XXXX____,
+1003:Core/Src/f6x8m.c ****    X___X___,
+1004:Core/Src/f6x8m.c ****    X___X___,
+1005:Core/Src/f6x8m.c ****    XXXX____,
+1006:Core/Src/f6x8m.c ****    X_X_____,
+1007:Core/Src/f6x8m.c ****    X__X____,
+1008:Core/Src/f6x8m.c ****    X___X___,
+1009:Core/Src/f6x8m.c ****    ________}
+1010:Core/Src/f6x8m.c **** // 0x53
+1011:Core/Src/f6x8m.c ****  ,{
+1012:Core/Src/f6x8m.c ****    f6x8_MONO_WIDTH,
+1013:Core/Src/f6x8m.c ****    f6x8_MONO_HEIGHT,
+1014:Core/Src/f6x8m.c ****    _XXX____,
+1015:Core/Src/f6x8m.c ****    X___X___,
+1016:Core/Src/f6x8m.c ****    X_______,
+1017:Core/Src/f6x8m.c ****    _XXX____,
+1018:Core/Src/f6x8m.c ****    ____X___,
+1019:Core/Src/f6x8m.c ****    X___X___,
+1020:Core/Src/f6x8m.c ****    _XXX____,
+1021:Core/Src/f6x8m.c ****    ________}
+1022:Core/Src/f6x8m.c **** // 0x54
+1023:Core/Src/f6x8m.c ****  ,{
+1024:Core/Src/f6x8m.c ****    f6x8_MONO_WIDTH,
+1025:Core/Src/f6x8m.c ****    f6x8_MONO_HEIGHT,
+1026:Core/Src/f6x8m.c ****    XXXXX___,
+1027:Core/Src/f6x8m.c ****    __X_____,
+1028:Core/Src/f6x8m.c ****    __X_____,
+1029:Core/Src/f6x8m.c ****    __X_____,
+1030:Core/Src/f6x8m.c ****    __X_____,
+1031:Core/Src/f6x8m.c ****    __X_____,
+1032:Core/Src/f6x8m.c ****    __X_____,
+1033:Core/Src/f6x8m.c ****    ________}
+1034:Core/Src/f6x8m.c **** // 0x55
+1035:Core/Src/f6x8m.c ****  ,{
+1036:Core/Src/f6x8m.c ****    f6x8_MONO_WIDTH,
+1037:Core/Src/f6x8m.c ****    f6x8_MONO_HEIGHT,
+1038:Core/Src/f6x8m.c ****    X___X___,
+1039:Core/Src/f6x8m.c ****    X___X___,
+1040:Core/Src/f6x8m.c ****    X___X___,
+1041:Core/Src/f6x8m.c ****    X___X___,
+1042:Core/Src/f6x8m.c ****    X___X___,
+1043:Core/Src/f6x8m.c ****    X___X___,
+1044:Core/Src/f6x8m.c ****    _XXX____,
+1045:Core/Src/f6x8m.c ****    ________}
+1046:Core/Src/f6x8m.c **** // 0x56
+1047:Core/Src/f6x8m.c ****  ,{
+1048:Core/Src/f6x8m.c ****    f6x8_MONO_WIDTH,
+1049:Core/Src/f6x8m.c ****    f6x8_MONO_HEIGHT,
+1050:Core/Src/f6x8m.c ****    X___X___,
+1051:Core/Src/f6x8m.c ****    X___X___,
+1052:Core/Src/f6x8m.c ****    X___X___,
+1053:Core/Src/f6x8m.c ****    X___X___,
+1054:Core/Src/f6x8m.c ****    X___X___,
+1055:Core/Src/f6x8m.c ****    _X_X____,
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\cci4qmtn.s 			page 20
+
+
+1056:Core/Src/f6x8m.c ****    __X_____,
+1057:Core/Src/f6x8m.c ****    ________}
+1058:Core/Src/f6x8m.c **** // 0x57
+1059:Core/Src/f6x8m.c ****  ,{
+1060:Core/Src/f6x8m.c ****    f6x8_MONO_WIDTH,
+1061:Core/Src/f6x8m.c ****    f6x8_MONO_HEIGHT,
+1062:Core/Src/f6x8m.c ****    X___X___,
+1063:Core/Src/f6x8m.c ****    X___X___,
+1064:Core/Src/f6x8m.c ****    X___X___,
+1065:Core/Src/f6x8m.c ****    X_X_X___,
+1066:Core/Src/f6x8m.c ****    X_X_X___,
+1067:Core/Src/f6x8m.c ****    X_X_X___,
+1068:Core/Src/f6x8m.c ****    _X_X____,
+1069:Core/Src/f6x8m.c ****    ________}
+1070:Core/Src/f6x8m.c **** // 0x58
+1071:Core/Src/f6x8m.c ****  ,{
+1072:Core/Src/f6x8m.c ****    f6x8_MONO_WIDTH,
+1073:Core/Src/f6x8m.c ****    f6x8_MONO_HEIGHT,
+1074:Core/Src/f6x8m.c ****    X___X___,
+1075:Core/Src/f6x8m.c ****    X___X___,
+1076:Core/Src/f6x8m.c ****    _X_X____,
+1077:Core/Src/f6x8m.c ****    __X_____,
+1078:Core/Src/f6x8m.c ****    _X_X____,
+1079:Core/Src/f6x8m.c ****    X___X___,
+1080:Core/Src/f6x8m.c ****    X___X___,
+1081:Core/Src/f6x8m.c ****    ________}
+1082:Core/Src/f6x8m.c **** // 0x59
+1083:Core/Src/f6x8m.c ****  ,{
+1084:Core/Src/f6x8m.c ****    f6x8_MONO_WIDTH,
+1085:Core/Src/f6x8m.c ****    f6x8_MONO_HEIGHT,
+1086:Core/Src/f6x8m.c ****    X___X___,
+1087:Core/Src/f6x8m.c ****    X___X___,
+1088:Core/Src/f6x8m.c ****    X___X___,
+1089:Core/Src/f6x8m.c ****    _X_X____,
+1090:Core/Src/f6x8m.c ****    __X_____,
+1091:Core/Src/f6x8m.c ****    __X_____,
+1092:Core/Src/f6x8m.c ****    __X_____,
+1093:Core/Src/f6x8m.c ****    ________}
+1094:Core/Src/f6x8m.c **** // 0x5A
+1095:Core/Src/f6x8m.c ****  ,{
+1096:Core/Src/f6x8m.c ****    f6x8_MONO_WIDTH,
+1097:Core/Src/f6x8m.c ****    f6x8_MONO_HEIGHT,
+1098:Core/Src/f6x8m.c ****    XXXXX___,
+1099:Core/Src/f6x8m.c ****    ____X___,
+1100:Core/Src/f6x8m.c ****    ___X____,
+1101:Core/Src/f6x8m.c ****    __X_____,
+1102:Core/Src/f6x8m.c ****    _X______,
+1103:Core/Src/f6x8m.c ****    X_______,
+1104:Core/Src/f6x8m.c ****    XXXXX___,
+1105:Core/Src/f6x8m.c ****    ________}
+1106:Core/Src/f6x8m.c **** // 0x5B
+1107:Core/Src/f6x8m.c ****  ,{
+1108:Core/Src/f6x8m.c ****    f6x8_MONO_WIDTH,
+1109:Core/Src/f6x8m.c ****    f6x8_MONO_HEIGHT,
+1110:Core/Src/f6x8m.c ****    _XXX____,
+1111:Core/Src/f6x8m.c ****    _X______,
+1112:Core/Src/f6x8m.c ****    _X______,
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\cci4qmtn.s 			page 21
+
+
+1113:Core/Src/f6x8m.c ****    _X______,
+1114:Core/Src/f6x8m.c ****    _X______,
+1115:Core/Src/f6x8m.c ****    _X______,
+1116:Core/Src/f6x8m.c ****    _XXX____,
+1117:Core/Src/f6x8m.c ****    ________}
+1118:Core/Src/f6x8m.c **** // 0x5C
+1119:Core/Src/f6x8m.c ****  ,{
+1120:Core/Src/f6x8m.c ****    f6x8_MONO_WIDTH,
+1121:Core/Src/f6x8m.c ****    f6x8_MONO_HEIGHT,
+1122:Core/Src/f6x8m.c ****    ________,
+1123:Core/Src/f6x8m.c ****    X_______,
+1124:Core/Src/f6x8m.c ****    _X______,
+1125:Core/Src/f6x8m.c ****    __X_____,
+1126:Core/Src/f6x8m.c ****    ___X____,
+1127:Core/Src/f6x8m.c ****    ____X___,
+1128:Core/Src/f6x8m.c ****    ________,
+1129:Core/Src/f6x8m.c ****    ________}
+1130:Core/Src/f6x8m.c **** // 0x5D
+1131:Core/Src/f6x8m.c ****  ,{
+1132:Core/Src/f6x8m.c ****    f6x8_MONO_WIDTH,
+1133:Core/Src/f6x8m.c ****    f6x8_MONO_HEIGHT,
+1134:Core/Src/f6x8m.c ****    _XXX____,
+1135:Core/Src/f6x8m.c ****    ___X____,
+1136:Core/Src/f6x8m.c ****    ___X____,
+1137:Core/Src/f6x8m.c ****    ___X____,
+1138:Core/Src/f6x8m.c ****    ___X____,
+1139:Core/Src/f6x8m.c ****    ___X____,
+1140:Core/Src/f6x8m.c ****    _XXX____,
+1141:Core/Src/f6x8m.c ****    ________}
+1142:Core/Src/f6x8m.c **** // 0x5E
+1143:Core/Src/f6x8m.c ****  ,{
+1144:Core/Src/f6x8m.c ****    f6x8_MONO_WIDTH,
+1145:Core/Src/f6x8m.c ****    f6x8_MONO_HEIGHT,
+1146:Core/Src/f6x8m.c ****    __X_____,
+1147:Core/Src/f6x8m.c ****    _X_X____,
+1148:Core/Src/f6x8m.c ****    X___X___,
+1149:Core/Src/f6x8m.c ****    ________,
+1150:Core/Src/f6x8m.c ****    ________,
+1151:Core/Src/f6x8m.c ****    ________,
+1152:Core/Src/f6x8m.c ****    ________,
+1153:Core/Src/f6x8m.c ****    ________}
+1154:Core/Src/f6x8m.c **** // 0x5F
+1155:Core/Src/f6x8m.c ****  ,{
+1156:Core/Src/f6x8m.c ****    f6x8_MONO_WIDTH,
+1157:Core/Src/f6x8m.c ****    f6x8_MONO_HEIGHT,
+1158:Core/Src/f6x8m.c ****    ________,
+1159:Core/Src/f6x8m.c ****    ________,
+1160:Core/Src/f6x8m.c ****    ________,
+1161:Core/Src/f6x8m.c ****    ________,
+1162:Core/Src/f6x8m.c ****    ________,
+1163:Core/Src/f6x8m.c ****    ________,
+1164:Core/Src/f6x8m.c ****    ________,
+1165:Core/Src/f6x8m.c ****    XXXXX___}
+1166:Core/Src/f6x8m.c **** // 0x60
+1167:Core/Src/f6x8m.c ****  ,{
+1168:Core/Src/f6x8m.c ****    f6x8_MONO_WIDTH,
+1169:Core/Src/f6x8m.c ****    f6x8_MONO_HEIGHT,
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\cci4qmtn.s 			page 22
+
+
+1170:Core/Src/f6x8m.c ****    _X______,
+1171:Core/Src/f6x8m.c ****    __X_____,
+1172:Core/Src/f6x8m.c ****    ___X____,
+1173:Core/Src/f6x8m.c ****    ________,
+1174:Core/Src/f6x8m.c ****    ________,
+1175:Core/Src/f6x8m.c ****    ________,
+1176:Core/Src/f6x8m.c ****    ________,
+1177:Core/Src/f6x8m.c ****    ________}
+1178:Core/Src/f6x8m.c **** // 0x61
+1179:Core/Src/f6x8m.c ****  ,{
+1180:Core/Src/f6x8m.c ****    f6x8_MONO_WIDTH,
+1181:Core/Src/f6x8m.c ****    f6x8_MONO_HEIGHT,
+1182:Core/Src/f6x8m.c ****    ________,
+1183:Core/Src/f6x8m.c ****    ________,
+1184:Core/Src/f6x8m.c ****    _XXX____,
+1185:Core/Src/f6x8m.c ****    ____X___,
+1186:Core/Src/f6x8m.c ****    _XXXX___,
+1187:Core/Src/f6x8m.c ****    X___X___,
+1188:Core/Src/f6x8m.c ****    _XXXX___,
+1189:Core/Src/f6x8m.c ****    ________}
+1190:Core/Src/f6x8m.c **** // 0x62
+1191:Core/Src/f6x8m.c ****  ,{
+1192:Core/Src/f6x8m.c ****    f6x8_MONO_WIDTH,
+1193:Core/Src/f6x8m.c ****    f6x8_MONO_HEIGHT,
+1194:Core/Src/f6x8m.c ****    X_______,
+1195:Core/Src/f6x8m.c ****    X_______,
+1196:Core/Src/f6x8m.c ****    X_XX____,
+1197:Core/Src/f6x8m.c ****    XX__X___,
+1198:Core/Src/f6x8m.c ****    X___X___,
+1199:Core/Src/f6x8m.c ****    X___X___,
+1200:Core/Src/f6x8m.c ****    XXXX____,
+1201:Core/Src/f6x8m.c ****    ________}
+1202:Core/Src/f6x8m.c **** // 0x63
+1203:Core/Src/f6x8m.c ****  ,{
+1204:Core/Src/f6x8m.c ****    f6x8_MONO_WIDTH,
+1205:Core/Src/f6x8m.c ****    f6x8_MONO_HEIGHT,
+1206:Core/Src/f6x8m.c ****    ________,
+1207:Core/Src/f6x8m.c ****    ________,
+1208:Core/Src/f6x8m.c ****    _XXX____,
+1209:Core/Src/f6x8m.c ****    X_______,
+1210:Core/Src/f6x8m.c ****    X_______,
+1211:Core/Src/f6x8m.c ****    X___X___,
+1212:Core/Src/f6x8m.c ****    _XXX____,
+1213:Core/Src/f6x8m.c ****    ________}
+1214:Core/Src/f6x8m.c **** // 0x64
+1215:Core/Src/f6x8m.c ****  ,{
+1216:Core/Src/f6x8m.c ****    f6x8_MONO_WIDTH,
+1217:Core/Src/f6x8m.c ****    f6x8_MONO_HEIGHT,
+1218:Core/Src/f6x8m.c ****    ____X___,
+1219:Core/Src/f6x8m.c ****    ____X___,
+1220:Core/Src/f6x8m.c ****    _XX_X___,
+1221:Core/Src/f6x8m.c ****    X__XX___,
+1222:Core/Src/f6x8m.c ****    X___X___,
+1223:Core/Src/f6x8m.c ****    X___X___,
+1224:Core/Src/f6x8m.c ****    _XXXX___,
+1225:Core/Src/f6x8m.c ****    ________}
+1226:Core/Src/f6x8m.c **** // 0x65
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\cci4qmtn.s 			page 23
+
+
+1227:Core/Src/f6x8m.c ****  ,{
+1228:Core/Src/f6x8m.c ****    f6x8_MONO_WIDTH,
+1229:Core/Src/f6x8m.c ****    f6x8_MONO_HEIGHT,
+1230:Core/Src/f6x8m.c ****    ________,
+1231:Core/Src/f6x8m.c ****    ________,
+1232:Core/Src/f6x8m.c ****    _XXX____,
+1233:Core/Src/f6x8m.c ****    X___X___,
+1234:Core/Src/f6x8m.c ****    XXXXX___,
+1235:Core/Src/f6x8m.c ****    X_______,
+1236:Core/Src/f6x8m.c ****    _XXX____,
+1237:Core/Src/f6x8m.c ****    ________}
+1238:Core/Src/f6x8m.c **** // 0x66
+1239:Core/Src/f6x8m.c ****  ,{
+1240:Core/Src/f6x8m.c ****    f6x8_MONO_WIDTH,
+1241:Core/Src/f6x8m.c ****    f6x8_MONO_HEIGHT,
+1242:Core/Src/f6x8m.c ****    __XX____,
+1243:Core/Src/f6x8m.c ****    _X__X___,
+1244:Core/Src/f6x8m.c ****    _X______,
+1245:Core/Src/f6x8m.c ****    XXX_____,
+1246:Core/Src/f6x8m.c ****    _X______,
+1247:Core/Src/f6x8m.c ****    _X______,
+1248:Core/Src/f6x8m.c ****    _X______,
+1249:Core/Src/f6x8m.c ****    ________}
+1250:Core/Src/f6x8m.c **** // 0x67
+1251:Core/Src/f6x8m.c ****  ,{
+1252:Core/Src/f6x8m.c ****    f6x8_MONO_WIDTH,
+1253:Core/Src/f6x8m.c ****    f6x8_MONO_HEIGHT,
+1254:Core/Src/f6x8m.c ****    ________,
+1255:Core/Src/f6x8m.c ****    ________,
+1256:Core/Src/f6x8m.c ****    _XXXX___,
+1257:Core/Src/f6x8m.c ****    X___X___,
+1258:Core/Src/f6x8m.c ****    X___X___,
+1259:Core/Src/f6x8m.c ****    _XXXX___,
+1260:Core/Src/f6x8m.c ****    ____X___,
+1261:Core/Src/f6x8m.c ****    _XXX____}
+1262:Core/Src/f6x8m.c **** // 0x68
+1263:Core/Src/f6x8m.c ****  ,{
+1264:Core/Src/f6x8m.c ****    f6x8_MONO_WIDTH,
+1265:Core/Src/f6x8m.c ****    f6x8_MONO_HEIGHT,
+1266:Core/Src/f6x8m.c ****    X_______,
+1267:Core/Src/f6x8m.c ****    X_______,
+1268:Core/Src/f6x8m.c ****    X_XX____,
+1269:Core/Src/f6x8m.c ****    XX__X___,
+1270:Core/Src/f6x8m.c ****    X___X___,
+1271:Core/Src/f6x8m.c ****    X___X___,
+1272:Core/Src/f6x8m.c ****    X___X___,
+1273:Core/Src/f6x8m.c ****    ________}
+1274:Core/Src/f6x8m.c **** // 0x69
+1275:Core/Src/f6x8m.c ****  ,{
+1276:Core/Src/f6x8m.c ****    f6x8_MONO_WIDTH,
+1277:Core/Src/f6x8m.c ****    f6x8_MONO_HEIGHT,
+1278:Core/Src/f6x8m.c ****    __X_____,
+1279:Core/Src/f6x8m.c ****    ________,
+1280:Core/Src/f6x8m.c ****    _XX_____,
+1281:Core/Src/f6x8m.c ****    __X_____,
+1282:Core/Src/f6x8m.c ****    __X_____,
+1283:Core/Src/f6x8m.c ****    __X_____,
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\cci4qmtn.s 			page 24
+
+
+1284:Core/Src/f6x8m.c ****    _XXX____,
+1285:Core/Src/f6x8m.c ****    ________}
+1286:Core/Src/f6x8m.c **** // 0x6A
+1287:Core/Src/f6x8m.c ****  ,{
+1288:Core/Src/f6x8m.c ****    f6x8_MONO_WIDTH,
+1289:Core/Src/f6x8m.c ****    f6x8_MONO_HEIGHT,
+1290:Core/Src/f6x8m.c ****    ___X____,
+1291:Core/Src/f6x8m.c ****    ________,
+1292:Core/Src/f6x8m.c ****    __XX____,
+1293:Core/Src/f6x8m.c ****    ___X____,
+1294:Core/Src/f6x8m.c ****    ___X____,
+1295:Core/Src/f6x8m.c ****    ___X____,
+1296:Core/Src/f6x8m.c ****    X__X____,
+1297:Core/Src/f6x8m.c ****    _XX_____}
+1298:Core/Src/f6x8m.c **** // 0x6B
+1299:Core/Src/f6x8m.c ****  ,{
+1300:Core/Src/f6x8m.c ****    f6x8_MONO_WIDTH,
+1301:Core/Src/f6x8m.c ****    f6x8_MONO_HEIGHT,
+1302:Core/Src/f6x8m.c ****    X_______,
+1303:Core/Src/f6x8m.c ****    X_______,
+1304:Core/Src/f6x8m.c ****    X__X____,
+1305:Core/Src/f6x8m.c ****    X_X_____,
+1306:Core/Src/f6x8m.c ****    XX______,
+1307:Core/Src/f6x8m.c ****    X_X_____,
+1308:Core/Src/f6x8m.c ****    X__X____,
+1309:Core/Src/f6x8m.c ****    ________}
+1310:Core/Src/f6x8m.c **** // 0x6C
+1311:Core/Src/f6x8m.c ****  ,{
+1312:Core/Src/f6x8m.c ****    f6x8_MONO_WIDTH,
+1313:Core/Src/f6x8m.c ****    f6x8_MONO_HEIGHT,
+1314:Core/Src/f6x8m.c ****    _XX_____,
+1315:Core/Src/f6x8m.c ****    __X_____,
+1316:Core/Src/f6x8m.c ****    __X_____,
+1317:Core/Src/f6x8m.c ****    __X_____,
+1318:Core/Src/f6x8m.c ****    __X_____,
+1319:Core/Src/f6x8m.c ****    __X_____,
+1320:Core/Src/f6x8m.c ****    _XXX____,
+1321:Core/Src/f6x8m.c ****    ________}
+1322:Core/Src/f6x8m.c **** // 0x6D
+1323:Core/Src/f6x8m.c ****  ,{
+1324:Core/Src/f6x8m.c ****    f6x8_MONO_WIDTH,
+1325:Core/Src/f6x8m.c ****    f6x8_MONO_HEIGHT,
+1326:Core/Src/f6x8m.c ****    ________,
+1327:Core/Src/f6x8m.c ****    ________,
+1328:Core/Src/f6x8m.c ****    XX_X____,
+1329:Core/Src/f6x8m.c ****    X_X_X___,
+1330:Core/Src/f6x8m.c ****    X___X___,
+1331:Core/Src/f6x8m.c ****    X___X___,
+1332:Core/Src/f6x8m.c ****    X___X___,
+1333:Core/Src/f6x8m.c ****    ________}
+1334:Core/Src/f6x8m.c **** // 0x6E
+1335:Core/Src/f6x8m.c ****  ,{
+1336:Core/Src/f6x8m.c ****    f6x8_MONO_WIDTH,
+1337:Core/Src/f6x8m.c ****    f6x8_MONO_HEIGHT,
+1338:Core/Src/f6x8m.c ****    ________,
+1339:Core/Src/f6x8m.c ****    ________,
+1340:Core/Src/f6x8m.c ****    X_XX____,
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\cci4qmtn.s 			page 25
+
+
+1341:Core/Src/f6x8m.c ****    XX__X___,
+1342:Core/Src/f6x8m.c ****    X___X___,
+1343:Core/Src/f6x8m.c ****    X___X___,
+1344:Core/Src/f6x8m.c ****    X___X___,
+1345:Core/Src/f6x8m.c ****    ________}
+1346:Core/Src/f6x8m.c **** // 0x6F
+1347:Core/Src/f6x8m.c ****  ,{
+1348:Core/Src/f6x8m.c ****    f6x8_MONO_WIDTH,
+1349:Core/Src/f6x8m.c ****    f6x8_MONO_HEIGHT,
+1350:Core/Src/f6x8m.c ****    ________,
+1351:Core/Src/f6x8m.c ****    ________,
+1352:Core/Src/f6x8m.c ****    _XXX____,
+1353:Core/Src/f6x8m.c ****    X___X___,
+1354:Core/Src/f6x8m.c ****    X___X___,
+1355:Core/Src/f6x8m.c ****    X___X___,
+1356:Core/Src/f6x8m.c ****    _XXX____,
+1357:Core/Src/f6x8m.c ****    ________}
+1358:Core/Src/f6x8m.c **** // 0x70
+1359:Core/Src/f6x8m.c ****  ,{
+1360:Core/Src/f6x8m.c ****    f6x8_MONO_WIDTH,
+1361:Core/Src/f6x8m.c ****    f6x8_MONO_HEIGHT,
+1362:Core/Src/f6x8m.c ****    ________,
+1363:Core/Src/f6x8m.c ****    ________,
+1364:Core/Src/f6x8m.c ****    XXXX____,
+1365:Core/Src/f6x8m.c ****    X___X___,
+1366:Core/Src/f6x8m.c ****    X___X___,
+1367:Core/Src/f6x8m.c ****    XXXX____,
+1368:Core/Src/f6x8m.c ****    X_______,
+1369:Core/Src/f6x8m.c ****    X_______}
+1370:Core/Src/f6x8m.c **** // 0x71
+1371:Core/Src/f6x8m.c ****  ,{
+1372:Core/Src/f6x8m.c ****    f6x8_MONO_WIDTH,
+1373:Core/Src/f6x8m.c ****    f6x8_MONO_HEIGHT,
+1374:Core/Src/f6x8m.c ****    ________,
+1375:Core/Src/f6x8m.c ****    ________,
+1376:Core/Src/f6x8m.c ****    _XXXX___,
+1377:Core/Src/f6x8m.c ****    X___X___,
+1378:Core/Src/f6x8m.c ****    X___X___,
+1379:Core/Src/f6x8m.c ****    _XXXX___,
+1380:Core/Src/f6x8m.c ****    ____X___,
+1381:Core/Src/f6x8m.c ****    ____X___}
+1382:Core/Src/f6x8m.c **** // 0x72
+1383:Core/Src/f6x8m.c ****  ,{
+1384:Core/Src/f6x8m.c ****    f6x8_MONO_WIDTH,
+1385:Core/Src/f6x8m.c ****    f6x8_MONO_HEIGHT,
+1386:Core/Src/f6x8m.c ****    ________,
+1387:Core/Src/f6x8m.c ****    ________,
+1388:Core/Src/f6x8m.c ****    X_XX____,
+1389:Core/Src/f6x8m.c ****    XX__X___,
+1390:Core/Src/f6x8m.c ****    X_______,
+1391:Core/Src/f6x8m.c ****    X_______,
+1392:Core/Src/f6x8m.c ****    X_______,
+1393:Core/Src/f6x8m.c ****    ________}
+1394:Core/Src/f6x8m.c **** // 0x73
+1395:Core/Src/f6x8m.c ****  ,{
+1396:Core/Src/f6x8m.c ****    f6x8_MONO_WIDTH,
+1397:Core/Src/f6x8m.c ****    f6x8_MONO_HEIGHT,
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\cci4qmtn.s 			page 26
+
+
+1398:Core/Src/f6x8m.c ****    ________,
+1399:Core/Src/f6x8m.c ****    ________,
+1400:Core/Src/f6x8m.c ****    _XXXX___,
+1401:Core/Src/f6x8m.c ****    X_______,
+1402:Core/Src/f6x8m.c ****    _XXX____,
+1403:Core/Src/f6x8m.c ****    ____X___,
+1404:Core/Src/f6x8m.c ****    XXXX____,
+1405:Core/Src/f6x8m.c ****    ________}
+1406:Core/Src/f6x8m.c **** // 0x74
+1407:Core/Src/f6x8m.c ****  ,{
+1408:Core/Src/f6x8m.c ****    f6x8_MONO_WIDTH,
+1409:Core/Src/f6x8m.c ****    f6x8_MONO_HEIGHT,
+1410:Core/Src/f6x8m.c ****    _X______,
+1411:Core/Src/f6x8m.c ****    _X______,
+1412:Core/Src/f6x8m.c ****    XXX_____,
+1413:Core/Src/f6x8m.c ****    _X______,
+1414:Core/Src/f6x8m.c ****    _X______,
+1415:Core/Src/f6x8m.c ****    _X__X___,
+1416:Core/Src/f6x8m.c ****    __XX____,
+1417:Core/Src/f6x8m.c ****    ________}
+1418:Core/Src/f6x8m.c **** // 0x75
+1419:Core/Src/f6x8m.c ****  ,{
+1420:Core/Src/f6x8m.c ****    f6x8_MONO_WIDTH,
+1421:Core/Src/f6x8m.c ****    f6x8_MONO_HEIGHT,
+1422:Core/Src/f6x8m.c ****    ________,
+1423:Core/Src/f6x8m.c ****    ________,
+1424:Core/Src/f6x8m.c ****    X___X___,
+1425:Core/Src/f6x8m.c ****    X___X___,
+1426:Core/Src/f6x8m.c ****    X___X___,
+1427:Core/Src/f6x8m.c ****    X__XX___,
+1428:Core/Src/f6x8m.c ****    _XX_X___,
+1429:Core/Src/f6x8m.c ****    ________}
+1430:Core/Src/f6x8m.c **** // 0x76
+1431:Core/Src/f6x8m.c ****  ,{
+1432:Core/Src/f6x8m.c ****    f6x8_MONO_WIDTH,
+1433:Core/Src/f6x8m.c ****    f6x8_MONO_HEIGHT,
+1434:Core/Src/f6x8m.c ****    ________,
+1435:Core/Src/f6x8m.c ****    ________,
+1436:Core/Src/f6x8m.c ****    X___X___,
+1437:Core/Src/f6x8m.c ****    X___X___,
+1438:Core/Src/f6x8m.c ****    X___X___,
+1439:Core/Src/f6x8m.c ****    _X_X____,
+1440:Core/Src/f6x8m.c ****    __X_____,
+1441:Core/Src/f6x8m.c ****    ________}
+1442:Core/Src/f6x8m.c **** // 0x77
+1443:Core/Src/f6x8m.c ****  ,{
+1444:Core/Src/f6x8m.c ****    f6x8_MONO_WIDTH,
+1445:Core/Src/f6x8m.c ****    f6x8_MONO_HEIGHT,
+1446:Core/Src/f6x8m.c ****    ________,
+1447:Core/Src/f6x8m.c ****    ________,
+1448:Core/Src/f6x8m.c ****    X___X___,
+1449:Core/Src/f6x8m.c ****    X___X___,
+1450:Core/Src/f6x8m.c ****    X_X_X___,
+1451:Core/Src/f6x8m.c ****    X_X_X___,
+1452:Core/Src/f6x8m.c ****    _X_X____,
+1453:Core/Src/f6x8m.c ****    ________}
+1454:Core/Src/f6x8m.c **** // 0x78
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\cci4qmtn.s 			page 27
+
+
+1455:Core/Src/f6x8m.c ****  ,{
+1456:Core/Src/f6x8m.c ****    f6x8_MONO_WIDTH,
+1457:Core/Src/f6x8m.c ****    f6x8_MONO_HEIGHT,
+1458:Core/Src/f6x8m.c ****    ________,
+1459:Core/Src/f6x8m.c ****    ________,
+1460:Core/Src/f6x8m.c ****    X___X___,
+1461:Core/Src/f6x8m.c ****    _X_X____,
+1462:Core/Src/f6x8m.c ****    __X_____,
+1463:Core/Src/f6x8m.c ****    _X_X____,
+1464:Core/Src/f6x8m.c ****    X___X___,
+1465:Core/Src/f6x8m.c ****    ________}
+1466:Core/Src/f6x8m.c **** // 0x79
+1467:Core/Src/f6x8m.c ****  ,{
+1468:Core/Src/f6x8m.c ****    f6x8_MONO_WIDTH,
+1469:Core/Src/f6x8m.c ****    f6x8_MONO_HEIGHT,
+1470:Core/Src/f6x8m.c ****    ________,
+1471:Core/Src/f6x8m.c ****    ________,
+1472:Core/Src/f6x8m.c ****    X___X___,
+1473:Core/Src/f6x8m.c ****    X___X___,
+1474:Core/Src/f6x8m.c ****    X___X___,
+1475:Core/Src/f6x8m.c ****    _XXXX___,
+1476:Core/Src/f6x8m.c ****    ____X___,
+1477:Core/Src/f6x8m.c ****    _XXX____}
+1478:Core/Src/f6x8m.c **** // 0x7A
+1479:Core/Src/f6x8m.c ****  ,{
+1480:Core/Src/f6x8m.c ****    f6x8_MONO_WIDTH,
+1481:Core/Src/f6x8m.c ****    f6x8_MONO_HEIGHT,
+1482:Core/Src/f6x8m.c ****    ________,
+1483:Core/Src/f6x8m.c ****    ________,
+1484:Core/Src/f6x8m.c ****    XXXXX___,
+1485:Core/Src/f6x8m.c ****    ___X____,
+1486:Core/Src/f6x8m.c ****    __X_____,
+1487:Core/Src/f6x8m.c ****    _X______,
+1488:Core/Src/f6x8m.c ****    XXXXX___,
+1489:Core/Src/f6x8m.c ****    ________}
+1490:Core/Src/f6x8m.c **** // 0x7B
+1491:Core/Src/f6x8m.c ****  ,{
+1492:Core/Src/f6x8m.c ****    f6x8_MONO_WIDTH,
+1493:Core/Src/f6x8m.c ****    f6x8_MONO_HEIGHT,
+1494:Core/Src/f6x8m.c ****    ___X____,
+1495:Core/Src/f6x8m.c ****    __X_____,
+1496:Core/Src/f6x8m.c ****    __X_____,
+1497:Core/Src/f6x8m.c ****    _X______,
+1498:Core/Src/f6x8m.c ****    __X_____,
+1499:Core/Src/f6x8m.c ****    __X_____,
+1500:Core/Src/f6x8m.c ****    ___X____,
+1501:Core/Src/f6x8m.c ****    ________}
+1502:Core/Src/f6x8m.c **** // 0x7C
+1503:Core/Src/f6x8m.c ****  ,{
+1504:Core/Src/f6x8m.c ****    f6x8_MONO_WIDTH,
+1505:Core/Src/f6x8m.c ****    f6x8_MONO_HEIGHT,
+1506:Core/Src/f6x8m.c ****    __X_____,
+1507:Core/Src/f6x8m.c ****    __X_____,
+1508:Core/Src/f6x8m.c ****    __X_____,
+1509:Core/Src/f6x8m.c ****    __X_____,
+1510:Core/Src/f6x8m.c ****    __X_____,
+1511:Core/Src/f6x8m.c ****    __X_____,
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\cci4qmtn.s 			page 28
+
+
+1512:Core/Src/f6x8m.c ****    __X_____,
+1513:Core/Src/f6x8m.c ****    ________}
+1514:Core/Src/f6x8m.c **** // 0x7D
+1515:Core/Src/f6x8m.c ****  ,{
+1516:Core/Src/f6x8m.c ****    f6x8_MONO_WIDTH,
+1517:Core/Src/f6x8m.c ****    f6x8_MONO_HEIGHT,
+1518:Core/Src/f6x8m.c ****    _X______,
+1519:Core/Src/f6x8m.c ****    __X_____,
+1520:Core/Src/f6x8m.c ****    __X_____,
+1521:Core/Src/f6x8m.c ****    ___X____,
+1522:Core/Src/f6x8m.c ****    __X_____,
+1523:Core/Src/f6x8m.c ****    __X_____,
+1524:Core/Src/f6x8m.c ****    _X______,
+1525:Core/Src/f6x8m.c ****    ________}
+1526:Core/Src/f6x8m.c **** // 0x7E
+1527:Core/Src/f6x8m.c ****  ,{
+1528:Core/Src/f6x8m.c ****    f6x8_MONO_WIDTH,
+1529:Core/Src/f6x8m.c ****    f6x8_MONO_HEIGHT,
+1530:Core/Src/f6x8m.c ****    _XX_X___,
+1531:Core/Src/f6x8m.c ****    X__X____,
+1532:Core/Src/f6x8m.c ****    ________,
+1533:Core/Src/f6x8m.c ****    ________,
+1534:Core/Src/f6x8m.c ****    ________,
+1535:Core/Src/f6x8m.c ****    ________,
+1536:Core/Src/f6x8m.c ****    ________,
+1537:Core/Src/f6x8m.c ****    ________}
+1538:Core/Src/f6x8m.c **** // 0x7F
+1539:Core/Src/f6x8m.c ****  ,{
+1540:Core/Src/f6x8m.c ****    f6x8_MONO_WIDTH,
+1541:Core/Src/f6x8m.c ****    f6x8_MONO_HEIGHT,
+1542:Core/Src/f6x8m.c ****    ________,
+1543:Core/Src/f6x8m.c ****    ________,
+1544:Core/Src/f6x8m.c ****    ________,
+1545:Core/Src/f6x8m.c ****    ________,
+1546:Core/Src/f6x8m.c ****    ________,
+1547:Core/Src/f6x8m.c ****    ________,
+1548:Core/Src/f6x8m.c ****    ________,
+1549:Core/Src/f6x8m.c ****    ________}
+1550:Core/Src/f6x8m.c **** // 0x80
+1551:Core/Src/f6x8m.c ****  ,{
+1552:Core/Src/f6x8m.c ****    f6x8_MONO_WIDTH,
+1553:Core/Src/f6x8m.c ****    f6x8_MONO_HEIGHT,
+1554:Core/Src/f6x8m.c ****    ________,
+1555:Core/Src/f6x8m.c ****    ________,
+1556:Core/Src/f6x8m.c ****    ________,
+1557:Core/Src/f6x8m.c ****    ________,
+1558:Core/Src/f6x8m.c ****    ________,
+1559:Core/Src/f6x8m.c ****    ________,
+1560:Core/Src/f6x8m.c ****    ________,
+1561:Core/Src/f6x8m.c ****    ________}
+1562:Core/Src/f6x8m.c **** // 0x81
+1563:Core/Src/f6x8m.c ****  ,{
+1564:Core/Src/f6x8m.c ****    f6x8_MONO_WIDTH,
+1565:Core/Src/f6x8m.c ****    f6x8_MONO_HEIGHT,
+1566:Core/Src/f6x8m.c ****    ________,
+1567:Core/Src/f6x8m.c ****    ________,
+1568:Core/Src/f6x8m.c ****    ________,
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\cci4qmtn.s 			page 29
+
+
+1569:Core/Src/f6x8m.c ****    ________,
+1570:Core/Src/f6x8m.c ****    ________,
+1571:Core/Src/f6x8m.c ****    ________,
+1572:Core/Src/f6x8m.c ****    ________,
+1573:Core/Src/f6x8m.c ****    ________}
+1574:Core/Src/f6x8m.c **** // 0x82
+1575:Core/Src/f6x8m.c ****  ,{
+1576:Core/Src/f6x8m.c ****    f6x8_MONO_WIDTH,
+1577:Core/Src/f6x8m.c ****    f6x8_MONO_HEIGHT,
+1578:Core/Src/f6x8m.c ****    ________,
+1579:Core/Src/f6x8m.c ****    ________,
+1580:Core/Src/f6x8m.c ****    ________,
+1581:Core/Src/f6x8m.c ****    ________,
+1582:Core/Src/f6x8m.c ****    ________,
+1583:Core/Src/f6x8m.c ****    ________,
+1584:Core/Src/f6x8m.c ****    ________,
+1585:Core/Src/f6x8m.c ****    ________}
+1586:Core/Src/f6x8m.c **** // 0x83
+1587:Core/Src/f6x8m.c ****  ,{
+1588:Core/Src/f6x8m.c ****    f6x8_MONO_WIDTH,
+1589:Core/Src/f6x8m.c ****    f6x8_MONO_HEIGHT,
+1590:Core/Src/f6x8m.c ****    ________,
+1591:Core/Src/f6x8m.c ****    ________,
+1592:Core/Src/f6x8m.c ****    ________,
+1593:Core/Src/f6x8m.c ****    ________,
+1594:Core/Src/f6x8m.c ****    ________,
+1595:Core/Src/f6x8m.c ****    ________,
+1596:Core/Src/f6x8m.c ****    ________,
+1597:Core/Src/f6x8m.c ****    ________}
+1598:Core/Src/f6x8m.c **** // 0x84
+1599:Core/Src/f6x8m.c ****  ,{
+1600:Core/Src/f6x8m.c ****    f6x8_MONO_WIDTH,
+1601:Core/Src/f6x8m.c ****    f6x8_MONO_HEIGHT,
+1602:Core/Src/f6x8m.c ****    ________,
+1603:Core/Src/f6x8m.c ****    ________,
+1604:Core/Src/f6x8m.c ****    ________,
+1605:Core/Src/f6x8m.c ****    ________,
+1606:Core/Src/f6x8m.c ****    ________,
+1607:Core/Src/f6x8m.c ****    ________,
+1608:Core/Src/f6x8m.c ****    ________,
+1609:Core/Src/f6x8m.c ****    ________}
+1610:Core/Src/f6x8m.c **** // 0x85
+1611:Core/Src/f6x8m.c ****  ,{
+1612:Core/Src/f6x8m.c ****    f6x8_MONO_WIDTH,
+1613:Core/Src/f6x8m.c ****    f6x8_MONO_HEIGHT,
+1614:Core/Src/f6x8m.c ****    ________,
+1615:Core/Src/f6x8m.c ****    ________,
+1616:Core/Src/f6x8m.c ****    ________,
+1617:Core/Src/f6x8m.c ****    ________,
+1618:Core/Src/f6x8m.c ****    ________,
+1619:Core/Src/f6x8m.c ****    ________,
+1620:Core/Src/f6x8m.c ****    ________,
+1621:Core/Src/f6x8m.c ****    ________}
+1622:Core/Src/f6x8m.c **** // 0x86
+1623:Core/Src/f6x8m.c ****  ,{
+1624:Core/Src/f6x8m.c ****    f6x8_MONO_WIDTH,
+1625:Core/Src/f6x8m.c ****    f6x8_MONO_HEIGHT,
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\cci4qmtn.s 			page 30
+
+
+1626:Core/Src/f6x8m.c ****    ________,
+1627:Core/Src/f6x8m.c ****    ________,
+1628:Core/Src/f6x8m.c ****    ________,
+1629:Core/Src/f6x8m.c ****    ________,
+1630:Core/Src/f6x8m.c ****    ________,
+1631:Core/Src/f6x8m.c ****    ________,
+1632:Core/Src/f6x8m.c ****    ________,
+1633:Core/Src/f6x8m.c ****    ________}
+1634:Core/Src/f6x8m.c **** // 0x87
+1635:Core/Src/f6x8m.c ****  ,{
+1636:Core/Src/f6x8m.c ****    f6x8_MONO_WIDTH,
+1637:Core/Src/f6x8m.c ****    f6x8_MONO_HEIGHT,
+1638:Core/Src/f6x8m.c ****    ________,
+1639:Core/Src/f6x8m.c ****    ________,
+1640:Core/Src/f6x8m.c ****    ________,
+1641:Core/Src/f6x8m.c ****    ________,
+1642:Core/Src/f6x8m.c ****    ________,
+1643:Core/Src/f6x8m.c ****    ________,
+1644:Core/Src/f6x8m.c ****    ________,
+1645:Core/Src/f6x8m.c ****    ________}
+1646:Core/Src/f6x8m.c **** // 0x88
+1647:Core/Src/f6x8m.c ****  ,{
+1648:Core/Src/f6x8m.c ****    f6x8_MONO_WIDTH,
+1649:Core/Src/f6x8m.c ****    f6x8_MONO_HEIGHT,
+1650:Core/Src/f6x8m.c ****    ________,
+1651:Core/Src/f6x8m.c ****    ________,
+1652:Core/Src/f6x8m.c ****    ________,
+1653:Core/Src/f6x8m.c ****    ________,
+1654:Core/Src/f6x8m.c ****    ________,
+1655:Core/Src/f6x8m.c ****    ________,
+1656:Core/Src/f6x8m.c ****    ________,
+1657:Core/Src/f6x8m.c ****    ________}
+1658:Core/Src/f6x8m.c **** // 0x89
+1659:Core/Src/f6x8m.c ****  ,{
+1660:Core/Src/f6x8m.c ****    f6x8_MONO_WIDTH,
+1661:Core/Src/f6x8m.c ****    f6x8_MONO_HEIGHT,
+1662:Core/Src/f6x8m.c ****    ________,
+1663:Core/Src/f6x8m.c ****    ________,
+1664:Core/Src/f6x8m.c ****    ________,
+1665:Core/Src/f6x8m.c ****    ________,
+1666:Core/Src/f6x8m.c ****    ________,
+1667:Core/Src/f6x8m.c ****    ________,
+1668:Core/Src/f6x8m.c ****    ________,
+1669:Core/Src/f6x8m.c ****    ________}
+1670:Core/Src/f6x8m.c **** // 0x8A
+1671:Core/Src/f6x8m.c ****  ,{
+1672:Core/Src/f6x8m.c ****    f6x8_MONO_WIDTH,
+1673:Core/Src/f6x8m.c ****    f6x8_MONO_HEIGHT,
+1674:Core/Src/f6x8m.c ****    ________,
+1675:Core/Src/f6x8m.c ****    ________,
+1676:Core/Src/f6x8m.c ****    ________,
+1677:Core/Src/f6x8m.c ****    ________,
+1678:Core/Src/f6x8m.c ****    ________,
+1679:Core/Src/f6x8m.c ****    ________,
+1680:Core/Src/f6x8m.c ****    ________,
+1681:Core/Src/f6x8m.c ****    ________}
+1682:Core/Src/f6x8m.c **** // 0x8B
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\cci4qmtn.s 			page 31
+
+
+1683:Core/Src/f6x8m.c ****  ,{
+1684:Core/Src/f6x8m.c ****    f6x8_MONO_WIDTH,
+1685:Core/Src/f6x8m.c ****    f6x8_MONO_HEIGHT,
+1686:Core/Src/f6x8m.c ****    ________,
+1687:Core/Src/f6x8m.c ****    ________,
+1688:Core/Src/f6x8m.c ****    ________,
+1689:Core/Src/f6x8m.c ****    ________,
+1690:Core/Src/f6x8m.c ****    ________,
+1691:Core/Src/f6x8m.c ****    ________,
+1692:Core/Src/f6x8m.c ****    ________,
+1693:Core/Src/f6x8m.c ****    ________}
+1694:Core/Src/f6x8m.c **** // 0x8C
+1695:Core/Src/f6x8m.c ****  ,{
+1696:Core/Src/f6x8m.c ****    f6x8_MONO_WIDTH,
+1697:Core/Src/f6x8m.c ****    f6x8_MONO_HEIGHT,
+1698:Core/Src/f6x8m.c ****    ________,
+1699:Core/Src/f6x8m.c ****    ________,
+1700:Core/Src/f6x8m.c ****    ________,
+1701:Core/Src/f6x8m.c ****    ________,
+1702:Core/Src/f6x8m.c ****    ________,
+1703:Core/Src/f6x8m.c ****    ________,
+1704:Core/Src/f6x8m.c ****    ________,
+1705:Core/Src/f6x8m.c ****    ________}
+1706:Core/Src/f6x8m.c **** // 0x8D
+1707:Core/Src/f6x8m.c ****  ,{
+1708:Core/Src/f6x8m.c ****    f6x8_MONO_WIDTH,
+1709:Core/Src/f6x8m.c ****    f6x8_MONO_HEIGHT,
+1710:Core/Src/f6x8m.c ****    ________,
+1711:Core/Src/f6x8m.c ****    ________,
+1712:Core/Src/f6x8m.c ****    ________,
+1713:Core/Src/f6x8m.c ****    ________,
+1714:Core/Src/f6x8m.c ****    ________,
+1715:Core/Src/f6x8m.c ****    ________,
+1716:Core/Src/f6x8m.c ****    ________,
+1717:Core/Src/f6x8m.c ****    ________}
+1718:Core/Src/f6x8m.c **** // 0x8E
+1719:Core/Src/f6x8m.c ****  ,{
+1720:Core/Src/f6x8m.c ****    f6x8_MONO_WIDTH,
+1721:Core/Src/f6x8m.c ****    f6x8_MONO_HEIGHT,
+1722:Core/Src/f6x8m.c ****    ________,
+1723:Core/Src/f6x8m.c ****    ________,
+1724:Core/Src/f6x8m.c ****    ________,
+1725:Core/Src/f6x8m.c ****    ________,
+1726:Core/Src/f6x8m.c ****    ________,
+1727:Core/Src/f6x8m.c ****    ________,
+1728:Core/Src/f6x8m.c ****    ________,
+1729:Core/Src/f6x8m.c ****    ________}
+1730:Core/Src/f6x8m.c **** // 0x8F
+1731:Core/Src/f6x8m.c ****  ,{
+1732:Core/Src/f6x8m.c ****    f6x8_MONO_WIDTH,
+1733:Core/Src/f6x8m.c ****    f6x8_MONO_HEIGHT,
+1734:Core/Src/f6x8m.c ****    ________,
+1735:Core/Src/f6x8m.c ****    ________,
+1736:Core/Src/f6x8m.c ****    ________,
+1737:Core/Src/f6x8m.c ****    ________,
+1738:Core/Src/f6x8m.c ****    ________,
+1739:Core/Src/f6x8m.c ****    ________,
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\cci4qmtn.s 			page 32
+
+
+1740:Core/Src/f6x8m.c ****    ________,
+1741:Core/Src/f6x8m.c ****    ________}
+1742:Core/Src/f6x8m.c **** // 0x90
+1743:Core/Src/f6x8m.c ****  ,{
+1744:Core/Src/f6x8m.c ****    f6x8_MONO_WIDTH,
+1745:Core/Src/f6x8m.c ****    f6x8_MONO_HEIGHT,
+1746:Core/Src/f6x8m.c ****    ________,
+1747:Core/Src/f6x8m.c ****    ________,
+1748:Core/Src/f6x8m.c ****    ________,
+1749:Core/Src/f6x8m.c ****    ________,
+1750:Core/Src/f6x8m.c ****    ________,
+1751:Core/Src/f6x8m.c ****    ________,
+1752:Core/Src/f6x8m.c ****    ________,
+1753:Core/Src/f6x8m.c ****    ________}
+1754:Core/Src/f6x8m.c **** // 0x91
+1755:Core/Src/f6x8m.c ****  ,{
+1756:Core/Src/f6x8m.c ****    f6x8_MONO_WIDTH,
+1757:Core/Src/f6x8m.c ****    f6x8_MONO_HEIGHT,
+1758:Core/Src/f6x8m.c ****    ________,
+1759:Core/Src/f6x8m.c ****    ________,
+1760:Core/Src/f6x8m.c ****    ________,
+1761:Core/Src/f6x8m.c ****    ________,
+1762:Core/Src/f6x8m.c ****    ________,
+1763:Core/Src/f6x8m.c ****    ________,
+1764:Core/Src/f6x8m.c ****    ________,
+1765:Core/Src/f6x8m.c ****    ________}
+1766:Core/Src/f6x8m.c **** // 0x92
+1767:Core/Src/f6x8m.c ****  ,{
+1768:Core/Src/f6x8m.c ****    f6x8_MONO_WIDTH,
+1769:Core/Src/f6x8m.c ****    f6x8_MONO_HEIGHT,
+1770:Core/Src/f6x8m.c ****    ________,
+1771:Core/Src/f6x8m.c ****    ________,
+1772:Core/Src/f6x8m.c ****    ________,
+1773:Core/Src/f6x8m.c ****    ________,
+1774:Core/Src/f6x8m.c ****    ________,
+1775:Core/Src/f6x8m.c ****    ________,
+1776:Core/Src/f6x8m.c ****    ________,
+1777:Core/Src/f6x8m.c ****    ________}
+1778:Core/Src/f6x8m.c **** // 0x93
+1779:Core/Src/f6x8m.c ****  ,{
+1780:Core/Src/f6x8m.c ****    f6x8_MONO_WIDTH,
+1781:Core/Src/f6x8m.c ****    f6x8_MONO_HEIGHT,
+1782:Core/Src/f6x8m.c ****    ________,
+1783:Core/Src/f6x8m.c ****    ________,
+1784:Core/Src/f6x8m.c ****    ________,
+1785:Core/Src/f6x8m.c ****    ________,
+1786:Core/Src/f6x8m.c ****    ________,
+1787:Core/Src/f6x8m.c ****    ________,
+1788:Core/Src/f6x8m.c ****    ________,
+1789:Core/Src/f6x8m.c ****    ________}
+1790:Core/Src/f6x8m.c **** // 0x94
+1791:Core/Src/f6x8m.c ****  ,{
+1792:Core/Src/f6x8m.c ****    f6x8_MONO_WIDTH,
+1793:Core/Src/f6x8m.c ****    f6x8_MONO_HEIGHT,
+1794:Core/Src/f6x8m.c ****    ________,
+1795:Core/Src/f6x8m.c ****    ________,
+1796:Core/Src/f6x8m.c ****    ________,
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\cci4qmtn.s 			page 33
+
+
+1797:Core/Src/f6x8m.c ****    ________,
+1798:Core/Src/f6x8m.c ****    ________,
+1799:Core/Src/f6x8m.c ****    ________,
+1800:Core/Src/f6x8m.c ****    ________,
+1801:Core/Src/f6x8m.c ****    ________}
+1802:Core/Src/f6x8m.c **** // 0x95
+1803:Core/Src/f6x8m.c ****  ,{
+1804:Core/Src/f6x8m.c ****    f6x8_MONO_WIDTH,
+1805:Core/Src/f6x8m.c ****    f6x8_MONO_HEIGHT,
+1806:Core/Src/f6x8m.c ****    ________,
+1807:Core/Src/f6x8m.c ****    ________,
+1808:Core/Src/f6x8m.c ****    ________,
+1809:Core/Src/f6x8m.c ****    ________,
+1810:Core/Src/f6x8m.c ****    ________,
+1811:Core/Src/f6x8m.c ****    ________,
+1812:Core/Src/f6x8m.c ****    ________,
+1813:Core/Src/f6x8m.c ****    ________}
+1814:Core/Src/f6x8m.c **** // 0x96
+1815:Core/Src/f6x8m.c ****  ,{
+1816:Core/Src/f6x8m.c ****    f6x8_MONO_WIDTH,
+1817:Core/Src/f6x8m.c ****    f6x8_MONO_HEIGHT,
+1818:Core/Src/f6x8m.c ****    ________,
+1819:Core/Src/f6x8m.c ****    ________,
+1820:Core/Src/f6x8m.c ****    ________,
+1821:Core/Src/f6x8m.c ****    ________,
+1822:Core/Src/f6x8m.c ****    ________,
+1823:Core/Src/f6x8m.c ****    ________,
+1824:Core/Src/f6x8m.c ****    ________,
+1825:Core/Src/f6x8m.c ****    ________}
+1826:Core/Src/f6x8m.c **** // 0x97
+1827:Core/Src/f6x8m.c ****  ,{
+1828:Core/Src/f6x8m.c ****    f6x8_MONO_WIDTH,
+1829:Core/Src/f6x8m.c ****    f6x8_MONO_HEIGHT,
+1830:Core/Src/f6x8m.c ****    ________,
+1831:Core/Src/f6x8m.c ****    ________,
+1832:Core/Src/f6x8m.c ****    ________,
+1833:Core/Src/f6x8m.c ****    ________,
+1834:Core/Src/f6x8m.c ****    ________,
+1835:Core/Src/f6x8m.c ****    ________,
+1836:Core/Src/f6x8m.c ****    ________,
+1837:Core/Src/f6x8m.c ****    ________}
+1838:Core/Src/f6x8m.c **** // 0x98
+1839:Core/Src/f6x8m.c ****  ,{
+1840:Core/Src/f6x8m.c ****    f6x8_MONO_WIDTH,
+1841:Core/Src/f6x8m.c ****    f6x8_MONO_HEIGHT,
+1842:Core/Src/f6x8m.c ****    ________,
+1843:Core/Src/f6x8m.c ****    ________,
+1844:Core/Src/f6x8m.c ****    ________,
+1845:Core/Src/f6x8m.c ****    ________,
+1846:Core/Src/f6x8m.c ****    ________,
+1847:Core/Src/f6x8m.c ****    ________,
+1848:Core/Src/f6x8m.c ****    ________,
+1849:Core/Src/f6x8m.c ****    ________}
+1850:Core/Src/f6x8m.c **** // 0x99
+1851:Core/Src/f6x8m.c ****  ,{
+1852:Core/Src/f6x8m.c ****    f6x8_MONO_WIDTH,
+1853:Core/Src/f6x8m.c ****    f6x8_MONO_HEIGHT,
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\cci4qmtn.s 			page 34
+
+
+1854:Core/Src/f6x8m.c ****    ________,
+1855:Core/Src/f6x8m.c ****    ________,
+1856:Core/Src/f6x8m.c ****    ________,
+1857:Core/Src/f6x8m.c ****    ________,
+1858:Core/Src/f6x8m.c ****    ________,
+1859:Core/Src/f6x8m.c ****    ________,
+1860:Core/Src/f6x8m.c ****    ________,
+1861:Core/Src/f6x8m.c ****    ________}
+1862:Core/Src/f6x8m.c **** // 0x9A
+1863:Core/Src/f6x8m.c ****  ,{
+1864:Core/Src/f6x8m.c ****    f6x8_MONO_WIDTH,
+1865:Core/Src/f6x8m.c ****    f6x8_MONO_HEIGHT,
+1866:Core/Src/f6x8m.c ****    ________,
+1867:Core/Src/f6x8m.c ****    ________,
+1868:Core/Src/f6x8m.c ****    ________,
+1869:Core/Src/f6x8m.c ****    ________,
+1870:Core/Src/f6x8m.c ****    ________,
+1871:Core/Src/f6x8m.c ****    ________,
+1872:Core/Src/f6x8m.c ****    ________,
+1873:Core/Src/f6x8m.c ****    ________}
+1874:Core/Src/f6x8m.c **** // 0x9B
+1875:Core/Src/f6x8m.c ****  ,{
+1876:Core/Src/f6x8m.c ****    f6x8_MONO_WIDTH,
+1877:Core/Src/f6x8m.c ****    f6x8_MONO_HEIGHT,
+1878:Core/Src/f6x8m.c ****    ________,
+1879:Core/Src/f6x8m.c ****    ________,
+1880:Core/Src/f6x8m.c ****    ________,
+1881:Core/Src/f6x8m.c ****    ________,
+1882:Core/Src/f6x8m.c ****    ________,
+1883:Core/Src/f6x8m.c ****    ________,
+1884:Core/Src/f6x8m.c ****    ________,
+1885:Core/Src/f6x8m.c ****    ________}
+1886:Core/Src/f6x8m.c **** // 0x9C
+1887:Core/Src/f6x8m.c ****  ,{
+1888:Core/Src/f6x8m.c ****    f6x8_MONO_WIDTH,
+1889:Core/Src/f6x8m.c ****    f6x8_MONO_HEIGHT,
+1890:Core/Src/f6x8m.c ****    ________,
+1891:Core/Src/f6x8m.c ****    ________,
+1892:Core/Src/f6x8m.c ****    ________,
+1893:Core/Src/f6x8m.c ****    ________,
+1894:Core/Src/f6x8m.c ****    ________,
+1895:Core/Src/f6x8m.c ****    ________,
+1896:Core/Src/f6x8m.c ****    ________,
+1897:Core/Src/f6x8m.c ****    ________}
+1898:Core/Src/f6x8m.c **** // 0x9D
+1899:Core/Src/f6x8m.c ****  ,{
+1900:Core/Src/f6x8m.c ****    f6x8_MONO_WIDTH,
+1901:Core/Src/f6x8m.c ****    f6x8_MONO_HEIGHT,
+1902:Core/Src/f6x8m.c ****    ________,
+1903:Core/Src/f6x8m.c ****    ________,
+1904:Core/Src/f6x8m.c ****    ________,
+1905:Core/Src/f6x8m.c ****    ________,
+1906:Core/Src/f6x8m.c ****    ________,
+1907:Core/Src/f6x8m.c ****    ________,
+1908:Core/Src/f6x8m.c ****    ________,
+1909:Core/Src/f6x8m.c ****    ________}
+1910:Core/Src/f6x8m.c **** // 0x9E
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\cci4qmtn.s 			page 35
+
+
+1911:Core/Src/f6x8m.c ****  ,{
+1912:Core/Src/f6x8m.c ****    f6x8_MONO_WIDTH,
+1913:Core/Src/f6x8m.c ****    f6x8_MONO_HEIGHT,
+1914:Core/Src/f6x8m.c ****    ________,
+1915:Core/Src/f6x8m.c ****    ________,
+1916:Core/Src/f6x8m.c ****    ________,
+1917:Core/Src/f6x8m.c ****    ________,
+1918:Core/Src/f6x8m.c ****    ________,
+1919:Core/Src/f6x8m.c ****    ________,
+1920:Core/Src/f6x8m.c ****    ________,
+1921:Core/Src/f6x8m.c ****    ________}
+1922:Core/Src/f6x8m.c **** // 0x9F
+1923:Core/Src/f6x8m.c ****  ,{
+1924:Core/Src/f6x8m.c ****    f6x8_MONO_WIDTH,
+1925:Core/Src/f6x8m.c ****    f6x8_MONO_HEIGHT,
+1926:Core/Src/f6x8m.c ****    ________,
+1927:Core/Src/f6x8m.c ****    ________,
+1928:Core/Src/f6x8m.c ****    ________,
+1929:Core/Src/f6x8m.c ****    ________,
+1930:Core/Src/f6x8m.c ****    ________,
+1931:Core/Src/f6x8m.c ****    ________,
+1932:Core/Src/f6x8m.c ****    ________,
+1933:Core/Src/f6x8m.c ****    ________}
+1934:Core/Src/f6x8m.c **** // 0xA0
+1935:Core/Src/f6x8m.c ****  ,{
+1936:Core/Src/f6x8m.c ****    f6x8_MONO_WIDTH,
+1937:Core/Src/f6x8m.c ****    f6x8_MONO_HEIGHT,
+1938:Core/Src/f6x8m.c ****    ________,
+1939:Core/Src/f6x8m.c ****    ________,
+1940:Core/Src/f6x8m.c ****    ________,
+1941:Core/Src/f6x8m.c ****    ________,
+1942:Core/Src/f6x8m.c ****    ________,
+1943:Core/Src/f6x8m.c ****    ________,
+1944:Core/Src/f6x8m.c ****    ________,
+1945:Core/Src/f6x8m.c ****    ________}
+1946:Core/Src/f6x8m.c **** // 0xA1
+1947:Core/Src/f6x8m.c ****  ,{
+1948:Core/Src/f6x8m.c ****    f6x8_MONO_WIDTH,
+1949:Core/Src/f6x8m.c ****    f6x8_MONO_HEIGHT,
+1950:Core/Src/f6x8m.c ****    ________,
+1951:Core/Src/f6x8m.c ****    ________,
+1952:Core/Src/f6x8m.c ****    ________,
+1953:Core/Src/f6x8m.c ****    ________,
+1954:Core/Src/f6x8m.c ****    ________,
+1955:Core/Src/f6x8m.c ****    ________,
+1956:Core/Src/f6x8m.c ****    ________,
+1957:Core/Src/f6x8m.c ****    ________}
+1958:Core/Src/f6x8m.c **** // 0xA2
+1959:Core/Src/f6x8m.c ****  ,{
+1960:Core/Src/f6x8m.c ****    f6x8_MONO_WIDTH,
+1961:Core/Src/f6x8m.c ****    f6x8_MONO_HEIGHT,
+1962:Core/Src/f6x8m.c ****    ________,
+1963:Core/Src/f6x8m.c ****    ________,
+1964:Core/Src/f6x8m.c ****    ________,
+1965:Core/Src/f6x8m.c ****    ________,
+1966:Core/Src/f6x8m.c ****    ________,
+1967:Core/Src/f6x8m.c ****    ________,
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\cci4qmtn.s 			page 36
+
+
+1968:Core/Src/f6x8m.c ****    ________,
+1969:Core/Src/f6x8m.c ****    ________}
+1970:Core/Src/f6x8m.c **** // 0xA3
+1971:Core/Src/f6x8m.c ****  ,{
+1972:Core/Src/f6x8m.c ****    f6x8_MONO_WIDTH,
+1973:Core/Src/f6x8m.c ****    f6x8_MONO_HEIGHT,
+1974:Core/Src/f6x8m.c ****    ________,
+1975:Core/Src/f6x8m.c ****    ________,
+1976:Core/Src/f6x8m.c ****    ________,
+1977:Core/Src/f6x8m.c ****    ________,
+1978:Core/Src/f6x8m.c ****    ________,
+1979:Core/Src/f6x8m.c ****    ________,
+1980:Core/Src/f6x8m.c ****    ________,
+1981:Core/Src/f6x8m.c ****    ________}
+1982:Core/Src/f6x8m.c **** // 0xA4
+1983:Core/Src/f6x8m.c ****  ,{
+1984:Core/Src/f6x8m.c ****    f6x8_MONO_WIDTH,
+1985:Core/Src/f6x8m.c ****    f6x8_MONO_HEIGHT,
+1986:Core/Src/f6x8m.c ****    ________,
+1987:Core/Src/f6x8m.c ****    ________,
+1988:Core/Src/f6x8m.c ****    ________,
+1989:Core/Src/f6x8m.c ****    ________,
+1990:Core/Src/f6x8m.c ****    ________,
+1991:Core/Src/f6x8m.c ****    ________,
+1992:Core/Src/f6x8m.c ****    ________,
+1993:Core/Src/f6x8m.c ****    ________}
+1994:Core/Src/f6x8m.c **** // 0xA5
+1995:Core/Src/f6x8m.c ****  ,{
+1996:Core/Src/f6x8m.c ****    f6x8_MONO_WIDTH,
+1997:Core/Src/f6x8m.c ****    f6x8_MONO_HEIGHT,
+1998:Core/Src/f6x8m.c ****    ________,
+1999:Core/Src/f6x8m.c ****    ________,
+2000:Core/Src/f6x8m.c ****    ________,
+2001:Core/Src/f6x8m.c ****    ________,
+2002:Core/Src/f6x8m.c ****    ________,
+2003:Core/Src/f6x8m.c ****    ________,
+2004:Core/Src/f6x8m.c ****    ________,
+2005:Core/Src/f6x8m.c ****    ________}
+2006:Core/Src/f6x8m.c **** // 0xA6
+2007:Core/Src/f6x8m.c ****  ,{
+2008:Core/Src/f6x8m.c ****    f6x8_MONO_WIDTH,
+2009:Core/Src/f6x8m.c ****    f6x8_MONO_HEIGHT,
+2010:Core/Src/f6x8m.c ****    ________,
+2011:Core/Src/f6x8m.c ****    ________,
+2012:Core/Src/f6x8m.c ****    ________,
+2013:Core/Src/f6x8m.c ****    ________,
+2014:Core/Src/f6x8m.c ****    ________,
+2015:Core/Src/f6x8m.c ****    ________,
+2016:Core/Src/f6x8m.c ****    ________,
+2017:Core/Src/f6x8m.c ****    ________}
+2018:Core/Src/f6x8m.c **** // 0xA7
+2019:Core/Src/f6x8m.c ****  ,{
+2020:Core/Src/f6x8m.c ****    f6x8_MONO_WIDTH,
+2021:Core/Src/f6x8m.c ****    f6x8_MONO_HEIGHT,
+2022:Core/Src/f6x8m.c ****    ________,
+2023:Core/Src/f6x8m.c ****    ________,
+2024:Core/Src/f6x8m.c ****    ________,
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\cci4qmtn.s 			page 37
+
+
+2025:Core/Src/f6x8m.c ****    ________,
+2026:Core/Src/f6x8m.c ****    ________,
+2027:Core/Src/f6x8m.c ****    ________,
+2028:Core/Src/f6x8m.c ****    ________,
+2029:Core/Src/f6x8m.c ****    ________}
+2030:Core/Src/f6x8m.c **** // 0xA8
+2031:Core/Src/f6x8m.c ****  ,{
+2032:Core/Src/f6x8m.c ****    f6x8_MONO_WIDTH,
+2033:Core/Src/f6x8m.c ****    f6x8_MONO_HEIGHT,
+2034:Core/Src/f6x8m.c ****    _X_X____,
+2035:Core/Src/f6x8m.c ****    ________,
+2036:Core/Src/f6x8m.c ****    XXXXX___,
+2037:Core/Src/f6x8m.c ****    X_______,
+2038:Core/Src/f6x8m.c ****    XXXX____,
+2039:Core/Src/f6x8m.c ****    X_______,
+2040:Core/Src/f6x8m.c ****    XXXXX___,
+2041:Core/Src/f6x8m.c ****    ________}
+2042:Core/Src/f6x8m.c **** // 0xA9
+2043:Core/Src/f6x8m.c ****  ,{
+2044:Core/Src/f6x8m.c ****    f6x8_MONO_WIDTH,
+2045:Core/Src/f6x8m.c ****    f6x8_MONO_HEIGHT,
+2046:Core/Src/f6x8m.c ****    ________,
+2047:Core/Src/f6x8m.c ****    ________,
+2048:Core/Src/f6x8m.c ****    ________,
+2049:Core/Src/f6x8m.c ****    ________,
+2050:Core/Src/f6x8m.c ****    ________,
+2051:Core/Src/f6x8m.c ****    ________,
+2052:Core/Src/f6x8m.c ****    ________,
+2053:Core/Src/f6x8m.c ****    ________}
+2054:Core/Src/f6x8m.c **** // 0xAA
+2055:Core/Src/f6x8m.c ****  ,{
+2056:Core/Src/f6x8m.c ****    f6x8_MONO_WIDTH,
+2057:Core/Src/f6x8m.c ****    f6x8_MONO_HEIGHT,
+2058:Core/Src/f6x8m.c ****    ________,
+2059:Core/Src/f6x8m.c ****    ________,
+2060:Core/Src/f6x8m.c ****    ________,
+2061:Core/Src/f6x8m.c ****    ________,
+2062:Core/Src/f6x8m.c ****    ________,
+2063:Core/Src/f6x8m.c ****    ________,
+2064:Core/Src/f6x8m.c ****    ________,
+2065:Core/Src/f6x8m.c ****    ________}
+2066:Core/Src/f6x8m.c **** // 0xAB
+2067:Core/Src/f6x8m.c ****  ,{
+2068:Core/Src/f6x8m.c ****    f6x8_MONO_WIDTH,
+2069:Core/Src/f6x8m.c ****    f6x8_MONO_HEIGHT,
+2070:Core/Src/f6x8m.c ****    ________,
+2071:Core/Src/f6x8m.c ****    ________,
+2072:Core/Src/f6x8m.c ****    ________,
+2073:Core/Src/f6x8m.c ****    ________,
+2074:Core/Src/f6x8m.c ****    ________,
+2075:Core/Src/f6x8m.c ****    ________,
+2076:Core/Src/f6x8m.c ****    ________,
+2077:Core/Src/f6x8m.c ****    ________}
+2078:Core/Src/f6x8m.c **** // 0xAC
+2079:Core/Src/f6x8m.c ****  ,{
+2080:Core/Src/f6x8m.c ****    f6x8_MONO_WIDTH,
+2081:Core/Src/f6x8m.c ****    f6x8_MONO_HEIGHT,
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\cci4qmtn.s 			page 38
+
+
+2082:Core/Src/f6x8m.c ****    ________,
+2083:Core/Src/f6x8m.c ****    ________,
+2084:Core/Src/f6x8m.c ****    ________,
+2085:Core/Src/f6x8m.c ****    ________,
+2086:Core/Src/f6x8m.c ****    ________,
+2087:Core/Src/f6x8m.c ****    ________,
+2088:Core/Src/f6x8m.c ****    ________,
+2089:Core/Src/f6x8m.c ****    ________}
+2090:Core/Src/f6x8m.c **** // 0xAD
+2091:Core/Src/f6x8m.c ****  ,{
+2092:Core/Src/f6x8m.c ****    f6x8_MONO_WIDTH,
+2093:Core/Src/f6x8m.c ****    f6x8_MONO_HEIGHT,
+2094:Core/Src/f6x8m.c ****    ________,
+2095:Core/Src/f6x8m.c ****    ________,
+2096:Core/Src/f6x8m.c ****    ________,
+2097:Core/Src/f6x8m.c ****    ________,
+2098:Core/Src/f6x8m.c ****    ________,
+2099:Core/Src/f6x8m.c ****    ________,
+2100:Core/Src/f6x8m.c ****    ________,
+2101:Core/Src/f6x8m.c ****    ________}
+2102:Core/Src/f6x8m.c **** // 0xAE
+2103:Core/Src/f6x8m.c ****  ,{
+2104:Core/Src/f6x8m.c ****    f6x8_MONO_WIDTH,
+2105:Core/Src/f6x8m.c ****    f6x8_MONO_HEIGHT,
+2106:Core/Src/f6x8m.c ****    ________,
+2107:Core/Src/f6x8m.c ****    ________,
+2108:Core/Src/f6x8m.c ****    ________,
+2109:Core/Src/f6x8m.c ****    ________,
+2110:Core/Src/f6x8m.c ****    ________,
+2111:Core/Src/f6x8m.c ****    ________,
+2112:Core/Src/f6x8m.c ****    ________,
+2113:Core/Src/f6x8m.c ****    ________}
+2114:Core/Src/f6x8m.c **** // 0xAF
+2115:Core/Src/f6x8m.c ****  ,{
+2116:Core/Src/f6x8m.c ****    f6x8_MONO_WIDTH,
+2117:Core/Src/f6x8m.c ****    f6x8_MONO_HEIGHT,
+2118:Core/Src/f6x8m.c ****    ________,
+2119:Core/Src/f6x8m.c ****    ________,
+2120:Core/Src/f6x8m.c ****    ________,
+2121:Core/Src/f6x8m.c ****    ________,
+2122:Core/Src/f6x8m.c ****    ________,
+2123:Core/Src/f6x8m.c ****    ________,
+2124:Core/Src/f6x8m.c ****    ________,
+2125:Core/Src/f6x8m.c ****    ________}
+2126:Core/Src/f6x8m.c **** // 0xB0
+2127:Core/Src/f6x8m.c ****  ,{
+2128:Core/Src/f6x8m.c ****    f6x8_MONO_WIDTH,
+2129:Core/Src/f6x8m.c ****    f6x8_MONO_HEIGHT,
+2130:Core/Src/f6x8m.c ****    ________,
+2131:Core/Src/f6x8m.c ****    ________,
+2132:Core/Src/f6x8m.c ****    ________,
+2133:Core/Src/f6x8m.c ****    ________,
+2134:Core/Src/f6x8m.c ****    ________,
+2135:Core/Src/f6x8m.c ****    ________,
+2136:Core/Src/f6x8m.c ****    ________,
+2137:Core/Src/f6x8m.c ****    ________}
+2138:Core/Src/f6x8m.c **** // 0xB1
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\cci4qmtn.s 			page 39
+
+
+2139:Core/Src/f6x8m.c ****  ,{
+2140:Core/Src/f6x8m.c ****    f6x8_MONO_WIDTH,
+2141:Core/Src/f6x8m.c ****    f6x8_MONO_HEIGHT,
+2142:Core/Src/f6x8m.c ****    ________,
+2143:Core/Src/f6x8m.c ****    ________,
+2144:Core/Src/f6x8m.c ****    ________,
+2145:Core/Src/f6x8m.c ****    ________,
+2146:Core/Src/f6x8m.c ****    ________,
+2147:Core/Src/f6x8m.c ****    ________,
+2148:Core/Src/f6x8m.c ****    ________,
+2149:Core/Src/f6x8m.c ****    ________}
+2150:Core/Src/f6x8m.c **** // 0xB2
+2151:Core/Src/f6x8m.c ****  ,{
+2152:Core/Src/f6x8m.c ****    f6x8_MONO_WIDTH,
+2153:Core/Src/f6x8m.c ****    f6x8_MONO_HEIGHT,
+2154:Core/Src/f6x8m.c ****    ________,
+2155:Core/Src/f6x8m.c ****    ________,
+2156:Core/Src/f6x8m.c ****    ________,
+2157:Core/Src/f6x8m.c ****    ________,
+2158:Core/Src/f6x8m.c ****    ________,
+2159:Core/Src/f6x8m.c ****    ________,
+2160:Core/Src/f6x8m.c ****    ________,
+2161:Core/Src/f6x8m.c ****    ________}
+2162:Core/Src/f6x8m.c **** // 0xB3
+2163:Core/Src/f6x8m.c ****  ,{
+2164:Core/Src/f6x8m.c ****    f6x8_MONO_WIDTH,
+2165:Core/Src/f6x8m.c ****    f6x8_MONO_HEIGHT,
+2166:Core/Src/f6x8m.c ****    ________,
+2167:Core/Src/f6x8m.c ****    ________,
+2168:Core/Src/f6x8m.c ****    ________,
+2169:Core/Src/f6x8m.c ****    ________,
+2170:Core/Src/f6x8m.c ****    ________,
+2171:Core/Src/f6x8m.c ****    ________,
+2172:Core/Src/f6x8m.c ****    ________,
+2173:Core/Src/f6x8m.c ****    ________}
+2174:Core/Src/f6x8m.c **** // 0xB4
+2175:Core/Src/f6x8m.c ****  ,{
+2176:Core/Src/f6x8m.c ****    f6x8_MONO_WIDTH,
+2177:Core/Src/f6x8m.c ****    f6x8_MONO_HEIGHT,
+2178:Core/Src/f6x8m.c ****    ________,
+2179:Core/Src/f6x8m.c ****    ________,
+2180:Core/Src/f6x8m.c ****    ________,
+2181:Core/Src/f6x8m.c ****    ________,
+2182:Core/Src/f6x8m.c ****    ________,
+2183:Core/Src/f6x8m.c ****    ________,
+2184:Core/Src/f6x8m.c ****    ________,
+2185:Core/Src/f6x8m.c ****    ________}
+2186:Core/Src/f6x8m.c **** // 0xB5
+2187:Core/Src/f6x8m.c ****  ,{
+2188:Core/Src/f6x8m.c ****    f6x8_MONO_WIDTH,
+2189:Core/Src/f6x8m.c ****    f6x8_MONO_HEIGHT,
+2190:Core/Src/f6x8m.c ****    ________,
+2191:Core/Src/f6x8m.c ****    ________,
+2192:Core/Src/f6x8m.c ****    ________,
+2193:Core/Src/f6x8m.c ****    ________,
+2194:Core/Src/f6x8m.c ****    ________,
+2195:Core/Src/f6x8m.c ****    ________,
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\cci4qmtn.s 			page 40
+
+
+2196:Core/Src/f6x8m.c ****    ________,
+2197:Core/Src/f6x8m.c ****    ________}
+2198:Core/Src/f6x8m.c **** // 0xB6
+2199:Core/Src/f6x8m.c ****  ,{
+2200:Core/Src/f6x8m.c ****    f6x8_MONO_WIDTH,
+2201:Core/Src/f6x8m.c ****    f6x8_MONO_HEIGHT,
+2202:Core/Src/f6x8m.c ****    ________,
+2203:Core/Src/f6x8m.c ****    ________,
+2204:Core/Src/f6x8m.c ****    ________,
+2205:Core/Src/f6x8m.c ****    ________,
+2206:Core/Src/f6x8m.c ****    ________,
+2207:Core/Src/f6x8m.c ****    ________,
+2208:Core/Src/f6x8m.c ****    ________,
+2209:Core/Src/f6x8m.c ****    ________}
+2210:Core/Src/f6x8m.c **** // 0xB7
+2211:Core/Src/f6x8m.c ****  ,{
+2212:Core/Src/f6x8m.c ****    f6x8_MONO_WIDTH,
+2213:Core/Src/f6x8m.c ****    f6x8_MONO_HEIGHT,
+2214:Core/Src/f6x8m.c ****    ________,
+2215:Core/Src/f6x8m.c ****    ________,
+2216:Core/Src/f6x8m.c ****    ________,
+2217:Core/Src/f6x8m.c ****    ________,
+2218:Core/Src/f6x8m.c ****    ________,
+2219:Core/Src/f6x8m.c ****    ________,
+2220:Core/Src/f6x8m.c ****    ________,
+2221:Core/Src/f6x8m.c ****    ________}
+2222:Core/Src/f6x8m.c **** // 0xB8
+2223:Core/Src/f6x8m.c ****  ,{
+2224:Core/Src/f6x8m.c ****    f6x8_MONO_WIDTH,
+2225:Core/Src/f6x8m.c ****    f6x8_MONO_HEIGHT,
+2226:Core/Src/f6x8m.c ****    _X_X____,
+2227:Core/Src/f6x8m.c ****    ________,
+2228:Core/Src/f6x8m.c ****    _XXX____,
+2229:Core/Src/f6x8m.c ****    X___X___,
+2230:Core/Src/f6x8m.c ****    XXXXX___,
+2231:Core/Src/f6x8m.c ****    X_______,
+2232:Core/Src/f6x8m.c ****    _XXX____,
+2233:Core/Src/f6x8m.c ****    ________}
+2234:Core/Src/f6x8m.c **** // 0xB9
+2235:Core/Src/f6x8m.c ****  ,{
+2236:Core/Src/f6x8m.c ****    f6x8_MONO_WIDTH,
+2237:Core/Src/f6x8m.c ****    f6x8_MONO_HEIGHT,
+2238:Core/Src/f6x8m.c ****    ________,
+2239:Core/Src/f6x8m.c ****    ________,
+2240:Core/Src/f6x8m.c ****    ________,
+2241:Core/Src/f6x8m.c ****    ________,
+2242:Core/Src/f6x8m.c ****    ________,
+2243:Core/Src/f6x8m.c ****    ________,
+2244:Core/Src/f6x8m.c ****    ________,
+2245:Core/Src/f6x8m.c ****    ________}
+2246:Core/Src/f6x8m.c **** // 0xBA
+2247:Core/Src/f6x8m.c ****  ,{
+2248:Core/Src/f6x8m.c ****    f6x8_MONO_WIDTH,
+2249:Core/Src/f6x8m.c ****    f6x8_MONO_HEIGHT,
+2250:Core/Src/f6x8m.c ****    ________,
+2251:Core/Src/f6x8m.c ****    ________,
+2252:Core/Src/f6x8m.c ****    ________,
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\cci4qmtn.s 			page 41
+
+
+2253:Core/Src/f6x8m.c ****    ________,
+2254:Core/Src/f6x8m.c ****    ________,
+2255:Core/Src/f6x8m.c ****    ________,
+2256:Core/Src/f6x8m.c ****    ________,
+2257:Core/Src/f6x8m.c ****    ________}
+2258:Core/Src/f6x8m.c **** // 0xBB
+2259:Core/Src/f6x8m.c ****  ,{
+2260:Core/Src/f6x8m.c ****    f6x8_MONO_WIDTH,
+2261:Core/Src/f6x8m.c ****    f6x8_MONO_HEIGHT,
+2262:Core/Src/f6x8m.c ****    ________,
+2263:Core/Src/f6x8m.c ****    ________,
+2264:Core/Src/f6x8m.c ****    ________,
+2265:Core/Src/f6x8m.c ****    ________,
+2266:Core/Src/f6x8m.c ****    ________,
+2267:Core/Src/f6x8m.c ****    ________,
+2268:Core/Src/f6x8m.c ****    ________,
+2269:Core/Src/f6x8m.c ****    ________}
+2270:Core/Src/f6x8m.c **** // 0xBC
+2271:Core/Src/f6x8m.c ****  ,{
+2272:Core/Src/f6x8m.c ****    f6x8_MONO_WIDTH,
+2273:Core/Src/f6x8m.c ****    f6x8_MONO_HEIGHT,
+2274:Core/Src/f6x8m.c ****    ________,
+2275:Core/Src/f6x8m.c ****    ________,
+2276:Core/Src/f6x8m.c ****    ________,
+2277:Core/Src/f6x8m.c ****    ________,
+2278:Core/Src/f6x8m.c ****    ________,
+2279:Core/Src/f6x8m.c ****    ________,
+2280:Core/Src/f6x8m.c ****    ________,
+2281:Core/Src/f6x8m.c ****    ________}
+2282:Core/Src/f6x8m.c **** // 0xBD
+2283:Core/Src/f6x8m.c ****  ,{
+2284:Core/Src/f6x8m.c ****    f6x8_MONO_WIDTH,
+2285:Core/Src/f6x8m.c ****    f6x8_MONO_HEIGHT,
+2286:Core/Src/f6x8m.c ****    ________,
+2287:Core/Src/f6x8m.c ****    ________,
+2288:Core/Src/f6x8m.c ****    ________,
+2289:Core/Src/f6x8m.c ****    ________,
+2290:Core/Src/f6x8m.c ****    ________,
+2291:Core/Src/f6x8m.c ****    ________,
+2292:Core/Src/f6x8m.c ****    ________,
+2293:Core/Src/f6x8m.c ****    ________}
+2294:Core/Src/f6x8m.c **** // 0xBE
+2295:Core/Src/f6x8m.c ****  ,{
+2296:Core/Src/f6x8m.c ****    f6x8_MONO_WIDTH,
+2297:Core/Src/f6x8m.c ****    f6x8_MONO_HEIGHT,
+2298:Core/Src/f6x8m.c ****    ________,
+2299:Core/Src/f6x8m.c ****    ________,
+2300:Core/Src/f6x8m.c ****    ________,
+2301:Core/Src/f6x8m.c ****    ________,
+2302:Core/Src/f6x8m.c ****    ________,
+2303:Core/Src/f6x8m.c ****    ________,
+2304:Core/Src/f6x8m.c ****    ________,
+2305:Core/Src/f6x8m.c ****    ________}
+2306:Core/Src/f6x8m.c **** // 0xBF
+2307:Core/Src/f6x8m.c ****  ,{
+2308:Core/Src/f6x8m.c ****    f6x8_MONO_WIDTH,
+2309:Core/Src/f6x8m.c ****    f6x8_MONO_HEIGHT,
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\cci4qmtn.s 			page 42
+
+
+2310:Core/Src/f6x8m.c ****    ________,
+2311:Core/Src/f6x8m.c ****    ________,
+2312:Core/Src/f6x8m.c ****    ________,
+2313:Core/Src/f6x8m.c ****    ________,
+2314:Core/Src/f6x8m.c ****    ________,
+2315:Core/Src/f6x8m.c ****    ________,
+2316:Core/Src/f6x8m.c ****    ________,
+2317:Core/Src/f6x8m.c ****    ________}
+2318:Core/Src/f6x8m.c **** // 0xC0
+2319:Core/Src/f6x8m.c ****  ,{
+2320:Core/Src/f6x8m.c ****    f6x8_MONO_WIDTH,
+2321:Core/Src/f6x8m.c ****    f6x8_MONO_HEIGHT,
+2322:Core/Src/f6x8m.c ****    _XXX____,
+2323:Core/Src/f6x8m.c ****    X___X___,
+2324:Core/Src/f6x8m.c ****    X___X___,
+2325:Core/Src/f6x8m.c ****    XXXXX___,
+2326:Core/Src/f6x8m.c ****    X___X___,
+2327:Core/Src/f6x8m.c ****    X___X___,
+2328:Core/Src/f6x8m.c ****    X___X___,
+2329:Core/Src/f6x8m.c ****    ________}
+2330:Core/Src/f6x8m.c **** // 0xC1
+2331:Core/Src/f6x8m.c ****  ,{
+2332:Core/Src/f6x8m.c ****    f6x8_MONO_WIDTH,
+2333:Core/Src/f6x8m.c ****    f6x8_MONO_HEIGHT,
+2334:Core/Src/f6x8m.c ****    XXXXX___,
+2335:Core/Src/f6x8m.c ****    X_______,
+2336:Core/Src/f6x8m.c ****    X_______,
+2337:Core/Src/f6x8m.c ****    XXXX____,
+2338:Core/Src/f6x8m.c ****    X___X___,
+2339:Core/Src/f6x8m.c ****    X___X___,
+2340:Core/Src/f6x8m.c ****    XXXX____,
+2341:Core/Src/f6x8m.c ****    ________}
+2342:Core/Src/f6x8m.c **** // 0xC2
+2343:Core/Src/f6x8m.c ****  ,{
+2344:Core/Src/f6x8m.c ****    f6x8_MONO_WIDTH,
+2345:Core/Src/f6x8m.c ****    f6x8_MONO_HEIGHT,
+2346:Core/Src/f6x8m.c ****    XXXX____,
+2347:Core/Src/f6x8m.c ****    X___X___,
+2348:Core/Src/f6x8m.c ****    X___X___,
+2349:Core/Src/f6x8m.c ****    XXXX____,
+2350:Core/Src/f6x8m.c ****    X___X___,
+2351:Core/Src/f6x8m.c ****    X___X___,
+2352:Core/Src/f6x8m.c ****    XXXX____,
+2353:Core/Src/f6x8m.c ****    ________}
+2354:Core/Src/f6x8m.c **** // 0xC3
+2355:Core/Src/f6x8m.c ****  ,{
+2356:Core/Src/f6x8m.c ****    f6x8_MONO_WIDTH,
+2357:Core/Src/f6x8m.c ****    f6x8_MONO_HEIGHT,
+2358:Core/Src/f6x8m.c ****    XXXXX___,
+2359:Core/Src/f6x8m.c ****    X_______,
+2360:Core/Src/f6x8m.c ****    X_______,
+2361:Core/Src/f6x8m.c ****    X_______,
+2362:Core/Src/f6x8m.c ****    X_______,
+2363:Core/Src/f6x8m.c ****    X_______,
+2364:Core/Src/f6x8m.c ****    X_______,
+2365:Core/Src/f6x8m.c ****    ________}
+2366:Core/Src/f6x8m.c **** // 0xC4
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\cci4qmtn.s 			page 43
+
+
+2367:Core/Src/f6x8m.c ****  ,{
+2368:Core/Src/f6x8m.c ****    f6x8_MONO_WIDTH,
+2369:Core/Src/f6x8m.c ****    f6x8_MONO_HEIGHT,
+2370:Core/Src/f6x8m.c ****    __XX____,
+2371:Core/Src/f6x8m.c ****    _X_X____,
+2372:Core/Src/f6x8m.c ****    _X_X____,
+2373:Core/Src/f6x8m.c ****    _X_X____,
+2374:Core/Src/f6x8m.c ****    _X_X____,
+2375:Core/Src/f6x8m.c ****    XXXXX___,
+2376:Core/Src/f6x8m.c ****    X___X___,
+2377:Core/Src/f6x8m.c ****    ________}
+2378:Core/Src/f6x8m.c **** // 0xC5
+2379:Core/Src/f6x8m.c ****  ,{
+2380:Core/Src/f6x8m.c ****    f6x8_MONO_WIDTH,
+2381:Core/Src/f6x8m.c ****    f6x8_MONO_HEIGHT,
+2382:Core/Src/f6x8m.c ****    XXXXX___,
+2383:Core/Src/f6x8m.c ****    X_______,
+2384:Core/Src/f6x8m.c ****    X_______,
+2385:Core/Src/f6x8m.c ****    XXXX____,
+2386:Core/Src/f6x8m.c ****    X_______,
+2387:Core/Src/f6x8m.c ****    X_______,
+2388:Core/Src/f6x8m.c ****    XXXXX___,
+2389:Core/Src/f6x8m.c ****    ________}
+2390:Core/Src/f6x8m.c **** // 0xC6
+2391:Core/Src/f6x8m.c ****  ,{
+2392:Core/Src/f6x8m.c ****    f6x8_MONO_WIDTH,
+2393:Core/Src/f6x8m.c ****    f6x8_MONO_HEIGHT,
+2394:Core/Src/f6x8m.c ****    X_X_X___,
+2395:Core/Src/f6x8m.c ****    X_X_X___,
+2396:Core/Src/f6x8m.c ****    X_X_X___,
+2397:Core/Src/f6x8m.c ****    _XXX____,
+2398:Core/Src/f6x8m.c ****    X_X_X___,
+2399:Core/Src/f6x8m.c ****    X_X_X___,
+2400:Core/Src/f6x8m.c ****    X_X_X___,
+2401:Core/Src/f6x8m.c ****    ________}
+2402:Core/Src/f6x8m.c **** // 0xC7
+2403:Core/Src/f6x8m.c ****  ,{
+2404:Core/Src/f6x8m.c ****    f6x8_MONO_WIDTH,
+2405:Core/Src/f6x8m.c ****    f6x8_MONO_HEIGHT,
+2406:Core/Src/f6x8m.c ****    _XXX____,
+2407:Core/Src/f6x8m.c ****    X___X___,
+2408:Core/Src/f6x8m.c ****    ____X___,
+2409:Core/Src/f6x8m.c ****    ___X____,
+2410:Core/Src/f6x8m.c ****    ____X___,
+2411:Core/Src/f6x8m.c ****    X___X___,
+2412:Core/Src/f6x8m.c ****    _XXX____,
+2413:Core/Src/f6x8m.c ****    ________}
+2414:Core/Src/f6x8m.c **** // 0xC8
+2415:Core/Src/f6x8m.c ****  ,{
+2416:Core/Src/f6x8m.c ****    f6x8_MONO_WIDTH,
+2417:Core/Src/f6x8m.c ****    f6x8_MONO_HEIGHT,
+2418:Core/Src/f6x8m.c ****    X___X___,
+2419:Core/Src/f6x8m.c ****    X___X___,
+2420:Core/Src/f6x8m.c ****    X__XX___,
+2421:Core/Src/f6x8m.c ****    X_X_X___,
+2422:Core/Src/f6x8m.c ****    XX__X___,
+2423:Core/Src/f6x8m.c ****    X___X___,
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\cci4qmtn.s 			page 44
+
+
+2424:Core/Src/f6x8m.c ****    X___X___,
+2425:Core/Src/f6x8m.c ****    ________}
+2426:Core/Src/f6x8m.c **** // 0xC9
+2427:Core/Src/f6x8m.c ****  ,{
+2428:Core/Src/f6x8m.c ****    f6x8_MONO_WIDTH,
+2429:Core/Src/f6x8m.c ****    f6x8_MONO_HEIGHT,
+2430:Core/Src/f6x8m.c ****    X_X_X___,
+2431:Core/Src/f6x8m.c ****    X___X___,
+2432:Core/Src/f6x8m.c ****    X__XX___,
+2433:Core/Src/f6x8m.c ****    X_X_X___,
+2434:Core/Src/f6x8m.c ****    XX__X___,
+2435:Core/Src/f6x8m.c ****    X___X___,
+2436:Core/Src/f6x8m.c ****    X___X___,
+2437:Core/Src/f6x8m.c ****    ________}
+2438:Core/Src/f6x8m.c **** // 0xCA
+2439:Core/Src/f6x8m.c ****  ,{
+2440:Core/Src/f6x8m.c ****    f6x8_MONO_WIDTH,
+2441:Core/Src/f6x8m.c ****    f6x8_MONO_HEIGHT,
+2442:Core/Src/f6x8m.c ****    X___X___,
+2443:Core/Src/f6x8m.c ****    X___X___,
+2444:Core/Src/f6x8m.c ****    X__X____,
+2445:Core/Src/f6x8m.c ****    XXX_____,
+2446:Core/Src/f6x8m.c ****    X__X____,
+2447:Core/Src/f6x8m.c ****    X___X___,
+2448:Core/Src/f6x8m.c ****    X___X___,
+2449:Core/Src/f6x8m.c ****    ________}
+2450:Core/Src/f6x8m.c **** // 0xCB
+2451:Core/Src/f6x8m.c ****  ,{
+2452:Core/Src/f6x8m.c ****    f6x8_MONO_WIDTH,
+2453:Core/Src/f6x8m.c ****    f6x8_MONO_HEIGHT,
+2454:Core/Src/f6x8m.c ****    __XXX___,
+2455:Core/Src/f6x8m.c ****    _X__X___,
+2456:Core/Src/f6x8m.c ****    X___X___,
+2457:Core/Src/f6x8m.c ****    X___X___,
+2458:Core/Src/f6x8m.c ****    X___X___,
+2459:Core/Src/f6x8m.c ****    X___X___,
+2460:Core/Src/f6x8m.c ****    X___X___,
+2461:Core/Src/f6x8m.c ****    ________}
+2462:Core/Src/f6x8m.c **** // 0xCC
+2463:Core/Src/f6x8m.c ****  ,{
+2464:Core/Src/f6x8m.c ****    f6x8_MONO_WIDTH,
+2465:Core/Src/f6x8m.c ****    f6x8_MONO_HEIGHT,
+2466:Core/Src/f6x8m.c ****    X___X___,
+2467:Core/Src/f6x8m.c ****    XX_XX___,
+2468:Core/Src/f6x8m.c ****    XX_XX___,
+2469:Core/Src/f6x8m.c ****    X_X_X___,
+2470:Core/Src/f6x8m.c ****    X_X_X___,
+2471:Core/Src/f6x8m.c ****    X___X___,
+2472:Core/Src/f6x8m.c ****    X___X___,
+2473:Core/Src/f6x8m.c ****    ________}
+2474:Core/Src/f6x8m.c **** // 0xCD
+2475:Core/Src/f6x8m.c ****  ,{
+2476:Core/Src/f6x8m.c ****    f6x8_MONO_WIDTH,
+2477:Core/Src/f6x8m.c ****    f6x8_MONO_HEIGHT,
+2478:Core/Src/f6x8m.c ****    X___X___,
+2479:Core/Src/f6x8m.c ****    X___X___,
+2480:Core/Src/f6x8m.c ****    X___X___,
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\cci4qmtn.s 			page 45
+
+
+2481:Core/Src/f6x8m.c ****    XXXXX___,
+2482:Core/Src/f6x8m.c ****    X___X___,
+2483:Core/Src/f6x8m.c ****    X___X___,
+2484:Core/Src/f6x8m.c ****    X___X___,
+2485:Core/Src/f6x8m.c ****    ________}
+2486:Core/Src/f6x8m.c **** // 0xCE
+2487:Core/Src/f6x8m.c ****  ,{
+2488:Core/Src/f6x8m.c ****    f6x8_MONO_WIDTH,
+2489:Core/Src/f6x8m.c ****    f6x8_MONO_HEIGHT,
+2490:Core/Src/f6x8m.c ****    _XXX____,
+2491:Core/Src/f6x8m.c ****    X___X___,
+2492:Core/Src/f6x8m.c ****    X___X___,
+2493:Core/Src/f6x8m.c ****    X___X___,
+2494:Core/Src/f6x8m.c ****    X___X___,
+2495:Core/Src/f6x8m.c ****    X___X___,
+2496:Core/Src/f6x8m.c ****    _XXX____,
+2497:Core/Src/f6x8m.c ****    ________}
+2498:Core/Src/f6x8m.c **** // 0xCF
+2499:Core/Src/f6x8m.c ****  ,{
+2500:Core/Src/f6x8m.c ****    f6x8_MONO_WIDTH,
+2501:Core/Src/f6x8m.c ****    f6x8_MONO_HEIGHT,
+2502:Core/Src/f6x8m.c ****    XXXXX___,
+2503:Core/Src/f6x8m.c ****    X___X___,
+2504:Core/Src/f6x8m.c ****    X___X___,
+2505:Core/Src/f6x8m.c ****    X___X___,
+2506:Core/Src/f6x8m.c ****    X___X___,
+2507:Core/Src/f6x8m.c ****    X___X___,
+2508:Core/Src/f6x8m.c ****    X___X___,
+2509:Core/Src/f6x8m.c ****    ________}
+2510:Core/Src/f6x8m.c **** // 0xD0
+2511:Core/Src/f6x8m.c ****  ,{
+2512:Core/Src/f6x8m.c ****    f6x8_MONO_WIDTH,
+2513:Core/Src/f6x8m.c ****    f6x8_MONO_HEIGHT,
+2514:Core/Src/f6x8m.c ****    XXXX____,
+2515:Core/Src/f6x8m.c ****    X___X___,
+2516:Core/Src/f6x8m.c ****    X___X___,
+2517:Core/Src/f6x8m.c ****    X___X___,
+2518:Core/Src/f6x8m.c ****    XXXX____,
+2519:Core/Src/f6x8m.c ****    X_______,
+2520:Core/Src/f6x8m.c ****    X_______,
+2521:Core/Src/f6x8m.c ****    ________}
+2522:Core/Src/f6x8m.c **** // 0xD1
+2523:Core/Src/f6x8m.c ****  ,{
+2524:Core/Src/f6x8m.c ****    f6x8_MONO_WIDTH,
+2525:Core/Src/f6x8m.c ****    f6x8_MONO_HEIGHT,
+2526:Core/Src/f6x8m.c ****    _XXX____,
+2527:Core/Src/f6x8m.c ****    X___X___,
+2528:Core/Src/f6x8m.c ****    X_______,
+2529:Core/Src/f6x8m.c ****    X_______,
+2530:Core/Src/f6x8m.c ****    X_______,
+2531:Core/Src/f6x8m.c ****    X___X___,
+2532:Core/Src/f6x8m.c ****    _XXX____,
+2533:Core/Src/f6x8m.c ****    ________}
+2534:Core/Src/f6x8m.c **** // 0xD2
+2535:Core/Src/f6x8m.c ****  ,{
+2536:Core/Src/f6x8m.c ****    f6x8_MONO_WIDTH,
+2537:Core/Src/f6x8m.c ****    f6x8_MONO_HEIGHT,
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\cci4qmtn.s 			page 46
+
+
+2538:Core/Src/f6x8m.c ****    XXXXX___,
+2539:Core/Src/f6x8m.c ****    __X_____,
+2540:Core/Src/f6x8m.c ****    __X_____,
+2541:Core/Src/f6x8m.c ****    __X_____,
+2542:Core/Src/f6x8m.c ****    __X_____,
+2543:Core/Src/f6x8m.c ****    __X_____,
+2544:Core/Src/f6x8m.c ****    __X_____,
+2545:Core/Src/f6x8m.c ****    ________}
+2546:Core/Src/f6x8m.c **** // 0xD3
+2547:Core/Src/f6x8m.c ****  ,{
+2548:Core/Src/f6x8m.c ****    f6x8_MONO_WIDTH,
+2549:Core/Src/f6x8m.c ****    f6x8_MONO_HEIGHT,
+2550:Core/Src/f6x8m.c ****    X___X___,
+2551:Core/Src/f6x8m.c ****    X___X___,
+2552:Core/Src/f6x8m.c ****    X___X___,
+2553:Core/Src/f6x8m.c ****    X___X___,
+2554:Core/Src/f6x8m.c ****    _XXXX___,
+2555:Core/Src/f6x8m.c ****    ____X___,
+2556:Core/Src/f6x8m.c ****    XXXX____,
+2557:Core/Src/f6x8m.c ****    ________}
+2558:Core/Src/f6x8m.c **** // 0xD4
+2559:Core/Src/f6x8m.c ****  ,{
+2560:Core/Src/f6x8m.c ****    f6x8_MONO_WIDTH,
+2561:Core/Src/f6x8m.c ****    f6x8_MONO_HEIGHT,
+2562:Core/Src/f6x8m.c ****    _XXX____,
+2563:Core/Src/f6x8m.c ****    X_X_X___,
+2564:Core/Src/f6x8m.c ****    X_X_X___,
+2565:Core/Src/f6x8m.c ****    X_X_X___,
+2566:Core/Src/f6x8m.c ****    X_X_X___,
+2567:Core/Src/f6x8m.c ****    _XXX____,
+2568:Core/Src/f6x8m.c ****    __X_____,
+2569:Core/Src/f6x8m.c ****    ________}
+2570:Core/Src/f6x8m.c **** // 0xD5
+2571:Core/Src/f6x8m.c ****  ,{
+2572:Core/Src/f6x8m.c ****    f6x8_MONO_WIDTH,
+2573:Core/Src/f6x8m.c ****    f6x8_MONO_HEIGHT,
+2574:Core/Src/f6x8m.c ****    X___X___,
+2575:Core/Src/f6x8m.c ****    X___X___,
+2576:Core/Src/f6x8m.c ****    _X_X____,
+2577:Core/Src/f6x8m.c ****    __X_____,
+2578:Core/Src/f6x8m.c ****    _X_X____,
+2579:Core/Src/f6x8m.c ****    X___X___,
+2580:Core/Src/f6x8m.c ****    X___X___,
+2581:Core/Src/f6x8m.c ****    ________}
+2582:Core/Src/f6x8m.c **** // 0xD6
+2583:Core/Src/f6x8m.c ****  ,{
+2584:Core/Src/f6x8m.c ****    f6x8_MONO_WIDTH,
+2585:Core/Src/f6x8m.c ****    f6x8_MONO_HEIGHT,
+2586:Core/Src/f6x8m.c ****    X___X___,
+2587:Core/Src/f6x8m.c ****    X___X___,
+2588:Core/Src/f6x8m.c ****    X___X___,
+2589:Core/Src/f6x8m.c ****    X___X___,
+2590:Core/Src/f6x8m.c ****    X___X___,
+2591:Core/Src/f6x8m.c ****    X___X___,
+2592:Core/Src/f6x8m.c ****    XXXXX___,
+2593:Core/Src/f6x8m.c ****    ____X___}
+2594:Core/Src/f6x8m.c **** // 0xD7
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\cci4qmtn.s 			page 47
+
+
+2595:Core/Src/f6x8m.c ****  ,{
+2596:Core/Src/f6x8m.c ****    f6x8_MONO_WIDTH,
+2597:Core/Src/f6x8m.c ****    f6x8_MONO_HEIGHT,
+2598:Core/Src/f6x8m.c ****    X___X___,
+2599:Core/Src/f6x8m.c ****    X___X___,
+2600:Core/Src/f6x8m.c ****    X___X___,
+2601:Core/Src/f6x8m.c ****    X___X___,
+2602:Core/Src/f6x8m.c ****    XXXXX___,
+2603:Core/Src/f6x8m.c ****    ____X___,
+2604:Core/Src/f6x8m.c ****    ____X___,
+2605:Core/Src/f6x8m.c ****    ________}
+2606:Core/Src/f6x8m.c **** // 0xD8
+2607:Core/Src/f6x8m.c ****  ,{
+2608:Core/Src/f6x8m.c ****    f6x8_MONO_WIDTH,
+2609:Core/Src/f6x8m.c ****    f6x8_MONO_HEIGHT,
+2610:Core/Src/f6x8m.c ****    X_X_X___,
+2611:Core/Src/f6x8m.c ****    X_X_X___,
+2612:Core/Src/f6x8m.c ****    X_X_X___,
+2613:Core/Src/f6x8m.c ****    X_X_X___,
+2614:Core/Src/f6x8m.c ****    X_X_X___,
+2615:Core/Src/f6x8m.c ****    X_X_X___,
+2616:Core/Src/f6x8m.c ****    XXXXX___,
+2617:Core/Src/f6x8m.c ****    ________}
+2618:Core/Src/f6x8m.c **** // 0xD9
+2619:Core/Src/f6x8m.c ****  ,{
+2620:Core/Src/f6x8m.c ****    f6x8_MONO_WIDTH,
+2621:Core/Src/f6x8m.c ****    f6x8_MONO_HEIGHT,
+2622:Core/Src/f6x8m.c ****    X_X_X___,
+2623:Core/Src/f6x8m.c ****    X_X_X___,
+2624:Core/Src/f6x8m.c ****    X_X_X___,
+2625:Core/Src/f6x8m.c ****    X_X_X___,
+2626:Core/Src/f6x8m.c ****    X_X_X___,
+2627:Core/Src/f6x8m.c ****    X_X_X___,
+2628:Core/Src/f6x8m.c ****    XXXXX___,
+2629:Core/Src/f6x8m.c ****    ____X___}
+2630:Core/Src/f6x8m.c **** // 0xDA
+2631:Core/Src/f6x8m.c ****  ,{
+2632:Core/Src/f6x8m.c ****    f6x8_MONO_WIDTH,
+2633:Core/Src/f6x8m.c ****    f6x8_MONO_HEIGHT,
+2634:Core/Src/f6x8m.c ****    XX______,
+2635:Core/Src/f6x8m.c ****    _X______,
+2636:Core/Src/f6x8m.c ****    _X______,
+2637:Core/Src/f6x8m.c ****    _XXX____,
+2638:Core/Src/f6x8m.c ****    _X__X___,
+2639:Core/Src/f6x8m.c ****    _X__X___,
+2640:Core/Src/f6x8m.c ****    _XXX____,
+2641:Core/Src/f6x8m.c ****    ________}
+2642:Core/Src/f6x8m.c **** // 0xDB
+2643:Core/Src/f6x8m.c ****  ,{
+2644:Core/Src/f6x8m.c ****    f6x8_MONO_WIDTH,
+2645:Core/Src/f6x8m.c ****    f6x8_MONO_HEIGHT,
+2646:Core/Src/f6x8m.c ****    X___X___,
+2647:Core/Src/f6x8m.c ****    X___X___,
+2648:Core/Src/f6x8m.c ****    X___X___,
+2649:Core/Src/f6x8m.c ****    XX__X___,
+2650:Core/Src/f6x8m.c ****    X_X_X___,
+2651:Core/Src/f6x8m.c ****    X_X_X___,
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\cci4qmtn.s 			page 48
+
+
+2652:Core/Src/f6x8m.c ****    XX__X___,
+2653:Core/Src/f6x8m.c ****    ________}
+2654:Core/Src/f6x8m.c **** // 0xDC
+2655:Core/Src/f6x8m.c ****  ,{
+2656:Core/Src/f6x8m.c ****    f6x8_MONO_WIDTH,
+2657:Core/Src/f6x8m.c ****    f6x8_MONO_HEIGHT,
+2658:Core/Src/f6x8m.c ****    _X______,
+2659:Core/Src/f6x8m.c ****    _X______,
+2660:Core/Src/f6x8m.c ****    _X______,
+2661:Core/Src/f6x8m.c ****    _XXX____,
+2662:Core/Src/f6x8m.c ****    _X__X___,
+2663:Core/Src/f6x8m.c ****    _X__X___,
+2664:Core/Src/f6x8m.c ****    _XXX____,
+2665:Core/Src/f6x8m.c ****    ________}
+2666:Core/Src/f6x8m.c **** // 0xDD
+2667:Core/Src/f6x8m.c ****  ,{
+2668:Core/Src/f6x8m.c ****    f6x8_MONO_WIDTH,
+2669:Core/Src/f6x8m.c ****    f6x8_MONO_HEIGHT,
+2670:Core/Src/f6x8m.c ****    _XXX____,
+2671:Core/Src/f6x8m.c ****    X___X___,
+2672:Core/Src/f6x8m.c ****    ____X___,
+2673:Core/Src/f6x8m.c ****    __XXX___,
+2674:Core/Src/f6x8m.c ****    ____X___,
+2675:Core/Src/f6x8m.c ****    X___X___,
+2676:Core/Src/f6x8m.c ****    _XXX____,
+2677:Core/Src/f6x8m.c ****    ________}
+2678:Core/Src/f6x8m.c **** // 0xDE
+2679:Core/Src/f6x8m.c ****  ,{
+2680:Core/Src/f6x8m.c ****    f6x8_MONO_WIDTH,
+2681:Core/Src/f6x8m.c ****    f6x8_MONO_HEIGHT,
+2682:Core/Src/f6x8m.c ****    X__X____,
+2683:Core/Src/f6x8m.c ****    X_X_X___,
+2684:Core/Src/f6x8m.c ****    X_X_X___,
+2685:Core/Src/f6x8m.c ****    XXX_X___,
+2686:Core/Src/f6x8m.c ****    X_X_X___,
+2687:Core/Src/f6x8m.c ****    X_X_X___,
+2688:Core/Src/f6x8m.c ****    X__X____,
+2689:Core/Src/f6x8m.c ****    ________}
+2690:Core/Src/f6x8m.c **** // 0xDF
+2691:Core/Src/f6x8m.c ****  ,{
+2692:Core/Src/f6x8m.c ****    f6x8_MONO_WIDTH,
+2693:Core/Src/f6x8m.c ****    f6x8_MONO_HEIGHT,
+2694:Core/Src/f6x8m.c ****    _XXXX___,
+2695:Core/Src/f6x8m.c ****    X___X___,
+2696:Core/Src/f6x8m.c ****    X___X___,
+2697:Core/Src/f6x8m.c ****    X___X___,
+2698:Core/Src/f6x8m.c ****    _XXXX___,
+2699:Core/Src/f6x8m.c ****    _X__X___,
+2700:Core/Src/f6x8m.c ****    X___X___,
+2701:Core/Src/f6x8m.c ****    ________}
+2702:Core/Src/f6x8m.c **** // 0xE0
+2703:Core/Src/f6x8m.c ****  ,{
+2704:Core/Src/f6x8m.c ****    f6x8_MONO_WIDTH,
+2705:Core/Src/f6x8m.c ****    f6x8_MONO_HEIGHT,
+2706:Core/Src/f6x8m.c ****    ________,
+2707:Core/Src/f6x8m.c ****    ________,
+2708:Core/Src/f6x8m.c ****    _XXX____,
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\cci4qmtn.s 			page 49
+
+
+2709:Core/Src/f6x8m.c ****    ____X___,
+2710:Core/Src/f6x8m.c ****    _XXXX___,
+2711:Core/Src/f6x8m.c ****    X___X___,
+2712:Core/Src/f6x8m.c ****    _XXXX___,
+2713:Core/Src/f6x8m.c ****    ________}
+2714:Core/Src/f6x8m.c **** // 0xE1
+2715:Core/Src/f6x8m.c ****  ,{
+2716:Core/Src/f6x8m.c ****    f6x8_MONO_WIDTH,
+2717:Core/Src/f6x8m.c ****    f6x8_MONO_HEIGHT,
+2718:Core/Src/f6x8m.c ****    ___XX___,
+2719:Core/Src/f6x8m.c ****    _XX_____,
+2720:Core/Src/f6x8m.c ****    X_______,
+2721:Core/Src/f6x8m.c ****    XXXX____,
+2722:Core/Src/f6x8m.c ****    X___X___,
+2723:Core/Src/f6x8m.c ****    X___X___,
+2724:Core/Src/f6x8m.c ****    _XXX____,
+2725:Core/Src/f6x8m.c ****    ________}
+2726:Core/Src/f6x8m.c **** // 0xE2
+2727:Core/Src/f6x8m.c ****  ,{
+2728:Core/Src/f6x8m.c ****    f6x8_MONO_WIDTH,
+2729:Core/Src/f6x8m.c ****    f6x8_MONO_HEIGHT,
+2730:Core/Src/f6x8m.c ****    ________,
+2731:Core/Src/f6x8m.c ****    ________,
+2732:Core/Src/f6x8m.c ****    XXXX____,
+2733:Core/Src/f6x8m.c ****    X___X___,
+2734:Core/Src/f6x8m.c ****    XXXX____,
+2735:Core/Src/f6x8m.c ****    X___X___,
+2736:Core/Src/f6x8m.c ****    XXXX____,
+2737:Core/Src/f6x8m.c ****    ________}
+2738:Core/Src/f6x8m.c **** // 0xE3
+2739:Core/Src/f6x8m.c ****  ,{
+2740:Core/Src/f6x8m.c ****    f6x8_MONO_WIDTH,
+2741:Core/Src/f6x8m.c ****    f6x8_MONO_HEIGHT,
+2742:Core/Src/f6x8m.c ****    ________,
+2743:Core/Src/f6x8m.c ****    ________,
+2744:Core/Src/f6x8m.c ****    XXXXX___,
+2745:Core/Src/f6x8m.c ****    X_______,
+2746:Core/Src/f6x8m.c ****    X_______,
+2747:Core/Src/f6x8m.c ****    X_______,
+2748:Core/Src/f6x8m.c ****    X_______,
+2749:Core/Src/f6x8m.c ****    ________}
+2750:Core/Src/f6x8m.c **** // 0xE4
+2751:Core/Src/f6x8m.c ****  ,{
+2752:Core/Src/f6x8m.c ****    f6x8_MONO_WIDTH,
+2753:Core/Src/f6x8m.c ****    f6x8_MONO_HEIGHT,
+2754:Core/Src/f6x8m.c ****    ________,
+2755:Core/Src/f6x8m.c ****    ________,
+2756:Core/Src/f6x8m.c ****    __XX____,
+2757:Core/Src/f6x8m.c ****    _X_X____,
+2758:Core/Src/f6x8m.c ****    _X_X____,
+2759:Core/Src/f6x8m.c ****    XXXXX___,
+2760:Core/Src/f6x8m.c ****    X___X___,
+2761:Core/Src/f6x8m.c ****    ________}
+2762:Core/Src/f6x8m.c **** // 0xE5
+2763:Core/Src/f6x8m.c ****  ,{
+2764:Core/Src/f6x8m.c ****    f6x8_MONO_WIDTH,
+2765:Core/Src/f6x8m.c ****    f6x8_MONO_HEIGHT,
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\cci4qmtn.s 			page 50
+
+
+2766:Core/Src/f6x8m.c ****    ________,
+2767:Core/Src/f6x8m.c ****    ________,
+2768:Core/Src/f6x8m.c ****    _XXX____,
+2769:Core/Src/f6x8m.c ****    X___X___,
+2770:Core/Src/f6x8m.c ****    XXXXX___,
+2771:Core/Src/f6x8m.c ****    X_______,
+2772:Core/Src/f6x8m.c ****    _XXX____,
+2773:Core/Src/f6x8m.c ****    ________}
+2774:Core/Src/f6x8m.c **** // 0xE6
+2775:Core/Src/f6x8m.c ****  ,{
+2776:Core/Src/f6x8m.c ****    f6x8_MONO_WIDTH,
+2777:Core/Src/f6x8m.c ****    f6x8_MONO_HEIGHT,
+2778:Core/Src/f6x8m.c ****    ________,
+2779:Core/Src/f6x8m.c ****    ________,
+2780:Core/Src/f6x8m.c ****    X_X_X___,
+2781:Core/Src/f6x8m.c ****    X_X_X___,
+2782:Core/Src/f6x8m.c ****    _XXX____,
+2783:Core/Src/f6x8m.c ****    X_X_X___,
+2784:Core/Src/f6x8m.c ****    X_X_X___,
+2785:Core/Src/f6x8m.c ****    ________}
+2786:Core/Src/f6x8m.c **** // 0xE7
+2787:Core/Src/f6x8m.c ****  ,{
+2788:Core/Src/f6x8m.c ****    f6x8_MONO_WIDTH,
+2789:Core/Src/f6x8m.c ****    f6x8_MONO_HEIGHT,
+2790:Core/Src/f6x8m.c ****    ________,
+2791:Core/Src/f6x8m.c ****    ________,
+2792:Core/Src/f6x8m.c ****    _XXX____,
+2793:Core/Src/f6x8m.c ****    X___X___,
+2794:Core/Src/f6x8m.c ****    ___X____,
+2795:Core/Src/f6x8m.c ****    X___X___,
+2796:Core/Src/f6x8m.c ****    _XXX____,
+2797:Core/Src/f6x8m.c ****    ________}
+2798:Core/Src/f6x8m.c **** // 0xE8
+2799:Core/Src/f6x8m.c ****  ,{
+2800:Core/Src/f6x8m.c ****    f6x8_MONO_WIDTH,
+2801:Core/Src/f6x8m.c ****    f6x8_MONO_HEIGHT,
+2802:Core/Src/f6x8m.c ****    ________,
+2803:Core/Src/f6x8m.c ****    ________,
+2804:Core/Src/f6x8m.c ****    X___X___,
+2805:Core/Src/f6x8m.c ****    X__XX___,
+2806:Core/Src/f6x8m.c ****    X_X_X___,
+2807:Core/Src/f6x8m.c ****    XX__X___,
+2808:Core/Src/f6x8m.c ****    X___X___,
+2809:Core/Src/f6x8m.c ****    ________}
+2810:Core/Src/f6x8m.c **** // 0xE9
+2811:Core/Src/f6x8m.c ****  ,{
+2812:Core/Src/f6x8m.c ****    f6x8_MONO_WIDTH,
+2813:Core/Src/f6x8m.c ****    f6x8_MONO_HEIGHT,
+2814:Core/Src/f6x8m.c ****    _XXX____,
+2815:Core/Src/f6x8m.c ****    ________,
+2816:Core/Src/f6x8m.c ****    X___X___,
+2817:Core/Src/f6x8m.c ****    X__XX___,
+2818:Core/Src/f6x8m.c ****    X_X_X___,
+2819:Core/Src/f6x8m.c ****    XX__X___,
+2820:Core/Src/f6x8m.c ****    X___X___,
+2821:Core/Src/f6x8m.c ****    ________}
+2822:Core/Src/f6x8m.c **** // 0xEA
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\cci4qmtn.s 			page 51
+
+
+2823:Core/Src/f6x8m.c ****  ,{
+2824:Core/Src/f6x8m.c ****    f6x8_MONO_WIDTH,
+2825:Core/Src/f6x8m.c ****    f6x8_MONO_HEIGHT,
+2826:Core/Src/f6x8m.c ****    ________,
+2827:Core/Src/f6x8m.c ****    ________,
+2828:Core/Src/f6x8m.c ****    X___X___,
+2829:Core/Src/f6x8m.c ****    X__X____,
+2830:Core/Src/f6x8m.c ****    XXX_____,
+2831:Core/Src/f6x8m.c ****    X__X____,
+2832:Core/Src/f6x8m.c ****    X___X___,
+2833:Core/Src/f6x8m.c ****    ________}
+2834:Core/Src/f6x8m.c **** // 0xEB
+2835:Core/Src/f6x8m.c ****  ,{
+2836:Core/Src/f6x8m.c ****    f6x8_MONO_WIDTH,
+2837:Core/Src/f6x8m.c ****    f6x8_MONO_HEIGHT,
+2838:Core/Src/f6x8m.c ****    ________,
+2839:Core/Src/f6x8m.c ****    ________,
+2840:Core/Src/f6x8m.c ****    __XXX___,
+2841:Core/Src/f6x8m.c ****    _X__X___,
+2842:Core/Src/f6x8m.c ****    X___X___,
+2843:Core/Src/f6x8m.c ****    X___X___,
+2844:Core/Src/f6x8m.c ****    X___X___,
+2845:Core/Src/f6x8m.c ****    ________}
+2846:Core/Src/f6x8m.c **** // 0xEC
+2847:Core/Src/f6x8m.c ****  ,{
+2848:Core/Src/f6x8m.c ****    f6x8_MONO_WIDTH,
+2849:Core/Src/f6x8m.c ****    f6x8_MONO_HEIGHT,
+2850:Core/Src/f6x8m.c ****    ________,
+2851:Core/Src/f6x8m.c ****    ________,
+2852:Core/Src/f6x8m.c ****    X___X___,
+2853:Core/Src/f6x8m.c ****    XX_XX___,
+2854:Core/Src/f6x8m.c ****    X_X_X___,
+2855:Core/Src/f6x8m.c ****    X___X___,
+2856:Core/Src/f6x8m.c ****    X___X___,
+2857:Core/Src/f6x8m.c ****    ________}
+2858:Core/Src/f6x8m.c **** // 0xED
+2859:Core/Src/f6x8m.c ****  ,{
+2860:Core/Src/f6x8m.c ****    f6x8_MONO_WIDTH,
+2861:Core/Src/f6x8m.c ****    f6x8_MONO_HEIGHT,
+2862:Core/Src/f6x8m.c ****    ________,
+2863:Core/Src/f6x8m.c ****    ________,
+2864:Core/Src/f6x8m.c ****    X___X___,
+2865:Core/Src/f6x8m.c ****    X___X___,
+2866:Core/Src/f6x8m.c ****    XXXXX___,
+2867:Core/Src/f6x8m.c ****    X___X___,
+2868:Core/Src/f6x8m.c ****    X___X___,
+2869:Core/Src/f6x8m.c ****    ________}
+2870:Core/Src/f6x8m.c **** // 0xEE
+2871:Core/Src/f6x8m.c ****  ,{
+2872:Core/Src/f6x8m.c ****    f6x8_MONO_WIDTH,
+2873:Core/Src/f6x8m.c ****    f6x8_MONO_HEIGHT,
+2874:Core/Src/f6x8m.c ****    ________,
+2875:Core/Src/f6x8m.c ****    ________,
+2876:Core/Src/f6x8m.c ****    _XXX____,
+2877:Core/Src/f6x8m.c ****    X___X___,
+2878:Core/Src/f6x8m.c ****    X___X___,
+2879:Core/Src/f6x8m.c ****    X___X___,
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\cci4qmtn.s 			page 52
+
+
+2880:Core/Src/f6x8m.c ****    _XXX____,
+2881:Core/Src/f6x8m.c ****    ________}
+2882:Core/Src/f6x8m.c **** // 0xEF
+2883:Core/Src/f6x8m.c ****  ,{
+2884:Core/Src/f6x8m.c ****    f6x8_MONO_WIDTH,
+2885:Core/Src/f6x8m.c ****    f6x8_MONO_HEIGHT,
+2886:Core/Src/f6x8m.c ****    ________,
+2887:Core/Src/f6x8m.c ****    ________,
+2888:Core/Src/f6x8m.c ****    XXXXX___,
+2889:Core/Src/f6x8m.c ****    X___X___,
+2890:Core/Src/f6x8m.c ****    X___X___,
+2891:Core/Src/f6x8m.c ****    X___X___,
+2892:Core/Src/f6x8m.c ****    X___X___,
+2893:Core/Src/f6x8m.c ****    ________}
+2894:Core/Src/f6x8m.c **** // 0xF0
+2895:Core/Src/f6x8m.c ****  ,{
+2896:Core/Src/f6x8m.c ****    f6x8_MONO_WIDTH,
+2897:Core/Src/f6x8m.c ****    f6x8_MONO_HEIGHT,
+2898:Core/Src/f6x8m.c ****    ________,
+2899:Core/Src/f6x8m.c ****    ________,
+2900:Core/Src/f6x8m.c ****    XXXX____,
+2901:Core/Src/f6x8m.c ****    X___X___,
+2902:Core/Src/f6x8m.c ****    XXXX____,
+2903:Core/Src/f6x8m.c ****    X_______,
+2904:Core/Src/f6x8m.c ****    X_______,
+2905:Core/Src/f6x8m.c ****    ________}
+2906:Core/Src/f6x8m.c **** // 0xF1
+2907:Core/Src/f6x8m.c ****  ,{
+2908:Core/Src/f6x8m.c ****    f6x8_MONO_WIDTH,
+2909:Core/Src/f6x8m.c ****    f6x8_MONO_HEIGHT,
+2910:Core/Src/f6x8m.c ****    ________,
+2911:Core/Src/f6x8m.c ****    ________,
+2912:Core/Src/f6x8m.c ****    _XXX____,
+2913:Core/Src/f6x8m.c ****    X___X___,
+2914:Core/Src/f6x8m.c ****    X_______,
+2915:Core/Src/f6x8m.c ****    X___X___,
+2916:Core/Src/f6x8m.c ****    _XXX____,
+2917:Core/Src/f6x8m.c ****    ________}
+2918:Core/Src/f6x8m.c **** // 0xF2
+2919:Core/Src/f6x8m.c ****  ,{
+2920:Core/Src/f6x8m.c ****    f6x8_MONO_WIDTH,
+2921:Core/Src/f6x8m.c ****    f6x8_MONO_HEIGHT,
+2922:Core/Src/f6x8m.c ****    ________,
+2923:Core/Src/f6x8m.c ****    ________,
+2924:Core/Src/f6x8m.c ****    XXXXX___,
+2925:Core/Src/f6x8m.c ****    __X_____,
+2926:Core/Src/f6x8m.c ****    __X_____,
+2927:Core/Src/f6x8m.c ****    __X_____,
+2928:Core/Src/f6x8m.c ****    __X_____,
+2929:Core/Src/f6x8m.c ****    ________}
+2930:Core/Src/f6x8m.c **** // 0xF3
+2931:Core/Src/f6x8m.c ****  ,{
+2932:Core/Src/f6x8m.c ****    f6x8_MONO_WIDTH,
+2933:Core/Src/f6x8m.c ****    f6x8_MONO_HEIGHT,
+2934:Core/Src/f6x8m.c ****    ________,
+2935:Core/Src/f6x8m.c ****    ________,
+2936:Core/Src/f6x8m.c ****    X___X___,
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\cci4qmtn.s 			page 53
+
+
+2937:Core/Src/f6x8m.c ****    X___X___,
+2938:Core/Src/f6x8m.c ****    _XXXX___,
+2939:Core/Src/f6x8m.c ****    ____X___,
+2940:Core/Src/f6x8m.c ****    XXXX____,
+2941:Core/Src/f6x8m.c ****    ________}
+2942:Core/Src/f6x8m.c **** // 0xF4
+2943:Core/Src/f6x8m.c ****  ,{
+2944:Core/Src/f6x8m.c ****    f6x8_MONO_WIDTH,
+2945:Core/Src/f6x8m.c ****    f6x8_MONO_HEIGHT,
+2946:Core/Src/f6x8m.c ****    ________,
+2947:Core/Src/f6x8m.c ****    ________,
+2948:Core/Src/f6x8m.c ****    _XXX____,
+2949:Core/Src/f6x8m.c ****    X_X_X___,
+2950:Core/Src/f6x8m.c ****    X_X_X___,
+2951:Core/Src/f6x8m.c ****    _XXX____,
+2952:Core/Src/f6x8m.c ****    __X_____,
+2953:Core/Src/f6x8m.c ****    ________}
+2954:Core/Src/f6x8m.c **** // 0xF5
+2955:Core/Src/f6x8m.c ****  ,{
+2956:Core/Src/f6x8m.c ****    f6x8_MONO_WIDTH,
+2957:Core/Src/f6x8m.c ****    f6x8_MONO_HEIGHT,
+2958:Core/Src/f6x8m.c ****    ________,
+2959:Core/Src/f6x8m.c ****    ________,
+2960:Core/Src/f6x8m.c ****    X___X___,
+2961:Core/Src/f6x8m.c ****    _X_X____,
+2962:Core/Src/f6x8m.c ****    __X_____,
+2963:Core/Src/f6x8m.c ****    _X_X____,
+2964:Core/Src/f6x8m.c ****    X___X___,
+2965:Core/Src/f6x8m.c ****    ________}
+2966:Core/Src/f6x8m.c **** // 0xF6
+2967:Core/Src/f6x8m.c ****  ,{
+2968:Core/Src/f6x8m.c ****    f6x8_MONO_WIDTH,
+2969:Core/Src/f6x8m.c ****    f6x8_MONO_HEIGHT,
+2970:Core/Src/f6x8m.c ****    ________,
+2971:Core/Src/f6x8m.c ****    ________,
+2972:Core/Src/f6x8m.c ****    X___X___,
+2973:Core/Src/f6x8m.c ****    X___X___,
+2974:Core/Src/f6x8m.c ****    X___X___,
+2975:Core/Src/f6x8m.c ****    X___X___,
+2976:Core/Src/f6x8m.c ****    XXXXX___,
+2977:Core/Src/f6x8m.c ****    ____X___}
+2978:Core/Src/f6x8m.c **** // 0xF7
+2979:Core/Src/f6x8m.c ****  ,{
+2980:Core/Src/f6x8m.c ****    f6x8_MONO_WIDTH,
+2981:Core/Src/f6x8m.c ****    f6x8_MONO_HEIGHT,
+2982:Core/Src/f6x8m.c ****    ________,
+2983:Core/Src/f6x8m.c ****    ________,
+2984:Core/Src/f6x8m.c ****    X___X___,
+2985:Core/Src/f6x8m.c ****    X___X___,
+2986:Core/Src/f6x8m.c ****    XXXXX___,
+2987:Core/Src/f6x8m.c ****    ____X___,
+2988:Core/Src/f6x8m.c ****    ____X___,
+2989:Core/Src/f6x8m.c ****    ________}
+2990:Core/Src/f6x8m.c **** // 0xF8
+2991:Core/Src/f6x8m.c ****  ,{
+2992:Core/Src/f6x8m.c ****    f6x8_MONO_WIDTH,
+2993:Core/Src/f6x8m.c ****    f6x8_MONO_HEIGHT,
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\cci4qmtn.s 			page 54
+
+
+2994:Core/Src/f6x8m.c ****    ________,
+2995:Core/Src/f6x8m.c ****    ________,
+2996:Core/Src/f6x8m.c ****    X_X_X___,
+2997:Core/Src/f6x8m.c ****    X_X_X___,
+2998:Core/Src/f6x8m.c ****    X_X_X___,
+2999:Core/Src/f6x8m.c ****    X_X_X___,
+3000:Core/Src/f6x8m.c ****    XXXXX___,
+3001:Core/Src/f6x8m.c ****    ________}
+3002:Core/Src/f6x8m.c **** // 0xF9
+3003:Core/Src/f6x8m.c ****  ,{
+3004:Core/Src/f6x8m.c ****    f6x8_MONO_WIDTH,
+3005:Core/Src/f6x8m.c ****    f6x8_MONO_HEIGHT,
+3006:Core/Src/f6x8m.c ****    ________,
+3007:Core/Src/f6x8m.c ****    ________,
+3008:Core/Src/f6x8m.c ****    X_X_X___,
+3009:Core/Src/f6x8m.c ****    X_X_X___,
+3010:Core/Src/f6x8m.c ****    X_X_X___,
+3011:Core/Src/f6x8m.c ****    X_X_X___,
+3012:Core/Src/f6x8m.c ****    XXXXX___,
+3013:Core/Src/f6x8m.c ****    ____X___}
+3014:Core/Src/f6x8m.c **** // 0xFA
+3015:Core/Src/f6x8m.c ****  ,{
+3016:Core/Src/f6x8m.c ****    f6x8_MONO_WIDTH,
+3017:Core/Src/f6x8m.c ****    f6x8_MONO_HEIGHT,
+3018:Core/Src/f6x8m.c ****    ________,
+3019:Core/Src/f6x8m.c ****    ________,
+3020:Core/Src/f6x8m.c ****    XX______,
+3021:Core/Src/f6x8m.c ****    _X______,
+3022:Core/Src/f6x8m.c ****    _XXX____,
+3023:Core/Src/f6x8m.c ****    _X__X___,
+3024:Core/Src/f6x8m.c ****    _XXX____,
+3025:Core/Src/f6x8m.c ****    ________}
+3026:Core/Src/f6x8m.c **** // 0xFB
+3027:Core/Src/f6x8m.c ****  ,{
+3028:Core/Src/f6x8m.c ****    f6x8_MONO_WIDTH,
+3029:Core/Src/f6x8m.c ****    f6x8_MONO_HEIGHT,
+3030:Core/Src/f6x8m.c ****    ________,
+3031:Core/Src/f6x8m.c ****    ________,
+3032:Core/Src/f6x8m.c ****    X___X___,
+3033:Core/Src/f6x8m.c ****    X___X___,
+3034:Core/Src/f6x8m.c ****    XX__X___,
+3035:Core/Src/f6x8m.c ****    X_X_X___,
+3036:Core/Src/f6x8m.c ****    XX__X___,
+3037:Core/Src/f6x8m.c ****    ________}
+3038:Core/Src/f6x8m.c **** // 0xFC
+3039:Core/Src/f6x8m.c ****  ,{
+3040:Core/Src/f6x8m.c ****    f6x8_MONO_WIDTH,
+3041:Core/Src/f6x8m.c ****    f6x8_MONO_HEIGHT,
+3042:Core/Src/f6x8m.c ****    ________,
+3043:Core/Src/f6x8m.c ****    ________,
+3044:Core/Src/f6x8m.c ****    _X______,
+3045:Core/Src/f6x8m.c ****    _X______,
+3046:Core/Src/f6x8m.c ****    _XXX____,
+3047:Core/Src/f6x8m.c ****    _X__X___,
+3048:Core/Src/f6x8m.c ****    _XXX____,
+3049:Core/Src/f6x8m.c ****    ________}
+3050:Core/Src/f6x8m.c **** // 0xFD
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\cci4qmtn.s 			page 55
+
+
+3051:Core/Src/f6x8m.c ****  ,{
+3052:Core/Src/f6x8m.c ****    f6x8_MONO_WIDTH,
+3053:Core/Src/f6x8m.c ****    f6x8_MONO_HEIGHT,
+3054:Core/Src/f6x8m.c ****    ________,
+3055:Core/Src/f6x8m.c ****    ________,
+3056:Core/Src/f6x8m.c ****    _XXX____,
+3057:Core/Src/f6x8m.c ****    X___X___,
+3058:Core/Src/f6x8m.c ****    __XXX___,
+3059:Core/Src/f6x8m.c ****    X___X___,
+3060:Core/Src/f6x8m.c ****    _XXX____,
+3061:Core/Src/f6x8m.c ****    ________}
+3062:Core/Src/f6x8m.c **** // 0xFE
+3063:Core/Src/f6x8m.c ****  ,{
+3064:Core/Src/f6x8m.c ****    f6x8_MONO_WIDTH,
+3065:Core/Src/f6x8m.c ****    f6x8_MONO_HEIGHT,
+3066:Core/Src/f6x8m.c ****    ________,
+3067:Core/Src/f6x8m.c ****    ________,
+3068:Core/Src/f6x8m.c ****    X__X____,
+3069:Core/Src/f6x8m.c ****    X_X_X___,
+3070:Core/Src/f6x8m.c ****    XXX_X___,
+3071:Core/Src/f6x8m.c ****    X_X_X___,
+3072:Core/Src/f6x8m.c ****    X__X____,
+3073:Core/Src/f6x8m.c ****    ________}
+3074:Core/Src/f6x8m.c **** // 0xFF
+3075:Core/Src/f6x8m.c ****  ,{
+3076:Core/Src/f6x8m.c ****    f6x8_MONO_WIDTH,
+3077:Core/Src/f6x8m.c ****    f6x8_MONO_HEIGHT,
+3078:Core/Src/f6x8m.c ****    ________,
+3079:Core/Src/f6x8m.c ****    ________,
+3080:Core/Src/f6x8m.c ****    _XXXX___,
+3081:Core/Src/f6x8m.c ****    X___X___,
+3082:Core/Src/f6x8m.c ****    _XXXX___,
+3083:Core/Src/f6x8m.c ****    _X__X___,
+3084:Core/Src/f6x8m.c ****    X___X___,
+3085:Core/Src/f6x8m.c ****    ________}
+3086:Core/Src/f6x8m.c **** };
+3087:Core/Src/f6x8m.c **** 
+3088:Core/Src/f6x8m.c **** //==============================================================================
+3089:Core/Src/f6x8m.c **** uint8_t *f6x8m_GetCharTable(char Char)
+3090:Core/Src/f6x8m.c **** {
+  30              		.loc 1 3090 1 view -0
+  31              		.cfi_startproc
+  32              		@ args = 0, pretend = 0, frame = 0
+  33              		@ frame_needed = 0, uses_anonymous_args = 0
+  34              		@ link register save eliminated.
+3091:Core/Src/f6x8m.c **** 	uint8_t charIdx = *((uint8_t *) &Char);
+  35              		.loc 1 3091 2 view .LVU1
+3092:Core/Src/f6x8m.c **** 	return (uint8_t *)(&f6x8m_table[charIdx][0]);
+  36              		.loc 1 3092 2 view .LVU2
+  37              		.loc 1 3092 9 is_stmt 0 view .LVU3
+  38 0000 00EB8000 		add	r0, r0, r0, lsl #2
+  39              	.LVL1:
+3093:Core/Src/f6x8m.c **** }
+  40              		.loc 1 3093 1 view .LVU4
+  41 0004 014B     		ldr	r3, .L2
+  42 0006 03EB4000 		add	r0, r3, r0, lsl #1
+  43 000a 7047     		bx	lr
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\cci4qmtn.s 			page 56
+
+
+  44              	.L3:
+  45              		.align	2
+  46              	.L2:
+  47 000c 00000000 		.word	f6x8m_table
+  48              		.cfi_endproc
+  49              	.LFE3:
+  51              		.global	f6x8m_table
+  52              		.section	.rodata.f6x8m_table,"a"
+  53              		.align	2
+  56              	f6x8m_table:
+  57 0000 06080000 		.ascii	"\006\010\000\000\000\000\000\000\000\000"
+  57      00000000 
+  57      0000
+  58 000a 06080000 		.ascii	"\006\010\000\000\000\000\000\000\000\000"
+  58      00000000 
+  58      0000
+  59 0014 06080000 		.ascii	"\006\010\000\000\000\000\000\000\000\000"
+  59      00000000 
+  59      0000
+  60 001e 06080000 		.ascii	"\006\010\000\000\000\000\000\000\000\000"
+  60      00000000 
+  60      0000
+  61 0028 06080000 		.ascii	"\006\010\000\000\000\000\000\000\000\000"
+  61      00000000 
+  61      0000
+  62 0032 06080000 		.ascii	"\006\010\000\000\000\000\000\000\000\000"
+  62      00000000 
+  62      0000
+  63 003c 06080000 		.ascii	"\006\010\000\000\000\000\000\000\000\000"
+  63      00000000 
+  63      0000
+  64 0046 06080000 		.ascii	"\006\010\000\000\000\000\000\000\000\000"
+  64      00000000 
+  64      0000
+  65 0050 06080000 		.ascii	"\006\010\000\000\000\000\000\000\000\000"
+  65      00000000 
+  65      0000
+  66 005a 06080000 		.ascii	"\006\010\000\000\000\000\000\000\000\000"
+  66      00000000 
+  66      0000
+  67 0064 06080000 		.ascii	"\006\010\000\000\000\000\000\000\000\000"
+  67      00000000 
+  67      0000
+  68 006e 06080000 		.ascii	"\006\010\000\000\000\000\000\000\000\000"
+  68      00000000 
+  68      0000
+  69 0078 06080000 		.ascii	"\006\010\000\000\000\000\000\000\000\000"
+  69      00000000 
+  69      0000
+  70 0082 06080000 		.ascii	"\006\010\000\000\000\000\000\000\000\000"
+  70      00000000 
+  70      0000
+  71 008c 06080000 		.ascii	"\006\010\000\000\000\000\000\000\000\000"
+  71      00000000 
+  71      0000
+  72 0096 06080000 		.ascii	"\006\010\000\000\000\000\000\000\000\000"
+  72      00000000 
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\cci4qmtn.s 			page 57
+
+
+  72      0000
+  73 00a0 06080000 		.ascii	"\006\010\000\000\000\000\000\000\000\000"
+  73      00000000 
+  73      0000
+  74 00aa 06080000 		.ascii	"\006\010\000\000\000\000\000\000\000\000"
+  74      00000000 
+  74      0000
+  75 00b4 06080000 		.ascii	"\006\010\000\000\000\000\000\000\000\000"
+  75      00000000 
+  75      0000
+  76 00be 06080000 		.ascii	"\006\010\000\000\000\000\000\000\000\000"
+  76      00000000 
+  76      0000
+  77 00c8 06080000 		.ascii	"\006\010\000\000\000\000\000\000\000\000"
+  77      00000000 
+  77      0000
+  78 00d2 06080000 		.ascii	"\006\010\000\000\000\000\000\000\000\000"
+  78      00000000 
+  78      0000
+  79 00dc 06080000 		.ascii	"\006\010\000\000\000\000\000\000\000\000"
+  79      00000000 
+  79      0000
+  80 00e6 06080000 		.ascii	"\006\010\000\000\000\000\000\000\000\000"
+  80      00000000 
+  80      0000
+  81 00f0 06080000 		.ascii	"\006\010\000\000\000\000\000\000\000\000"
+  81      00000000 
+  81      0000
+  82 00fa 06080000 		.ascii	"\006\010\000\000\000\000\000\000\000\000"
+  82      00000000 
+  82      0000
+  83 0104 06080000 		.ascii	"\006\010\000\000\000\000\000\000\000\000"
+  83      00000000 
+  83      0000
+  84 010e 06080000 		.ascii	"\006\010\000\000\000\000\000\000\000\000"
+  84      00000000 
+  84      0000
+  85 0118 06080000 		.ascii	"\006\010\000\000\000\000\000\000\000\000"
+  85      00000000 
+  85      0000
+  86 0122 06080000 		.ascii	"\006\010\000\000\000\000\000\000\000\000"
+  86      00000000 
+  86      0000
+  87 012c 06080000 		.ascii	"\006\010\000\000\000\000\000\000\000\000"
+  87      00000000 
+  87      0000
+  88 0136 06080000 		.ascii	"\006\010\000\000\000\000\000\000\000\000"
+  88      00000000 
+  88      0000
+  89 0140 06080000 		.ascii	"\006\010\000\000\000\000\000\000\000\000"
+  89      00000000 
+  89      0000
+  90 014a 06082020 		.ascii	"\006\010     \000 \000"
+  90      20202000 
+  90      2000
+  91 0154 06084848 		.ascii	"\006\010HHH\000\000\000\000\000"
+  91      48000000 
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\cci4qmtn.s 			page 58
+
+
+  91      0000
+  92 015e 06085050 		.ascii	"\006\010PP\370P\370PP\000"
+  92      F850F850 
+  92      5000
+  93 0168 06082078 		.ascii	"\006\010 x\240p(\360 \000"
+  93      A07028F0 
+  93      2000
+  94 0172 0608C0C8 		.ascii	"\006\010\300\310\020 @\230\030\000"
+  94      10204098 
+  94      1800
+  95 017c 06086090 		.ascii	"\006\010`\220\240@\250\220h\000"
+  95      A040A890 
+  95      6800
+  96 0186 06086020 		.ascii	"\006\010` @\000\000\000\000\000"
+  96      40000000 
+  96      0000
+  97 0190 06081020 		.ascii	"\006\010\020 @@@ \020\000"
+  97      40404020 
+  97      1000
+  98 019a 06084020 		.ascii	"\006\010@ \020\020\020 @\000"
+  98      10101020 
+  98      4000
+  99 01a4 06080050 		.ascii	"\006\010\000P \370 P\000\000"
+  99      20F82050 
+  99      0000
+ 100 01ae 06080020 		.ascii	"\006\010\000  \370  \000\000"
+ 100      20F82020 
+ 100      0000
+ 101 01b8 06080000 		.ascii	"\006\010\000\000\000\000\000` @"
+ 101      00000060 
+ 101      2040
+ 102 01c2 06080000 		.ascii	"\006\010\000\000\000\370\000\000\000\000"
+ 102      00F80000 
+ 102      0000
+ 103 01cc 06080000 		.ascii	"\006\010\000\000\000\000\000``\000"
+ 103      00000060 
+ 103      6000
+ 104 01d6 06080008 		.ascii	"\006\010\000\010\020 @\200\000\000"
+ 104      10204080 
+ 104      0000
+ 105 01e0 06087088 		.ascii	"\006\010p\210\230\250\310\210p\000"
+ 105      98A8C888 
+ 105      7000
+ 106 01ea 06082060 		.ascii	"\006\010 `    p\000"
+ 106      20202020 
+ 106      7000
+ 107 01f4 06087088 		.ascii	"\006\010p\210\0100@\200\370\000"
+ 107      08304080 
+ 107      F800
+ 108 01fe 06087088 		.ascii	"\006\010p\210\0100\010\210p\000"
+ 108      08300888 
+ 108      7000
+ 109 0208 06081030 		.ascii	"\006\010\0200P\220\370\020\020\000"
+ 109      5090F810 
+ 109      1000
+ 110 0212 0608F880 		.ascii	"\006\010\370\200\360\010\010\210p\000"
+ 110      F0080888 
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\cci4qmtn.s 			page 59
+
+
+ 110      7000
+ 111 021c 06083040 		.ascii	"\006\0100@\200\360\210\210p\000"
+ 111      80F08888 
+ 111      7000
+ 112 0226 0608F808 		.ascii	"\006\010\370\010\020 @@@\000"
+ 112      10204040 
+ 112      4000
+ 113 0230 06087088 		.ascii	"\006\010p\210\210p\210\210p\000"
+ 113      88708888 
+ 113      7000
+ 114 023a 06087088 		.ascii	"\006\010p\210\210x\010\020`\000"
+ 114      88780810 
+ 114      6000
+ 115 0244 06080060 		.ascii	"\006\010\000``\000``\000\000"
+ 115      60006060 
+ 115      0000
+ 116 024e 06080000 		.ascii	"\006\010\000\000``\000` @"
+ 116      60600060 
+ 116      2040
+ 117 0258 06081020 		.ascii	"\006\010\020 @\200@ \020\000"
+ 117      40804020 
+ 117      1000
+ 118 0262 06080000 		.ascii	"\006\010\000\000\370\000\370\000\000\000"
+ 118      F800F800 
+ 118      0000
+ 119 026c 06088040 		.ascii	"\006\010\200@ \020 @\200\000"
+ 119      20102040 
+ 119      8000
+ 120 0276 06087088 		.ascii	"\006\010p\210\010\020 \000 \000"
+ 120      08102000 
+ 120      2000
+ 121 0280 06087088 		.ascii	"\006\010p\210\010h\250\250p\000"
+ 121      0868A8A8 
+ 121      7000
+ 122 028a 06087088 		.ascii	"\006\010p\210\210\370\210\210\210\000"
+ 122      88F88888 
+ 122      8800
+ 123 0294 0608F088 		.ascii	"\006\010\360\210\210\360\210\210\360\000"
+ 123      88F08888 
+ 123      F000
+ 124 029e 06087088 		.ascii	"\006\010p\210\200\200\200\210p\000"
+ 124      80808088 
+ 124      7000
+ 125 02a8 0608E090 		.ascii	"\006\010\340\220\210\210\210\220\340\000"
+ 125      88888890 
+ 125      E000
+ 126 02b2 0608F880 		.ascii	"\006\010\370\200\200\360\200\200\370\000"
+ 126      80F08080 
+ 126      F800
+ 127 02bc 0608F880 		.ascii	"\006\010\370\200\200\360\200\200\200\000"
+ 127      80F08080 
+ 127      8000
+ 128 02c6 06087088 		.ascii	"\006\010p\210\200\200\230\210x\000"
+ 128      80809888 
+ 128      7800
+ 129 02d0 06088888 		.ascii	"\006\010\210\210\210\370\210\210\210\000"
+ 129      88F88888 
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\cci4qmtn.s 			page 60
+
+
+ 129      8800
+ 130 02da 06087020 		.ascii	"\006\010p     p\000"
+ 130      20202020 
+ 130      7000
+ 131 02e4 06083810 		.ascii	"\006\0108\020\020\020\020\220`\000"
+ 131      10101090 
+ 131      6000
+ 132 02ee 06088890 		.ascii	"\006\010\210\220\240\300\240\220\210\000"
+ 132      A0C0A090 
+ 132      8800
+ 133 02f8 06088080 		.ascii	"\006\010\200\200\200\200\200\200\370\000"
+ 133      80808080 
+ 133      F800
+ 134 0302 060888D8 		.ascii	"\006\010\210\330\250\250\210\210\210\000"
+ 134      A8A88888 
+ 134      8800
+ 135 030c 06088888 		.ascii	"\006\010\210\210\310\250\230\210\210\000"
+ 135      C8A89888 
+ 135      8800
+ 136 0316 06087088 		.ascii	"\006\010p\210\210\210\210\210p\000"
+ 136      88888888 
+ 136      7000
+ 137 0320 0608F088 		.ascii	"\006\010\360\210\210\360\200\200\200\000"
+ 137      88F08080 
+ 137      8000
+ 138 032a 06087088 		.ascii	"\006\010p\210\210\210\250\220h\000"
+ 138      8888A890 
+ 138      6800
+ 139 0334 0608F088 		.ascii	"\006\010\360\210\210\360\240\220\210\000"
+ 139      88F0A090 
+ 139      8800
+ 140 033e 06087088 		.ascii	"\006\010p\210\200p\010\210p\000"
+ 140      80700888 
+ 140      7000
+ 141 0348 0608F820 		.ascii	"\006\010\370      \000"
+ 141      20202020 
+ 141      2000
+ 142 0352 06088888 		.ascii	"\006\010\210\210\210\210\210\210p\000"
+ 142      88888888 
+ 142      7000
+ 143 035c 06088888 		.ascii	"\006\010\210\210\210\210\210P \000"
+ 143      88888850 
+ 143      2000
+ 144 0366 06088888 		.ascii	"\006\010\210\210\210\250\250\250P\000"
+ 144      88A8A8A8 
+ 144      5000
+ 145 0370 06088888 		.ascii	"\006\010\210\210P P\210\210\000"
+ 145      50205088 
+ 145      8800
+ 146 037a 06088888 		.ascii	"\006\010\210\210\210P   \000"
+ 146      88502020 
+ 146      2000
+ 147 0384 0608F808 		.ascii	"\006\010\370\010\020 @\200\370\000"
+ 147      10204080 
+ 147      F800
+ 148 038e 06087040 		.ascii	"\006\010p@@@@@p\000"
+ 148      40404040 
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\cci4qmtn.s 			page 61
+
+
+ 148      7000
+ 149 0398 06080080 		.ascii	"\006\010\000\200@ \020\010\000\000"
+ 149      40201008 
+ 149      0000
+ 150 03a2 06087010 		.ascii	"\006\010p\020\020\020\020\020p\000"
+ 150      10101010 
+ 150      7000
+ 151 03ac 06082050 		.ascii	"\006\010 P\210\000\000\000\000\000"
+ 151      88000000 
+ 151      0000
+ 152 03b6 06080000 		.ascii	"\006\010\000\000\000\000\000\000\000\370"
+ 152      00000000 
+ 152      00F8
+ 153 03c0 06084020 		.ascii	"\006\010@ \020\000\000\000\000\000"
+ 153      10000000 
+ 153      0000
+ 154 03ca 06080000 		.ascii	"\006\010\000\000p\010x\210x\000"
+ 154      70087888 
+ 154      7800
+ 155 03d4 06088080 		.ascii	"\006\010\200\200\260\310\210\210\360\000"
+ 155      B0C88888 
+ 155      F000
+ 156 03de 06080000 		.ascii	"\006\010\000\000p\200\200\210p\000"
+ 156      70808088 
+ 156      7000
+ 157 03e8 06080808 		.ascii	"\006\010\010\010h\230\210\210x\000"
+ 157      68988888 
+ 157      7800
+ 158 03f2 06080000 		.ascii	"\006\010\000\000p\210\370\200p\000"
+ 158      7088F880 
+ 158      7000
+ 159 03fc 06083048 		.ascii	"\006\0100H@\340@@@\000"
+ 159      40E04040 
+ 159      4000
+ 160 0406 06080000 		.ascii	"\006\010\000\000x\210\210x\010p"
+ 160      78888878 
+ 160      0870
+ 161 0410 06088080 		.ascii	"\006\010\200\200\260\310\210\210\210\000"
+ 161      B0C88888 
+ 161      8800
+ 162 041a 06082000 		.ascii	"\006\010 \000`   p\000"
+ 162      60202020 
+ 162      7000
+ 163 0424 06081000 		.ascii	"\006\010\020\0000\020\020\020\220`"
+ 163      30101010 
+ 163      9060
+ 164 042e 06088080 		.ascii	"\006\010\200\200\220\240\300\240\220\000"
+ 164      90A0C0A0 
+ 164      9000
+ 165 0438 06086020 		.ascii	"\006\010`     p\000"
+ 165      20202020 
+ 165      7000
+ 166 0442 06080000 		.ascii	"\006\010\000\000\320\250\210\210\210\000"
+ 166      D0A88888 
+ 166      8800
+ 167 044c 06080000 		.ascii	"\006\010\000\000\260\310\210\210\210\000"
+ 167      B0C88888 
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\cci4qmtn.s 			page 62
+
+
+ 167      8800
+ 168 0456 06080000 		.ascii	"\006\010\000\000p\210\210\210p\000"
+ 168      70888888 
+ 168      7000
+ 169 0460 06080000 		.ascii	"\006\010\000\000\360\210\210\360\200\200"
+ 169      F08888F0 
+ 169      8080
+ 170 046a 06080000 		.ascii	"\006\010\000\000x\210\210x\010\010"
+ 170      78888878 
+ 170      0808
+ 171 0474 06080000 		.ascii	"\006\010\000\000\260\310\200\200\200\000"
+ 171      B0C88080 
+ 171      8000
+ 172 047e 06080000 		.ascii	"\006\010\000\000x\200p\010\360\000"
+ 172      78807008 
+ 172      F000
+ 173 0488 06084040 		.ascii	"\006\010@@\340@@H0\000"
+ 173      E0404048 
+ 173      3000
+ 174 0492 06080000 		.ascii	"\006\010\000\000\210\210\210\230h\000"
+ 174      88888898 
+ 174      6800
+ 175 049c 06080000 		.ascii	"\006\010\000\000\210\210\210P \000"
+ 175      88888850 
+ 175      2000
+ 176 04a6 06080000 		.ascii	"\006\010\000\000\210\210\250\250P\000"
+ 176      8888A8A8 
+ 176      5000
+ 177 04b0 06080000 		.ascii	"\006\010\000\000\210P P\210\000"
+ 177      88502050 
+ 177      8800
+ 178 04ba 06080000 		.ascii	"\006\010\000\000\210\210\210x\010p"
+ 178      88888878 
+ 178      0870
+ 179 04c4 06080000 		.ascii	"\006\010\000\000\370\020 @\370\000"
+ 179      F8102040 
+ 179      F800
+ 180 04ce 06081020 		.ascii	"\006\010\020  @  \020\000"
+ 180      20402020 
+ 180      1000
+ 181 04d8 06082020 		.ascii	"\006\010       \000"
+ 181      20202020 
+ 181      2000
+ 182 04e2 06084020 		.ascii	"\006\010@  \020  @\000"
+ 182      20102020 
+ 182      4000
+ 183 04ec 06086890 		.ascii	"\006\010h\220\000\000\000\000\000\000"
+ 183      00000000 
+ 183      0000
+ 184 04f6 06080000 		.ascii	"\006\010\000\000\000\000\000\000\000\000"
+ 184      00000000 
+ 184      0000
+ 185 0500 06080000 		.ascii	"\006\010\000\000\000\000\000\000\000\000"
+ 185      00000000 
+ 185      0000
+ 186 050a 06080000 		.ascii	"\006\010\000\000\000\000\000\000\000\000"
+ 186      00000000 
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\cci4qmtn.s 			page 63
+
+
+ 186      0000
+ 187 0514 06080000 		.ascii	"\006\010\000\000\000\000\000\000\000\000"
+ 187      00000000 
+ 187      0000
+ 188 051e 06080000 		.ascii	"\006\010\000\000\000\000\000\000\000\000"
+ 188      00000000 
+ 188      0000
+ 189 0528 06080000 		.ascii	"\006\010\000\000\000\000\000\000\000\000"
+ 189      00000000 
+ 189      0000
+ 190 0532 06080000 		.ascii	"\006\010\000\000\000\000\000\000\000\000"
+ 190      00000000 
+ 190      0000
+ 191 053c 06080000 		.ascii	"\006\010\000\000\000\000\000\000\000\000"
+ 191      00000000 
+ 191      0000
+ 192 0546 06080000 		.ascii	"\006\010\000\000\000\000\000\000\000\000"
+ 192      00000000 
+ 192      0000
+ 193 0550 06080000 		.ascii	"\006\010\000\000\000\000\000\000\000\000"
+ 193      00000000 
+ 193      0000
+ 194 055a 06080000 		.ascii	"\006\010\000\000\000\000\000\000\000\000"
+ 194      00000000 
+ 194      0000
+ 195 0564 06080000 		.ascii	"\006\010\000\000\000\000\000\000\000\000"
+ 195      00000000 
+ 195      0000
+ 196 056e 06080000 		.ascii	"\006\010\000\000\000\000\000\000\000\000"
+ 196      00000000 
+ 196      0000
+ 197 0578 06080000 		.ascii	"\006\010\000\000\000\000\000\000\000\000"
+ 197      00000000 
+ 197      0000
+ 198 0582 06080000 		.ascii	"\006\010\000\000\000\000\000\000\000\000"
+ 198      00000000 
+ 198      0000
+ 199 058c 06080000 		.ascii	"\006\010\000\000\000\000\000\000\000\000"
+ 199      00000000 
+ 199      0000
+ 200 0596 06080000 		.ascii	"\006\010\000\000\000\000\000\000\000\000"
+ 200      00000000 
+ 200      0000
+ 201 05a0 06080000 		.ascii	"\006\010\000\000\000\000\000\000\000\000"
+ 201      00000000 
+ 201      0000
+ 202 05aa 06080000 		.ascii	"\006\010\000\000\000\000\000\000\000\000"
+ 202      00000000 
+ 202      0000
+ 203 05b4 06080000 		.ascii	"\006\010\000\000\000\000\000\000\000\000"
+ 203      00000000 
+ 203      0000
+ 204 05be 06080000 		.ascii	"\006\010\000\000\000\000\000\000\000\000"
+ 204      00000000 
+ 204      0000
+ 205 05c8 06080000 		.ascii	"\006\010\000\000\000\000\000\000\000\000"
+ 205      00000000 
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\cci4qmtn.s 			page 64
+
+
+ 205      0000
+ 206 05d2 06080000 		.ascii	"\006\010\000\000\000\000\000\000\000\000"
+ 206      00000000 
+ 206      0000
+ 207 05dc 06080000 		.ascii	"\006\010\000\000\000\000\000\000\000\000"
+ 207      00000000 
+ 207      0000
+ 208 05e6 06080000 		.ascii	"\006\010\000\000\000\000\000\000\000\000"
+ 208      00000000 
+ 208      0000
+ 209 05f0 06080000 		.ascii	"\006\010\000\000\000\000\000\000\000\000"
+ 209      00000000 
+ 209      0000
+ 210 05fa 06080000 		.ascii	"\006\010\000\000\000\000\000\000\000\000"
+ 210      00000000 
+ 210      0000
+ 211 0604 06080000 		.ascii	"\006\010\000\000\000\000\000\000\000\000"
+ 211      00000000 
+ 211      0000
+ 212 060e 06080000 		.ascii	"\006\010\000\000\000\000\000\000\000\000"
+ 212      00000000 
+ 212      0000
+ 213 0618 06080000 		.ascii	"\006\010\000\000\000\000\000\000\000\000"
+ 213      00000000 
+ 213      0000
+ 214 0622 06080000 		.ascii	"\006\010\000\000\000\000\000\000\000\000"
+ 214      00000000 
+ 214      0000
+ 215 062c 06080000 		.ascii	"\006\010\000\000\000\000\000\000\000\000"
+ 215      00000000 
+ 215      0000
+ 216 0636 06080000 		.ascii	"\006\010\000\000\000\000\000\000\000\000"
+ 216      00000000 
+ 216      0000
+ 217 0640 06080000 		.ascii	"\006\010\000\000\000\000\000\000\000\000"
+ 217      00000000 
+ 217      0000
+ 218 064a 06080000 		.ascii	"\006\010\000\000\000\000\000\000\000\000"
+ 218      00000000 
+ 218      0000
+ 219 0654 06080000 		.ascii	"\006\010\000\000\000\000\000\000\000\000"
+ 219      00000000 
+ 219      0000
+ 220 065e 06080000 		.ascii	"\006\010\000\000\000\000\000\000\000\000"
+ 220      00000000 
+ 220      0000
+ 221 0668 06080000 		.ascii	"\006\010\000\000\000\000\000\000\000\000"
+ 221      00000000 
+ 221      0000
+ 222 0672 06080000 		.ascii	"\006\010\000\000\000\000\000\000\000\000"
+ 222      00000000 
+ 222      0000
+ 223 067c 06080000 		.ascii	"\006\010\000\000\000\000\000\000\000\000"
+ 223      00000000 
+ 223      0000
+ 224 0686 06080000 		.ascii	"\006\010\000\000\000\000\000\000\000\000"
+ 224      00000000 
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\cci4qmtn.s 			page 65
+
+
+ 224      0000
+ 225 0690 06085000 		.ascii	"\006\010P\000\370\200\360\200\370\000"
+ 225      F880F080 
+ 225      F800
+ 226 069a 06080000 		.ascii	"\006\010\000\000\000\000\000\000\000\000"
+ 226      00000000 
+ 226      0000
+ 227 06a4 06080000 		.ascii	"\006\010\000\000\000\000\000\000\000\000"
+ 227      00000000 
+ 227      0000
+ 228 06ae 06080000 		.ascii	"\006\010\000\000\000\000\000\000\000\000"
+ 228      00000000 
+ 228      0000
+ 229 06b8 06080000 		.ascii	"\006\010\000\000\000\000\000\000\000\000"
+ 229      00000000 
+ 229      0000
+ 230 06c2 06080000 		.ascii	"\006\010\000\000\000\000\000\000\000\000"
+ 230      00000000 
+ 230      0000
+ 231 06cc 06080000 		.ascii	"\006\010\000\000\000\000\000\000\000\000"
+ 231      00000000 
+ 231      0000
+ 232 06d6 06080000 		.ascii	"\006\010\000\000\000\000\000\000\000\000"
+ 232      00000000 
+ 232      0000
+ 233 06e0 06080000 		.ascii	"\006\010\000\000\000\000\000\000\000\000"
+ 233      00000000 
+ 233      0000
+ 234 06ea 06080000 		.ascii	"\006\010\000\000\000\000\000\000\000\000"
+ 234      00000000 
+ 234      0000
+ 235 06f4 06080000 		.ascii	"\006\010\000\000\000\000\000\000\000\000"
+ 235      00000000 
+ 235      0000
+ 236 06fe 06080000 		.ascii	"\006\010\000\000\000\000\000\000\000\000"
+ 236      00000000 
+ 236      0000
+ 237 0708 06080000 		.ascii	"\006\010\000\000\000\000\000\000\000\000"
+ 237      00000000 
+ 237      0000
+ 238 0712 06080000 		.ascii	"\006\010\000\000\000\000\000\000\000\000"
+ 238      00000000 
+ 238      0000
+ 239 071c 06080000 		.ascii	"\006\010\000\000\000\000\000\000\000\000"
+ 239      00000000 
+ 239      0000
+ 240 0726 06080000 		.ascii	"\006\010\000\000\000\000\000\000\000\000"
+ 240      00000000 
+ 240      0000
+ 241 0730 06085000 		.ascii	"\006\010P\000p\210\370\200p\000"
+ 241      7088F880 
+ 241      7000
+ 242 073a 06080000 		.ascii	"\006\010\000\000\000\000\000\000\000\000"
+ 242      00000000 
+ 242      0000
+ 243 0744 06080000 		.ascii	"\006\010\000\000\000\000\000\000\000\000"
+ 243      00000000 
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\cci4qmtn.s 			page 66
+
+
+ 243      0000
+ 244 074e 06080000 		.ascii	"\006\010\000\000\000\000\000\000\000\000"
+ 244      00000000 
+ 244      0000
+ 245 0758 06080000 		.ascii	"\006\010\000\000\000\000\000\000\000\000"
+ 245      00000000 
+ 245      0000
+ 246 0762 06080000 		.ascii	"\006\010\000\000\000\000\000\000\000\000"
+ 246      00000000 
+ 246      0000
+ 247 076c 06080000 		.ascii	"\006\010\000\000\000\000\000\000\000\000"
+ 247      00000000 
+ 247      0000
+ 248 0776 06080000 		.ascii	"\006\010\000\000\000\000\000\000\000\000"
+ 248      00000000 
+ 248      0000
+ 249 0780 06087088 		.ascii	"\006\010p\210\210\370\210\210\210\000"
+ 249      88F88888 
+ 249      8800
+ 250 078a 0608F880 		.ascii	"\006\010\370\200\200\360\210\210\360\000"
+ 250      80F08888 
+ 250      F000
+ 251 0794 0608F088 		.ascii	"\006\010\360\210\210\360\210\210\360\000"
+ 251      88F08888 
+ 251      F000
+ 252 079e 0608F880 		.ascii	"\006\010\370\200\200\200\200\200\200\000"
+ 252      80808080 
+ 252      8000
+ 253 07a8 06083050 		.ascii	"\006\0100PPPP\370\210\000"
+ 253      505050F8 
+ 253      8800
+ 254 07b2 0608F880 		.ascii	"\006\010\370\200\200\360\200\200\370\000"
+ 254      80F08080 
+ 254      F800
+ 255 07bc 0608A8A8 		.ascii	"\006\010\250\250\250p\250\250\250\000"
+ 255      A870A8A8 
+ 255      A800
+ 256 07c6 06087088 		.ascii	"\006\010p\210\010\020\010\210p\000"
+ 256      08100888 
+ 256      7000
+ 257 07d0 06088888 		.ascii	"\006\010\210\210\230\250\310\210\210\000"
+ 257      98A8C888 
+ 257      8800
+ 258 07da 0608A888 		.ascii	"\006\010\250\210\230\250\310\210\210\000"
+ 258      98A8C888 
+ 258      8800
+ 259 07e4 06088888 		.ascii	"\006\010\210\210\220\340\220\210\210\000"
+ 259      90E09088 
+ 259      8800
+ 260 07ee 06083848 		.ascii	"\006\0108H\210\210\210\210\210\000"
+ 260      88888888 
+ 260      8800
+ 261 07f8 060888D8 		.ascii	"\006\010\210\330\330\250\250\210\210\000"
+ 261      D8A8A888 
+ 261      8800
+ 262 0802 06088888 		.ascii	"\006\010\210\210\210\370\210\210\210\000"
+ 262      88F88888 
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\cci4qmtn.s 			page 67
+
+
+ 262      8800
+ 263 080c 06087088 		.ascii	"\006\010p\210\210\210\210\210p\000"
+ 263      88888888 
+ 263      7000
+ 264 0816 0608F888 		.ascii	"\006\010\370\210\210\210\210\210\210\000"
+ 264      88888888 
+ 264      8800
+ 265 0820 0608F088 		.ascii	"\006\010\360\210\210\210\360\200\200\000"
+ 265      8888F080 
+ 265      8000
+ 266 082a 06087088 		.ascii	"\006\010p\210\200\200\200\210p\000"
+ 266      80808088 
+ 266      7000
+ 267 0834 0608F820 		.ascii	"\006\010\370      \000"
+ 267      20202020 
+ 267      2000
+ 268 083e 06088888 		.ascii	"\006\010\210\210\210\210x\010\360\000"
+ 268      88887808 
+ 268      F000
+ 269 0848 060870A8 		.ascii	"\006\010p\250\250\250\250p \000"
+ 269      A8A8A870 
+ 269      2000
+ 270 0852 06088888 		.ascii	"\006\010\210\210P P\210\210\000"
+ 270      50205088 
+ 270      8800
+ 271 085c 06088888 		.ascii	"\006\010\210\210\210\210\210\210\370\010"
+ 271      88888888 
+ 271      F808
+ 272 0866 06088888 		.ascii	"\006\010\210\210\210\210\370\010\010\000"
+ 272      8888F808 
+ 272      0800
+ 273 0870 0608A8A8 		.ascii	"\006\010\250\250\250\250\250\250\370\000"
+ 273      A8A8A8A8 
+ 273      F800
+ 274 087a 0608A8A8 		.ascii	"\006\010\250\250\250\250\250\250\370\010"
+ 274      A8A8A8A8 
+ 274      F808
+ 275 0884 0608C040 		.ascii	"\006\010\300@@pHHp\000"
+ 275      40704848 
+ 275      7000
+ 276 088e 06088888 		.ascii	"\006\010\210\210\210\310\250\250\310\000"
+ 276      88C8A8A8 
+ 276      C800
+ 277 0898 06084040 		.ascii	"\006\010@@@pHHp\000"
+ 277      40704848 
+ 277      7000
+ 278 08a2 06087088 		.ascii	"\006\010p\210\0108\010\210p\000"
+ 278      08380888 
+ 278      7000
+ 279 08ac 060890A8 		.ascii	"\006\010\220\250\250\350\250\250\220\000"
+ 279      A8E8A8A8 
+ 279      9000
+ 280 08b6 06087888 		.ascii	"\006\010x\210\210\210xH\210\000"
+ 280      88887848 
+ 280      8800
+ 281 08c0 06080000 		.ascii	"\006\010\000\000p\010x\210x\000"
+ 281      70087888 
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\cci4qmtn.s 			page 68
+
+
+ 281      7800
+ 282 08ca 06081860 		.ascii	"\006\010\030`\200\360\210\210p\000"
+ 282      80F08888 
+ 282      7000
+ 283 08d4 06080000 		.ascii	"\006\010\000\000\360\210\360\210\360\000"
+ 283      F088F088 
+ 283      F000
+ 284 08de 06080000 		.ascii	"\006\010\000\000\370\200\200\200\200\000"
+ 284      F8808080 
+ 284      8000
+ 285 08e8 06080000 		.ascii	"\006\010\000\0000PP\370\210\000"
+ 285      305050F8 
+ 285      8800
+ 286 08f2 06080000 		.ascii	"\006\010\000\000p\210\370\200p\000"
+ 286      7088F880 
+ 286      7000
+ 287 08fc 06080000 		.ascii	"\006\010\000\000\250\250p\250\250\000"
+ 287      A8A870A8 
+ 287      A800
+ 288 0906 06080000 		.ascii	"\006\010\000\000p\210\020\210p\000"
+ 288      70881088 
+ 288      7000
+ 289 0910 06080000 		.ascii	"\006\010\000\000\210\230\250\310\210\000"
+ 289      8898A8C8 
+ 289      8800
+ 290 091a 06087000 		.ascii	"\006\010p\000\210\230\250\310\210\000"
+ 290      8898A8C8 
+ 290      8800
+ 291 0924 06080000 		.ascii	"\006\010\000\000\210\220\340\220\210\000"
+ 291      8890E090 
+ 291      8800
+ 292 092e 06080000 		.ascii	"\006\010\000\0008H\210\210\210\000"
+ 292      38488888 
+ 292      8800
+ 293 0938 06080000 		.ascii	"\006\010\000\000\210\330\250\210\210\000"
+ 293      88D8A888 
+ 293      8800
+ 294 0942 06080000 		.ascii	"\006\010\000\000\210\210\370\210\210\000"
+ 294      8888F888 
+ 294      8800
+ 295 094c 06080000 		.ascii	"\006\010\000\000p\210\210\210p\000"
+ 295      70888888 
+ 295      7000
+ 296 0956 06080000 		.ascii	"\006\010\000\000\370\210\210\210\210\000"
+ 296      F8888888 
+ 296      8800
+ 297 0960 06080000 		.ascii	"\006\010\000\000\360\210\360\200\200\000"
+ 297      F088F080 
+ 297      8000
+ 298 096a 06080000 		.ascii	"\006\010\000\000p\210\200\210p\000"
+ 298      70888088 
+ 298      7000
+ 299 0974 06080000 		.ascii	"\006\010\000\000\370    \000"
+ 299      F8202020 
+ 299      2000
+ 300 097e 06080000 		.ascii	"\006\010\000\000\210\210x\010\360\000"
+ 300      88887808 
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\cci4qmtn.s 			page 69
+
+
+ 300      F000
+ 301 0988 06080000 		.ascii	"\006\010\000\000p\250\250p \000"
+ 301      70A8A870 
+ 301      2000
+ 302 0992 06080000 		.ascii	"\006\010\000\000\210P P\210\000"
+ 302      88502050 
+ 302      8800
+ 303 099c 06080000 		.ascii	"\006\010\000\000\210\210\210\210\370\010"
+ 303      88888888 
+ 303      F808
+ 304 09a6 06080000 		.ascii	"\006\010\000\000\210\210\370\010\010\000"
+ 304      8888F808 
+ 304      0800
+ 305 09b0 06080000 		.ascii	"\006\010\000\000\250\250\250\250\370\000"
+ 305      A8A8A8A8 
+ 305      F800
+ 306 09ba 06080000 		.ascii	"\006\010\000\000\250\250\250\250\370\010"
+ 306      A8A8A8A8 
+ 306      F808
+ 307 09c4 06080000 		.ascii	"\006\010\000\000\300@pHp\000"
+ 307      C0407048 
+ 307      7000
+ 308 09ce 06080000 		.ascii	"\006\010\000\000\210\210\310\250\310\000"
+ 308      8888C8A8 
+ 308      C800
+ 309 09d8 06080000 		.ascii	"\006\010\000\000@@pHp\000"
+ 309      40407048 
+ 309      7000
+ 310 09e2 06080000 		.ascii	"\006\010\000\000p\2108\210p\000"
+ 310      70883888 
+ 310      7000
+ 311 09ec 06080000 		.ascii	"\006\010\000\000\220\250\350\250\220\000"
+ 311      90A8E8A8 
+ 311      9000
+ 312 09f6 06080000 		.ascii	"\006\010\000\000x\210xH\210\000"
+ 312      78887848 
+ 312      8800
+ 313              		.text
+ 314              	.Letext0:
+ 315              		.file 2 "C:/Users/kroko/AppData/Roaming/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-to
+ 316              		.file 3 "C:/Users/kroko/AppData/Roaming/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-to
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\cci4qmtn.s 			page 70
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 f6x8m.c
+C:\Users\kroko\AppData\Local\Temp\cci4qmtn.s:21     .text.f6x8m_GetCharTable:00000000 $t
+C:\Users\kroko\AppData\Local\Temp\cci4qmtn.s:27     .text.f6x8m_GetCharTable:00000000 f6x8m_GetCharTable
+C:\Users\kroko\AppData\Local\Temp\cci4qmtn.s:47     .text.f6x8m_GetCharTable:0000000c $d
+C:\Users\kroko\AppData\Local\Temp\cci4qmtn.s:56     .rodata.f6x8m_table:00000000 f6x8m_table
+C:\Users\kroko\AppData\Local\Temp\cci4qmtn.s:53     .rodata.f6x8m_table:00000000 $d
+
+NO UNDEFINED SYMBOLS

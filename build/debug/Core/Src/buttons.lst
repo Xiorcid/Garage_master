@@ -1,0 +1,387 @@
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccKO4nhi.s 			page 1
+
+
+   1              		.cpu cortex-m4
+   2              		.arch armv7e-m
+   3              		.fpu fpv4-sp-d16
+   4              		.eabi_attribute 27, 1
+   5              		.eabi_attribute 28, 1
+   6              		.eabi_attribute 20, 1
+   7              		.eabi_attribute 21, 1
+   8              		.eabi_attribute 23, 3
+   9              		.eabi_attribute 24, 1
+  10              		.eabi_attribute 25, 1
+  11              		.eabi_attribute 26, 1
+  12              		.eabi_attribute 30, 1
+  13              		.eabi_attribute 34, 1
+  14              		.eabi_attribute 18, 4
+  15              		.file	"buttons.c"
+  16              		.text
+  17              	.Ltext0:
+  18              		.cfi_sections	.debug_frame
+  19              		.file 1 "Core/Src/buttons.c"
+  20              		.section	.text.init,"ax",%progbits
+  21              		.align	1
+  22              		.global	init
+  23              		.syntax unified
+  24              		.thumb
+  25              		.thumb_func
+  27              	init:
+  28              	.LVL0:
+  29              	.LFB134:
+   1:Core/Src/buttons.c **** #include "buttons.h"
+   2:Core/Src/buttons.c **** 
+   3:Core/Src/buttons.c **** void init(Button *btt){
+  30              		.loc 1 3 23 view -0
+  31              		.cfi_startproc
+  32              		@ args = 0, pretend = 0, frame = 0
+  33              		@ frame_needed = 0, uses_anonymous_args = 0
+  34              		@ link register save eliminated.
+   4:Core/Src/buttons.c ****     //gpio_SetGPIOmode_In(btt->port, btt->pin, 0);
+   5:Core/Src/buttons.c ****     btt->btn_flag = true;
+  35              		.loc 1 5 5 view .LVU1
+  36              		.loc 1 5 19 is_stmt 0 view .LVU2
+  37 0000 0123     		movs	r3, #1
+  38 0002 0374     		strb	r3, [r0, #16]
+   6:Core/Src/buttons.c **** }
+  39              		.loc 1 6 1 view .LVU3
+  40 0004 7047     		bx	lr
+  41              		.cfi_endproc
+  42              	.LFE134:
+  44              		.section	.text.tick,"ax",%progbits
+  45              		.align	1
+  46              		.global	tick
+  47              		.syntax unified
+  48              		.thumb
+  49              		.thumb_func
+  51              	tick:
+  52              	.LVL1:
+  53              	.LFB135:
+   7:Core/Src/buttons.c **** 
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccKO4nhi.s 			page 2
+
+
+   8:Core/Src/buttons.c **** bool tick(Button *btt){
+  54              		.loc 1 8 23 is_stmt 1 view -0
+  55              		.cfi_startproc
+  56              		@ args = 0, pretend = 0, frame = 0
+  57              		@ frame_needed = 0, uses_anonymous_args = 0
+  58              		.loc 1 8 23 is_stmt 0 view .LVU5
+  59 0000 70B5     		push	{r4, r5, r6, lr}
+  60              		.cfi_def_cfa_offset 16
+  61              		.cfi_offset 4, -16
+  62              		.cfi_offset 5, -12
+  63              		.cfi_offset 6, -8
+  64              		.cfi_offset 14, -4
+  65 0002 0446     		mov	r4, r0
+   9:Core/Src/buttons.c ****     bool btn_state = !HAL_GPIO_ReadPin(btt->port, btt->pin);
+  66              		.loc 1 9 5 is_stmt 1 view .LVU6
+  67              		.loc 1 9 23 is_stmt 0 view .LVU7
+  68 0004 8188     		ldrh	r1, [r0, #4]
+  69 0006 0068     		ldr	r0, [r0]
+  70              	.LVL2:
+  71              		.loc 1 9 23 view .LVU8
+  72 0008 FFF7FEFF 		bl	HAL_GPIO_ReadPin
+  73              	.LVL3:
+  74              		.loc 1 9 10 discriminator 1 view .LVU9
+  75 000c 051E     		subs	r5, r0, #0
+  76 000e 0CBF     		ite	eq
+  77 0010 0126     		moveq	r6, #1
+  78 0012 0026     		movne	r6, #0
+  79              	.LVL4:
+  10:Core/Src/buttons.c **** 
+  11:Core/Src/buttons.c ****     if (!btn_state && !btt->btn_flag && HAL_GetTick() - btt->btn_timer > 100) {
+  80              		.loc 1 11 5 is_stmt 1 view .LVU10
+  81              		.loc 1 11 8 is_stmt 0 view .LVU11
+  82 0014 02D0     		beq	.L3
+  83              		.loc 1 11 27 discriminator 1 view .LVU12
+  84 0016 237C     		ldrb	r3, [r4, #16]	@ zero_extendqisi2
+  85              		.loc 1 11 20 discriminator 1 view .LVU13
+  86 0018 3BB1     		cbz	r3, .L9
+  87              	.L4:
+  12:Core/Src/buttons.c ****         btt->btn_flag = true;
+  13:Core/Src/buttons.c ****         if(!btt->btn_hold){btt->btn_single = true;}
+  14:Core/Src/buttons.c ****         btt->btn_hold = false;
+  15:Core/Src/buttons.c ****         btt->btn_timer = HAL_GetTick();
+  16:Core/Src/buttons.c ****     }
+  17:Core/Src/buttons.c ****     if (btn_state && btt->btn_flag && HAL_GetTick() - btt->btn_timer > 100) {
+  88              		.loc 1 17 5 is_stmt 1 view .LVU14
+  89              		.loc 1 17 8 is_stmt 0 view .LVU15
+  90 001a 0DB9     		cbnz	r5, .L6
+  91              	.L3:
+  92              		.loc 1 17 25 discriminator 1 view .LVU16
+  93 001c 237C     		ldrb	r3, [r4, #16]	@ zero_extendqisi2
+  94              		.loc 1 17 19 discriminator 1 view .LVU17
+  95 001e B3B9     		cbnz	r3, .L10
+  96              	.L6:
+  18:Core/Src/buttons.c ****         btt->btn_flag = false;
+  19:Core/Src/buttons.c ****         btt->btn_timer = HAL_GetTick();
+  20:Core/Src/buttons.c ****         btt->btn_hold_timer = HAL_GetTick();
+  21:Core/Src/buttons.c ****     }
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccKO4nhi.s 			page 3
+
+
+  22:Core/Src/buttons.c **** 
+  23:Core/Src/buttons.c ****     if (!btt->btn_flag && btn_state && (HAL_GetTick() - btt->btn_hold_timer >= 200) && !btt->btn_ho
+  97              		.loc 1 23 5 is_stmt 1 view .LVU18
+  98              		.loc 1 23 13 is_stmt 0 view .LVU19
+  99 0020 237C     		ldrb	r3, [r4, #16]	@ zero_extendqisi2
+ 100              		.loc 1 23 8 view .LVU20
+ 101 0022 03B9     		cbnz	r3, .L7
+ 102              		.loc 1 23 24 discriminator 1 view .LVU21
+ 103 0024 15B3     		cbz	r5, .L11
+ 104              	.L7:
+  24:Core/Src/buttons.c ****         btt->btn_hold = true;
+  25:Core/Src/buttons.c ****         btt->btn_hold_timer = HAL_GetTick();
+  26:Core/Src/buttons.c ****     }
+  27:Core/Src/buttons.c **** 
+  28:Core/Src/buttons.c ****     return btn_state;
+ 105              		.loc 1 28 5 is_stmt 1 view .LVU22
+  29:Core/Src/buttons.c **** }
+ 106              		.loc 1 29 1 is_stmt 0 view .LVU23
+ 107 0026 3046     		mov	r0, r6
+ 108 0028 70BD     		pop	{r4, r5, r6, pc}
+ 109              	.LVL5:
+ 110              	.L9:
+  11:Core/Src/buttons.c ****         btt->btn_flag = true;
+ 111              		.loc 1 11 41 discriminator 2 view .LVU24
+ 112 002a FFF7FEFF 		bl	HAL_GetTick
+ 113              	.LVL6:
+  11:Core/Src/buttons.c ****         btt->btn_flag = true;
+ 114              		.loc 1 11 60 discriminator 1 view .LVU25
+ 115 002e A368     		ldr	r3, [r4, #8]
+  11:Core/Src/buttons.c ****         btt->btn_flag = true;
+ 116              		.loc 1 11 55 discriminator 1 view .LVU26
+ 117 0030 C01A     		subs	r0, r0, r3
+  11:Core/Src/buttons.c ****         btt->btn_flag = true;
+ 118              		.loc 1 11 38 discriminator 1 view .LVU27
+ 119 0032 6428     		cmp	r0, #100
+ 120 0034 F1D9     		bls	.L4
+  12:Core/Src/buttons.c ****         if(!btt->btn_hold){btt->btn_single = true;}
+ 121              		.loc 1 12 9 is_stmt 1 view .LVU28
+  12:Core/Src/buttons.c ****         if(!btt->btn_hold){btt->btn_single = true;}
+ 122              		.loc 1 12 23 is_stmt 0 view .LVU29
+ 123 0036 0123     		movs	r3, #1
+ 124 0038 2374     		strb	r3, [r4, #16]
+  13:Core/Src/buttons.c ****         btt->btn_hold = false;
+ 125              		.loc 1 13 9 is_stmt 1 view .LVU30
+  13:Core/Src/buttons.c ****         btt->btn_hold = false;
+ 126              		.loc 1 13 16 is_stmt 0 view .LVU31
+ 127 003a 637C     		ldrb	r3, [r4, #17]	@ zero_extendqisi2
+  13:Core/Src/buttons.c ****         btt->btn_hold = false;
+ 128              		.loc 1 13 11 view .LVU32
+ 129 003c 0BB9     		cbnz	r3, .L5
+  13:Core/Src/buttons.c ****         btt->btn_hold = false;
+ 130              		.loc 1 13 28 is_stmt 1 discriminator 1 view .LVU33
+  13:Core/Src/buttons.c ****         btt->btn_hold = false;
+ 131              		.loc 1 13 44 is_stmt 0 discriminator 1 view .LVU34
+ 132 003e 0123     		movs	r3, #1
+ 133 0040 E374     		strb	r3, [r4, #19]
+ 134              	.L5:
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccKO4nhi.s 			page 4
+
+
+  14:Core/Src/buttons.c ****         btt->btn_timer = HAL_GetTick();
+ 135              		.loc 1 14 9 is_stmt 1 view .LVU35
+  14:Core/Src/buttons.c ****         btt->btn_timer = HAL_GetTick();
+ 136              		.loc 1 14 23 is_stmt 0 view .LVU36
+ 137 0042 0023     		movs	r3, #0
+ 138 0044 6374     		strb	r3, [r4, #17]
+  15:Core/Src/buttons.c ****     }
+ 139              		.loc 1 15 9 is_stmt 1 view .LVU37
+  15:Core/Src/buttons.c ****     }
+ 140              		.loc 1 15 26 is_stmt 0 view .LVU38
+ 141 0046 FFF7FEFF 		bl	HAL_GetTick
+ 142              	.LVL7:
+  15:Core/Src/buttons.c ****     }
+ 143              		.loc 1 15 24 discriminator 1 view .LVU39
+ 144 004a A060     		str	r0, [r4, #8]
+ 145 004c E5E7     		b	.L4
+ 146              	.L10:
+  17:Core/Src/buttons.c ****         btt->btn_flag = false;
+ 147              		.loc 1 17 39 discriminator 2 view .LVU40
+ 148 004e FFF7FEFF 		bl	HAL_GetTick
+ 149              	.LVL8:
+  17:Core/Src/buttons.c ****         btt->btn_flag = false;
+ 150              		.loc 1 17 58 discriminator 1 view .LVU41
+ 151 0052 A368     		ldr	r3, [r4, #8]
+  17:Core/Src/buttons.c ****         btt->btn_flag = false;
+ 152              		.loc 1 17 53 discriminator 1 view .LVU42
+ 153 0054 C01A     		subs	r0, r0, r3
+  17:Core/Src/buttons.c ****         btt->btn_flag = false;
+ 154              		.loc 1 17 36 discriminator 1 view .LVU43
+ 155 0056 6428     		cmp	r0, #100
+ 156 0058 E2D9     		bls	.L6
+  18:Core/Src/buttons.c ****         btt->btn_timer = HAL_GetTick();
+ 157              		.loc 1 18 9 is_stmt 1 view .LVU44
+  18:Core/Src/buttons.c ****         btt->btn_timer = HAL_GetTick();
+ 158              		.loc 1 18 23 is_stmt 0 view .LVU45
+ 159 005a 0023     		movs	r3, #0
+ 160 005c 2374     		strb	r3, [r4, #16]
+  19:Core/Src/buttons.c ****         btt->btn_hold_timer = HAL_GetTick();
+ 161              		.loc 1 19 9 is_stmt 1 view .LVU46
+  19:Core/Src/buttons.c ****         btt->btn_hold_timer = HAL_GetTick();
+ 162              		.loc 1 19 26 is_stmt 0 view .LVU47
+ 163 005e FFF7FEFF 		bl	HAL_GetTick
+ 164              	.LVL9:
+  19:Core/Src/buttons.c ****         btt->btn_hold_timer = HAL_GetTick();
+ 165              		.loc 1 19 24 discriminator 1 view .LVU48
+ 166 0062 A060     		str	r0, [r4, #8]
+  20:Core/Src/buttons.c ****     }
+ 167              		.loc 1 20 9 is_stmt 1 view .LVU49
+  20:Core/Src/buttons.c ****     }
+ 168              		.loc 1 20 31 is_stmt 0 view .LVU50
+ 169 0064 FFF7FEFF 		bl	HAL_GetTick
+ 170              	.LVL10:
+  20:Core/Src/buttons.c ****     }
+ 171              		.loc 1 20 29 discriminator 1 view .LVU51
+ 172 0068 E060     		str	r0, [r4, #12]
+ 173 006a D9E7     		b	.L6
+ 174              	.L11:
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccKO4nhi.s 			page 5
+
+
+  23:Core/Src/buttons.c ****         btt->btn_hold = true;
+ 175              		.loc 1 23 41 discriminator 2 view .LVU52
+ 176 006c FFF7FEFF 		bl	HAL_GetTick
+ 177              	.LVL11:
+  23:Core/Src/buttons.c ****         btt->btn_hold = true;
+ 178              		.loc 1 23 60 discriminator 1 view .LVU53
+ 179 0070 E368     		ldr	r3, [r4, #12]
+  23:Core/Src/buttons.c ****         btt->btn_hold = true;
+ 180              		.loc 1 23 55 discriminator 1 view .LVU54
+ 181 0072 C01A     		subs	r0, r0, r3
+  23:Core/Src/buttons.c ****         btt->btn_hold = true;
+ 182              		.loc 1 23 37 discriminator 1 view .LVU55
+ 183 0074 C728     		cmp	r0, #199
+ 184 0076 D6D9     		bls	.L7
+  23:Core/Src/buttons.c ****         btt->btn_hold = true;
+ 185              		.loc 1 23 92 discriminator 3 view .LVU56
+ 186 0078 637C     		ldrb	r3, [r4, #17]	@ zero_extendqisi2
+  23:Core/Src/buttons.c ****         btt->btn_hold = true;
+ 187              		.loc 1 23 85 discriminator 3 view .LVU57
+ 188 007a 002B     		cmp	r3, #0
+ 189 007c D3D1     		bne	.L7
+  24:Core/Src/buttons.c ****         btt->btn_hold_timer = HAL_GetTick();
+ 190              		.loc 1 24 9 is_stmt 1 view .LVU58
+  24:Core/Src/buttons.c ****         btt->btn_hold_timer = HAL_GetTick();
+ 191              		.loc 1 24 23 is_stmt 0 view .LVU59
+ 192 007e 0123     		movs	r3, #1
+ 193 0080 6374     		strb	r3, [r4, #17]
+  25:Core/Src/buttons.c ****     }
+ 194              		.loc 1 25 9 is_stmt 1 view .LVU60
+  25:Core/Src/buttons.c ****     }
+ 195              		.loc 1 25 31 is_stmt 0 view .LVU61
+ 196 0082 FFF7FEFF 		bl	HAL_GetTick
+ 197              	.LVL12:
+  25:Core/Src/buttons.c ****     }
+ 198              		.loc 1 25 29 discriminator 1 view .LVU62
+ 199 0086 E060     		str	r0, [r4, #12]
+ 200 0088 CDE7     		b	.L7
+ 201              		.cfi_endproc
+ 202              	.LFE135:
+ 204              		.section	.text.isClicked,"ax",%progbits
+ 205              		.align	1
+ 206              		.global	isClicked
+ 207              		.syntax unified
+ 208              		.thumb
+ 209              		.thumb_func
+ 211              	isClicked:
+ 212              	.LVL13:
+ 213              	.LFB136:
+  30:Core/Src/buttons.c **** 
+  31:Core/Src/buttons.c **** bool isClicked(Button *btt){
+ 214              		.loc 1 31 28 is_stmt 1 view -0
+ 215              		.cfi_startproc
+ 216              		@ args = 0, pretend = 0, frame = 0
+ 217              		@ frame_needed = 0, uses_anonymous_args = 0
+ 218              		@ link register save eliminated.
+ 219              		.loc 1 31 28 is_stmt 0 view .LVU64
+ 220 0000 0346     		mov	r3, r0
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccKO4nhi.s 			page 6
+
+
+  32:Core/Src/buttons.c ****     if(btt->btn_single){
+ 221              		.loc 1 32 5 is_stmt 1 view .LVU65
+ 222              		.loc 1 32 11 is_stmt 0 view .LVU66
+ 223 0002 C07C     		ldrb	r0, [r0, #19]	@ zero_extendqisi2
+ 224              	.LVL14:
+ 225              		.loc 1 32 7 view .LVU67
+ 226 0004 00B9     		cbnz	r0, .L14
+ 227              	.L13:
+  33:Core/Src/buttons.c ****         btt->btn_single = false;
+  34:Core/Src/buttons.c ****         return true;
+  35:Core/Src/buttons.c ****     } return false;
+  36:Core/Src/buttons.c **** }
+ 228              		.loc 1 36 1 view .LVU68
+ 229 0006 7047     		bx	lr
+ 230              	.L14:
+  33:Core/Src/buttons.c ****         btt->btn_single = false;
+ 231              		.loc 1 33 9 is_stmt 1 view .LVU69
+  33:Core/Src/buttons.c ****         btt->btn_single = false;
+ 232              		.loc 1 33 25 is_stmt 0 view .LVU70
+ 233 0008 0022     		movs	r2, #0
+ 234 000a DA74     		strb	r2, [r3, #19]
+  34:Core/Src/buttons.c ****     } return false;
+ 235              		.loc 1 34 9 is_stmt 1 view .LVU71
+  34:Core/Src/buttons.c ****     } return false;
+ 236              		.loc 1 34 16 is_stmt 0 view .LVU72
+ 237 000c FBE7     		b	.L13
+ 238              		.cfi_endproc
+ 239              	.LFE136:
+ 241              		.section	.text.isHold,"ax",%progbits
+ 242              		.align	1
+ 243              		.global	isHold
+ 244              		.syntax unified
+ 245              		.thumb
+ 246              		.thumb_func
+ 248              	isHold:
+ 249              	.LVL15:
+ 250              	.LFB137:
+  37:Core/Src/buttons.c **** 
+  38:Core/Src/buttons.c **** bool isHold(Button *btt){
+ 251              		.loc 1 38 25 is_stmt 1 view -0
+ 252              		.cfi_startproc
+ 253              		@ args = 0, pretend = 0, frame = 0
+ 254              		@ frame_needed = 0, uses_anonymous_args = 0
+ 255              		@ link register save eliminated.
+  39:Core/Src/buttons.c ****     if(btt->btn_hold){
+ 256              		.loc 1 39 5 view .LVU74
+  40:Core/Src/buttons.c ****         return true;
+  41:Core/Src/buttons.c ****     } return false;
+  42:Core/Src/buttons.c **** }...
+ 257              		.loc 1 42 1 is_stmt 0 view .LVU75
+ 258 0000 407C     		ldrb	r0, [r0, #17]	@ zero_extendqisi2
+ 259              	.LVL16:
+ 260              		.loc 1 42 1 view .LVU76
+ 261 0002 7047     		bx	lr
+ 262              		.cfi_endproc
+ 263              	.LFE137:
+ 265              		.text
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccKO4nhi.s 			page 7
+
+
+ 266              	.Letext0:
+ 267              		.file 2 "C:/Users/kroko/AppData/Roaming/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-to
+ 268              		.file 3 "C:/Users/kroko/AppData/Roaming/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-to
+ 269              		.file 4 "Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f413xx.h"
+ 270              		.file 5 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h"
+ 271              		.file 6 "Core/Inc/buttons.h"
+ 272              		.file 7 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h"
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccKO4nhi.s 			page 8
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 buttons.c
+C:\Users\kroko\AppData\Local\Temp\ccKO4nhi.s:21     .text.init:00000000 $t
+C:\Users\kroko\AppData\Local\Temp\ccKO4nhi.s:27     .text.init:00000000 init
+C:\Users\kroko\AppData\Local\Temp\ccKO4nhi.s:45     .text.tick:00000000 $t
+C:\Users\kroko\AppData\Local\Temp\ccKO4nhi.s:51     .text.tick:00000000 tick
+C:\Users\kroko\AppData\Local\Temp\ccKO4nhi.s:205    .text.isClicked:00000000 $t
+C:\Users\kroko\AppData\Local\Temp\ccKO4nhi.s:211    .text.isClicked:00000000 isClicked
+C:\Users\kroko\AppData\Local\Temp\ccKO4nhi.s:242    .text.isHold:00000000 $t
+C:\Users\kroko\AppData\Local\Temp\ccKO4nhi.s:248    .text.isHold:00000000 isHold
+
+UNDEFINED SYMBOLS
+HAL_GPIO_ReadPin
+HAL_GetTick
