@@ -165,6 +165,7 @@ void Dispaly_Data(Device *dev) {
 
 	if (!isOn){
 		Draw_BMP(78, 78, bitmap_off_84x84, 84, 84, 1);
+		//Draw_BMP(78, 78, skynet_100x64, 100, 64, 1);
 	} else {
 		Draw_BMP(78, 78, bitmap_on_84x84, 84, 84, 1);
 	}
@@ -172,6 +173,14 @@ void Dispaly_Data(Device *dev) {
 	dispcolor_Update();
 }
 
+
+void Draw_Easter(){
+	HAL_Delay(30);
+	dispcolor_FillScreen(BLACK);
+	Draw_BMP(70, 50, skynet_100x64, 100, 64, 1);
+	dispcolor_DrawString(10, 125, FONTID_16F, "The machines rose from the \n\rashes of the nuclear fire.", WHITE);
+	dispcolor_Update();
+}
 
 void Display_Init(int data, int maxV){
 	HAL_Delay(30);

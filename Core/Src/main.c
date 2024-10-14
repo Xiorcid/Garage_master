@@ -363,6 +363,11 @@ int main(void)
         if(deviceList[dev_num].setValue-5>deviceList[dev_num].minValue){
           deviceList[dev_num].setValue -=5;
         }
+        else{
+          for (uint8_t i = 0; i < 30; i++){
+            Draw_Easter();
+          }
+        }
       }
       // VALUE EDIT END
     }

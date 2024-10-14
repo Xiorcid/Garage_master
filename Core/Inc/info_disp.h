@@ -22,5 +22,6 @@ void Dispaly_Data(Device *dev);
 void Display_Init(int data, int maxV);
 void SIM_Init(char *cmd, char *ack);
 void Show_Message(char *msg, uint16_t time);
+void Draw_Easter();
 
 #endif /* SRC_DEMO_THERMOSTAT_H_ */
