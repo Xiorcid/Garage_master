@@ -290,7 +290,20 @@ int main(void)
       for (uint8_t i = 0; i < DEV_COUNT; i++){
         char init_file_buf[50];
         if(deviceList[i].initState == DEV_STATE_IN){
-          buf_len = sprintf(init_file_buf, "DEV: %d\nMin/Max: %d/%d\nDev type: %d\n\n", i, deviceList[i].minValue, deviceList[i].maxValue, deviceList[i].deviceMode);
+          char dev_type_buf[14];
+          switch (deviceList[i].deviceMode)
+          {
+          case TYPE_SET_ONLY:
+            buf = "TYPE_SET_ONLY";
+            break;
+          case TYPE_SET_TEL:
+            buf = "TYPE_SET_TEL";
+            break;
+          case TYPE_TEL_ONLY:
+            buf = "TYPE_TEL_ONLY";
+            break;
+          }
+          buf_len = sprintf(init_file_buf, "DEV: %d\nMin/Max: %d/%d\nDev type: %s\n\n", i, deviceList[i].minValue, deviceList[i].maxValue, dev_type_buf);
         }else{
           buf_len = sprintf(init_file_buf, "DEV: empty\n\n");
         }
@@ -366,11 +379,11 @@ int main(void)
         if(deviceList[dev_num].setValue-5>deviceList[dev_num].minValue){
           deviceList[dev_num].setValue -=5;
         }
-        else{
-          for (uint8_t i = 0; i < 30; i++){
-            Draw_Easter();
-          }
-        }
+        // else{
+        //   for (uint8_t i = 0; i < 30; i++){
+        //     Draw_Easter();
+        //   }
+        // }
       }
       // VALUE EDIT END
     }
