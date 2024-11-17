@@ -1,0 +1,4 @@
+../Core/Src/onewire.c:22:13:SetBaudrate	256	static
+../Core/Src/onewire.c:63:9:OneWire_ProcessBit	32	static
+../Core/Src/onewire.c:82:9:OneWire_ProcessByte	40	static
+../Core/Src/onewire.c:107:16:OneWire_Reset	40	static
