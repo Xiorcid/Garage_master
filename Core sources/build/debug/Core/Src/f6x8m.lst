@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\kroko\AppData\Local\Temp\cci4qmtn.s 			page 1
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccbkkHoh.s 			page 1
 
 
    1              		.cpu cortex-m4
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\kroko\AppData\Local\Temp\cci4qmtn.s 			page 1
   27:Core/Src/f6x8m.c ****    ________,
   28:Core/Src/f6x8m.c ****    ________}
   29:Core/Src/f6x8m.c **** // 0x02
-ARM GAS  C:\Users\kroko\AppData\Local\Temp\cci4qmtn.s 			page 2
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccbkkHoh.s 			page 2
 
 
   30:Core/Src/f6x8m.c ****  ,{
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\kroko\AppData\Local\Temp\cci4qmtn.s 			page 1
   84:Core/Src/f6x8m.c ****    ________,
   85:Core/Src/f6x8m.c ****    ________,
   86:Core/Src/f6x8m.c ****    ________,
-ARM GAS  C:\Users\kroko\AppData\Local\Temp\cci4qmtn.s 			page 3
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccbkkHoh.s 			page 3
 
 
   87:Core/Src/f6x8m.c ****    ________,
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\kroko\AppData\Local\Temp\cci4qmtn.s 			page 1
  141:Core/Src/f6x8m.c ****    ________,
  142:Core/Src/f6x8m.c ****    ________,
  143:Core/Src/f6x8m.c ****    ________,
-ARM GAS  C:\Users\kroko\AppData\Local\Temp\cci4qmtn.s 			page 4
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccbkkHoh.s 			page 4
 
 
  144:Core/Src/f6x8m.c ****    ________,
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\kroko\AppData\Local\Temp\cci4qmtn.s 			page 1
  198:Core/Src/f6x8m.c ****  ,{
  199:Core/Src/f6x8m.c ****    f6x8_MONO_WIDTH,
  200:Core/Src/f6x8m.c ****    f6x8_MONO_HEIGHT,
-ARM GAS  C:\Users\kroko\AppData\Local\Temp\cci4qmtn.s 			page 5
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccbkkHoh.s 			page 5
 
 
  201:Core/Src/f6x8m.c ****    ________,
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\kroko\AppData\Local\Temp\cci4qmtn.s 			page 1
  255:Core/Src/f6x8m.c ****    ________,
  256:Core/Src/f6x8m.c ****    ________}
  257:Core/Src/f6x8m.c **** // 0x15
-ARM GAS  C:\Users\kroko\AppData\Local\Temp\cci4qmtn.s 			page 6
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccbkkHoh.s 			page 6
 
 
  258:Core/Src/f6x8m.c ****  ,{
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\kroko\AppData\Local\Temp\cci4qmtn.s 			page 1
  312:Core/Src/f6x8m.c ****    ________,
  313:Core/Src/f6x8m.c ****    ________,
  314:Core/Src/f6x8m.c ****    ________,
-ARM GAS  C:\Users\kroko\AppData\Local\Temp\cci4qmtn.s 			page 7
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccbkkHoh.s 			page 7
 
 
  315:Core/Src/f6x8m.c ****    ________,
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\kroko\AppData\Local\Temp\cci4qmtn.s 			page 1
  369:Core/Src/f6x8m.c ****    ________,
  370:Core/Src/f6x8m.c ****    ________,
  371:Core/Src/f6x8m.c ****    ________,
-ARM GAS  C:\Users\kroko\AppData\Local\Temp\cci4qmtn.s 			page 8
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccbkkHoh.s 			page 8
 
 
  372:Core/Src/f6x8m.c ****    ________,
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\kroko\AppData\Local\Temp\cci4qmtn.s 			page 1
  426:Core/Src/f6x8m.c **** // 0x23
  427:Core/Src/f6x8m.c ****  ,{
  428:Core/Src/f6x8m.c ****    f6x8_MONO_WIDTH,
-ARM GAS  C:\Users\kroko\AppData\Local\Temp\cci4qmtn.s 			page 9
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccbkkHoh.s 			page 9
 
 
  429:Core/Src/f6x8m.c ****    f6x8_MONO_HEIGHT,
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\kroko\AppData\Local\Temp\cci4qmtn.s 			page 1
  483:Core/Src/f6x8m.c ****    _X______,
  484:Core/Src/f6x8m.c ****    ________,
  485:Core/Src/f6x8m.c ****    ________,
-ARM GAS  C:\Users\kroko\AppData\Local\Temp\cci4qmtn.s 			page 10
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccbkkHoh.s 			page 10
 
 
  486:Core/Src/f6x8m.c ****    ________,
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\kroko\AppData\Local\Temp\cci4qmtn.s 			page 1
  540:Core/Src/f6x8m.c ****    f6x8_MONO_WIDTH,
  541:Core/Src/f6x8m.c ****    f6x8_MONO_HEIGHT,
  542:Core/Src/f6x8m.c ****    ________,
-ARM GAS  C:\Users\kroko\AppData\Local\Temp\cci4qmtn.s 			page 11
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccbkkHoh.s 			page 11
 
 
  543:Core/Src/f6x8m.c ****    ________,
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\kroko\AppData\Local\Temp\cci4qmtn.s 			page 1
  597:Core/Src/f6x8m.c ****    _XXX____,
  598:Core/Src/f6x8m.c ****    ________}
  599:Core/Src/f6x8m.c **** 
-ARM GAS  C:\Users\kroko\AppData\Local\Temp\cci4qmtn.s 			page 12
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccbkkHoh.s 			page 12
 
 
  600:Core/Src/f6x8m.c **** // 0x31
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\kroko\AppData\Local\Temp\cci4qmtn.s 			page 1
  654:Core/Src/f6x8m.c ****    XXXXX___,
  655:Core/Src/f6x8m.c ****    X_______,
  656:Core/Src/f6x8m.c ****    XXXX____,
-ARM GAS  C:\Users\kroko\AppData\Local\Temp\cci4qmtn.s 			page 13
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccbkkHoh.s 			page 13
 
 
  657:Core/Src/f6x8m.c ****    ____X___,
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\kroko\AppData\Local\Temp\cci4qmtn.s 			page 1
  711:Core/Src/f6x8m.c ****  ,{
  712:Core/Src/f6x8m.c ****    f6x8_MONO_WIDTH,
  713:Core/Src/f6x8m.c ****    f6x8_MONO_HEIGHT,
-ARM GAS  C:\Users\kroko\AppData\Local\Temp\cci4qmtn.s 			page 14
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccbkkHoh.s 			page 14
 
 
  714:Core/Src/f6x8m.c ****    ________,
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\kroko\AppData\Local\Temp\cci4qmtn.s 			page 1
  768:Core/Src/f6x8m.c ****    X_______,
  769:Core/Src/f6x8m.c ****    ________}
  770:Core/Src/f6x8m.c **** // 0x3F
-ARM GAS  C:\Users\kroko\AppData\Local\Temp\cci4qmtn.s 			page 15
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccbkkHoh.s 			page 15
 
 
  771:Core/Src/f6x8m.c ****  ,{
@@ -898,7 +898,7 @@ ARM GAS  C:\Users\kroko\AppData\Local\Temp\cci4qmtn.s 			page 1
  825:Core/Src/f6x8m.c ****    X_______,
  826:Core/Src/f6x8m.c ****    X_______,
  827:Core/Src/f6x8m.c ****    X___X___,
-ARM GAS  C:\Users\kroko\AppData\Local\Temp\cci4qmtn.s 			page 16
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccbkkHoh.s 			page 16
 
 
  828:Core/Src/f6x8m.c ****    _XXX____,
@@ -958,7 +958,7 @@ ARM GAS  C:\Users\kroko\AppData\Local\Temp\cci4qmtn.s 			page 1
  882:Core/Src/f6x8m.c ****    X___X___,
  883:Core/Src/f6x8m.c ****    X___X___,
  884:Core/Src/f6x8m.c ****    X___X___,
-ARM GAS  C:\Users\kroko\AppData\Local\Temp\cci4qmtn.s 			page 17
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccbkkHoh.s 			page 17
 
 
  885:Core/Src/f6x8m.c ****    XXXXX___,
@@ -1018,7 +1018,7 @@ ARM GAS  C:\Users\kroko\AppData\Local\Temp\cci4qmtn.s 			page 1
  939:Core/Src/f6x8m.c ****  ,{
  940:Core/Src/f6x8m.c ****    f6x8_MONO_WIDTH,
  941:Core/Src/f6x8m.c ****    f6x8_MONO_HEIGHT,
-ARM GAS  C:\Users\kroko\AppData\Local\Temp\cci4qmtn.s 			page 18
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccbkkHoh.s 			page 18
 
 
  942:Core/Src/f6x8m.c ****    X___X___,
@@ -1078,7 +1078,7 @@ ARM GAS  C:\Users\kroko\AppData\Local\Temp\cci4qmtn.s 			page 1
  996:Core/Src/f6x8m.c ****    _XX_X___,
  997:Core/Src/f6x8m.c ****    ________}
  998:Core/Src/f6x8m.c **** // 0x52
-ARM GAS  C:\Users\kroko\AppData\Local\Temp\cci4qmtn.s 			page 19
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccbkkHoh.s 			page 19
 
 
  999:Core/Src/f6x8m.c ****  ,{
@@ -1138,7 +1138,7 @@ ARM GAS  C:\Users\kroko\AppData\Local\Temp\cci4qmtn.s 			page 1
 1053:Core/Src/f6x8m.c ****    X___X___,
 1054:Core/Src/f6x8m.c ****    X___X___,
 1055:Core/Src/f6x8m.c ****    _X_X____,
-ARM GAS  C:\Users\kroko\AppData\Local\Temp\cci4qmtn.s 			page 20
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccbkkHoh.s 			page 20
 
 
 1056:Core/Src/f6x8m.c ****    __X_____,
@@ -1198,7 +1198,7 @@ ARM GAS  C:\Users\kroko\AppData\Local\Temp\cci4qmtn.s 			page 1
 1110:Core/Src/f6x8m.c ****    _XXX____,
 1111:Core/Src/f6x8m.c ****    _X______,
 1112:Core/Src/f6x8m.c ****    _X______,
-ARM GAS  C:\Users\kroko\AppData\Local\Temp\cci4qmtn.s 			page 21
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccbkkHoh.s 			page 21
 
 
 1113:Core/Src/f6x8m.c ****    _X______,
@@ -1258,7 +1258,7 @@ ARM GAS  C:\Users\kroko\AppData\Local\Temp\cci4qmtn.s 			page 1
 1167:Core/Src/f6x8m.c ****  ,{
 1168:Core/Src/f6x8m.c ****    f6x8_MONO_WIDTH,
 1169:Core/Src/f6x8m.c ****    f6x8_MONO_HEIGHT,
-ARM GAS  C:\Users\kroko\AppData\Local\Temp\cci4qmtn.s 			page 22
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccbkkHoh.s 			page 22
 
 
 1170:Core/Src/f6x8m.c ****    _X______,
@@ -1318,7 +1318,7 @@ ARM GAS  C:\Users\kroko\AppData\Local\Temp\cci4qmtn.s 			page 1
 1224:Core/Src/f6x8m.c ****    _XXXX___,
 1225:Core/Src/f6x8m.c ****    ________}
 1226:Core/Src/f6x8m.c **** // 0x65
-ARM GAS  C:\Users\kroko\AppData\Local\Temp\cci4qmtn.s 			page 23
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccbkkHoh.s 			page 23
 
 
 1227:Core/Src/f6x8m.c ****  ,{
@@ -1378,7 +1378,7 @@ ARM GAS  C:\Users\kroko\AppData\Local\Temp\cci4qmtn.s 			page 1
 1281:Core/Src/f6x8m.c ****    __X_____,
 1282:Core/Src/f6x8m.c ****    __X_____,
 1283:Core/Src/f6x8m.c ****    __X_____,
-ARM GAS  C:\Users\kroko\AppData\Local\Temp\cci4qmtn.s 			page 24
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccbkkHoh.s 			page 24
 
 
 1284:Core/Src/f6x8m.c ****    _XXX____,
@@ -1438,7 +1438,7 @@ ARM GAS  C:\Users\kroko\AppData\Local\Temp\cci4qmtn.s 			page 1
 1338:Core/Src/f6x8m.c ****    ________,
 1339:Core/Src/f6x8m.c ****    ________,
 1340:Core/Src/f6x8m.c ****    X_XX____,
-ARM GAS  C:\Users\kroko\AppData\Local\Temp\cci4qmtn.s 			page 25
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccbkkHoh.s 			page 25
 
 
 1341:Core/Src/f6x8m.c ****    XX__X___,
@@ -1498,7 +1498,7 @@ ARM GAS  C:\Users\kroko\AppData\Local\Temp\cci4qmtn.s 			page 1
 1395:Core/Src/f6x8m.c ****  ,{
 1396:Core/Src/f6x8m.c ****    f6x8_MONO_WIDTH,
 1397:Core/Src/f6x8m.c ****    f6x8_MONO_HEIGHT,
-ARM GAS  C:\Users\kroko\AppData\Local\Temp\cci4qmtn.s 			page 26
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccbkkHoh.s 			page 26
 
 
 1398:Core/Src/f6x8m.c ****    ________,
@@ -1558,7 +1558,7 @@ ARM GAS  C:\Users\kroko\AppData\Local\Temp\cci4qmtn.s 			page 1
 1452:Core/Src/f6x8m.c ****    _X_X____,
 1453:Core/Src/f6x8m.c ****    ________}
 1454:Core/Src/f6x8m.c **** // 0x78
-ARM GAS  C:\Users\kroko\AppData\Local\Temp\cci4qmtn.s 			page 27
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccbkkHoh.s 			page 27
 
 
 1455:Core/Src/f6x8m.c ****  ,{
@@ -1618,7 +1618,7 @@ ARM GAS  C:\Users\kroko\AppData\Local\Temp\cci4qmtn.s 			page 1
 1509:Core/Src/f6x8m.c ****    __X_____,
 1510:Core/Src/f6x8m.c ****    __X_____,
 1511:Core/Src/f6x8m.c ****    __X_____,
-ARM GAS  C:\Users\kroko\AppData\Local\Temp\cci4qmtn.s 			page 28
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccbkkHoh.s 			page 28
 
 
 1512:Core/Src/f6x8m.c ****    __X_____,
@@ -1678,7 +1678,7 @@ ARM GAS  C:\Users\kroko\AppData\Local\Temp\cci4qmtn.s 			page 1
 1566:Core/Src/f6x8m.c ****    ________,
 1567:Core/Src/f6x8m.c ****    ________,
 1568:Core/Src/f6x8m.c ****    ________,
-ARM GAS  C:\Users\kroko\AppData\Local\Temp\cci4qmtn.s 			page 29
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccbkkHoh.s 			page 29
 
 
 1569:Core/Src/f6x8m.c ****    ________,
@@ -1738,7 +1738,7 @@ ARM GAS  C:\Users\kroko\AppData\Local\Temp\cci4qmtn.s 			page 1
 1623:Core/Src/f6x8m.c ****  ,{
 1624:Core/Src/f6x8m.c ****    f6x8_MONO_WIDTH,
 1625:Core/Src/f6x8m.c ****    f6x8_MONO_HEIGHT,
-ARM GAS  C:\Users\kroko\AppData\Local\Temp\cci4qmtn.s 			page 30
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccbkkHoh.s 			page 30
 
 
 1626:Core/Src/f6x8m.c ****    ________,
@@ -1798,7 +1798,7 @@ ARM GAS  C:\Users\kroko\AppData\Local\Temp\cci4qmtn.s 			page 1
 1680:Core/Src/f6x8m.c ****    ________,
 1681:Core/Src/f6x8m.c ****    ________}
 1682:Core/Src/f6x8m.c **** // 0x8B
-ARM GAS  C:\Users\kroko\AppData\Local\Temp\cci4qmtn.s 			page 31
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccbkkHoh.s 			page 31
 
 
 1683:Core/Src/f6x8m.c ****  ,{
@@ -1858,7 +1858,7 @@ ARM GAS  C:\Users\kroko\AppData\Local\Temp\cci4qmtn.s 			page 1
 1737:Core/Src/f6x8m.c ****    ________,
 1738:Core/Src/f6x8m.c ****    ________,
 1739:Core/Src/f6x8m.c ****    ________,
-ARM GAS  C:\Users\kroko\AppData\Local\Temp\cci4qmtn.s 			page 32
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccbkkHoh.s 			page 32
 
 
 1740:Core/Src/f6x8m.c ****    ________,
@@ -1918,7 +1918,7 @@ ARM GAS  C:\Users\kroko\AppData\Local\Temp\cci4qmtn.s 			page 1
 1794:Core/Src/f6x8m.c ****    ________,
 1795:Core/Src/f6x8m.c ****    ________,
 1796:Core/Src/f6x8m.c ****    ________,
-ARM GAS  C:\Users\kroko\AppData\Local\Temp\cci4qmtn.s 			page 33
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccbkkHoh.s 			page 33
 
 
 1797:Core/Src/f6x8m.c ****    ________,
@@ -1978,7 +1978,7 @@ ARM GAS  C:\Users\kroko\AppData\Local\Temp\cci4qmtn.s 			page 1
 1851:Core/Src/f6x8m.c ****  ,{
 1852:Core/Src/f6x8m.c ****    f6x8_MONO_WIDTH,
 1853:Core/Src/f6x8m.c ****    f6x8_MONO_HEIGHT,
-ARM GAS  C:\Users\kroko\AppData\Local\Temp\cci4qmtn.s 			page 34
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccbkkHoh.s 			page 34
 
 
 1854:Core/Src/f6x8m.c ****    ________,
@@ -2038,7 +2038,7 @@ ARM GAS  C:\Users\kroko\AppData\Local\Temp\cci4qmtn.s 			page 1
 1908:Core/Src/f6x8m.c ****    ________,
 1909:Core/Src/f6x8m.c ****    ________}
 1910:Core/Src/f6x8m.c **** // 0x9E
-ARM GAS  C:\Users\kroko\AppData\Local\Temp\cci4qmtn.s 			page 35
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccbkkHoh.s 			page 35
 
 
 1911:Core/Src/f6x8m.c ****  ,{
@@ -2098,7 +2098,7 @@ ARM GAS  C:\Users\kroko\AppData\Local\Temp\cci4qmtn.s 			page 1
 1965:Core/Src/f6x8m.c ****    ________,
 1966:Core/Src/f6x8m.c ****    ________,
 1967:Core/Src/f6x8m.c ****    ________,
-ARM GAS  C:\Users\kroko\AppData\Local\Temp\cci4qmtn.s 			page 36
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccbkkHoh.s 			page 36
 
 
 1968:Core/Src/f6x8m.c ****    ________,
@@ -2158,7 +2158,7 @@ ARM GAS  C:\Users\kroko\AppData\Local\Temp\cci4qmtn.s 			page 1
 2022:Core/Src/f6x8m.c ****    ________,
 2023:Core/Src/f6x8m.c ****    ________,
 2024:Core/Src/f6x8m.c ****    ________,
-ARM GAS  C:\Users\kroko\AppData\Local\Temp\cci4qmtn.s 			page 37
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccbkkHoh.s 			page 37
 
 
 2025:Core/Src/f6x8m.c ****    ________,
@@ -2218,7 +2218,7 @@ ARM GAS  C:\Users\kroko\AppData\Local\Temp\cci4qmtn.s 			page 1
 2079:Core/Src/f6x8m.c ****  ,{
 2080:Core/Src/f6x8m.c ****    f6x8_MONO_WIDTH,
 2081:Core/Src/f6x8m.c ****    f6x8_MONO_HEIGHT,
-ARM GAS  C:\Users\kroko\AppData\Local\Temp\cci4qmtn.s 			page 38
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccbkkHoh.s 			page 38
 
 
 2082:Core/Src/f6x8m.c ****    ________,
@@ -2278,7 +2278,7 @@ ARM GAS  C:\Users\kroko\AppData\Local\Temp\cci4qmtn.s 			page 1
 2136:Core/Src/f6x8m.c ****    ________,
 2137:Core/Src/f6x8m.c ****    ________}
 2138:Core/Src/f6x8m.c **** // 0xB1
-ARM GAS  C:\Users\kroko\AppData\Local\Temp\cci4qmtn.s 			page 39
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccbkkHoh.s 			page 39
 
 
 2139:Core/Src/f6x8m.c ****  ,{
@@ -2338,7 +2338,7 @@ ARM GAS  C:\Users\kroko\AppData\Local\Temp\cci4qmtn.s 			page 1
 2193:Core/Src/f6x8m.c ****    ________,
 2194:Core/Src/f6x8m.c ****    ________,
 2195:Core/Src/f6x8m.c ****    ________,
-ARM GAS  C:\Users\kroko\AppData\Local\Temp\cci4qmtn.s 			page 40
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccbkkHoh.s 			page 40
 
 
 2196:Core/Src/f6x8m.c ****    ________,
@@ -2398,7 +2398,7 @@ ARM GAS  C:\Users\kroko\AppData\Local\Temp\cci4qmtn.s 			page 1
 2250:Core/Src/f6x8m.c ****    ________,
 2251:Core/Src/f6x8m.c ****    ________,
 2252:Core/Src/f6x8m.c ****    ________,
-ARM GAS  C:\Users\kroko\AppData\Local\Temp\cci4qmtn.s 			page 41
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccbkkHoh.s 			page 41
 
 
 2253:Core/Src/f6x8m.c ****    ________,
@@ -2458,7 +2458,7 @@ ARM GAS  C:\Users\kroko\AppData\Local\Temp\cci4qmtn.s 			page 1
 2307:Core/Src/f6x8m.c ****  ,{
 2308:Core/Src/f6x8m.c ****    f6x8_MONO_WIDTH,
 2309:Core/Src/f6x8m.c ****    f6x8_MONO_HEIGHT,
-ARM GAS  C:\Users\kroko\AppData\Local\Temp\cci4qmtn.s 			page 42
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccbkkHoh.s 			page 42
 
 
 2310:Core/Src/f6x8m.c ****    ________,
@@ -2518,7 +2518,7 @@ ARM GAS  C:\Users\kroko\AppData\Local\Temp\cci4qmtn.s 			page 1
 2364:Core/Src/f6x8m.c ****    X_______,
 2365:Core/Src/f6x8m.c ****    ________}
 2366:Core/Src/f6x8m.c **** // 0xC4
-ARM GAS  C:\Users\kroko\AppData\Local\Temp\cci4qmtn.s 			page 43
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccbkkHoh.s 			page 43
 
 
 2367:Core/Src/f6x8m.c ****  ,{
@@ -2578,7 +2578,7 @@ ARM GAS  C:\Users\kroko\AppData\Local\Temp\cci4qmtn.s 			page 1
 2421:Core/Src/f6x8m.c ****    X_X_X___,
 2422:Core/Src/f6x8m.c ****    XX__X___,
 2423:Core/Src/f6x8m.c ****    X___X___,
-ARM GAS  C:\Users\kroko\AppData\Local\Temp\cci4qmtn.s 			page 44
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccbkkHoh.s 			page 44
 
 
 2424:Core/Src/f6x8m.c ****    X___X___,
@@ -2638,7 +2638,7 @@ ARM GAS  C:\Users\kroko\AppData\Local\Temp\cci4qmtn.s 			page 1
 2478:Core/Src/f6x8m.c ****    X___X___,
 2479:Core/Src/f6x8m.c ****    X___X___,
 2480:Core/Src/f6x8m.c ****    X___X___,
-ARM GAS  C:\Users\kroko\AppData\Local\Temp\cci4qmtn.s 			page 45
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccbkkHoh.s 			page 45
 
 
 2481:Core/Src/f6x8m.c ****    XXXXX___,
@@ -2698,7 +2698,7 @@ ARM GAS  C:\Users\kroko\AppData\Local\Temp\cci4qmtn.s 			page 1
 2535:Core/Src/f6x8m.c ****  ,{
 2536:Core/Src/f6x8m.c ****    f6x8_MONO_WIDTH,
 2537:Core/Src/f6x8m.c ****    f6x8_MONO_HEIGHT,
-ARM GAS  C:\Users\kroko\AppData\Local\Temp\cci4qmtn.s 			page 46
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccbkkHoh.s 			page 46
 
 
 2538:Core/Src/f6x8m.c ****    XXXXX___,
@@ -2758,7 +2758,7 @@ ARM GAS  C:\Users\kroko\AppData\Local\Temp\cci4qmtn.s 			page 1
 2592:Core/Src/f6x8m.c ****    XXXXX___,
 2593:Core/Src/f6x8m.c ****    ____X___}
 2594:Core/Src/f6x8m.c **** // 0xD7
-ARM GAS  C:\Users\kroko\AppData\Local\Temp\cci4qmtn.s 			page 47
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccbkkHoh.s 			page 47
 
 
 2595:Core/Src/f6x8m.c ****  ,{
@@ -2818,7 +2818,7 @@ ARM GAS  C:\Users\kroko\AppData\Local\Temp\cci4qmtn.s 			page 1
 2649:Core/Src/f6x8m.c ****    XX__X___,
 2650:Core/Src/f6x8m.c ****    X_X_X___,
 2651:Core/Src/f6x8m.c ****    X_X_X___,
-ARM GAS  C:\Users\kroko\AppData\Local\Temp\cci4qmtn.s 			page 48
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccbkkHoh.s 			page 48
 
 
 2652:Core/Src/f6x8m.c ****    XX__X___,
@@ -2878,7 +2878,7 @@ ARM GAS  C:\Users\kroko\AppData\Local\Temp\cci4qmtn.s 			page 1
 2706:Core/Src/f6x8m.c ****    ________,
 2707:Core/Src/f6x8m.c ****    ________,
 2708:Core/Src/f6x8m.c ****    _XXX____,
-ARM GAS  C:\Users\kroko\AppData\Local\Temp\cci4qmtn.s 			page 49
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccbkkHoh.s 			page 49
 
 
 2709:Core/Src/f6x8m.c ****    ____X___,
@@ -2938,7 +2938,7 @@ ARM GAS  C:\Users\kroko\AppData\Local\Temp\cci4qmtn.s 			page 1
 2763:Core/Src/f6x8m.c ****  ,{
 2764:Core/Src/f6x8m.c ****    f6x8_MONO_WIDTH,
 2765:Core/Src/f6x8m.c ****    f6x8_MONO_HEIGHT,
-ARM GAS  C:\Users\kroko\AppData\Local\Temp\cci4qmtn.s 			page 50
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccbkkHoh.s 			page 50
 
 
 2766:Core/Src/f6x8m.c ****    ________,
@@ -2998,7 +2998,7 @@ ARM GAS  C:\Users\kroko\AppData\Local\Temp\cci4qmtn.s 			page 1
 2820:Core/Src/f6x8m.c ****    X___X___,
 2821:Core/Src/f6x8m.c ****    ________}
 2822:Core/Src/f6x8m.c **** // 0xEA
-ARM GAS  C:\Users\kroko\AppData\Local\Temp\cci4qmtn.s 			page 51
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccbkkHoh.s 			page 51
 
 
 2823:Core/Src/f6x8m.c ****  ,{
@@ -3058,7 +3058,7 @@ ARM GAS  C:\Users\kroko\AppData\Local\Temp\cci4qmtn.s 			page 1
 2877:Core/Src/f6x8m.c ****    X___X___,
 2878:Core/Src/f6x8m.c ****    X___X___,
 2879:Core/Src/f6x8m.c ****    X___X___,
-ARM GAS  C:\Users\kroko\AppData\Local\Temp\cci4qmtn.s 			page 52
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccbkkHoh.s 			page 52
 
 
 2880:Core/Src/f6x8m.c ****    _XXX____,
@@ -3118,7 +3118,7 @@ ARM GAS  C:\Users\kroko\AppData\Local\Temp\cci4qmtn.s 			page 1
 2934:Core/Src/f6x8m.c ****    ________,
 2935:Core/Src/f6x8m.c ****    ________,
 2936:Core/Src/f6x8m.c ****    X___X___,
-ARM GAS  C:\Users\kroko\AppData\Local\Temp\cci4qmtn.s 			page 53
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccbkkHoh.s 			page 53
 
 
 2937:Core/Src/f6x8m.c ****    X___X___,
@@ -3178,7 +3178,7 @@ ARM GAS  C:\Users\kroko\AppData\Local\Temp\cci4qmtn.s 			page 1
 2991:Core/Src/f6x8m.c ****  ,{
 2992:Core/Src/f6x8m.c ****    f6x8_MONO_WIDTH,
 2993:Core/Src/f6x8m.c ****    f6x8_MONO_HEIGHT,
-ARM GAS  C:\Users\kroko\AppData\Local\Temp\cci4qmtn.s 			page 54
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccbkkHoh.s 			page 54
 
 
 2994:Core/Src/f6x8m.c ****    ________,
@@ -3238,7 +3238,7 @@ ARM GAS  C:\Users\kroko\AppData\Local\Temp\cci4qmtn.s 			page 1
 3048:Core/Src/f6x8m.c ****    _XXX____,
 3049:Core/Src/f6x8m.c ****    ________}
 3050:Core/Src/f6x8m.c **** // 0xFD
-ARM GAS  C:\Users\kroko\AppData\Local\Temp\cci4qmtn.s 			page 55
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccbkkHoh.s 			page 55
 
 
 3051:Core/Src/f6x8m.c ****  ,{
@@ -3298,7 +3298,7 @@ ARM GAS  C:\Users\kroko\AppData\Local\Temp\cci4qmtn.s 			page 1
   41 0004 014B     		ldr	r3, .L2
   42 0006 03EB4000 		add	r0, r3, r0, lsl #1
   43 000a 7047     		bx	lr
-ARM GAS  C:\Users\kroko\AppData\Local\Temp\cci4qmtn.s 			page 56
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccbkkHoh.s 			page 56
 
 
   44              	.L3:
@@ -3358,7 +3358,7 @@ ARM GAS  C:\Users\kroko\AppData\Local\Temp\cci4qmtn.s 			page 1
   71      0000
   72 0096 06080000 		.ascii	"\006\010\000\000\000\000\000\000\000\000"
   72      00000000 
-ARM GAS  C:\Users\kroko\AppData\Local\Temp\cci4qmtn.s 			page 57
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccbkkHoh.s 			page 57
 
 
   72      0000
@@ -3418,7 +3418,7 @@ ARM GAS  C:\Users\kroko\AppData\Local\Temp\cci4qmtn.s 			page 1
   90      2000
   91 0154 06084848 		.ascii	"\006\010HHH\000\000\000\000\000"
   91      48000000 
-ARM GAS  C:\Users\kroko\AppData\Local\Temp\cci4qmtn.s 			page 58
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccbkkHoh.s 			page 58
 
 
   91      0000
@@ -3478,7 +3478,7 @@ ARM GAS  C:\Users\kroko\AppData\Local\Temp\cci4qmtn.s 			page 1
  109      1000
  110 0212 0608F880 		.ascii	"\006\010\370\200\360\010\010\210p\000"
  110      F0080888 
-ARM GAS  C:\Users\kroko\AppData\Local\Temp\cci4qmtn.s 			page 59
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccbkkHoh.s 			page 59
 
 
  110      7000
@@ -3538,7 +3538,7 @@ ARM GAS  C:\Users\kroko\AppData\Local\Temp\cci4qmtn.s 			page 1
  128      7800
  129 02d0 06088888 		.ascii	"\006\010\210\210\210\370\210\210\210\000"
  129      88F88888 
-ARM GAS  C:\Users\kroko\AppData\Local\Temp\cci4qmtn.s 			page 60
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccbkkHoh.s 			page 60
 
 
  129      8800
@@ -3598,7 +3598,7 @@ ARM GAS  C:\Users\kroko\AppData\Local\Temp\cci4qmtn.s 			page 1
  147      F800
  148 038e 06087040 		.ascii	"\006\010p@@@@@p\000"
  148      40404040 
-ARM GAS  C:\Users\kroko\AppData\Local\Temp\cci4qmtn.s 			page 61
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccbkkHoh.s 			page 61
 
 
  148      7000
@@ -3658,7 +3658,7 @@ ARM GAS  C:\Users\kroko\AppData\Local\Temp\cci4qmtn.s 			page 1
  166      8800
  167 044c 06080000 		.ascii	"\006\010\000\000\260\310\210\210\210\000"
  167      B0C88888 
-ARM GAS  C:\Users\kroko\AppData\Local\Temp\cci4qmtn.s 			page 62
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccbkkHoh.s 			page 62
 
 
  167      8800
@@ -3718,7 +3718,7 @@ ARM GAS  C:\Users\kroko\AppData\Local\Temp\cci4qmtn.s 			page 1
  185      0000
  186 050a 06080000 		.ascii	"\006\010\000\000\000\000\000\000\000\000"
  186      00000000 
-ARM GAS  C:\Users\kroko\AppData\Local\Temp\cci4qmtn.s 			page 63
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccbkkHoh.s 			page 63
 
 
  186      0000
@@ -3778,7 +3778,7 @@ ARM GAS  C:\Users\kroko\AppData\Local\Temp\cci4qmtn.s 			page 1
  204      0000
  205 05c8 06080000 		.ascii	"\006\010\000\000\000\000\000\000\000\000"
  205      00000000 
-ARM GAS  C:\Users\kroko\AppData\Local\Temp\cci4qmtn.s 			page 64
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccbkkHoh.s 			page 64
 
 
  205      0000
@@ -3838,7 +3838,7 @@ ARM GAS  C:\Users\kroko\AppData\Local\Temp\cci4qmtn.s 			page 1
  223      0000
  224 0686 06080000 		.ascii	"\006\010\000\000\000\000\000\000\000\000"
  224      00000000 
-ARM GAS  C:\Users\kroko\AppData\Local\Temp\cci4qmtn.s 			page 65
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccbkkHoh.s 			page 65
 
 
  224      0000
@@ -3898,7 +3898,7 @@ ARM GAS  C:\Users\kroko\AppData\Local\Temp\cci4qmtn.s 			page 1
  242      0000
  243 0744 06080000 		.ascii	"\006\010\000\000\000\000\000\000\000\000"
  243      00000000 
-ARM GAS  C:\Users\kroko\AppData\Local\Temp\cci4qmtn.s 			page 66
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccbkkHoh.s 			page 66
 
 
  243      0000
@@ -3958,7 +3958,7 @@ ARM GAS  C:\Users\kroko\AppData\Local\Temp\cci4qmtn.s 			page 1
  261      8800
  262 0802 06088888 		.ascii	"\006\010\210\210\210\370\210\210\210\000"
  262      88F88888 
-ARM GAS  C:\Users\kroko\AppData\Local\Temp\cci4qmtn.s 			page 67
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccbkkHoh.s 			page 67
 
 
  262      8800
@@ -4018,7 +4018,7 @@ ARM GAS  C:\Users\kroko\AppData\Local\Temp\cci4qmtn.s 			page 1
  280      8800
  281 08c0 06080000 		.ascii	"\006\010\000\000p\010x\210x\000"
  281      70087888 
-ARM GAS  C:\Users\kroko\AppData\Local\Temp\cci4qmtn.s 			page 68
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccbkkHoh.s 			page 68
 
 
  281      7800
@@ -4078,7 +4078,7 @@ ARM GAS  C:\Users\kroko\AppData\Local\Temp\cci4qmtn.s 			page 1
  299      2000
  300 097e 06080000 		.ascii	"\006\010\000\000\210\210x\010\360\000"
  300      88887808 
-ARM GAS  C:\Users\kroko\AppData\Local\Temp\cci4qmtn.s 			page 69
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccbkkHoh.s 			page 69
 
 
  300      F000
@@ -4122,15 +4122,15 @@ ARM GAS  C:\Users\kroko\AppData\Local\Temp\cci4qmtn.s 			page 1
  314              	.Letext0:
  315              		.file 2 "C:/Users/kroko/AppData/Roaming/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-to
  316              		.file 3 "C:/Users/kroko/AppData/Roaming/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-to
-ARM GAS  C:\Users\kroko\AppData\Local\Temp\cci4qmtn.s 			page 70
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccbkkHoh.s 			page 70
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 f6x8m.c
-C:\Users\kroko\AppData\Local\Temp\cci4qmtn.s:21     .text.f6x8m_GetCharTable:00000000 $t
-C:\Users\kroko\AppData\Local\Temp\cci4qmtn.s:27     .text.f6x8m_GetCharTable:00000000 f6x8m_GetCharTable
-C:\Users\kroko\AppData\Local\Temp\cci4qmtn.s:47     .text.f6x8m_GetCharTable:0000000c $d
-C:\Users\kroko\AppData\Local\Temp\cci4qmtn.s:56     .rodata.f6x8m_table:00000000 f6x8m_table
-C:\Users\kroko\AppData\Local\Temp\cci4qmtn.s:53     .rodata.f6x8m_table:00000000 $d
+C:\Users\kroko\AppData\Local\Temp\ccbkkHoh.s:21     .text.f6x8m_GetCharTable:00000000 $t
+C:\Users\kroko\AppData\Local\Temp\ccbkkHoh.s:27     .text.f6x8m_GetCharTable:00000000 f6x8m_GetCharTable
+C:\Users\kroko\AppData\Local\Temp\ccbkkHoh.s:47     .text.f6x8m_GetCharTable:0000000c $d
+C:\Users\kroko\AppData\Local\Temp\ccbkkHoh.s:56     .rodata.f6x8m_table:00000000 f6x8m_table
+C:\Users\kroko\AppData\Local\Temp\ccbkkHoh.s:53     .rodata.f6x8m_table:00000000 $d
 
 NO UNDEFINED SYMBOLS

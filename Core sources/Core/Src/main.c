@@ -59,17 +59,21 @@ RTC_HandleTypeDef hrtc;
 
 SPI_HandleTypeDef hspi1;
 SPI_HandleTypeDef hspi2;
-// DMA_HandleTypeDef hdma_spi1_tx;
+//DMA_HandleTypeDef hdma_spi1_tx;
 
 UART_HandleTypeDef huart5;
+UART_HandleTypeDef huart2;
 UART_HandleTypeDef huart6;
 DMA_HandleTypeDef hdma_uart5_rx;
 DMA_HandleTypeDef hdma_uart5_tx;
+DMA_HandleTypeDef hdma_usart2_rx;
+DMA_HandleTypeDef hdma_usart2_tx;
 DMA_HandleTypeDef hdma_usart6_rx;
 DMA_HandleTypeDef hdma_usart6_tx;
 
 /* USER CODE BEGIN PV */
-#define DEV0_UART &huart5
+#define DEV0_UART &huart4
+#define DEV3_UART &huart5
 
 #define DEV_STATE_IN    1
 #define DEV_STATE_UNIN  0
@@ -87,6 +91,7 @@ static void MX_UART5_Init(void);
 static void MX_USART6_UART_Init(void);
 static void MX_SPI2_Init(void);
 static void MX_RTC_Init(void);
+static void MX_USART2_UART_Init(void);
 /* USER CODE BEGIN PFP */
 
 /* USER CODE END PFP */
@@ -109,12 +114,14 @@ Button button = {ENC_KEY_GPIO_Port, ENC_KEY_Pin, TYPE_HIGH_PULL};
 
 Encoder enc = {ENC_S1_GPIO_Port, ENC_S1_Pin, ENC_S2_GPIO_Port, ENC_S2_Pin};
 
-// Device device_0 = {&huart5, DEV_STATE_UNIN, TYPE_SET_ONLY};
+//Device device_0 = {&huart4, DEV_STATE_UNIN, TYPE_SET_ONLY};
 // Device device_2 = {&huart5, DEV_STATE_UNIN, TYPE_SET_ONLY};
-// Device device_3 = {&huart5, DEV_STATE_UNIN, TYPE_SET_ONLY};
+//Device device_3 = {&huart5, DEV_STATE_UNIN, TYPE_SET_ONLY};
 // Device device_4 = {&huart5, DEV_STATE_UNIN, TYPE_SET_ONLY};
 
-Device deviceList[] = {{&huart5, DEV_STATE_UNIN, TYPE_SET_ONLY}};
+Device deviceList[] = {{&huart5, DEV_STATE_UNIN, TYPE_SET_ONLY}, {&huart2, DEV_STATE_UNIN, TYPE_SET_ONLY}};
+//Device deviceList[] = {device_0, dev};
+
 
 SIM sim = {SIM800_UART};
 
@@ -145,10 +152,10 @@ int main(void)
 
   /* USER CODE BEGIN Init */
 	// gpio_SetGPIOmode_Out(GPIOB, GPIO_PIN_14);
-  gpio_SetGPIOmode_Out(GPIOD, GPIO_PIN_2);
-  HAL_GPIO_WritePin(GPIOD, GPIO_PIN_2, GPIO_PIN_RESET);
-	HAL_Delay(100);
-  HAL_GPIO_WritePin(GPIOD, GPIO_PIN_2, GPIO_PIN_SET);
+  // gpio_SetGPIOmode_Out(GPIOD, GPIO_PIN_2);
+  // HAL_GPIO_WritePin(GPIOD, GPIO_PIN_2, GPIO_PIN_RESET);
+	// HAL_Delay(100);
+  // HAL_GPIO_WritePin(GPIOD, GPIO_PIN_2, GPIO_PIN_SET);
 
 
 	// HAL_GPIO_TogglePin(GPIOC, GPIO_PIN_13);
@@ -172,6 +179,7 @@ int main(void)
   MX_SPI2_Init();
   MX_FATFS_Init();
   MX_RTC_Init();
+  MX_USART2_UART_Init();
   /* USER CODE BEGIN 2 */
   // init(&button);
   // initEnc(&enc);
@@ -206,8 +214,6 @@ int main(void)
     // RTC SETUP MENU
   }
 
-  
-
   /* SD CARD */
   FATFS FatFs;
   FRESULT FR_Status;
@@ -223,6 +229,16 @@ int main(void)
 
 
   deviceList[0].tx_buff[0] = 84;
+  deviceList[1].tx_buff[0] = 84;
+
+
+  HAL_GPIO_WritePin(GPIOD, GPIO_PIN_2, GPIO_PIN_RESET);
+  HAL_GPIO_WritePin(DEV1_RST_GPIO_Port, DEV1_RST_Pin, GPIO_PIN_RESET);
+	HAL_Delay(100);
+  HAL_GPIO_WritePin(GPIOD, GPIO_PIN_2, GPIO_PIN_SET);
+  HAL_GPIO_WritePin(DEV1_RST_GPIO_Port, DEV1_RST_Pin, GPIO_PIN_SET);
+
+  dev_init_timeout = HAL_GetTick();
   /* USER CODE END 2 */
 
   /* Infinite loop */
@@ -232,7 +248,7 @@ int main(void)
     if(state == STATE_INIT){
       Display_Init(dev_num, DEV_COUNT);
       HAL_UART_Transmit_DMA(deviceList[dev_num].uart, deviceList[dev_num].tx_buff, 10);
-      HAL_UART_Receive_DMA(deviceList[dev_num].uart, deviceList[dev_num].rx_buff, 10);
+       HAL_UART_Receive_DMA(deviceList[dev_num].uart, deviceList[dev_num].rx_buff, 10);
     }
     // else if (state == STATE_800INIT){
     //   trySIMInit = 1;
@@ -243,12 +259,17 @@ int main(void)
     // }
     else{
       Dispaly_Data(&deviceList[dev_num]);
-      if(!transmitMode){
-        HAL_UART_Transmit_DMA(deviceList[dev_num].uart, deviceList[dev_num].tx_buff, 10);
+      if(transmitMode == TRANSMIT_MODE_GET){
+        if(deviceList[dev_num].deviceMode != TYPE_SET_ONLY){
+          HAL_UART_Transmit_DMA(deviceList[dev_num].uart, deviceList[dev_num].tx_buff, 10);
+          HAL_UART_Receive_DMA(deviceList[dev_num].uart, deviceList[dev_num].rx_buff, 10);
+        }
       }else{
         char setValueTx[10];
-        sprintf(setValueTx, "%d", deviceList[dev_num].setValue);
+        //sprintf(setValueTx, "%d", deviceList[dev_num].setValue);
+        itoa(deviceList[dev_num].setValue, setValueTx, 10);
         HAL_UART_Transmit_DMA(deviceList[dev_num].uart, setValueTx, 10);
+        transmitMode = TRANSMIT_MODE_GET;
       }
     }
     // NEW CODE END
@@ -281,36 +302,43 @@ int main(void)
       state = STATE_DISPLAY;
       simtmr = HAL_GetTick();
       dev_num = 0;
-      
-      // CREATE FILE "init_time_date.txt"
-      char filename_buff[35];
-      uint8_t buf_len;
-      sprintf(filename_buff, "init_%02d-%02d-%02d_%02d-%02d-%2d.txt", gTime.Hours, gTime.Minutes, gTime.Seconds, gDate.Date, gDate.Month, gDate.Year);
-      FR_Status = f_open(&Fil, filename_buff, FA_WRITE | FA_OPEN_ALWAYS | FA_CREATE_ALWAYS);
-      for (uint8_t i = 0; i < DEV_COUNT; i++){
-        char init_file_buf[50];
-        if(deviceList[i].initState == DEV_STATE_IN){
-          char dev_type_buf[14];
-          switch (deviceList[i].deviceMode)
-          {
-          case TYPE_SET_ONLY:
-            buf = "TYPE_SET_ONLY";
-            break;
-          case TYPE_SET_TEL:
-            buf = "TYPE_SET_TEL";
-            break;
-          case TYPE_TEL_ONLY:
-            buf = "TYPE_TEL_ONLY";
-            break;
+      screen_scroll_mode = SCROLL_MODE_AUTO;
+      if(isSDInitialised){
+        // CREATE FILE "init_time_date.txt"
+        char filename_buff[35];
+        uint8_t buf_len;
+        sprintf(filename_buff, "init_%02d-%02d-%02d_%02d-%02d-%2d.txt", gTime.Hours, gTime.Minutes, gTime.Seconds, gDate.Date, gDate.Month, gDate.Year);
+        FR_Status = f_open(&Fil, filename_buff, FA_WRITE | FA_OPEN_ALWAYS | FA_CREATE_ALWAYS);
+        for (uint8_t i = 0; i < DEV_COUNT; i++){
+          char init_file_buf[75];
+          if(deviceList[i].initState == DEV_STATE_IN){
+            char dev_type_buf[15];
+            switch (deviceList[i].deviceMode)
+            {
+            case TYPE_SET_ONLY:
+              sprintf(dev_type_buf, "TYPE_SET_ONLY");
+              break;
+            case TYPE_SET_TEL:
+              sprintf(dev_type_buf, "TYPE_SET_TEL");
+              break;
+            case TYPE_TEL_ONLY:
+              sprintf(dev_type_buf, "TYPE_TEL_ONLY");
+              break;
+            }
+            uint8_t max[5];
+            uint8_t min[5];
+            gcvt(deviceList[i].minValue, 5, min);
+            gcvt(deviceList[i].maxValue, 5, max);
+            buf_len = sprintf(init_file_buf, "DEV: %d\nMin/Max: %s/%s\nDev type: %s\n\n", i, min, max, dev_type_buf);
+            HAL_GPIO_TogglePin(GPIOC, GPIO_PIN_13);
+          }else{
+            buf_len = sprintf(init_file_buf, "DEV: empty\n\n");
           }
-          buf_len = sprintf(init_file_buf, "DEV: %d\nMin/Max: %d/%d\nDev type: %s\n\n", i, deviceList[i].minValue, deviceList[i].maxValue, dev_type_buf);
-        }else{
-          buf_len = sprintf(init_file_buf, "DEV: empty\n\n");
+          FR_Status = f_write(&Fil, init_file_buf, buf_len, &bytesWrote);
         }
-        FR_Status = f_write(&Fil, init_file_buf, buf_len, &bytesWrote);
+        f_close(&Fil);
+        // SAVE CONFIG
       }
-      f_close(&Fil);
-      // SAVE CONFIG
     }
     // DEVICE INITIALIZATION END
 
@@ -371,12 +399,12 @@ int main(void)
     }else{
       // VALUE EDIT START
       if(isRight(&enc)){
-        if(deviceList[dev_num].setValue+5<deviceList[dev_num].maxValue){
+        if(deviceList[dev_num].setValue+5<=deviceList[dev_num].maxValue){
           deviceList[dev_num].setValue +=5;
         }
       }
       if(isLeft(&enc)){
-        if(deviceList[dev_num].setValue-5>deviceList[dev_num].minValue){
+        if(deviceList[dev_num].setValue-5>=deviceList[dev_num].minValue){
           deviceList[dev_num].setValue -=5;
         }
         // else{
@@ -390,11 +418,13 @@ int main(void)
     // ENCODER END
 
     // EDIT VALUE START
-    if(isHold(&button) && HAL_GetTick() - hold_timeout > 750){
+    if(isHold(&button) && HAL_GetTick() - hold_timeout > 750 && deviceList[dev_num].deviceMode != TYPE_TEL_ONLY){
       screen_disp_time = HAL_GetTick();
       hold_timeout = HAL_GetTick();
       if(deviceList[dev_num].deviceDisplayMode == MODE_NORMAL){
-        deviceList[dev_num].setValue = deviceList[dev_num].currentValue;
+        if (deviceList[dev_num].deviceMode != TYPE_SET_ONLY){
+          deviceList[dev_num].setValue = deviceList[dev_num].currentValue;
+        }
         deviceList[dev_num].deviceDisplayMode = MODE_EDIT;
       }else{
         transmitMode = TRANSMIT_MODE_SET;
@@ -496,31 +526,46 @@ static void MX_RTC_Init(void)
   }
 
   /* USER CODE BEGIN Check_RTC_BKUP */
+  // GET RTC DATETIME
+  RTC_DateTypeDef gDate;
+  RTC_TimeTypeDef gTime;
+  bool rtcBackup = false;
 
+  /* Get the RTC current Time */
+  HAL_RTC_GetTime(&hrtc, &gTime, RTC_FORMAT_BIN);
+  /* Get the RTC current Date */
+  HAL_RTC_GetDate(&hrtc, &gDate, RTC_FORMAT_BIN);
+  
+  if(gDate.Year != 0){
+      rtcBackup = true;
+  }
   /* USER CODE END Check_RTC_BKUP */
 
   /** Initialize RTC and set the Time and Date
   */
-  // sTime.Hours = 0x16;
-  // sTime.Minutes = 0x34;
-  // sTime.Seconds = 0x45;
-  // sTime.DayLightSaving = RTC_DAYLIGHTSAVING_NONE;
-  // sTime.StoreOperation = RTC_STOREOPERATION_RESET;
-  // if (HAL_RTC_SetTime(&hrtc, &sTime, RTC_FORMAT_BCD) != HAL_OK)
-  // {
-  //   Error_Handler();
-  // }
-  // sDate.WeekDay = RTC_WEEKDAY_MONDAY;
-  // sDate.Month = RTC_MONTH_OCTOBER;
-  // sDate.Date = 0x14;
-  // sDate.Year = 0x2024;
+  sTime.Hours = 0x0;
+  sTime.Minutes = 0x0;
+  sTime.Seconds = 0x0;
+  sTime.DayLightSaving = RTC_DAYLIGHTSAVING_NONE;
+  sTime.StoreOperation = RTC_STOREOPERATION_RESET;
+  if (HAL_RTC_SetTime(&hrtc, &sTime, RTC_FORMAT_BCD) != HAL_OK)
+  {
+    Error_Handler();
+  }
+  sDate.WeekDay = RTC_WEEKDAY_MONDAY;
+  sDate.Month = RTC_MONTH_JANUARY;
+  sDate.Date = 0x1;
+  sDate.Year = 0x0;
 
-  // if (HAL_RTC_SetDate(&hrtc, &sDate, RTC_FORMAT_BCD) != HAL_OK)
-  // {
-  //   Error_Handler();
-  // }
+  if (HAL_RTC_SetDate(&hrtc, &sDate, RTC_FORMAT_BCD) != HAL_OK)
+  {
+    Error_Handler();
+  }
   /* USER CODE BEGIN RTC_Init 2 */
-
+  if(rtcBackup){
+    HAL_RTC_SetTime(&hrtc, &gTime, RTC_FORMAT_BIN);
+    HAL_RTC_SetDate(&hrtc, &gDate, RTC_FORMAT_BIN);
+  }
   /* USER CODE END RTC_Init 2 */
 
 }
@@ -635,6 +680,39 @@ static void MX_UART5_Init(void)
 }
 
 /**
+  * @brief USART2 Initialization Function
+  * @param None
+  * @retval None
+  */
+static void MX_USART2_UART_Init(void)
+{
+
+  /* USER CODE BEGIN USART2_Init 0 */
+
+  /* USER CODE END USART2_Init 0 */
+
+  /* USER CODE BEGIN USART2_Init 1 */
+
+  /* USER CODE END USART2_Init 1 */
+  huart2.Instance = USART2;
+  huart2.Init.BaudRate = 115200;
+  huart2.Init.WordLength = UART_WORDLENGTH_8B;
+  huart2.Init.StopBits = UART_STOPBITS_1;
+  huart2.Init.Parity = UART_PARITY_NONE;
+  huart2.Init.Mode = UART_MODE_TX_RX;
+  huart2.Init.HwFlowCtl = UART_HWCONTROL_NONE;
+  huart2.Init.OverSampling = UART_OVERSAMPLING_16;
+  if (HAL_UART_Init(&huart2) != HAL_OK)
+  {
+    Error_Handler();
+  }
+  /* USER CODE BEGIN USART2_Init 2 */
+
+  /* USER CODE END USART2_Init 2 */
+
+}
+
+/**
   * @brief USART6 Initialization Function
   * @param None
   * @retval None
@@ -681,6 +759,12 @@ static void MX_DMA_Init(void)
   /* DMA1_Stream0_IRQn interrupt configuration */
   HAL_NVIC_SetPriority(DMA1_Stream0_IRQn, 0, 0);
   HAL_NVIC_EnableIRQ(DMA1_Stream0_IRQn);
+  /* DMA1_Stream5_IRQn interrupt configuration */
+  HAL_NVIC_SetPriority(DMA1_Stream5_IRQn, 0, 0);
+  HAL_NVIC_EnableIRQ(DMA1_Stream5_IRQn);
+  /* DMA1_Stream6_IRQn interrupt configuration */
+  HAL_NVIC_SetPriority(DMA1_Stream6_IRQn, 0, 0);
+  HAL_NVIC_EnableIRQ(DMA1_Stream6_IRQn);
   /* DMA1_Stream7_IRQn interrupt configuration */
   HAL_NVIC_SetPriority(DMA1_Stream7_IRQn, 0, 0);
   HAL_NVIC_EnableIRQ(DMA1_Stream7_IRQn);
@@ -712,15 +796,22 @@ static void MX_GPIO_Init(void)
   __HAL_RCC_GPIOH_CLK_ENABLE();
   __HAL_RCC_GPIOA_CLK_ENABLE();
   __HAL_RCC_GPIOB_CLK_ENABLE();
+  __HAL_RCC_GPIOD_CLK_ENABLE();
 
   /*Configure GPIO pin Output Level */
-  HAL_GPIO_WritePin(GPIOC, LED_Pin|SPI2_CS_Pin|DC_Pin, GPIO_PIN_RESET);
+  HAL_GPIO_WritePin(GPIOC, LED_Pin|DEV0_RST_Pin|SPI2_CS_Pin|DC_Pin, GPIO_PIN_RESET);
 
   /*Configure GPIO pin Output Level */
   HAL_GPIO_WritePin(RST_GPIO_Port, RST_Pin, GPIO_PIN_RESET);
 
-  /*Configure GPIO pins : LED_Pin SPI2_CS_Pin DC_Pin */
-  GPIO_InitStruct.Pin = LED_Pin|SPI2_CS_Pin|DC_Pin;
+  /*Configure GPIO pin Output Level */
+  HAL_GPIO_WritePin(DEV1_RST_GPIO_Port, DEV1_RST_Pin, GPIO_PIN_RESET);
+
+  /*Configure GPIO pin Output Level */
+  HAL_GPIO_WritePin(DEV3_RST_GPIO_Port, DEV3_RST_Pin, GPIO_PIN_RESET);
+
+  /*Configure GPIO pins : LED_Pin DEV0_RST_Pin SPI2_CS_Pin DC_Pin */
+  GPIO_InitStruct.Pin = LED_Pin|DEV0_RST_Pin|SPI2_CS_Pin|DC_Pin;
   GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
@@ -732,6 +823,20 @@ static void MX_GPIO_Init(void)
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
   HAL_GPIO_Init(RST_GPIO_Port, &GPIO_InitStruct);
+
+  /*Configure GPIO pin : DEV1_RST_Pin */
+  GPIO_InitStruct.Pin = DEV1_RST_Pin;
+  GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
+  GPIO_InitStruct.Pull = GPIO_NOPULL;
+  GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
+  HAL_GPIO_Init(DEV1_RST_GPIO_Port, &GPIO_InitStruct);
+
+  /*Configure GPIO pin : DEV3_RST_Pin */
+  GPIO_InitStruct.Pin = DEV3_RST_Pin;
+  GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
+  GPIO_InitStruct.Pull = GPIO_NOPULL;
+  GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
+  HAL_GPIO_Init(DEV3_RST_GPIO_Port, &GPIO_InitStruct);
 
   /*Configure GPIO pins : ENC_KEY_Pin ENC_S2_Pin */
   GPIO_InitStruct.Pin = ENC_KEY_Pin|ENC_S2_Pin;
@@ -770,7 +875,8 @@ void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart)
  //(rx_buff, ""); 
   // HAL_UART_Receive_DMA(deviceList[dev_num].uart, rx_buff, 9);
   uint8_t rx_buff[10];
-HAL_UART_Receive_DMA(&huart5, rx_buff, 10);
+  HAL_UART_Receive_DMA(deviceList[dev_num].uart, rx_buff, 10);
+  //HAL_UART_Receive_DMA(&huart5, rx_buff, 10);
 //HAL_Delay(10);
   // if(trySIMInit == 1){
   //   if(rx_buff[0] == 79){
@@ -849,12 +955,11 @@ HAL_UART_Receive_DMA(&huart5, rx_buff, 10);
   else if(rx_buff[0] == 79){
     transmitMode = TRANSMIT_MODE_GET;
   }else{// ISSUE START
+    //deviceList[dev_num].currentValue = atof(rx_buff);
     deviceList[dev_num].currentValue = atof(rx_buff);
-    // deviceList[dev_num].currentValue /= 10;
+    deviceList[dev_num].currentValue /= 10;
   }// ISSUE END
   // NEW CODE END
-
-
 
   HAL_GPIO_TogglePin(GPIOC, GPIO_PIN_13);
 }

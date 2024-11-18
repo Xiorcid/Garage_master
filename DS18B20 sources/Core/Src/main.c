@@ -101,8 +101,9 @@ int main(void)
   MX_USART1_UART_Init();
   MX_USART2_UART_Init();
   /* USER CODE BEGIN 2 */
-  DS18_INIT();
   HAL_UART_Receive_DMA(&huart2, rx_buff, 10);
+  HAL_GPIO_WritePin(LED_GPIO_Port, LED_Pin, GPIO_PIN_SET);
+  DS18_INIT();
   /* USER CODE END 2 */
 
   /* Infinite loop */
@@ -311,13 +312,15 @@ float DS18_GET(){
 }
 
 void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart){
+	HAL_GPIO_TogglePin(LED_GPIO_Port, LED_Pin);
 	HAL_UART_Receive_DMA(&huart2, rx_buff, 10);
 	if (rx_buff[0] == 84){
-		uint8_t tx_buff[10] = {76, 66, 50, 88, 49, 48, 48, 89, 37, 37};
+    // TT-30X50Y*
+		uint8_t tx_buff[10] = {84, 84, 45, 51, 48, 88, 53, 48, 89, 176};
 		HAL_UART_Transmit_DMA(&huart2, &tx_buff, 10);
 	}else if (rx_buff[0] == 71){
 		uint8_t tx_buff[10] = {35, 35, 35, 35, 35, 35, 35, 35, 35, 35};
-		uint16_t val = 57;
+    int16_t val = roundf(temp * 10);
 		itoa(val, tx_buff, 10);
 		HAL_UART_Transmit_DMA(&huart2, &tx_buff, 10);
 	}

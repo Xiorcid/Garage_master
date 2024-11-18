@@ -110,7 +110,6 @@ void Dispaly_Data(Device *dev) {
 		}else{
 			drawData = minV;
 		}
-		
 	}else{
 		PaletteReady = 0;
 		drawData = data;
@@ -123,7 +122,10 @@ void Dispaly_Data(Device *dev) {
 	HAL_Delay(30);
 	dispcolor_FillScreen(bgColor);
 
-	if (deviceType == TYPE_SET_ONLY || displayMode == MODE_EDIT){drawData = set; data = set;}
+	if (deviceType == TYPE_SET_ONLY || displayMode == MODE_EDIT){
+		drawData = set; 
+		data = set;
+	}
 
 	
 	
@@ -134,23 +136,33 @@ void Dispaly_Data(Device *dev) {
 	char b[4];
 	if (deviceType != TYPE_SET_ONLY){
 		gcvt(data, 3, b);
+		//sprintf(b, "%f", data);
 		sprintf(buf, "%s %c", b, symbol);
 		
 		if(displayMode == MODE_NORMAL){
-			dispcolor_DrawString(85, 160, FONTID_32F, buf, textColor);		
+			dispcolor_DrawString(120-(strlen(buf)*6), 160, FONTID_32F, buf, textColor);		
 		}else{
 			if(HAL_GetTick() - edit_tmr > 500 && HAL_GetTick() - edit_tmr < 1000){
-				dispcolor_DrawString(85, 160, FONTID_32F, buf, textColor);		
+				dispcolor_DrawString(120-(strlen(buf)*6), 160, FONTID_32F, buf, textColor);		
 			}
 			if (HAL_GetTick() - edit_tmr > 1000){edit_tmr = HAL_GetTick();}	
 		}
 	}
 
-	if (deviceType != TYPE_TEL_ONLY && displayMode == MODE_NORMAL){
+	if (deviceType != TYPE_TEL_ONLY){
 		gcvt(set, 3, b);
 		sprintf(buf, "%s %c", b, symbol);
-		if (deviceType == TYPE_SET_ONLY){dispcolor_DrawString(85, 205, FONTID_32F, buf, textColor);}else{
-		dispcolor_DrawString(90, 205, FONTID_24F, buf, textColor);}		
+		if (displayMode == MODE_NORMAL || HAL_GetTick() - edit_tmr < 500){
+			if (deviceType == TYPE_SET_ONLY){
+				dispcolor_DrawString(120-(strlen(buf)*6), 200, FONTID_32F, buf, textColor);
+			}else{
+				dispcolor_DrawString(120-(strlen(buf)*4), 200, FONTID_24F, buf, textColor);
+			}	
+		}else{
+			if (HAL_GetTick() - edit_tmr > 750){
+				edit_tmr = HAL_GetTick();
+			}
+		}
 	}
 
 	uint8_t mainRadius = 101;
@@ -217,7 +229,7 @@ void Show_Message(char *msg, uint16_t time){
 	while(HAL_GetTick() - tmr < time){
 		HAL_Delay(30);
 		dispcolor_FillScreen(BLACK);
-		dispcolor_DrawString(120-(sizeof(msg)*16), 120, FONTID_16F, msg, WHITE);
+		dispcolor_DrawString(120-(strlen(msg)*4), 120, FONTID_16F, msg, WHITE);
 		
 		int16_t position = (time - (HAL_GetTick() - tmr)) * (max_angle_local - min_angle_local) / time + min_angle_local;
 

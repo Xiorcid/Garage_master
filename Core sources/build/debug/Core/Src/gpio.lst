@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccyYbVys.s 			page 1
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccCVJgcb.s 			page 1
 
 
    1              		.cpu cortex-m4
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccyYbVys.s 			page 1
   27:Core/Src/gpio.c **** 	HAL_GPIO_Init(GPIOx, &InitStruct);
   28:Core/Src/gpio.c **** }
   29:Core/Src/gpio.c **** 
-ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccyYbVys.s 			page 2
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccCVJgcb.s 			page 2
 
 
   30:Core/Src/gpio.c **** void gpio_SetGPIOmode_Out(GPIO_TypeDef *GPIOx, uint16_t Mask) {
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccyYbVys.s 			page 1
   63              		.loc 1 50 3 is_stmt 1 view .LVU12
   64              	.LBB2:
   65              		.loc 1 50 3 view .LVU13
-ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccyYbVys.s 			page 3
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccCVJgcb.s 			page 3
 
 
   66 0020 0023     		movs	r3, #0
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccyYbVys.s 			page 1
  112              	.LBB4:
   44:Core/Src/gpio.c **** 	else if (GPIOx == GPIOC)
  113              		.loc 1 44 3 view .LVU27
-ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccyYbVys.s 			page 4
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccCVJgcb.s 			page 4
 
 
  114 0056 0023     		movs	r3, #0
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccyYbVys.s 			page 1
   48:Core/Src/gpio.c **** 	else if (GPIOx == GPIOE)
  156              		.loc 1 48 3 view .LVU40
  157 008e 0A4B     		ldr	r3, .L12+20
-ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccyYbVys.s 			page 5
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccCVJgcb.s 			page 5
 
 
  158 0090 1A6B     		ldr	r2, [r3, #48]
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccyYbVys.s 			page 1
  208              		.loc 1 7 2 is_stmt 1 view .LVU46
  209 000a FFF7FEFF 		bl	gpio_PortClockStart
  210              	.LVL2:
-ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccyYbVys.s 			page 6
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccCVJgcb.s 			page 6
 
 
    9:Core/Src/gpio.c **** 	InitStruct.Pin = Mask;
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccyYbVys.s 			page 1
  250              		.cfi_restore_state
   20:Core/Src/gpio.c **** 		break;
  251              		.loc 1 20 3 is_stmt 1 view .LVU62
-ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccyYbVys.s 			page 7
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccCVJgcb.s 			page 7
 
 
   20:Core/Src/gpio.c **** 		break;
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccyYbVys.s 			page 1
  297 000c 0195     		str	r5, [sp, #4]
   35:Core/Src/gpio.c **** 	InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
  298              		.loc 1 35 2 is_stmt 1 view .LVU74
-ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccyYbVys.s 			page 8
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccCVJgcb.s 			page 8
 
 
   35:Core/Src/gpio.c **** 	InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
@@ -453,18 +453,18 @@ ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccyYbVys.s 			page 1
  323              		.file 3 "C:/Users/kroko/AppData/Roaming/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-to
  324              		.file 4 "Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f413xx.h"
  325              		.file 5 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h"
-ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccyYbVys.s 			page 9
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccCVJgcb.s 			page 9
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 gpio.c
-C:\Users\kroko\AppData\Local\Temp\ccyYbVys.s:21     .text.gpio_PortClockStart:00000000 $t
-C:\Users\kroko\AppData\Local\Temp\ccyYbVys.s:27     .text.gpio_PortClockStart:00000000 gpio_PortClockStart
-C:\Users\kroko\AppData\Local\Temp\ccyYbVys.s:173    .text.gpio_PortClockStart:000000a4 $d
-C:\Users\kroko\AppData\Local\Temp\ccyYbVys.s:183    .text.gpio_SetGPIOmode_In:00000000 $t
-C:\Users\kroko\AppData\Local\Temp\ccyYbVys.s:189    .text.gpio_SetGPIOmode_In:00000000 gpio_SetGPIOmode_In
-C:\Users\kroko\AppData\Local\Temp\ccyYbVys.s:268    .text.gpio_SetGPIOmode_Out:00000000 $t
-C:\Users\kroko\AppData\Local\Temp\ccyYbVys.s:274    .text.gpio_SetGPIOmode_Out:00000000 gpio_SetGPIOmode_Out
+C:\Users\kroko\AppData\Local\Temp\ccCVJgcb.s:21     .text.gpio_PortClockStart:00000000 $t
+C:\Users\kroko\AppData\Local\Temp\ccCVJgcb.s:27     .text.gpio_PortClockStart:00000000 gpio_PortClockStart
+C:\Users\kroko\AppData\Local\Temp\ccCVJgcb.s:173    .text.gpio_PortClockStart:000000a4 $d
+C:\Users\kroko\AppData\Local\Temp\ccCVJgcb.s:183    .text.gpio_SetGPIOmode_In:00000000 $t
+C:\Users\kroko\AppData\Local\Temp\ccCVJgcb.s:189    .text.gpio_SetGPIOmode_In:00000000 gpio_SetGPIOmode_In
+C:\Users\kroko\AppData\Local\Temp\ccCVJgcb.s:268    .text.gpio_SetGPIOmode_Out:00000000 $t
+C:\Users\kroko\AppData\Local\Temp\ccCVJgcb.s:274    .text.gpio_SetGPIOmode_Out:00000000 gpio_SetGPIOmode_Out
 
 UNDEFINED SYMBOLS
 HAL_GPIO_Init

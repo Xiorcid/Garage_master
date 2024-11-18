@@ -45,10 +45,10 @@ typedef struct _Device{
   UART_HandleTypeDef* uart;
   bool initState;
   uint8_t deviceMode;
-  uint16_t currentValue;
-  uint16_t setValue;
-  uint16_t minValue;
-  uint16_t maxValue;
+  double currentValue;
+  double setValue;
+  double minValue;
+  double maxValue;
   bool isDevOn;
   bool deviceDisplayMode;
   bool paletteType;
@@ -79,12 +79,18 @@ void Error_Handler(void);
 /* Private defines -----------------------------------------------------------*/
 #define LED_Pin GPIO_PIN_13
 #define LED_GPIO_Port GPIOC
+#define DEV0_RST_Pin GPIO_PIN_0
+#define DEV0_RST_GPIO_Port GPIOC
 #define SPI2_CS_Pin GPIO_PIN_1
 #define SPI2_CS_GPIO_Port GPIOC
 #define RST_Pin GPIO_PIN_6
 #define RST_GPIO_Port GPIOA
 #define DC_Pin GPIO_PIN_4
 #define DC_GPIO_Port GPIOC
+#define DEV1_RST_Pin GPIO_PIN_0
+#define DEV1_RST_GPIO_Port GPIOB
+#define DEV3_RST_Pin GPIO_PIN_2
+#define DEV3_RST_GPIO_Port GPIOD
 #define ENC_KEY_Pin GPIO_PIN_7
 #define ENC_KEY_GPIO_Port GPIOB
 #define ENC_S2_Pin GPIO_PIN_8

@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccMnsF66.s 			page 1
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccDS64ke.s 			page 1
 
 
    1              		.cpu cortex-m4
@@ -54,11 +54,11 @@ ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccMnsF66.s 			page 1
   24:FATFS/App/fatfs.c **** FIL USERFile;       /* File object for USER */
   25:FATFS/App/fatfs.c **** 
   26:FATFS/App/fatfs.c **** /* USER CODE BEGIN Variables */
-  27:FATFS/App/fatfs.c **** 
+  27:FATFS/App/fatfs.c **** extern RTC_HandleTypeDef hrtc;
   28:FATFS/App/fatfs.c **** /* USER CODE END Variables */
   29:FATFS/App/fatfs.c **** 
   30:FATFS/App/fatfs.c **** void MX_FATFS_Init(void)
-ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccMnsF66.s 			page 2
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccDS64ke.s 			page 2
 
 
   31:FATFS/App/fatfs.c **** {
@@ -114,78 +114,160 @@ ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccMnsF66.s 			page 1
   46:FATFS/App/fatfs.c **** {
   66              		.loc 1 46 1 is_stmt 1 view -0
   67              		.cfi_startproc
-  68              		@ args = 0, pretend = 0, frame = 0
+  68              		@ args = 0, pretend = 0, frame = 24
   69              		@ frame_needed = 0, uses_anonymous_args = 0
-  70              		@ link register save eliminated.
+  70 0000 10B5     		push	{r4, lr}
+  71              		.cfi_def_cfa_offset 8
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccDS64ke.s 			page 3
+
+
+  72              		.cfi_offset 4, -8
+  73              		.cfi_offset 14, -4
+  74 0002 86B0     		sub	sp, sp, #24
+  75              		.cfi_def_cfa_offset 32
   47:FATFS/App/fatfs.c ****   /* USER CODE BEGIN get_fattime */
-ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccMnsF66.s 			page 3
+  48:FATFS/App/fatfs.c ****   // GET RTC DATETIME
+  49:FATFS/App/fatfs.c ****   RTC_DateTypeDef gDate;
+  76              		.loc 1 49 3 view .LVU6
+  50:FATFS/App/fatfs.c ****   RTC_TimeTypeDef gTime;
+  77              		.loc 1 50 3 view .LVU7
+  51:FATFS/App/fatfs.c ****   
+  52:FATFS/App/fatfs.c ****   /* Get the RTC current Time */
+  53:FATFS/App/fatfs.c ****   HAL_RTC_GetTime(&hrtc, &gTime, RTC_FORMAT_BIN);
+  78              		.loc 1 53 3 view .LVU8
+  79 0004 124C     		ldr	r4, .L7
+  80 0006 0022     		movs	r2, #0
+  81 0008 6946     		mov	r1, sp
+  82 000a 2046     		mov	r0, r4
+  83 000c FFF7FEFF 		bl	HAL_RTC_GetTime
+  84              	.LVL1:
+  54:FATFS/App/fatfs.c ****   /* Get the RTC current Date */
+  55:FATFS/App/fatfs.c ****   HAL_RTC_GetDate(&hrtc, &gDate, RTC_FORMAT_BIN);
+  85              		.loc 1 55 3 view .LVU9
+  86 0010 0022     		movs	r2, #0
+  87 0012 05A9     		add	r1, sp, #20
+  88 0014 2046     		mov	r0, r4
+  89 0016 FFF7FEFF 		bl	HAL_RTC_GetDate
+  90              	.LVL2:
+  56:FATFS/App/fatfs.c ****   
+  57:FATFS/App/fatfs.c ****   return (DWORD)(gDate.Year-108)<<25|
+  91              		.loc 1 57 3 view .LVU10
+  92              		.loc 1 57 23 is_stmt 0 view .LVU11
+  93 001a 9DF81720 		ldrb	r2, [sp, #23]	@ zero_extendqisi2
+  94              		.loc 1 57 28 view .LVU12
+  95 001e 6C3A     		subs	r2, r2, #108
+  58:FATFS/App/fatfs.c ****          (DWORD)(gDate.Month)<<21|
+  96              		.loc 1 58 23 view .LVU13
+  97 0020 9DF81530 		ldrb	r3, [sp, #21]	@ zero_extendqisi2
+  98              		.loc 1 58 30 view .LVU14
+  99 0024 5B05     		lsls	r3, r3, #21
+  57:FATFS/App/fatfs.c ****          (DWORD)(gDate.Month)<<21|
+ 100              		.loc 1 57 37 view .LVU15
+ 101 0026 43EA4263 		orr	r3, r3, r2, lsl #25
+  59:FATFS/App/fatfs.c ****          (DWORD)(gDate.Date)<<16|
+ 102              		.loc 1 59 23 view .LVU16
+ 103 002a 9DF81620 		ldrb	r2, [sp, #22]	@ zero_extendqisi2
+  58:FATFS/App/fatfs.c ****          (DWORD)(gDate.Month)<<21|
+ 104              		.loc 1 58 34 view .LVU17
+ 105 002e 43EA0243 		orr	r3, r3, r2, lsl #16
+  60:FATFS/App/fatfs.c ****          (DWORD)(gTime.Hours)<<11|
+ 106              		.loc 1 60 23 view .LVU18
+ 107 0032 9DF80020 		ldrb	r2, [sp]	@ zero_extendqisi2
+  59:FATFS/App/fatfs.c ****          (DWORD)(gDate.Date)<<16|
+ 108              		.loc 1 59 33 view .LVU19
+ 109 0036 43EAC223 		orr	r3, r3, r2, lsl #11
+  61:FATFS/App/fatfs.c ****          (DWORD)(gTime.Minutes)<<5|
+ 110              		.loc 1 61 23 view .LVU20
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccDS64ke.s 			page 4
 
 
-  48:FATFS/App/fatfs.c ****   return 0;
-  71              		.loc 1 48 3 view .LVU6
-  49:FATFS/App/fatfs.c ****   /* USER CODE END get_fattime */
-  50:FATFS/App/fatfs.c **** }
-  72              		.loc 1 50 1 is_stmt 0 view .LVU7
-  73 0000 0020     		movs	r0, #0
-  74 0002 7047     		bx	lr
-  75              		.cfi_endproc
-  76              	.LFE135:
-  78              		.global	USERFile
-  79              		.section	.bss.USERFile,"aw",%nobits
-  80              		.align	2
-  83              	USERFile:
-  84 0000 00000000 		.space	4144
-  84      00000000 
-  84      00000000 
-  84      00000000 
-  84      00000000 
-  85              		.global	USERFatFS
-  86              		.section	.bss.USERFatFS,"aw",%nobits
-  87              		.align	2
-  90              	USERFatFS:
-  91 0000 00000000 		.space	4152
-  91      00000000 
-  91      00000000 
-  91      00000000 
-  91      00000000 
-  92              		.global	USERPath
-  93              		.section	.bss.USERPath,"aw",%nobits
-  94              		.align	2
-  97              	USERPath:
-  98 0000 00000000 		.space	4
-  99              		.global	retUSER
- 100              		.section	.bss.retUSER,"aw",%nobits
- 103              	retUSER:
- 104 0000 00       		.space	1
- 105              		.text
- 106              	.Letext0:
- 107              		.file 2 "Middlewares/Third_Party/FatFs/src/integer.h"
- 108              		.file 3 "C:/Users/kroko/AppData/Roaming/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-to
- 109              		.file 4 "C:/Users/kroko/AppData/Roaming/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-to
- 110              		.file 5 "Middlewares/Third_Party/FatFs/src/ff.h"
- 111              		.file 6 "Middlewares/Third_Party/FatFs/src/diskio.h"
- 112              		.file 7 "Middlewares/Third_Party/FatFs/src/ff_gen_drv.h"
- 113              		.file 8 "FATFS/Target/user_diskio.h"
- 114              		.file 9 "FATFS/App/fatfs.h"
-ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccMnsF66.s 			page 4
+ 111 003a 9DF80120 		ldrb	r2, [sp, #1]	@ zero_extendqisi2
+  60:FATFS/App/fatfs.c ****          (DWORD)(gTime.Hours)<<11|
+ 112              		.loc 1 60 34 view .LVU21
+ 113 003e 43EA4213 		orr	r3, r3, r2, lsl #5
+  62:FATFS/App/fatfs.c ****          (DWORD)(gTime.Seconds)>>1;
+ 114              		.loc 1 62 23 view .LVU22
+ 115 0042 9DF80200 		ldrb	r0, [sp, #2]	@ zero_extendqisi2
+  63:FATFS/App/fatfs.c ****   /* USER CODE END get_fattime */
+  64:FATFS/App/fatfs.c **** }
+ 116              		.loc 1 64 1 view .LVU23
+ 117 0046 43EA5000 		orr	r0, r3, r0, lsr #1
+ 118 004a 06B0     		add	sp, sp, #24
+ 119              		.cfi_def_cfa_offset 8
+ 120              		@ sp needed
+ 121 004c 10BD     		pop	{r4, pc}
+ 122              	.L8:
+ 123 004e 00BF     		.align	2
+ 124              	.L7:
+ 125 0050 00000000 		.word	hrtc
+ 126              		.cfi_endproc
+ 127              	.LFE135:
+ 129              		.global	USERFile
+ 130              		.section	.bss.USERFile,"aw",%nobits
+ 131              		.align	2
+ 134              	USERFile:
+ 135 0000 00000000 		.space	4144
+ 135      00000000 
+ 135      00000000 
+ 135      00000000 
+ 135      00000000 
+ 136              		.global	USERFatFS
+ 137              		.section	.bss.USERFatFS,"aw",%nobits
+ 138              		.align	2
+ 141              	USERFatFS:
+ 142 0000 00000000 		.space	4152
+ 142      00000000 
+ 142      00000000 
+ 142      00000000 
+ 142      00000000 
+ 143              		.global	USERPath
+ 144              		.section	.bss.USERPath,"aw",%nobits
+ 145              		.align	2
+ 148              	USERPath:
+ 149 0000 00000000 		.space	4
+ 150              		.global	retUSER
+ 151              		.section	.bss.retUSER,"aw",%nobits
+ 154              	retUSER:
+ 155 0000 00       		.space	1
+ 156              		.text
+ 157              	.Letext0:
+ 158              		.file 2 "Middlewares/Third_Party/FatFs/src/integer.h"
+ 159              		.file 3 "Core/Inc/stm32f4xx_hal_conf.h"
+ 160              		.file 4 "C:/Users/kroko/AppData/Roaming/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-to
+ 161              		.file 5 "C:/Users/kroko/AppData/Roaming/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-to
+ 162              		.file 6 "Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f413xx.h"
+ 163              		.file 7 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rtc.h"
+ 164              		.file 8 "Middlewares/Third_Party/FatFs/src/ff.h"
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccDS64ke.s 			page 5
+
+
+ 165              		.file 9 "Middlewares/Third_Party/FatFs/src/diskio.h"
+ 166              		.file 10 "Middlewares/Third_Party/FatFs/src/ff_gen_drv.h"
+ 167              		.file 11 "FATFS/Target/user_diskio.h"
+ 168              		.file 12 "FATFS/App/fatfs.h"
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccDS64ke.s 			page 6
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 fatfs.c
-C:\Users\kroko\AppData\Local\Temp\ccMnsF66.s:21     .text.MX_FATFS_Init:00000000 $t
-C:\Users\kroko\AppData\Local\Temp\ccMnsF66.s:27     .text.MX_FATFS_Init:00000000 MX_FATFS_Init
-C:\Users\kroko\AppData\Local\Temp\ccMnsF66.s:51     .text.MX_FATFS_Init:00000010 $d
-C:\Users\kroko\AppData\Local\Temp\ccMnsF66.s:97     .bss.USERPath:00000000 USERPath
-C:\Users\kroko\AppData\Local\Temp\ccMnsF66.s:103    .bss.retUSER:00000000 retUSER
-C:\Users\kroko\AppData\Local\Temp\ccMnsF66.s:58     .text.get_fattime:00000000 $t
-C:\Users\kroko\AppData\Local\Temp\ccMnsF66.s:64     .text.get_fattime:00000000 get_fattime
-C:\Users\kroko\AppData\Local\Temp\ccMnsF66.s:83     .bss.USERFile:00000000 USERFile
-C:\Users\kroko\AppData\Local\Temp\ccMnsF66.s:80     .bss.USERFile:00000000 $d
-C:\Users\kroko\AppData\Local\Temp\ccMnsF66.s:90     .bss.USERFatFS:00000000 USERFatFS
-C:\Users\kroko\AppData\Local\Temp\ccMnsF66.s:87     .bss.USERFatFS:00000000 $d
-C:\Users\kroko\AppData\Local\Temp\ccMnsF66.s:94     .bss.USERPath:00000000 $d
-C:\Users\kroko\AppData\Local\Temp\ccMnsF66.s:104    .bss.retUSER:00000000 $d
+C:\Users\kroko\AppData\Local\Temp\ccDS64ke.s:21     .text.MX_FATFS_Init:00000000 $t
+C:\Users\kroko\AppData\Local\Temp\ccDS64ke.s:27     .text.MX_FATFS_Init:00000000 MX_FATFS_Init
+C:\Users\kroko\AppData\Local\Temp\ccDS64ke.s:51     .text.MX_FATFS_Init:00000010 $d
+C:\Users\kroko\AppData\Local\Temp\ccDS64ke.s:148    .bss.USERPath:00000000 USERPath
+C:\Users\kroko\AppData\Local\Temp\ccDS64ke.s:154    .bss.retUSER:00000000 retUSER
+C:\Users\kroko\AppData\Local\Temp\ccDS64ke.s:58     .text.get_fattime:00000000 $t
+C:\Users\kroko\AppData\Local\Temp\ccDS64ke.s:64     .text.get_fattime:00000000 get_fattime
+C:\Users\kroko\AppData\Local\Temp\ccDS64ke.s:125    .text.get_fattime:00000050 $d
+C:\Users\kroko\AppData\Local\Temp\ccDS64ke.s:134    .bss.USERFile:00000000 USERFile
+C:\Users\kroko\AppData\Local\Temp\ccDS64ke.s:131    .bss.USERFile:00000000 $d
+C:\Users\kroko\AppData\Local\Temp\ccDS64ke.s:141    .bss.USERFatFS:00000000 USERFatFS
+C:\Users\kroko\AppData\Local\Temp\ccDS64ke.s:138    .bss.USERFatFS:00000000 $d
+C:\Users\kroko\AppData\Local\Temp\ccDS64ke.s:145    .bss.USERPath:00000000 $d
+C:\Users\kroko\AppData\Local\Temp\ccDS64ke.s:155    .bss.retUSER:00000000 $d
 
 UNDEFINED SYMBOLS
 FATFS_LinkDriver
 USER_Driver
+HAL_RTC_GetTime
+HAL_RTC_GetDate
+hrtc
