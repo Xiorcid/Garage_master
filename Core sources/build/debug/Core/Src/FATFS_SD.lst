@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\kroko\AppData\Local\Temp\cczUt9gh.s 			page 1
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\cc1J5wcp.s 			page 1
 
 
    1              		.cpu cortex-m4
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\kroko\AppData\Local\Temp\cczUt9gh.s 			page 1
   29:Core/Src/fatfs_sd.c **** static void SELECT(void)
   30:Core/Src/fatfs_sd.c **** {
   31:Core/Src/fatfs_sd.c ****   HAL_GPIO_WritePin(SD_CS_GPIO_Port, SD_CS_Pin, GPIO_PIN_RESET);
-ARM GAS  C:\Users\kroko\AppData\Local\Temp\cczUt9gh.s 			page 2
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\cc1J5wcp.s 			page 2
 
 
   32:Core/Src/fatfs_sd.c **** }
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\kroko\AppData\Local\Temp\cczUt9gh.s 			page 1
   86:Core/Src/fatfs_sd.c **** {
   87:Core/Src/fatfs_sd.c ****   uint8_t cmd_arg[6];
   88:Core/Src/fatfs_sd.c ****   uint32_t Count = 0x1FFF;
-ARM GAS  C:\Users\kroko\AppData\Local\Temp\cczUt9gh.s 			page 3
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\cc1J5wcp.s 			page 3
 
 
   89:Core/Src/fatfs_sd.c **** 
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\kroko\AppData\Local\Temp\cczUt9gh.s 			page 1
   39 0006 7047     		bx	lr
   40              	.L3:
   41              		.align	2
-ARM GAS  C:\Users\kroko\AppData\Local\Temp\cczUt9gh.s 			page 4
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\cc1J5wcp.s 			page 4
 
 
   42              	.L2:
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\kroko\AppData\Local\Temp\cczUt9gh.s 			page 1
   91 0004 8DF80700 		strb	r0, [sp, #7]
   43:Core/Src/fatfs_sd.c ****   HAL_SPI_Transmit(&hspi2, &data, 1, SPI_TIMEOUT);
   92              		.loc 1 43 3 is_stmt 1 view .LVU9
-ARM GAS  C:\Users\kroko\AppData\Local\Temp\cczUt9gh.s 			page 5
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\cc1J5wcp.s 			page 5
 
 
   93              	.LVL1:
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\kroko\AppData\Local\Temp\cczUt9gh.s 			page 1
  142 0008 FFF7FEFF 		bl	HAL_GPIO_WritePin
  143              	.LVL4:
   32:Core/Src/fatfs_sd.c **** 
-ARM GAS  C:\Users\kroko\AppData\Local\Temp\cczUt9gh.s 			page 6
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\cc1J5wcp.s 			page 6
 
 
  144              		.loc 1 32 1 is_stmt 0 view .LVU17
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\kroko\AppData\Local\Temp\cczUt9gh.s 			page 1
  198              		.cfi_offset 14, -4
  199 0002 85B0     		sub	sp, sp, #20
  200              		.cfi_def_cfa_offset 24
-ARM GAS  C:\Users\kroko\AppData\Local\Temp\cczUt9gh.s 			page 7
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\cc1J5wcp.s 			page 7
 
 
   50:Core/Src/fatfs_sd.c ****   dummy = 0xFF;
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\kroko\AppData\Local\Temp\cczUt9gh.s 			page 1
  244              		.align	1
  245              		.syntax unified
  246              		.thumb
-ARM GAS  C:\Users\kroko\AppData\Local\Temp\cczUt9gh.s 			page 8
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\cc1J5wcp.s 			page 8
 
 
  247              		.thumb_func
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\kroko\AppData\Local\Temp\cczUt9gh.s 			page 1
  290              	.LVL13:
  102:Core/Src/fatfs_sd.c ****   cmd_arg[1] = 0;
  291              		.loc 1 102 3 view .LVU46
-ARM GAS  C:\Users\kroko\AppData\Local\Temp\cczUt9gh.s 			page 9
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\cc1J5wcp.s 			page 9
 
 
  102:Core/Src/fatfs_sd.c ****   cmd_arg[1] = 0;
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\kroko\AppData\Local\Temp\cczUt9gh.s 			page 1
  329 004a 0134     		adds	r4, r4, #1
  330              	.LVL18:
  331              	.L28:
-ARM GAS  C:\Users\kroko\AppData\Local\Temp\cczUt9gh.s 			page 10
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\cc1J5wcp.s 			page 10
 
 
  110:Core/Src/fatfs_sd.c ****   {
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\kroko\AppData\Local\Temp\cczUt9gh.s 			page 1
  373              	.L35:
  125:Core/Src/fatfs_sd.c **** 
  374              		.loc 1 125 1 view .LVU77
-ARM GAS  C:\Users\kroko\AppData\Local\Temp\cczUt9gh.s 			page 11
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\cc1J5wcp.s 			page 11
 
 
  375 0076 00BF     		.align	2
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\kroko\AppData\Local\Temp\cczUt9gh.s 			page 1
   81:Core/Src/fatfs_sd.c **** }
  421              		.loc 1 81 3 is_stmt 1 view .LVU88
   82:Core/Src/fatfs_sd.c **** 
-ARM GAS  C:\Users\kroko\AppData\Local\Temp\cczUt9gh.s 			page 12
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\cc1J5wcp.s 			page 12
 
 
  422              		.loc 1 82 1 is_stmt 0 view .LVU89
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\kroko\AppData\Local\Temp\cczUt9gh.s 			page 1
  177:Core/Src/fatfs_sd.c **** 
  178:Core/Src/fatfs_sd.c ****   /* SD카드 준비 대기 */
  179:Core/Src/fatfs_sd.c ****   if (SD_ReadyWait() != 0xFF)
-ARM GAS  C:\Users\kroko\AppData\Local\Temp\cczUt9gh.s 			page 13
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\cc1J5wcp.s 			page 13
 
 
  180:Core/Src/fatfs_sd.c ****     return FALSE;
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\kroko\AppData\Local\Temp\cczUt9gh.s 			page 1
  448              		.cfi_offset 4, -12
  449              		.cfi_offset 5, -8
  450              		.cfi_offset 14, -4
-ARM GAS  C:\Users\kroko\AppData\Local\Temp\cczUt9gh.s 			page 14
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\cc1J5wcp.s 			page 14
 
 
  451 0002 0546     		mov	r5, r0
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\kroko\AppData\Local\Temp\cczUt9gh.s 			page 1
  468              	.L51:
  233:Core/Src/fatfs_sd.c ****   SPI_TxByte((BYTE) (arg >> 24)); 	/* Argument[31..24] */
  469              		.loc 1 233 3 is_stmt 1 view .LVU98
-ARM GAS  C:\Users\kroko\AppData\Local\Temp\cczUt9gh.s 			page 15
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\cc1J5wcp.s 			page 15
 
 
  470 0012 2846     		mov	r0, r5
@@ -898,7 +898,7 @@ ARM GAS  C:\Users\kroko\AppData\Local\Temp\cczUt9gh.s 			page 1
  511              	.LVL38:
  512              	.L46:
  256:Core/Src/fatfs_sd.c ****   {
-ARM GAS  C:\Users\kroko\AppData\Local\Temp\cczUt9gh.s 			page 16
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\cc1J5wcp.s 			page 16
 
 
  513              		.loc 1 256 3 is_stmt 1 view .LVU112
@@ -958,7 +958,7 @@ ARM GAS  C:\Users\kroko\AppData\Local\Temp\cczUt9gh.s 			page 1
  559              		.loc 1 62 1 is_stmt 0 view .LVU122
  560 0000 10B5     		push	{r4, lr}
  561              		.cfi_def_cfa_offset 8
-ARM GAS  C:\Users\kroko\AppData\Local\Temp\cczUt9gh.s 			page 17
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\cc1J5wcp.s 			page 17
 
 
  562              		.cfi_offset 4, -8
@@ -1018,7 +1018,7 @@ ARM GAS  C:\Users\kroko\AppData\Local\Temp\cczUt9gh.s 			page 1
  607              		.loc 1 149 3 is_stmt 1 view .LVU133
  151:Core/Src/fatfs_sd.c ****   } while((token == 0xFF) && Timer1);
  608              		.loc 1 151 5 view .LVU134
-ARM GAS  C:\Users\kroko\AppData\Local\Temp\cczUt9gh.s 			page 18
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\cc1J5wcp.s 			page 18
 
 
  151:Core/Src/fatfs_sd.c ****   } while((token == 0xFF) && Timer1);
@@ -1078,7 +1078,7 @@ ARM GAS  C:\Users\kroko\AppData\Local\Temp\cczUt9gh.s 			page 1
  165:Core/Src/fatfs_sd.c ****   SPI_RxByte();
  649              		.loc 1 165 3 is_stmt 1 view .LVU149
  650 0034 FFF7FEFF 		bl	SPI_RxByte
-ARM GAS  C:\Users\kroko\AppData\Local\Temp\cczUt9gh.s 			page 19
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\cc1J5wcp.s 			page 19
 
 
  651              	.LVL55:
@@ -1138,7 +1138,7 @@ ARM GAS  C:\Users\kroko\AppData\Local\Temp\cczUt9gh.s 			page 1
  698              		.loc 1 175 3 is_stmt 1 view .LVU158
  176:Core/Src/fatfs_sd.c **** 
  699              		.loc 1 176 3 view .LVU159
-ARM GAS  C:\Users\kroko\AppData\Local\Temp\cczUt9gh.s 			page 20
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\cc1J5wcp.s 			page 20
 
 
  700              	.LVL61:
@@ -1198,7 +1198,7 @@ ARM GAS  C:\Users\kroko\AppData\Local\Temp\cczUt9gh.s 			page 1
  739 0028 0235     		adds	r5, r5, #2
  740              	.LVL68:
  194:Core/Src/fatfs_sd.c ****     } while (--wc);
-ARM GAS  C:\Users\kroko\AppData\Local\Temp\cczUt9gh.s 			page 21
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\cc1J5wcp.s 			page 21
 
 
  741              		.loc 1 194 7 view .LVU175
@@ -1258,7 +1258,7 @@ ARM GAS  C:\Users\kroko\AppData\Local\Temp\cczUt9gh.s 			page 1
  781              		.loc 1 213 25 is_stmt 1 discriminator 1 view .LVU189
  213:Core/Src/fatfs_sd.c ****   }
  782              		.loc 1 213 12 is_stmt 0 discriminator 1 view .LVU190
-ARM GAS  C:\Users\kroko\AppData\Local\Temp\cczUt9gh.s 			page 22
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\cc1J5wcp.s 			page 22
 
 
  783 0056 FFF7FEFF 		bl	SPI_RxByte
@@ -1318,7 +1318,7 @@ ARM GAS  C:\Users\kroko\AppData\Local\Temp\cczUt9gh.s 			page 1
  274:Core/Src/fatfs_sd.c ****   /* 한종류의 드라이브만 지원 */
  275:Core/Src/fatfs_sd.c ****   if(drv)
  822              		.loc 1 275 3 view .LVU199
-ARM GAS  C:\Users\kroko\AppData\Local\Temp\cczUt9gh.s 			page 23
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\cc1J5wcp.s 			page 23
 
 
  823              		.loc 1 275 5 is_stmt 0 view .LVU200
@@ -1378,7 +1378,7 @@ ARM GAS  C:\Users\kroko\AppData\Local\Temp\cczUt9gh.s 			page 1
  303:Core/Src/fatfs_sd.c ****         ocr[n] = SPI_RxByte();
  304:Core/Src/fatfs_sd.c ****       }
  305:Core/Src/fatfs_sd.c **** 
-ARM GAS  C:\Users\kroko\AppData\Local\Temp\cczUt9gh.s 			page 24
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\cc1J5wcp.s 			page 24
 
 
  306:Core/Src/fatfs_sd.c ****       if (ocr[2] == 0x01 && ocr[3] == 0xAA)
@@ -1438,7 +1438,7 @@ ARM GAS  C:\Users\kroko\AppData\Local\Temp\cczUt9gh.s 			page 1
  360:Core/Src/fatfs_sd.c ****     /* Clear STA_NOINIT */
  361:Core/Src/fatfs_sd.c ****     Stat &= ~STA_NOINIT;
  362:Core/Src/fatfs_sd.c ****   }
-ARM GAS  C:\Users\kroko\AppData\Local\Temp\cczUt9gh.s 			page 25
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\cc1J5wcp.s 			page 25
 
 
  363:Core/Src/fatfs_sd.c ****   else
@@ -1498,7 +1498,7 @@ ARM GAS  C:\Users\kroko\AppData\Local\Temp\cczUt9gh.s 			page 1
  885 003c FFF7FEFF 		bl	SPI_RxByte
  886              	.LVL88:
  358:Core/Src/fatfs_sd.c ****   {
-ARM GAS  C:\Users\kroko\AppData\Local\Temp\cczUt9gh.s 			page 26
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\cc1J5wcp.s 			page 26
 
 
  887              		.loc 1 358 3 view .LVU219
@@ -1558,7 +1558,7 @@ ARM GAS  C:\Users\kroko\AppData\Local\Temp\cczUt9gh.s 			page 1
  928              	.LVL92:
  303:Core/Src/fatfs_sd.c ****       }
  929              		.loc 1 303 16 discriminator 1 view .LVU233
-ARM GAS  C:\Users\kroko\AppData\Local\Temp\cczUt9gh.s 			page 27
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\cc1J5wcp.s 			page 27
 
 
  930 0074 05F10803 		add	r3, r5, #8
@@ -1618,7 +1618,7 @@ ARM GAS  C:\Users\kroko\AppData\Local\Temp\cczUt9gh.s 			page 1
  310:Core/Src/fatfs_sd.c ****             break; /* ACMD41 with HCS bit */
  971              		.loc 1 310 44 discriminator 1 view .LVU247
  972 00aa 4FF08041 		mov	r1, #1073741824
-ARM GAS  C:\Users\kroko\AppData\Local\Temp\cczUt9gh.s 			page 28
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\cc1J5wcp.s 			page 28
 
 
  973 00ae 6920     		movs	r0, #105
@@ -1678,7 +1678,7 @@ ARM GAS  C:\Users\kroko\AppData\Local\Temp\cczUt9gh.s 			page 1
  317:Core/Src/fatfs_sd.c ****           {
  1015              		.loc 1 317 31 is_stmt 1 discriminator 3 view .LVU260
  1016 00e6 0135     		adds	r5, r5, #1
-ARM GAS  C:\Users\kroko\AppData\Local\Temp\cczUt9gh.s 			page 29
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\cc1J5wcp.s 			page 29
 
 
  1017              	.LVL101:
@@ -1738,7 +1738,7 @@ ARM GAS  C:\Users\kroko\AppData\Local\Temp\cczUt9gh.s 			page 1
  1058              	.L111:
  334:Core/Src/fatfs_sd.c ****             break; /* ACMD41 */
  1059              		.loc 1 334 11 is_stmt 1 view .LVU274
-ARM GAS  C:\Users\kroko\AppData\Local\Temp\cczUt9gh.s 			page 30
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\cc1J5wcp.s 			page 30
 
 
  334:Core/Src/fatfs_sd.c ****             break; /* ACMD41 */
@@ -1798,7 +1798,7 @@ ARM GAS  C:\Users\kroko\AppData\Local\Temp\cczUt9gh.s 			page 1
  1100              		.loc 1 334 44 discriminator 1 view .LVU288
  1101 0146 0021     		movs	r1, #0
  1102 0148 6920     		movs	r0, #105
-ARM GAS  C:\Users\kroko\AppData\Local\Temp\cczUt9gh.s 			page 31
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\cc1J5wcp.s 			page 31
 
 
  1103 014a FFF7FEFF 		bl	SD_SendCmd
@@ -1858,7 +1858,7 @@ ARM GAS  C:\Users\kroko\AppData\Local\Temp\cczUt9gh.s 			page 1
  1150              	.LFE146:
  1152              		.section	.text.SD_disk_status,"ax",%progbits
  1153              		.align	1
-ARM GAS  C:\Users\kroko\AppData\Local\Temp\cczUt9gh.s 			page 32
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\cc1J5wcp.s 			page 32
 
 
  1154              		.global	SD_disk_status
@@ -1918,7 +1918,7 @@ ARM GAS  C:\Users\kroko\AppData\Local\Temp\cczUt9gh.s 			page 1
  1201              	.LFB148:
  380:Core/Src/fatfs_sd.c **** 
  381:Core/Src/fatfs_sd.c **** /* 섹터 읽기 */
-ARM GAS  C:\Users\kroko\AppData\Local\Temp\cczUt9gh.s 			page 33
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\cc1J5wcp.s 			page 33
 
 
  382:Core/Src/fatfs_sd.c **** DRESULT SD_disk_read(BYTE pdrv, BYTE* buff, DWORD sector, UINT count)
@@ -1978,7 +1978,7 @@ ARM GAS  C:\Users\kroko\AppData\Local\Temp\cczUt9gh.s 			page 1
  393:Core/Src/fatfs_sd.c ****   SELECT();
  1244              		.loc 1 393 3 is_stmt 1 view .LVU319
  1245 0026 FFF7FEFF 		bl	SELECT
-ARM GAS  C:\Users\kroko\AppData\Local\Temp\cczUt9gh.s 			page 34
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\cc1J5wcp.s 			page 34
 
 
  1246              	.LVL124:
@@ -2038,7 +2038,7 @@ ARM GAS  C:\Users\kroko\AppData\Local\Temp\cczUt9gh.s 			page 1
  414:Core/Src/fatfs_sd.c ****       SD_SendCmd(CMD12, 0);
  1280              		.loc 1 414 7 is_stmt 1 view .LVU334
  1281 004c 0021     		movs	r1, #0
-ARM GAS  C:\Users\kroko\AppData\Local\Temp\cczUt9gh.s 			page 35
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\cc1J5wcp.s 			page 35
 
 
  1282 004e 4C20     		movs	r0, #76
@@ -2098,7 +2098,7 @@ ARM GAS  C:\Users\kroko\AppData\Local\Temp\cczUt9gh.s 			page 1
  399:Core/Src/fatfs_sd.c ****   }
  1322              		.loc 1 399 13 view .LVU346
  1323 0080 E8E7     		b	.L124
-ARM GAS  C:\Users\kroko\AppData\Local\Temp\cczUt9gh.s 			page 36
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\cc1J5wcp.s 			page 36
 
 
  1324              	.LVL136:
@@ -2158,7 +2158,7 @@ ARM GAS  C:\Users\kroko\AppData\Local\Temp\cczUt9gh.s 			page 1
  425:Core/Src/fatfs_sd.c **** #if _READONLY == 0
  426:Core/Src/fatfs_sd.c **** DRESULT SD_disk_write(BYTE pdrv, const BYTE* buff, DWORD sector, UINT count)
  427:Core/Src/fatfs_sd.c **** {
-ARM GAS  C:\Users\kroko\AppData\Local\Temp\cczUt9gh.s 			page 37
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\cc1J5wcp.s 			page 37
 
 
  1373              		.loc 1 427 1 is_stmt 1 view -0
@@ -2218,7 +2218,7 @@ ARM GAS  C:\Users\kroko\AppData\Local\Temp\cczUt9gh.s 			page 1
  1416 002c 00D1     		bne	.L140
  438:Core/Src/fatfs_sd.c ****     sector *= 512; /* 지정 sector를 Byte addressing 단위로 변경 */
  1417              		.loc 1 438 5 is_stmt 1 view .LVU368
-ARM GAS  C:\Users\kroko\AppData\Local\Temp\cczUt9gh.s 			page 38
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\cc1J5wcp.s 			page 38
 
 
  1418              		.loc 1 438 12 is_stmt 0 view .LVU369
@@ -2278,7 +2278,7 @@ ARM GAS  C:\Users\kroko\AppData\Local\Temp\cczUt9gh.s 			page 1
  1450 004e 2846     		mov	r0, r5
  1451 0050 FFF7FEFF 		bl	SD_TxDataBlock
  1452              	.LVL147:
-ARM GAS  C:\Users\kroko\AppData\Local\Temp\cczUt9gh.s 			page 39
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\cc1J5wcp.s 			page 39
 
 
  1453              		.loc 1 460 11 discriminator 1 view .LVU382
@@ -2338,7 +2338,7 @@ ARM GAS  C:\Users\kroko\AppData\Local\Temp\cczUt9gh.s 			page 1
  1490              	.LVL154:
  1491              	.L156:
  445:Core/Src/fatfs_sd.c ****       count = 0;
-ARM GAS  C:\Users\kroko\AppData\Local\Temp\cczUt9gh.s 			page 40
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\cc1J5wcp.s 			page 40
 
 
  1492              		.loc 1 445 5 is_stmt 1 view .LVU396
@@ -2398,7 +2398,7 @@ ARM GAS  C:\Users\kroko\AppData\Local\Temp\cczUt9gh.s 			page 1
  1536              		.cfi_restore 4
  1537              		.cfi_restore 5
  1538              		.cfi_restore 6
-ARM GAS  C:\Users\kroko\AppData\Local\Temp\cczUt9gh.s 			page 41
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\cc1J5wcp.s 			page 41
 
 
  1539              		.cfi_restore 14
@@ -2458,7 +2458,7 @@ ARM GAS  C:\Users\kroko\AppData\Local\Temp\cczUt9gh.s 			page 1
  1588              	.LFB150:
  478:Core/Src/fatfs_sd.c **** #endif /* _READONLY */
  479:Core/Src/fatfs_sd.c **** 
-ARM GAS  C:\Users\kroko\AppData\Local\Temp\cczUt9gh.s 			page 42
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\cc1J5wcp.s 			page 42
 
 
  480:Core/Src/fatfs_sd.c **** /* 기타 함수 */
@@ -2518,7 +2518,7 @@ ARM GAS  C:\Users\kroko\AppData\Local\Temp\cczUt9gh.s 			page 1
  504:Core/Src/fatfs_sd.c ****       break;
  505:Core/Src/fatfs_sd.c ****     case 2:
  506:Core/Src/fatfs_sd.c ****       *(ptr + 1) = (BYTE) SD_CheckPower();
-ARM GAS  C:\Users\kroko\AppData\Local\Temp\cczUt9gh.s 			page 43
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\cc1J5wcp.s 			page 43
 
 
  507:Core/Src/fatfs_sd.c ****       res = RES_OK;             /* Power Check */
@@ -2578,7 +2578,7 @@ ARM GAS  C:\Users\kroko\AppData\Local\Temp\cczUt9gh.s 			page 1
  1656 0040 0ED0     		beq	.L163
  1657 0042 022D     		cmp	r5, #2
  1658 0044 0FD0     		beq	.L164
-ARM GAS  C:\Users\kroko\AppData\Local\Temp\cczUt9gh.s 			page 44
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\cc1J5wcp.s 			page 44
 
 
  1659 0046 002D     		cmp	r5, #0
@@ -2638,7 +2638,7 @@ ARM GAS  C:\Users\kroko\AppData\Local\Temp\cczUt9gh.s 			page 1
  521:Core/Src/fatfs_sd.c ****     {
  522:Core/Src/fatfs_sd.c ****     case GET_SECTOR_COUNT:
  523:Core/Src/fatfs_sd.c ****       /* SD카드 내 Sector의 개수 (DWORD) */
-ARM GAS  C:\Users\kroko\AppData\Local\Temp\cczUt9gh.s 			page 45
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\cc1J5wcp.s 			page 45
 
 
  524:Core/Src/fatfs_sd.c ****       if ((SD_SendCmd(CMD9, 0) == 0) && SD_RxDataBlock(csd, 16))
@@ -2698,7 +2698,7 @@ ARM GAS  C:\Users\kroko\AppData\Local\Temp\cczUt9gh.s 			page 1
  1740 00a8 5B00     		lsls	r3, r3, #1
  1741 00aa 03F00603 		and	r3, r3, #6
  1742              		.loc 1 535 54 view .LVU464
-ARM GAS  C:\Users\kroko\AppData\Local\Temp\cczUt9gh.s 			page 46
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\cc1J5wcp.s 			page 46
 
 
  1743 00ae 1A44     		add	r2, r2, r3
@@ -2758,7 +2758,7 @@ ARM GAS  C:\Users\kroko\AppData\Local\Temp\cczUt9gh.s 			page 1
  1789              		.loc 1 530 11 is_stmt 1 view .LVU483
  530:Core/Src/fatfs_sd.c ****         }
  1790              		.loc 1 530 42 is_stmt 0 view .LVU484
-ARM GAS  C:\Users\kroko\AppData\Local\Temp\cczUt9gh.s 			page 47
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\cc1J5wcp.s 			page 47
 
 
  1791 00e6 9B02     		lsls	r3, r3, #10
@@ -2818,7 +2818,7 @@ ARM GAS  C:\Users\kroko\AppData\Local\Temp\cczUt9gh.s 			page 1
  1821              		.loc 1 558 7 is_stmt 1 view .LVU495
  1822              		.loc 1 558 11 is_stmt 0 view .LVU496
  1823 0100 0021     		movs	r1, #0
-ARM GAS  C:\Users\kroko\AppData\Local\Temp\cczUt9gh.s 			page 48
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\cc1J5wcp.s 			page 48
 
 
  1824 0102 4920     		movs	r0, #73
@@ -2878,7 +2878,7 @@ ARM GAS  C:\Users\kroko\AppData\Local\Temp\cczUt9gh.s 			page 1
  1868              	.L166:
  565:Core/Src/fatfs_sd.c ****         res = RES_OK;
  566:Core/Src/fatfs_sd.c ****       break;
-ARM GAS  C:\Users\kroko\AppData\Local\Temp\cczUt9gh.s 			page 49
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\cc1J5wcp.s 			page 49
 
 
  567:Core/Src/fatfs_sd.c **** 
@@ -2938,7 +2938,7 @@ ARM GAS  C:\Users\kroko\AppData\Local\Temp\cczUt9gh.s 			page 1
  1902              	.LVL209:
  1903              		.loc 1 581 11 view .LVU520
  1904 015e 00E0     		b	.L165
-ARM GAS  C:\Users\kroko\AppData\Local\Temp\cczUt9gh.s 			page 50
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\cc1J5wcp.s 			page 50
 
 
  1905              	.LVL210:
@@ -2998,7 +2998,7 @@ ARM GAS  C:\Users\kroko\AppData\Local\Temp\cczUt9gh.s 			page 1
  516:Core/Src/fatfs_sd.c **** 
  1946              		.loc 1 516 14 view .LVU529
  1947 0180 0324     		movs	r4, #3
-ARM GAS  C:\Users\kroko\AppData\Local\Temp\cczUt9gh.s 			page 51
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\cc1J5wcp.s 			page 51
 
 
  1948 0182 F2E7     		b	.L161
@@ -3028,67 +3028,67 @@ ARM GAS  C:\Users\kroko\AppData\Local\Temp\cczUt9gh.s 			page 1
  1979              		.file 8 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_spi.h"
  1980              		.file 9 "Middlewares/Third_Party/FatFs/src/integer.h"
  1981              		.file 10 "Middlewares/Third_Party/FatFs/src/diskio.h"
-ARM GAS  C:\Users\kroko\AppData\Local\Temp\cczUt9gh.s 			page 52
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\cc1J5wcp.s 			page 52
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 fatfs_sd.c
-C:\Users\kroko\AppData\Local\Temp\cczUt9gh.s:21     .text.SD_PowerOff:00000000 $t
-C:\Users\kroko\AppData\Local\Temp\cczUt9gh.s:26     .text.SD_PowerOff:00000000 SD_PowerOff
-C:\Users\kroko\AppData\Local\Temp\cczUt9gh.s:43     .text.SD_PowerOff:00000008 $d
-C:\Users\kroko\AppData\Local\Temp\cczUt9gh.s:1959   .bss.PowerFlag:00000000 PowerFlag
-C:\Users\kroko\AppData\Local\Temp\cczUt9gh.s:48     .text.SD_CheckPower:00000000 $t
-C:\Users\kroko\AppData\Local\Temp\cczUt9gh.s:53     .text.SD_CheckPower:00000000 SD_CheckPower
-C:\Users\kroko\AppData\Local\Temp\cczUt9gh.s:68     .text.SD_CheckPower:00000008 $d
-C:\Users\kroko\AppData\Local\Temp\cczUt9gh.s:73     .text.SPI_TxByte:00000000 $t
-C:\Users\kroko\AppData\Local\Temp\cczUt9gh.s:78     .text.SPI_TxByte:00000000 SPI_TxByte
-C:\Users\kroko\AppData\Local\Temp\cczUt9gh.s:118    .text.SPI_TxByte:00000028 $d
-C:\Users\kroko\AppData\Local\Temp\cczUt9gh.s:123    .text.SELECT:00000000 $t
-C:\Users\kroko\AppData\Local\Temp\cczUt9gh.s:128    .text.SELECT:00000000 SELECT
-C:\Users\kroko\AppData\Local\Temp\cczUt9gh.s:149    .text.SELECT:00000010 $d
-C:\Users\kroko\AppData\Local\Temp\cczUt9gh.s:154    .text.DESELECT:00000000 $t
-C:\Users\kroko\AppData\Local\Temp\cczUt9gh.s:159    .text.DESELECT:00000000 DESELECT
-C:\Users\kroko\AppData\Local\Temp\cczUt9gh.s:180    .text.DESELECT:00000010 $d
-C:\Users\kroko\AppData\Local\Temp\cczUt9gh.s:185    .text.SPI_RxByte:00000000 $t
-C:\Users\kroko\AppData\Local\Temp\cczUt9gh.s:190    .text.SPI_RxByte:00000000 SPI_RxByte
-C:\Users\kroko\AppData\Local\Temp\cczUt9gh.s:239    .text.SPI_RxByte:0000003c $d
-C:\Users\kroko\AppData\Local\Temp\cczUt9gh.s:244    .text.SD_PowerOn:00000000 $t
-C:\Users\kroko\AppData\Local\Temp\cczUt9gh.s:249    .text.SD_PowerOn:00000000 SD_PowerOn
-C:\Users\kroko\AppData\Local\Temp\cczUt9gh.s:377    .text.SD_PowerOn:00000078 $d
-C:\Users\kroko\AppData\Local\Temp\cczUt9gh.s:382    .text.SD_ReadyWait:00000000 $t
-C:\Users\kroko\AppData\Local\Temp\cczUt9gh.s:387    .text.SD_ReadyWait:00000000 SD_ReadyWait
-C:\Users\kroko\AppData\Local\Temp\cczUt9gh.s:427    .text.SD_ReadyWait:00000020 $d
-C:\Users\kroko\AppData\Local\Temp\cczUt9gh.s:432    .text.SD_SendCmd:00000000 $t
-C:\Users\kroko\AppData\Local\Temp\cczUt9gh.s:437    .text.SD_SendCmd:00000000 SD_SendCmd
-C:\Users\kroko\AppData\Local\Temp\cczUt9gh.s:547    .text.SPI_RxBytePtr:00000000 $t
-C:\Users\kroko\AppData\Local\Temp\cczUt9gh.s:552    .text.SPI_RxBytePtr:00000000 SPI_RxBytePtr
-C:\Users\kroko\AppData\Local\Temp\cczUt9gh.s:578    .text.SD_RxDataBlock:00000000 $t
-C:\Users\kroko\AppData\Local\Temp\cczUt9gh.s:583    .text.SD_RxDataBlock:00000000 SD_RxDataBlock
-C:\Users\kroko\AppData\Local\Temp\cczUt9gh.s:672    .text.SD_RxDataBlock:00000044 $d
-C:\Users\kroko\AppData\Local\Temp\cczUt9gh.s:677    .text.SD_TxDataBlock:00000000 $t
-C:\Users\kroko\AppData\Local\Temp\cczUt9gh.s:682    .text.SD_TxDataBlock:00000000 SD_TxDataBlock
-C:\Users\kroko\AppData\Local\Temp\cczUt9gh.s:808    .text.SD_disk_initialize:00000000 $t
-C:\Users\kroko\AppData\Local\Temp\cczUt9gh.s:814    .text.SD_disk_initialize:00000000 SD_disk_initialize
-C:\Users\kroko\AppData\Local\Temp\cczUt9gh.s:1146   .text.SD_disk_initialize:00000178 $d
-C:\Users\kroko\AppData\Local\Temp\cczUt9gh.s:1969   .data.Stat:00000000 Stat
-C:\Users\kroko\AppData\Local\Temp\cczUt9gh.s:1964   .bss.CardType:00000000 CardType
-C:\Users\kroko\AppData\Local\Temp\cczUt9gh.s:1153   .text.SD_disk_status:00000000 $t
-C:\Users\kroko\AppData\Local\Temp\cczUt9gh.s:1159   .text.SD_disk_status:00000000 SD_disk_status
-C:\Users\kroko\AppData\Local\Temp\cczUt9gh.s:1188   .text.SD_disk_status:00000010 $d
-C:\Users\kroko\AppData\Local\Temp\cczUt9gh.s:1193   .text.SD_disk_read:00000000 $t
-C:\Users\kroko\AppData\Local\Temp\cczUt9gh.s:1199   .text.SD_disk_read:00000000 SD_disk_read
-C:\Users\kroko\AppData\Local\Temp\cczUt9gh.s:1358   .text.SD_disk_read:00000090 $d
-C:\Users\kroko\AppData\Local\Temp\cczUt9gh.s:1364   .text.SD_disk_write:00000000 $t
-C:\Users\kroko\AppData\Local\Temp\cczUt9gh.s:1370   .text.SD_disk_write:00000000 SD_disk_write
-C:\Users\kroko\AppData\Local\Temp\cczUt9gh.s:1574   .text.SD_disk_write:000000bc $d
-C:\Users\kroko\AppData\Local\Temp\cczUt9gh.s:1580   .text.SD_disk_ioctl:00000000 $t
-C:\Users\kroko\AppData\Local\Temp\cczUt9gh.s:1586   .text.SD_disk_ioctl:00000000 SD_disk_ioctl
-C:\Users\kroko\AppData\Local\Temp\cczUt9gh.s:1634   .text.SD_disk_ioctl:0000002e $d
-C:\Users\kroko\AppData\Local\Temp\cczUt9gh.s:1649   .text.SD_disk_ioctl:0000003c $t
-C:\Users\kroko\AppData\Local\Temp\cczUt9gh.s:1952   .text.SD_disk_ioctl:00000184 $d
-C:\Users\kroko\AppData\Local\Temp\cczUt9gh.s:1960   .bss.PowerFlag:00000000 $d
-C:\Users\kroko\AppData\Local\Temp\cczUt9gh.s:1965   .bss.CardType:00000000 $d
-ARM GAS  C:\Users\kroko\AppData\Local\Temp\cczUt9gh.s 			page 53
+C:\Users\kroko\AppData\Local\Temp\cc1J5wcp.s:21     .text.SD_PowerOff:00000000 $t
+C:\Users\kroko\AppData\Local\Temp\cc1J5wcp.s:26     .text.SD_PowerOff:00000000 SD_PowerOff
+C:\Users\kroko\AppData\Local\Temp\cc1J5wcp.s:43     .text.SD_PowerOff:00000008 $d
+C:\Users\kroko\AppData\Local\Temp\cc1J5wcp.s:1959   .bss.PowerFlag:00000000 PowerFlag
+C:\Users\kroko\AppData\Local\Temp\cc1J5wcp.s:48     .text.SD_CheckPower:00000000 $t
+C:\Users\kroko\AppData\Local\Temp\cc1J5wcp.s:53     .text.SD_CheckPower:00000000 SD_CheckPower
+C:\Users\kroko\AppData\Local\Temp\cc1J5wcp.s:68     .text.SD_CheckPower:00000008 $d
+C:\Users\kroko\AppData\Local\Temp\cc1J5wcp.s:73     .text.SPI_TxByte:00000000 $t
+C:\Users\kroko\AppData\Local\Temp\cc1J5wcp.s:78     .text.SPI_TxByte:00000000 SPI_TxByte
+C:\Users\kroko\AppData\Local\Temp\cc1J5wcp.s:118    .text.SPI_TxByte:00000028 $d
+C:\Users\kroko\AppData\Local\Temp\cc1J5wcp.s:123    .text.SELECT:00000000 $t
+C:\Users\kroko\AppData\Local\Temp\cc1J5wcp.s:128    .text.SELECT:00000000 SELECT
+C:\Users\kroko\AppData\Local\Temp\cc1J5wcp.s:149    .text.SELECT:00000010 $d
+C:\Users\kroko\AppData\Local\Temp\cc1J5wcp.s:154    .text.DESELECT:00000000 $t
+C:\Users\kroko\AppData\Local\Temp\cc1J5wcp.s:159    .text.DESELECT:00000000 DESELECT
+C:\Users\kroko\AppData\Local\Temp\cc1J5wcp.s:180    .text.DESELECT:00000010 $d
+C:\Users\kroko\AppData\Local\Temp\cc1J5wcp.s:185    .text.SPI_RxByte:00000000 $t
+C:\Users\kroko\AppData\Local\Temp\cc1J5wcp.s:190    .text.SPI_RxByte:00000000 SPI_RxByte
+C:\Users\kroko\AppData\Local\Temp\cc1J5wcp.s:239    .text.SPI_RxByte:0000003c $d
+C:\Users\kroko\AppData\Local\Temp\cc1J5wcp.s:244    .text.SD_PowerOn:00000000 $t
+C:\Users\kroko\AppData\Local\Temp\cc1J5wcp.s:249    .text.SD_PowerOn:00000000 SD_PowerOn
+C:\Users\kroko\AppData\Local\Temp\cc1J5wcp.s:377    .text.SD_PowerOn:00000078 $d
+C:\Users\kroko\AppData\Local\Temp\cc1J5wcp.s:382    .text.SD_ReadyWait:00000000 $t
+C:\Users\kroko\AppData\Local\Temp\cc1J5wcp.s:387    .text.SD_ReadyWait:00000000 SD_ReadyWait
+C:\Users\kroko\AppData\Local\Temp\cc1J5wcp.s:427    .text.SD_ReadyWait:00000020 $d
+C:\Users\kroko\AppData\Local\Temp\cc1J5wcp.s:432    .text.SD_SendCmd:00000000 $t
+C:\Users\kroko\AppData\Local\Temp\cc1J5wcp.s:437    .text.SD_SendCmd:00000000 SD_SendCmd
+C:\Users\kroko\AppData\Local\Temp\cc1J5wcp.s:547    .text.SPI_RxBytePtr:00000000 $t
+C:\Users\kroko\AppData\Local\Temp\cc1J5wcp.s:552    .text.SPI_RxBytePtr:00000000 SPI_RxBytePtr
+C:\Users\kroko\AppData\Local\Temp\cc1J5wcp.s:578    .text.SD_RxDataBlock:00000000 $t
+C:\Users\kroko\AppData\Local\Temp\cc1J5wcp.s:583    .text.SD_RxDataBlock:00000000 SD_RxDataBlock
+C:\Users\kroko\AppData\Local\Temp\cc1J5wcp.s:672    .text.SD_RxDataBlock:00000044 $d
+C:\Users\kroko\AppData\Local\Temp\cc1J5wcp.s:677    .text.SD_TxDataBlock:00000000 $t
+C:\Users\kroko\AppData\Local\Temp\cc1J5wcp.s:682    .text.SD_TxDataBlock:00000000 SD_TxDataBlock
+C:\Users\kroko\AppData\Local\Temp\cc1J5wcp.s:808    .text.SD_disk_initialize:00000000 $t
+C:\Users\kroko\AppData\Local\Temp\cc1J5wcp.s:814    .text.SD_disk_initialize:00000000 SD_disk_initialize
+C:\Users\kroko\AppData\Local\Temp\cc1J5wcp.s:1146   .text.SD_disk_initialize:00000178 $d
+C:\Users\kroko\AppData\Local\Temp\cc1J5wcp.s:1969   .data.Stat:00000000 Stat
+C:\Users\kroko\AppData\Local\Temp\cc1J5wcp.s:1964   .bss.CardType:00000000 CardType
+C:\Users\kroko\AppData\Local\Temp\cc1J5wcp.s:1153   .text.SD_disk_status:00000000 $t
+C:\Users\kroko\AppData\Local\Temp\cc1J5wcp.s:1159   .text.SD_disk_status:00000000 SD_disk_status
+C:\Users\kroko\AppData\Local\Temp\cc1J5wcp.s:1188   .text.SD_disk_status:00000010 $d
+C:\Users\kroko\AppData\Local\Temp\cc1J5wcp.s:1193   .text.SD_disk_read:00000000 $t
+C:\Users\kroko\AppData\Local\Temp\cc1J5wcp.s:1199   .text.SD_disk_read:00000000 SD_disk_read
+C:\Users\kroko\AppData\Local\Temp\cc1J5wcp.s:1358   .text.SD_disk_read:00000090 $d
+C:\Users\kroko\AppData\Local\Temp\cc1J5wcp.s:1364   .text.SD_disk_write:00000000 $t
+C:\Users\kroko\AppData\Local\Temp\cc1J5wcp.s:1370   .text.SD_disk_write:00000000 SD_disk_write
+C:\Users\kroko\AppData\Local\Temp\cc1J5wcp.s:1574   .text.SD_disk_write:000000bc $d
+C:\Users\kroko\AppData\Local\Temp\cc1J5wcp.s:1580   .text.SD_disk_ioctl:00000000 $t
+C:\Users\kroko\AppData\Local\Temp\cc1J5wcp.s:1586   .text.SD_disk_ioctl:00000000 SD_disk_ioctl
+C:\Users\kroko\AppData\Local\Temp\cc1J5wcp.s:1634   .text.SD_disk_ioctl:0000002e $d
+C:\Users\kroko\AppData\Local\Temp\cc1J5wcp.s:1649   .text.SD_disk_ioctl:0000003c $t
+C:\Users\kroko\AppData\Local\Temp\cc1J5wcp.s:1952   .text.SD_disk_ioctl:00000184 $d
+C:\Users\kroko\AppData\Local\Temp\cc1J5wcp.s:1960   .bss.PowerFlag:00000000 $d
+C:\Users\kroko\AppData\Local\Temp\cc1J5wcp.s:1965   .bss.CardType:00000000 $d
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\cc1J5wcp.s 			page 53
 
 
 

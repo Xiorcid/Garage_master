@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccQMDolv.s 			page 1
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccrs87Wk.s 			page 1
 
 
    1              		.cpu cortex-m4
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccQMDolv.s 			page 1
   28:Core/Src/stm32f4xx_it.c **** /* USER CODE BEGIN TD */
   29:Core/Src/stm32f4xx_it.c **** 
   30:Core/Src/stm32f4xx_it.c **** /* USER CODE END TD */
-ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccQMDolv.s 			page 2
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccrs87Wk.s 			page 2
 
 
   31:Core/Src/stm32f4xx_it.c **** 
@@ -89,63 +89,70 @@ ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccQMDolv.s 			page 1
   56:Core/Src/stm32f4xx_it.c **** /* USER CODE END 0 */
   57:Core/Src/stm32f4xx_it.c **** 
   58:Core/Src/stm32f4xx_it.c **** /* External variables --------------------------------------------------------*/
-  59:Core/Src/stm32f4xx_it.c **** extern DMA_HandleTypeDef hdma_spi1_tx;
-  60:Core/Src/stm32f4xx_it.c **** extern DMA_HandleTypeDef hdma_uart5_rx;
-  61:Core/Src/stm32f4xx_it.c **** extern DMA_HandleTypeDef hdma_uart5_tx;
-  62:Core/Src/stm32f4xx_it.c **** extern DMA_HandleTypeDef hdma_usart2_rx;
-  63:Core/Src/stm32f4xx_it.c **** extern DMA_HandleTypeDef hdma_usart2_tx;
-  64:Core/Src/stm32f4xx_it.c **** extern DMA_HandleTypeDef hdma_usart6_rx;
-  65:Core/Src/stm32f4xx_it.c **** extern DMA_HandleTypeDef hdma_usart6_tx;
-  66:Core/Src/stm32f4xx_it.c **** extern UART_HandleTypeDef huart5;
-  67:Core/Src/stm32f4xx_it.c **** extern UART_HandleTypeDef huart2;
-  68:Core/Src/stm32f4xx_it.c **** extern UART_HandleTypeDef huart6;
-  69:Core/Src/stm32f4xx_it.c **** /* USER CODE BEGIN EV */
-  70:Core/Src/stm32f4xx_it.c **** 
-  71:Core/Src/stm32f4xx_it.c **** void SDTimer_Handler(void)
-  72:Core/Src/stm32f4xx_it.c **** {
-  29              		.loc 1 72 1 view -0
+  59:Core/Src/stm32f4xx_it.c **** extern I2C_HandleTypeDef hi2c1;
+  60:Core/Src/stm32f4xx_it.c **** extern DMA_HandleTypeDef hdma_spi1_tx;
+  61:Core/Src/stm32f4xx_it.c **** extern DMA_HandleTypeDef hdma_uart4_tx;
+  62:Core/Src/stm32f4xx_it.c **** extern DMA_HandleTypeDef hdma_uart4_rx;
+  63:Core/Src/stm32f4xx_it.c **** extern DMA_HandleTypeDef hdma_uart5_rx;
+  64:Core/Src/stm32f4xx_it.c **** extern DMA_HandleTypeDef hdma_uart5_tx;
+  65:Core/Src/stm32f4xx_it.c **** extern DMA_HandleTypeDef hdma_usart2_rx;
+  66:Core/Src/stm32f4xx_it.c **** extern DMA_HandleTypeDef hdma_usart2_tx;
+  67:Core/Src/stm32f4xx_it.c **** extern DMA_HandleTypeDef hdma_usart3_rx;
+  68:Core/Src/stm32f4xx_it.c **** extern DMA_HandleTypeDef hdma_usart3_tx;
+  69:Core/Src/stm32f4xx_it.c **** extern DMA_HandleTypeDef hdma_usart6_rx;
+  70:Core/Src/stm32f4xx_it.c **** extern DMA_HandleTypeDef hdma_usart6_tx;
+  71:Core/Src/stm32f4xx_it.c **** extern UART_HandleTypeDef huart4;
+  72:Core/Src/stm32f4xx_it.c **** extern UART_HandleTypeDef huart5;
+  73:Core/Src/stm32f4xx_it.c **** extern UART_HandleTypeDef huart2;
+  74:Core/Src/stm32f4xx_it.c **** extern UART_HandleTypeDef huart3;
+  75:Core/Src/stm32f4xx_it.c **** extern UART_HandleTypeDef huart6;
+  76:Core/Src/stm32f4xx_it.c **** /* USER CODE BEGIN EV */
+  77:Core/Src/stm32f4xx_it.c **** 
+  78:Core/Src/stm32f4xx_it.c **** void SDTimer_Handler(void)
+  79:Core/Src/stm32f4xx_it.c **** {
+  29              		.loc 1 79 1 view -0
   30              		.cfi_startproc
   31              		@ args = 0, pretend = 0, frame = 0
   32              		@ frame_needed = 0, uses_anonymous_args = 0
   33              		@ link register save eliminated.
-  73:Core/Src/stm32f4xx_it.c ****   if(Timer1 > 0)
-  34              		.loc 1 73 3 view .LVU1
-  35              		.loc 1 73 13 is_stmt 0 view .LVU2
+  80:Core/Src/stm32f4xx_it.c ****   if(Timer1 > 0)
+  34              		.loc 1 80 3 view .LVU1
+  35              		.loc 1 80 13 is_stmt 0 view .LVU2
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccrs87Wk.s 			page 3
+
+
   36 0000 084B     		ldr	r3, .L4
   37 0002 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
-  38              		.loc 1 73 5 view .LVU3
+  38              		.loc 1 80 5 view .LVU3
   39 0004 23B1     		cbz	r3, .L2
-  74:Core/Src/stm32f4xx_it.c ****     Timer1--;
-  40              		.loc 1 74 5 is_stmt 1 view .LVU4
-  41              		.loc 1 74 11 is_stmt 0 view .LVU5
-ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccQMDolv.s 			page 3
-
-
+  81:Core/Src/stm32f4xx_it.c ****     Timer1--;
+  40              		.loc 1 81 5 is_stmt 1 view .LVU4
+  41              		.loc 1 81 11 is_stmt 0 view .LVU5
   42 0006 074A     		ldr	r2, .L4
   43 0008 1378     		ldrb	r3, [r2]	@ zero_extendqisi2
   44 000a 013B     		subs	r3, r3, #1
   45 000c DBB2     		uxtb	r3, r3
   46 000e 1370     		strb	r3, [r2]
   47              	.L2:
-  75:Core/Src/stm32f4xx_it.c **** 
-  76:Core/Src/stm32f4xx_it.c ****   if(Timer2 > 0)
-  48              		.loc 1 76 3 is_stmt 1 view .LVU6
-  49              		.loc 1 76 13 is_stmt 0 view .LVU7
+  82:Core/Src/stm32f4xx_it.c **** 
+  83:Core/Src/stm32f4xx_it.c ****   if(Timer2 > 0)
+  48              		.loc 1 83 3 is_stmt 1 view .LVU6
+  49              		.loc 1 83 13 is_stmt 0 view .LVU7
   50 0010 054B     		ldr	r3, .L4+4
   51 0012 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
-  52              		.loc 1 76 5 view .LVU8
+  52              		.loc 1 83 5 view .LVU8
   53 0014 23B1     		cbz	r3, .L1
-  77:Core/Src/stm32f4xx_it.c ****     Timer2--;
-  54              		.loc 1 77 5 is_stmt 1 view .LVU9
-  55              		.loc 1 77 11 is_stmt 0 view .LVU10
+  84:Core/Src/stm32f4xx_it.c ****     Timer2--;
+  54              		.loc 1 84 5 is_stmt 1 view .LVU9
+  55              		.loc 1 84 11 is_stmt 0 view .LVU10
   56 0016 044A     		ldr	r2, .L4+4
   57 0018 1378     		ldrb	r3, [r2]	@ zero_extendqisi2
   58 001a 013B     		subs	r3, r3, #1
   59 001c DBB2     		uxtb	r3, r3
   60 001e 1370     		strb	r3, [r2]
   61              	.L1:
-  78:Core/Src/stm32f4xx_it.c **** }
-  62              		.loc 1 78 1 view .LVU11
+  85:Core/Src/stm32f4xx_it.c **** }
+  62              		.loc 1 85 1 view .LVU11
   63 0020 7047     		bx	lr
   64              	.L5:
   65 0022 00BF     		.align	2
@@ -162,37 +169,37 @@ ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccQMDolv.s 			page 1
   77              		.thumb_func
   79              	NMI_Handler:
   80              	.LFB135:
-  79:Core/Src/stm32f4xx_it.c **** /* USER CODE END EV */
-  80:Core/Src/stm32f4xx_it.c **** 
-  81:Core/Src/stm32f4xx_it.c **** /******************************************************************************/
-  82:Core/Src/stm32f4xx_it.c **** /*           Cortex-M4 Processor Interruption and Exception Handlers          */
-  83:Core/Src/stm32f4xx_it.c **** /******************************************************************************/
-  84:Core/Src/stm32f4xx_it.c **** /**
-  85:Core/Src/stm32f4xx_it.c ****   * @brief This function handles Non maskable interrupt.
-  86:Core/Src/stm32f4xx_it.c ****   */
-  87:Core/Src/stm32f4xx_it.c **** void NMI_Handler(void)
-  88:Core/Src/stm32f4xx_it.c **** {
-  81              		.loc 1 88 1 is_stmt 1 view -0
+  86:Core/Src/stm32f4xx_it.c **** /* USER CODE END EV */
+  87:Core/Src/stm32f4xx_it.c **** 
+  88:Core/Src/stm32f4xx_it.c **** /******************************************************************************/
+  89:Core/Src/stm32f4xx_it.c **** /*           Cortex-M4 Processor Interruption and Exception Handlers          */
+  90:Core/Src/stm32f4xx_it.c **** /******************************************************************************/
+  91:Core/Src/stm32f4xx_it.c **** /**
+  92:Core/Src/stm32f4xx_it.c ****   * @brief This function handles Non maskable interrupt.
+  93:Core/Src/stm32f4xx_it.c ****   */
+  94:Core/Src/stm32f4xx_it.c **** void NMI_Handler(void)
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccrs87Wk.s 			page 4
+
+
+  95:Core/Src/stm32f4xx_it.c **** {
+  81              		.loc 1 95 1 is_stmt 1 view -0
   82              		.cfi_startproc
   83              		@ Volatile: function does not return.
   84              		@ args = 0, pretend = 0, frame = 0
   85              		@ frame_needed = 0, uses_anonymous_args = 0
   86              		@ link register save eliminated.
-ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccQMDolv.s 			page 4
-
-
   87              	.L7:
-  89:Core/Src/stm32f4xx_it.c ****   /* USER CODE BEGIN NonMaskableInt_IRQn 0 */
-  90:Core/Src/stm32f4xx_it.c **** 
-  91:Core/Src/stm32f4xx_it.c ****   /* USER CODE END NonMaskableInt_IRQn 0 */
-  92:Core/Src/stm32f4xx_it.c ****   /* USER CODE BEGIN NonMaskableInt_IRQn 1 */
-  93:Core/Src/stm32f4xx_it.c ****    while (1)
-  88              		.loc 1 93 4 view .LVU13
-  94:Core/Src/stm32f4xx_it.c ****   {
-  95:Core/Src/stm32f4xx_it.c ****   }
-  89              		.loc 1 95 3 view .LVU14
-  93:Core/Src/stm32f4xx_it.c ****   {
-  90              		.loc 1 93 10 view .LVU15
+  96:Core/Src/stm32f4xx_it.c ****   /* USER CODE BEGIN NonMaskableInt_IRQn 0 */
+  97:Core/Src/stm32f4xx_it.c **** 
+  98:Core/Src/stm32f4xx_it.c ****   /* USER CODE END NonMaskableInt_IRQn 0 */
+  99:Core/Src/stm32f4xx_it.c ****   /* USER CODE BEGIN NonMaskableInt_IRQn 1 */
+ 100:Core/Src/stm32f4xx_it.c ****    while (1)
+  88              		.loc 1 100 4 view .LVU13
+ 101:Core/Src/stm32f4xx_it.c ****   {
+ 102:Core/Src/stm32f4xx_it.c ****   }
+  89              		.loc 1 102 3 view .LVU14
+ 100:Core/Src/stm32f4xx_it.c ****   {
+  90              		.loc 1 100 10 view .LVU15
   91 0000 FEE7     		b	.L7
   92              		.cfi_endproc
   93              	.LFE135:
@@ -204,33 +211,36 @@ ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccQMDolv.s 			page 1
  100              		.thumb_func
  102              	HardFault_Handler:
  103              	.LFB136:
-  96:Core/Src/stm32f4xx_it.c ****   /* USER CODE END NonMaskableInt_IRQn 1 */
-  97:Core/Src/stm32f4xx_it.c **** }
-  98:Core/Src/stm32f4xx_it.c **** 
-  99:Core/Src/stm32f4xx_it.c **** /**
- 100:Core/Src/stm32f4xx_it.c ****   * @brief This function handles Hard fault interrupt.
- 101:Core/Src/stm32f4xx_it.c ****   */
- 102:Core/Src/stm32f4xx_it.c **** void HardFault_Handler(void)
- 103:Core/Src/stm32f4xx_it.c **** {
- 104              		.loc 1 103 1 view -0
+ 103:Core/Src/stm32f4xx_it.c ****   /* USER CODE END NonMaskableInt_IRQn 1 */
+ 104:Core/Src/stm32f4xx_it.c **** }
+ 105:Core/Src/stm32f4xx_it.c **** 
+ 106:Core/Src/stm32f4xx_it.c **** /**
+ 107:Core/Src/stm32f4xx_it.c ****   * @brief This function handles Hard fault interrupt.
+ 108:Core/Src/stm32f4xx_it.c ****   */
+ 109:Core/Src/stm32f4xx_it.c **** void HardFault_Handler(void)
+ 110:Core/Src/stm32f4xx_it.c **** {
+ 104              		.loc 1 110 1 view -0
  105              		.cfi_startproc
  106              		@ Volatile: function does not return.
  107              		@ args = 0, pretend = 0, frame = 0
  108              		@ frame_needed = 0, uses_anonymous_args = 0
  109              		@ link register save eliminated.
  110              	.L9:
- 104:Core/Src/stm32f4xx_it.c ****   /* USER CODE BEGIN HardFault_IRQn 0 */
- 105:Core/Src/stm32f4xx_it.c **** 
- 106:Core/Src/stm32f4xx_it.c ****   /* USER CODE END HardFault_IRQn 0 */
- 107:Core/Src/stm32f4xx_it.c ****   while (1)
- 111              		.loc 1 107 3 view .LVU17
- 108:Core/Src/stm32f4xx_it.c ****   {
- 109:Core/Src/stm32f4xx_it.c ****     /* USER CODE BEGIN W1_HardFault_IRQn 0 */
- 110:Core/Src/stm32f4xx_it.c ****     /* USER CODE END W1_HardFault_IRQn 0 */
- 111:Core/Src/stm32f4xx_it.c ****   }
- 112              		.loc 1 111 3 view .LVU18
- 107:Core/Src/stm32f4xx_it.c ****   {
- 113              		.loc 1 107 9 view .LVU19
+ 111:Core/Src/stm32f4xx_it.c ****   /* USER CODE BEGIN HardFault_IRQn 0 */
+ 112:Core/Src/stm32f4xx_it.c **** 
+ 113:Core/Src/stm32f4xx_it.c ****   /* USER CODE END HardFault_IRQn 0 */
+ 114:Core/Src/stm32f4xx_it.c ****   while (1)
+ 111              		.loc 1 114 3 view .LVU17
+ 115:Core/Src/stm32f4xx_it.c ****   {
+ 116:Core/Src/stm32f4xx_it.c ****     /* USER CODE BEGIN W1_HardFault_IRQn 0 */
+ 117:Core/Src/stm32f4xx_it.c ****     /* USER CODE END W1_HardFault_IRQn 0 */
+ 118:Core/Src/stm32f4xx_it.c ****   }
+ 112              		.loc 1 118 3 view .LVU18
+ 114:Core/Src/stm32f4xx_it.c ****   {
+ 113              		.loc 1 114 9 view .LVU19
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccrs87Wk.s 			page 5
+
+
  114 0000 FEE7     		b	.L9
  115              		.cfi_endproc
  116              	.LFE136:
@@ -238,39 +248,36 @@ ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccQMDolv.s 			page 1
  119              		.align	1
  120              		.global	MemManage_Handler
  121              		.syntax unified
-ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccQMDolv.s 			page 5
-
-
  122              		.thumb
  123              		.thumb_func
  125              	MemManage_Handler:
  126              	.LFB137:
- 112:Core/Src/stm32f4xx_it.c **** }
- 113:Core/Src/stm32f4xx_it.c **** 
- 114:Core/Src/stm32f4xx_it.c **** /**
- 115:Core/Src/stm32f4xx_it.c ****   * @brief This function handles Memory management fault.
- 116:Core/Src/stm32f4xx_it.c ****   */
- 117:Core/Src/stm32f4xx_it.c **** void MemManage_Handler(void)
- 118:Core/Src/stm32f4xx_it.c **** {
- 127              		.loc 1 118 1 view -0
+ 119:Core/Src/stm32f4xx_it.c **** }
+ 120:Core/Src/stm32f4xx_it.c **** 
+ 121:Core/Src/stm32f4xx_it.c **** /**
+ 122:Core/Src/stm32f4xx_it.c ****   * @brief This function handles Memory management fault.
+ 123:Core/Src/stm32f4xx_it.c ****   */
+ 124:Core/Src/stm32f4xx_it.c **** void MemManage_Handler(void)
+ 125:Core/Src/stm32f4xx_it.c **** {
+ 127              		.loc 1 125 1 view -0
  128              		.cfi_startproc
  129              		@ Volatile: function does not return.
  130              		@ args = 0, pretend = 0, frame = 0
  131              		@ frame_needed = 0, uses_anonymous_args = 0
  132              		@ link register save eliminated.
  133              	.L11:
- 119:Core/Src/stm32f4xx_it.c ****   /* USER CODE BEGIN MemoryManagement_IRQn 0 */
- 120:Core/Src/stm32f4xx_it.c **** 
- 121:Core/Src/stm32f4xx_it.c ****   /* USER CODE END MemoryManagement_IRQn 0 */
- 122:Core/Src/stm32f4xx_it.c ****   while (1)
- 134              		.loc 1 122 3 view .LVU21
- 123:Core/Src/stm32f4xx_it.c ****   {
- 124:Core/Src/stm32f4xx_it.c ****     /* USER CODE BEGIN W1_MemoryManagement_IRQn 0 */
- 125:Core/Src/stm32f4xx_it.c ****     /* USER CODE END W1_MemoryManagement_IRQn 0 */
- 126:Core/Src/stm32f4xx_it.c ****   }
- 135              		.loc 1 126 3 view .LVU22
- 122:Core/Src/stm32f4xx_it.c ****   {
- 136              		.loc 1 122 9 view .LVU23
+ 126:Core/Src/stm32f4xx_it.c ****   /* USER CODE BEGIN MemoryManagement_IRQn 0 */
+ 127:Core/Src/stm32f4xx_it.c **** 
+ 128:Core/Src/stm32f4xx_it.c ****   /* USER CODE END MemoryManagement_IRQn 0 */
+ 129:Core/Src/stm32f4xx_it.c ****   while (1)
+ 134              		.loc 1 129 3 view .LVU21
+ 130:Core/Src/stm32f4xx_it.c ****   {
+ 131:Core/Src/stm32f4xx_it.c ****     /* USER CODE BEGIN W1_MemoryManagement_IRQn 0 */
+ 132:Core/Src/stm32f4xx_it.c ****     /* USER CODE END W1_MemoryManagement_IRQn 0 */
+ 133:Core/Src/stm32f4xx_it.c ****   }
+ 135              		.loc 1 133 3 view .LVU22
+ 129:Core/Src/stm32f4xx_it.c ****   {
+ 136              		.loc 1 129 9 view .LVU23
  137 0000 FEE7     		b	.L11
  138              		.cfi_endproc
  139              	.LFE137:
@@ -282,35 +289,35 @@ ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccQMDolv.s 			page 1
  146              		.thumb_func
  148              	BusFault_Handler:
  149              	.LFB138:
- 127:Core/Src/stm32f4xx_it.c **** }
- 128:Core/Src/stm32f4xx_it.c **** 
- 129:Core/Src/stm32f4xx_it.c **** /**
- 130:Core/Src/stm32f4xx_it.c ****   * @brief This function handles Pre-fetch fault, memory access fault.
- 131:Core/Src/stm32f4xx_it.c ****   */
- 132:Core/Src/stm32f4xx_it.c **** void BusFault_Handler(void)
- 133:Core/Src/stm32f4xx_it.c **** {
- 150              		.loc 1 133 1 view -0
+ 134:Core/Src/stm32f4xx_it.c **** }
+ 135:Core/Src/stm32f4xx_it.c **** 
+ 136:Core/Src/stm32f4xx_it.c **** /**
+ 137:Core/Src/stm32f4xx_it.c ****   * @brief This function handles Pre-fetch fault, memory access fault.
+ 138:Core/Src/stm32f4xx_it.c ****   */
+ 139:Core/Src/stm32f4xx_it.c **** void BusFault_Handler(void)
+ 140:Core/Src/stm32f4xx_it.c **** {
+ 150              		.loc 1 140 1 view -0
  151              		.cfi_startproc
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccrs87Wk.s 			page 6
+
+
  152              		@ Volatile: function does not return.
  153              		@ args = 0, pretend = 0, frame = 0
  154              		@ frame_needed = 0, uses_anonymous_args = 0
  155              		@ link register save eliminated.
  156              	.L13:
- 134:Core/Src/stm32f4xx_it.c ****   /* USER CODE BEGIN BusFault_IRQn 0 */
- 135:Core/Src/stm32f4xx_it.c **** 
-ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccQMDolv.s 			page 6
-
-
- 136:Core/Src/stm32f4xx_it.c ****   /* USER CODE END BusFault_IRQn 0 */
- 137:Core/Src/stm32f4xx_it.c ****   while (1)
- 157              		.loc 1 137 3 view .LVU25
- 138:Core/Src/stm32f4xx_it.c ****   {
- 139:Core/Src/stm32f4xx_it.c ****     /* USER CODE BEGIN W1_BusFault_IRQn 0 */
- 140:Core/Src/stm32f4xx_it.c ****     /* USER CODE END W1_BusFault_IRQn 0 */
- 141:Core/Src/stm32f4xx_it.c ****   }
- 158              		.loc 1 141 3 view .LVU26
- 137:Core/Src/stm32f4xx_it.c ****   {
- 159              		.loc 1 137 9 view .LVU27
+ 141:Core/Src/stm32f4xx_it.c ****   /* USER CODE BEGIN BusFault_IRQn 0 */
+ 142:Core/Src/stm32f4xx_it.c **** 
+ 143:Core/Src/stm32f4xx_it.c ****   /* USER CODE END BusFault_IRQn 0 */
+ 144:Core/Src/stm32f4xx_it.c ****   while (1)
+ 157              		.loc 1 144 3 view .LVU25
+ 145:Core/Src/stm32f4xx_it.c ****   {
+ 146:Core/Src/stm32f4xx_it.c ****     /* USER CODE BEGIN W1_BusFault_IRQn 0 */
+ 147:Core/Src/stm32f4xx_it.c ****     /* USER CODE END W1_BusFault_IRQn 0 */
+ 148:Core/Src/stm32f4xx_it.c ****   }
+ 158              		.loc 1 148 3 view .LVU26
+ 144:Core/Src/stm32f4xx_it.c ****   {
+ 159              		.loc 1 144 9 view .LVU27
  160 0000 FEE7     		b	.L13
  161              		.cfi_endproc
  162              	.LFE138:
@@ -322,35 +329,38 @@ ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccQMDolv.s 			page 1
  169              		.thumb_func
  171              	UsageFault_Handler:
  172              	.LFB139:
- 142:Core/Src/stm32f4xx_it.c **** }
- 143:Core/Src/stm32f4xx_it.c **** 
- 144:Core/Src/stm32f4xx_it.c **** /**
- 145:Core/Src/stm32f4xx_it.c ****   * @brief This function handles Undefined instruction or illegal state.
- 146:Core/Src/stm32f4xx_it.c ****   */
- 147:Core/Src/stm32f4xx_it.c **** void UsageFault_Handler(void)
- 148:Core/Src/stm32f4xx_it.c **** {
- 173              		.loc 1 148 1 view -0
+ 149:Core/Src/stm32f4xx_it.c **** }
+ 150:Core/Src/stm32f4xx_it.c **** 
+ 151:Core/Src/stm32f4xx_it.c **** /**
+ 152:Core/Src/stm32f4xx_it.c ****   * @brief This function handles Undefined instruction or illegal state.
+ 153:Core/Src/stm32f4xx_it.c ****   */
+ 154:Core/Src/stm32f4xx_it.c **** void UsageFault_Handler(void)
+ 155:Core/Src/stm32f4xx_it.c **** {
+ 173              		.loc 1 155 1 view -0
  174              		.cfi_startproc
  175              		@ Volatile: function does not return.
  176              		@ args = 0, pretend = 0, frame = 0
  177              		@ frame_needed = 0, uses_anonymous_args = 0
  178              		@ link register save eliminated.
  179              	.L15:
- 149:Core/Src/stm32f4xx_it.c ****   /* USER CODE BEGIN UsageFault_IRQn 0 */
- 150:Core/Src/stm32f4xx_it.c **** 
- 151:Core/Src/stm32f4xx_it.c ****   /* USER CODE END UsageFault_IRQn 0 */
- 152:Core/Src/stm32f4xx_it.c ****   while (1)
- 180              		.loc 1 152 3 view .LVU29
- 153:Core/Src/stm32f4xx_it.c ****   {
- 154:Core/Src/stm32f4xx_it.c ****     /* USER CODE BEGIN W1_UsageFault_IRQn 0 */
- 155:Core/Src/stm32f4xx_it.c ****     /* USER CODE END W1_UsageFault_IRQn 0 */
- 156:Core/Src/stm32f4xx_it.c ****   }
- 181              		.loc 1 156 3 view .LVU30
- 152:Core/Src/stm32f4xx_it.c ****   {
- 182              		.loc 1 152 9 view .LVU31
+ 156:Core/Src/stm32f4xx_it.c ****   /* USER CODE BEGIN UsageFault_IRQn 0 */
+ 157:Core/Src/stm32f4xx_it.c **** 
+ 158:Core/Src/stm32f4xx_it.c ****   /* USER CODE END UsageFault_IRQn 0 */
+ 159:Core/Src/stm32f4xx_it.c ****   while (1)
+ 180              		.loc 1 159 3 view .LVU29
+ 160:Core/Src/stm32f4xx_it.c ****   {
+ 161:Core/Src/stm32f4xx_it.c ****     /* USER CODE BEGIN W1_UsageFault_IRQn 0 */
+ 162:Core/Src/stm32f4xx_it.c ****     /* USER CODE END W1_UsageFault_IRQn 0 */
+ 163:Core/Src/stm32f4xx_it.c ****   }
+ 181              		.loc 1 163 3 view .LVU30
+ 159:Core/Src/stm32f4xx_it.c ****   {
+ 182              		.loc 1 159 9 view .LVU31
  183 0000 FEE7     		b	.L15
  184              		.cfi_endproc
  185              	.LFE139:
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccrs87Wk.s 			page 7
+
+
  187              		.section	.text.SVC_Handler,"ax",%progbits
  188              		.align	1
  189              		.global	SVC_Handler
@@ -358,30 +368,27 @@ ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccQMDolv.s 			page 1
  191              		.thumb
  192              		.thumb_func
  194              	SVC_Handler:
-ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccQMDolv.s 			page 7
-
-
  195              	.LFB140:
- 157:Core/Src/stm32f4xx_it.c **** }
- 158:Core/Src/stm32f4xx_it.c **** 
- 159:Core/Src/stm32f4xx_it.c **** /**
- 160:Core/Src/stm32f4xx_it.c ****   * @brief This function handles System service call via SWI instruction.
- 161:Core/Src/stm32f4xx_it.c ****   */
- 162:Core/Src/stm32f4xx_it.c **** void SVC_Handler(void)
- 163:Core/Src/stm32f4xx_it.c **** {
- 196              		.loc 1 163 1 view -0
+ 164:Core/Src/stm32f4xx_it.c **** }
+ 165:Core/Src/stm32f4xx_it.c **** 
+ 166:Core/Src/stm32f4xx_it.c **** /**
+ 167:Core/Src/stm32f4xx_it.c ****   * @brief This function handles System service call via SWI instruction.
+ 168:Core/Src/stm32f4xx_it.c ****   */
+ 169:Core/Src/stm32f4xx_it.c **** void SVC_Handler(void)
+ 170:Core/Src/stm32f4xx_it.c **** {
+ 196              		.loc 1 170 1 view -0
  197              		.cfi_startproc
  198              		@ args = 0, pretend = 0, frame = 0
  199              		@ frame_needed = 0, uses_anonymous_args = 0
  200              		@ link register save eliminated.
- 164:Core/Src/stm32f4xx_it.c ****   /* USER CODE BEGIN SVCall_IRQn 0 */
- 165:Core/Src/stm32f4xx_it.c **** 
- 166:Core/Src/stm32f4xx_it.c ****   /* USER CODE END SVCall_IRQn 0 */
- 167:Core/Src/stm32f4xx_it.c ****   /* USER CODE BEGIN SVCall_IRQn 1 */
- 168:Core/Src/stm32f4xx_it.c **** 
- 169:Core/Src/stm32f4xx_it.c ****   /* USER CODE END SVCall_IRQn 1 */
- 170:Core/Src/stm32f4xx_it.c **** }
- 201              		.loc 1 170 1 view .LVU33
+ 171:Core/Src/stm32f4xx_it.c ****   /* USER CODE BEGIN SVCall_IRQn 0 */
+ 172:Core/Src/stm32f4xx_it.c **** 
+ 173:Core/Src/stm32f4xx_it.c ****   /* USER CODE END SVCall_IRQn 0 */
+ 174:Core/Src/stm32f4xx_it.c ****   /* USER CODE BEGIN SVCall_IRQn 1 */
+ 175:Core/Src/stm32f4xx_it.c **** 
+ 176:Core/Src/stm32f4xx_it.c ****   /* USER CODE END SVCall_IRQn 1 */
+ 177:Core/Src/stm32f4xx_it.c **** }
+ 201              		.loc 1 177 1 view .LVU33
  202 0000 7047     		bx	lr
  203              		.cfi_endproc
  204              	.LFE140:
@@ -393,58 +400,58 @@ ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccQMDolv.s 			page 1
  211              		.thumb_func
  213              	DebugMon_Handler:
  214              	.LFB141:
- 171:Core/Src/stm32f4xx_it.c **** 
- 172:Core/Src/stm32f4xx_it.c **** /**
- 173:Core/Src/stm32f4xx_it.c ****   * @brief This function handles Debug monitor.
- 174:Core/Src/stm32f4xx_it.c ****   */
- 175:Core/Src/stm32f4xx_it.c **** void DebugMon_Handler(void)
- 176:Core/Src/stm32f4xx_it.c **** {
- 215              		.loc 1 176 1 view -0
+ 178:Core/Src/stm32f4xx_it.c **** 
+ 179:Core/Src/stm32f4xx_it.c **** /**
+ 180:Core/Src/stm32f4xx_it.c ****   * @brief This function handles Debug monitor.
+ 181:Core/Src/stm32f4xx_it.c ****   */
+ 182:Core/Src/stm32f4xx_it.c **** void DebugMon_Handler(void)
+ 183:Core/Src/stm32f4xx_it.c **** {
+ 215              		.loc 1 183 1 view -0
  216              		.cfi_startproc
  217              		@ args = 0, pretend = 0, frame = 0
  218              		@ frame_needed = 0, uses_anonymous_args = 0
  219              		@ link register save eliminated.
- 177:Core/Src/stm32f4xx_it.c ****   /* USER CODE BEGIN DebugMonitor_IRQn 0 */
- 178:Core/Src/stm32f4xx_it.c **** 
- 179:Core/Src/stm32f4xx_it.c ****   /* USER CODE END DebugMonitor_IRQn 0 */
- 180:Core/Src/stm32f4xx_it.c ****   /* USER CODE BEGIN DebugMonitor_IRQn 1 */
- 181:Core/Src/stm32f4xx_it.c **** 
- 182:Core/Src/stm32f4xx_it.c ****   /* USER CODE END DebugMonitor_IRQn 1 */
- 183:Core/Src/stm32f4xx_it.c **** }
- 220              		.loc 1 183 1 view .LVU35
+ 184:Core/Src/stm32f4xx_it.c ****   /* USER CODE BEGIN DebugMonitor_IRQn 0 */
+ 185:Core/Src/stm32f4xx_it.c **** 
+ 186:Core/Src/stm32f4xx_it.c ****   /* USER CODE END DebugMonitor_IRQn 0 */
+ 187:Core/Src/stm32f4xx_it.c ****   /* USER CODE BEGIN DebugMonitor_IRQn 1 */
+ 188:Core/Src/stm32f4xx_it.c **** 
+ 189:Core/Src/stm32f4xx_it.c ****   /* USER CODE END DebugMonitor_IRQn 1 */
+ 190:Core/Src/stm32f4xx_it.c **** }
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccrs87Wk.s 			page 8
+
+
+ 220              		.loc 1 190 1 view .LVU35
  221 0000 7047     		bx	lr
  222              		.cfi_endproc
  223              	.LFE141:
  225              		.section	.text.PendSV_Handler,"ax",%progbits
  226              		.align	1
  227              		.global	PendSV_Handler
-ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccQMDolv.s 			page 8
-
-
  228              		.syntax unified
  229              		.thumb
  230              		.thumb_func
  232              	PendSV_Handler:
  233              	.LFB142:
- 184:Core/Src/stm32f4xx_it.c **** 
- 185:Core/Src/stm32f4xx_it.c **** /**
- 186:Core/Src/stm32f4xx_it.c ****   * @brief This function handles Pendable request for system service.
- 187:Core/Src/stm32f4xx_it.c ****   */
- 188:Core/Src/stm32f4xx_it.c **** void PendSV_Handler(void)
- 189:Core/Src/stm32f4xx_it.c **** {
- 234              		.loc 1 189 1 view -0
+ 191:Core/Src/stm32f4xx_it.c **** 
+ 192:Core/Src/stm32f4xx_it.c **** /**
+ 193:Core/Src/stm32f4xx_it.c ****   * @brief This function handles Pendable request for system service.
+ 194:Core/Src/stm32f4xx_it.c ****   */
+ 195:Core/Src/stm32f4xx_it.c **** void PendSV_Handler(void)
+ 196:Core/Src/stm32f4xx_it.c **** {
+ 234              		.loc 1 196 1 view -0
  235              		.cfi_startproc
  236              		@ args = 0, pretend = 0, frame = 0
  237              		@ frame_needed = 0, uses_anonymous_args = 0
  238              		@ link register save eliminated.
- 190:Core/Src/stm32f4xx_it.c ****   /* USER CODE BEGIN PendSV_IRQn 0 */
- 191:Core/Src/stm32f4xx_it.c **** 
- 192:Core/Src/stm32f4xx_it.c ****   /* USER CODE END PendSV_IRQn 0 */
- 193:Core/Src/stm32f4xx_it.c ****   /* USER CODE BEGIN PendSV_IRQn 1 */
- 194:Core/Src/stm32f4xx_it.c **** 
- 195:Core/Src/stm32f4xx_it.c ****   /* USER CODE END PendSV_IRQn 1 */
- 196:Core/Src/stm32f4xx_it.c **** }
- 239              		.loc 1 196 1 view .LVU37
+ 197:Core/Src/stm32f4xx_it.c ****   /* USER CODE BEGIN PendSV_IRQn 0 */
+ 198:Core/Src/stm32f4xx_it.c **** 
+ 199:Core/Src/stm32f4xx_it.c ****   /* USER CODE END PendSV_IRQn 0 */
+ 200:Core/Src/stm32f4xx_it.c ****   /* USER CODE BEGIN PendSV_IRQn 1 */
+ 201:Core/Src/stm32f4xx_it.c **** 
+ 202:Core/Src/stm32f4xx_it.c ****   /* USER CODE END PendSV_IRQn 1 */
+ 203:Core/Src/stm32f4xx_it.c **** }
+ 239              		.loc 1 203 1 view .LVU37
  240 0000 7047     		bx	lr
  241              		.cfi_endproc
  242              	.LFE142:
@@ -456,13 +463,13 @@ ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccQMDolv.s 			page 1
  249              		.thumb_func
  251              	SysTick_Handler:
  252              	.LFB143:
- 197:Core/Src/stm32f4xx_it.c **** 
- 198:Core/Src/stm32f4xx_it.c **** /**
- 199:Core/Src/stm32f4xx_it.c ****   * @brief This function handles System tick timer.
- 200:Core/Src/stm32f4xx_it.c ****   */
- 201:Core/Src/stm32f4xx_it.c **** void SysTick_Handler(void)
- 202:Core/Src/stm32f4xx_it.c **** {
- 253              		.loc 1 202 1 view -0
+ 204:Core/Src/stm32f4xx_it.c **** 
+ 205:Core/Src/stm32f4xx_it.c **** /**
+ 206:Core/Src/stm32f4xx_it.c ****   * @brief This function handles System tick timer.
+ 207:Core/Src/stm32f4xx_it.c ****   */
+ 208:Core/Src/stm32f4xx_it.c **** void SysTick_Handler(void)
+ 209:Core/Src/stm32f4xx_it.c **** {
+ 253              		.loc 1 209 1 view -0
  254              		.cfi_startproc
  255              		@ args = 0, pretend = 0, frame = 0
  256              		@ frame_needed = 0, uses_anonymous_args = 0
@@ -470,52 +477,52 @@ ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccQMDolv.s 			page 1
  258              		.cfi_def_cfa_offset 8
  259              		.cfi_offset 3, -8
  260              		.cfi_offset 14, -4
- 203:Core/Src/stm32f4xx_it.c ****   /* USER CODE BEGIN SysTick_IRQn 0 */
- 204:Core/Src/stm32f4xx_it.c **** 	  FatFsCnt++;
- 261              		.loc 1 204 4 view .LVU39
- 262              		.loc 1 204 12 is_stmt 0 view .LVU40
+ 210:Core/Src/stm32f4xx_it.c ****   /* USER CODE BEGIN SysTick_IRQn 0 */
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccrs87Wk.s 			page 9
+
+
+ 211:Core/Src/stm32f4xx_it.c **** 	  FatFsCnt++;
+ 261              		.loc 1 211 4 view .LVU39
+ 262              		.loc 1 211 12 is_stmt 0 view .LVU40
  263 0002 094A     		ldr	r2, .L23
  264 0004 1378     		ldrb	r3, [r2]	@ zero_extendqisi2
  265 0006 0133     		adds	r3, r3, #1
  266 0008 DBB2     		uxtb	r3, r3
-ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccQMDolv.s 			page 9
-
-
  267 000a 1370     		strb	r3, [r2]
- 205:Core/Src/stm32f4xx_it.c **** 	  if(FatFsCnt >= 10)
- 268              		.loc 1 205 4 is_stmt 1 view .LVU41
- 269              		.loc 1 205 16 is_stmt 0 view .LVU42
+ 212:Core/Src/stm32f4xx_it.c **** 	  if(FatFsCnt >= 10)
+ 268              		.loc 1 212 4 is_stmt 1 view .LVU41
+ 269              		.loc 1 212 16 is_stmt 0 view .LVU42
  270 000c 1378     		ldrb	r3, [r2]	@ zero_extendqisi2
  271 000e DBB2     		uxtb	r3, r3
- 272              		.loc 1 205 6 view .LVU43
+ 272              		.loc 1 212 6 view .LVU43
  273 0010 092B     		cmp	r3, #9
  274 0012 02D8     		bhi	.L22
  275              	.L20:
- 206:Core/Src/stm32f4xx_it.c **** 	  {
- 207:Core/Src/stm32f4xx_it.c **** 	    FatFsCnt = 0;
- 208:Core/Src/stm32f4xx_it.c **** 	    SDTimer_Handler();
- 209:Core/Src/stm32f4xx_it.c **** 	  }
- 210:Core/Src/stm32f4xx_it.c ****   /* USER CODE END SysTick_IRQn 0 */
- 211:Core/Src/stm32f4xx_it.c ****   HAL_IncTick();
- 276              		.loc 1 211 3 is_stmt 1 view .LVU44
+ 213:Core/Src/stm32f4xx_it.c **** 	  {
+ 214:Core/Src/stm32f4xx_it.c **** 	    FatFsCnt = 0;
+ 215:Core/Src/stm32f4xx_it.c **** 	    SDTimer_Handler();
+ 216:Core/Src/stm32f4xx_it.c **** 	  }
+ 217:Core/Src/stm32f4xx_it.c ****   /* USER CODE END SysTick_IRQn 0 */
+ 218:Core/Src/stm32f4xx_it.c ****   HAL_IncTick();
+ 276              		.loc 1 218 3 is_stmt 1 view .LVU44
  277 0014 FFF7FEFF 		bl	HAL_IncTick
  278              	.LVL0:
- 212:Core/Src/stm32f4xx_it.c ****   /* USER CODE BEGIN SysTick_IRQn 1 */
- 213:Core/Src/stm32f4xx_it.c **** 
- 214:Core/Src/stm32f4xx_it.c ****   /* USER CODE END SysTick_IRQn 1 */
- 215:Core/Src/stm32f4xx_it.c **** }
- 279              		.loc 1 215 1 is_stmt 0 view .LVU45
+ 219:Core/Src/stm32f4xx_it.c ****   /* USER CODE BEGIN SysTick_IRQn 1 */
+ 220:Core/Src/stm32f4xx_it.c **** 
+ 221:Core/Src/stm32f4xx_it.c ****   /* USER CODE END SysTick_IRQn 1 */
+ 222:Core/Src/stm32f4xx_it.c **** }
+ 279              		.loc 1 222 1 is_stmt 0 view .LVU45
  280 0018 08BD     		pop	{r3, pc}
  281              	.L22:
- 207:Core/Src/stm32f4xx_it.c **** 	    SDTimer_Handler();
- 282              		.loc 1 207 6 is_stmt 1 view .LVU46
- 207:Core/Src/stm32f4xx_it.c **** 	    SDTimer_Handler();
- 283              		.loc 1 207 15 is_stmt 0 view .LVU47
+ 214:Core/Src/stm32f4xx_it.c **** 	    SDTimer_Handler();
+ 282              		.loc 1 214 6 is_stmt 1 view .LVU46
+ 214:Core/Src/stm32f4xx_it.c **** 	    SDTimer_Handler();
+ 283              		.loc 1 214 15 is_stmt 0 view .LVU47
  284 001a 1346     		mov	r3, r2
  285 001c 0022     		movs	r2, #0
  286 001e 1A70     		strb	r2, [r3]
- 208:Core/Src/stm32f4xx_it.c **** 	  }
- 287              		.loc 1 208 6 is_stmt 1 view .LVU48
+ 215:Core/Src/stm32f4xx_it.c **** 	  }
+ 287              		.loc 1 215 6 is_stmt 1 view .LVU48
  288 0020 FFF7FEFF 		bl	SDTimer_Handler
  289              	.LVL1:
  290 0024 F6E7     		b	.L20
@@ -531,25 +538,25 @@ ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccQMDolv.s 			page 1
  301              		.syntax unified
  302              		.thumb
  303              		.thumb_func
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccrs87Wk.s 			page 10
+
+
  305              	DMA1_Stream0_IRQHandler:
  306              	.LFB144:
- 216:Core/Src/stm32f4xx_it.c **** 
- 217:Core/Src/stm32f4xx_it.c **** /******************************************************************************/
- 218:Core/Src/stm32f4xx_it.c **** /* STM32F4xx Peripheral Interrupt Handlers                                    */
- 219:Core/Src/stm32f4xx_it.c **** /* Add here the Interrupt Handlers for the used peripherals.                  */
- 220:Core/Src/stm32f4xx_it.c **** /* For the available peripheral interrupt handler names,                      */
-ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccQMDolv.s 			page 10
-
-
- 221:Core/Src/stm32f4xx_it.c **** /* please refer to the startup file (startup_stm32f4xx.s).                    */
- 222:Core/Src/stm32f4xx_it.c **** /******************************************************************************/
  223:Core/Src/stm32f4xx_it.c **** 
- 224:Core/Src/stm32f4xx_it.c **** /**
- 225:Core/Src/stm32f4xx_it.c ****   * @brief This function handles DMA1 stream0 global interrupt.
- 226:Core/Src/stm32f4xx_it.c ****   */
- 227:Core/Src/stm32f4xx_it.c **** void DMA1_Stream0_IRQHandler(void)
- 228:Core/Src/stm32f4xx_it.c **** {
- 307              		.loc 1 228 1 view -0
+ 224:Core/Src/stm32f4xx_it.c **** /******************************************************************************/
+ 225:Core/Src/stm32f4xx_it.c **** /* STM32F4xx Peripheral Interrupt Handlers                                    */
+ 226:Core/Src/stm32f4xx_it.c **** /* Add here the Interrupt Handlers for the used peripherals.                  */
+ 227:Core/Src/stm32f4xx_it.c **** /* For the available peripheral interrupt handler names,                      */
+ 228:Core/Src/stm32f4xx_it.c **** /* please refer to the startup file (startup_stm32f4xx.s).                    */
+ 229:Core/Src/stm32f4xx_it.c **** /******************************************************************************/
+ 230:Core/Src/stm32f4xx_it.c **** 
+ 231:Core/Src/stm32f4xx_it.c **** /**
+ 232:Core/Src/stm32f4xx_it.c ****   * @brief This function handles DMA1 stream0 global interrupt.
+ 233:Core/Src/stm32f4xx_it.c ****   */
+ 234:Core/Src/stm32f4xx_it.c **** void DMA1_Stream0_IRQHandler(void)
+ 235:Core/Src/stm32f4xx_it.c **** {
+ 307              		.loc 1 235 1 view -0
  308              		.cfi_startproc
  309              		@ args = 0, pretend = 0, frame = 0
  310              		@ frame_needed = 0, uses_anonymous_args = 0
@@ -557,19 +564,19 @@ ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccQMDolv.s 			page 1
  312              		.cfi_def_cfa_offset 8
  313              		.cfi_offset 3, -8
  314              		.cfi_offset 14, -4
- 229:Core/Src/stm32f4xx_it.c ****   /* USER CODE BEGIN DMA1_Stream0_IRQn 0 */
- 230:Core/Src/stm32f4xx_it.c **** 
- 231:Core/Src/stm32f4xx_it.c ****   /* USER CODE END DMA1_Stream0_IRQn 0 */
- 232:Core/Src/stm32f4xx_it.c ****   HAL_DMA_IRQHandler(&hdma_uart5_rx);
- 315              		.loc 1 232 3 view .LVU50
+ 236:Core/Src/stm32f4xx_it.c ****   /* USER CODE BEGIN DMA1_Stream0_IRQn 0 */
+ 237:Core/Src/stm32f4xx_it.c **** 
+ 238:Core/Src/stm32f4xx_it.c ****   /* USER CODE END DMA1_Stream0_IRQn 0 */
+ 239:Core/Src/stm32f4xx_it.c ****   HAL_DMA_IRQHandler(&hdma_uart5_rx);
+ 315              		.loc 1 239 3 view .LVU50
  316 0002 0248     		ldr	r0, .L27
  317 0004 FFF7FEFF 		bl	HAL_DMA_IRQHandler
  318              	.LVL2:
- 233:Core/Src/stm32f4xx_it.c ****   /* USER CODE BEGIN DMA1_Stream0_IRQn 1 */
- 234:Core/Src/stm32f4xx_it.c **** 
- 235:Core/Src/stm32f4xx_it.c ****   /* USER CODE END DMA1_Stream0_IRQn 1 */
- 236:Core/Src/stm32f4xx_it.c **** }
- 319              		.loc 1 236 1 is_stmt 0 view .LVU51
+ 240:Core/Src/stm32f4xx_it.c ****   /* USER CODE BEGIN DMA1_Stream0_IRQn 1 */
+ 241:Core/Src/stm32f4xx_it.c **** 
+ 242:Core/Src/stm32f4xx_it.c ****   /* USER CODE END DMA1_Stream0_IRQn 1 */
+ 243:Core/Src/stm32f4xx_it.c **** }
+ 319              		.loc 1 243 1 is_stmt 0 view .LVU51
  320 0008 08BD     		pop	{r3, pc}
  321              	.L28:
  322 000a 00BF     		.align	2
@@ -577,66 +584,66 @@ ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccQMDolv.s 			page 1
  324 000c 00000000 		.word	hdma_uart5_rx
  325              		.cfi_endproc
  326              	.LFE144:
- 328              		.section	.text.DMA1_Stream5_IRQHandler,"ax",%progbits
+ 328              		.section	.text.DMA1_Stream1_IRQHandler,"ax",%progbits
  329              		.align	1
- 330              		.global	DMA1_Stream5_IRQHandler
+ 330              		.global	DMA1_Stream1_IRQHandler
  331              		.syntax unified
  332              		.thumb
  333              		.thumb_func
- 335              	DMA1_Stream5_IRQHandler:
+ 335              	DMA1_Stream1_IRQHandler:
  336              	.LFB145:
- 237:Core/Src/stm32f4xx_it.c **** 
- 238:Core/Src/stm32f4xx_it.c **** /**
- 239:Core/Src/stm32f4xx_it.c ****   * @brief This function handles DMA1 stream5 global interrupt.
- 240:Core/Src/stm32f4xx_it.c ****   */
- 241:Core/Src/stm32f4xx_it.c **** void DMA1_Stream5_IRQHandler(void)
- 242:Core/Src/stm32f4xx_it.c **** {
- 337              		.loc 1 242 1 is_stmt 1 view -0
+ 244:Core/Src/stm32f4xx_it.c **** 
+ 245:Core/Src/stm32f4xx_it.c **** /**
+ 246:Core/Src/stm32f4xx_it.c ****   * @brief This function handles DMA1 stream1 global interrupt.
+ 247:Core/Src/stm32f4xx_it.c ****   */
+ 248:Core/Src/stm32f4xx_it.c **** void DMA1_Stream1_IRQHandler(void)
+ 249:Core/Src/stm32f4xx_it.c **** {
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccrs87Wk.s 			page 11
+
+
+ 337              		.loc 1 249 1 is_stmt 1 view -0
  338              		.cfi_startproc
  339              		@ args = 0, pretend = 0, frame = 0
  340              		@ frame_needed = 0, uses_anonymous_args = 0
  341 0000 08B5     		push	{r3, lr}
  342              		.cfi_def_cfa_offset 8
  343              		.cfi_offset 3, -8
-ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccQMDolv.s 			page 11
-
-
  344              		.cfi_offset 14, -4
- 243:Core/Src/stm32f4xx_it.c ****   /* USER CODE BEGIN DMA1_Stream5_IRQn 0 */
- 244:Core/Src/stm32f4xx_it.c **** 
- 245:Core/Src/stm32f4xx_it.c ****   /* USER CODE END DMA1_Stream5_IRQn 0 */
- 246:Core/Src/stm32f4xx_it.c ****   HAL_DMA_IRQHandler(&hdma_usart2_rx);
- 345              		.loc 1 246 3 view .LVU53
+ 250:Core/Src/stm32f4xx_it.c ****   /* USER CODE BEGIN DMA1_Stream1_IRQn 0 */
+ 251:Core/Src/stm32f4xx_it.c **** 
+ 252:Core/Src/stm32f4xx_it.c ****   /* USER CODE END DMA1_Stream1_IRQn 0 */
+ 253:Core/Src/stm32f4xx_it.c ****   HAL_DMA_IRQHandler(&hdma_usart3_rx);
+ 345              		.loc 1 253 3 view .LVU53
  346 0002 0248     		ldr	r0, .L31
  347 0004 FFF7FEFF 		bl	HAL_DMA_IRQHandler
  348              	.LVL3:
- 247:Core/Src/stm32f4xx_it.c ****   /* USER CODE BEGIN DMA1_Stream5_IRQn 1 */
- 248:Core/Src/stm32f4xx_it.c **** 
- 249:Core/Src/stm32f4xx_it.c ****   /* USER CODE END DMA1_Stream5_IRQn 1 */
- 250:Core/Src/stm32f4xx_it.c **** }
- 349              		.loc 1 250 1 is_stmt 0 view .LVU54
+ 254:Core/Src/stm32f4xx_it.c ****   /* USER CODE BEGIN DMA1_Stream1_IRQn 1 */
+ 255:Core/Src/stm32f4xx_it.c **** 
+ 256:Core/Src/stm32f4xx_it.c ****   /* USER CODE END DMA1_Stream1_IRQn 1 */
+ 257:Core/Src/stm32f4xx_it.c **** }
+ 349              		.loc 1 257 1 is_stmt 0 view .LVU54
  350 0008 08BD     		pop	{r3, pc}
  351              	.L32:
  352 000a 00BF     		.align	2
  353              	.L31:
- 354 000c 00000000 		.word	hdma_usart2_rx
+ 354 000c 00000000 		.word	hdma_usart3_rx
  355              		.cfi_endproc
  356              	.LFE145:
- 358              		.section	.text.DMA1_Stream6_IRQHandler,"ax",%progbits
+ 358              		.section	.text.DMA1_Stream2_IRQHandler,"ax",%progbits
  359              		.align	1
- 360              		.global	DMA1_Stream6_IRQHandler
+ 360              		.global	DMA1_Stream2_IRQHandler
  361              		.syntax unified
  362              		.thumb
  363              		.thumb_func
- 365              	DMA1_Stream6_IRQHandler:
+ 365              	DMA1_Stream2_IRQHandler:
  366              	.LFB146:
- 251:Core/Src/stm32f4xx_it.c **** 
- 252:Core/Src/stm32f4xx_it.c **** /**
- 253:Core/Src/stm32f4xx_it.c ****   * @brief This function handles DMA1 stream6 global interrupt.
- 254:Core/Src/stm32f4xx_it.c ****   */
- 255:Core/Src/stm32f4xx_it.c **** void DMA1_Stream6_IRQHandler(void)
- 256:Core/Src/stm32f4xx_it.c **** {
- 367              		.loc 1 256 1 is_stmt 1 view -0
+ 258:Core/Src/stm32f4xx_it.c **** 
+ 259:Core/Src/stm32f4xx_it.c **** /**
+ 260:Core/Src/stm32f4xx_it.c ****   * @brief This function handles DMA1 stream2 global interrupt.
+ 261:Core/Src/stm32f4xx_it.c ****   */
+ 262:Core/Src/stm32f4xx_it.c **** void DMA1_Stream2_IRQHandler(void)
+ 263:Core/Src/stm32f4xx_it.c **** {
+ 367              		.loc 1 263 1 is_stmt 1 view -0
  368              		.cfi_startproc
  369              		@ args = 0, pretend = 0, frame = 0
  370              		@ frame_needed = 0, uses_anonymous_args = 0
@@ -644,44 +651,44 @@ ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccQMDolv.s 			page 1
  372              		.cfi_def_cfa_offset 8
  373              		.cfi_offset 3, -8
  374              		.cfi_offset 14, -4
- 257:Core/Src/stm32f4xx_it.c ****   /* USER CODE BEGIN DMA1_Stream6_IRQn 0 */
- 258:Core/Src/stm32f4xx_it.c **** 
- 259:Core/Src/stm32f4xx_it.c ****   /* USER CODE END DMA1_Stream6_IRQn 0 */
- 260:Core/Src/stm32f4xx_it.c ****   HAL_DMA_IRQHandler(&hdma_usart2_tx);
- 375              		.loc 1 260 3 view .LVU56
+ 264:Core/Src/stm32f4xx_it.c ****   /* USER CODE BEGIN DMA1_Stream2_IRQn 0 */
+ 265:Core/Src/stm32f4xx_it.c **** 
+ 266:Core/Src/stm32f4xx_it.c ****   /* USER CODE END DMA1_Stream2_IRQn 0 */
+ 267:Core/Src/stm32f4xx_it.c ****   HAL_DMA_IRQHandler(&hdma_uart4_rx);
+ 375              		.loc 1 267 3 view .LVU56
  376 0002 0248     		ldr	r0, .L35
  377 0004 FFF7FEFF 		bl	HAL_DMA_IRQHandler
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccrs87Wk.s 			page 12
+
+
  378              	.LVL4:
- 261:Core/Src/stm32f4xx_it.c ****   /* USER CODE BEGIN DMA1_Stream6_IRQn 1 */
- 262:Core/Src/stm32f4xx_it.c **** 
- 263:Core/Src/stm32f4xx_it.c ****   /* USER CODE END DMA1_Stream6_IRQn 1 */
- 264:Core/Src/stm32f4xx_it.c **** }
- 379              		.loc 1 264 1 is_stmt 0 view .LVU57
+ 268:Core/Src/stm32f4xx_it.c ****   /* USER CODE BEGIN DMA1_Stream2_IRQn 1 */
+ 269:Core/Src/stm32f4xx_it.c **** 
+ 270:Core/Src/stm32f4xx_it.c ****   /* USER CODE END DMA1_Stream2_IRQn 1 */
+ 271:Core/Src/stm32f4xx_it.c **** }
+ 379              		.loc 1 271 1 is_stmt 0 view .LVU57
  380 0008 08BD     		pop	{r3, pc}
-ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccQMDolv.s 			page 12
-
-
  381              	.L36:
  382 000a 00BF     		.align	2
  383              	.L35:
- 384 000c 00000000 		.word	hdma_usart2_tx
+ 384 000c 00000000 		.word	hdma_uart4_rx
  385              		.cfi_endproc
  386              	.LFE146:
- 388              		.section	.text.EXTI9_5_IRQHandler,"ax",%progbits
+ 388              		.section	.text.DMA1_Stream3_IRQHandler,"ax",%progbits
  389              		.align	1
- 390              		.global	EXTI9_5_IRQHandler
+ 390              		.global	DMA1_Stream3_IRQHandler
  391              		.syntax unified
  392              		.thumb
  393              		.thumb_func
- 395              	EXTI9_5_IRQHandler:
+ 395              	DMA1_Stream3_IRQHandler:
  396              	.LFB147:
- 265:Core/Src/stm32f4xx_it.c **** 
- 266:Core/Src/stm32f4xx_it.c **** /**
- 267:Core/Src/stm32f4xx_it.c ****   * @brief This function handles EXTI line[9:5] interrupts.
- 268:Core/Src/stm32f4xx_it.c ****   */
- 269:Core/Src/stm32f4xx_it.c **** void EXTI9_5_IRQHandler(void)
- 270:Core/Src/stm32f4xx_it.c **** {
- 397              		.loc 1 270 1 is_stmt 1 view -0
+ 272:Core/Src/stm32f4xx_it.c **** 
+ 273:Core/Src/stm32f4xx_it.c **** /**
+ 274:Core/Src/stm32f4xx_it.c ****   * @brief This function handles DMA1 stream3 global interrupt.
+ 275:Core/Src/stm32f4xx_it.c ****   */
+ 276:Core/Src/stm32f4xx_it.c **** void DMA1_Stream3_IRQHandler(void)
+ 277:Core/Src/stm32f4xx_it.c **** {
+ 397              		.loc 1 277 1 is_stmt 1 view -0
  398              		.cfi_startproc
  399              		@ args = 0, pretend = 0, frame = 0
  400              		@ frame_needed = 0, uses_anonymous_args = 0
@@ -689,259 +696,259 @@ ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccQMDolv.s 			page 1
  402              		.cfi_def_cfa_offset 8
  403              		.cfi_offset 3, -8
  404              		.cfi_offset 14, -4
- 271:Core/Src/stm32f4xx_it.c ****   /* USER CODE BEGIN EXTI9_5_IRQn 0 */
- 272:Core/Src/stm32f4xx_it.c **** 
- 273:Core/Src/stm32f4xx_it.c ****   /* USER CODE END EXTI9_5_IRQn 0 */
- 274:Core/Src/stm32f4xx_it.c ****   HAL_GPIO_EXTI_IRQHandler(ENC_S1_Pin);
- 405              		.loc 1 274 3 view .LVU59
- 406 0002 4FF40070 		mov	r0, #512
- 407 0006 FFF7FEFF 		bl	HAL_GPIO_EXTI_IRQHandler
- 408              	.LVL5:
- 275:Core/Src/stm32f4xx_it.c ****   /* USER CODE BEGIN EXTI9_5_IRQn 1 */
- 276:Core/Src/stm32f4xx_it.c **** 
- 277:Core/Src/stm32f4xx_it.c ****   /* USER CODE END EXTI9_5_IRQn 1 */
- 278:Core/Src/stm32f4xx_it.c **** }
- 409              		.loc 1 278 1 is_stmt 0 view .LVU60
- 410 000a 08BD     		pop	{r3, pc}
- 411              		.cfi_endproc
- 412              	.LFE147:
- 414              		.section	.text.USART2_IRQHandler,"ax",%progbits
- 415              		.align	1
- 416              		.global	USART2_IRQHandler
- 417              		.syntax unified
- 418              		.thumb
- 419              		.thumb_func
- 421              	USART2_IRQHandler:
- 422              	.LFB148:
+ 278:Core/Src/stm32f4xx_it.c ****   /* USER CODE BEGIN DMA1_Stream3_IRQn 0 */
  279:Core/Src/stm32f4xx_it.c **** 
- 280:Core/Src/stm32f4xx_it.c **** /**
- 281:Core/Src/stm32f4xx_it.c ****   * @brief This function handles USART2 global interrupt.
- 282:Core/Src/stm32f4xx_it.c ****   */
- 283:Core/Src/stm32f4xx_it.c **** void USART2_IRQHandler(void)
-ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccQMDolv.s 			page 13
+ 280:Core/Src/stm32f4xx_it.c ****   /* USER CODE END DMA1_Stream3_IRQn 0 */
+ 281:Core/Src/stm32f4xx_it.c ****   HAL_DMA_IRQHandler(&hdma_usart3_tx);
+ 405              		.loc 1 281 3 view .LVU59
+ 406 0002 0248     		ldr	r0, .L39
+ 407 0004 FFF7FEFF 		bl	HAL_DMA_IRQHandler
+ 408              	.LVL5:
+ 282:Core/Src/stm32f4xx_it.c ****   /* USER CODE BEGIN DMA1_Stream3_IRQn 1 */
+ 283:Core/Src/stm32f4xx_it.c **** 
+ 284:Core/Src/stm32f4xx_it.c ****   /* USER CODE END DMA1_Stream3_IRQn 1 */
+ 285:Core/Src/stm32f4xx_it.c **** }
+ 409              		.loc 1 285 1 is_stmt 0 view .LVU60
+ 410 0008 08BD     		pop	{r3, pc}
+ 411              	.L40:
+ 412 000a 00BF     		.align	2
+ 413              	.L39:
+ 414 000c 00000000 		.word	hdma_usart3_tx
+ 415              		.cfi_endproc
+ 416              	.LFE147:
+ 418              		.section	.text.DMA1_Stream4_IRQHandler,"ax",%progbits
+ 419              		.align	1
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccrs87Wk.s 			page 13
 
 
- 284:Core/Src/stm32f4xx_it.c **** {
- 423              		.loc 1 284 1 is_stmt 1 view -0
- 424              		.cfi_startproc
- 425              		@ args = 0, pretend = 0, frame = 0
- 426              		@ frame_needed = 0, uses_anonymous_args = 0
- 427 0000 08B5     		push	{r3, lr}
- 428              		.cfi_def_cfa_offset 8
- 429              		.cfi_offset 3, -8
- 430              		.cfi_offset 14, -4
- 285:Core/Src/stm32f4xx_it.c ****   /* USER CODE BEGIN USART2_IRQn 0 */
+ 420              		.global	DMA1_Stream4_IRQHandler
+ 421              		.syntax unified
+ 422              		.thumb
+ 423              		.thumb_func
+ 425              	DMA1_Stream4_IRQHandler:
+ 426              	.LFB148:
  286:Core/Src/stm32f4xx_it.c **** 
- 287:Core/Src/stm32f4xx_it.c ****   /* USER CODE END USART2_IRQn 0 */
- 288:Core/Src/stm32f4xx_it.c ****   HAL_UART_IRQHandler(&huart2);
- 431              		.loc 1 288 3 view .LVU62
- 432 0002 0248     		ldr	r0, .L41
- 433 0004 FFF7FEFF 		bl	HAL_UART_IRQHandler
- 434              	.LVL6:
- 289:Core/Src/stm32f4xx_it.c ****   /* USER CODE BEGIN USART2_IRQn 1 */
- 290:Core/Src/stm32f4xx_it.c **** 
- 291:Core/Src/stm32f4xx_it.c ****   /* USER CODE END USART2_IRQn 1 */
- 292:Core/Src/stm32f4xx_it.c **** }
- 435              		.loc 1 292 1 is_stmt 0 view .LVU63
- 436 0008 08BD     		pop	{r3, pc}
- 437              	.L42:
- 438 000a 00BF     		.align	2
- 439              	.L41:
- 440 000c 00000000 		.word	huart2
- 441              		.cfi_endproc
- 442              	.LFE148:
- 444              		.section	.text.DMA1_Stream7_IRQHandler,"ax",%progbits
- 445              		.align	1
- 446              		.global	DMA1_Stream7_IRQHandler
- 447              		.syntax unified
- 448              		.thumb
- 449              		.thumb_func
- 451              	DMA1_Stream7_IRQHandler:
- 452              	.LFB149:
+ 287:Core/Src/stm32f4xx_it.c **** /**
+ 288:Core/Src/stm32f4xx_it.c ****   * @brief This function handles DMA1 stream4 global interrupt.
+ 289:Core/Src/stm32f4xx_it.c ****   */
+ 290:Core/Src/stm32f4xx_it.c **** void DMA1_Stream4_IRQHandler(void)
+ 291:Core/Src/stm32f4xx_it.c **** {
+ 427              		.loc 1 291 1 is_stmt 1 view -0
+ 428              		.cfi_startproc
+ 429              		@ args = 0, pretend = 0, frame = 0
+ 430              		@ frame_needed = 0, uses_anonymous_args = 0
+ 431 0000 08B5     		push	{r3, lr}
+ 432              		.cfi_def_cfa_offset 8
+ 433              		.cfi_offset 3, -8
+ 434              		.cfi_offset 14, -4
+ 292:Core/Src/stm32f4xx_it.c ****   /* USER CODE BEGIN DMA1_Stream4_IRQn 0 */
  293:Core/Src/stm32f4xx_it.c **** 
- 294:Core/Src/stm32f4xx_it.c **** /**
- 295:Core/Src/stm32f4xx_it.c ****   * @brief This function handles DMA1 stream7 global interrupt.
- 296:Core/Src/stm32f4xx_it.c ****   */
- 297:Core/Src/stm32f4xx_it.c **** void DMA1_Stream7_IRQHandler(void)
- 298:Core/Src/stm32f4xx_it.c **** {
- 453              		.loc 1 298 1 is_stmt 1 view -0
- 454              		.cfi_startproc
- 455              		@ args = 0, pretend = 0, frame = 0
- 456              		@ frame_needed = 0, uses_anonymous_args = 0
- 457 0000 08B5     		push	{r3, lr}
- 458              		.cfi_def_cfa_offset 8
- 459              		.cfi_offset 3, -8
- 460              		.cfi_offset 14, -4
- 299:Core/Src/stm32f4xx_it.c ****   /* USER CODE BEGIN DMA1_Stream7_IRQn 0 */
+ 294:Core/Src/stm32f4xx_it.c ****   /* USER CODE END DMA1_Stream4_IRQn 0 */
+ 295:Core/Src/stm32f4xx_it.c ****   HAL_DMA_IRQHandler(&hdma_uart4_tx);
+ 435              		.loc 1 295 3 view .LVU62
+ 436 0002 0248     		ldr	r0, .L43
+ 437 0004 FFF7FEFF 		bl	HAL_DMA_IRQHandler
+ 438              	.LVL6:
+ 296:Core/Src/stm32f4xx_it.c ****   /* USER CODE BEGIN DMA1_Stream4_IRQn 1 */
+ 297:Core/Src/stm32f4xx_it.c **** 
+ 298:Core/Src/stm32f4xx_it.c ****   /* USER CODE END DMA1_Stream4_IRQn 1 */
+ 299:Core/Src/stm32f4xx_it.c **** }
+ 439              		.loc 1 299 1 is_stmt 0 view .LVU63
+ 440 0008 08BD     		pop	{r3, pc}
+ 441              	.L44:
+ 442 000a 00BF     		.align	2
+ 443              	.L43:
+ 444 000c 00000000 		.word	hdma_uart4_tx
+ 445              		.cfi_endproc
+ 446              	.LFE148:
+ 448              		.section	.text.DMA1_Stream5_IRQHandler,"ax",%progbits
+ 449              		.align	1
+ 450              		.global	DMA1_Stream5_IRQHandler
+ 451              		.syntax unified
+ 452              		.thumb
+ 453              		.thumb_func
+ 455              	DMA1_Stream5_IRQHandler:
+ 456              	.LFB149:
  300:Core/Src/stm32f4xx_it.c **** 
- 301:Core/Src/stm32f4xx_it.c ****   /* USER CODE END DMA1_Stream7_IRQn 0 */
- 302:Core/Src/stm32f4xx_it.c ****   HAL_DMA_IRQHandler(&hdma_uart5_tx);
- 461              		.loc 1 302 3 view .LVU65
- 462 0002 0248     		ldr	r0, .L45
-ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccQMDolv.s 			page 14
+ 301:Core/Src/stm32f4xx_it.c **** /**
+ 302:Core/Src/stm32f4xx_it.c ****   * @brief This function handles DMA1 stream5 global interrupt.
+ 303:Core/Src/stm32f4xx_it.c ****   */
+ 304:Core/Src/stm32f4xx_it.c **** void DMA1_Stream5_IRQHandler(void)
+ 305:Core/Src/stm32f4xx_it.c **** {
+ 457              		.loc 1 305 1 is_stmt 1 view -0
+ 458              		.cfi_startproc
+ 459              		@ args = 0, pretend = 0, frame = 0
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccrs87Wk.s 			page 14
 
 
- 463 0004 FFF7FEFF 		bl	HAL_DMA_IRQHandler
- 464              	.LVL7:
- 303:Core/Src/stm32f4xx_it.c ****   /* USER CODE BEGIN DMA1_Stream7_IRQn 1 */
- 304:Core/Src/stm32f4xx_it.c **** 
- 305:Core/Src/stm32f4xx_it.c ****   /* USER CODE END DMA1_Stream7_IRQn 1 */
- 306:Core/Src/stm32f4xx_it.c **** }
- 465              		.loc 1 306 1 is_stmt 0 view .LVU66
- 466 0008 08BD     		pop	{r3, pc}
- 467              	.L46:
- 468 000a 00BF     		.align	2
- 469              	.L45:
- 470 000c 00000000 		.word	hdma_uart5_tx
- 471              		.cfi_endproc
- 472              	.LFE149:
- 474              		.section	.text.UART5_IRQHandler,"ax",%progbits
- 475              		.align	1
- 476              		.global	UART5_IRQHandler
- 477              		.syntax unified
- 478              		.thumb
- 479              		.thumb_func
- 481              	UART5_IRQHandler:
- 482              	.LFB150:
+ 460              		@ frame_needed = 0, uses_anonymous_args = 0
+ 461 0000 08B5     		push	{r3, lr}
+ 462              		.cfi_def_cfa_offset 8
+ 463              		.cfi_offset 3, -8
+ 464              		.cfi_offset 14, -4
+ 306:Core/Src/stm32f4xx_it.c ****   /* USER CODE BEGIN DMA1_Stream5_IRQn 0 */
  307:Core/Src/stm32f4xx_it.c **** 
- 308:Core/Src/stm32f4xx_it.c **** /**
- 309:Core/Src/stm32f4xx_it.c ****   * @brief This function handles UART5 global interrupt.
- 310:Core/Src/stm32f4xx_it.c ****   */
- 311:Core/Src/stm32f4xx_it.c **** void UART5_IRQHandler(void)
- 312:Core/Src/stm32f4xx_it.c **** {
- 483              		.loc 1 312 1 is_stmt 1 view -0
- 484              		.cfi_startproc
- 485              		@ args = 0, pretend = 0, frame = 0
- 486              		@ frame_needed = 0, uses_anonymous_args = 0
- 487 0000 08B5     		push	{r3, lr}
- 488              		.cfi_def_cfa_offset 8
- 489              		.cfi_offset 3, -8
- 490              		.cfi_offset 14, -4
- 313:Core/Src/stm32f4xx_it.c ****   /* USER CODE BEGIN UART5_IRQn 0 */
+ 308:Core/Src/stm32f4xx_it.c ****   /* USER CODE END DMA1_Stream5_IRQn 0 */
+ 309:Core/Src/stm32f4xx_it.c ****   HAL_DMA_IRQHandler(&hdma_usart2_rx);
+ 465              		.loc 1 309 3 view .LVU65
+ 466 0002 0248     		ldr	r0, .L47
+ 467 0004 FFF7FEFF 		bl	HAL_DMA_IRQHandler
+ 468              	.LVL7:
+ 310:Core/Src/stm32f4xx_it.c ****   /* USER CODE BEGIN DMA1_Stream5_IRQn 1 */
+ 311:Core/Src/stm32f4xx_it.c **** 
+ 312:Core/Src/stm32f4xx_it.c ****   /* USER CODE END DMA1_Stream5_IRQn 1 */
+ 313:Core/Src/stm32f4xx_it.c **** }
+ 469              		.loc 1 313 1 is_stmt 0 view .LVU66
+ 470 0008 08BD     		pop	{r3, pc}
+ 471              	.L48:
+ 472 000a 00BF     		.align	2
+ 473              	.L47:
+ 474 000c 00000000 		.word	hdma_usart2_rx
+ 475              		.cfi_endproc
+ 476              	.LFE149:
+ 478              		.section	.text.DMA1_Stream6_IRQHandler,"ax",%progbits
+ 479              		.align	1
+ 480              		.global	DMA1_Stream6_IRQHandler
+ 481              		.syntax unified
+ 482              		.thumb
+ 483              		.thumb_func
+ 485              	DMA1_Stream6_IRQHandler:
+ 486              	.LFB150:
  314:Core/Src/stm32f4xx_it.c **** 
- 315:Core/Src/stm32f4xx_it.c ****   /* USER CODE END UART5_IRQn 0 */
- 316:Core/Src/stm32f4xx_it.c ****   HAL_UART_IRQHandler(&huart5);
- 491              		.loc 1 316 3 view .LVU68
- 492 0002 0248     		ldr	r0, .L49
- 493 0004 FFF7FEFF 		bl	HAL_UART_IRQHandler
- 494              	.LVL8:
- 317:Core/Src/stm32f4xx_it.c ****   /* USER CODE BEGIN UART5_IRQn 1 */
- 318:Core/Src/stm32f4xx_it.c **** 
- 319:Core/Src/stm32f4xx_it.c ****   /* USER CODE END UART5_IRQn 1 */
- 320:Core/Src/stm32f4xx_it.c **** }
- 495              		.loc 1 320 1 is_stmt 0 view .LVU69
- 496 0008 08BD     		pop	{r3, pc}
- 497              	.L50:
- 498 000a 00BF     		.align	2
- 499              	.L49:
- 500 000c 00000000 		.word	huart5
- 501              		.cfi_endproc
- 502              	.LFE150:
- 504              		.section	.text.DMA2_Stream1_IRQHandler,"ax",%progbits
-ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccQMDolv.s 			page 15
-
-
- 505              		.align	1
- 506              		.global	DMA2_Stream1_IRQHandler
- 507              		.syntax unified
- 508              		.thumb
- 509              		.thumb_func
- 511              	DMA2_Stream1_IRQHandler:
- 512              	.LFB151:
+ 315:Core/Src/stm32f4xx_it.c **** /**
+ 316:Core/Src/stm32f4xx_it.c ****   * @brief This function handles DMA1 stream6 global interrupt.
+ 317:Core/Src/stm32f4xx_it.c ****   */
+ 318:Core/Src/stm32f4xx_it.c **** void DMA1_Stream6_IRQHandler(void)
+ 319:Core/Src/stm32f4xx_it.c **** {
+ 487              		.loc 1 319 1 is_stmt 1 view -0
+ 488              		.cfi_startproc
+ 489              		@ args = 0, pretend = 0, frame = 0
+ 490              		@ frame_needed = 0, uses_anonymous_args = 0
+ 491 0000 08B5     		push	{r3, lr}
+ 492              		.cfi_def_cfa_offset 8
+ 493              		.cfi_offset 3, -8
+ 494              		.cfi_offset 14, -4
+ 320:Core/Src/stm32f4xx_it.c ****   /* USER CODE BEGIN DMA1_Stream6_IRQn 0 */
  321:Core/Src/stm32f4xx_it.c **** 
- 322:Core/Src/stm32f4xx_it.c **** /**
- 323:Core/Src/stm32f4xx_it.c ****   * @brief This function handles DMA2 stream1 global interrupt.
- 324:Core/Src/stm32f4xx_it.c ****   */
- 325:Core/Src/stm32f4xx_it.c **** void DMA2_Stream1_IRQHandler(void)
- 326:Core/Src/stm32f4xx_it.c **** {
- 513              		.loc 1 326 1 is_stmt 1 view -0
- 514              		.cfi_startproc
- 515              		@ args = 0, pretend = 0, frame = 0
- 516              		@ frame_needed = 0, uses_anonymous_args = 0
- 517 0000 08B5     		push	{r3, lr}
- 518              		.cfi_def_cfa_offset 8
- 519              		.cfi_offset 3, -8
- 520              		.cfi_offset 14, -4
- 327:Core/Src/stm32f4xx_it.c ****   /* USER CODE BEGIN DMA2_Stream1_IRQn 0 */
+ 322:Core/Src/stm32f4xx_it.c ****   /* USER CODE END DMA1_Stream6_IRQn 0 */
+ 323:Core/Src/stm32f4xx_it.c ****   HAL_DMA_IRQHandler(&hdma_usart2_tx);
+ 495              		.loc 1 323 3 view .LVU68
+ 496 0002 0248     		ldr	r0, .L51
+ 497 0004 FFF7FEFF 		bl	HAL_DMA_IRQHandler
+ 498              	.LVL8:
+ 324:Core/Src/stm32f4xx_it.c ****   /* USER CODE BEGIN DMA1_Stream6_IRQn 1 */
+ 325:Core/Src/stm32f4xx_it.c **** 
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccrs87Wk.s 			page 15
+
+
+ 326:Core/Src/stm32f4xx_it.c ****   /* USER CODE END DMA1_Stream6_IRQn 1 */
+ 327:Core/Src/stm32f4xx_it.c **** }
+ 499              		.loc 1 327 1 is_stmt 0 view .LVU69
+ 500 0008 08BD     		pop	{r3, pc}
+ 501              	.L52:
+ 502 000a 00BF     		.align	2
+ 503              	.L51:
+ 504 000c 00000000 		.word	hdma_usart2_tx
+ 505              		.cfi_endproc
+ 506              	.LFE150:
+ 508              		.section	.text.EXTI9_5_IRQHandler,"ax",%progbits
+ 509              		.align	1
+ 510              		.global	EXTI9_5_IRQHandler
+ 511              		.syntax unified
+ 512              		.thumb
+ 513              		.thumb_func
+ 515              	EXTI9_5_IRQHandler:
+ 516              	.LFB151:
  328:Core/Src/stm32f4xx_it.c **** 
- 329:Core/Src/stm32f4xx_it.c ****   /* USER CODE END DMA2_Stream1_IRQn 0 */
- 330:Core/Src/stm32f4xx_it.c ****   HAL_DMA_IRQHandler(&hdma_usart6_rx);
- 521              		.loc 1 330 3 view .LVU71
- 522 0002 0248     		ldr	r0, .L53
- 523 0004 FFF7FEFF 		bl	HAL_DMA_IRQHandler
- 524              	.LVL9:
- 331:Core/Src/stm32f4xx_it.c ****   /* USER CODE BEGIN DMA2_Stream1_IRQn 1 */
- 332:Core/Src/stm32f4xx_it.c **** 
- 333:Core/Src/stm32f4xx_it.c ****   /* USER CODE END DMA2_Stream1_IRQn 1 */
- 334:Core/Src/stm32f4xx_it.c **** }
- 525              		.loc 1 334 1 is_stmt 0 view .LVU72
- 526 0008 08BD     		pop	{r3, pc}
- 527              	.L54:
- 528 000a 00BF     		.align	2
- 529              	.L53:
- 530 000c 00000000 		.word	hdma_usart6_rx
+ 329:Core/Src/stm32f4xx_it.c **** /**
+ 330:Core/Src/stm32f4xx_it.c ****   * @brief This function handles EXTI line[9:5] interrupts.
+ 331:Core/Src/stm32f4xx_it.c ****   */
+ 332:Core/Src/stm32f4xx_it.c **** void EXTI9_5_IRQHandler(void)
+ 333:Core/Src/stm32f4xx_it.c **** {
+ 517              		.loc 1 333 1 is_stmt 1 view -0
+ 518              		.cfi_startproc
+ 519              		@ args = 0, pretend = 0, frame = 0
+ 520              		@ frame_needed = 0, uses_anonymous_args = 0
+ 521 0000 08B5     		push	{r3, lr}
+ 522              		.cfi_def_cfa_offset 8
+ 523              		.cfi_offset 3, -8
+ 524              		.cfi_offset 14, -4
+ 334:Core/Src/stm32f4xx_it.c ****   /* USER CODE BEGIN EXTI9_5_IRQn 0 */
+ 335:Core/Src/stm32f4xx_it.c **** 
+ 336:Core/Src/stm32f4xx_it.c ****   /* USER CODE END EXTI9_5_IRQn 0 */
+ 337:Core/Src/stm32f4xx_it.c ****   HAL_GPIO_EXTI_IRQHandler(TP_INT_Pin);
+ 525              		.loc 1 337 3 view .LVU71
+ 526 0002 4FF40070 		mov	r0, #512
+ 527 0006 FFF7FEFF 		bl	HAL_GPIO_EXTI_IRQHandler
+ 528              	.LVL9:
+ 338:Core/Src/stm32f4xx_it.c ****   /* USER CODE BEGIN EXTI9_5_IRQn 1 */
+ 339:Core/Src/stm32f4xx_it.c **** 
+ 340:Core/Src/stm32f4xx_it.c ****   /* USER CODE END EXTI9_5_IRQn 1 */
+ 341:Core/Src/stm32f4xx_it.c **** }
+ 529              		.loc 1 341 1 is_stmt 0 view .LVU72
+ 530 000a 08BD     		pop	{r3, pc}
  531              		.cfi_endproc
  532              	.LFE151:
- 534              		.section	.text.DMA2_Stream2_IRQHandler,"ax",%progbits
+ 534              		.section	.text.I2C1_EV_IRQHandler,"ax",%progbits
  535              		.align	1
- 536              		.global	DMA2_Stream2_IRQHandler
+ 536              		.global	I2C1_EV_IRQHandler
  537              		.syntax unified
  538              		.thumb
  539              		.thumb_func
- 541              	DMA2_Stream2_IRQHandler:
+ 541              	I2C1_EV_IRQHandler:
  542              	.LFB152:
- 335:Core/Src/stm32f4xx_it.c **** 
- 336:Core/Src/stm32f4xx_it.c **** /**
- 337:Core/Src/stm32f4xx_it.c ****   * @brief This function handles DMA2 stream2 global interrupt.
- 338:Core/Src/stm32f4xx_it.c ****   */
- 339:Core/Src/stm32f4xx_it.c **** void DMA2_Stream2_IRQHandler(void)
- 340:Core/Src/stm32f4xx_it.c **** {
- 543              		.loc 1 340 1 is_stmt 1 view -0
+ 342:Core/Src/stm32f4xx_it.c **** 
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccrs87Wk.s 			page 16
+
+
+ 343:Core/Src/stm32f4xx_it.c **** /**
+ 344:Core/Src/stm32f4xx_it.c ****   * @brief This function handles I2C1 event interrupt.
+ 345:Core/Src/stm32f4xx_it.c ****   */
+ 346:Core/Src/stm32f4xx_it.c **** void I2C1_EV_IRQHandler(void)
+ 347:Core/Src/stm32f4xx_it.c **** {
+ 543              		.loc 1 347 1 is_stmt 1 view -0
  544              		.cfi_startproc
-ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccQMDolv.s 			page 16
-
-
  545              		@ args = 0, pretend = 0, frame = 0
  546              		@ frame_needed = 0, uses_anonymous_args = 0
  547 0000 08B5     		push	{r3, lr}
  548              		.cfi_def_cfa_offset 8
  549              		.cfi_offset 3, -8
  550              		.cfi_offset 14, -4
- 341:Core/Src/stm32f4xx_it.c ****   /* USER CODE BEGIN DMA2_Stream2_IRQn 0 */
- 342:Core/Src/stm32f4xx_it.c **** 
- 343:Core/Src/stm32f4xx_it.c ****   /* USER CODE END DMA2_Stream2_IRQn 0 */
- 344:Core/Src/stm32f4xx_it.c ****   HAL_DMA_IRQHandler(&hdma_spi1_tx);
- 551              		.loc 1 344 3 view .LVU74
+ 348:Core/Src/stm32f4xx_it.c ****   /* USER CODE BEGIN I2C1_EV_IRQn 0 */
+ 349:Core/Src/stm32f4xx_it.c **** 
+ 350:Core/Src/stm32f4xx_it.c ****   /* USER CODE END I2C1_EV_IRQn 0 */
+ 351:Core/Src/stm32f4xx_it.c ****   HAL_I2C_EV_IRQHandler(&hi2c1);
+ 551              		.loc 1 351 3 view .LVU74
  552 0002 0248     		ldr	r0, .L57
- 553 0004 FFF7FEFF 		bl	HAL_DMA_IRQHandler
+ 553 0004 FFF7FEFF 		bl	HAL_I2C_EV_IRQHandler
  554              	.LVL10:
- 345:Core/Src/stm32f4xx_it.c ****   /* USER CODE BEGIN DMA2_Stream2_IRQn 1 */
- 346:Core/Src/stm32f4xx_it.c **** 
- 347:Core/Src/stm32f4xx_it.c ****   /* USER CODE END DMA2_Stream2_IRQn 1 */
- 348:Core/Src/stm32f4xx_it.c **** }
- 555              		.loc 1 348 1 is_stmt 0 view .LVU75
+ 352:Core/Src/stm32f4xx_it.c ****   /* USER CODE BEGIN I2C1_EV_IRQn 1 */
+ 353:Core/Src/stm32f4xx_it.c **** 
+ 354:Core/Src/stm32f4xx_it.c ****   /* USER CODE END I2C1_EV_IRQn 1 */
+ 355:Core/Src/stm32f4xx_it.c **** }
+ 555              		.loc 1 355 1 is_stmt 0 view .LVU75
  556 0008 08BD     		pop	{r3, pc}
  557              	.L58:
  558 000a 00BF     		.align	2
  559              	.L57:
- 560 000c 00000000 		.word	hdma_spi1_tx
+ 560 000c 00000000 		.word	hi2c1
  561              		.cfi_endproc
  562              	.LFE152:
- 564              		.section	.text.DMA2_Stream6_IRQHandler,"ax",%progbits
+ 564              		.section	.text.I2C1_ER_IRQHandler,"ax",%progbits
  565              		.align	1
- 566              		.global	DMA2_Stream6_IRQHandler
+ 566              		.global	I2C1_ER_IRQHandler
  567              		.syntax unified
  568              		.thumb
  569              		.thumb_func
- 571              	DMA2_Stream6_IRQHandler:
+ 571              	I2C1_ER_IRQHandler:
  572              	.LFB153:
- 349:Core/Src/stm32f4xx_it.c **** 
- 350:Core/Src/stm32f4xx_it.c **** /**
- 351:Core/Src/stm32f4xx_it.c ****   * @brief This function handles DMA2 stream6 global interrupt.
- 352:Core/Src/stm32f4xx_it.c ****   */
- 353:Core/Src/stm32f4xx_it.c **** void DMA2_Stream6_IRQHandler(void)
- 354:Core/Src/stm32f4xx_it.c **** {
- 573              		.loc 1 354 1 is_stmt 1 view -0
+ 356:Core/Src/stm32f4xx_it.c **** 
+ 357:Core/Src/stm32f4xx_it.c **** /**
+ 358:Core/Src/stm32f4xx_it.c ****   * @brief This function handles I2C1 error interrupt.
+ 359:Core/Src/stm32f4xx_it.c ****   */
+ 360:Core/Src/stm32f4xx_it.c **** void I2C1_ER_IRQHandler(void)
+ 361:Core/Src/stm32f4xx_it.c **** {
+ 573              		.loc 1 361 1 is_stmt 1 view -0
  574              		.cfi_startproc
  575              		@ args = 0, pretend = 0, frame = 0
  576              		@ frame_needed = 0, uses_anonymous_args = 0
@@ -949,44 +956,44 @@ ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccQMDolv.s 			page 1
  578              		.cfi_def_cfa_offset 8
  579              		.cfi_offset 3, -8
  580              		.cfi_offset 14, -4
- 355:Core/Src/stm32f4xx_it.c ****   /* USER CODE BEGIN DMA2_Stream6_IRQn 0 */
- 356:Core/Src/stm32f4xx_it.c **** 
- 357:Core/Src/stm32f4xx_it.c ****   /* USER CODE END DMA2_Stream6_IRQn 0 */
- 358:Core/Src/stm32f4xx_it.c ****   HAL_DMA_IRQHandler(&hdma_usart6_tx);
- 581              		.loc 1 358 3 view .LVU77
+ 362:Core/Src/stm32f4xx_it.c ****   /* USER CODE BEGIN I2C1_ER_IRQn 0 */
+ 363:Core/Src/stm32f4xx_it.c **** 
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccrs87Wk.s 			page 17
+
+
+ 364:Core/Src/stm32f4xx_it.c ****   /* USER CODE END I2C1_ER_IRQn 0 */
+ 365:Core/Src/stm32f4xx_it.c ****   HAL_I2C_ER_IRQHandler(&hi2c1);
+ 581              		.loc 1 365 3 view .LVU77
  582 0002 0248     		ldr	r0, .L61
- 583 0004 FFF7FEFF 		bl	HAL_DMA_IRQHandler
+ 583 0004 FFF7FEFF 		bl	HAL_I2C_ER_IRQHandler
  584              	.LVL11:
- 359:Core/Src/stm32f4xx_it.c ****   /* USER CODE BEGIN DMA2_Stream6_IRQn 1 */
-ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccQMDolv.s 			page 17
-
-
- 360:Core/Src/stm32f4xx_it.c **** 
- 361:Core/Src/stm32f4xx_it.c ****   /* USER CODE END DMA2_Stream6_IRQn 1 */
- 362:Core/Src/stm32f4xx_it.c **** }
- 585              		.loc 1 362 1 is_stmt 0 view .LVU78
+ 366:Core/Src/stm32f4xx_it.c ****   /* USER CODE BEGIN I2C1_ER_IRQn 1 */
+ 367:Core/Src/stm32f4xx_it.c **** 
+ 368:Core/Src/stm32f4xx_it.c ****   /* USER CODE END I2C1_ER_IRQn 1 */
+ 369:Core/Src/stm32f4xx_it.c **** }
+ 585              		.loc 1 369 1 is_stmt 0 view .LVU78
  586 0008 08BD     		pop	{r3, pc}
  587              	.L62:
  588 000a 00BF     		.align	2
  589              	.L61:
- 590 000c 00000000 		.word	hdma_usart6_tx
+ 590 000c 00000000 		.word	hi2c1
  591              		.cfi_endproc
  592              	.LFE153:
- 594              		.section	.text.USART6_IRQHandler,"ax",%progbits
+ 594              		.section	.text.USART2_IRQHandler,"ax",%progbits
  595              		.align	1
- 596              		.global	USART6_IRQHandler
+ 596              		.global	USART2_IRQHandler
  597              		.syntax unified
  598              		.thumb
  599              		.thumb_func
- 601              	USART6_IRQHandler:
+ 601              	USART2_IRQHandler:
  602              	.LFB154:
- 363:Core/Src/stm32f4xx_it.c **** 
- 364:Core/Src/stm32f4xx_it.c **** /**
- 365:Core/Src/stm32f4xx_it.c ****   * @brief This function handles USART6 global interrupt.
- 366:Core/Src/stm32f4xx_it.c ****   */
- 367:Core/Src/stm32f4xx_it.c **** void USART6_IRQHandler(void)
- 368:Core/Src/stm32f4xx_it.c **** {
- 603              		.loc 1 368 1 is_stmt 1 view -0
+ 370:Core/Src/stm32f4xx_it.c **** 
+ 371:Core/Src/stm32f4xx_it.c **** /**
+ 372:Core/Src/stm32f4xx_it.c ****   * @brief This function handles USART2 global interrupt.
+ 373:Core/Src/stm32f4xx_it.c ****   */
+ 374:Core/Src/stm32f4xx_it.c **** void USART2_IRQHandler(void)
+ 375:Core/Src/stm32f4xx_it.c **** {
+ 603              		.loc 1 375 1 is_stmt 1 view -0
  604              		.cfi_startproc
  605              		@ args = 0, pretend = 0, frame = 0
  606              		@ frame_needed = 0, uses_anonymous_args = 0
@@ -994,130 +1001,518 @@ ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccQMDolv.s 			page 1
  608              		.cfi_def_cfa_offset 8
  609              		.cfi_offset 3, -8
  610              		.cfi_offset 14, -4
- 369:Core/Src/stm32f4xx_it.c ****   /* USER CODE BEGIN USART6_IRQn 0 */
- 370:Core/Src/stm32f4xx_it.c **** 
- 371:Core/Src/stm32f4xx_it.c ****   /* USER CODE END USART6_IRQn 0 */
- 372:Core/Src/stm32f4xx_it.c ****   HAL_UART_IRQHandler(&huart6);
- 611              		.loc 1 372 3 view .LVU80
+ 376:Core/Src/stm32f4xx_it.c ****   /* USER CODE BEGIN USART2_IRQn 0 */
+ 377:Core/Src/stm32f4xx_it.c **** 
+ 378:Core/Src/stm32f4xx_it.c ****   /* USER CODE END USART2_IRQn 0 */
+ 379:Core/Src/stm32f4xx_it.c ****   HAL_UART_IRQHandler(&huart2);
+ 611              		.loc 1 379 3 view .LVU80
  612 0002 0248     		ldr	r0, .L65
  613 0004 FFF7FEFF 		bl	HAL_UART_IRQHandler
  614              	.LVL12:
- 373:Core/Src/stm32f4xx_it.c ****   /* USER CODE BEGIN USART6_IRQn 1 */
- 374:Core/Src/stm32f4xx_it.c **** 
- 375:Core/Src/stm32f4xx_it.c ****   /* USER CODE END USART6_IRQn 1 */
- 376:Core/Src/stm32f4xx_it.c **** }
- 615              		.loc 1 376 1 is_stmt 0 view .LVU81
+ 380:Core/Src/stm32f4xx_it.c ****   /* USER CODE BEGIN USART2_IRQn 1 */
+ 381:Core/Src/stm32f4xx_it.c **** 
+ 382:Core/Src/stm32f4xx_it.c ****   /* USER CODE END USART2_IRQn 1 */
+ 383:Core/Src/stm32f4xx_it.c **** }
+ 615              		.loc 1 383 1 is_stmt 0 view .LVU81
  616 0008 08BD     		pop	{r3, pc}
  617              	.L66:
  618 000a 00BF     		.align	2
  619              	.L65:
- 620 000c 00000000 		.word	huart6
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccrs87Wk.s 			page 18
+
+
+ 620 000c 00000000 		.word	huart2
  621              		.cfi_endproc
  622              	.LFE154:
- 624              		.global	Timer2
- 625              		.section	.bss.Timer2,"aw",%nobits
- 628              	Timer2:
- 629 0000 00       		.space	1
-ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccQMDolv.s 			page 18
+ 624              		.section	.text.USART3_IRQHandler,"ax",%progbits
+ 625              		.align	1
+ 626              		.global	USART3_IRQHandler
+ 627              		.syntax unified
+ 628              		.thumb
+ 629              		.thumb_func
+ 631              	USART3_IRQHandler:
+ 632              	.LFB155:
+ 384:Core/Src/stm32f4xx_it.c **** 
+ 385:Core/Src/stm32f4xx_it.c **** /**
+ 386:Core/Src/stm32f4xx_it.c ****   * @brief This function handles USART3 global interrupt.
+ 387:Core/Src/stm32f4xx_it.c ****   */
+ 388:Core/Src/stm32f4xx_it.c **** void USART3_IRQHandler(void)
+ 389:Core/Src/stm32f4xx_it.c **** {
+ 633              		.loc 1 389 1 is_stmt 1 view -0
+ 634              		.cfi_startproc
+ 635              		@ args = 0, pretend = 0, frame = 0
+ 636              		@ frame_needed = 0, uses_anonymous_args = 0
+ 637 0000 08B5     		push	{r3, lr}
+ 638              		.cfi_def_cfa_offset 8
+ 639              		.cfi_offset 3, -8
+ 640              		.cfi_offset 14, -4
+ 390:Core/Src/stm32f4xx_it.c ****   /* USER CODE BEGIN USART3_IRQn 0 */
+ 391:Core/Src/stm32f4xx_it.c **** 
+ 392:Core/Src/stm32f4xx_it.c ****   /* USER CODE END USART3_IRQn 0 */
+ 393:Core/Src/stm32f4xx_it.c ****   HAL_UART_IRQHandler(&huart3);
+ 641              		.loc 1 393 3 view .LVU83
+ 642 0002 0248     		ldr	r0, .L69
+ 643 0004 FFF7FEFF 		bl	HAL_UART_IRQHandler
+ 644              	.LVL13:
+ 394:Core/Src/stm32f4xx_it.c ****   /* USER CODE BEGIN USART3_IRQn 1 */
+ 395:Core/Src/stm32f4xx_it.c **** 
+ 396:Core/Src/stm32f4xx_it.c ****   /* USER CODE END USART3_IRQn 1 */
+ 397:Core/Src/stm32f4xx_it.c **** }
+ 645              		.loc 1 397 1 is_stmt 0 view .LVU84
+ 646 0008 08BD     		pop	{r3, pc}
+ 647              	.L70:
+ 648 000a 00BF     		.align	2
+ 649              	.L69:
+ 650 000c 00000000 		.word	huart3
+ 651              		.cfi_endproc
+ 652              	.LFE155:
+ 654              		.section	.text.DMA1_Stream7_IRQHandler,"ax",%progbits
+ 655              		.align	1
+ 656              		.global	DMA1_Stream7_IRQHandler
+ 657              		.syntax unified
+ 658              		.thumb
+ 659              		.thumb_func
+ 661              	DMA1_Stream7_IRQHandler:
+ 662              	.LFB156:
+ 398:Core/Src/stm32f4xx_it.c **** 
+ 399:Core/Src/stm32f4xx_it.c **** /**
+ 400:Core/Src/stm32f4xx_it.c ****   * @brief This function handles DMA1 stream7 global interrupt.
+ 401:Core/Src/stm32f4xx_it.c ****   */
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccrs87Wk.s 			page 19
 
 
- 630              		.global	Timer1
- 631              		.section	.bss.Timer1,"aw",%nobits
- 634              	Timer1:
- 635 0000 00       		.space	1
- 636              		.global	FatFsCnt
- 637              		.section	.bss.FatFsCnt,"aw",%nobits
- 640              	FatFsCnt:
- 641 0000 00       		.space	1
- 642              		.text
- 643              	.Letext0:
- 644              		.file 2 "Core/Inc/stm32f4xx_hal_conf.h"
- 645              		.file 3 "C:/Users/kroko/AppData/Roaming/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-to
- 646              		.file 4 "C:/Users/kroko/AppData/Roaming/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-to
- 647              		.file 5 "Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f413xx.h"
- 648              		.file 6 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma.h"
- 649              		.file 7 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h"
- 650              		.file 8 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h"
- 651              		.file 9 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h"
-ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccQMDolv.s 			page 19
+ 402:Core/Src/stm32f4xx_it.c **** void DMA1_Stream7_IRQHandler(void)
+ 403:Core/Src/stm32f4xx_it.c **** {
+ 663              		.loc 1 403 1 is_stmt 1 view -0
+ 664              		.cfi_startproc
+ 665              		@ args = 0, pretend = 0, frame = 0
+ 666              		@ frame_needed = 0, uses_anonymous_args = 0
+ 667 0000 08B5     		push	{r3, lr}
+ 668              		.cfi_def_cfa_offset 8
+ 669              		.cfi_offset 3, -8
+ 670              		.cfi_offset 14, -4
+ 404:Core/Src/stm32f4xx_it.c ****   /* USER CODE BEGIN DMA1_Stream7_IRQn 0 */
+ 405:Core/Src/stm32f4xx_it.c **** 
+ 406:Core/Src/stm32f4xx_it.c ****   /* USER CODE END DMA1_Stream7_IRQn 0 */
+ 407:Core/Src/stm32f4xx_it.c ****   HAL_DMA_IRQHandler(&hdma_uart5_tx);
+ 671              		.loc 1 407 3 view .LVU86
+ 672 0002 0248     		ldr	r0, .L73
+ 673 0004 FFF7FEFF 		bl	HAL_DMA_IRQHandler
+ 674              	.LVL14:
+ 408:Core/Src/stm32f4xx_it.c ****   /* USER CODE BEGIN DMA1_Stream7_IRQn 1 */
+ 409:Core/Src/stm32f4xx_it.c **** 
+ 410:Core/Src/stm32f4xx_it.c ****   /* USER CODE END DMA1_Stream7_IRQn 1 */
+ 411:Core/Src/stm32f4xx_it.c **** }
+ 675              		.loc 1 411 1 is_stmt 0 view .LVU87
+ 676 0008 08BD     		pop	{r3, pc}
+ 677              	.L74:
+ 678 000a 00BF     		.align	2
+ 679              	.L73:
+ 680 000c 00000000 		.word	hdma_uart5_tx
+ 681              		.cfi_endproc
+ 682              	.LFE156:
+ 684              		.section	.text.UART4_IRQHandler,"ax",%progbits
+ 685              		.align	1
+ 686              		.global	UART4_IRQHandler
+ 687              		.syntax unified
+ 688              		.thumb
+ 689              		.thumb_func
+ 691              	UART4_IRQHandler:
+ 692              	.LFB157:
+ 412:Core/Src/stm32f4xx_it.c **** 
+ 413:Core/Src/stm32f4xx_it.c **** /**
+ 414:Core/Src/stm32f4xx_it.c ****   * @brief This function handles UART4 global interrupt.
+ 415:Core/Src/stm32f4xx_it.c ****   */
+ 416:Core/Src/stm32f4xx_it.c **** void UART4_IRQHandler(void)
+ 417:Core/Src/stm32f4xx_it.c **** {
+ 693              		.loc 1 417 1 is_stmt 1 view -0
+ 694              		.cfi_startproc
+ 695              		@ args = 0, pretend = 0, frame = 0
+ 696              		@ frame_needed = 0, uses_anonymous_args = 0
+ 697 0000 08B5     		push	{r3, lr}
+ 698              		.cfi_def_cfa_offset 8
+ 699              		.cfi_offset 3, -8
+ 700              		.cfi_offset 14, -4
+ 418:Core/Src/stm32f4xx_it.c ****   /* USER CODE BEGIN UART4_IRQn 0 */
+ 419:Core/Src/stm32f4xx_it.c **** 
+ 420:Core/Src/stm32f4xx_it.c ****   /* USER CODE END UART4_IRQn 0 */
+ 421:Core/Src/stm32f4xx_it.c ****   HAL_UART_IRQHandler(&huart4);
+ 701              		.loc 1 421 3 view .LVU89
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccrs87Wk.s 			page 20
+
+
+ 702 0002 0248     		ldr	r0, .L77
+ 703 0004 FFF7FEFF 		bl	HAL_UART_IRQHandler
+ 704              	.LVL15:
+ 422:Core/Src/stm32f4xx_it.c ****   /* USER CODE BEGIN UART4_IRQn 1 */
+ 423:Core/Src/stm32f4xx_it.c **** 
+ 424:Core/Src/stm32f4xx_it.c ****   /* USER CODE END UART4_IRQn 1 */
+ 425:Core/Src/stm32f4xx_it.c **** }
+ 705              		.loc 1 425 1 is_stmt 0 view .LVU90
+ 706 0008 08BD     		pop	{r3, pc}
+ 707              	.L78:
+ 708 000a 00BF     		.align	2
+ 709              	.L77:
+ 710 000c 00000000 		.word	huart4
+ 711              		.cfi_endproc
+ 712              	.LFE157:
+ 714              		.section	.text.UART5_IRQHandler,"ax",%progbits
+ 715              		.align	1
+ 716              		.global	UART5_IRQHandler
+ 717              		.syntax unified
+ 718              		.thumb
+ 719              		.thumb_func
+ 721              	UART5_IRQHandler:
+ 722              	.LFB158:
+ 426:Core/Src/stm32f4xx_it.c **** 
+ 427:Core/Src/stm32f4xx_it.c **** /**
+ 428:Core/Src/stm32f4xx_it.c ****   * @brief This function handles UART5 global interrupt.
+ 429:Core/Src/stm32f4xx_it.c ****   */
+ 430:Core/Src/stm32f4xx_it.c **** void UART5_IRQHandler(void)
+ 431:Core/Src/stm32f4xx_it.c **** {
+ 723              		.loc 1 431 1 is_stmt 1 view -0
+ 724              		.cfi_startproc
+ 725              		@ args = 0, pretend = 0, frame = 0
+ 726              		@ frame_needed = 0, uses_anonymous_args = 0
+ 727 0000 08B5     		push	{r3, lr}
+ 728              		.cfi_def_cfa_offset 8
+ 729              		.cfi_offset 3, -8
+ 730              		.cfi_offset 14, -4
+ 432:Core/Src/stm32f4xx_it.c ****   /* USER CODE BEGIN UART5_IRQn 0 */
+ 433:Core/Src/stm32f4xx_it.c **** 
+ 434:Core/Src/stm32f4xx_it.c ****   /* USER CODE END UART5_IRQn 0 */
+ 435:Core/Src/stm32f4xx_it.c ****   HAL_UART_IRQHandler(&huart5);
+ 731              		.loc 1 435 3 view .LVU92
+ 732 0002 0248     		ldr	r0, .L81
+ 733 0004 FFF7FEFF 		bl	HAL_UART_IRQHandler
+ 734              	.LVL16:
+ 436:Core/Src/stm32f4xx_it.c ****   /* USER CODE BEGIN UART5_IRQn 1 */
+ 437:Core/Src/stm32f4xx_it.c **** 
+ 438:Core/Src/stm32f4xx_it.c ****   /* USER CODE END UART5_IRQn 1 */
+ 439:Core/Src/stm32f4xx_it.c **** }
+ 735              		.loc 1 439 1 is_stmt 0 view .LVU93
+ 736 0008 08BD     		pop	{r3, pc}
+ 737              	.L82:
+ 738 000a 00BF     		.align	2
+ 739              	.L81:
+ 740 000c 00000000 		.word	huart5
+ 741              		.cfi_endproc
+ 742              	.LFE158:
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccrs87Wk.s 			page 21
+
+
+ 744              		.section	.text.DMA2_Stream1_IRQHandler,"ax",%progbits
+ 745              		.align	1
+ 746              		.global	DMA2_Stream1_IRQHandler
+ 747              		.syntax unified
+ 748              		.thumb
+ 749              		.thumb_func
+ 751              	DMA2_Stream1_IRQHandler:
+ 752              	.LFB159:
+ 440:Core/Src/stm32f4xx_it.c **** 
+ 441:Core/Src/stm32f4xx_it.c **** /**
+ 442:Core/Src/stm32f4xx_it.c ****   * @brief This function handles DMA2 stream1 global interrupt.
+ 443:Core/Src/stm32f4xx_it.c ****   */
+ 444:Core/Src/stm32f4xx_it.c **** void DMA2_Stream1_IRQHandler(void)
+ 445:Core/Src/stm32f4xx_it.c **** {
+ 753              		.loc 1 445 1 is_stmt 1 view -0
+ 754              		.cfi_startproc
+ 755              		@ args = 0, pretend = 0, frame = 0
+ 756              		@ frame_needed = 0, uses_anonymous_args = 0
+ 757 0000 08B5     		push	{r3, lr}
+ 758              		.cfi_def_cfa_offset 8
+ 759              		.cfi_offset 3, -8
+ 760              		.cfi_offset 14, -4
+ 446:Core/Src/stm32f4xx_it.c ****   /* USER CODE BEGIN DMA2_Stream1_IRQn 0 */
+ 447:Core/Src/stm32f4xx_it.c **** 
+ 448:Core/Src/stm32f4xx_it.c ****   /* USER CODE END DMA2_Stream1_IRQn 0 */
+ 449:Core/Src/stm32f4xx_it.c ****   HAL_DMA_IRQHandler(&hdma_usart6_rx);
+ 761              		.loc 1 449 3 view .LVU95
+ 762 0002 0248     		ldr	r0, .L85
+ 763 0004 FFF7FEFF 		bl	HAL_DMA_IRQHandler
+ 764              	.LVL17:
+ 450:Core/Src/stm32f4xx_it.c ****   /* USER CODE BEGIN DMA2_Stream1_IRQn 1 */
+ 451:Core/Src/stm32f4xx_it.c **** 
+ 452:Core/Src/stm32f4xx_it.c ****   /* USER CODE END DMA2_Stream1_IRQn 1 */
+ 453:Core/Src/stm32f4xx_it.c **** }
+ 765              		.loc 1 453 1 is_stmt 0 view .LVU96
+ 766 0008 08BD     		pop	{r3, pc}
+ 767              	.L86:
+ 768 000a 00BF     		.align	2
+ 769              	.L85:
+ 770 000c 00000000 		.word	hdma_usart6_rx
+ 771              		.cfi_endproc
+ 772              	.LFE159:
+ 774              		.section	.text.DMA2_Stream2_IRQHandler,"ax",%progbits
+ 775              		.align	1
+ 776              		.global	DMA2_Stream2_IRQHandler
+ 777              		.syntax unified
+ 778              		.thumb
+ 779              		.thumb_func
+ 781              	DMA2_Stream2_IRQHandler:
+ 782              	.LFB160:
+ 454:Core/Src/stm32f4xx_it.c **** 
+ 455:Core/Src/stm32f4xx_it.c **** /**
+ 456:Core/Src/stm32f4xx_it.c ****   * @brief This function handles DMA2 stream2 global interrupt.
+ 457:Core/Src/stm32f4xx_it.c ****   */
+ 458:Core/Src/stm32f4xx_it.c **** void DMA2_Stream2_IRQHandler(void)
+ 459:Core/Src/stm32f4xx_it.c **** {
+ 783              		.loc 1 459 1 is_stmt 1 view -0
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccrs87Wk.s 			page 22
+
+
+ 784              		.cfi_startproc
+ 785              		@ args = 0, pretend = 0, frame = 0
+ 786              		@ frame_needed = 0, uses_anonymous_args = 0
+ 787 0000 08B5     		push	{r3, lr}
+ 788              		.cfi_def_cfa_offset 8
+ 789              		.cfi_offset 3, -8
+ 790              		.cfi_offset 14, -4
+ 460:Core/Src/stm32f4xx_it.c ****   /* USER CODE BEGIN DMA2_Stream2_IRQn 0 */
+ 461:Core/Src/stm32f4xx_it.c **** 
+ 462:Core/Src/stm32f4xx_it.c ****   /* USER CODE END DMA2_Stream2_IRQn 0 */
+ 463:Core/Src/stm32f4xx_it.c ****   HAL_DMA_IRQHandler(&hdma_spi1_tx);
+ 791              		.loc 1 463 3 view .LVU98
+ 792 0002 0248     		ldr	r0, .L89
+ 793 0004 FFF7FEFF 		bl	HAL_DMA_IRQHandler
+ 794              	.LVL18:
+ 464:Core/Src/stm32f4xx_it.c ****   /* USER CODE BEGIN DMA2_Stream2_IRQn 1 */
+ 465:Core/Src/stm32f4xx_it.c **** 
+ 466:Core/Src/stm32f4xx_it.c ****   /* USER CODE END DMA2_Stream2_IRQn 1 */
+ 467:Core/Src/stm32f4xx_it.c **** }
+ 795              		.loc 1 467 1 is_stmt 0 view .LVU99
+ 796 0008 08BD     		pop	{r3, pc}
+ 797              	.L90:
+ 798 000a 00BF     		.align	2
+ 799              	.L89:
+ 800 000c 00000000 		.word	hdma_spi1_tx
+ 801              		.cfi_endproc
+ 802              	.LFE160:
+ 804              		.section	.text.DMA2_Stream6_IRQHandler,"ax",%progbits
+ 805              		.align	1
+ 806              		.global	DMA2_Stream6_IRQHandler
+ 807              		.syntax unified
+ 808              		.thumb
+ 809              		.thumb_func
+ 811              	DMA2_Stream6_IRQHandler:
+ 812              	.LFB161:
+ 468:Core/Src/stm32f4xx_it.c **** 
+ 469:Core/Src/stm32f4xx_it.c **** /**
+ 470:Core/Src/stm32f4xx_it.c ****   * @brief This function handles DMA2 stream6 global interrupt.
+ 471:Core/Src/stm32f4xx_it.c ****   */
+ 472:Core/Src/stm32f4xx_it.c **** void DMA2_Stream6_IRQHandler(void)
+ 473:Core/Src/stm32f4xx_it.c **** {
+ 813              		.loc 1 473 1 is_stmt 1 view -0
+ 814              		.cfi_startproc
+ 815              		@ args = 0, pretend = 0, frame = 0
+ 816              		@ frame_needed = 0, uses_anonymous_args = 0
+ 817 0000 08B5     		push	{r3, lr}
+ 818              		.cfi_def_cfa_offset 8
+ 819              		.cfi_offset 3, -8
+ 820              		.cfi_offset 14, -4
+ 474:Core/Src/stm32f4xx_it.c ****   /* USER CODE BEGIN DMA2_Stream6_IRQn 0 */
+ 475:Core/Src/stm32f4xx_it.c **** 
+ 476:Core/Src/stm32f4xx_it.c ****   /* USER CODE END DMA2_Stream6_IRQn 0 */
+ 477:Core/Src/stm32f4xx_it.c ****   HAL_DMA_IRQHandler(&hdma_usart6_tx);
+ 821              		.loc 1 477 3 view .LVU101
+ 822 0002 0248     		ldr	r0, .L93
+ 823 0004 FFF7FEFF 		bl	HAL_DMA_IRQHandler
+ 824              	.LVL19:
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccrs87Wk.s 			page 23
+
+
+ 478:Core/Src/stm32f4xx_it.c ****   /* USER CODE BEGIN DMA2_Stream6_IRQn 1 */
+ 479:Core/Src/stm32f4xx_it.c **** 
+ 480:Core/Src/stm32f4xx_it.c ****   /* USER CODE END DMA2_Stream6_IRQn 1 */
+ 481:Core/Src/stm32f4xx_it.c **** }
+ 825              		.loc 1 481 1 is_stmt 0 view .LVU102
+ 826 0008 08BD     		pop	{r3, pc}
+ 827              	.L94:
+ 828 000a 00BF     		.align	2
+ 829              	.L93:
+ 830 000c 00000000 		.word	hdma_usart6_tx
+ 831              		.cfi_endproc
+ 832              	.LFE161:
+ 834              		.section	.text.USART6_IRQHandler,"ax",%progbits
+ 835              		.align	1
+ 836              		.global	USART6_IRQHandler
+ 837              		.syntax unified
+ 838              		.thumb
+ 839              		.thumb_func
+ 841              	USART6_IRQHandler:
+ 842              	.LFB162:
+ 482:Core/Src/stm32f4xx_it.c **** 
+ 483:Core/Src/stm32f4xx_it.c **** /**
+ 484:Core/Src/stm32f4xx_it.c ****   * @brief This function handles USART6 global interrupt.
+ 485:Core/Src/stm32f4xx_it.c ****   */
+ 486:Core/Src/stm32f4xx_it.c **** void USART6_IRQHandler(void)
+ 487:Core/Src/stm32f4xx_it.c **** {
+ 843              		.loc 1 487 1 is_stmt 1 view -0
+ 844              		.cfi_startproc
+ 845              		@ args = 0, pretend = 0, frame = 0
+ 846              		@ frame_needed = 0, uses_anonymous_args = 0
+ 847 0000 08B5     		push	{r3, lr}
+ 848              		.cfi_def_cfa_offset 8
+ 849              		.cfi_offset 3, -8
+ 850              		.cfi_offset 14, -4
+ 488:Core/Src/stm32f4xx_it.c ****   /* USER CODE BEGIN USART6_IRQn 0 */
+ 489:Core/Src/stm32f4xx_it.c **** 
+ 490:Core/Src/stm32f4xx_it.c ****   /* USER CODE END USART6_IRQn 0 */
+ 491:Core/Src/stm32f4xx_it.c ****   HAL_UART_IRQHandler(&huart6);
+ 851              		.loc 1 491 3 view .LVU104
+ 852 0002 0248     		ldr	r0, .L97
+ 853 0004 FFF7FEFF 		bl	HAL_UART_IRQHandler
+ 854              	.LVL20:
+ 492:Core/Src/stm32f4xx_it.c ****   /* USER CODE BEGIN USART6_IRQn 1 */
+ 493:Core/Src/stm32f4xx_it.c **** 
+ 494:Core/Src/stm32f4xx_it.c ****   /* USER CODE END USART6_IRQn 1 */
+ 495:Core/Src/stm32f4xx_it.c **** }
+ 855              		.loc 1 495 1 is_stmt 0 view .LVU105
+ 856 0008 08BD     		pop	{r3, pc}
+ 857              	.L98:
+ 858 000a 00BF     		.align	2
+ 859              	.L97:
+ 860 000c 00000000 		.word	huart6
+ 861              		.cfi_endproc
+ 862              	.LFE162:
+ 864              		.global	Timer2
+ 865              		.section	.bss.Timer2,"aw",%nobits
+ 868              	Timer2:
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccrs87Wk.s 			page 24
+
+
+ 869 0000 00       		.space	1
+ 870              		.global	Timer1
+ 871              		.section	.bss.Timer1,"aw",%nobits
+ 874              	Timer1:
+ 875 0000 00       		.space	1
+ 876              		.global	FatFsCnt
+ 877              		.section	.bss.FatFsCnt,"aw",%nobits
+ 880              	FatFsCnt:
+ 881 0000 00       		.space	1
+ 882              		.text
+ 883              	.Letext0:
+ 884              		.file 2 "Core/Inc/stm32f4xx_hal_conf.h"
+ 885              		.file 3 "C:/Users/kroko/AppData/Roaming/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-to
+ 886              		.file 4 "C:/Users/kroko/AppData/Roaming/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-to
+ 887              		.file 5 "Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f413xx.h"
+ 888              		.file 6 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma.h"
+ 889              		.file 7 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_i2c.h"
+ 890              		.file 8 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h"
+ 891              		.file 9 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h"
+ 892              		.file 10 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h"
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccrs87Wk.s 			page 25
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 stm32f4xx_it.c
-C:\Users\kroko\AppData\Local\Temp\ccQMDolv.s:21     .text.SDTimer_Handler:00000000 $t
-C:\Users\kroko\AppData\Local\Temp\ccQMDolv.s:27     .text.SDTimer_Handler:00000000 SDTimer_Handler
-C:\Users\kroko\AppData\Local\Temp\ccQMDolv.s:67     .text.SDTimer_Handler:00000024 $d
-C:\Users\kroko\AppData\Local\Temp\ccQMDolv.s:634    .bss.Timer1:00000000 Timer1
-C:\Users\kroko\AppData\Local\Temp\ccQMDolv.s:628    .bss.Timer2:00000000 Timer2
-C:\Users\kroko\AppData\Local\Temp\ccQMDolv.s:73     .text.NMI_Handler:00000000 $t
-C:\Users\kroko\AppData\Local\Temp\ccQMDolv.s:79     .text.NMI_Handler:00000000 NMI_Handler
-C:\Users\kroko\AppData\Local\Temp\ccQMDolv.s:96     .text.HardFault_Handler:00000000 $t
-C:\Users\kroko\AppData\Local\Temp\ccQMDolv.s:102    .text.HardFault_Handler:00000000 HardFault_Handler
-C:\Users\kroko\AppData\Local\Temp\ccQMDolv.s:119    .text.MemManage_Handler:00000000 $t
-C:\Users\kroko\AppData\Local\Temp\ccQMDolv.s:125    .text.MemManage_Handler:00000000 MemManage_Handler
-C:\Users\kroko\AppData\Local\Temp\ccQMDolv.s:142    .text.BusFault_Handler:00000000 $t
-C:\Users\kroko\AppData\Local\Temp\ccQMDolv.s:148    .text.BusFault_Handler:00000000 BusFault_Handler
-C:\Users\kroko\AppData\Local\Temp\ccQMDolv.s:165    .text.UsageFault_Handler:00000000 $t
-C:\Users\kroko\AppData\Local\Temp\ccQMDolv.s:171    .text.UsageFault_Handler:00000000 UsageFault_Handler
-C:\Users\kroko\AppData\Local\Temp\ccQMDolv.s:188    .text.SVC_Handler:00000000 $t
-C:\Users\kroko\AppData\Local\Temp\ccQMDolv.s:194    .text.SVC_Handler:00000000 SVC_Handler
-C:\Users\kroko\AppData\Local\Temp\ccQMDolv.s:207    .text.DebugMon_Handler:00000000 $t
-C:\Users\kroko\AppData\Local\Temp\ccQMDolv.s:213    .text.DebugMon_Handler:00000000 DebugMon_Handler
-C:\Users\kroko\AppData\Local\Temp\ccQMDolv.s:226    .text.PendSV_Handler:00000000 $t
-C:\Users\kroko\AppData\Local\Temp\ccQMDolv.s:232    .text.PendSV_Handler:00000000 PendSV_Handler
-C:\Users\kroko\AppData\Local\Temp\ccQMDolv.s:245    .text.SysTick_Handler:00000000 $t
-C:\Users\kroko\AppData\Local\Temp\ccQMDolv.s:251    .text.SysTick_Handler:00000000 SysTick_Handler
-C:\Users\kroko\AppData\Local\Temp\ccQMDolv.s:294    .text.SysTick_Handler:00000028 $d
-C:\Users\kroko\AppData\Local\Temp\ccQMDolv.s:640    .bss.FatFsCnt:00000000 FatFsCnt
-C:\Users\kroko\AppData\Local\Temp\ccQMDolv.s:299    .text.DMA1_Stream0_IRQHandler:00000000 $t
-C:\Users\kroko\AppData\Local\Temp\ccQMDolv.s:305    .text.DMA1_Stream0_IRQHandler:00000000 DMA1_Stream0_IRQHandler
-C:\Users\kroko\AppData\Local\Temp\ccQMDolv.s:324    .text.DMA1_Stream0_IRQHandler:0000000c $d
-C:\Users\kroko\AppData\Local\Temp\ccQMDolv.s:329    .text.DMA1_Stream5_IRQHandler:00000000 $t
-C:\Users\kroko\AppData\Local\Temp\ccQMDolv.s:335    .text.DMA1_Stream5_IRQHandler:00000000 DMA1_Stream5_IRQHandler
-C:\Users\kroko\AppData\Local\Temp\ccQMDolv.s:354    .text.DMA1_Stream5_IRQHandler:0000000c $d
-C:\Users\kroko\AppData\Local\Temp\ccQMDolv.s:359    .text.DMA1_Stream6_IRQHandler:00000000 $t
-C:\Users\kroko\AppData\Local\Temp\ccQMDolv.s:365    .text.DMA1_Stream6_IRQHandler:00000000 DMA1_Stream6_IRQHandler
-C:\Users\kroko\AppData\Local\Temp\ccQMDolv.s:384    .text.DMA1_Stream6_IRQHandler:0000000c $d
-C:\Users\kroko\AppData\Local\Temp\ccQMDolv.s:389    .text.EXTI9_5_IRQHandler:00000000 $t
-C:\Users\kroko\AppData\Local\Temp\ccQMDolv.s:395    .text.EXTI9_5_IRQHandler:00000000 EXTI9_5_IRQHandler
-C:\Users\kroko\AppData\Local\Temp\ccQMDolv.s:415    .text.USART2_IRQHandler:00000000 $t
-C:\Users\kroko\AppData\Local\Temp\ccQMDolv.s:421    .text.USART2_IRQHandler:00000000 USART2_IRQHandler
-C:\Users\kroko\AppData\Local\Temp\ccQMDolv.s:440    .text.USART2_IRQHandler:0000000c $d
-C:\Users\kroko\AppData\Local\Temp\ccQMDolv.s:445    .text.DMA1_Stream7_IRQHandler:00000000 $t
-C:\Users\kroko\AppData\Local\Temp\ccQMDolv.s:451    .text.DMA1_Stream7_IRQHandler:00000000 DMA1_Stream7_IRQHandler
-C:\Users\kroko\AppData\Local\Temp\ccQMDolv.s:470    .text.DMA1_Stream7_IRQHandler:0000000c $d
-C:\Users\kroko\AppData\Local\Temp\ccQMDolv.s:475    .text.UART5_IRQHandler:00000000 $t
-C:\Users\kroko\AppData\Local\Temp\ccQMDolv.s:481    .text.UART5_IRQHandler:00000000 UART5_IRQHandler
-C:\Users\kroko\AppData\Local\Temp\ccQMDolv.s:500    .text.UART5_IRQHandler:0000000c $d
-C:\Users\kroko\AppData\Local\Temp\ccQMDolv.s:505    .text.DMA2_Stream1_IRQHandler:00000000 $t
-C:\Users\kroko\AppData\Local\Temp\ccQMDolv.s:511    .text.DMA2_Stream1_IRQHandler:00000000 DMA2_Stream1_IRQHandler
-C:\Users\kroko\AppData\Local\Temp\ccQMDolv.s:530    .text.DMA2_Stream1_IRQHandler:0000000c $d
-C:\Users\kroko\AppData\Local\Temp\ccQMDolv.s:535    .text.DMA2_Stream2_IRQHandler:00000000 $t
-C:\Users\kroko\AppData\Local\Temp\ccQMDolv.s:541    .text.DMA2_Stream2_IRQHandler:00000000 DMA2_Stream2_IRQHandler
-C:\Users\kroko\AppData\Local\Temp\ccQMDolv.s:560    .text.DMA2_Stream2_IRQHandler:0000000c $d
-C:\Users\kroko\AppData\Local\Temp\ccQMDolv.s:565    .text.DMA2_Stream6_IRQHandler:00000000 $t
-C:\Users\kroko\AppData\Local\Temp\ccQMDolv.s:571    .text.DMA2_Stream6_IRQHandler:00000000 DMA2_Stream6_IRQHandler
-C:\Users\kroko\AppData\Local\Temp\ccQMDolv.s:590    .text.DMA2_Stream6_IRQHandler:0000000c $d
-C:\Users\kroko\AppData\Local\Temp\ccQMDolv.s:595    .text.USART6_IRQHandler:00000000 $t
-ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccQMDolv.s 			page 20
+C:\Users\kroko\AppData\Local\Temp\ccrs87Wk.s:21     .text.SDTimer_Handler:00000000 $t
+C:\Users\kroko\AppData\Local\Temp\ccrs87Wk.s:27     .text.SDTimer_Handler:00000000 SDTimer_Handler
+C:\Users\kroko\AppData\Local\Temp\ccrs87Wk.s:67     .text.SDTimer_Handler:00000024 $d
+C:\Users\kroko\AppData\Local\Temp\ccrs87Wk.s:874    .bss.Timer1:00000000 Timer1
+C:\Users\kroko\AppData\Local\Temp\ccrs87Wk.s:868    .bss.Timer2:00000000 Timer2
+C:\Users\kroko\AppData\Local\Temp\ccrs87Wk.s:73     .text.NMI_Handler:00000000 $t
+C:\Users\kroko\AppData\Local\Temp\ccrs87Wk.s:79     .text.NMI_Handler:00000000 NMI_Handler
+C:\Users\kroko\AppData\Local\Temp\ccrs87Wk.s:96     .text.HardFault_Handler:00000000 $t
+C:\Users\kroko\AppData\Local\Temp\ccrs87Wk.s:102    .text.HardFault_Handler:00000000 HardFault_Handler
+C:\Users\kroko\AppData\Local\Temp\ccrs87Wk.s:119    .text.MemManage_Handler:00000000 $t
+C:\Users\kroko\AppData\Local\Temp\ccrs87Wk.s:125    .text.MemManage_Handler:00000000 MemManage_Handler
+C:\Users\kroko\AppData\Local\Temp\ccrs87Wk.s:142    .text.BusFault_Handler:00000000 $t
+C:\Users\kroko\AppData\Local\Temp\ccrs87Wk.s:148    .text.BusFault_Handler:00000000 BusFault_Handler
+C:\Users\kroko\AppData\Local\Temp\ccrs87Wk.s:165    .text.UsageFault_Handler:00000000 $t
+C:\Users\kroko\AppData\Local\Temp\ccrs87Wk.s:171    .text.UsageFault_Handler:00000000 UsageFault_Handler
+C:\Users\kroko\AppData\Local\Temp\ccrs87Wk.s:188    .text.SVC_Handler:00000000 $t
+C:\Users\kroko\AppData\Local\Temp\ccrs87Wk.s:194    .text.SVC_Handler:00000000 SVC_Handler
+C:\Users\kroko\AppData\Local\Temp\ccrs87Wk.s:207    .text.DebugMon_Handler:00000000 $t
+C:\Users\kroko\AppData\Local\Temp\ccrs87Wk.s:213    .text.DebugMon_Handler:00000000 DebugMon_Handler
+C:\Users\kroko\AppData\Local\Temp\ccrs87Wk.s:226    .text.PendSV_Handler:00000000 $t
+C:\Users\kroko\AppData\Local\Temp\ccrs87Wk.s:232    .text.PendSV_Handler:00000000 PendSV_Handler
+C:\Users\kroko\AppData\Local\Temp\ccrs87Wk.s:245    .text.SysTick_Handler:00000000 $t
+C:\Users\kroko\AppData\Local\Temp\ccrs87Wk.s:251    .text.SysTick_Handler:00000000 SysTick_Handler
+C:\Users\kroko\AppData\Local\Temp\ccrs87Wk.s:294    .text.SysTick_Handler:00000028 $d
+C:\Users\kroko\AppData\Local\Temp\ccrs87Wk.s:880    .bss.FatFsCnt:00000000 FatFsCnt
+C:\Users\kroko\AppData\Local\Temp\ccrs87Wk.s:299    .text.DMA1_Stream0_IRQHandler:00000000 $t
+C:\Users\kroko\AppData\Local\Temp\ccrs87Wk.s:305    .text.DMA1_Stream0_IRQHandler:00000000 DMA1_Stream0_IRQHandler
+C:\Users\kroko\AppData\Local\Temp\ccrs87Wk.s:324    .text.DMA1_Stream0_IRQHandler:0000000c $d
+C:\Users\kroko\AppData\Local\Temp\ccrs87Wk.s:329    .text.DMA1_Stream1_IRQHandler:00000000 $t
+C:\Users\kroko\AppData\Local\Temp\ccrs87Wk.s:335    .text.DMA1_Stream1_IRQHandler:00000000 DMA1_Stream1_IRQHandler
+C:\Users\kroko\AppData\Local\Temp\ccrs87Wk.s:354    .text.DMA1_Stream1_IRQHandler:0000000c $d
+C:\Users\kroko\AppData\Local\Temp\ccrs87Wk.s:359    .text.DMA1_Stream2_IRQHandler:00000000 $t
+C:\Users\kroko\AppData\Local\Temp\ccrs87Wk.s:365    .text.DMA1_Stream2_IRQHandler:00000000 DMA1_Stream2_IRQHandler
+C:\Users\kroko\AppData\Local\Temp\ccrs87Wk.s:384    .text.DMA1_Stream2_IRQHandler:0000000c $d
+C:\Users\kroko\AppData\Local\Temp\ccrs87Wk.s:389    .text.DMA1_Stream3_IRQHandler:00000000 $t
+C:\Users\kroko\AppData\Local\Temp\ccrs87Wk.s:395    .text.DMA1_Stream3_IRQHandler:00000000 DMA1_Stream3_IRQHandler
+C:\Users\kroko\AppData\Local\Temp\ccrs87Wk.s:414    .text.DMA1_Stream3_IRQHandler:0000000c $d
+C:\Users\kroko\AppData\Local\Temp\ccrs87Wk.s:419    .text.DMA1_Stream4_IRQHandler:00000000 $t
+C:\Users\kroko\AppData\Local\Temp\ccrs87Wk.s:425    .text.DMA1_Stream4_IRQHandler:00000000 DMA1_Stream4_IRQHandler
+C:\Users\kroko\AppData\Local\Temp\ccrs87Wk.s:444    .text.DMA1_Stream4_IRQHandler:0000000c $d
+C:\Users\kroko\AppData\Local\Temp\ccrs87Wk.s:449    .text.DMA1_Stream5_IRQHandler:00000000 $t
+C:\Users\kroko\AppData\Local\Temp\ccrs87Wk.s:455    .text.DMA1_Stream5_IRQHandler:00000000 DMA1_Stream5_IRQHandler
+C:\Users\kroko\AppData\Local\Temp\ccrs87Wk.s:474    .text.DMA1_Stream5_IRQHandler:0000000c $d
+C:\Users\kroko\AppData\Local\Temp\ccrs87Wk.s:479    .text.DMA1_Stream6_IRQHandler:00000000 $t
+C:\Users\kroko\AppData\Local\Temp\ccrs87Wk.s:485    .text.DMA1_Stream6_IRQHandler:00000000 DMA1_Stream6_IRQHandler
+C:\Users\kroko\AppData\Local\Temp\ccrs87Wk.s:504    .text.DMA1_Stream6_IRQHandler:0000000c $d
+C:\Users\kroko\AppData\Local\Temp\ccrs87Wk.s:509    .text.EXTI9_5_IRQHandler:00000000 $t
+C:\Users\kroko\AppData\Local\Temp\ccrs87Wk.s:515    .text.EXTI9_5_IRQHandler:00000000 EXTI9_5_IRQHandler
+C:\Users\kroko\AppData\Local\Temp\ccrs87Wk.s:535    .text.I2C1_EV_IRQHandler:00000000 $t
+C:\Users\kroko\AppData\Local\Temp\ccrs87Wk.s:541    .text.I2C1_EV_IRQHandler:00000000 I2C1_EV_IRQHandler
+C:\Users\kroko\AppData\Local\Temp\ccrs87Wk.s:560    .text.I2C1_EV_IRQHandler:0000000c $d
+C:\Users\kroko\AppData\Local\Temp\ccrs87Wk.s:565    .text.I2C1_ER_IRQHandler:00000000 $t
+C:\Users\kroko\AppData\Local\Temp\ccrs87Wk.s:571    .text.I2C1_ER_IRQHandler:00000000 I2C1_ER_IRQHandler
+C:\Users\kroko\AppData\Local\Temp\ccrs87Wk.s:590    .text.I2C1_ER_IRQHandler:0000000c $d
+C:\Users\kroko\AppData\Local\Temp\ccrs87Wk.s:595    .text.USART2_IRQHandler:00000000 $t
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccrs87Wk.s 			page 26
 
 
-C:\Users\kroko\AppData\Local\Temp\ccQMDolv.s:601    .text.USART6_IRQHandler:00000000 USART6_IRQHandler
-C:\Users\kroko\AppData\Local\Temp\ccQMDolv.s:620    .text.USART6_IRQHandler:0000000c $d
-C:\Users\kroko\AppData\Local\Temp\ccQMDolv.s:629    .bss.Timer2:00000000 $d
-C:\Users\kroko\AppData\Local\Temp\ccQMDolv.s:635    .bss.Timer1:00000000 $d
-C:\Users\kroko\AppData\Local\Temp\ccQMDolv.s:641    .bss.FatFsCnt:00000000 $d
+C:\Users\kroko\AppData\Local\Temp\ccrs87Wk.s:601    .text.USART2_IRQHandler:00000000 USART2_IRQHandler
+C:\Users\kroko\AppData\Local\Temp\ccrs87Wk.s:620    .text.USART2_IRQHandler:0000000c $d
+C:\Users\kroko\AppData\Local\Temp\ccrs87Wk.s:625    .text.USART3_IRQHandler:00000000 $t
+C:\Users\kroko\AppData\Local\Temp\ccrs87Wk.s:631    .text.USART3_IRQHandler:00000000 USART3_IRQHandler
+C:\Users\kroko\AppData\Local\Temp\ccrs87Wk.s:650    .text.USART3_IRQHandler:0000000c $d
+C:\Users\kroko\AppData\Local\Temp\ccrs87Wk.s:655    .text.DMA1_Stream7_IRQHandler:00000000 $t
+C:\Users\kroko\AppData\Local\Temp\ccrs87Wk.s:661    .text.DMA1_Stream7_IRQHandler:00000000 DMA1_Stream7_IRQHandler
+C:\Users\kroko\AppData\Local\Temp\ccrs87Wk.s:680    .text.DMA1_Stream7_IRQHandler:0000000c $d
+C:\Users\kroko\AppData\Local\Temp\ccrs87Wk.s:685    .text.UART4_IRQHandler:00000000 $t
+C:\Users\kroko\AppData\Local\Temp\ccrs87Wk.s:691    .text.UART4_IRQHandler:00000000 UART4_IRQHandler
+C:\Users\kroko\AppData\Local\Temp\ccrs87Wk.s:710    .text.UART4_IRQHandler:0000000c $d
+C:\Users\kroko\AppData\Local\Temp\ccrs87Wk.s:715    .text.UART5_IRQHandler:00000000 $t
+C:\Users\kroko\AppData\Local\Temp\ccrs87Wk.s:721    .text.UART5_IRQHandler:00000000 UART5_IRQHandler
+C:\Users\kroko\AppData\Local\Temp\ccrs87Wk.s:740    .text.UART5_IRQHandler:0000000c $d
+C:\Users\kroko\AppData\Local\Temp\ccrs87Wk.s:745    .text.DMA2_Stream1_IRQHandler:00000000 $t
+C:\Users\kroko\AppData\Local\Temp\ccrs87Wk.s:751    .text.DMA2_Stream1_IRQHandler:00000000 DMA2_Stream1_IRQHandler
+C:\Users\kroko\AppData\Local\Temp\ccrs87Wk.s:770    .text.DMA2_Stream1_IRQHandler:0000000c $d
+C:\Users\kroko\AppData\Local\Temp\ccrs87Wk.s:775    .text.DMA2_Stream2_IRQHandler:00000000 $t
+C:\Users\kroko\AppData\Local\Temp\ccrs87Wk.s:781    .text.DMA2_Stream2_IRQHandler:00000000 DMA2_Stream2_IRQHandler
+C:\Users\kroko\AppData\Local\Temp\ccrs87Wk.s:800    .text.DMA2_Stream2_IRQHandler:0000000c $d
+C:\Users\kroko\AppData\Local\Temp\ccrs87Wk.s:805    .text.DMA2_Stream6_IRQHandler:00000000 $t
+C:\Users\kroko\AppData\Local\Temp\ccrs87Wk.s:811    .text.DMA2_Stream6_IRQHandler:00000000 DMA2_Stream6_IRQHandler
+C:\Users\kroko\AppData\Local\Temp\ccrs87Wk.s:830    .text.DMA2_Stream6_IRQHandler:0000000c $d
+C:\Users\kroko\AppData\Local\Temp\ccrs87Wk.s:835    .text.USART6_IRQHandler:00000000 $t
+C:\Users\kroko\AppData\Local\Temp\ccrs87Wk.s:841    .text.USART6_IRQHandler:00000000 USART6_IRQHandler
+C:\Users\kroko\AppData\Local\Temp\ccrs87Wk.s:860    .text.USART6_IRQHandler:0000000c $d
+C:\Users\kroko\AppData\Local\Temp\ccrs87Wk.s:869    .bss.Timer2:00000000 $d
+C:\Users\kroko\AppData\Local\Temp\ccrs87Wk.s:875    .bss.Timer1:00000000 $d
+C:\Users\kroko\AppData\Local\Temp\ccrs87Wk.s:881    .bss.FatFsCnt:00000000 $d
 
 UNDEFINED SYMBOLS
 HAL_IncTick
 HAL_DMA_IRQHandler
 hdma_uart5_rx
+hdma_usart3_rx
+hdma_uart4_rx
+hdma_usart3_tx
+hdma_uart4_tx
 hdma_usart2_rx
 hdma_usart2_tx
 HAL_GPIO_EXTI_IRQHandler
+HAL_I2C_EV_IRQHandler
+hi2c1
+HAL_I2C_ER_IRQHandler
 HAL_UART_IRQHandler
 huart2
+huart3
 hdma_uart5_tx
+huart4
 huart5
 hdma_usart6_rx
 hdma_spi1_tx

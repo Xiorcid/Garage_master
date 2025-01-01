@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccg45KyH.s 			page 1
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\cchyPhKi.s 			page 1
 
 
    1              		.cpu cortex-m4
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccg45KyH.s 			page 1
   52              	.LVL1:
   53              	.LFB135:
    7:Core/Src/buttons.c **** 
-ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccg45KyH.s 			page 2
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\cchyPhKi.s 			page 2
 
 
    8:Core/Src/buttons.c **** bool tick(Button *btt){
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccg45KyH.s 			page 1
   19:Core/Src/buttons.c ****         btt->btn_timer = HAL_GetTick();
   20:Core/Src/buttons.c ****         btt->btn_hold_timer = HAL_GetTick();
   21:Core/Src/buttons.c ****     }
-ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccg45KyH.s 			page 3
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\cchyPhKi.s 			page 3
 
 
   22:Core/Src/buttons.c **** 
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccg45KyH.s 			page 1
  132 003e 0123     		movs	r3, #1
  133 0040 E374     		strb	r3, [r4, #19]
  134              	.L5:
-ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccg45KyH.s 			page 4
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\cchyPhKi.s 			page 4
 
 
   14:Core/Src/buttons.c ****         btt->btn_timer = HAL_GetTick();
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccg45KyH.s 			page 1
  172 0068 E060     		str	r0, [r4, #12]
  173 006a D9E7     		b	.L6
  174              	.L11:
-ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccg45KyH.s 			page 5
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\cchyPhKi.s 			page 5
 
 
   23:Core/Src/buttons.c ****         btt->btn_hold = true;
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccg45KyH.s 			page 1
  218              		@ link register save eliminated.
  219              		.loc 1 31 28 is_stmt 0 view .LVU64
  220 0000 0346     		mov	r3, r0
-ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccg45KyH.s 			page 6
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\cchyPhKi.s 			page 6
 
 
   32:Core/Src/buttons.c ****     if(btt->btn_single){
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccg45KyH.s 			page 1
  262              		.cfi_endproc
  263              	.LFE137:
  265              		.text
-ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccg45KyH.s 			page 7
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\cchyPhKi.s 			page 7
 
 
  266              	.Letext0:
@@ -368,19 +368,19 @@ ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccg45KyH.s 			page 1
  270              		.file 5 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h"
  271              		.file 6 "Core/Inc/buttons.h"
  272              		.file 7 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h"
-ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccg45KyH.s 			page 8
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\cchyPhKi.s 			page 8
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 buttons.c
-C:\Users\kroko\AppData\Local\Temp\ccg45KyH.s:21     .text.init:00000000 $t
-C:\Users\kroko\AppData\Local\Temp\ccg45KyH.s:27     .text.init:00000000 init
-C:\Users\kroko\AppData\Local\Temp\ccg45KyH.s:45     .text.tick:00000000 $t
-C:\Users\kroko\AppData\Local\Temp\ccg45KyH.s:51     .text.tick:00000000 tick
-C:\Users\kroko\AppData\Local\Temp\ccg45KyH.s:205    .text.isClicked:00000000 $t
-C:\Users\kroko\AppData\Local\Temp\ccg45KyH.s:211    .text.isClicked:00000000 isClicked
-C:\Users\kroko\AppData\Local\Temp\ccg45KyH.s:242    .text.isHold:00000000 $t
-C:\Users\kroko\AppData\Local\Temp\ccg45KyH.s:248    .text.isHold:00000000 isHold
+C:\Users\kroko\AppData\Local\Temp\cchyPhKi.s:21     .text.init:00000000 $t
+C:\Users\kroko\AppData\Local\Temp\cchyPhKi.s:27     .text.init:00000000 init
+C:\Users\kroko\AppData\Local\Temp\cchyPhKi.s:45     .text.tick:00000000 $t
+C:\Users\kroko\AppData\Local\Temp\cchyPhKi.s:51     .text.tick:00000000 tick
+C:\Users\kroko\AppData\Local\Temp\cchyPhKi.s:205    .text.isClicked:00000000 $t
+C:\Users\kroko\AppData\Local\Temp\cchyPhKi.s:211    .text.isClicked:00000000 isClicked
+C:\Users\kroko\AppData\Local\Temp\cchyPhKi.s:242    .text.isHold:00000000 $t
+C:\Users\kroko\AppData\Local\Temp\cchyPhKi.s:248    .text.isHold:00000000 isHold
 
 UNDEFINED SYMBOLS
 HAL_GPIO_ReadPin

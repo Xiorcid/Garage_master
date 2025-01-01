@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccTR2sLI.s 			page 1
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccN6gor1.s 			page 1
 
 
    1              		.cpu cortex-m4
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccTR2sLI.s 			page 1
   27:Core/Src/f32f.c ****     _XXXX___,__XXXX__,
   28:Core/Src/f32f.c ****     _XXXX___,__XXXX__,
   29:Core/Src/f32f.c ****     _XXXX___,__XXXX__,
-ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccTR2sLI.s 			page 2
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccN6gor1.s 			page 2
 
 
   30:Core/Src/f32f.c ****     __XXXX__,_XXXX___,
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccTR2sLI.s 			page 1
   84:Core/Src/f32f.c ****     ________,________,
   85:Core/Src/f32f.c ****     ________,________,
   86:Core/Src/f32f.c ****     ________,________,
-ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccTR2sLI.s 			page 3
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccN6gor1.s 			page 3
 
 
   87:Core/Src/f32f.c ****     _____XXX,XXX_____,
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccTR2sLI.s 			page 1
  141:Core/Src/f32f.c ****     ___XXXXX,XXXX____,
  142:Core/Src/f32f.c ****     _____XXX,XX______,
  143:Core/Src/f32f.c ****     ________,________,
-ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccTR2sLI.s 			page 4
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccN6gor1.s 			page 4
 
 
  144:Core/Src/f32f.c ****     ________,________,
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccTR2sLI.s 			page 1
  198:Core/Src/f32f.c ****     __XXXX__,________,
  199:Core/Src/f32f.c ****     __XXX___,________,
  200:Core/Src/f32f.c ****     __XXX___,________,
-ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccTR2sLI.s 			page 5
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccN6gor1.s 			page 5
 
 
  201:Core/Src/f32f.c ****     __XXX_XX,XXX_____,
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccTR2sLI.s 			page 1
  255:Core/Src/f32f.c ****     ________,________,
  256:Core/Src/f32f.c ****     ________,________,
  257:Core/Src/f32f.c ****     ________,________}
-ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccTR2sLI.s 			page 6
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccN6gor1.s 			page 6
 
 
  258:Core/Src/f32f.c ****   // 0x37
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccTR2sLI.s 			page 1
  312:Core/Src/f32f.c ****     ____XXXX,XXX_____,
  313:Core/Src/f32f.c ****     ___XXXXX,XXXX____,
  314:Core/Src/f32f.c ****     __XXXX__,_XXXX___,
-ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccTR2sLI.s 			page 7
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccN6gor1.s 			page 7
 
 
  315:Core/Src/f32f.c ****     _XXXX___,__XXXX__,
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccTR2sLI.s 			page 1
  369:Core/Src/f32f.c **** // 0x20
  370:Core/Src/f32f.c **** {
  371:Core/Src/f32f.c ****   8,
-ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccTR2sLI.s 			page 8
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccN6gor1.s 			page 8
 
 
  372:Core/Src/f32f.c ****   f32_FLOAT_HEIGHT,
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccTR2sLI.s 			page 1
  426:Core/Src/f32f.c ****   ________,________,
  427:Core/Src/f32f.c ****   ________,________,
  428:Core/Src/f32f.c ****   ________,________,
-ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccTR2sLI.s 			page 9
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccN6gor1.s 			page 9
 
 
  429:Core/Src/f32f.c ****   ________,________,
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccTR2sLI.s 			page 1
  483:Core/Src/f32f.c **** };
  484:Core/Src/f32f.c **** 
  485:Core/Src/f32f.c **** const uint8_t f32f_table5[64 + 2] =
-ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccTR2sLI.s 			page 10
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccN6gor1.s 			page 10
 
 
  486:Core/Src/f32f.c **** // 0x25
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccTR2sLI.s 			page 1
  540:Core/Src/f32f.c ****   ________,________,
  541:Core/Src/f32f.c ****   ________,________,
  542:Core/Src/f32f.c ****   ________,________,
-ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccTR2sLI.s 			page 11
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccN6gor1.s 			page 11
 
 
  543:Core/Src/f32f.c ****   ________,________,
@@ -619,507 +619,591 @@ ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccTR2sLI.s 			page 1
  558:Core/Src/f32f.c ****   ________,________,
  559:Core/Src/f32f.c ****   ________,________
  560:Core/Src/f32f.c **** };
- 561:Core/Src/f32f.c **** //==============================================================================
- 562:Core/Src/f32f.c **** 
- 563:Core/Src/f32f.c **** uint8_t *f32f_GetCharTable(char Char)
+ 561:Core/Src/f32f.c **** 
+ 562:Core/Src/f32f.c **** const uint8_t f32f_table7[64 + 2] =
+ 563:Core/Src/f32f.c **** // 0x3A
  564:Core/Src/f32f.c **** {
-  30              		.loc 1 564 1 view -0
+ 565:Core/Src/f32f.c ****   15,
+ 566:Core/Src/f32f.c ****   f32_FLOAT_HEIGHT,
+ 567:Core/Src/f32f.c ****   ________, ________,     // Row 1
+ 568:Core/Src/f32f.c ****   ________, ________,     // Row 2
+ 569:Core/Src/f32f.c ****   ________, ________,     // Row 3
+ 570:Core/Src/f32f.c ****   ________, ________,    // Row 4
+ 571:Core/Src/f32f.c ****   ________, ________,     // Row 5
+ 572:Core/Src/f32f.c ****   ________, ________,     // Row 6
+ 573:Core/Src/f32f.c ****   ________, ________,     // Row 7
+ 574:Core/Src/f32f.c ****   ________, ________,     // Row 8
+ 575:Core/Src/f32f.c ****   ____XXXX, ________,     // Row 9
+ 576:Core/Src/f32f.c ****   ____XXXX, ________,     // Row 10 (Top dot)
+ 577:Core/Src/f32f.c ****   ____XXXX, ________,     // Row 11
+ 578:Core/Src/f32f.c ****   ____XXXX, ________,     // Row 12 (Empty space)
+ 579:Core/Src/f32f.c ****   ________, ________,     // Row 13
+ 580:Core/Src/f32f.c ****   ________, ________,     // Row 14
+ 581:Core/Src/f32f.c ****   ________, ________,     // Row 15
+ 582:Core/Src/f32f.c ****   ________, ________,     // Row 16
+ 583:Core/Src/f32f.c ****   ________, ________,     // Row 17
+ 584:Core/Src/f32f.c ****   ________, ________,     // Row 18
+ 585:Core/Src/f32f.c ****   ____XXXX, ________,     // Row 19
+ 586:Core/Src/f32f.c ****   ____XXXX, ________,     // Row 20 (Bottom dot)
+ 587:Core/Src/f32f.c ****   ____XXXX, ________,     // Row 21
+ 588:Core/Src/f32f.c ****   ____XXXX, ________,     // Row 22 (Empty space)
+ 589:Core/Src/f32f.c ****   ________, ________,     // Row 23
+ 590:Core/Src/f32f.c ****   ________, ________,     // Row 24
+ 591:Core/Src/f32f.c ****   ________, ________,     // Row 25
+ 592:Core/Src/f32f.c ****   ________, ________,     // Row 26
+ 593:Core/Src/f32f.c ****   ________, ________,     // Row 27
+ 594:Core/Src/f32f.c ****   ________, ________,     // Row 28
+ 595:Core/Src/f32f.c ****   ________, ________,     // Row 29
+ 596:Core/Src/f32f.c ****   ________, ________,    // Row 30
+ 597:Core/Src/f32f.c ****   ________, ________,    // Row 31
+ 598:Core/Src/f32f.c ****   ________, ________     // Row 32
+ 599:Core/Src/f32f.c **** };
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccN6gor1.s 			page 12
+
+
+ 600:Core/Src/f32f.c **** //==============================================================================
+ 601:Core/Src/f32f.c **** 
+ 602:Core/Src/f32f.c **** uint8_t *f32f_GetCharTable(char Char)
+ 603:Core/Src/f32f.c **** {
+  30              		.loc 1 603 1 view -0
   31              		.cfi_startproc
   32              		@ args = 0, pretend = 0, frame = 0
   33              		@ frame_needed = 0, uses_anonymous_args = 0
   34              		@ link register save eliminated.
- 565:Core/Src/f32f.c ****   // ������ �����
- 566:Core/Src/f32f.c ****   if ((Char >= 0x30) && (Char <= 0x39))
-  35              		.loc 1 566 3 view .LVU1
-  36 0000 3928     		cmp	r0, #57
-  37 0002 16D8     		bhi	.L2
+ 604:Core/Src/f32f.c ****   // ������ �����
+ 605:Core/Src/f32f.c ****   if ((Char >= 0x30) && (Char <= 0x39))
+  35              		.loc 1 605 3 view .LVU1
+  36 0000 3A28     		cmp	r0, #58
+  37 0002 17D8     		bhi	.L2
   38 0004 2028     		cmp	r0, #32
-  39 0006 25D3     		bcc	.L10
+  39 0006 28D3     		bcc	.L11
   40 0008 A0F12003 		sub	r3, r0, #32
-  41 000c 192B     		cmp	r3, #25
-  42 000e 0ED8     		bhi	.L4
+  41 000c 1A2B     		cmp	r3, #26
+  42 000e 0FD8     		bhi	.L4
   43 0010 DFE803F0 		tbb	[pc, r3]
   44              	.L6:
-  45 0014 22       		.byte	(.L11-.L6)/2
-  46 0015 0D       		.byte	(.L4-.L6)/2
-  47 0016 0D       		.byte	(.L4-.L6)/2
-  48 0017 0D       		.byte	(.L4-.L6)/2
-  49 0018 0D       		.byte	(.L4-.L6)/2
-  50 0019 1C       		.byte	(.L9-.L6)/2
-  51 001a 0D       		.byte	(.L4-.L6)/2
-  52 001b 0D       		.byte	(.L4-.L6)/2
-  53 001c 0D       		.byte	(.L4-.L6)/2
-  54 001d 0D       		.byte	(.L4-.L6)/2
-  55 001e 0D       		.byte	(.L4-.L6)/2
-  56 001f 0D       		.byte	(.L4-.L6)/2
-  57 0020 0D       		.byte	(.L4-.L6)/2
-  58 0021 1E       		.byte	(.L8-.L6)/2
-  59 0022 1A       		.byte	(.L7-.L6)/2
-  60 0023 0D       		.byte	(.L4-.L6)/2
-  61 0024 13       		.byte	(.L5-.L6)/2
-  62 0025 13       		.byte	(.L5-.L6)/2
-ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccTR2sLI.s 			page 12
+  45 0014 25       		.byte	(.L12-.L6)/2
+  46 0015 0E       		.byte	(.L4-.L6)/2
+  47 0016 0E       		.byte	(.L4-.L6)/2
+  48 0017 0E       		.byte	(.L4-.L6)/2
+  49 0018 0E       		.byte	(.L4-.L6)/2
+  50 0019 1D       		.byte	(.L10-.L6)/2
+  51 001a 0E       		.byte	(.L4-.L6)/2
+  52 001b 0E       		.byte	(.L4-.L6)/2
+  53 001c 0E       		.byte	(.L4-.L6)/2
+  54 001d 0E       		.byte	(.L4-.L6)/2
+  55 001e 0E       		.byte	(.L4-.L6)/2
+  56 001f 0E       		.byte	(.L4-.L6)/2
+  57 0020 0E       		.byte	(.L4-.L6)/2
+  58 0021 1F       		.byte	(.L9-.L6)/2
+  59 0022 1B       		.byte	(.L8-.L6)/2
+  60 0023 0E       		.byte	(.L4-.L6)/2
+  61 0024 14       		.byte	(.L7-.L6)/2
+  62 0025 14       		.byte	(.L7-.L6)/2
+  63 0026 14       		.byte	(.L7-.L6)/2
+  64 0027 14       		.byte	(.L7-.L6)/2
+  65 0028 14       		.byte	(.L7-.L6)/2
+  66 0029 14       		.byte	(.L7-.L6)/2
+  67 002a 14       		.byte	(.L7-.L6)/2
+  68 002b 14       		.byte	(.L7-.L6)/2
+  69 002c 14       		.byte	(.L7-.L6)/2
+  70 002d 14       		.byte	(.L7-.L6)/2
+  71 002e 21       		.byte	(.L5-.L6)/2
+  72 002f 00       		.p2align 1
+  73              	.L4:
+ 606:Core/Src/f32f.c ****     return (uint8_t *)(&f32f_table[Char - 0x30][0]);
+ 607:Core/Src/f32f.c ****   if (Char == 0x20)
+ 608:Core/Src/f32f.c **** 	  return (uint8_t *) f32f_table2;
+ 609:Core/Src/f32f.c ****   if (Char == 0x2E)
+ 610:Core/Src/f32f.c **** 	  return (uint8_t *) f32f_table3;
+ 611:Core/Src/f32f.c ****   if (Char == 0xB0)
+ 612:Core/Src/f32f.c **** 	  return (uint8_t *) f32f_table4;
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccN6gor1.s 			page 13
 
 
-  63 0026 13       		.byte	(.L5-.L6)/2
-  64 0027 13       		.byte	(.L5-.L6)/2
-  65 0028 13       		.byte	(.L5-.L6)/2
-  66 0029 13       		.byte	(.L5-.L6)/2
-  67 002a 13       		.byte	(.L5-.L6)/2
-  68 002b 13       		.byte	(.L5-.L6)/2
-  69 002c 13       		.byte	(.L5-.L6)/2
-  70 002d 13       		.byte	(.L5-.L6)/2
-  71              		.p2align 1
-  72              	.L4:
- 567:Core/Src/f32f.c ****     return (uint8_t *)(&f32f_table[Char - 0x30][0]);
- 568:Core/Src/f32f.c ****   if (Char == 0x20)
- 569:Core/Src/f32f.c **** 	  return (uint8_t *) f32f_table2;
- 570:Core/Src/f32f.c ****   if (Char == 0x2E)
- 571:Core/Src/f32f.c **** 	  return (uint8_t *) f32f_table3;
- 572:Core/Src/f32f.c ****   if (Char == 0xB0)
- 573:Core/Src/f32f.c **** 	  return (uint8_t *) f32f_table4;
- 574:Core/Src/f32f.c ****   if (Char == 0x25)
- 575:Core/Src/f32f.c **** 	  return (uint8_t *) f32f_table5;
- 576:Core/Src/f32f.c ****   if (Char == 0x2D)
- 577:Core/Src/f32f.c **** 	  return (uint8_t *) f32f_table6;
-  73              		.loc 1 577 11 is_stmt 0 view .LVU2
-  74 002e 0020     		movs	r0, #0
-  75              	.LVL1:
-  76              		.loc 1 577 11 view .LVU3
-  77 0030 7047     		bx	lr
-  78              	.LVL2:
-  79              	.L2:
-  80              		.loc 1 577 11 view .LVU4
-  81 0032 B028     		cmp	r0, #176
-  82 0034 12D1     		bne	.L12
- 573:Core/Src/f32f.c ****   if (Char == 0x25)
-  83              		.loc 1 573 11 view .LVU5
-  84 0036 0A48     		ldr	r0, .L13
-  85              	.LVL3:
- 573:Core/Src/f32f.c ****   if (Char == 0x25)
-  86              		.loc 1 573 11 view .LVU6
-  87 0038 7047     		bx	lr
-  88              	.LVL4:
-  89              	.L5:
- 567:Core/Src/f32f.c ****     return (uint8_t *)(&f32f_table[Char - 0x30][0]);
-  90              		.loc 1 567 5 is_stmt 1 view .LVU7
- 567:Core/Src/f32f.c ****     return (uint8_t *)(&f32f_table[Char - 0x30][0]);
-  91              		.loc 1 567 41 is_stmt 0 view .LVU8
-  92 003a 3038     		subs	r0, r0, #48
-  93              	.LVL5:
- 567:Core/Src/f32f.c ****     return (uint8_t *)(&f32f_table[Char - 0x30][0]);
-  94              		.loc 1 567 12 view .LVU9
-  95 003c 00EB4010 		add	r0, r0, r0, lsl #5
-  96 0040 084B     		ldr	r3, .L13+4
-  97 0042 03EB4000 		add	r0, r3, r0, lsl #1
-  98 0046 7047     		bx	lr
-  99              	.LVL6:
- 100              	.L7:
- 571:Core/Src/f32f.c ****   if (Char == 0xB0)
- 101              		.loc 1 571 4 is_stmt 1 view .LVU10
- 571:Core/Src/f32f.c ****   if (Char == 0xB0)
-ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccTR2sLI.s 			page 13
+ 613:Core/Src/f32f.c ****   if (Char == 0x25)
+ 614:Core/Src/f32f.c **** 	  return (uint8_t *) f32f_table5;
+ 615:Core/Src/f32f.c ****   if (Char == 0x2D)
+ 616:Core/Src/f32f.c **** 	  return (uint8_t *) f32f_table6;
+ 617:Core/Src/f32f.c ****   if (Char == 0x3A)
+ 618:Core/Src/f32f.c **** 	  return (uint8_t *) f32f_table7;
+  74              		.loc 1 618 11 is_stmt 0 view .LVU2
+  75 0030 0020     		movs	r0, #0
+  76              	.LVL1:
+  77              		.loc 1 618 11 view .LVU3
+  78 0032 7047     		bx	lr
+  79              	.LVL2:
+  80              	.L2:
+  81              		.loc 1 618 11 view .LVU4
+  82 0034 B028     		cmp	r0, #176
+  83 0036 14D1     		bne	.L13
+ 612:Core/Src/f32f.c ****   if (Char == 0x25)
+  84              		.loc 1 612 11 view .LVU5
+  85 0038 0B48     		ldr	r0, .L14
+  86              	.LVL3:
+ 612:Core/Src/f32f.c ****   if (Char == 0x25)
+  87              		.loc 1 612 11 view .LVU6
+  88 003a 7047     		bx	lr
+  89              	.LVL4:
+  90              	.L7:
+ 606:Core/Src/f32f.c ****     return (uint8_t *)(&f32f_table[Char - 0x30][0]);
+  91              		.loc 1 606 5 is_stmt 1 view .LVU7
+ 606:Core/Src/f32f.c ****     return (uint8_t *)(&f32f_table[Char - 0x30][0]);
+  92              		.loc 1 606 41 is_stmt 0 view .LVU8
+  93 003c 3038     		subs	r0, r0, #48
+  94              	.LVL5:
+ 606:Core/Src/f32f.c ****     return (uint8_t *)(&f32f_table[Char - 0x30][0]);
+  95              		.loc 1 606 12 view .LVU9
+  96 003e 00EB4010 		add	r0, r0, r0, lsl #5
+  97 0042 0A4B     		ldr	r3, .L14+4
+  98 0044 03EB4000 		add	r0, r3, r0, lsl #1
+  99 0048 7047     		bx	lr
+ 100              	.LVL6:
+ 101              	.L8:
+ 610:Core/Src/f32f.c ****   if (Char == 0xB0)
+ 102              		.loc 1 610 4 is_stmt 1 view .LVU10
+ 610:Core/Src/f32f.c ****   if (Char == 0xB0)
+ 103              		.loc 1 610 11 is_stmt 0 view .LVU11
+ 104 004a 0948     		ldr	r0, .L14+8
+ 105              	.LVL7:
+ 610:Core/Src/f32f.c ****   if (Char == 0xB0)
+ 106              		.loc 1 610 11 view .LVU12
+ 107 004c 7047     		bx	lr
+ 108              	.LVL8:
+ 109              	.L10:
+ 614:Core/Src/f32f.c ****   if (Char == 0x2D)
+ 110              		.loc 1 614 4 is_stmt 1 view .LVU13
+ 614:Core/Src/f32f.c ****   if (Char == 0x2D)
+ 111              		.loc 1 614 11 is_stmt 0 view .LVU14
+ 112 004e 0948     		ldr	r0, .L14+12
+ 113              	.LVL9:
+ 614:Core/Src/f32f.c ****   if (Char == 0x2D)
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccN6gor1.s 			page 14
 
 
- 102              		.loc 1 571 11 is_stmt 0 view .LVU11
- 103 0048 0748     		ldr	r0, .L13+8
- 104              	.LVL7:
- 571:Core/Src/f32f.c ****   if (Char == 0xB0)
- 105              		.loc 1 571 11 view .LVU12
- 106 004a 7047     		bx	lr
- 107              	.LVL8:
- 108              	.L9:
- 575:Core/Src/f32f.c ****   if (Char == 0x2D)
- 109              		.loc 1 575 4 is_stmt 1 view .LVU13
- 575:Core/Src/f32f.c ****   if (Char == 0x2D)
- 110              		.loc 1 575 11 is_stmt 0 view .LVU14
- 111 004c 0748     		ldr	r0, .L13+12
- 112              	.LVL9:
- 575:Core/Src/f32f.c ****   if (Char == 0x2D)
- 113              		.loc 1 575 11 view .LVU15
- 114 004e 7047     		bx	lr
- 115              	.LVL10:
- 116              	.L8:
- 117              		.loc 1 577 4 is_stmt 1 view .LVU16
- 118              		.loc 1 577 11 is_stmt 0 view .LVU17
- 119 0050 0748     		ldr	r0, .L13+16
- 120              	.LVL11:
- 121              		.loc 1 577 11 view .LVU18
- 122 0052 7047     		bx	lr
- 123              	.LVL12:
- 124              	.L10:
- 125              		.loc 1 577 11 view .LVU19
- 126 0054 0020     		movs	r0, #0
- 127              	.LVL13:
- 128              		.loc 1 577 11 view .LVU20
- 129 0056 7047     		bx	lr
- 130              	.LVL14:
- 131              	.L11:
- 569:Core/Src/f32f.c ****   if (Char == 0x2E)
- 132              		.loc 1 569 11 view .LVU21
- 133 0058 0648     		ldr	r0, .L13+20
- 134              	.LVL15:
- 569:Core/Src/f32f.c ****   if (Char == 0x2E)
- 135              		.loc 1 569 11 view .LVU22
- 136 005a 7047     		bx	lr
- 137              	.LVL16:
- 138              	.L12:
- 139              		.loc 1 577 11 view .LVU23
- 140 005c 0020     		movs	r0, #0
- 141              	.LVL17:
- 578:Core/Src/f32f.c ****   return 0;
- 579:Core/Src/f32f.c **** }
- 142              		.loc 1 579 1 view .LVU24
- 143 005e 7047     		bx	lr
- 144              	.L14:
- 145              		.align	2
- 146              	.L13:
- 147 0060 00000000 		.word	f32f_table4
- 148 0064 00000000 		.word	f32f_table
- 149 0068 00000000 		.word	f32f_table3
- 150 006c 00000000 		.word	f32f_table5
-ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccTR2sLI.s 			page 14
+ 114              		.loc 1 614 11 view .LVU15
+ 115 0050 7047     		bx	lr
+ 116              	.LVL10:
+ 117              	.L9:
+ 616:Core/Src/f32f.c ****   if (Char == 0x3A)
+ 118              		.loc 1 616 4 is_stmt 1 view .LVU16
+ 616:Core/Src/f32f.c ****   if (Char == 0x3A)
+ 119              		.loc 1 616 11 is_stmt 0 view .LVU17
+ 120 0052 0948     		ldr	r0, .L14+16
+ 121              	.LVL11:
+ 616:Core/Src/f32f.c ****   if (Char == 0x3A)
+ 122              		.loc 1 616 11 view .LVU18
+ 123 0054 7047     		bx	lr
+ 124              	.LVL12:
+ 125              	.L5:
+ 126              		.loc 1 618 4 is_stmt 1 view .LVU19
+ 127              		.loc 1 618 11 is_stmt 0 view .LVU20
+ 128 0056 0948     		ldr	r0, .L14+20
+ 129              	.LVL13:
+ 130              		.loc 1 618 11 view .LVU21
+ 131 0058 7047     		bx	lr
+ 132              	.LVL14:
+ 133              	.L11:
+ 134              		.loc 1 618 11 view .LVU22
+ 135 005a 0020     		movs	r0, #0
+ 136              	.LVL15:
+ 137              		.loc 1 618 11 view .LVU23
+ 138 005c 7047     		bx	lr
+ 139              	.LVL16:
+ 140              	.L12:
+ 608:Core/Src/f32f.c ****   if (Char == 0x2E)
+ 141              		.loc 1 608 11 view .LVU24
+ 142 005e 0848     		ldr	r0, .L14+24
+ 143              	.LVL17:
+ 608:Core/Src/f32f.c ****   if (Char == 0x2E)
+ 144              		.loc 1 608 11 view .LVU25
+ 145 0060 7047     		bx	lr
+ 146              	.LVL18:
+ 147              	.L13:
+ 148              		.loc 1 618 11 view .LVU26
+ 149 0062 0020     		movs	r0, #0
+ 150              	.LVL19:
+ 619:Core/Src/f32f.c ****   return 0;
+ 620:Core/Src/f32f.c **** }
+ 151              		.loc 1 620 1 view .LVU27
+ 152 0064 7047     		bx	lr
+ 153              	.L15:
+ 154 0066 00BF     		.align	2
+ 155              	.L14:
+ 156 0068 00000000 		.word	f32f_table4
+ 157 006c 00000000 		.word	f32f_table
+ 158 0070 00000000 		.word	f32f_table3
+ 159 0074 00000000 		.word	f32f_table5
+ 160 0078 00000000 		.word	f32f_table6
+ 161 007c 00000000 		.word	f32f_table7
+ 162 0080 00000000 		.word	f32f_table2
+ 163              		.cfi_endproc
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccN6gor1.s 			page 15
 
 
- 151 0070 00000000 		.word	f32f_table6
- 152 0074 00000000 		.word	f32f_table2
- 153              		.cfi_endproc
- 154              	.LFE3:
- 156              		.global	f32f_table6
- 157              		.section	.rodata.f32f_table6,"a"
- 158              		.align	2
- 161              	f32f_table6:
- 162 0000 08200000 		.ascii	"\010 \000\000\000\000\000\000\000\000\000\000\000\000"
- 162      00000000 
- 162      00000000 
- 162      0000
- 163 000e 00000000 		.ascii	"\000\000\000\000\000\000\000\000\000\000\000\000\000"
- 163      00000000 
- 163      00000000 
- 163      00
- 164 001b 00000000 		.ascii	"\000\000\000\000\000\000\000\000\000\000\000\377\377"
- 164      00000000 
- 164      000000FF 
- 164      FF
- 165 0028 FFFF0000 		.ascii	"\377\377\000\000\000\000\000\000\000\000\000\000\000"
- 165      00000000 
- 165      00000000 
- 165      00
- 166 0035 00000000 		.ascii	"\000\000\000\000\000\000\000\000\000\000\000\000\000"
- 166      00000000 
- 166      00000000 
- 166      00
- 167              		.global	f32f_table5
- 168              		.section	.rodata.f32f_table5,"a"
- 169              		.align	2
- 172              	f32f_table5:
- 173 0000 0F200000 		.ascii	"\017 \000\000\000\000<\006f\006\303\014\303\014\303"
- 173      00003C06 
- 173      6606C30C 
- 173      C30CC3
- 174 000f 18C31866 		.ascii	"\030\303\030f0<0\000`\000`\000\300\000\300\001\200\001"
- 174      303C3000 
- 174      60006000 
- 174      C000C001 
- 174      8001
- 175 0021 80030003 		.ascii	"\200\003\000\003\000\006\000\006\000\014\000\014\000"
- 175      00060006 
- 175      000C000C 
+ 164              	.LFE3:
+ 166              		.global	f32f_table7
+ 167              		.section	.rodata.f32f_table7,"a"
+ 168              		.align	2
+ 171              	f32f_table7:
+ 172 0000 0F200000 		.ascii	"\017 \000\000\000\000\000\000\000\000\000\000\000\000"
+ 172      00000000 
+ 172      00000000 
+ 172      0000
+ 173 000e 00000000 		.ascii	"\000\000\000\000\017\000\017\000\017\000\017\000\000"
+ 173      0F000F00 
+ 173      0F000F00 
+ 173      00
+ 174 001b 00000000 		.ascii	"\000\000\000\000\000\000\000\000\000\000\000\017\000"
+ 174      00000000 
+ 174      0000000F 
+ 174      00
+ 175 0028 0F000F00 		.ascii	"\017\000\017\000\017\000\000\000\000\000\000\000\000"
+ 175      0F000000 
+ 175      00000000 
  175      00
- 176 002e 1838186C 		.ascii	"\0308\030l0\3060\306`\306`\306\300l\3008\000\000\000"
- 176      30C630C6 
- 176      60C660C6 
- 176      C06CC038 
- 176      000000
- 177 0041 00       		.ascii	"\000"
- 178              		.global	f32f_table4
- 179              		.section	.rodata.f32f_table4,"a"
- 180              		.align	2
- 183              	f32f_table4:
- 184 0000 0F200000 		.ascii	"\017 \000\000\000\000\000\000\000\000\007\300\037\360"
+ 176 0035 00000000 		.ascii	"\000\000\000\000\000\000\000\000\000\000\000\000\000"
+ 176      00000000 
+ 176      00000000 
+ 176      00
+ 177              		.global	f32f_table6
+ 178              		.section	.rodata.f32f_table6,"a"
+ 179              		.align	2
+ 182              	f32f_table6:
+ 183 0000 08200000 		.ascii	"\010 \000\000\000\000\000\000\000\000\000\000\000\000"
+ 183      00000000 
+ 183      00000000 
+ 183      0000
+ 184 000e 00000000 		.ascii	"\000\000\000\000\000\000\000\000\000\000\000\000\000"
  184      00000000 
-ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccTR2sLI.s 			page 15
-
-
- 184      000007C0 
- 184      1FF0
- 185 000e 3FF83C78 		.ascii	"?\370<xx<x<x<x<<x?\370\037\360\007\340\000\000\000\000"
- 185      783C783C 
- 185      783C783C 
- 185      3C783FF8 
- 185      1FF007E0 
- 186 0026 00000000 		.ascii	"\000\000\000\000\000\000\000\000\000\000\000\000\000"
+ 184      00000000 
+ 184      00
+ 185 001b 00000000 		.ascii	"\000\000\000\000\000\000\000\000\000\000\000\377\377"
+ 185      00000000 
+ 185      000000FF 
+ 185      FF
+ 186 0028 FFFF0000 		.ascii	"\377\377\000\000\000\000\000\000\000\000\000\000\000"
  186      00000000 
  186      00000000 
  186      00
- 187 0033 00000000 		.ascii	"\000\000\000\000\000\000\000\000\000\000\000\000\000"
+ 187 0035 00000000 		.ascii	"\000\000\000\000\000\000\000\000\000\000\000\000\000"
  187      00000000 
  187      00000000 
  187      00
- 188 0040 0000     		.ascii	"\000\000"
- 189              		.global	f32f_table3
- 190              		.section	.rodata.f32f_table3,"a"
- 191              		.align	2
- 194              	f32f_table3:
- 195 0000 08200000 		.ascii	"\010 \000\000\000\000\000\000\000\000\000\000\000\000"
- 195      00000000 
- 195      00000000 
- 195      0000
- 196 000e 00000000 		.ascii	"\000\000\000\000\000\000\000\000\000\000\000\000\000"
- 196      00000000 
- 196      00000000 
+ 188              		.global	f32f_table5
+ 189              		.section	.rodata.f32f_table5,"a"
+ 190              		.align	2
+ 193              	f32f_table5:
+ 194 0000 0F200000 		.ascii	"\017 \000\000\000\000<\006f\006\303\014\303\014\303"
+ 194      00003C06 
+ 194      6606C30C 
+ 194      C30CC3
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccN6gor1.s 			page 16
+
+
+ 195 000f 18C31866 		.ascii	"\030\303\030f0<0\000`\000`\000\300\000\300\001\200\001"
+ 195      303C3000 
+ 195      60006000 
+ 195      C000C001 
+ 195      8001
+ 196 0021 80030003 		.ascii	"\200\003\000\003\000\006\000\006\000\014\000\014\000"
+ 196      00060006 
+ 196      000C000C 
  196      00
- 197 001b 00000000 		.ascii	"\000\000\000\000\000\000\000\000\000\000\000\000\000"
- 197      00000000 
- 197      00000000 
- 197      00
- 198 0028 3C007E00 		.ascii	"<\000~\000~\000~\000~\000<\000\000\000\000\000\000\000"
- 198      7E007E00 
- 198      7E003C00 
- 198      00000000 
- 198      0000
- 199 003a 00000000 		.ascii	"\000\000\000\000\000\000\000\000"
- 199      00000000 
- 200              		.global	f32f_table2
- 201              		.section	.rodata.f32f_table2,"a"
- 202              		.align	2
- 205              	f32f_table2:
- 206 0000 08200000 		.ascii	"\010 \000\000\000\000\000\000\000\000\000\000\000\000"
- 206      00000000 
- 206      00000000 
- 206      0000
- 207 000e 00000000 		.ascii	"\000\000\000\000\000\000\000\000\000\000\000\000\000"
+ 197 002e 1838186C 		.ascii	"\0308\030l0\3060\306`\306`\306\300l\3008\000\000\000"
+ 197      30C630C6 
+ 197      60C660C6 
+ 197      C06CC038 
+ 197      000000
+ 198 0041 00       		.ascii	"\000"
+ 199              		.global	f32f_table4
+ 200              		.section	.rodata.f32f_table4,"a"
+ 201              		.align	2
+ 204              	f32f_table4:
+ 205 0000 0F200000 		.ascii	"\017 \000\000\000\000\000\000\000\000\007\300\037\360"
+ 205      00000000 
+ 205      000007C0 
+ 205      1FF0
+ 206 000e 3FF83C78 		.ascii	"?\370<xx<x<x<x<<x?\370\037\360\007\340\000\000\000\000"
+ 206      783C783C 
+ 206      783C783C 
+ 206      3C783FF8 
+ 206      1FF007E0 
+ 207 0026 00000000 		.ascii	"\000\000\000\000\000\000\000\000\000\000\000\000\000"
  207      00000000 
  207      00000000 
  207      00
- 208 001b 00000000 		.ascii	"\000\000\000\000\000\000\000\000\000\000\000\000\000"
+ 208 0033 00000000 		.ascii	"\000\000\000\000\000\000\000\000\000\000\000\000\000"
  208      00000000 
  208      00000000 
  208      00
- 209 0028 00000000 		.ascii	"\000\000\000\000\000\000\000\000\000\000\000\000\000"
- 209      00000000 
-ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccTR2sLI.s 			page 16
-
-
- 209      00000000 
- 209      00
- 210 0035 00000000 		.ascii	"\000\000\000\000\000\000\000\000\000\000\000\000\000"
- 210      00000000 
- 210      00000000 
- 210      00
- 211              		.global	f32f_table
- 212              		.section	.rodata.f32f_table,"a"
- 213              		.align	2
- 216              	f32f_table:
- 217 0000 0F200000 		.ascii	"\017 \000\000\000\000\000\000\000\000\000\000\007\300"
+ 209 0040 0000     		.ascii	"\000\000"
+ 210              		.global	f32f_table3
+ 211              		.section	.rodata.f32f_table3,"a"
+ 212              		.align	2
+ 215              	f32f_table3:
+ 216 0000 08200000 		.ascii	"\010 \000\000\000\000\000\000\000\000\000\000\000\000"
+ 216      00000000 
+ 216      00000000 
+ 216      0000
+ 217 000e 00000000 		.ascii	"\000\000\000\000\000\000\000\000\000\000\000\000\000"
  217      00000000 
  217      00000000 
- 217      07C0
- 218 000e 1FF01FF0 		.ascii	"\037\360\037\360<x<xx<x<x<x<x<x<x<x<x<x<<x<x\037\360"
- 218      3C783C78 
- 218      783C783C 
- 218      783C783C 
- 218      783C783C 
- 219 0030 1FF007C0 		.ascii	"\037\360\007\300\000\000\000\000\000\000\000\000\000"
+ 217      00
+ 218 001b 00000000 		.ascii	"\000\000\000\000\000\000\000\000\000\000\000\000\000"
+ 218      00000000 
+ 218      00000000 
+ 218      00
+ 219 0028 3C007E00 		.ascii	"<\000~\000~\000~\000~\000<\000\000\000\000\000\000\000"
+ 219      7E007E00 
+ 219      7E003C00 
  219      00000000 
- 219      00000000 
- 219      00
- 220 003d 00000000 		.ascii	"\000\000\000\000\000"
- 220      00
- 221 0042 0C200000 		.ascii	"\014 \000\000\000\000\000\000\000\000\000\000\000\340"
- 221      00000000 
- 221      00000000 
- 221      00E0
- 222 0050 01E003E0 		.ascii	"\001\340\003\340\007\340\037\340?\340=\3409\340!\340"
- 222      07E01FE0 
- 222      3FE03DE0 
- 222      39E021E0 
- 223 0060 01E001E0 		.ascii	"\001\340\001\340\001\340\001\340\001\340\001\340\001"
- 223      01E001E0 
- 223      01E001E0 
- 223      01
- 224 006d E001E001 		.ascii	"\340\001\340\001\340\001\340\001\340\000\000\000\000"
- 224      E001E001 
- 224      E0000000 
- 224      00
- 225 007a 00000000 		.ascii	"\000\000\000\000\000\000\000\000\000\000"
- 225      00000000 
- 225      0000
- 226 0084 0F200000 		.ascii	"\017 \000\000\000\000\000\000\000\000\000\000\007\340"
- 226      00000000 
- 226      00000000 
- 226      07E0
- 227 0092 1FF03FF8 		.ascii	"\037\360?\370<|x<x<\000<\000<\000x\000\370\001\360\003"
- 227      3C7C783C 
- 227      783C003C 
- 227      003C0078 
- 227      00F801F0 
- 228 00a7 E007C00F 		.ascii	"\340\007\300\017\200\037\000\036\000<\000?\374\177\374"
- 228      801F001E 
- 228      003C003F 
- 228      FC7FFC
-ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccTR2sLI.s 			page 17
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccN6gor1.s 			page 17
 
 
- 229 00b6 7FFC0000 		.ascii	"\177\374\000\000\000\000\000\000\000\000\000\000\000"
+ 219      0000
+ 220 003a 00000000 		.ascii	"\000\000\000\000\000\000\000\000"
+ 220      00000000 
+ 221              		.global	f32f_table2
+ 222              		.section	.rodata.f32f_table2,"a"
+ 223              		.align	2
+ 226              	f32f_table2:
+ 227 0000 08200000 		.ascii	"\010 \000\000\000\000\000\000\000\000\000\000\000\000"
+ 227      00000000 
+ 227      00000000 
+ 227      0000
+ 228 000e 00000000 		.ascii	"\000\000\000\000\000\000\000\000\000\000\000\000\000"
+ 228      00000000 
+ 228      00000000 
+ 228      00
+ 229 001b 00000000 		.ascii	"\000\000\000\000\000\000\000\000\000\000\000\000\000"
  229      00000000 
  229      00000000 
  229      00
- 230 00c3 000000   		.ascii	"\000\000\000"
- 231 00c6 0F200000 		.ascii	"\017 \000\000\000\000\000\000\000\000\000\000\017\300"
+ 230 0028 00000000 		.ascii	"\000\000\000\000\000\000\000\000\000\000\000\000\000"
+ 230      00000000 
+ 230      00000000 
+ 230      00
+ 231 0035 00000000 		.ascii	"\000\000\000\000\000\000\000\000\000\000\000\000\000"
  231      00000000 
  231      00000000 
- 231      0FC0
- 232 00d4 1FE03FF0 		.ascii	"\037\340?\360|\370xx\000x\000\360\003\360\003\300\003"
- 232      7CF87878 
- 232      007800F0 
- 232      03F003C0 
- 232      03
- 233 00e5 F0007800 		.ascii	"\360\000x\000<\000<\000<x<x<<x?\370\037\360\007\300"
- 233      3C003C00 
- 233      3C783C78 
- 233      3C3C783F 
- 233      F81FF007 
- 234 00fa 00000000 		.ascii	"\000\000\000\000\000\000\000\000\000\000\000\000\000"
- 234      00000000 
- 234      00000000 
- 234      00
- 235 0107 00       		.ascii	"\000"
- 236 0108 10200000 		.ascii	"\020 \000\000\000\000\000\000\000\000\000\000\000x\000"
- 236      00000000 
- 236      00000000 
- 236      007800
- 237 0117 7800F801 		.ascii	"x\000\370\001\370\001\370\003\370\007x\007x\016x\034"
- 237      F801F803 
- 237      F8077807 
- 237      780E781C 
- 238 0127 781C7838 		.ascii	"x\034x8xpx\177\376\177\376\177\376\000x\000x\000x\000"
- 238      7870787F 
- 238      FE7FFE7F 
- 238      FE007800 
- 238      78007800 
- 239 013b 78000000 		.ascii	"x\000\000\000\000\000\000\000\000\000\000\000\000\000"
- 239      00000000 
- 239      00000000 
- 239      0000
- 240 0149 00       		.ascii	"\000"
- 241 014a 0F200000 		.ascii	"\017 \000\000\000\000\000\000\000\000\000\000\037\370"
- 241      00000000 
- 241      00000000 
- 241      1FF8
- 242 0158 1FF83FF8 		.ascii	"\037\370?\370<\0008\0008\000;\340\177\360\177\370xx"
- 242      3C003800 
- 242      38003BE0 
- 242      7FF07FF8 
- 242      7878
- 243 016a 003C003C 		.ascii	"\000<\000<\000<\000<\000<x<|x?\360\037\360\017\300\000"
- 243      003C003C 
- 243      003C783C 
- 243      7C783FF0 
- 243      1FF00FC0 
- 244 017f 00000000 		.ascii	"\000\000\000\000\000\000\000\000\000\000\000\000\000"
-ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccTR2sLI.s 			page 18
+ 231      00
+ 232              		.global	f32f_table
+ 233              		.section	.rodata.f32f_table,"a"
+ 234              		.align	2
+ 237              	f32f_table:
+ 238 0000 0F200000 		.ascii	"\017 \000\000\000\000\000\000\000\000\000\000\007\300"
+ 238      00000000 
+ 238      00000000 
+ 238      07C0
+ 239 000e 1FF01FF0 		.ascii	"\037\360\037\360<x<xx<x<x<x<x<x<x<x<x<x<<x<x\037\360"
+ 239      3C783C78 
+ 239      783C783C 
+ 239      783C783C 
+ 239      783C783C 
+ 240 0030 1FF007C0 		.ascii	"\037\360\007\300\000\000\000\000\000\000\000\000\000"
+ 240      00000000 
+ 240      00000000 
+ 240      00
+ 241 003d 00000000 		.ascii	"\000\000\000\000\000"
+ 241      00
+ 242 0042 0C200000 		.ascii	"\014 \000\000\000\000\000\000\000\000\000\000\000\340"
+ 242      00000000 
+ 242      00000000 
+ 242      00E0
+ 243 0050 01E003E0 		.ascii	"\001\340\003\340\007\340\037\340?\340=\3409\340!\340"
+ 243      07E01FE0 
+ 243      3FE03DE0 
+ 243      39E021E0 
+ 244 0060 01E001E0 		.ascii	"\001\340\001\340\001\340\001\340\001\340\001\340\001"
+ 244      01E001E0 
+ 244      01E001E0 
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccN6gor1.s 			page 18
 
 
- 244      00000000 
- 244      00000000 
- 244      00
- 245 018c 0F200000 		.ascii	"\017 \000\000\000\000\000\000\000\000\000\000\003\340"
- 245      00000000 
- 245      00000000 
- 245      03E0
- 246 019a 0FF01FF8 		.ascii	"\017\360\037\370<|<<8\000x\000{\340\177\360\177\370"
- 246      3C7C3C3C 
- 246      38007800 
- 246      7BE07FF0 
- 246      7FF8
- 247 01ac 7C78783C 		.ascii	"|xx<x<x<x<8<<x\037\370\017\360\007\300\000\000\000\000"
- 247      783C783C 
- 247      783C383C 
- 247      3C781FF8 
- 247      0FF007C0 
- 248 01c4 00000000 		.ascii	"\000\000\000\000\000\000\000\000\000\000"
- 248      00000000 
- 248      0000
- 249 01ce 0F200000 		.ascii	"\017 \000\000\000\000\000\000\000\000\000\000\177\374"
- 249      00000000 
- 249      00000000 
- 249      7FFC
- 250 01dc 7FFC7FFC 		.ascii	"\177\374\177\374\000|\000\370\000\360\001\340\003\340"
- 250      007C00F8 
- 250      00F001E0 
- 250      03E0
- 251 01ea 03C007C0 		.ascii	"\003\300\007\300\007\200\007\200\017\000\017\000\017"
- 251      07800780 
- 251      0F000F00 
- 251      0F
- 252 01f7 000F001E 		.ascii	"\000\017\000\036\000\036\000\036\000\036\000\000\000"
- 252      001E001E 
- 252      001E0000 
- 252      00
- 253 0204 00000000 		.ascii	"\000\000\000\000\000\000\000\000\000\000\000\000"
- 253      00000000 
- 253      00000000 
- 254 0210 0F200000 		.ascii	"\017 \000\000\000\000\000\000\000\000\000\000\017\340"
- 254      00000000 
- 254      00000000 
- 254      0FE0
- 255 021e 1FF03FF8 		.ascii	"\037\360?\370||x<x<x<<x\037\360\017\340\037\360<xx<"
- 255      7C7C783C 
- 255      783C783C 
- 255      3C781FF0 
- 255      0FE01FF0 
- 256 0236 783C783C 		.ascii	"x<x<x<||?\370\037\360\007\300\000\000\000\000\000\000"
- 256      783C7C7C 
- 256      3FF81FF0 
- 256      07C00000 
- 256      00000000 
- 257 024a 00000000 		.ascii	"\000\000\000\000\000\000\000\000"
+ 244      01
+ 245 006d E001E001 		.ascii	"\340\001\340\001\340\001\340\001\340\000\000\000\000"
+ 245      E001E001 
+ 245      E0000000 
+ 245      00
+ 246 007a 00000000 		.ascii	"\000\000\000\000\000\000\000\000\000\000"
+ 246      00000000 
+ 246      0000
+ 247 0084 0F200000 		.ascii	"\017 \000\000\000\000\000\000\000\000\000\000\007\340"
+ 247      00000000 
+ 247      00000000 
+ 247      07E0
+ 248 0092 1FF03FF8 		.ascii	"\037\360?\370<|x<x<\000<\000<\000x\000\370\001\360\003"
+ 248      3C7C783C 
+ 248      783C003C 
+ 248      003C0078 
+ 248      00F801F0 
+ 249 00a7 E007C00F 		.ascii	"\340\007\300\017\200\037\000\036\000<\000?\374\177\374"
+ 249      801F001E 
+ 249      003C003F 
+ 249      FC7FFC
+ 250 00b6 7FFC0000 		.ascii	"\177\374\000\000\000\000\000\000\000\000\000\000\000"
+ 250      00000000 
+ 250      00000000 
+ 250      00
+ 251 00c3 000000   		.ascii	"\000\000\000"
+ 252 00c6 0F200000 		.ascii	"\017 \000\000\000\000\000\000\000\000\000\000\017\300"
+ 252      00000000 
+ 252      00000000 
+ 252      0FC0
+ 253 00d4 1FE03FF0 		.ascii	"\037\340?\360|\370xx\000x\000\360\003\360\003\300\003"
+ 253      7CF87878 
+ 253      007800F0 
+ 253      03F003C0 
+ 253      03
+ 254 00e5 F0007800 		.ascii	"\360\000x\000<\000<\000<x<x<<x?\370\037\360\007\300"
+ 254      3C003C00 
+ 254      3C783C78 
+ 254      3C3C783F 
+ 254      F81FF007 
+ 255 00fa 00000000 		.ascii	"\000\000\000\000\000\000\000\000\000\000\000\000\000"
+ 255      00000000 
+ 255      00000000 
+ 255      00
+ 256 0107 00       		.ascii	"\000"
+ 257 0108 10200000 		.ascii	"\020 \000\000\000\000\000\000\000\000\000\000\000x\000"
  257      00000000 
- 258 0252 0F200000 		.ascii	"\017 \000\000\000\000\000\000\000\000\000\000\007\300"
- 258      00000000 
-ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccTR2sLI.s 			page 19
+ 257      00000000 
+ 257      007800
+ 258 0117 7800F801 		.ascii	"x\000\370\001\370\001\370\003\370\007x\007x\016x\034"
+ 258      F801F803 
+ 258      F8077807 
+ 258      780E781C 
+ 259 0127 781C7838 		.ascii	"x\034x8xpx\177\376\177\376\177\376\000x\000x\000x\000"
+ 259      7870787F 
+ 259      FE7FFE7F 
+ 259      FE007800 
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccN6gor1.s 			page 19
 
 
- 258      00000000 
- 258      07C0
- 259 0260 1FE03FF0 		.ascii	"\037\340?\360<xx8x<x<x<x<<|?\374\037\374\017\274\000"
- 259      3C787838 
- 259      783C783C 
- 259      783C783C 
- 259      3C7C3FFC 
- 260 0279 3C003878 		.ascii	"<\0008xx|x?\360?\340\017\200\000\000\000\000\000\000"
- 260      787C783F 
- 260      F03FE00F 
- 260      80000000 
- 260      000000
- 261 028c 00000000 		.ascii	"\000\000\000\000\000\000\000\000"
- 261      00000000 
- 262              		.text
- 263              	.Letext0:
- 264              		.file 2 "C:/Users/kroko/AppData/Roaming/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-to
- 265              		.file 3 "C:/Users/kroko/AppData/Roaming/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-to
-ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccTR2sLI.s 			page 20
+ 259      78007800 
+ 260 013b 78000000 		.ascii	"x\000\000\000\000\000\000\000\000\000\000\000\000\000"
+ 260      00000000 
+ 260      00000000 
+ 260      0000
+ 261 0149 00       		.ascii	"\000"
+ 262 014a 0F200000 		.ascii	"\017 \000\000\000\000\000\000\000\000\000\000\037\370"
+ 262      00000000 
+ 262      00000000 
+ 262      1FF8
+ 263 0158 1FF83FF8 		.ascii	"\037\370?\370<\0008\0008\000;\340\177\360\177\370xx"
+ 263      3C003800 
+ 263      38003BE0 
+ 263      7FF07FF8 
+ 263      7878
+ 264 016a 003C003C 		.ascii	"\000<\000<\000<\000<\000<x<|x?\360\037\360\017\300\000"
+ 264      003C003C 
+ 264      003C783C 
+ 264      7C783FF0 
+ 264      1FF00FC0 
+ 265 017f 00000000 		.ascii	"\000\000\000\000\000\000\000\000\000\000\000\000\000"
+ 265      00000000 
+ 265      00000000 
+ 265      00
+ 266 018c 0F200000 		.ascii	"\017 \000\000\000\000\000\000\000\000\000\000\003\340"
+ 266      00000000 
+ 266      00000000 
+ 266      03E0
+ 267 019a 0FF01FF8 		.ascii	"\017\360\037\370<|<<8\000x\000{\340\177\360\177\370"
+ 267      3C7C3C3C 
+ 267      38007800 
+ 267      7BE07FF0 
+ 267      7FF8
+ 268 01ac 7C78783C 		.ascii	"|xx<x<x<x<8<<x\037\370\017\360\007\300\000\000\000\000"
+ 268      783C783C 
+ 268      783C383C 
+ 268      3C781FF8 
+ 268      0FF007C0 
+ 269 01c4 00000000 		.ascii	"\000\000\000\000\000\000\000\000\000\000"
+ 269      00000000 
+ 269      0000
+ 270 01ce 0F200000 		.ascii	"\017 \000\000\000\000\000\000\000\000\000\000\177\374"
+ 270      00000000 
+ 270      00000000 
+ 270      7FFC
+ 271 01dc 7FFC7FFC 		.ascii	"\177\374\177\374\000|\000\370\000\360\001\340\003\340"
+ 271      007C00F8 
+ 271      00F001E0 
+ 271      03E0
+ 272 01ea 03C007C0 		.ascii	"\003\300\007\300\007\200\007\200\017\000\017\000\017"
+ 272      07800780 
+ 272      0F000F00 
+ 272      0F
+ 273 01f7 000F001E 		.ascii	"\000\017\000\036\000\036\000\036\000\036\000\000\000"
+ 273      001E001E 
+ 273      001E0000 
+ 273      00
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccN6gor1.s 			page 20
+
+
+ 274 0204 00000000 		.ascii	"\000\000\000\000\000\000\000\000\000\000\000\000"
+ 274      00000000 
+ 274      00000000 
+ 275 0210 0F200000 		.ascii	"\017 \000\000\000\000\000\000\000\000\000\000\017\340"
+ 275      00000000 
+ 275      00000000 
+ 275      0FE0
+ 276 021e 1FF03FF8 		.ascii	"\037\360?\370||x<x<x<<x\037\360\017\340\037\360<xx<"
+ 276      7C7C783C 
+ 276      783C783C 
+ 276      3C781FF0 
+ 276      0FE01FF0 
+ 277 0236 783C783C 		.ascii	"x<x<x<||?\370\037\360\007\300\000\000\000\000\000\000"
+ 277      783C7C7C 
+ 277      3FF81FF0 
+ 277      07C00000 
+ 277      00000000 
+ 278 024a 00000000 		.ascii	"\000\000\000\000\000\000\000\000"
+ 278      00000000 
+ 279 0252 0F200000 		.ascii	"\017 \000\000\000\000\000\000\000\000\000\000\007\300"
+ 279      00000000 
+ 279      00000000 
+ 279      07C0
+ 280 0260 1FE03FF0 		.ascii	"\037\340?\360<xx8x<x<x<x<<|?\374\037\374\017\274\000"
+ 280      3C787838 
+ 280      783C783C 
+ 280      783C783C 
+ 280      3C7C3FFC 
+ 281 0279 3C003878 		.ascii	"<\0008xx|x?\360?\340\017\200\000\000\000\000\000\000"
+ 281      787C783F 
+ 281      F03FE00F 
+ 281      80000000 
+ 281      000000
+ 282 028c 00000000 		.ascii	"\000\000\000\000\000\000\000\000"
+ 282      00000000 
+ 283              		.text
+ 284              	.Letext0:
+ 285              		.file 2 "C:/Users/kroko/AppData/Roaming/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-to
+ 286              		.file 3 "C:/Users/kroko/AppData/Roaming/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-to
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccN6gor1.s 			page 21
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 f32f.c
-C:\Users\kroko\AppData\Local\Temp\ccTR2sLI.s:21     .text.f32f_GetCharTable:00000000 $t
-C:\Users\kroko\AppData\Local\Temp\ccTR2sLI.s:27     .text.f32f_GetCharTable:00000000 f32f_GetCharTable
-C:\Users\kroko\AppData\Local\Temp\ccTR2sLI.s:45     .text.f32f_GetCharTable:00000014 $d
-C:\Users\kroko\AppData\Local\Temp\ccTR2sLI.s:71     .text.f32f_GetCharTable:0000002e $t
-C:\Users\kroko\AppData\Local\Temp\ccTR2sLI.s:147    .text.f32f_GetCharTable:00000060 $d
-C:\Users\kroko\AppData\Local\Temp\ccTR2sLI.s:183    .rodata.f32f_table4:00000000 f32f_table4
-C:\Users\kroko\AppData\Local\Temp\ccTR2sLI.s:216    .rodata.f32f_table:00000000 f32f_table
-C:\Users\kroko\AppData\Local\Temp\ccTR2sLI.s:194    .rodata.f32f_table3:00000000 f32f_table3
-C:\Users\kroko\AppData\Local\Temp\ccTR2sLI.s:172    .rodata.f32f_table5:00000000 f32f_table5
-C:\Users\kroko\AppData\Local\Temp\ccTR2sLI.s:161    .rodata.f32f_table6:00000000 f32f_table6
-C:\Users\kroko\AppData\Local\Temp\ccTR2sLI.s:205    .rodata.f32f_table2:00000000 f32f_table2
-C:\Users\kroko\AppData\Local\Temp\ccTR2sLI.s:158    .rodata.f32f_table6:00000000 $d
-C:\Users\kroko\AppData\Local\Temp\ccTR2sLI.s:169    .rodata.f32f_table5:00000000 $d
-C:\Users\kroko\AppData\Local\Temp\ccTR2sLI.s:180    .rodata.f32f_table4:00000000 $d
-C:\Users\kroko\AppData\Local\Temp\ccTR2sLI.s:191    .rodata.f32f_table3:00000000 $d
-C:\Users\kroko\AppData\Local\Temp\ccTR2sLI.s:202    .rodata.f32f_table2:00000000 $d
-C:\Users\kroko\AppData\Local\Temp\ccTR2sLI.s:213    .rodata.f32f_table:00000000 $d
+C:\Users\kroko\AppData\Local\Temp\ccN6gor1.s:21     .text.f32f_GetCharTable:00000000 $t
+C:\Users\kroko\AppData\Local\Temp\ccN6gor1.s:27     .text.f32f_GetCharTable:00000000 f32f_GetCharTable
+C:\Users\kroko\AppData\Local\Temp\ccN6gor1.s:45     .text.f32f_GetCharTable:00000014 $d
+C:\Users\kroko\AppData\Local\Temp\ccN6gor1.s:156    .text.f32f_GetCharTable:00000068 $d
+C:\Users\kroko\AppData\Local\Temp\ccN6gor1.s:204    .rodata.f32f_table4:00000000 f32f_table4
+C:\Users\kroko\AppData\Local\Temp\ccN6gor1.s:237    .rodata.f32f_table:00000000 f32f_table
+C:\Users\kroko\AppData\Local\Temp\ccN6gor1.s:215    .rodata.f32f_table3:00000000 f32f_table3
+C:\Users\kroko\AppData\Local\Temp\ccN6gor1.s:193    .rodata.f32f_table5:00000000 f32f_table5
+C:\Users\kroko\AppData\Local\Temp\ccN6gor1.s:182    .rodata.f32f_table6:00000000 f32f_table6
+C:\Users\kroko\AppData\Local\Temp\ccN6gor1.s:171    .rodata.f32f_table7:00000000 f32f_table7
+C:\Users\kroko\AppData\Local\Temp\ccN6gor1.s:226    .rodata.f32f_table2:00000000 f32f_table2
+C:\Users\kroko\AppData\Local\Temp\ccN6gor1.s:168    .rodata.f32f_table7:00000000 $d
+C:\Users\kroko\AppData\Local\Temp\ccN6gor1.s:179    .rodata.f32f_table6:00000000 $d
+C:\Users\kroko\AppData\Local\Temp\ccN6gor1.s:190    .rodata.f32f_table5:00000000 $d
+C:\Users\kroko\AppData\Local\Temp\ccN6gor1.s:201    .rodata.f32f_table4:00000000 $d
+C:\Users\kroko\AppData\Local\Temp\ccN6gor1.s:212    .rodata.f32f_table3:00000000 $d
+C:\Users\kroko\AppData\Local\Temp\ccN6gor1.s:223    .rodata.f32f_table2:00000000 $d
+C:\Users\kroko\AppData\Local\Temp\ccN6gor1.s:234    .rodata.f32f_table:00000000 $d
+C:\Users\kroko\AppData\Local\Temp\ccN6gor1.s:72     .text.f32f_GetCharTable:0000002f $d
+C:\Users\kroko\AppData\Local\Temp\ccN6gor1.s:72     .text.f32f_GetCharTable:00000030 $t
 
 NO UNDEFINED SYMBOLS

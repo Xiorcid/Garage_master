@@ -45,6 +45,8 @@ typedef struct _Device{
   UART_HandleTypeDef* uart;
   bool initState;
   uint8_t deviceMode;
+  GPIO_TypeDef* RSTport;
+  uint16_t RSTpin;
   double currentValue;
   double setValue;
   double minValue;
@@ -77,8 +79,6 @@ void Error_Handler(void);
 /* USER CODE END EFP */
 
 /* Private defines -----------------------------------------------------------*/
-#define LED_Pin GPIO_PIN_13
-#define LED_GPIO_Port GPIOC
 #define DEV0_RST_Pin GPIO_PIN_0
 #define DEV0_RST_GPIO_Port GPIOC
 #define SPI2_CS_Pin GPIO_PIN_1
@@ -89,15 +89,17 @@ void Error_Handler(void);
 #define DC_GPIO_Port GPIOC
 #define DEV1_RST_Pin GPIO_PIN_0
 #define DEV1_RST_GPIO_Port GPIOB
+#define DEV2_RST_Pin GPIO_PIN_1
+#define DEV2_RST_GPIO_Port GPIOB
+#define BL_EN_Pin GPIO_PIN_8
+#define BL_EN_GPIO_Port GPIOC
 #define DEV3_RST_Pin GPIO_PIN_2
 #define DEV3_RST_GPIO_Port GPIOD
-#define ENC_KEY_Pin GPIO_PIN_7
-#define ENC_KEY_GPIO_Port GPIOB
-#define ENC_S2_Pin GPIO_PIN_8
-#define ENC_S2_GPIO_Port GPIOB
-#define ENC_S1_Pin GPIO_PIN_9
-#define ENC_S1_GPIO_Port GPIOB
-#define ENC_S1_EXTI_IRQn EXTI9_5_IRQn
+#define TP_RST_Pin GPIO_PIN_8
+#define TP_RST_GPIO_Port GPIOB
+#define TP_INT_Pin GPIO_PIN_9
+#define TP_INT_GPIO_Port GPIOB
+#define TP_INT_EXTI_IRQn EXTI9_5_IRQn
 
 /* USER CODE BEGIN Private defines */
 

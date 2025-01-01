@@ -38,6 +38,8 @@ typedef union
 #define MAGENTA  0xF81F
 #define YELLOW   0xFFE0 
 #define WHITE    0xFFFF
+#define ORANGE	 0xFDA0
+#define GRAY	 0x8410
 
 
 void dispcolor_Init(uint8_t Width, uint8_t Height);

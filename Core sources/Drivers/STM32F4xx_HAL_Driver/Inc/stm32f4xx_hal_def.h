@@ -32,9 +32,9 @@
 
 /* Exported types ------------------------------------------------------------*/
 
-/** 
-  * @brief  HAL Status structures definition  
-  */  
+// /** 
+//   * @brief  HAL Status structures definition  
+//   */  
 // typedef enum 
 // {
 //   HAL_OK       = 0x00U,

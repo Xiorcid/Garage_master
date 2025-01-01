@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccjOOx2b.s 			page 1
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccVEzPpl.s 			page 1
 
 
    1              		.cpu cortex-m4
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccjOOx2b.s 			page 1
   36 0000 B0F90030 		ldrsh	r3, [r0]
   37              	.LVL1:
   21:Core/Src/dispcolor.c **** 	*pValue1 = *pValue2;
-ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccjOOx2b.s 			page 2
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccVEzPpl.s 			page 2
 
 
   38              		.loc 1 21 2 is_stmt 1 view .LVU3
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccjOOx2b.s 			page 1
   77              		.align	1
   78              		.global	dispcolor_SetBrightness
   79              		.syntax unified
-ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccjOOx2b.s 			page 3
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccVEzPpl.s 			page 3
 
 
   80              		.thumb
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccjOOx2b.s 			page 1
  126 0000 08B5     		push	{r3, lr}
  127              		.cfi_def_cfa_offset 8
  128              		.cfi_offset 3, -8
-ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccjOOx2b.s 			page 4
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccVEzPpl.s 			page 4
 
 
  129              		.cfi_offset 14, -4
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccjOOx2b.s 			page 1
  157              		.cfi_offset 7, -24
  158              		.cfi_offset 8, -20
  159              		.cfi_offset 9, -16
-ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccjOOx2b.s 			page 5
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccVEzPpl.s 			page 5
 
 
  160              		.cfi_offset 10, -12
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccjOOx2b.s 			page 1
  210              	.L12:
  211              	.LVL15:
   83:Core/Src/dispcolor.c **** 
-ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccjOOx2b.s 			page 6
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccVEzPpl.s 			page 6
 
 
   84:Core/Src/dispcolor.c **** 	int16_t error = deltaX - deltaY;
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccjOOx2b.s 			page 1
  256              		.loc 1 90 3 view .LVU51
  257              		.loc 1 90 32 is_stmt 0 view .LVU52
  258 006c A2B2     		uxth	r2, r4
-ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccjOOx2b.s 			page 7
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccVEzPpl.s 			page 7
 
 
  259 006e 5300     		lsls	r3, r2, #1
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccjOOx2b.s 			page 1
  305              	.LVL32:
  306              	.L13:
  307              		.loc 1 98 7 view .LVU71
-ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccjOOx2b.s 			page 8
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccVEzPpl.s 			page 8
 
 
  308              	.LBE2:
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccjOOx2b.s 			page 1
  128:Core/Src/dispcolor.c **** 	const int16_t signX = x1 < x2 ? 1 : -1;
  129:Core/Src/dispcolor.c **** 	const int16_t signY = y1 < y2 ? 1 : -1;
  130:Core/Src/dispcolor.c **** 
-ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccjOOx2b.s 			page 9
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccVEzPpl.s 			page 9
 
 
  131:Core/Src/dispcolor.c **** 	int16_t error = deltaX - deltaY;
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccjOOx2b.s 			page 1
  185:Core/Src/dispcolor.c **** float rfpart(float x) {
  186:Core/Src/dispcolor.c **** 	return 1 - fpart(x);
  187:Core/Src/dispcolor.c **** }
-ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccjOOx2b.s 			page 10
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccVEzPpl.s 			page 10
 
 
  188:Core/Src/dispcolor.c **** 
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccjOOx2b.s 			page 1
  242:Core/Src/dispcolor.c **** 	// main loop
  243:Core/Src/dispcolor.c **** 	if (steep) {
  244:Core/Src/dispcolor.c **** 		for (int16_t x = xpxl1 + 1; x <= xpxl2 - 1; x++) {
-ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccjOOx2b.s 			page 11
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccVEzPpl.s 			page 11
 
 
  245:Core/Src/dispcolor.c **** 			DrawPixel(ipart(intery), x, color, rfpart(intery));
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccjOOx2b.s 			page 1
  299:Core/Src/dispcolor.c **** 	dispcolor_DrawLine(x0, y0, x1, y1, color);
  300:Core/Src/dispcolor.c **** 	dispcolor_DrawLine(x1, y1, x2, y2, color);
  301:Core/Src/dispcolor.c **** 	dispcolor_DrawLine(x2, y2, x0, y0, color);
-ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccjOOx2b.s 			page 12
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccVEzPpl.s 			page 12
 
 
  302:Core/Src/dispcolor.c **** }
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccjOOx2b.s 			page 1
  356:Core/Src/dispcolor.c **** 		last = y1; // Include y1 scanline
  357:Core/Src/dispcolor.c **** 	else
  358:Core/Src/dispcolor.c **** 		last = y1 - 1; // Skip it
-ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccjOOx2b.s 			page 13
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccVEzPpl.s 			page 13
 
 
  359:Core/Src/dispcolor.c **** 
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccjOOx2b.s 			page 1
  413:Core/Src/dispcolor.c **** 		if (delta > 0 && error > 0) {
  414:Core/Src/dispcolor.c **** 			--y;
  415:Core/Src/dispcolor.c **** 			delta += 1 - 2 * y;
-ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccjOOx2b.s 			page 14
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccVEzPpl.s 			page 14
 
 
  416:Core/Src/dispcolor.c **** 			continue;
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccjOOx2b.s 			page 1
  470:Core/Src/dispcolor.c **** 		uint16_t color) {
  471:Core/Src/dispcolor.c **** 	int x = 0;
  472:Core/Src/dispcolor.c **** 	int y = radius;
-ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccjOOx2b.s 			page 15
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccVEzPpl.s 			page 15
 
 
  473:Core/Src/dispcolor.c **** 	int delta = 1 - 2 * radius;
@@ -898,7 +898,7 @@ ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccjOOx2b.s 			page 1
  527:Core/Src/dispcolor.c **** 		else
  528:Core/Src/dispcolor.c **** 			dispcolor_DrawLine(xLast, yLast, x, y, color);
  529:Core/Src/dispcolor.c **** 
-ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccjOOx2b.s 			page 16
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccVEzPpl.s 			page 16
 
 
  530:Core/Src/dispcolor.c **** 		xLast = x;
@@ -958,7 +958,7 @@ ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccjOOx2b.s 			page 1
  351 0006 8046     		mov	r8, r0
  352 0008 8946     		mov	r9, r1
  353 000a 1446     		mov	r4, r2
-ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccjOOx2b.s 			page 17
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccVEzPpl.s 			page 17
 
 
  354 000c 0392     		str	r2, [sp, #12]
@@ -1018,7 +1018,7 @@ ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccjOOx2b.s 			page 1
  580:Core/Src/dispcolor.c **** 		}
  581:Core/Src/dispcolor.c **** 	} else {
  582:Core/Src/dispcolor.c **** 		for (uint8_t row = 0; row < CharHeight; row++) {
-ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccjOOx2b.s 			page 18
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccVEzPpl.s 			page 18
 
 
  394              		.loc 1 582 16 view .LVU92
@@ -1078,7 +1078,7 @@ ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccjOOx2b.s 			page 1
  435              		.loc 1 577 10 is_stmt 1 view .LVU106
  577:Core/Src/dispcolor.c **** 					dispcolor_DrawPixel(X + col, Y + row, BgColor);
  436              		.loc 1 577 13 is_stmt 0 view .LVU107
-ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccjOOx2b.s 			page 19
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccVEzPpl.s 			page 19
 
 
  437 0068 002F     		cmp	r7, #0
@@ -1138,7 +1138,7 @@ ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccjOOx2b.s 			page 1
  479              	.LBE6:
  480              	.LBB9:
  481              	.LBB4:
-ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccjOOx2b.s 			page 20
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccVEzPpl.s 			page 20
 
 
  583:Core/Src/dispcolor.c **** 			for (uint8_t col = 0; col < CharWidth; col++) {
@@ -1198,7 +1198,7 @@ ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccjOOx2b.s 			page 1
  523 00d2 04EB0800 		add	r0, r4, r8
  524              		.loc 1 591 38 view .LVU137
  525 00d6 0BEB0901 		add	r1, fp, r9
-ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccjOOx2b.s 			page 21
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccVEzPpl.s 			page 21
 
 
  526              		.loc 1 591 7 view .LVU138
@@ -1258,7 +1258,7 @@ ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccjOOx2b.s 			page 1
  568 010e 019A     		ldr	r2, [sp, #4]
  569 0110 09B2     		sxth	r1, r1
  570 0112 00B2     		sxth	r0, r0
-ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccjOOx2b.s 			page 22
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccVEzPpl.s 			page 22
 
 
  571 0114 FFF7FEFF 		bl	dispcolor_DrawPixel
@@ -1318,7 +1318,7 @@ ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccjOOx2b.s 			page 1
  615              	dispcolor_GetPixel:
  616              	.LVL61:
  617              	.LFB8:
-ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccjOOx2b.s 			page 23
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccVEzPpl.s 			page 23
 
 
   56:Core/Src/dispcolor.c **** #if (DISPCOLOR_type == DISPTYPE_gc9a01a)
@@ -1378,7 +1378,7 @@ ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccjOOx2b.s 			page 1
  665              		@ sp needed
  666 0010 10BD     		pop	{r4, pc}
   67:Core/Src/dispcolor.c **** 
-ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccjOOx2b.s 			page 24
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccVEzPpl.s 			page 24
 
 
  667              		.loc 1 67 1 view .LVU173
@@ -1438,7 +1438,7 @@ ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccjOOx2b.s 			page 1
  719              		.syntax unified
  720              		.thumb
  721              		.thumb_func
-ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccjOOx2b.s 			page 25
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccVEzPpl.s 			page 25
 
 
  723              	dispcolor_ClearScreen:
@@ -1498,7 +1498,7 @@ ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccjOOx2b.s 			page 1
  770 000c 1880     		strh	r0, [r3]	@ movhi
   29:Core/Src/dispcolor.c **** #endif
  771              		.loc 1 29 2 is_stmt 1 view .LVU188
-ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccjOOx2b.s 			page 26
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccVEzPpl.s 			page 26
 
 
   29:Core/Src/dispcolor.c **** #endif
@@ -1558,7 +1558,7 @@ ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccjOOx2b.s 			page 1
  819              		.loc 1 113 2 is_stmt 1 view .LVU197
  113:Core/Src/dispcolor.c **** 		if (x1 > x2)
  820              		.loc 1 113 5 is_stmt 0 view .LVU198
-ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccjOOx2b.s 			page 27
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccVEzPpl.s 			page 27
 
 
  821 0010 9942     		cmp	r1, r3
@@ -1618,7 +1618,7 @@ ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccjOOx2b.s 			page 1
  863              	.L60:
  109:Core/Src/dispcolor.c **** 		return;
  864              		.loc 1 109 4 is_stmt 1 view .LVU211
-ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccjOOx2b.s 			page 28
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccVEzPpl.s 			page 28
 
 
  109:Core/Src/dispcolor.c **** 		return;
@@ -1678,7 +1678,7 @@ ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccjOOx2b.s 			page 1
  904              		.loc 1 115 4 view .LVU226
  905 005a FFF7FEFF 		bl	dispcolor_FillRect
  906              	.LVL89:
-ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccjOOx2b.s 			page 29
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccVEzPpl.s 			page 29
 
 
  115:Core/Src/dispcolor.c **** 		else
@@ -1738,7 +1738,7 @@ ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccjOOx2b.s 			page 1
  953 0002 2DED028B 		vpush.64	{d8}
  954              		.cfi_def_cfa_offset 24
  955              		.cfi_offset 80, -24
-ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccjOOx2b.s 			page 30
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccVEzPpl.s 			page 30
 
 
  956              		.cfi_offset 81, -20
@@ -1798,7 +1798,7 @@ ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccjOOx2b.s 			page 1
  994              		.loc 1 165 30 is_stmt 0 view .LVU252
  995 004a C0F34513 		ubfx	r3, r0, #5, #6
  996 004e 07EE903A 		vmov	s15, r3	@ int
-ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccjOOx2b.s 			page 31
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccVEzPpl.s 			page 31
 
 
  165:Core/Src/dispcolor.c **** 	uint16_t b = oldColorRgb.rgb.b * iintensity + colorRgb.rgb.b * intensity;
@@ -1858,7 +1858,7 @@ ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccjOOx2b.s 			page 1
  1036 00a6 4FF00002 		mov	r2, #0	@ movhi
  1037              	.LVL100:
  169:Core/Src/dispcolor.c **** 	newColorRgb.rgb.g = g;
-ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccjOOx2b.s 			page 32
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccVEzPpl.s 			page 32
 
 
  1038              		.loc 1 169 20 view .LVU268
@@ -1918,7 +1918,7 @@ ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccjOOx2b.s 			page 1
  1082              		.cfi_startproc
  1083              		@ args = 0, pretend = 0, frame = 0
  1084              		@ frame_needed = 0, uses_anonymous_args = 0
-ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccjOOx2b.s 			page 33
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccVEzPpl.s 			page 33
 
 
  1085              		@ link register save eliminated.
@@ -1978,7 +1978,7 @@ ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccjOOx2b.s 			page 1
  1134              		@ args = 0, pretend = 0, frame = 0
  1135              		@ frame_needed = 0, uses_anonymous_args = 0
  185:Core/Src/dispcolor.c **** 	return 1 - fpart(x);
-ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccjOOx2b.s 			page 34
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccVEzPpl.s 			page 34
 
 
  1136              		.loc 1 185 23 is_stmt 0 view .LVU290
@@ -2038,7 +2038,7 @@ ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccjOOx2b.s 			page 1
  1180 000c 7047     		bx	lr
  1181              		.cfi_endproc
  1182              	.LFE19:
-ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccjOOx2b.s 			page 35
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccVEzPpl.s 			page 35
 
 
  1184              		.global	__aeabi_i2d
@@ -2098,7 +2098,7 @@ ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccjOOx2b.s 			page 1
  1233              		.loc 1 197 18 view .LVU308
  1234 0028 BAF1000F 		cmp	r10, #0
  1235 002c B8BF     		it	lt
-ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccjOOx2b.s 			page 36
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccVEzPpl.s 			page 36
 
 
  1236 002e CAF1000A 		rsblt	r10, r10, #0
@@ -2158,7 +2158,7 @@ ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccjOOx2b.s 			page 1
  1277              	.LVL119:
  209:Core/Src/dispcolor.c **** 
  1278              		.loc 1 209 2 is_stmt 1 view .LVU322
-ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccjOOx2b.s 			page 37
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccVEzPpl.s 			page 37
 
 
  209:Core/Src/dispcolor.c **** 
@@ -2218,7 +2218,7 @@ ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccjOOx2b.s 			page 1
  1319              		.loc 1 214 25 view .LVU336
  1320 00be 3946     		mov	r1, r7
  1321 00c0 FFF7FEFF 		bl	__aeabi_dadd
-ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccjOOx2b.s 			page 38
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccVEzPpl.s 			page 38
 
 
  1322              	.LVL126:
@@ -2278,7 +2278,7 @@ ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccjOOx2b.s 			page 1
  1363 0102 4046     		mov	r0, r8
  1364 0104 FFF7FEFF 		bl	DrawPixel
  1365              	.LVL136:
-ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccjOOx2b.s 			page 39
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccVEzPpl.s 			page 39
 
 
  219:Core/Src/dispcolor.c **** 	} else {
@@ -2338,7 +2338,7 @@ ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccjOOx2b.s 			page 1
  1407 0148 68EE898A 		vmul.f32	s17, s17, s18
  229:Core/Src/dispcolor.c **** 	xgap = fpart(x2 + 0.5);
  1408              		.loc 1 229 32 view .LVU363
-ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccjOOx2b.s 			page 40
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccVEzPpl.s 			page 40
 
 
  1409 014c BDF90030 		ldrsh	r3, [sp]
@@ -2398,7 +2398,7 @@ ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccjOOx2b.s 			page 1
  1451              	.LVL154:
  234:Core/Src/dispcolor.c **** 		DrawPixel(ypxl2, xpxl2, color, rfpart(yend) * xgap);
  1452              		.loc 1 234 2 is_stmt 1 view .LVU376
-ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccjOOx2b.s 			page 41
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccVEzPpl.s 			page 41
 
 
  234:Core/Src/dispcolor.c **** 		DrawPixel(ypxl2, xpxl2, color, rfpart(yend) * xgap);
@@ -2458,7 +2458,7 @@ ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccjOOx2b.s 			page 1
  244:Core/Src/dispcolor.c **** 			DrawPixel(ipart(intery), x, color, rfpart(intery));
  1494              		.loc 1 244 16 view .LVU390
  1495 01d0 3FB2     		sxth	r7, r7
-ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccjOOx2b.s 			page 42
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccVEzPpl.s 			page 42
 
 
  1496              	.LVL160:
@@ -2518,7 +2518,7 @@ ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccjOOx2b.s 			page 1
  1539 0206 B0EE480A 		vmov.f32	s0, s16
  1540 020a FFF7FEFF 		bl	rfpart
  1541              	.LVL170:
-ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccjOOx2b.s 			page 43
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccVEzPpl.s 			page 43
 
 
  221:Core/Src/dispcolor.c **** 		DrawPixel(xpxl1, ypxl1 + 1, color, fpart(yend) * xgap);
@@ -2578,7 +2578,7 @@ ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccjOOx2b.s 			page 1
  1585 025a FFF7FEFF 		bl	fpart
  1586              	.LVL177:
  239:Core/Src/dispcolor.c **** 	}
-ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccjOOx2b.s 			page 44
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccVEzPpl.s 			page 44
 
 
  1587              		.loc 1 239 3 discriminator 1 view .LVU413
@@ -2638,7 +2638,7 @@ ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccjOOx2b.s 			page 1
  1631              	.LVL185:
  244:Core/Src/dispcolor.c **** 			DrawPixel(ipart(intery), x, color, rfpart(intery));
  1632              		.loc 1 244 48 is_stmt 1 discriminator 3 view .LVU424
-ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccjOOx2b.s 			page 45
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccVEzPpl.s 			page 45
 
 
  1633 02a6 0137     		adds	r7, r7, #1
@@ -2698,7 +2698,7 @@ ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccjOOx2b.s 			page 1
  1677              	.L89:
  251:Core/Src/dispcolor.c **** 			DrawPixel(x, ipart(intery) + 1, color, fpart(intery));
  1678              		.loc 1 251 4 is_stmt 1 view .LVU435
-ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccjOOx2b.s 			page 46
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccVEzPpl.s 			page 46
 
 
  251:Core/Src/dispcolor.c **** 			DrawPixel(x, ipart(intery) + 1, color, fpart(intery));
@@ -2758,7 +2758,7 @@ ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccjOOx2b.s 			page 1
  1721 02fa E0DB     		blt	.L89
  250:Core/Src/dispcolor.c **** 			DrawPixel(x, ipart(intery), color, rfpart(intery));
  1722              		.loc 1 250 33 is_stmt 0 discriminator 1 view .LVU448
-ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccjOOx2b.s 			page 47
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccVEzPpl.s 			page 47
 
 
  1723 02fc D7E7     		b	.L76
@@ -2818,7 +2818,7 @@ ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccjOOx2b.s 			page 1
  1771              		.cfi_remember_state
  1772              		.cfi_def_cfa_offset 8
  1773              		@ sp needed
-ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccjOOx2b.s 			page 48
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccVEzPpl.s 			page 48
 
 
  1774 001c 10BD     		pop	{r4, pc}
@@ -2878,7 +2878,7 @@ ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccjOOx2b.s 			page 1
  1813              		.loc 1 264 4 view .LVU471
  1814 003c 0094     		str	r4, [sp]
  1815 003e 1BB2     		sxth	r3, r3
-ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccjOOx2b.s 			page 49
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccVEzPpl.s 			page 49
 
 
  1816 0040 0122     		movs	r2, #1
@@ -2938,7 +2938,7 @@ ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccjOOx2b.s 			page 1
  272:Core/Src/dispcolor.c **** 		return;
  1856              		.loc 1 272 34 view .LVU486
  1857 0062 92B2     		uxth	r2, r2
-ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccjOOx2b.s 			page 50
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccVEzPpl.s 			page 50
 
 
  272:Core/Src/dispcolor.c **** 		return;
@@ -2998,7 +2998,7 @@ ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccjOOx2b.s 			page 1
  281:Core/Src/dispcolor.c **** 	dispcolor_DrawLine(x2, y1, x2, y2, color);
  1907              		.loc 1 281 2 is_stmt 0 view .LVU494
  1908 0018 FFF7FEFF 		bl	dispcolor_DrawLine
-ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccjOOx2b.s 			page 51
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccVEzPpl.s 			page 51
 
 
  1909              	.LVL224:
@@ -3058,7 +3058,7 @@ ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccjOOx2b.s 			page 1
  1958 0000 10B5     		push	{r4, lr}
  1959              		.cfi_def_cfa_offset 8
  1960              		.cfi_offset 4, -8
-ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccjOOx2b.s 			page 52
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccVEzPpl.s 			page 52
 
 
  1961              		.cfi_offset 14, -4
@@ -3118,7 +3118,7 @@ ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccjOOx2b.s 			page 1
  295:Core/Src/dispcolor.c **** 
  2004              		.loc 1 295 1 view .LVU513
  2005 004c 04B0     		add	sp, sp, #16
-ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccjOOx2b.s 			page 53
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccVEzPpl.s 			page 53
 
 
  2006              		.cfi_remember_state
@@ -3178,7 +3178,7 @@ ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccjOOx2b.s 			page 1
  2055              		.cfi_offset 8, -16
  2056              		.cfi_offset 9, -12
  2057              		.cfi_offset 10, -8
-ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccjOOx2b.s 			page 54
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccVEzPpl.s 			page 54
 
 
  2058              		.cfi_offset 14, -4
@@ -3238,7 +3238,7 @@ ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccjOOx2b.s 			page 1
  2108              		.cfi_startproc
  2109              		@ args = 12, pretend = 0, frame = 0
  2110              		@ frame_needed = 0, uses_anonymous_args = 0
-ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccjOOx2b.s 			page 55
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccVEzPpl.s 			page 55
 
 
  305:Core/Src/dispcolor.c **** 	dispcolor_DrawLine_Wu(x0, y0, x1, y1, color);
@@ -3298,7 +3298,7 @@ ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccjOOx2b.s 			page 1
  2160              		.section	.text.dispcolor_FillTriangle,"ax",%progbits
  2161              		.align	1
  2162              		.global	dispcolor_FillTriangle
-ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccjOOx2b.s 			page 56
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccVEzPpl.s 			page 56
 
 
  2163              		.syntax unified
@@ -3358,7 +3358,7 @@ ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccjOOx2b.s 			page 1
  2209 0026 BDF95430 		ldrsh	r3, [sp, #84]
  320:Core/Src/dispcolor.c **** 		SwapInt16Values(&y2, &y1);
  2210              		.loc 1 320 5 view .LVU542
-ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccjOOx2b.s 			page 57
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccVEzPpl.s 			page 57
 
 
  2211 002a 9A42     		cmp	r2, r3
@@ -3418,7 +3418,7 @@ ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccjOOx2b.s 			page 1
  345:Core/Src/dispcolor.c **** 			dx12 = x2 - x1, dy12 = y2 - y1;
  2252              		.loc 1 345 68 view .LVU556
  2253 0070 82B2     		uxth	r2, r0
-ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccjOOx2b.s 			page 58
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccVEzPpl.s 			page 58
 
 
  2254 0072 A2EB0808 		sub	r8, r2, r8
@@ -3478,7 +3478,7 @@ ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccjOOx2b.s 			page 1
  317:Core/Src/dispcolor.c **** 		SwapInt16Values(&x0, &x1);
  2293              		.loc 1 317 3 is_stmt 1 view .LVU572
  2294 009c 06A9     		add	r1, sp, #24
-ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccjOOx2b.s 			page 59
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccVEzPpl.s 			page 59
 
 
  2295              	.LVL259:
@@ -3538,7 +3538,7 @@ ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccjOOx2b.s 			page 1
  2338 00dc BDF91E30 		ldrsh	r3, [sp, #30]
  2339 00e0 ADF82430 		strh	r3, [sp, #36]	@ movhi
  331:Core/Src/dispcolor.c **** 		if (x1 < a)
-ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccjOOx2b.s 			page 60
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccVEzPpl.s 			page 60
 
 
  2340              		.loc 1 331 5 view .LVU584
@@ -3598,7 +3598,7 @@ ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccjOOx2b.s 			page 1
  2379              	.L119:
  386:Core/Src/dispcolor.c **** 
  2380              		.loc 1 386 1 is_stmt 0 view .LVU600
-ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccjOOx2b.s 			page 61
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccVEzPpl.s 			page 61
 
 
  2381 0120 0BB0     		add	sp, sp, #44
@@ -3658,7 +3658,7 @@ ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccjOOx2b.s 			page 1
  2422 0154 2146     		mov	r1, r4
  2423 0156 FFF7FEFF 		bl	dispcolor_FillRect
  2424              	.LVL271:
-ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccjOOx2b.s 			page 62
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccVEzPpl.s 			page 62
 
 
  360:Core/Src/dispcolor.c **** 		a = x0 + sa / dy01;
@@ -3718,7 +3718,7 @@ ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccjOOx2b.s 			page 1
  2462              		.loc 1 366 6 is_stmt 0 view .LVU630
  2463 0184 9A42     		cmp	r2, r3
  2464 0186 DADD     		ble	.L131
-ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccjOOx2b.s 			page 63
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccVEzPpl.s 			page 63
 
 
  367:Core/Src/dispcolor.c **** 
@@ -3778,7 +3778,7 @@ ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccjOOx2b.s 			page 1
  384:Core/Src/dispcolor.c **** 	}
  2505              		.loc 1 384 34 view .LVU645
  2506 01be 0132     		adds	r2, r2, #1
-ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccjOOx2b.s 			page 64
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccVEzPpl.s 			page 64
 
 
  384:Core/Src/dispcolor.c **** 	}
@@ -3838,7 +3838,7 @@ ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccjOOx2b.s 			page 1
  379:Core/Src/dispcolor.c **** 
  2547              		.loc 1 379 3 is_stmt 1 view .LVU660
  379:Core/Src/dispcolor.c **** 
-ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccjOOx2b.s 			page 65
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccVEzPpl.s 			page 65
 
 
  2548              		.loc 1 379 6 is_stmt 0 view .LVU661
@@ -3898,7 +3898,7 @@ ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccjOOx2b.s 			page 1
  2598 0010 0293     		str	r3, [sp, #8]
  390:Core/Src/dispcolor.c **** 	int y = radius;
  2599              		.loc 1 390 2 is_stmt 1 view .LVU668
-ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccjOOx2b.s 			page 66
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccVEzPpl.s 			page 66
 
 
  2600              	.LVL291:
@@ -3958,7 +3958,7 @@ ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccjOOx2b.s 			page 1
  2639              		.loc 1 407 19 view .LVU683
  2640 0030 0133     		adds	r3, r3, #1
  407:Core/Src/dispcolor.c **** 			continue;
-ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccjOOx2b.s 			page 67
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccVEzPpl.s 			page 67
 
 
  2641              		.loc 1 407 10 view .LVU684
@@ -4018,7 +4018,7 @@ ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccjOOx2b.s 			page 1
  2682 006c 13FA86F6 		uxtah	r6, r3, r6
  399:Core/Src/dispcolor.c **** 		dispcolor_DrawPixel(x0 + x, y0 - y, color);
  2683              		.loc 1 399 3 view .LVU698
-ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccjOOx2b.s 			page 68
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccVEzPpl.s 			page 68
 
 
  2684 0070 36B2     		sxth	r6, r6
@@ -4078,7 +4078,7 @@ ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccjOOx2b.s 			page 1
  2726              		.loc 1 405 3 is_stmt 1 view .LVU710
  405:Core/Src/dispcolor.c **** 			++x;
  2727              		.loc 1 405 6 is_stmt 0 view .LVU711
-ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccjOOx2b.s 			page 69
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccVEzPpl.s 			page 69
 
 
  2728 00b6 002F     		cmp	r7, #0
@@ -4138,7 +4138,7 @@ ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccjOOx2b.s 			page 1
  2768              	.L152:
  423:Core/Src/dispcolor.c **** 
  2769              		.loc 1 423 1 view .LVU726
-ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccjOOx2b.s 			page 70
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccVEzPpl.s 			page 70
 
 
  2770 00de 07B0     		add	sp, sp, #28
@@ -4198,7 +4198,7 @@ ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccjOOx2b.s 			page 1
  431:Core/Src/dispcolor.c **** 		float height = sqrt(fmax(radius * radius - i * i, 0));
  2820              		.loc 1 431 2 view .LVU733
  428:Core/Src/dispcolor.c **** 	float last_fade_amount = 0;
-ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccjOOx2b.s 			page 71
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccVEzPpl.s 			page 71
 
 
  2821              		.loc 1 428 10 is_stmt 0 view .LVU734
@@ -4258,7 +4258,7 @@ ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccjOOx2b.s 			page 1
  2862 0054 0136     		adds	r6, r6, #1
  442:Core/Src/dispcolor.c **** 
  2863              		.loc 1 442 3 view .LVU748
-ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccjOOx2b.s 			page 72
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccVEzPpl.s 			page 72
 
 
  2864 0056 32B2     		sxth	r2, r6
@@ -4318,7 +4318,7 @@ ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccjOOx2b.s 			page 1
  2907 00a4 B0EE680A 		vmov.f32	s0, s17
  2908 00a8 5A46     		mov	r2, fp
  2909 00aa 3946     		mov	r1, r7
-ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccjOOx2b.s 			page 73
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccVEzPpl.s 			page 73
 
 
  2910 00ac 0498     		ldr	r0, [sp, #16]
@@ -4378,7 +4378,7 @@ ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccjOOx2b.s 			page 1
  2954              	.LVL331:
  454:Core/Src/dispcolor.c **** 
  2955              		.loc 1 454 3 is_stmt 1 view .LVU770
-ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccjOOx2b.s 			page 74
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccVEzPpl.s 			page 74
 
 
  2956 0104 B0EE480A 		vmov.f32	s0, s16
@@ -4438,7 +4438,7 @@ ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccjOOx2b.s 			page 1
  3001 015e B0EE680A 		vmov.f32	s0, s17
  3002 0162 5A46     		mov	r2, fp
  3003 0164 0299     		ldr	r1, [sp, #8]
-ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccjOOx2b.s 			page 75
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccVEzPpl.s 			page 75
 
 
  3004 0166 4046     		mov	r0, r8
@@ -4498,7 +4498,7 @@ ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccjOOx2b.s 			page 1
  3047 01a6 51EC100B 		vmov	r0, r1, d0
  432:Core/Src/dispcolor.c **** 		float fade_amount = ceil(height) - height;
  3048              		.loc 1 432 9 discriminator 2 view .LVU791
-ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccjOOx2b.s 			page 76
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccVEzPpl.s 			page 76
 
 
  3049 01aa FFF7FEFF 		bl	__aeabi_d2f
@@ -4558,7 +4558,7 @@ ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccjOOx2b.s 			page 1
  3091 01e8 09B0     		add	sp, sp, #36
  3092              		.cfi_def_cfa_offset 44
  3093              	.LVL353:
-ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccjOOx2b.s 			page 77
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccVEzPpl.s 			page 77
 
 
  467:Core/Src/dispcolor.c **** 
@@ -4618,7 +4618,7 @@ ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccjOOx2b.s 			page 1
  3144              	.LVL356:
  472:Core/Src/dispcolor.c **** 	int delta = 1 - 2 * radius;
  3145              		.loc 1 472 2 view .LVU809
-ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccjOOx2b.s 			page 78
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccVEzPpl.s 			page 78
 
 
  472:Core/Src/dispcolor.c **** 	int delta = 1 - 2 * radius;
@@ -4678,7 +4678,7 @@ ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccjOOx2b.s 			page 1
  3184 002c 0AF1010A 		add	r10, r10, #1
  3185              	.LVL365:
  496:Core/Src/dispcolor.c **** 		--y;
-ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccjOOx2b.s 			page 79
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccVEzPpl.s 			page 79
 
 
  3186              		.loc 1 496 3 view .LVU826
@@ -4738,7 +4738,7 @@ ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccjOOx2b.s 			page 1
  3226              		.loc 1 478 3 view .LVU840
  3227 0070 00B2     		sxth	r0, r0
  3228 0072 CDF800B0 		str	fp, [sp]
-ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccjOOx2b.s 			page 80
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccVEzPpl.s 			page 80
 
 
  3229 0076 2346     		mov	r3, r4
@@ -4798,7 +4798,7 @@ ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccjOOx2b.s 			page 1
  491:Core/Src/dispcolor.c **** 			continue;
  3268              		.loc 1 491 10 view .LVU856
  3269 009e 1E44     		add	r6, r6, r3
-ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccjOOx2b.s 			page 81
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccVEzPpl.s 			page 81
 
 
  3270              	.LVL376:
@@ -4858,7 +4858,7 @@ ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccjOOx2b.s 			page 1
  3319              		.loc 1 126 32 is_stmt 0 view .LVU863
  3320 0016 121A     		subs	r2, r2, r0
  3321              	.LVL379:
-ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccjOOx2b.s 			page 82
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccVEzPpl.s 			page 82
 
 
  126:Core/Src/dispcolor.c **** 	const int16_t deltaY = abs(y2 - y1);
@@ -4918,7 +4918,7 @@ ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccjOOx2b.s 			page 1
  131:Core/Src/dispcolor.c **** 
  3362              		.loc 1 131 25 is_stmt 0 view .LVU878
  3363 0040 92B2     		uxth	r2, r2
-ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccjOOx2b.s 			page 83
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccVEzPpl.s 			page 83
 
 
  3364 0042 0192     		str	r2, [sp, #4]
@@ -4978,7 +4978,7 @@ ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccjOOx2b.s 			page 1
  3406              		.loc 1 144 17 view .LVU890
  3407 0074 1BB2     		sxth	r3, r3
  3408              	.LVL390:
-ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccjOOx2b.s 			page 84
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccVEzPpl.s 			page 84
 
 
  145:Core/Src/dispcolor.c **** 			error -= deltaY;
@@ -5038,7 +5038,7 @@ ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccjOOx2b.s 			page 1
  3447 0096 1E44     		add	r6, r6, r3
  3448              	.LVL397:
  151:Core/Src/dispcolor.c **** 		}
-ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccjOOx2b.s 			page 85
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccVEzPpl.s 			page 85
 
 
  3449              		.loc 1 151 7 view .LVU907
@@ -5098,7 +5098,7 @@ ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccjOOx2b.s 			page 1
  3494 00c6 9E42     		cmp	r6, r3
  3495 00c8 CAD1     		bne	.L183
  154:Core/Src/dispcolor.c **** 
-ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccjOOx2b.s 			page 86
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccVEzPpl.s 			page 86
 
 
  3496              		.loc 1 154 1 view .LVU917
@@ -5158,7 +5158,7 @@ ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccjOOx2b.s 			page 1
  3545              		.loc 1 506 1 is_stmt 0 view .LVU924
  3546 001a F8BD     		pop	{r3, r4, r5, r6, r7, pc}
  3547              	.LVL409:
-ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccjOOx2b.s 			page 87
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccVEzPpl.s 			page 87
 
 
  3548              	.L191:
@@ -5218,7 +5218,7 @@ ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccjOOx2b.s 			page 1
  3598 000c 0491     		str	r1, [sp, #16]
  3599 000e 0592     		str	r2, [sp, #20]
  3600 0010 BDF85420 		ldrh	r2, [sp, #84]
-ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccjOOx2b.s 			page 88
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccVEzPpl.s 			page 88
 
 
  3601              	.LVL413:
@@ -5278,7 +5278,7 @@ ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccjOOx2b.s 			page 1
  3639              		.loc 1 521 10 is_stmt 0 view .LVU946
  3640 0038 0FFA86FA 		sxth	r10, r6
  3641              	.LVL419:
-ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccjOOx2b.s 			page 89
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccVEzPpl.s 			page 89
 
 
  522:Core/Src/dispcolor.c **** 		}
@@ -5338,7 +5338,7 @@ ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccjOOx2b.s 			page 1
  3683 0068 17EE900A 		vmov	r0, s15
  3684 006c FFF7FEFF 		bl	__aeabi_f2d
  3685              	.LVL426:
-ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccjOOx2b.s 			page 90
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccVEzPpl.s 			page 90
 
 
  515:Core/Src/dispcolor.c **** 		int x = cos(angleRad) * radius + x0;
@@ -5398,7 +5398,7 @@ ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccjOOx2b.s 			page 1
  516:Core/Src/dispcolor.c **** 		int y = sin(angleRad) * radius + y0;
  3732              		.loc 1 516 7 discriminator 1 view .LVU968
  3733 00c6 FFF7FEFF 		bl	__aeabi_d2iz
-ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccjOOx2b.s 			page 91
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccVEzPpl.s 			page 91
 
 
  3734              	.LVL436:
@@ -5458,7 +5458,7 @@ ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccjOOx2b.s 			page 1
  526:Core/Src/dispcolor.c **** 		else
  3777              		.loc 1 526 4 is_stmt 1 view .LVU980
  3778 010e 0193     		str	r3, [sp, #4]
-ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccjOOx2b.s 			page 92
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccVEzPpl.s 			page 92
 
 
  3779 0110 069B     		ldr	r3, [sp, #24]
@@ -5518,7 +5518,7 @@ ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccjOOx2b.s 			page 1
  3829              		.loc 1 536 72 is_stmt 0 view .LVU986
  3830 0000 2DE9F04F 		push	{r4, r5, r6, r7, r8, r9, r10, fp, lr}
  3831              		.cfi_def_cfa_offset 36
-ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccjOOx2b.s 			page 93
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccVEzPpl.s 			page 93
 
 
  3832              		.cfi_offset 4, -36
@@ -5578,7 +5578,7 @@ ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccjOOx2b.s 			page 1
  537:Core/Src/dispcolor.c **** 	startAngle -= 90;
  3876              		.loc 1 537 10 view .LVU997
  3877 0030 5546     		mov	r5, r10
-ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccjOOx2b.s 			page 94
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccVEzPpl.s 			page 94
 
 
  3878              	.LBB24:
@@ -5638,7 +5638,7 @@ ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccjOOx2b.s 			page 1
  3918              		.loc 1 541 60 is_stmt 1 discriminator 2 view .LVU1011
  3919 0058 0134     		adds	r4, r4, #1
  3920              	.LVL460:
-ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccjOOx2b.s 			page 95
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccVEzPpl.s 			page 95
 
 
  541:Core/Src/dispcolor.c **** 			{
@@ -5698,7 +5698,7 @@ ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccjOOx2b.s 			page 1
  3964 00a4 8046     		mov	r8, r0
  3965 00a6 8946     		mov	r9, r1
  3966 00a8 0246     		mov	r2, r0
-ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccjOOx2b.s 			page 96
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccVEzPpl.s 			page 96
 
 
  3967 00aa 0B46     		mov	r3, r1
@@ -5758,7 +5758,7 @@ ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccjOOx2b.s 			page 1
  4013 00fa 0646     		mov	r6, r0
  4014              	.LVL479:
  547:Core/Src/dispcolor.c **** 			xLast = x;
-ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccjOOx2b.s 			page 97
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccVEzPpl.s 			page 97
 
 
  4015              		.loc 1 547 3 is_stmt 1 view .LVU1031
@@ -5818,7 +5818,7 @@ ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccjOOx2b.s 			page 1
  4060              	.LFE32:
  4062              		.section	.text.dispcolor_DrawChar,"ax",%progbits
  4063              		.align	1
-ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccjOOx2b.s 			page 98
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccVEzPpl.s 			page 98
 
 
  4064              		.global	dispcolor_DrawChar
@@ -5878,7 +5878,7 @@ ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccjOOx2b.s 			page 1
  4113              		.cfi_startproc
  4114              		@ args = 8, pretend = 0, frame = 0
  4115              		@ frame_needed = 0, uses_anonymous_args = 0
-ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccjOOx2b.s 			page 99
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccVEzPpl.s 			page 99
 
 
  4116              		.loc 1 608 52 is_stmt 0 view .LVU1048
@@ -5938,7 +5938,7 @@ ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccjOOx2b.s 			page 1
  4166              		.cfi_offset 14, -4
  4167 0004 85B0     		sub	sp, sp, #20
  4168              		.cfi_def_cfa_offset 56
-ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccjOOx2b.s 			page 100
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccVEzPpl.s 			page 100
 
 
  4169 0006 0390     		str	r0, [sp, #12]
@@ -5998,7 +5998,7 @@ ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccjOOx2b.s 			page 1
  634:Core/Src/dispcolor.c **** 				X += dispcolor_DrawChar_Bg(X, Y, FontID, *Str, TextColor,
  4202              		.loc 1 634 5 view .LVU1067
  4203              		.loc 1 634 10 is_stmt 0 view .LVU1068
-ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccjOOx2b.s 			page 101
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccVEzPpl.s 			page 101
 
 
  4204 0028 CDF804B0 		str	fp, [sp, #4]
@@ -6058,7 +6058,7 @@ ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccjOOx2b.s 			page 1
  632:Core/Src/dispcolor.c **** 			else
  4245              		.loc 1 632 5 is_stmt 1 view .LVU1081
  632:Core/Src/dispcolor.c **** 			else
-ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccjOOx2b.s 			page 102
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccVEzPpl.s 			page 102
 
 
  4246              		.loc 1 632 10 is_stmt 0 view .LVU1082
@@ -6118,7 +6118,7 @@ ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccjOOx2b.s 			page 1
  4289              		.cfi_endproc
  4290              	.LFE36:
  4292              		.section	.text.dispcolor_DrawString,"ax",%progbits
-ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccjOOx2b.s 			page 103
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccVEzPpl.s 			page 103
 
 
  4293              		.align	1
@@ -6178,7 +6178,7 @@ ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccjOOx2b.s 			page 1
  4342              		.loc 1 651 41 is_stmt 1 view -0
  4343              		.cfi_startproc
  4344              		@ args = 8, pretend = 0, frame = 0
-ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccjOOx2b.s 			page 104
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccVEzPpl.s 			page 104
 
 
  4345              		@ frame_needed = 0, uses_anonymous_args = 0
@@ -6238,7 +6238,7 @@ ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccjOOx2b.s 			page 1
  4395              		.cfi_def_cfa_offset 136
  4396 0004 0446     		mov	r4, r0
  4397 0006 0D46     		mov	r5, r1
-ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccjOOx2b.s 			page 105
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccVEzPpl.s 			page 105
 
 
  4398 0008 1646     		mov	r6, r2
@@ -6298,7 +6298,7 @@ ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccjOOx2b.s 			page 1
  4445              	.LVL519:
  4446              	.LFB40:
  667:Core/Src/dispcolor.c **** 
-ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccjOOx2b.s 			page 106
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccVEzPpl.s 			page 106
 
 
  668:Core/Src/dispcolor.c **** int16_t dispcolor_printf_Bg(int16_t X, int16_t Y, uint8_t FontID,
@@ -6358,7 +6358,7 @@ ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccjOOx2b.s 			page 1
  4491 0024 3246     		mov	r2, r6
  4492 0026 2946     		mov	r1, r5
  4493 0028 2046     		mov	r0, r4
-ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccjOOx2b.s 			page 107
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccVEzPpl.s 			page 107
 
 
  4494 002a FFF7FEFF 		bl	dispcolor_DrawString_Bg
@@ -6418,7 +6418,7 @@ ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccjOOx2b.s 			page 1
  4540              	.LVL528:
  4541              	.L248:
  686:Core/Src/dispcolor.c **** 		switch (*Str) {
-ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccjOOx2b.s 			page 108
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccVEzPpl.s 			page 108
 
 
  687:Core/Src/dispcolor.c **** 		case '\0':
@@ -6478,7 +6478,7 @@ ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccjOOx2b.s 			page 1
  4579 002e F4E7     		b	.L243
  4580              	.LVL535:
  4581              	.L247:
-ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccjOOx2b.s 			page 109
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccVEzPpl.s 			page 109
 
 
  698:Core/Src/dispcolor.c **** 	}
@@ -6538,7 +6538,7 @@ ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccjOOx2b.s 			page 1
  4627              		.loc 1 708 2 is_stmt 0 view .LVU1167
  4628 0014 01A8     		add	r0, sp, #4
  4629              	.LVL538:
-ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccjOOx2b.s 			page 110
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccVEzPpl.s 			page 110
 
 
  4630              		.loc 1 708 2 view .LVU1168
@@ -6593,104 +6593,104 @@ ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccjOOx2b.s 			page 1
  4680              		.file 9 "C:/Users/kroko/AppData/Roaming/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-to
  4681              		.file 10 "Core/Inc/gc9a01a.h"
  4682              		.file 11 "<built-in>"
-ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccjOOx2b.s 			page 111
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccVEzPpl.s 			page 111
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 dispcolor.c
-C:\Users\kroko\AppData\Local\Temp\ccjOOx2b.s:21     .text.SwapInt16Values:00000000 $t
-C:\Users\kroko\AppData\Local\Temp\ccjOOx2b.s:26     .text.SwapInt16Values:00000000 SwapInt16Values
-C:\Users\kroko\AppData\Local\Temp\ccjOOx2b.s:52     .text.dispcolor_Update:00000000 $t
-C:\Users\kroko\AppData\Local\Temp\ccjOOx2b.s:58     .text.dispcolor_Update:00000000 dispcolor_Update
-C:\Users\kroko\AppData\Local\Temp\ccjOOx2b.s:77     .text.dispcolor_SetBrightness:00000000 $t
-C:\Users\kroko\AppData\Local\Temp\ccjOOx2b.s:83     .text.dispcolor_SetBrightness:00000000 dispcolor_SetBrightness
-C:\Users\kroko\AppData\Local\Temp\ccjOOx2b.s:112    .text.dispcolor_DrawPixel:00000000 $t
-C:\Users\kroko\AppData\Local\Temp\ccjOOx2b.s:118    .text.dispcolor_DrawPixel:00000000 dispcolor_DrawPixel
-C:\Users\kroko\AppData\Local\Temp\ccjOOx2b.s:139    .text.DrawLine_Slow:00000000 $t
-C:\Users\kroko\AppData\Local\Temp\ccjOOx2b.s:144    .text.DrawLine_Slow:00000000 DrawLine_Slow
-C:\Users\kroko\AppData\Local\Temp\ccjOOx2b.s:325    .text.dispcolor_DrawChar_General:00000000 $t
-C:\Users\kroko\AppData\Local\Temp\ccjOOx2b.s:330    .text.dispcolor_DrawChar_General:00000000 dispcolor_DrawChar_General
-C:\Users\kroko\AppData\Local\Temp\ccjOOx2b.s:609    .text.dispcolor_GetPixel:00000000 $t
-C:\Users\kroko\AppData\Local\Temp\ccjOOx2b.s:615    .text.dispcolor_GetPixel:00000000 dispcolor_GetPixel
-C:\Users\kroko\AppData\Local\Temp\ccjOOx2b.s:637    .text.dispcolor_FillRect:00000000 $t
-C:\Users\kroko\AppData\Local\Temp\ccjOOx2b.s:643    .text.dispcolor_FillRect:00000000 dispcolor_FillRect
-C:\Users\kroko\AppData\Local\Temp\ccjOOx2b.s:672    .text.dispcolor_FillScreen:00000000 $t
-C:\Users\kroko\AppData\Local\Temp\ccjOOx2b.s:678    .text.dispcolor_FillScreen:00000000 dispcolor_FillScreen
-C:\Users\kroko\AppData\Local\Temp\ccjOOx2b.s:711    .text.dispcolor_FillScreen:00000020 $d
-C:\Users\kroko\AppData\Local\Temp\ccjOOx2b.s:4663   .bss._Height:00000000 _Height
-C:\Users\kroko\AppData\Local\Temp\ccjOOx2b.s:4669   .bss._Width:00000000 _Width
-C:\Users\kroko\AppData\Local\Temp\ccjOOx2b.s:717    .text.dispcolor_ClearScreen:00000000 $t
-C:\Users\kroko\AppData\Local\Temp\ccjOOx2b.s:723    .text.dispcolor_ClearScreen:00000000 dispcolor_ClearScreen
-C:\Users\kroko\AppData\Local\Temp\ccjOOx2b.s:743    .text.dispcolor_Init:00000000 $t
-C:\Users\kroko\AppData\Local\Temp\ccjOOx2b.s:749    .text.dispcolor_Init:00000000 dispcolor_Init
-C:\Users\kroko\AppData\Local\Temp\ccjOOx2b.s:786    .text.dispcolor_Init:0000001c $d
-C:\Users\kroko\AppData\Local\Temp\ccjOOx2b.s:792    .text.dispcolor_DrawLine:00000000 $t
-C:\Users\kroko\AppData\Local\Temp\ccjOOx2b.s:798    .text.dispcolor_DrawLine:00000000 dispcolor_DrawLine
-C:\Users\kroko\AppData\Local\Temp\ccjOOx2b.s:933    .text.DrawPixel:00000000 $t
-C:\Users\kroko\AppData\Local\Temp\ccjOOx2b.s:939    .text.DrawPixel:00000000 DrawPixel
-C:\Users\kroko\AppData\Local\Temp\ccjOOx2b.s:1072   .text.ipart:00000000 $t
-C:\Users\kroko\AppData\Local\Temp\ccjOOx2b.s:1078   .text.ipart:00000000 ipart
-C:\Users\kroko\AppData\Local\Temp\ccjOOx2b.s:1095   .text.fpart:00000000 $t
-C:\Users\kroko\AppData\Local\Temp\ccjOOx2b.s:1101   .text.fpart:00000000 fpart
-C:\Users\kroko\AppData\Local\Temp\ccjOOx2b.s:1123   .text.rfpart:00000000 $t
-C:\Users\kroko\AppData\Local\Temp\ccjOOx2b.s:1129   .text.rfpart:00000000 rfpart
-C:\Users\kroko\AppData\Local\Temp\ccjOOx2b.s:1153   .text.swap:00000000 $t
-C:\Users\kroko\AppData\Local\Temp\ccjOOx2b.s:1159   .text.swap:00000000 swap
-C:\Users\kroko\AppData\Local\Temp\ccjOOx2b.s:1188   .text.DrawLine_Slow_Wu:00000000 $t
-C:\Users\kroko\AppData\Local\Temp\ccjOOx2b.s:1193   .text.DrawLine_Slow_Wu:00000000 DrawLine_Slow_Wu
-C:\Users\kroko\AppData\Local\Temp\ccjOOx2b.s:1727   .text.DrawLine_Slow_Wu:00000300 $d
-C:\Users\kroko\AppData\Local\Temp\ccjOOx2b.s:1733   .text.dispcolor_DrawLine_Wu:00000000 $t
-C:\Users\kroko\AppData\Local\Temp\ccjOOx2b.s:1739   .text.dispcolor_DrawLine_Wu:00000000 dispcolor_DrawLine_Wu
-C:\Users\kroko\AppData\Local\Temp\ccjOOx2b.s:1874   .text.dispcolor_DrawRectangle:00000000 $t
-C:\Users\kroko\AppData\Local\Temp\ccjOOx2b.s:1880   .text.dispcolor_DrawRectangle:00000000 dispcolor_DrawRectangle
-C:\Users\kroko\AppData\Local\Temp\ccjOOx2b.s:1944   .text.dispcolor_FillRectangle:00000000 $t
-C:\Users\kroko\AppData\Local\Temp\ccjOOx2b.s:1950   .text.dispcolor_FillRectangle:00000000 dispcolor_FillRectangle
-C:\Users\kroko\AppData\Local\Temp\ccjOOx2b.s:2035   .text.dispcolor_DrawTriangle:00000000 $t
-C:\Users\kroko\AppData\Local\Temp\ccjOOx2b.s:2041   .text.dispcolor_DrawTriangle:00000000 dispcolor_DrawTriangle
-C:\Users\kroko\AppData\Local\Temp\ccjOOx2b.s:2098   .text.dispcolor_DrawTriangle_Wu:00000000 $t
-C:\Users\kroko\AppData\Local\Temp\ccjOOx2b.s:2104   .text.dispcolor_DrawTriangle_Wu:00000000 dispcolor_DrawTriangle_Wu
-C:\Users\kroko\AppData\Local\Temp\ccjOOx2b.s:2161   .text.dispcolor_FillTriangle:00000000 $t
-C:\Users\kroko\AppData\Local\Temp\ccjOOx2b.s:2167   .text.dispcolor_FillTriangle:00000000 dispcolor_FillTriangle
-C:\Users\kroko\AppData\Local\Temp\ccjOOx2b.s:2565   .text.dispcolor_DrawCircle:00000000 $t
-C:\Users\kroko\AppData\Local\Temp\ccjOOx2b.s:2571   .text.dispcolor_DrawCircle:00000000 dispcolor_DrawCircle
-ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccjOOx2b.s 			page 112
+C:\Users\kroko\AppData\Local\Temp\ccVEzPpl.s:21     .text.SwapInt16Values:00000000 $t
+C:\Users\kroko\AppData\Local\Temp\ccVEzPpl.s:26     .text.SwapInt16Values:00000000 SwapInt16Values
+C:\Users\kroko\AppData\Local\Temp\ccVEzPpl.s:52     .text.dispcolor_Update:00000000 $t
+C:\Users\kroko\AppData\Local\Temp\ccVEzPpl.s:58     .text.dispcolor_Update:00000000 dispcolor_Update
+C:\Users\kroko\AppData\Local\Temp\ccVEzPpl.s:77     .text.dispcolor_SetBrightness:00000000 $t
+C:\Users\kroko\AppData\Local\Temp\ccVEzPpl.s:83     .text.dispcolor_SetBrightness:00000000 dispcolor_SetBrightness
+C:\Users\kroko\AppData\Local\Temp\ccVEzPpl.s:112    .text.dispcolor_DrawPixel:00000000 $t
+C:\Users\kroko\AppData\Local\Temp\ccVEzPpl.s:118    .text.dispcolor_DrawPixel:00000000 dispcolor_DrawPixel
+C:\Users\kroko\AppData\Local\Temp\ccVEzPpl.s:139    .text.DrawLine_Slow:00000000 $t
+C:\Users\kroko\AppData\Local\Temp\ccVEzPpl.s:144    .text.DrawLine_Slow:00000000 DrawLine_Slow
+C:\Users\kroko\AppData\Local\Temp\ccVEzPpl.s:325    .text.dispcolor_DrawChar_General:00000000 $t
+C:\Users\kroko\AppData\Local\Temp\ccVEzPpl.s:330    .text.dispcolor_DrawChar_General:00000000 dispcolor_DrawChar_General
+C:\Users\kroko\AppData\Local\Temp\ccVEzPpl.s:609    .text.dispcolor_GetPixel:00000000 $t
+C:\Users\kroko\AppData\Local\Temp\ccVEzPpl.s:615    .text.dispcolor_GetPixel:00000000 dispcolor_GetPixel
+C:\Users\kroko\AppData\Local\Temp\ccVEzPpl.s:637    .text.dispcolor_FillRect:00000000 $t
+C:\Users\kroko\AppData\Local\Temp\ccVEzPpl.s:643    .text.dispcolor_FillRect:00000000 dispcolor_FillRect
+C:\Users\kroko\AppData\Local\Temp\ccVEzPpl.s:672    .text.dispcolor_FillScreen:00000000 $t
+C:\Users\kroko\AppData\Local\Temp\ccVEzPpl.s:678    .text.dispcolor_FillScreen:00000000 dispcolor_FillScreen
+C:\Users\kroko\AppData\Local\Temp\ccVEzPpl.s:711    .text.dispcolor_FillScreen:00000020 $d
+C:\Users\kroko\AppData\Local\Temp\ccVEzPpl.s:4663   .bss._Height:00000000 _Height
+C:\Users\kroko\AppData\Local\Temp\ccVEzPpl.s:4669   .bss._Width:00000000 _Width
+C:\Users\kroko\AppData\Local\Temp\ccVEzPpl.s:717    .text.dispcolor_ClearScreen:00000000 $t
+C:\Users\kroko\AppData\Local\Temp\ccVEzPpl.s:723    .text.dispcolor_ClearScreen:00000000 dispcolor_ClearScreen
+C:\Users\kroko\AppData\Local\Temp\ccVEzPpl.s:743    .text.dispcolor_Init:00000000 $t
+C:\Users\kroko\AppData\Local\Temp\ccVEzPpl.s:749    .text.dispcolor_Init:00000000 dispcolor_Init
+C:\Users\kroko\AppData\Local\Temp\ccVEzPpl.s:786    .text.dispcolor_Init:0000001c $d
+C:\Users\kroko\AppData\Local\Temp\ccVEzPpl.s:792    .text.dispcolor_DrawLine:00000000 $t
+C:\Users\kroko\AppData\Local\Temp\ccVEzPpl.s:798    .text.dispcolor_DrawLine:00000000 dispcolor_DrawLine
+C:\Users\kroko\AppData\Local\Temp\ccVEzPpl.s:933    .text.DrawPixel:00000000 $t
+C:\Users\kroko\AppData\Local\Temp\ccVEzPpl.s:939    .text.DrawPixel:00000000 DrawPixel
+C:\Users\kroko\AppData\Local\Temp\ccVEzPpl.s:1072   .text.ipart:00000000 $t
+C:\Users\kroko\AppData\Local\Temp\ccVEzPpl.s:1078   .text.ipart:00000000 ipart
+C:\Users\kroko\AppData\Local\Temp\ccVEzPpl.s:1095   .text.fpart:00000000 $t
+C:\Users\kroko\AppData\Local\Temp\ccVEzPpl.s:1101   .text.fpart:00000000 fpart
+C:\Users\kroko\AppData\Local\Temp\ccVEzPpl.s:1123   .text.rfpart:00000000 $t
+C:\Users\kroko\AppData\Local\Temp\ccVEzPpl.s:1129   .text.rfpart:00000000 rfpart
+C:\Users\kroko\AppData\Local\Temp\ccVEzPpl.s:1153   .text.swap:00000000 $t
+C:\Users\kroko\AppData\Local\Temp\ccVEzPpl.s:1159   .text.swap:00000000 swap
+C:\Users\kroko\AppData\Local\Temp\ccVEzPpl.s:1188   .text.DrawLine_Slow_Wu:00000000 $t
+C:\Users\kroko\AppData\Local\Temp\ccVEzPpl.s:1193   .text.DrawLine_Slow_Wu:00000000 DrawLine_Slow_Wu
+C:\Users\kroko\AppData\Local\Temp\ccVEzPpl.s:1727   .text.DrawLine_Slow_Wu:00000300 $d
+C:\Users\kroko\AppData\Local\Temp\ccVEzPpl.s:1733   .text.dispcolor_DrawLine_Wu:00000000 $t
+C:\Users\kroko\AppData\Local\Temp\ccVEzPpl.s:1739   .text.dispcolor_DrawLine_Wu:00000000 dispcolor_DrawLine_Wu
+C:\Users\kroko\AppData\Local\Temp\ccVEzPpl.s:1874   .text.dispcolor_DrawRectangle:00000000 $t
+C:\Users\kroko\AppData\Local\Temp\ccVEzPpl.s:1880   .text.dispcolor_DrawRectangle:00000000 dispcolor_DrawRectangle
+C:\Users\kroko\AppData\Local\Temp\ccVEzPpl.s:1944   .text.dispcolor_FillRectangle:00000000 $t
+C:\Users\kroko\AppData\Local\Temp\ccVEzPpl.s:1950   .text.dispcolor_FillRectangle:00000000 dispcolor_FillRectangle
+C:\Users\kroko\AppData\Local\Temp\ccVEzPpl.s:2035   .text.dispcolor_DrawTriangle:00000000 $t
+C:\Users\kroko\AppData\Local\Temp\ccVEzPpl.s:2041   .text.dispcolor_DrawTriangle:00000000 dispcolor_DrawTriangle
+C:\Users\kroko\AppData\Local\Temp\ccVEzPpl.s:2098   .text.dispcolor_DrawTriangle_Wu:00000000 $t
+C:\Users\kroko\AppData\Local\Temp\ccVEzPpl.s:2104   .text.dispcolor_DrawTriangle_Wu:00000000 dispcolor_DrawTriangle_Wu
+C:\Users\kroko\AppData\Local\Temp\ccVEzPpl.s:2161   .text.dispcolor_FillTriangle:00000000 $t
+C:\Users\kroko\AppData\Local\Temp\ccVEzPpl.s:2167   .text.dispcolor_FillTriangle:00000000 dispcolor_FillTriangle
+C:\Users\kroko\AppData\Local\Temp\ccVEzPpl.s:2565   .text.dispcolor_DrawCircle:00000000 $t
+C:\Users\kroko\AppData\Local\Temp\ccVEzPpl.s:2571   .text.dispcolor_DrawCircle:00000000 dispcolor_DrawCircle
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccVEzPpl.s 			page 112
 
 
-C:\Users\kroko\AppData\Local\Temp\ccjOOx2b.s:2781   .text.dispcolor_DrawCircle_Wu:00000000 $t
-C:\Users\kroko\AppData\Local\Temp\ccjOOx2b.s:2787   .text.dispcolor_DrawCircle_Wu:00000000 dispcolor_DrawCircle_Wu
-C:\Users\kroko\AppData\Local\Temp\ccjOOx2b.s:3106   .text.dispcolor_DrawCircle_Wu:000001f8 $d
-C:\Users\kroko\AppData\Local\Temp\ccjOOx2b.s:3113   .text.dispcolor_FillCircle:00000000 $t
-C:\Users\kroko\AppData\Local\Temp\ccjOOx2b.s:3119   .text.dispcolor_FillCircle:00000000 dispcolor_FillCircle
-C:\Users\kroko\AppData\Local\Temp\ccjOOx2b.s:3285   .text.dispcolor_DrawLine2:00000000 $t
-C:\Users\kroko\AppData\Local\Temp\ccjOOx2b.s:3291   .text.dispcolor_DrawLine2:00000000 dispcolor_DrawLine2
-C:\Users\kroko\AppData\Local\Temp\ccjOOx2b.s:3506   .text.dispcolor_FillCircleWu:00000000 $t
-C:\Users\kroko\AppData\Local\Temp\ccjOOx2b.s:3512   .text.dispcolor_FillCircleWu:00000000 dispcolor_FillCircleWu
-C:\Users\kroko\AppData\Local\Temp\ccjOOx2b.s:3566   .text.dispcolor_DrawArc:00000000 $t
-C:\Users\kroko\AppData\Local\Temp\ccjOOx2b.s:3572   .text.dispcolor_DrawArc:00000000 dispcolor_DrawArc
-C:\Users\kroko\AppData\Local\Temp\ccjOOx2b.s:3809   .text.dispcolor_DrawArc:00000130 $d
-C:\Users\kroko\AppData\Local\Temp\ccjOOx2b.s:3816   .text.dispcolor_DrawArc_Wu:00000000 $t
-C:\Users\kroko\AppData\Local\Temp\ccjOOx2b.s:3822   .text.dispcolor_DrawArc_Wu:00000000 dispcolor_DrawArc_Wu
-C:\Users\kroko\AppData\Local\Temp\ccjOOx2b.s:4056   .text.dispcolor_DrawArc_Wu:00000128 $d
-C:\Users\kroko\AppData\Local\Temp\ccjOOx2b.s:4063   .text.dispcolor_DrawChar:00000000 $t
-C:\Users\kroko\AppData\Local\Temp\ccjOOx2b.s:4069   .text.dispcolor_DrawChar:00000000 dispcolor_DrawChar
-C:\Users\kroko\AppData\Local\Temp\ccjOOx2b.s:4103   .text.dispcolor_DrawChar_Bg:00000000 $t
-C:\Users\kroko\AppData\Local\Temp\ccjOOx2b.s:4109   .text.dispcolor_DrawChar_Bg:00000000 dispcolor_DrawChar_Bg
-C:\Users\kroko\AppData\Local\Temp\ccjOOx2b.s:4143   .text.dispcolor_DrawString_General:00000000 $t
-C:\Users\kroko\AppData\Local\Temp\ccjOOx2b.s:4148   .text.dispcolor_DrawString_General:00000000 dispcolor_DrawString_General
-C:\Users\kroko\AppData\Local\Temp\ccjOOx2b.s:4293   .text.dispcolor_DrawString:00000000 $t
-C:\Users\kroko\AppData\Local\Temp\ccjOOx2b.s:4299   .text.dispcolor_DrawString:00000000 dispcolor_DrawString
-C:\Users\kroko\AppData\Local\Temp\ccjOOx2b.s:4333   .text.dispcolor_DrawString_Bg:00000000 $t
-C:\Users\kroko\AppData\Local\Temp\ccjOOx2b.s:4339   .text.dispcolor_DrawString_Bg:00000000 dispcolor_DrawString_Bg
-C:\Users\kroko\AppData\Local\Temp\ccjOOx2b.s:4373   .text.dispcolor_printf:00000000 $t
-C:\Users\kroko\AppData\Local\Temp\ccjOOx2b.s:4379   .text.dispcolor_printf:00000000 dispcolor_printf
-C:\Users\kroko\AppData\Local\Temp\ccjOOx2b.s:4438   .text.dispcolor_printf_Bg:00000000 $t
-C:\Users\kroko\AppData\Local\Temp\ccjOOx2b.s:4444   .text.dispcolor_printf_Bg:00000000 dispcolor_printf_Bg
-C:\Users\kroko\AppData\Local\Temp\ccjOOx2b.s:4506   .text.dispcolor_GetTextWidth:00000000 $t
-C:\Users\kroko\AppData\Local\Temp\ccjOOx2b.s:4512   .text.dispcolor_GetTextWidth:00000000 dispcolor_GetTextWidth
-C:\Users\kroko\AppData\Local\Temp\ccjOOx2b.s:4591   .text.dispcolor_GetFormatedTextWidth:00000000 $t
-C:\Users\kroko\AppData\Local\Temp\ccjOOx2b.s:4597   .text.dispcolor_GetFormatedTextWidth:00000000 dispcolor_GetFormatedTextWidth
-C:\Users\kroko\AppData\Local\Temp\ccjOOx2b.s:4660   .bss._Height:00000000 $d
-C:\Users\kroko\AppData\Local\Temp\ccjOOx2b.s:4666   .bss._Width:00000000 $d
+C:\Users\kroko\AppData\Local\Temp\ccVEzPpl.s:2781   .text.dispcolor_DrawCircle_Wu:00000000 $t
+C:\Users\kroko\AppData\Local\Temp\ccVEzPpl.s:2787   .text.dispcolor_DrawCircle_Wu:00000000 dispcolor_DrawCircle_Wu
+C:\Users\kroko\AppData\Local\Temp\ccVEzPpl.s:3106   .text.dispcolor_DrawCircle_Wu:000001f8 $d
+C:\Users\kroko\AppData\Local\Temp\ccVEzPpl.s:3113   .text.dispcolor_FillCircle:00000000 $t
+C:\Users\kroko\AppData\Local\Temp\ccVEzPpl.s:3119   .text.dispcolor_FillCircle:00000000 dispcolor_FillCircle
+C:\Users\kroko\AppData\Local\Temp\ccVEzPpl.s:3285   .text.dispcolor_DrawLine2:00000000 $t
+C:\Users\kroko\AppData\Local\Temp\ccVEzPpl.s:3291   .text.dispcolor_DrawLine2:00000000 dispcolor_DrawLine2
+C:\Users\kroko\AppData\Local\Temp\ccVEzPpl.s:3506   .text.dispcolor_FillCircleWu:00000000 $t
+C:\Users\kroko\AppData\Local\Temp\ccVEzPpl.s:3512   .text.dispcolor_FillCircleWu:00000000 dispcolor_FillCircleWu
+C:\Users\kroko\AppData\Local\Temp\ccVEzPpl.s:3566   .text.dispcolor_DrawArc:00000000 $t
+C:\Users\kroko\AppData\Local\Temp\ccVEzPpl.s:3572   .text.dispcolor_DrawArc:00000000 dispcolor_DrawArc
+C:\Users\kroko\AppData\Local\Temp\ccVEzPpl.s:3809   .text.dispcolor_DrawArc:00000130 $d
+C:\Users\kroko\AppData\Local\Temp\ccVEzPpl.s:3816   .text.dispcolor_DrawArc_Wu:00000000 $t
+C:\Users\kroko\AppData\Local\Temp\ccVEzPpl.s:3822   .text.dispcolor_DrawArc_Wu:00000000 dispcolor_DrawArc_Wu
+C:\Users\kroko\AppData\Local\Temp\ccVEzPpl.s:4056   .text.dispcolor_DrawArc_Wu:00000128 $d
+C:\Users\kroko\AppData\Local\Temp\ccVEzPpl.s:4063   .text.dispcolor_DrawChar:00000000 $t
+C:\Users\kroko\AppData\Local\Temp\ccVEzPpl.s:4069   .text.dispcolor_DrawChar:00000000 dispcolor_DrawChar
+C:\Users\kroko\AppData\Local\Temp\ccVEzPpl.s:4103   .text.dispcolor_DrawChar_Bg:00000000 $t
+C:\Users\kroko\AppData\Local\Temp\ccVEzPpl.s:4109   .text.dispcolor_DrawChar_Bg:00000000 dispcolor_DrawChar_Bg
+C:\Users\kroko\AppData\Local\Temp\ccVEzPpl.s:4143   .text.dispcolor_DrawString_General:00000000 $t
+C:\Users\kroko\AppData\Local\Temp\ccVEzPpl.s:4148   .text.dispcolor_DrawString_General:00000000 dispcolor_DrawString_General
+C:\Users\kroko\AppData\Local\Temp\ccVEzPpl.s:4293   .text.dispcolor_DrawString:00000000 $t
+C:\Users\kroko\AppData\Local\Temp\ccVEzPpl.s:4299   .text.dispcolor_DrawString:00000000 dispcolor_DrawString
+C:\Users\kroko\AppData\Local\Temp\ccVEzPpl.s:4333   .text.dispcolor_DrawString_Bg:00000000 $t
+C:\Users\kroko\AppData\Local\Temp\ccVEzPpl.s:4339   .text.dispcolor_DrawString_Bg:00000000 dispcolor_DrawString_Bg
+C:\Users\kroko\AppData\Local\Temp\ccVEzPpl.s:4373   .text.dispcolor_printf:00000000 $t
+C:\Users\kroko\AppData\Local\Temp\ccVEzPpl.s:4379   .text.dispcolor_printf:00000000 dispcolor_printf
+C:\Users\kroko\AppData\Local\Temp\ccVEzPpl.s:4438   .text.dispcolor_printf_Bg:00000000 $t
+C:\Users\kroko\AppData\Local\Temp\ccVEzPpl.s:4444   .text.dispcolor_printf_Bg:00000000 dispcolor_printf_Bg
+C:\Users\kroko\AppData\Local\Temp\ccVEzPpl.s:4506   .text.dispcolor_GetTextWidth:00000000 $t
+C:\Users\kroko\AppData\Local\Temp\ccVEzPpl.s:4512   .text.dispcolor_GetTextWidth:00000000 dispcolor_GetTextWidth
+C:\Users\kroko\AppData\Local\Temp\ccVEzPpl.s:4591   .text.dispcolor_GetFormatedTextWidth:00000000 $t
+C:\Users\kroko\AppData\Local\Temp\ccVEzPpl.s:4597   .text.dispcolor_GetFormatedTextWidth:00000000 dispcolor_GetFormatedTextWidth
+C:\Users\kroko\AppData\Local\Temp\ccVEzPpl.s:4660   .bss._Height:00000000 $d
+C:\Users\kroko\AppData\Local\Temp\ccVEzPpl.s:4666   .bss._Width:00000000 $d
 
 UNDEFINED SYMBOLS
 GC9A01A_Update
@@ -6713,7 +6713,7 @@ fmax
 sqrt
 ceil
 __aeabi_dmul
-ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccjOOx2b.s 			page 113
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccVEzPpl.s 			page 113
 
 
 __aeabi_ddiv
