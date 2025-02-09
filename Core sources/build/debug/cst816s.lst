@@ -1,0 +1,311 @@
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccUC8vbk.s 			page 1
+
+
+   1              		.cpu cortex-m4
+   2              		.arch armv7e-m
+   3              		.fpu fpv4-sp-d16
+   4              		.eabi_attribute 27, 1
+   5              		.eabi_attribute 28, 1
+   6              		.eabi_attribute 20, 1
+   7              		.eabi_attribute 21, 1
+   8              		.eabi_attribute 23, 3
+   9              		.eabi_attribute 24, 1
+  10              		.eabi_attribute 25, 1
+  11              		.eabi_attribute 26, 1
+  12              		.eabi_attribute 30, 1
+  13              		.eabi_attribute 34, 1
+  14              		.eabi_attribute 18, 4
+  15              		.file	"cst816s.c"
+  16              		.text
+  17              	.Ltext0:
+  18              		.cfi_sections	.debug_frame
+  19              		.file 1 "Core/Src/cst816s.c"
+  20              		.section	.text.CST816S_Init,"ax",%progbits
+  21              		.align	1
+  22              		.global	CST816S_Init
+  23              		.syntax unified
+  24              		.thumb
+  25              		.thumb_func
+  27              	CST816S_Init:
+  28              	.LVL0:
+  29              	.LFB134:
+   1:Core/Src/cst816s.c **** // CST816S.c
+   2:Core/Src/cst816s.c **** #include "cst816s.h"
+   3:Core/Src/cst816s.c **** 
+   4:Core/Src/cst816s.c **** // Initialize the CST816S touch IC
+   5:Core/Src/cst816s.c **** bool CST816S_Init(I2C_HandleTypeDef* hi2c) {
+  30              		.loc 1 5 44 view -0
+  31              		.cfi_startproc
+  32              		@ args = 0, pretend = 0, frame = 8
+  33              		@ frame_needed = 0, uses_anonymous_args = 0
+  34              		.loc 1 5 44 is_stmt 0 view .LVU1
+  35 0000 30B5     		push	{r4, r5, lr}
+  36              		.cfi_def_cfa_offset 12
+  37              		.cfi_offset 4, -12
+  38              		.cfi_offset 5, -8
+  39              		.cfi_offset 14, -4
+  40 0002 85B0     		sub	sp, sp, #20
+  41              		.cfi_def_cfa_offset 32
+  42 0004 0446     		mov	r4, r0
+   6:Core/Src/cst816s.c ****     // Reset the CST816S using GPIO
+   7:Core/Src/cst816s.c ****     HAL_GPIO_WritePin(CST816S_RST_PORT, CST816S_RST_PIN, GPIO_PIN_RESET);
+  43              		.loc 1 7 5 is_stmt 1 view .LVU2
+  44 0006 194D     		ldr	r5, .L7
+  45 0008 0022     		movs	r2, #0
+  46 000a 4FF48071 		mov	r1, #256
+  47 000e 2846     		mov	r0, r5
+  48              	.LVL1:
+  49              		.loc 1 7 5 is_stmt 0 view .LVU3
+  50 0010 FFF7FEFF 		bl	HAL_GPIO_WritePin
+  51              	.LVL2:
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccUC8vbk.s 			page 2
+
+
+   8:Core/Src/cst816s.c ****     HAL_Delay(10);
+  52              		.loc 1 8 5 is_stmt 1 view .LVU4
+  53 0014 0A20     		movs	r0, #10
+  54 0016 FFF7FEFF 		bl	HAL_Delay
+  55              	.LVL3:
+   9:Core/Src/cst816s.c ****     HAL_GPIO_WritePin(CST816S_RST_PORT, CST816S_RST_PIN, GPIO_PIN_SET);
+  56              		.loc 1 9 5 view .LVU5
+  57 001a 0122     		movs	r2, #1
+  58 001c 4FF48071 		mov	r1, #256
+  59 0020 2846     		mov	r0, r5
+  60 0022 FFF7FEFF 		bl	HAL_GPIO_WritePin
+  61              	.LVL4:
+  10:Core/Src/cst816s.c ****     HAL_Delay(50);
+  62              		.loc 1 10 5 view .LVU6
+  63 0026 3220     		movs	r0, #50
+  64 0028 FFF7FEFF 		bl	HAL_Delay
+  65              	.LVL5:
+  11:Core/Src/cst816s.c **** 
+  12:Core/Src/cst816s.c ****     // Test communication with the CST816S by reading a register
+  13:Core/Src/cst816s.c ****     uint8_t reg = CST816S_REG_GESTURE_ID;
+  66              		.loc 1 13 5 view .LVU7
+  67              		.loc 1 13 13 is_stmt 0 view .LVU8
+  68 002c 0123     		movs	r3, #1
+  69 002e 8DF80F30 		strb	r3, [sp, #15]
+  14:Core/Src/cst816s.c ****     if (HAL_I2C_Master_Transmit(hi2c, CST816S_I2C_ADDR << 1, &reg, 1, HAL_MAX_DELAY) != HAL_OK) {
+  70              		.loc 1 14 5 is_stmt 1 view .LVU9
+  71              		.loc 1 14 9 is_stmt 0 view .LVU10
+  72 0032 4FF0FF32 		mov	r2, #-1
+  73 0036 0092     		str	r2, [sp]
+  74 0038 0DF10F02 		add	r2, sp, #15
+  75 003c 2A21     		movs	r1, #42
+  76 003e 2046     		mov	r0, r4
+  77 0040 FFF7FEFF 		bl	HAL_I2C_Master_Transmit
+  78              	.LVL6:
+  79              		.loc 1 14 8 discriminator 1 view .LVU11
+  80 0044 10B1     		cbz	r0, .L6
+  15:Core/Src/cst816s.c ****         return false; // Communication failed
+  81              		.loc 1 15 16 view .LVU12
+  82 0046 0020     		movs	r0, #0
+  83              	.L2:
+  16:Core/Src/cst816s.c ****     }
+  17:Core/Src/cst816s.c **** 
+  18:Core/Src/cst816s.c ****     uint8_t data;
+  19:Core/Src/cst816s.c ****     if (HAL_I2C_Master_Receive(hi2c, CST816S_I2C_ADDR << 1, &data, 1, HAL_MAX_DELAY) != HAL_OK) {
+  20:Core/Src/cst816s.c ****         return false; // Communication failed
+  21:Core/Src/cst816s.c ****     }
+  22:Core/Src/cst816s.c **** 
+  23:Core/Src/cst816s.c ****     return true;
+  24:Core/Src/cst816s.c **** }
+  84              		.loc 1 24 1 view .LVU13
+  85 0048 05B0     		add	sp, sp, #20
+  86              		.cfi_remember_state
+  87              		.cfi_def_cfa_offset 12
+  88              		@ sp needed
+  89 004a 30BD     		pop	{r4, r5, pc}
+  90              	.LVL7:
+  91              	.L6:
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccUC8vbk.s 			page 3
+
+
+  92              		.cfi_restore_state
+  18:Core/Src/cst816s.c ****     if (HAL_I2C_Master_Receive(hi2c, CST816S_I2C_ADDR << 1, &data, 1, HAL_MAX_DELAY) != HAL_OK) {
+  93              		.loc 1 18 5 is_stmt 1 view .LVU14
+  19:Core/Src/cst816s.c ****         return false; // Communication failed
+  94              		.loc 1 19 5 view .LVU15
+  19:Core/Src/cst816s.c ****         return false; // Communication failed
+  95              		.loc 1 19 9 is_stmt 0 view .LVU16
+  96 004c 4FF0FF33 		mov	r3, #-1
+  97 0050 0093     		str	r3, [sp]
+  98 0052 0123     		movs	r3, #1
+  99 0054 0DF10E02 		add	r2, sp, #14
+ 100 0058 2A21     		movs	r1, #42
+ 101 005a 2046     		mov	r0, r4
+ 102 005c FFF7FEFF 		bl	HAL_I2C_Master_Receive
+ 103              	.LVL8:
+  19:Core/Src/cst816s.c ****         return false; // Communication failed
+ 104              		.loc 1 19 8 discriminator 1 view .LVU17
+ 105 0060 08B9     		cbnz	r0, .L4
+  23:Core/Src/cst816s.c **** }
+ 106              		.loc 1 23 12 view .LVU18
+ 107 0062 0120     		movs	r0, #1
+ 108 0064 F0E7     		b	.L2
+ 109              	.L4:
+  20:Core/Src/cst816s.c ****     }
+ 110              		.loc 1 20 16 view .LVU19
+ 111 0066 0020     		movs	r0, #0
+ 112 0068 EEE7     		b	.L2
+ 113              	.L8:
+ 114 006a 00BF     		.align	2
+ 115              	.L7:
+ 116 006c 00040240 		.word	1073873920
+ 117              		.cfi_endproc
+ 118              	.LFE134:
+ 120              		.section	.text.CST816S_ReadTouchData,"ax",%progbits
+ 121              		.align	1
+ 122              		.global	CST816S_ReadTouchData
+ 123              		.syntax unified
+ 124              		.thumb
+ 125              		.thumb_func
+ 127              	CST816S_ReadTouchData:
+ 128              	.LVL9:
+ 129              	.LFB135:
+  25:Core/Src/cst816s.c **** 
+  26:Core/Src/cst816s.c **** // Read touch data from the CST816S
+  27:Core/Src/cst816s.c **** bool CST816S_ReadTouchData(I2C_HandleTypeDef* hi2c, CST816S_TouchData* touch_data) {
+ 130              		.loc 1 27 84 is_stmt 1 view -0
+ 131              		.cfi_startproc
+ 132              		@ args = 0, pretend = 0, frame = 8
+ 133              		@ frame_needed = 0, uses_anonymous_args = 0
+  28:Core/Src/cst816s.c ****     if (touch_data == NULL) {
+ 134              		.loc 1 28 5 view .LVU21
+ 135              		.loc 1 28 8 is_stmt 0 view .LVU22
+ 136 0000 09B3     		cbz	r1, .L11
+  27:Core/Src/cst816s.c ****     if (touch_data == NULL) {
+ 137              		.loc 1 27 84 view .LVU23
+ 138 0002 10B5     		push	{r4, lr}
+ 139              		.cfi_def_cfa_offset 8
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccUC8vbk.s 			page 4
+
+
+ 140              		.cfi_offset 4, -8
+ 141              		.cfi_offset 14, -4
+ 142 0004 84B0     		sub	sp, sp, #16
+ 143              		.cfi_def_cfa_offset 24
+ 144 0006 0C46     		mov	r4, r1
+  29:Core/Src/cst816s.c ****         return false; // Invalid pointer
+  30:Core/Src/cst816s.c ****     }
+  31:Core/Src/cst816s.c **** 
+  32:Core/Src/cst816s.c ****     // uint8_t reg = CST816S_REG_GESTURE_ID;
+  33:Core/Src/cst816s.c ****     // if (HAL_I2C_Master_Transmit(hi2c, CST816S_I2C_ADDR << 1, &reg, 1, 100) != HAL_OK) {
+  34:Core/Src/cst816s.c ****     //     return false; // Communication failed
+  35:Core/Src/cst816s.c ****     // }
+  36:Core/Src/cst816s.c **** 
+  37:Core/Src/cst816s.c ****     uint8_t buffer[6];
+ 145              		.loc 1 37 5 is_stmt 1 view .LVU24
+  38:Core/Src/cst816s.c ****     if (HAL_I2C_Master_Receive(hi2c, CST816S_I2C_ADDR << 1, buffer, 6, 100) != HAL_OK) {
+ 146              		.loc 1 38 5 view .LVU25
+ 147              		.loc 1 38 9 is_stmt 0 view .LVU26
+ 148 0008 6423     		movs	r3, #100
+ 149 000a 0093     		str	r3, [sp]
+ 150 000c 0623     		movs	r3, #6
+ 151 000e 02AA     		add	r2, sp, #8
+ 152 0010 2A21     		movs	r1, #42
+ 153              	.LVL10:
+ 154              		.loc 1 38 9 view .LVU27
+ 155 0012 FFF7FEFF 		bl	HAL_I2C_Master_Receive
+ 156              	.LVL11:
+ 157              		.loc 1 38 8 discriminator 1 view .LVU28
+ 158 0016 C0B9     		cbnz	r0, .L12
+  39:Core/Src/cst816s.c ****         return false; // Communication failed
+  40:Core/Src/cst816s.c ****     }
+  41:Core/Src/cst816s.c **** 
+  42:Core/Src/cst816s.c ****     touch_data->gesture_id = buffer[0];
+ 159              		.loc 1 42 5 is_stmt 1 view .LVU29
+ 160              		.loc 1 42 36 is_stmt 0 view .LVU30
+ 161 0018 9DF80830 		ldrb	r3, [sp, #8]	@ zero_extendqisi2
+ 162              		.loc 1 42 28 view .LVU31
+ 163 001c 2370     		strb	r3, [r4]
+  43:Core/Src/cst816s.c ****     touch_data->finger_num = buffer[1];
+ 164              		.loc 1 43 5 is_stmt 1 view .LVU32
+ 165              		.loc 1 43 36 is_stmt 0 view .LVU33
+ 166 001e 9DF80930 		ldrb	r3, [sp, #9]	@ zero_extendqisi2
+ 167              		.loc 1 43 28 view .LVU34
+ 168 0022 6370     		strb	r3, [r4, #1]
+  44:Core/Src/cst816s.c ****     touch_data->x_coord = (buffer[2] | (buffer[3] << 8));
+ 169              		.loc 1 44 5 is_stmt 1 view .LVU35
+ 170              		.loc 1 44 34 is_stmt 0 view .LVU36
+ 171 0024 9DF80A30 		ldrb	r3, [sp, #10]	@ zero_extendqisi2
+ 172              		.loc 1 44 47 view .LVU37
+ 173 0028 9DF80B20 		ldrb	r2, [sp, #11]	@ zero_extendqisi2
+ 174              		.loc 1 44 38 view .LVU38
+ 175 002c 43EA0223 		orr	r3, r3, r2, lsl #8
+ 176              		.loc 1 44 25 view .LVU39
+ 177 0030 6380     		strh	r3, [r4, #2]	@ movhi
+  45:Core/Src/cst816s.c ****     touch_data->y_coord = (buffer[4] | (buffer[5] << 8));
+ 178              		.loc 1 45 5 is_stmt 1 view .LVU40
+ 179              		.loc 1 45 34 is_stmt 0 view .LVU41
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccUC8vbk.s 			page 5
+
+
+ 180 0032 9DF80C30 		ldrb	r3, [sp, #12]	@ zero_extendqisi2
+ 181              		.loc 1 45 47 view .LVU42
+ 182 0036 9DF80D20 		ldrb	r2, [sp, #13]	@ zero_extendqisi2
+ 183              		.loc 1 45 38 view .LVU43
+ 184 003a 43EA0223 		orr	r3, r3, r2, lsl #8
+ 185              		.loc 1 45 25 view .LVU44
+ 186 003e A380     		strh	r3, [r4, #4]	@ movhi
+  46:Core/Src/cst816s.c **** 
+  47:Core/Src/cst816s.c ****     return true;
+ 187              		.loc 1 47 5 is_stmt 1 view .LVU45
+ 188              		.loc 1 47 12 is_stmt 0 view .LVU46
+ 189 0040 0120     		movs	r0, #1
+ 190              	.L10:
+  48:Core/Src/cst816s.c **** }...
+ 191              		.loc 1 48 1 view .LVU47
+ 192 0042 04B0     		add	sp, sp, #16
+ 193              		.cfi_def_cfa_offset 8
+ 194              		@ sp needed
+ 195 0044 10BD     		pop	{r4, pc}
+ 196              	.LVL12:
+ 197              	.L11:
+ 198              		.cfi_def_cfa_offset 0
+ 199              		.cfi_restore 4
+ 200              		.cfi_restore 14
+  29:Core/Src/cst816s.c ****         return false; // Invalid pointer
+ 201              		.loc 1 29 16 view .LVU48
+ 202 0046 0020     		movs	r0, #0
+ 203              	.LVL13:
+ 204              		.loc 1 48 1 view .LVU49
+ 205 0048 7047     		bx	lr
+ 206              	.LVL14:
+ 207              	.L12:
+ 208              		.cfi_def_cfa_offset 24
+ 209              		.cfi_offset 4, -8
+ 210              		.cfi_offset 14, -4
+  39:Core/Src/cst816s.c ****         return false; // Communication failed
+ 211              		.loc 1 39 16 view .LVU50
+ 212 004a 0020     		movs	r0, #0
+ 213 004c F9E7     		b	.L10
+ 214              		.cfi_endproc
+ 215              	.LFE135:
+ 217              		.text
+ 218              	.Letext0:
+ 219              		.file 2 "Core/Inc/stm32f4xx_hal_conf.h"
+ 220              		.file 3 "C:/Users/kroko/AppData/Roaming/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-to
+ 221              		.file 4 "C:/Users/kroko/AppData/Roaming/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-to
+ 222              		.file 5 "Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f413xx.h"
+ 223              		.file 6 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h"
+ 224              		.file 7 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma.h"
+ 225              		.file 8 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_i2c.h"
+ 226              		.file 9 "Core/Inc/cst816s.h"
+ 227              		.file 10 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h"
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccUC8vbk.s 			page 6
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 cst816s.c
+C:\Users\kroko\AppData\Local\Temp\ccUC8vbk.s:21     .text.CST816S_Init:00000000 $t
+C:\Users\kroko\AppData\Local\Temp\ccUC8vbk.s:27     .text.CST816S_Init:00000000 CST816S_Init
+C:\Users\kroko\AppData\Local\Temp\ccUC8vbk.s:116    .text.CST816S_Init:0000006c $d
+C:\Users\kroko\AppData\Local\Temp\ccUC8vbk.s:121    .text.CST816S_ReadTouchData:00000000 $t
+C:\Users\kroko\AppData\Local\Temp\ccUC8vbk.s:127    .text.CST816S_ReadTouchData:00000000 CST816S_ReadTouchData
+
+UNDEFINED SYMBOLS
+HAL_GPIO_WritePin
+HAL_Delay
+HAL_I2C_Master_Transmit
+HAL_I2C_Master_Receive

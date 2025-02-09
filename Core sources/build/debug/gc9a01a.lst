@@ -1,0 +1,3334 @@
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccg2kW7X.s 			page 1
+
+
+   1              		.cpu cortex-m4
+   2              		.arch armv7e-m
+   3              		.fpu fpv4-sp-d16
+   4              		.eabi_attribute 27, 1
+   5              		.eabi_attribute 28, 1
+   6              		.eabi_attribute 20, 1
+   7              		.eabi_attribute 21, 1
+   8              		.eabi_attribute 23, 3
+   9              		.eabi_attribute 24, 1
+  10              		.eabi_attribute 25, 1
+  11              		.eabi_attribute 26, 1
+  12              		.eabi_attribute 30, 1
+  13              		.eabi_attribute 34, 1
+  14              		.eabi_attribute 18, 4
+  15              		.file	"gc9a01a.c"
+  16              		.text
+  17              	.Ltext0:
+  18              		.cfi_sections	.debug_frame
+  19              		.file 1 "Core/Src/gc9a01a.c"
+  20              		.section	.text.SwapBytes,"ax",%progbits
+  21              		.align	1
+  22              		.syntax unified
+  23              		.thumb
+  24              		.thumb_func
+  26              	SwapBytes:
+  27              	.LVL0:
+  28              	.LFB137:
+   1:Core/Src/gc9a01a.c **** #include <stm32f4xx_hal_gpio.h>
+   2:Core/Src/gc9a01a.c **** #include <stm32f4xx_hal_rcc.h>
+   3:Core/Src/gc9a01a.c **** #include <dispcolor.h>
+   4:Core/Src/gc9a01a.c **** #include <gc9a01a.h>
+   5:Core/Src/gc9a01a.c **** #include <gpio.h>
+   6:Core/Src/gc9a01a.c **** #include <spim.h>
+   7:Core/Src/gc9a01a.c **** #include <stdio.h>
+   8:Core/Src/gc9a01a.c **** #include <string.h>
+   9:Core/Src/gc9a01a.c **** 
+  10:Core/Src/gc9a01a.c **** #if (GC9A01A_CS_Used)
+  11:Core/Src/gc9a01a.c ****   #define CS_HIGH()              HAL_GPIO_WritePin(GC9A01A_CS_Port, GC9A01A_CS_Pin, GPIO_PIN_SET)
+  12:Core/Src/gc9a01a.c ****   #define CS_LOW()               HAL_GPIO_WritePin(GC9A01A_CS_Port, GC9A01A_CS_Pin, GPIO_PIN_RESET)
+  13:Core/Src/gc9a01a.c **** #else
+  14:Core/Src/gc9a01a.c **** #define CS_HIGH()
+  15:Core/Src/gc9a01a.c **** #define CS_LOW()
+  16:Core/Src/gc9a01a.c **** #endif
+  17:Core/Src/gc9a01a.c **** 
+  18:Core/Src/gc9a01a.c **** #if (GC9A01A_RESET_Used)
+  19:Core/Src/gc9a01a.c **** #define RESET_HIGH()           HAL_GPIO_WritePin(GC9A01A_RESET_Port, GC9A01A_RESET_Pin, GPIO_PIN_SE
+  20:Core/Src/gc9a01a.c **** #define RESET_LOW()            HAL_GPIO_WritePin(GC9A01A_RESET_Port, GC9A01A_RESET_Pin, GPIO_PIN_RE
+  21:Core/Src/gc9a01a.c **** #endif
+  22:Core/Src/gc9a01a.c **** 
+  23:Core/Src/gc9a01a.c **** #if (GC9A01A_DC_Used)
+  24:Core/Src/gc9a01a.c **** #define DC_HIGH()              HAL_GPIO_WritePin(GC9A01A_DC_Port, GC9A01A_DC_Pin, GPIO_PIN_SET)
+  25:Core/Src/gc9a01a.c **** #define DC_LOW()               HAL_GPIO_WritePin(GC9A01A_DC_Port, GC9A01A_DC_Pin, GPIO_PIN_RESET)
+  26:Core/Src/gc9a01a.c **** #endif
+  27:Core/Src/gc9a01a.c **** 
+  28:Core/Src/gc9a01a.c **** #if (GC9A01A_BLK_PWM_Used)
+  29:Core/Src/gc9a01a.c **** 
+  30:Core/Src/gc9a01a.c **** #else
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccg2kW7X.s 			page 2
+
+
+  31:Core/Src/gc9a01a.c ****   #define BLK_HIGH()             HAL_GPIO_WritePin(GC9A01A_BLK_Port, GC9A01A_BLK_Pin, GPIO_PIN_SET)
+  32:Core/Src/gc9a01a.c ****   #define BLK_LOW()              HAL_GPIO_WritePin(GC9A01A_BLK_Port, GC9A01A_BLK_Pin, GPIO_PIN_RESE
+  33:Core/Src/gc9a01a.c **** #endif
+  34:Core/Src/gc9a01a.c **** 
+  35:Core/Src/gc9a01a.c **** #define Cmd_SLPIN       0x10
+  36:Core/Src/gc9a01a.c **** #define Cmd_SLPOUT      0x11
+  37:Core/Src/gc9a01a.c **** #define Cmd_INVOFF      0x20
+  38:Core/Src/gc9a01a.c **** #define Cmd_INVON       0x21
+  39:Core/Src/gc9a01a.c **** #define Cmd_DISPOFF     0x28
+  40:Core/Src/gc9a01a.c **** #define Cmd_DISPON      0x29
+  41:Core/Src/gc9a01a.c **** #define Cmd_CASET       0x2A
+  42:Core/Src/gc9a01a.c **** #define Cmd_RASET       0x2B
+  43:Core/Src/gc9a01a.c **** #define Cmd_RAMWR       0x2C
+  44:Core/Src/gc9a01a.c **** #define Cmd_TEON      	0x35    // Tearing effect line ON
+  45:Core/Src/gc9a01a.c **** #define Cmd_MADCTL      0x36    // Memory data access control
+  46:Core/Src/gc9a01a.c **** #define Cmd_COLMOD      0x3A   // Pixel format set
+  47:Core/Src/gc9a01a.c **** 
+  48:Core/Src/gc9a01a.c **** #define Cmd_DisplayFunctionControl    0xB6
+  49:Core/Src/gc9a01a.c **** #define Cmd_PWCTR1       0xC1    // Power control 1
+  50:Core/Src/gc9a01a.c **** #define Cmd_PWCTR2       0xC3    // Power control 2
+  51:Core/Src/gc9a01a.c **** #define Cmd_PWCTR3       0xC4    // Power control 3
+  52:Core/Src/gc9a01a.c **** #define Cmd_PWCTR4       0xC9    // Power control 4
+  53:Core/Src/gc9a01a.c **** #define Cmd_PWCTR7       0xA7    // Power control 7
+  54:Core/Src/gc9a01a.c **** 
+  55:Core/Src/gc9a01a.c **** #define Cmd_FRAMERATE      0xE8
+  56:Core/Src/gc9a01a.c **** #define Cmd_InnerReg1Enable   0xFE
+  57:Core/Src/gc9a01a.c **** #define Cmd_InnerReg2Enable   0xEF
+  58:Core/Src/gc9a01a.c **** 
+  59:Core/Src/gc9a01a.c **** #define Cmd_GAMMA1       0xF0    // Set gamma 1
+  60:Core/Src/gc9a01a.c **** #define Cmd_GAMMA2       0xF1    // Set gamma 2
+  61:Core/Src/gc9a01a.c **** #define Cmd_GAMMA3       0xF2    // Set gamma 3
+  62:Core/Src/gc9a01a.c **** #define Cmd_GAMMA4       0xF3    // Set gamma 4
+  63:Core/Src/gc9a01a.c **** 
+  64:Core/Src/gc9a01a.c **** //==============================================================================
+  65:Core/Src/gc9a01a.c **** // Cmd_COLMOD
+  66:Core/Src/gc9a01a.c **** #define ColorMode_RGB_16bit  0x50
+  67:Core/Src/gc9a01a.c **** #define ColorMode_RGB_18bit  0x60
+  68:Core/Src/gc9a01a.c **** #define ColorMode_MCU_12bit  0x03
+  69:Core/Src/gc9a01a.c **** #define ColorMode_MCU_16bit  0x05
+  70:Core/Src/gc9a01a.c **** #define ColorMode_MCU_18bit  0x06
+  71:Core/Src/gc9a01a.c **** 
+  72:Core/Src/gc9a01a.c **** #define MADCTL_MY        0x80
+  73:Core/Src/gc9a01a.c **** #define MADCTL_MX        0x40
+  74:Core/Src/gc9a01a.c **** #define MADCTL_MV        0x20
+  75:Core/Src/gc9a01a.c **** #define MADCTL_ML        0x10
+  76:Core/Src/gc9a01a.c **** #define MADCTL_BGR       0x08
+  77:Core/Src/gc9a01a.c **** #define MADCTL_MH        0x04
+  78:Core/Src/gc9a01a.c **** 
+  79:Core/Src/gc9a01a.c **** #define GC9A01A_Width	240
+  80:Core/Src/gc9a01a.c **** #define GC9A01A_Height 	240
+  81:Core/Src/gc9a01a.c **** 
+  82:Core/Src/gc9a01a.c **** uint8_t GC9A01A_X_Start = 0, GC9A01A_Y_Start = 0;
+  83:Core/Src/gc9a01a.c **** 
+  84:Core/Src/gc9a01a.c **** #if (GC9A01_MODE == GC9A01_BUFFER_MODE)
+  85:Core/Src/gc9a01a.c **** static uint16_t ScreenBuff[GC9A01A_Height * GC9A01A_Width];
+  86:Core/Src/gc9a01a.c **** #endif
+  87:Core/Src/gc9a01a.c **** 
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccg2kW7X.s 			page 3
+
+
+  88:Core/Src/gc9a01a.c **** static void SwapBytes(uint16_t *color) {
+  29              		.loc 1 88 40 view -0
+  30              		.cfi_startproc
+  31              		@ args = 0, pretend = 0, frame = 0
+  32              		@ frame_needed = 0, uses_anonymous_args = 0
+  33              		@ link register save eliminated.
+  89:Core/Src/gc9a01a.c **** 	uint8_t temp = *color >> 8;
+  34              		.loc 1 89 2 view .LVU1
+  35              		.loc 1 89 17 is_stmt 0 view .LVU2
+  36 0000 0288     		ldrh	r2, [r0]
+  37              	.LVL1:
+  90:Core/Src/gc9a01a.c **** 	*color = (*color << 8) | temp;
+  38              		.loc 1 90 2 is_stmt 1 view .LVU3
+  39              		.loc 1 90 25 is_stmt 0 view .LVU4
+  40 0002 1302     		lsls	r3, r2, #8
+  41 0004 43EA1223 		orr	r3, r3, r2, lsr #8
+  42              		.loc 1 90 9 view .LVU5
+  43 0008 0380     		strh	r3, [r0]	@ movhi
+  91:Core/Src/gc9a01a.c **** }
+  44              		.loc 1 91 1 view .LVU6
+  45 000a 7047     		bx	lr
+  46              		.cfi_endproc
+  47              	.LFE137:
+  49              		.section	.text.SendPart2,"ax",%progbits
+  50              		.align	1
+  51              		.global	SendPart2
+  52              		.syntax unified
+  53              		.thumb
+  54              		.thumb_func
+  56              	SendPart2:
+  57              	.LFB153:
+  92:Core/Src/gc9a01a.c **** 
+  93:Core/Src/gc9a01a.c **** void SendCmd(uint8_t Cmd) {
+  94:Core/Src/gc9a01a.c **** 	DC_LOW(); CS_LOW();
+  95:Core/Src/gc9a01a.c **** 
+  96:Core/Src/gc9a01a.c **** 	SPI_send(GC9A01A_SPI_periph, 0, &Cmd, 1);
+  97:Core/Src/gc9a01a.c **** 
+  98:Core/Src/gc9a01a.c **** 	CS_HIGH();
+  99:Core/Src/gc9a01a.c **** }
+ 100:Core/Src/gc9a01a.c **** 
+ 101:Core/Src/gc9a01a.c **** void SendData(uint8_t Data) {
+ 102:Core/Src/gc9a01a.c **** 	DC_HIGH(); CS_LOW();
+ 103:Core/Src/gc9a01a.c **** 
+ 104:Core/Src/gc9a01a.c **** 	SPI_send(GC9A01A_SPI_periph, 0, &Data, 1);
+ 105:Core/Src/gc9a01a.c **** 
+ 106:Core/Src/gc9a01a.c **** 	CS_HIGH();
+ 107:Core/Src/gc9a01a.c **** }
+ 108:Core/Src/gc9a01a.c **** 
+ 109:Core/Src/gc9a01a.c **** void GC9A01A_HardReset(void) {
+ 110:Core/Src/gc9a01a.c **** #if (GC9A01A_RESET_Used)
+ 111:Core/Src/gc9a01a.c **** 	RESET_LOW();
+ 112:Core/Src/gc9a01a.c **** 	HAL_Delay(10);
+ 113:Core/Src/gc9a01a.c **** 	RESET_HIGH();
+ 114:Core/Src/gc9a01a.c **** 	HAL_Delay(150);
+ 115:Core/Src/gc9a01a.c **** #endif
+ 116:Core/Src/gc9a01a.c **** }
+ 117:Core/Src/gc9a01a.c **** 
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccg2kW7X.s 			page 4
+
+
+ 118:Core/Src/gc9a01a.c **** void GC9A01A_SleepMode(uint8_t Mode) {
+ 119:Core/Src/gc9a01a.c **** 	if (Mode)
+ 120:Core/Src/gc9a01a.c **** 		SendCmd(Cmd_SLPIN);
+ 121:Core/Src/gc9a01a.c **** 	else
+ 122:Core/Src/gc9a01a.c **** 		SendCmd(Cmd_SLPOUT);
+ 123:Core/Src/gc9a01a.c **** 
+ 124:Core/Src/gc9a01a.c **** 	HAL_Delay(500);
+ 125:Core/Src/gc9a01a.c **** }
+ 126:Core/Src/gc9a01a.c **** 
+ 127:Core/Src/gc9a01a.c **** void GC9A01A_InversionMode(uint8_t Mode) {
+ 128:Core/Src/gc9a01a.c **** 	if (Mode)
+ 129:Core/Src/gc9a01a.c **** 		SendCmd(Cmd_INVON);
+ 130:Core/Src/gc9a01a.c **** 	else
+ 131:Core/Src/gc9a01a.c **** 		SendCmd(Cmd_INVOFF);
+ 132:Core/Src/gc9a01a.c **** }
+ 133:Core/Src/gc9a01a.c **** 
+ 134:Core/Src/gc9a01a.c **** void GC9A01A_DisplayPower(uint8_t On) {
+ 135:Core/Src/gc9a01a.c **** 	if (On)
+ 136:Core/Src/gc9a01a.c **** 		SendCmd(Cmd_DISPON);
+ 137:Core/Src/gc9a01a.c **** 	else
+ 138:Core/Src/gc9a01a.c **** 		SendCmd(Cmd_DISPOFF);
+ 139:Core/Src/gc9a01a.c **** }
+ 140:Core/Src/gc9a01a.c **** 
+ 141:Core/Src/gc9a01a.c **** static void ColumnSet(uint16_t ColumnStart, uint16_t ColumnEnd) {
+ 142:Core/Src/gc9a01a.c **** 	if (ColumnStart > ColumnEnd)
+ 143:Core/Src/gc9a01a.c **** 		return;
+ 144:Core/Src/gc9a01a.c **** 	if (ColumnEnd > GC9A01A_Width)
+ 145:Core/Src/gc9a01a.c **** 		return;
+ 146:Core/Src/gc9a01a.c **** 
+ 147:Core/Src/gc9a01a.c **** 	ColumnStart += GC9A01A_X_Start;
+ 148:Core/Src/gc9a01a.c **** 	ColumnEnd += GC9A01A_X_Start;
+ 149:Core/Src/gc9a01a.c **** 
+ 150:Core/Src/gc9a01a.c **** 	SendCmd(Cmd_CASET);
+ 151:Core/Src/gc9a01a.c **** 	SendData(ColumnStart >> 8);
+ 152:Core/Src/gc9a01a.c **** 	SendData(ColumnStart & 0xFF);
+ 153:Core/Src/gc9a01a.c **** 	SendData(ColumnEnd >> 8);
+ 154:Core/Src/gc9a01a.c **** 	SendData(ColumnEnd & 0xFF);
+ 155:Core/Src/gc9a01a.c **** }
+ 156:Core/Src/gc9a01a.c **** 
+ 157:Core/Src/gc9a01a.c **** static void RowSet(uint16_t RowStart, uint16_t RowEnd) {
+ 158:Core/Src/gc9a01a.c **** 	if (RowStart > RowEnd)
+ 159:Core/Src/gc9a01a.c **** 		return;
+ 160:Core/Src/gc9a01a.c **** 	if (RowEnd > GC9A01A_Height)
+ 161:Core/Src/gc9a01a.c **** 		return;
+ 162:Core/Src/gc9a01a.c **** 
+ 163:Core/Src/gc9a01a.c **** 	RowStart += GC9A01A_Y_Start;
+ 164:Core/Src/gc9a01a.c **** 	RowEnd += GC9A01A_Y_Start;
+ 165:Core/Src/gc9a01a.c **** 
+ 166:Core/Src/gc9a01a.c **** 	SendCmd(Cmd_RASET);
+ 167:Core/Src/gc9a01a.c **** 	SendData(RowStart >> 8);
+ 168:Core/Src/gc9a01a.c **** 	SendData(RowStart & 0xFF);
+ 169:Core/Src/gc9a01a.c **** 	SendData(RowEnd >> 8);
+ 170:Core/Src/gc9a01a.c **** 	SendData(RowEnd & 0xFF);
+ 171:Core/Src/gc9a01a.c **** }
+ 172:Core/Src/gc9a01a.c **** 
+ 173:Core/Src/gc9a01a.c **** void GC9A01A_SetWindow(uint8_t x0, uint8_t y0, uint8_t x1, uint8_t y1) {
+ 174:Core/Src/gc9a01a.c **** 	ColumnSet(x0, x1);
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccg2kW7X.s 			page 5
+
+
+ 175:Core/Src/gc9a01a.c **** 	RowSet(y0, y1);
+ 176:Core/Src/gc9a01a.c **** 
+ 177:Core/Src/gc9a01a.c **** 	SendCmd(Cmd_RAMWR);
+ 178:Core/Src/gc9a01a.c **** }
+ 179:Core/Src/gc9a01a.c **** 
+ 180:Core/Src/gc9a01a.c **** static void ColorModeSet(uint8_t ColorMode) {
+ 181:Core/Src/gc9a01a.c **** 	SendCmd(Cmd_COLMOD);
+ 182:Core/Src/gc9a01a.c **** 	SendData(ColorMode & 0x77);
+ 183:Core/Src/gc9a01a.c **** }
+ 184:Core/Src/gc9a01a.c **** 
+ 185:Core/Src/gc9a01a.c **** static void MemAccessModeSet(uint8_t Rotation, uint8_t VertMirror,
+ 186:Core/Src/gc9a01a.c **** 		uint8_t HorizMirror, uint8_t IsBGR) {
+ 187:Core/Src/gc9a01a.c **** 	uint8_t Value;
+ 188:Core/Src/gc9a01a.c **** 	Rotation &= 7;
+ 189:Core/Src/gc9a01a.c **** 
+ 190:Core/Src/gc9a01a.c **** 	SendCmd(Cmd_MADCTL);
+ 191:Core/Src/gc9a01a.c **** 
+ 192:Core/Src/gc9a01a.c **** 	switch (Rotation) {
+ 193:Core/Src/gc9a01a.c **** 	case 0:
+ 194:Core/Src/gc9a01a.c **** 		Value = 0;
+ 195:Core/Src/gc9a01a.c **** 		break;
+ 196:Core/Src/gc9a01a.c **** 	case 1:
+ 197:Core/Src/gc9a01a.c **** 		Value = MADCTL_MX;
+ 198:Core/Src/gc9a01a.c **** 		break;
+ 199:Core/Src/gc9a01a.c **** 	case 2:
+ 200:Core/Src/gc9a01a.c **** 		Value = MADCTL_MY;
+ 201:Core/Src/gc9a01a.c **** 		break;
+ 202:Core/Src/gc9a01a.c **** 	case 3:
+ 203:Core/Src/gc9a01a.c **** 		Value = MADCTL_MX | MADCTL_MY;
+ 204:Core/Src/gc9a01a.c **** 		break;
+ 205:Core/Src/gc9a01a.c **** 	case 4:
+ 206:Core/Src/gc9a01a.c **** 		Value = MADCTL_MV;
+ 207:Core/Src/gc9a01a.c **** 		break;
+ 208:Core/Src/gc9a01a.c **** 	case 5:
+ 209:Core/Src/gc9a01a.c **** 		Value = MADCTL_MV | MADCTL_MX;
+ 210:Core/Src/gc9a01a.c **** 		break;
+ 211:Core/Src/gc9a01a.c **** 	case 6:
+ 212:Core/Src/gc9a01a.c **** 		Value = MADCTL_MV | MADCTL_MY;
+ 213:Core/Src/gc9a01a.c **** 		break;
+ 214:Core/Src/gc9a01a.c **** 	case 7:
+ 215:Core/Src/gc9a01a.c **** 		Value = MADCTL_MV | MADCTL_MX | MADCTL_MY;
+ 216:Core/Src/gc9a01a.c **** 		break;
+ 217:Core/Src/gc9a01a.c **** 	}
+ 218:Core/Src/gc9a01a.c **** 
+ 219:Core/Src/gc9a01a.c **** 	if (VertMirror)
+ 220:Core/Src/gc9a01a.c **** 		Value = MADCTL_ML;
+ 221:Core/Src/gc9a01a.c **** 	if (HorizMirror)
+ 222:Core/Src/gc9a01a.c **** 		Value = MADCTL_MH;
+ 223:Core/Src/gc9a01a.c **** 
+ 224:Core/Src/gc9a01a.c **** 	if (IsBGR)
+ 225:Core/Src/gc9a01a.c **** 		Value |= MADCTL_BGR;
+ 226:Core/Src/gc9a01a.c **** 
+ 227:Core/Src/gc9a01a.c **** 	SendData(Value);
+ 228:Core/Src/gc9a01a.c **** }
+ 229:Core/Src/gc9a01a.c **** 
+ 230:Core/Src/gc9a01a.c **** void GC9A01A_SetBL(uint8_t Value) {
+ 231:Core/Src/gc9a01a.c **** 	if (Value > 100)
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccg2kW7X.s 			page 6
+
+
+ 232:Core/Src/gc9a01a.c **** 		Value = 100;
+ 233:Core/Src/gc9a01a.c **** 
+ 234:Core/Src/gc9a01a.c **** #if (GC9A01A_BLK_PWM_Used)
+ 235:Core/Src/gc9a01a.c **** 
+ 236:Core/Src/gc9a01a.c **** 	//tmr11_PWM_set(Value);
+ 237:Core/Src/gc9a01a.c **** 
+ 238:Core/Src/gc9a01a.c **** #else
+ 239:Core/Src/gc9a01a.c ****   if (Value)
+ 240:Core/Src/gc9a01a.c ****     BLK_HIGH();
+ 241:Core/Src/gc9a01a.c ****   else
+ 242:Core/Src/gc9a01a.c ****     BLK_LOW();
+ 243:Core/Src/gc9a01a.c **** #endif
+ 244:Core/Src/gc9a01a.c **** }
+ 245:Core/Src/gc9a01a.c **** 
+ 246:Core/Src/gc9a01a.c **** #if (GC9A01_MODE == GC9A01_DIRECT_MODE)
+ 247:Core/Src/gc9a01a.c **** 
+ 248:Core/Src/gc9a01a.c **** void GC9A01A_RamWrite(uint16_t *pBuff, uint16_t Len)
+ 249:Core/Src/gc9a01a.c **** {
+ 250:Core/Src/gc9a01a.c ****   while (Len--)
+ 251:Core/Src/gc9a01a.c ****   {
+ 252:Core/Src/gc9a01a.c ****     SendData(*pBuff >> 8);
+ 253:Core/Src/gc9a01a.c ****     SendData(*pBuff & 0xFF);
+ 254:Core/Src/gc9a01a.c ****   }
+ 255:Core/Src/gc9a01a.c **** }
+ 256:Core/Src/gc9a01a.c **** 
+ 257:Core/Src/gc9a01a.c **** void GC9A01A_DrawPixel(int16_t x, int16_t y, uint16_t color)
+ 258:Core/Src/gc9a01a.c **** {
+ 259:Core/Src/gc9a01a.c ****   if ((x < 0) ||(x >= GC9A01A_Width) || (y < 0) || (y >= GC9A01A_Height))
+ 260:Core/Src/gc9a01a.c ****     return;
+ 261:Core/Src/gc9a01a.c **** 
+ 262:Core/Src/gc9a01a.c ****   GC9A01A_SetWindow(x, y, x, y);
+ 263:Core/Src/gc9a01a.c ****   GC9A01A_RamWrite(&color, 1);
+ 264:Core/Src/gc9a01a.c **** }
+ 265:Core/Src/gc9a01a.c **** 
+ 266:Core/Src/gc9a01a.c **** void GC9A01A_FillRect(int16_t x, int16_t y, int16_t w, int16_t h, uint16_t color)
+ 267:Core/Src/gc9a01a.c **** {
+ 268:Core/Src/gc9a01a.c ****   if ((x >= GC9A01A_Width) || (y >= GC9A01A_Height))
+ 269:Core/Src/gc9a01a.c ****     return;
+ 270:Core/Src/gc9a01a.c **** 
+ 271:Core/Src/gc9a01a.c ****   if ((x + w) > GC9A01A_Width)
+ 272:Core/Src/gc9a01a.c ****     w = GC9A01A_Width - x;
+ 273:Core/Src/gc9a01a.c **** 
+ 274:Core/Src/gc9a01a.c ****   if ((y + h) > GC9A01A_Height)
+ 275:Core/Src/gc9a01a.c ****     h = GC9A01A_Height - y;
+ 276:Core/Src/gc9a01a.c **** 
+ 277:Core/Src/gc9a01a.c ****   GC9A01A_SetWindow(x, y, x + w - 1, y + h - 1);
+ 278:Core/Src/gc9a01a.c **** 
+ 279:Core/Src/gc9a01a.c ****   for (uint32_t i = 0; i < (h * w); i++)
+ 280:Core/Src/gc9a01a.c ****     GC9A01A_RamWrite(&color, 1);
+ 281:Core/Src/gc9a01a.c **** }
+ 282:Core/Src/gc9a01a.c **** 
+ 283:Core/Src/gc9a01a.c **** #else
+ 284:Core/Src/gc9a01a.c **** 
+ 285:Core/Src/gc9a01a.c **** void GC9A01A_DrawPixel(int16_t x, int16_t y, uint16_t color) {
+ 286:Core/Src/gc9a01a.c **** 	if ((x < 0) || (x >= GC9A01A_Width) || (y < 0) || (y >= GC9A01A_Height))
+ 287:Core/Src/gc9a01a.c **** 		return;
+ 288:Core/Src/gc9a01a.c **** 
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccg2kW7X.s 			page 7
+
+
+ 289:Core/Src/gc9a01a.c **** 	SwapBytes(&color);
+ 290:Core/Src/gc9a01a.c **** 
+ 291:Core/Src/gc9a01a.c **** 	ScreenBuff[y * GC9A01A_Width + x] = color;
+ 292:Core/Src/gc9a01a.c **** }
+ 293:Core/Src/gc9a01a.c **** 
+ 294:Core/Src/gc9a01a.c **** uint16_t GC9A01A_GetPixel(int16_t x, int16_t y) {
+ 295:Core/Src/gc9a01a.c **** 	if ((x < 0) || (x >= GC9A01A_Width) || (y < 0) || (y >= GC9A01A_Height))
+ 296:Core/Src/gc9a01a.c **** 		return 0;
+ 297:Core/Src/gc9a01a.c **** 
+ 298:Core/Src/gc9a01a.c **** 	uint16_t color = ScreenBuff[y * GC9A01A_Width + x];
+ 299:Core/Src/gc9a01a.c **** 	SwapBytes(&color);
+ 300:Core/Src/gc9a01a.c **** 	return color;
+ 301:Core/Src/gc9a01a.c **** }
+ 302:Core/Src/gc9a01a.c **** 
+ 303:Core/Src/gc9a01a.c **** void GC9A01A_FillRect(int16_t x, int16_t y, int16_t w, int16_t h,
+ 304:Core/Src/gc9a01a.c **** 		uint16_t color) {
+ 305:Core/Src/gc9a01a.c **** 	if ((w <= 0) || (h <= 0) || (x >= GC9A01A_Width) || (y >= GC9A01A_Height))
+ 306:Core/Src/gc9a01a.c **** 		return;
+ 307:Core/Src/gc9a01a.c **** 
+ 308:Core/Src/gc9a01a.c **** 	if (x < 0) {
+ 309:Core/Src/gc9a01a.c **** 		w += x;
+ 310:Core/Src/gc9a01a.c **** 		x = 0;
+ 311:Core/Src/gc9a01a.c **** 	}
+ 312:Core/Src/gc9a01a.c **** 	if (y < 0) {
+ 313:Core/Src/gc9a01a.c **** 		h += y;
+ 314:Core/Src/gc9a01a.c **** 		y = 0;
+ 315:Core/Src/gc9a01a.c **** 	}
+ 316:Core/Src/gc9a01a.c **** 
+ 317:Core/Src/gc9a01a.c **** 	if ((w <= 0) || (h <= 0))
+ 318:Core/Src/gc9a01a.c **** 		return;
+ 319:Core/Src/gc9a01a.c **** 
+ 320:Core/Src/gc9a01a.c **** 	if ((x + w) > GC9A01A_Width)
+ 321:Core/Src/gc9a01a.c **** 		w = GC9A01A_Width - x;
+ 322:Core/Src/gc9a01a.c **** 	if ((y + h) > GC9A01A_Height)
+ 323:Core/Src/gc9a01a.c **** 		h = GC9A01A_Height - y;
+ 324:Core/Src/gc9a01a.c **** 
+ 325:Core/Src/gc9a01a.c **** 	SwapBytes(&color);
+ 326:Core/Src/gc9a01a.c **** 
+ 327:Core/Src/gc9a01a.c **** 	for (uint16_t row = 0; row < h; row++) {
+ 328:Core/Src/gc9a01a.c **** 		for (uint16_t col = 0; col < w; col++)
+ 329:Core/Src/gc9a01a.c **** 			//GC9A01A_DrawPixel(col, row, color);
+ 330:Core/Src/gc9a01a.c **** 			ScreenBuff[(y + row) * GC9A01A_Width + x + col] = color;
+ 331:Core/Src/gc9a01a.c **** 	}
+ 332:Core/Src/gc9a01a.c **** }
+ 333:Core/Src/gc9a01a.c **** 
+ 334:Core/Src/gc9a01a.c **** void SendPart2() {
+  58              		.loc 1 334 18 is_stmt 1 view -0
+  59              		.cfi_startproc
+  60              		@ args = 0, pretend = 0, frame = 0
+  61              		@ frame_needed = 0, uses_anonymous_args = 0
+  62 0000 00B5     		push	{lr}
+  63              		.cfi_def_cfa_offset 4
+  64              		.cfi_offset 14, -4
+  65 0002 83B0     		sub	sp, sp, #12
+  66              		.cfi_def_cfa_offset 16
+ 335:Core/Src/gc9a01a.c **** 	uint16_t len = GC9A01A_Width * GC9A01A_Height;
+  67              		.loc 1 335 2 view .LVU8
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccg2kW7X.s 			page 8
+
+
+  68              	.LVL2:
+ 336:Core/Src/gc9a01a.c **** 	SPI_send_dma(GC9A01A_SPI_periph, 0, (uint8_t*) &ScreenBuff[len / 2], len,
+  69              		.loc 1 336 2 view .LVU9
+  70 0004 0021     		movs	r1, #0
+  71 0006 0091     		str	r1, [sp]
+  72 0008 4FF46143 		mov	r3, #57600
+  73 000c 034A     		ldr	r2, .L4
+  74 000e 0448     		ldr	r0, .L4+4
+  75 0010 FFF7FEFF 		bl	SPI_send_dma
+  76              	.LVL3:
+ 337:Core/Src/gc9a01a.c **** 			0);
+ 338:Core/Src/gc9a01a.c **** }
+  77              		.loc 1 338 1 is_stmt 0 view .LVU10
+  78 0014 03B0     		add	sp, sp, #12
+  79              		.cfi_def_cfa_offset 4
+  80              		@ sp needed
+  81 0016 5DF804FB 		ldr	pc, [sp], #4
+  82              	.L5:
+  83 001a 00BF     		.align	2
+  84              	.L4:
+  85 001c 00E10000 		.word	ScreenBuff+57600
+  86 0020 00300140 		.word	1073819648
+  87              		.cfi_endproc
+  88              	.LFE153:
+  90              		.section	.text.GPIO_init,"ax",%progbits
+  91              		.align	1
+  92              		.syntax unified
+  93              		.thumb
+  94              		.thumb_func
+  96              	GPIO_init:
+  97              	.LFB155:
+ 339:Core/Src/gc9a01a.c **** 
+ 340:Core/Src/gc9a01a.c **** void GC9A01A_Update() {
+ 341:Core/Src/gc9a01a.c **** 	GC9A01A_SetWindow(0, 0, GC9A01A_Width - 1, GC9A01A_Height - 1);
+ 342:Core/Src/gc9a01a.c **** 
+ 343:Core/Src/gc9a01a.c **** 	DC_HIGH(); CS_LOW();
+ 344:Core/Src/gc9a01a.c **** 
+ 345:Core/Src/gc9a01a.c **** 	uint16_t len = GC9A01A_Width * GC9A01A_Height;
+ 346:Core/Src/gc9a01a.c **** 	SPI_send_dma(GC9A01A_SPI_periph, 0, (uint8_t*) ScreenBuff, len, SendPart2);
+ 347:Core/Src/gc9a01a.c **** }
+ 348:Core/Src/gc9a01a.c **** 
+ 349:Core/Src/gc9a01a.c **** #endif
+ 350:Core/Src/gc9a01a.c **** 
+ 351:Core/Src/gc9a01a.c **** 
+ 352:Core/Src/gc9a01a.c **** static void GPIO_init(void) {
+  98              		.loc 1 352 29 is_stmt 1 view -0
+  99              		.cfi_startproc
+ 100              		@ args = 0, pretend = 0, frame = 32
+ 101              		@ frame_needed = 0, uses_anonymous_args = 0
+ 102 0000 2DE9F043 		push	{r4, r5, r6, r7, r8, r9, lr}
+ 103              		.cfi_def_cfa_offset 28
+ 104              		.cfi_offset 4, -28
+ 105              		.cfi_offset 5, -24
+ 106              		.cfi_offset 6, -20
+ 107              		.cfi_offset 7, -16
+ 108              		.cfi_offset 8, -12
+ 109              		.cfi_offset 9, -8
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccg2kW7X.s 			page 9
+
+
+ 110              		.cfi_offset 14, -4
+ 111 0004 89B0     		sub	sp, sp, #36
+ 112              		.cfi_def_cfa_offset 64
+ 353:Core/Src/gc9a01a.c **** 	__HAL_RCC_GPIOA_CLK_ENABLE();
+ 113              		.loc 1 353 2 view .LVU12
+ 114              	.LBB2:
+ 115              		.loc 1 353 2 view .LVU13
+ 116 0006 0026     		movs	r6, #0
+ 117 0008 0196     		str	r6, [sp, #4]
+ 118              		.loc 1 353 2 view .LVU14
+ 119 000a 254B     		ldr	r3, .L8
+ 120 000c 1A6B     		ldr	r2, [r3, #48]
+ 121 000e 42F00102 		orr	r2, r2, #1
+ 122 0012 1A63     		str	r2, [r3, #48]
+ 123              		.loc 1 353 2 view .LVU15
+ 124 0014 1A6B     		ldr	r2, [r3, #48]
+ 125 0016 02F00102 		and	r2, r2, #1
+ 126 001a 0192     		str	r2, [sp, #4]
+ 127              		.loc 1 353 2 view .LVU16
+ 128 001c 019A     		ldr	r2, [sp, #4]
+ 129              	.LBE2:
+ 130              		.loc 1 353 2 view .LVU17
+ 354:Core/Src/gc9a01a.c **** 	__HAL_RCC_GPIOB_CLK_ENABLE();
+ 131              		.loc 1 354 2 view .LVU18
+ 132              	.LBB3:
+ 133              		.loc 1 354 2 view .LVU19
+ 134 001e 0296     		str	r6, [sp, #8]
+ 135              		.loc 1 354 2 view .LVU20
+ 136 0020 1A6B     		ldr	r2, [r3, #48]
+ 137 0022 42F00202 		orr	r2, r2, #2
+ 138 0026 1A63     		str	r2, [r3, #48]
+ 139              		.loc 1 354 2 view .LVU21
+ 140 0028 1B6B     		ldr	r3, [r3, #48]
+ 141 002a 03F00203 		and	r3, r3, #2
+ 142 002e 0293     		str	r3, [sp, #8]
+ 143              		.loc 1 354 2 view .LVU22
+ 144 0030 029B     		ldr	r3, [sp, #8]
+ 145              	.LBE3:
+ 146              		.loc 1 354 2 view .LVU23
+ 355:Core/Src/gc9a01a.c **** 
+ 356:Core/Src/gc9a01a.c **** 	GPIO_InitTypeDef GPIO_InitStruct;
+ 147              		.loc 1 356 2 view .LVU24
+ 357:Core/Src/gc9a01a.c **** 	GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_HIGH;
+ 148              		.loc 1 357 2 view .LVU25
+ 149              		.loc 1 357 24 is_stmt 0 view .LVU26
+ 150 0032 0225     		movs	r5, #2
+ 151 0034 0695     		str	r5, [sp, #24]
+ 358:Core/Src/gc9a01a.c **** 	GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
+ 152              		.loc 1 358 2 is_stmt 1 view .LVU27
+ 153              		.loc 1 358 23 is_stmt 0 view .LVU28
+ 154 0036 4FF00108 		mov	r8, #1
+ 155 003a CDF81080 		str	r8, [sp, #16]
+ 359:Core/Src/gc9a01a.c **** 
+ 360:Core/Src/gc9a01a.c **** #if (GC9A01A_RESET_Used)
+ 361:Core/Src/gc9a01a.c **** 	gpio_PortClockStart(GC9A01A_RESET_Port);
+ 156              		.loc 1 361 2 is_stmt 1 view .LVU29
+ 157 003e 194C     		ldr	r4, .L8+4
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccg2kW7X.s 			page 10
+
+
+ 158 0040 2046     		mov	r0, r4
+ 159 0042 FFF7FEFF 		bl	gpio_PortClockStart
+ 160              	.LVL4:
+ 362:Core/Src/gc9a01a.c **** 	GPIO_InitStruct.Pin = GC9A01A_RESET_Pin;
+ 161              		.loc 1 362 2 view .LVU30
+ 162              		.loc 1 362 22 is_stmt 0 view .LVU31
+ 163 0046 4027     		movs	r7, #64
+ 164 0048 0397     		str	r7, [sp, #12]
+ 363:Core/Src/gc9a01a.c **** 	HAL_GPIO_Init(GC9A01A_RESET_Port, &GPIO_InitStruct);
+ 165              		.loc 1 363 2 is_stmt 1 view .LVU32
+ 166 004a 03A9     		add	r1, sp, #12
+ 167 004c 2046     		mov	r0, r4
+ 168 004e FFF7FEFF 		bl	HAL_GPIO_Init
+ 169              	.LVL5:
+ 364:Core/Src/gc9a01a.c **** 	RESET_HIGH();
+ 170              		.loc 1 364 2 view .LVU33
+ 171 0052 4246     		mov	r2, r8
+ 172 0054 3946     		mov	r1, r7
+ 173 0056 2046     		mov	r0, r4
+ 174 0058 FFF7FEFF 		bl	HAL_GPIO_WritePin
+ 175              	.LVL6:
+ 365:Core/Src/gc9a01a.c **** #endif
+ 366:Core/Src/gc9a01a.c **** 
+ 367:Core/Src/gc9a01a.c **** #if (GC9A01A_CS_Used)
+ 368:Core/Src/gc9a01a.c ****   gpio_PortClockStart(GC9A01A_CS_Port);
+ 369:Core/Src/gc9a01a.c ****   GPIO_InitStruct.Pin = GC9A01A_CS_Pin;
+ 370:Core/Src/gc9a01a.c ****   HAL_GPIO_Init(GC9A01A_CS_Port, &GPIO_InitStruct);
+ 371:Core/Src/gc9a01a.c ****   CS_HIGH();
+ 372:Core/Src/gc9a01a.c **** #endif
+ 373:Core/Src/gc9a01a.c **** 
+ 374:Core/Src/gc9a01a.c **** #if (GC9A01A_DC_Used)
+ 375:Core/Src/gc9a01a.c **** 	gpio_PortClockStart(GC9A01A_DC_Port);
+ 176              		.loc 1 375 2 view .LVU34
+ 177 005c 124F     		ldr	r7, .L8+8
+ 178 005e 3846     		mov	r0, r7
+ 179 0060 FFF7FEFF 		bl	gpio_PortClockStart
+ 180              	.LVL7:
+ 376:Core/Src/gc9a01a.c **** 	GPIO_InitStruct.Pin = GC9A01A_DC_Pin;
+ 181              		.loc 1 376 2 view .LVU35
+ 182              		.loc 1 376 22 is_stmt 0 view .LVU36
+ 183 0064 4FF01009 		mov	r9, #16
+ 184 0068 CDF80C90 		str	r9, [sp, #12]
+ 377:Core/Src/gc9a01a.c **** 	HAL_GPIO_Init(GC9A01A_DC_Port, &GPIO_InitStruct);
+ 185              		.loc 1 377 2 is_stmt 1 view .LVU37
+ 186 006c 03A9     		add	r1, sp, #12
+ 187 006e 3846     		mov	r0, r7
+ 188 0070 FFF7FEFF 		bl	HAL_GPIO_Init
+ 189              	.LVL8:
+ 378:Core/Src/gc9a01a.c **** 	DC_HIGH();
+ 190              		.loc 1 378 2 view .LVU38
+ 191 0074 4246     		mov	r2, r8
+ 192 0076 4946     		mov	r1, r9
+ 193 0078 3846     		mov	r0, r7
+ 194 007a FFF7FEFF 		bl	HAL_GPIO_WritePin
+ 195              	.LVL9:
+ 379:Core/Src/gc9a01a.c **** #endif
+ 380:Core/Src/gc9a01a.c **** 
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccg2kW7X.s 			page 11
+
+
+ 381:Core/Src/gc9a01a.c **** #if (GC9A01A_BLK_PWM_Used)
+ 382:Core/Src/gc9a01a.c **** 	//tmr11_PWM_init(100, 0);
+ 383:Core/Src/gc9a01a.c **** 	//tmr11_start();
+ 384:Core/Src/gc9a01a.c **** 	GC9A01A_SetBL(0);
+ 385:Core/Src/gc9a01a.c **** #else
+ 386:Core/Src/gc9a01a.c ****   gpio_PortClockStart(GC9A01A_BLK_Port);
+ 196              		.loc 1 386 3 view .LVU39
+ 197 007e 2046     		mov	r0, r4
+ 198 0080 FFF7FEFF 		bl	gpio_PortClockStart
+ 199              	.LVL10:
+ 387:Core/Src/gc9a01a.c ****   GPIO_InitStruct.Pin = GC9A01A_BLK_Pin;
+ 200              		.loc 1 387 3 view .LVU40
+ 201              		.loc 1 387 23 is_stmt 0 view .LVU41
+ 202 0084 0395     		str	r5, [sp, #12]
+ 388:Core/Src/gc9a01a.c ****   HAL_GPIO_Init(GC9A01A_BLK_Port, &GPIO_InitStruct);
+ 203              		.loc 1 388 3 is_stmt 1 view .LVU42
+ 204 0086 03A9     		add	r1, sp, #12
+ 205 0088 2046     		mov	r0, r4
+ 206 008a FFF7FEFF 		bl	HAL_GPIO_Init
+ 207              	.LVL11:
+ 389:Core/Src/gc9a01a.c ****   BLK_LOW();
+ 208              		.loc 1 389 3 view .LVU43
+ 209 008e 3246     		mov	r2, r6
+ 210 0090 2946     		mov	r1, r5
+ 211 0092 2046     		mov	r0, r4
+ 212 0094 FFF7FEFF 		bl	HAL_GPIO_WritePin
+ 213              	.LVL12:
+ 390:Core/Src/gc9a01a.c **** #endif
+ 391:Core/Src/gc9a01a.c **** }
+ 214              		.loc 1 391 1 is_stmt 0 view .LVU44
+ 215 0098 09B0     		add	sp, sp, #36
+ 216              		.cfi_def_cfa_offset 28
+ 217              		@ sp needed
+ 218 009a BDE8F083 		pop	{r4, r5, r6, r7, r8, r9, pc}
+ 219              	.L9:
+ 220 009e 00BF     		.align	2
+ 221              	.L8:
+ 222 00a0 00380240 		.word	1073887232
+ 223 00a4 00000240 		.word	1073872896
+ 224 00a8 00080240 		.word	1073874944
+ 225              		.cfi_endproc
+ 226              	.LFE155:
+ 228              		.section	.text.SendCmd,"ax",%progbits
+ 229              		.align	1
+ 230              		.global	SendCmd
+ 231              		.syntax unified
+ 232              		.thumb
+ 233              		.thumb_func
+ 235              	SendCmd:
+ 236              	.LVL13:
+ 237              	.LFB138:
+  93:Core/Src/gc9a01a.c **** 	DC_LOW(); CS_LOW();
+ 238              		.loc 1 93 27 is_stmt 1 view -0
+ 239              		.cfi_startproc
+ 240              		@ args = 0, pretend = 0, frame = 8
+ 241              		@ frame_needed = 0, uses_anonymous_args = 0
+  93:Core/Src/gc9a01a.c **** 	DC_LOW(); CS_LOW();
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccg2kW7X.s 			page 12
+
+
+ 242              		.loc 1 93 27 is_stmt 0 view .LVU46
+ 243 0000 00B5     		push	{lr}
+ 244              		.cfi_def_cfa_offset 4
+ 245              		.cfi_offset 14, -4
+ 246 0002 83B0     		sub	sp, sp, #12
+ 247              		.cfi_def_cfa_offset 16
+ 248 0004 8DF80700 		strb	r0, [sp, #7]
+  94:Core/Src/gc9a01a.c **** 
+ 249              		.loc 1 94 2 is_stmt 1 view .LVU47
+ 250 0008 0022     		movs	r2, #0
+ 251 000a 1021     		movs	r1, #16
+ 252 000c 0648     		ldr	r0, .L12
+ 253              	.LVL14:
+  94:Core/Src/gc9a01a.c **** 
+ 254              		.loc 1 94 2 is_stmt 0 view .LVU48
+ 255 000e FFF7FEFF 		bl	HAL_GPIO_WritePin
+ 256              	.LVL15:
+  94:Core/Src/gc9a01a.c **** 
+ 257              		.loc 1 94 20 is_stmt 1 discriminator 1 view .LVU49
+  96:Core/Src/gc9a01a.c **** 
+ 258              		.loc 1 96 2 view .LVU50
+ 259 0012 0123     		movs	r3, #1
+ 260 0014 0DF10702 		add	r2, sp, #7
+ 261 0018 0021     		movs	r1, #0
+ 262 001a 0448     		ldr	r0, .L12+4
+ 263 001c FFF7FEFF 		bl	SPI_send
+ 264              	.LVL16:
+  98:Core/Src/gc9a01a.c **** }
+ 265              		.loc 1 98 11 view .LVU51
+  99:Core/Src/gc9a01a.c **** 
+ 266              		.loc 1 99 1 is_stmt 0 view .LVU52
+ 267 0020 03B0     		add	sp, sp, #12
+ 268              		.cfi_def_cfa_offset 4
+ 269              		@ sp needed
+ 270 0022 5DF804FB 		ldr	pc, [sp], #4
+ 271              	.L13:
+ 272 0026 00BF     		.align	2
+ 273              	.L12:
+ 274 0028 00080240 		.word	1073874944
+ 275 002c 00300140 		.word	1073819648
+ 276              		.cfi_endproc
+ 277              	.LFE138:
+ 279              		.section	.text.SendData,"ax",%progbits
+ 280              		.align	1
+ 281              		.global	SendData
+ 282              		.syntax unified
+ 283              		.thumb
+ 284              		.thumb_func
+ 286              	SendData:
+ 287              	.LVL17:
+ 288              	.LFB139:
+ 101:Core/Src/gc9a01a.c **** 	DC_HIGH(); CS_LOW();
+ 289              		.loc 1 101 29 is_stmt 1 view -0
+ 290              		.cfi_startproc
+ 291              		@ args = 0, pretend = 0, frame = 8
+ 292              		@ frame_needed = 0, uses_anonymous_args = 0
+ 101:Core/Src/gc9a01a.c **** 	DC_HIGH(); CS_LOW();
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccg2kW7X.s 			page 13
+
+
+ 293              		.loc 1 101 29 is_stmt 0 view .LVU54
+ 294 0000 00B5     		push	{lr}
+ 295              		.cfi_def_cfa_offset 4
+ 296              		.cfi_offset 14, -4
+ 297 0002 83B0     		sub	sp, sp, #12
+ 298              		.cfi_def_cfa_offset 16
+ 299 0004 8DF80700 		strb	r0, [sp, #7]
+ 102:Core/Src/gc9a01a.c **** 
+ 300              		.loc 1 102 2 is_stmt 1 view .LVU55
+ 301 0008 0122     		movs	r2, #1
+ 302 000a 1021     		movs	r1, #16
+ 303 000c 0648     		ldr	r0, .L16
+ 304              	.LVL18:
+ 102:Core/Src/gc9a01a.c **** 
+ 305              		.loc 1 102 2 is_stmt 0 view .LVU56
+ 306 000e FFF7FEFF 		bl	HAL_GPIO_WritePin
+ 307              	.LVL19:
+ 102:Core/Src/gc9a01a.c **** 
+ 308              		.loc 1 102 21 is_stmt 1 discriminator 1 view .LVU57
+ 104:Core/Src/gc9a01a.c **** 
+ 309              		.loc 1 104 2 view .LVU58
+ 310 0012 0123     		movs	r3, #1
+ 311 0014 0DF10702 		add	r2, sp, #7
+ 312 0018 0021     		movs	r1, #0
+ 313 001a 0448     		ldr	r0, .L16+4
+ 314 001c FFF7FEFF 		bl	SPI_send
+ 315              	.LVL20:
+ 106:Core/Src/gc9a01a.c **** }
+ 316              		.loc 1 106 11 view .LVU59
+ 107:Core/Src/gc9a01a.c **** 
+ 317              		.loc 1 107 1 is_stmt 0 view .LVU60
+ 318 0020 03B0     		add	sp, sp, #12
+ 319              		.cfi_def_cfa_offset 4
+ 320              		@ sp needed
+ 321 0022 5DF804FB 		ldr	pc, [sp], #4
+ 322              	.L17:
+ 323 0026 00BF     		.align	2
+ 324              	.L16:
+ 325 0028 00080240 		.word	1073874944
+ 326 002c 00300140 		.word	1073819648
+ 327              		.cfi_endproc
+ 328              	.LFE139:
+ 330              		.section	.text.ColumnSet,"ax",%progbits
+ 331              		.align	1
+ 332              		.syntax unified
+ 333              		.thumb
+ 334              		.thumb_func
+ 336              	ColumnSet:
+ 337              	.LVL21:
+ 338              	.LFB144:
+ 141:Core/Src/gc9a01a.c **** 	if (ColumnStart > ColumnEnd)
+ 339              		.loc 1 141 65 is_stmt 1 view -0
+ 340              		.cfi_startproc
+ 341              		@ args = 0, pretend = 0, frame = 0
+ 342              		@ frame_needed = 0, uses_anonymous_args = 0
+ 142:Core/Src/gc9a01a.c **** 		return;
+ 343              		.loc 1 142 2 view .LVU62
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccg2kW7X.s 			page 14
+
+
+ 142:Core/Src/gc9a01a.c **** 		return;
+ 344              		.loc 1 142 5 is_stmt 0 view .LVU63
+ 345 0000 8842     		cmp	r0, r1
+ 346 0002 01D8     		bhi	.L21
+ 144:Core/Src/gc9a01a.c **** 		return;
+ 347              		.loc 1 144 2 is_stmt 1 view .LVU64
+ 144:Core/Src/gc9a01a.c **** 		return;
+ 348              		.loc 1 144 5 is_stmt 0 view .LVU65
+ 349 0004 F029     		cmp	r1, #240
+ 350 0006 00D9     		bls	.L24
+ 351              	.L21:
+ 352 0008 7047     		bx	lr
+ 353              	.L24:
+ 141:Core/Src/gc9a01a.c **** 	if (ColumnStart > ColumnEnd)
+ 354              		.loc 1 141 65 view .LVU66
+ 355 000a 38B5     		push	{r3, r4, r5, lr}
+ 356              		.cfi_def_cfa_offset 16
+ 357              		.cfi_offset 3, -16
+ 358              		.cfi_offset 4, -12
+ 359              		.cfi_offset 5, -8
+ 360              		.cfi_offset 14, -4
+ 147:Core/Src/gc9a01a.c **** 	ColumnEnd += GC9A01A_X_Start;
+ 361              		.loc 1 147 2 is_stmt 1 view .LVU67
+ 147:Core/Src/gc9a01a.c **** 	ColumnEnd += GC9A01A_X_Start;
+ 362              		.loc 1 147 14 is_stmt 0 view .LVU68
+ 363 000c 0A4B     		ldr	r3, .L25
+ 364 000e 1D78     		ldrb	r5, [r3]	@ zero_extendqisi2
+ 365 0010 2844     		add	r0, r0, r5
+ 366              	.LVL22:
+ 147:Core/Src/gc9a01a.c **** 	ColumnEnd += GC9A01A_X_Start;
+ 367              		.loc 1 147 14 view .LVU69
+ 368 0012 84B2     		uxth	r4, r0
+ 369              	.LVL23:
+ 148:Core/Src/gc9a01a.c **** 
+ 370              		.loc 1 148 2 is_stmt 1 view .LVU70
+ 148:Core/Src/gc9a01a.c **** 
+ 371              		.loc 1 148 12 is_stmt 0 view .LVU71
+ 372 0014 0D44     		add	r5, r5, r1
+ 373 0016 ADB2     		uxth	r5, r5
+ 374              	.LVL24:
+ 150:Core/Src/gc9a01a.c **** 	SendData(ColumnStart >> 8);
+ 375              		.loc 1 150 2 is_stmt 1 view .LVU72
+ 376 0018 2A20     		movs	r0, #42
+ 377 001a FFF7FEFF 		bl	SendCmd
+ 378              	.LVL25:
+ 151:Core/Src/gc9a01a.c **** 	SendData(ColumnStart & 0xFF);
+ 379              		.loc 1 151 2 view .LVU73
+ 380 001e 200A     		lsrs	r0, r4, #8
+ 381 0020 FFF7FEFF 		bl	SendData
+ 382              	.LVL26:
+ 152:Core/Src/gc9a01a.c **** 	SendData(ColumnEnd >> 8);
+ 383              		.loc 1 152 2 view .LVU74
+ 384 0024 E0B2     		uxtb	r0, r4
+ 385 0026 FFF7FEFF 		bl	SendData
+ 386              	.LVL27:
+ 153:Core/Src/gc9a01a.c **** 	SendData(ColumnEnd & 0xFF);
+ 387              		.loc 1 153 2 view .LVU75
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccg2kW7X.s 			page 15
+
+
+ 388 002a 280A     		lsrs	r0, r5, #8
+ 389 002c FFF7FEFF 		bl	SendData
+ 390              	.LVL28:
+ 154:Core/Src/gc9a01a.c **** }
+ 391              		.loc 1 154 2 view .LVU76
+ 392 0030 E8B2     		uxtb	r0, r5
+ 393 0032 FFF7FEFF 		bl	SendData
+ 394              	.LVL29:
+ 155:Core/Src/gc9a01a.c **** 
+ 395              		.loc 1 155 1 is_stmt 0 view .LVU77
+ 396 0036 38BD     		pop	{r3, r4, r5, pc}
+ 397              	.LVL30:
+ 398              	.L26:
+ 155:Core/Src/gc9a01a.c **** 
+ 399              		.loc 1 155 1 view .LVU78
+ 400              		.align	2
+ 401              	.L25:
+ 402 0038 00000000 		.word	GC9A01A_X_Start
+ 403              		.cfi_endproc
+ 404              	.LFE144:
+ 406              		.section	.text.RowSet,"ax",%progbits
+ 407              		.align	1
+ 408              		.syntax unified
+ 409              		.thumb
+ 410              		.thumb_func
+ 412              	RowSet:
+ 413              	.LVL31:
+ 414              	.LFB145:
+ 157:Core/Src/gc9a01a.c **** 	if (RowStart > RowEnd)
+ 415              		.loc 1 157 56 is_stmt 1 view -0
+ 416              		.cfi_startproc
+ 417              		@ args = 0, pretend = 0, frame = 0
+ 418              		@ frame_needed = 0, uses_anonymous_args = 0
+ 158:Core/Src/gc9a01a.c **** 		return;
+ 419              		.loc 1 158 2 view .LVU80
+ 158:Core/Src/gc9a01a.c **** 		return;
+ 420              		.loc 1 158 5 is_stmt 0 view .LVU81
+ 421 0000 8842     		cmp	r0, r1
+ 422 0002 01D8     		bhi	.L30
+ 160:Core/Src/gc9a01a.c **** 		return;
+ 423              		.loc 1 160 2 is_stmt 1 view .LVU82
+ 160:Core/Src/gc9a01a.c **** 		return;
+ 424              		.loc 1 160 5 is_stmt 0 view .LVU83
+ 425 0004 F029     		cmp	r1, #240
+ 426 0006 00D9     		bls	.L33
+ 427              	.L30:
+ 428 0008 7047     		bx	lr
+ 429              	.L33:
+ 157:Core/Src/gc9a01a.c **** 	if (RowStart > RowEnd)
+ 430              		.loc 1 157 56 view .LVU84
+ 431 000a 38B5     		push	{r3, r4, r5, lr}
+ 432              		.cfi_def_cfa_offset 16
+ 433              		.cfi_offset 3, -16
+ 434              		.cfi_offset 4, -12
+ 435              		.cfi_offset 5, -8
+ 436              		.cfi_offset 14, -4
+ 163:Core/Src/gc9a01a.c **** 	RowEnd += GC9A01A_Y_Start;
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccg2kW7X.s 			page 16
+
+
+ 437              		.loc 1 163 2 is_stmt 1 view .LVU85
+ 163:Core/Src/gc9a01a.c **** 	RowEnd += GC9A01A_Y_Start;
+ 438              		.loc 1 163 11 is_stmt 0 view .LVU86
+ 439 000c 0A4B     		ldr	r3, .L34
+ 440 000e 1D78     		ldrb	r5, [r3]	@ zero_extendqisi2
+ 441 0010 2844     		add	r0, r0, r5
+ 442              	.LVL32:
+ 163:Core/Src/gc9a01a.c **** 	RowEnd += GC9A01A_Y_Start;
+ 443              		.loc 1 163 11 view .LVU87
+ 444 0012 84B2     		uxth	r4, r0
+ 445              	.LVL33:
+ 164:Core/Src/gc9a01a.c **** 
+ 446              		.loc 1 164 2 is_stmt 1 view .LVU88
+ 164:Core/Src/gc9a01a.c **** 
+ 447              		.loc 1 164 9 is_stmt 0 view .LVU89
+ 448 0014 0D44     		add	r5, r5, r1
+ 449 0016 ADB2     		uxth	r5, r5
+ 450              	.LVL34:
+ 166:Core/Src/gc9a01a.c **** 	SendData(RowStart >> 8);
+ 451              		.loc 1 166 2 is_stmt 1 view .LVU90
+ 452 0018 2B20     		movs	r0, #43
+ 453 001a FFF7FEFF 		bl	SendCmd
+ 454              	.LVL35:
+ 167:Core/Src/gc9a01a.c **** 	SendData(RowStart & 0xFF);
+ 455              		.loc 1 167 2 view .LVU91
+ 456 001e 200A     		lsrs	r0, r4, #8
+ 457 0020 FFF7FEFF 		bl	SendData
+ 458              	.LVL36:
+ 168:Core/Src/gc9a01a.c **** 	SendData(RowEnd >> 8);
+ 459              		.loc 1 168 2 view .LVU92
+ 460 0024 E0B2     		uxtb	r0, r4
+ 461 0026 FFF7FEFF 		bl	SendData
+ 462              	.LVL37:
+ 169:Core/Src/gc9a01a.c **** 	SendData(RowEnd & 0xFF);
+ 463              		.loc 1 169 2 view .LVU93
+ 464 002a 280A     		lsrs	r0, r5, #8
+ 465 002c FFF7FEFF 		bl	SendData
+ 466              	.LVL38:
+ 170:Core/Src/gc9a01a.c **** }
+ 467              		.loc 1 170 2 view .LVU94
+ 468 0030 E8B2     		uxtb	r0, r5
+ 469 0032 FFF7FEFF 		bl	SendData
+ 470              	.LVL39:
+ 171:Core/Src/gc9a01a.c **** 
+ 471              		.loc 1 171 1 is_stmt 0 view .LVU95
+ 472 0036 38BD     		pop	{r3, r4, r5, pc}
+ 473              	.LVL40:
+ 474              	.L35:
+ 171:Core/Src/gc9a01a.c **** 
+ 475              		.loc 1 171 1 view .LVU96
+ 476              		.align	2
+ 477              	.L34:
+ 478 0038 00000000 		.word	GC9A01A_Y_Start
+ 479              		.cfi_endproc
+ 480              	.LFE145:
+ 482              		.section	.text.MemAccessModeSet,"ax",%progbits
+ 483              		.align	1
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccg2kW7X.s 			page 17
+
+
+ 484              		.syntax unified
+ 485              		.thumb
+ 486              		.thumb_func
+ 488              	MemAccessModeSet:
+ 489              	.LVL41:
+ 490              	.LFB148:
+ 186:Core/Src/gc9a01a.c **** 	uint8_t Value;
+ 491              		.loc 1 186 39 is_stmt 1 view -0
+ 492              		.cfi_startproc
+ 493              		@ args = 0, pretend = 0, frame = 0
+ 494              		@ frame_needed = 0, uses_anonymous_args = 0
+ 186:Core/Src/gc9a01a.c **** 	uint8_t Value;
+ 495              		.loc 1 186 39 is_stmt 0 view .LVU98
+ 496 0000 F8B5     		push	{r3, r4, r5, r6, r7, lr}
+ 497              		.cfi_def_cfa_offset 24
+ 498              		.cfi_offset 3, -24
+ 499              		.cfi_offset 4, -20
+ 500              		.cfi_offset 5, -16
+ 501              		.cfi_offset 6, -12
+ 502              		.cfi_offset 7, -8
+ 503              		.cfi_offset 14, -4
+ 504 0002 0F46     		mov	r7, r1
+ 505 0004 1646     		mov	r6, r2
+ 506 0006 1D46     		mov	r5, r3
+ 187:Core/Src/gc9a01a.c **** 	Rotation &= 7;
+ 507              		.loc 1 187 2 is_stmt 1 view .LVU99
+ 188:Core/Src/gc9a01a.c **** 
+ 508              		.loc 1 188 2 view .LVU100
+ 188:Core/Src/gc9a01a.c **** 
+ 509              		.loc 1 188 11 is_stmt 0 view .LVU101
+ 510 0008 00F00704 		and	r4, r0, #7
+ 511              	.LVL42:
+ 190:Core/Src/gc9a01a.c **** 
+ 512              		.loc 1 190 2 is_stmt 1 view .LVU102
+ 513 000c 3620     		movs	r0, #54
+ 514 000e FFF7FEFF 		bl	SendCmd
+ 515              	.LVL43:
+ 192:Core/Src/gc9a01a.c **** 	case 0:
+ 516              		.loc 1 192 2 view .LVU103
+ 517 0012 072C     		cmp	r4, #7
+ 518 0014 06D8     		bhi	.L46
+ 519 0016 DFE804F0 		tbb	[pc, r4]
+ 520              	.L39:
+ 521 001a 05       		.byte	(.L46-.L39)/2
+ 522 001b 04       		.byte	(.L45-.L39)/2
+ 523 001c 10       		.byte	(.L44-.L39)/2
+ 524 001d 12       		.byte	(.L43-.L39)/2
+ 525 001e 14       		.byte	(.L42-.L39)/2
+ 526 001f 16       		.byte	(.L41-.L39)/2
+ 527 0020 18       		.byte	(.L40-.L39)/2
+ 528 0021 1A       		.byte	(.L38-.L39)/2
+ 529              		.p2align 1
+ 530              	.L45:
+ 197:Core/Src/gc9a01a.c **** 		break;
+ 531              		.loc 1 197 3 view .LVU104
+ 532              	.LVL44:
+ 198:Core/Src/gc9a01a.c **** 	case 2:
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccg2kW7X.s 			page 18
+
+
+ 533              		.loc 1 198 3 view .LVU105
+ 197:Core/Src/gc9a01a.c **** 		break;
+ 534              		.loc 1 197 9 is_stmt 0 view .LVU106
+ 535 0022 4024     		movs	r4, #64
+ 536              	.LVL45:
+ 537              	.L46:
+ 219:Core/Src/gc9a01a.c **** 		Value = MADCTL_ML;
+ 538              		.loc 1 219 2 is_stmt 1 view .LVU107
+ 219:Core/Src/gc9a01a.c **** 		Value = MADCTL_ML;
+ 539              		.loc 1 219 5 is_stmt 0 view .LVU108
+ 540 0024 07B1     		cbz	r7, .L47
+ 220:Core/Src/gc9a01a.c **** 	if (HorizMirror)
+ 541              		.loc 1 220 9 view .LVU109
+ 542 0026 1024     		movs	r4, #16
+ 543              	.LVL46:
+ 544              	.L47:
+ 221:Core/Src/gc9a01a.c **** 		Value = MADCTL_MH;
+ 545              		.loc 1 221 2 is_stmt 1 view .LVU110
+ 221:Core/Src/gc9a01a.c **** 		Value = MADCTL_MH;
+ 546              		.loc 1 221 5 is_stmt 0 view .LVU111
+ 547 0028 06B1     		cbz	r6, .L48
+ 222:Core/Src/gc9a01a.c **** 
+ 548              		.loc 1 222 9 view .LVU112
+ 549 002a 0424     		movs	r4, #4
+ 550              	.LVL47:
+ 551              	.L48:
+ 224:Core/Src/gc9a01a.c **** 		Value |= MADCTL_BGR;
+ 552              		.loc 1 224 2 is_stmt 1 view .LVU113
+ 224:Core/Src/gc9a01a.c **** 		Value |= MADCTL_BGR;
+ 553              		.loc 1 224 5 is_stmt 0 view .LVU114
+ 554 002c 0DB1     		cbz	r5, .L49
+ 225:Core/Src/gc9a01a.c **** 
+ 555              		.loc 1 225 3 is_stmt 1 view .LVU115
+ 225:Core/Src/gc9a01a.c **** 
+ 556              		.loc 1 225 9 is_stmt 0 view .LVU116
+ 557 002e 44F00804 		orr	r4, r4, #8
+ 558              	.LVL48:
+ 559              	.L49:
+ 227:Core/Src/gc9a01a.c **** }
+ 560              		.loc 1 227 2 is_stmt 1 view .LVU117
+ 561 0032 2046     		mov	r0, r4
+ 562 0034 FFF7FEFF 		bl	SendData
+ 563              	.LVL49:
+ 228:Core/Src/gc9a01a.c **** 
+ 564              		.loc 1 228 1 is_stmt 0 view .LVU118
+ 565 0038 F8BD     		pop	{r3, r4, r5, r6, r7, pc}
+ 566              	.LVL50:
+ 567              	.L44:
+ 200:Core/Src/gc9a01a.c **** 		break;
+ 568              		.loc 1 200 3 is_stmt 1 view .LVU119
+ 201:Core/Src/gc9a01a.c **** 	case 3:
+ 569              		.loc 1 201 3 view .LVU120
+ 200:Core/Src/gc9a01a.c **** 		break;
+ 570              		.loc 1 200 9 is_stmt 0 view .LVU121
+ 571 003a 8024     		movs	r4, #128
+ 572              	.LVL51:
+ 201:Core/Src/gc9a01a.c **** 	case 3:
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccg2kW7X.s 			page 19
+
+
+ 573              		.loc 1 201 3 view .LVU122
+ 574 003c F2E7     		b	.L46
+ 575              	.LVL52:
+ 576              	.L43:
+ 203:Core/Src/gc9a01a.c **** 		break;
+ 577              		.loc 1 203 3 is_stmt 1 view .LVU123
+ 204:Core/Src/gc9a01a.c **** 	case 4:
+ 578              		.loc 1 204 3 view .LVU124
+ 203:Core/Src/gc9a01a.c **** 		break;
+ 579              		.loc 1 203 9 is_stmt 0 view .LVU125
+ 580 003e C024     		movs	r4, #192
+ 581              	.LVL53:
+ 204:Core/Src/gc9a01a.c **** 	case 4:
+ 582              		.loc 1 204 3 view .LVU126
+ 583 0040 F0E7     		b	.L46
+ 584              	.LVL54:
+ 585              	.L42:
+ 206:Core/Src/gc9a01a.c **** 		break;
+ 586              		.loc 1 206 3 is_stmt 1 view .LVU127
+ 207:Core/Src/gc9a01a.c **** 	case 5:
+ 587              		.loc 1 207 3 view .LVU128
+ 206:Core/Src/gc9a01a.c **** 		break;
+ 588              		.loc 1 206 9 is_stmt 0 view .LVU129
+ 589 0042 2024     		movs	r4, #32
+ 590              	.LVL55:
+ 207:Core/Src/gc9a01a.c **** 	case 5:
+ 591              		.loc 1 207 3 view .LVU130
+ 592 0044 EEE7     		b	.L46
+ 593              	.LVL56:
+ 594              	.L41:
+ 209:Core/Src/gc9a01a.c **** 		break;
+ 595              		.loc 1 209 3 is_stmt 1 view .LVU131
+ 210:Core/Src/gc9a01a.c **** 	case 6:
+ 596              		.loc 1 210 3 view .LVU132
+ 209:Core/Src/gc9a01a.c **** 		break;
+ 597              		.loc 1 209 9 is_stmt 0 view .LVU133
+ 598 0046 6024     		movs	r4, #96
+ 599              	.LVL57:
+ 210:Core/Src/gc9a01a.c **** 	case 6:
+ 600              		.loc 1 210 3 view .LVU134
+ 601 0048 ECE7     		b	.L46
+ 602              	.LVL58:
+ 603              	.L40:
+ 212:Core/Src/gc9a01a.c **** 		break;
+ 604              		.loc 1 212 3 is_stmt 1 view .LVU135
+ 213:Core/Src/gc9a01a.c **** 	case 7:
+ 605              		.loc 1 213 3 view .LVU136
+ 212:Core/Src/gc9a01a.c **** 		break;
+ 606              		.loc 1 212 9 is_stmt 0 view .LVU137
+ 607 004a A024     		movs	r4, #160
+ 608              	.LVL59:
+ 213:Core/Src/gc9a01a.c **** 	case 7:
+ 609              		.loc 1 213 3 view .LVU138
+ 610 004c EAE7     		b	.L46
+ 611              	.LVL60:
+ 612              	.L38:
+ 215:Core/Src/gc9a01a.c **** 		break;
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccg2kW7X.s 			page 20
+
+
+ 613              		.loc 1 215 3 is_stmt 1 view .LVU139
+ 216:Core/Src/gc9a01a.c **** 	}
+ 614              		.loc 1 216 3 view .LVU140
+ 215:Core/Src/gc9a01a.c **** 		break;
+ 615              		.loc 1 215 9 is_stmt 0 view .LVU141
+ 616 004e E024     		movs	r4, #224
+ 617              	.LVL61:
+ 216:Core/Src/gc9a01a.c **** 	}
+ 618              		.loc 1 216 3 view .LVU142
+ 619 0050 E8E7     		b	.L46
+ 620              		.cfi_endproc
+ 621              	.LFE148:
+ 623              		.section	.text.ColorModeSet,"ax",%progbits
+ 624              		.align	1
+ 625              		.syntax unified
+ 626              		.thumb
+ 627              		.thumb_func
+ 629              	ColorModeSet:
+ 630              	.LVL62:
+ 631              	.LFB147:
+ 180:Core/Src/gc9a01a.c **** 	SendCmd(Cmd_COLMOD);
+ 632              		.loc 1 180 45 is_stmt 1 view -0
+ 633              		.cfi_startproc
+ 634              		@ args = 0, pretend = 0, frame = 0
+ 635              		@ frame_needed = 0, uses_anonymous_args = 0
+ 180:Core/Src/gc9a01a.c **** 	SendCmd(Cmd_COLMOD);
+ 636              		.loc 1 180 45 is_stmt 0 view .LVU144
+ 637 0000 10B5     		push	{r4, lr}
+ 638              		.cfi_def_cfa_offset 8
+ 639              		.cfi_offset 4, -8
+ 640              		.cfi_offset 14, -4
+ 641 0002 0446     		mov	r4, r0
+ 181:Core/Src/gc9a01a.c **** 	SendData(ColorMode & 0x77);
+ 642              		.loc 1 181 2 is_stmt 1 view .LVU145
+ 643 0004 3A20     		movs	r0, #58
+ 644              	.LVL63:
+ 181:Core/Src/gc9a01a.c **** 	SendData(ColorMode & 0x77);
+ 645              		.loc 1 181 2 is_stmt 0 view .LVU146
+ 646 0006 FFF7FEFF 		bl	SendCmd
+ 647              	.LVL64:
+ 182:Core/Src/gc9a01a.c **** }
+ 648              		.loc 1 182 2 is_stmt 1 view .LVU147
+ 649 000a 04F07700 		and	r0, r4, #119
+ 650 000e FFF7FEFF 		bl	SendData
+ 651              	.LVL65:
+ 183:Core/Src/gc9a01a.c **** 
+ 652              		.loc 1 183 1 is_stmt 0 view .LVU148
+ 653 0012 10BD     		pop	{r4, pc}
+ 183:Core/Src/gc9a01a.c **** 
+ 654              		.loc 1 183 1 view .LVU149
+ 655              		.cfi_endproc
+ 656              	.LFE147:
+ 658              		.section	.text.GC9A01A_HardReset,"ax",%progbits
+ 659              		.align	1
+ 660              		.global	GC9A01A_HardReset
+ 661              		.syntax unified
+ 662              		.thumb
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccg2kW7X.s 			page 21
+
+
+ 663              		.thumb_func
+ 665              	GC9A01A_HardReset:
+ 666              	.LFB140:
+ 109:Core/Src/gc9a01a.c **** #if (GC9A01A_RESET_Used)
+ 667              		.loc 1 109 30 is_stmt 1 view -0
+ 668              		.cfi_startproc
+ 669              		@ args = 0, pretend = 0, frame = 0
+ 670              		@ frame_needed = 0, uses_anonymous_args = 0
+ 671 0000 10B5     		push	{r4, lr}
+ 672              		.cfi_def_cfa_offset 8
+ 673              		.cfi_offset 4, -8
+ 674              		.cfi_offset 14, -4
+ 111:Core/Src/gc9a01a.c **** 	HAL_Delay(10);
+ 675              		.loc 1 111 2 view .LVU151
+ 676 0002 094C     		ldr	r4, .L58
+ 677 0004 0022     		movs	r2, #0
+ 678 0006 4021     		movs	r1, #64
+ 679 0008 2046     		mov	r0, r4
+ 680 000a FFF7FEFF 		bl	HAL_GPIO_WritePin
+ 681              	.LVL66:
+ 112:Core/Src/gc9a01a.c **** 	RESET_HIGH();
+ 682              		.loc 1 112 2 view .LVU152
+ 683 000e 0A20     		movs	r0, #10
+ 684 0010 FFF7FEFF 		bl	HAL_Delay
+ 685              	.LVL67:
+ 113:Core/Src/gc9a01a.c **** 	HAL_Delay(150);
+ 686              		.loc 1 113 2 view .LVU153
+ 687 0014 0122     		movs	r2, #1
+ 688 0016 4021     		movs	r1, #64
+ 689 0018 2046     		mov	r0, r4
+ 690 001a FFF7FEFF 		bl	HAL_GPIO_WritePin
+ 691              	.LVL68:
+ 114:Core/Src/gc9a01a.c **** #endif
+ 692              		.loc 1 114 2 view .LVU154
+ 693 001e 9620     		movs	r0, #150
+ 694 0020 FFF7FEFF 		bl	HAL_Delay
+ 695              	.LVL69:
+ 116:Core/Src/gc9a01a.c **** 
+ 696              		.loc 1 116 1 is_stmt 0 view .LVU155
+ 697 0024 10BD     		pop	{r4, pc}
+ 698              	.L59:
+ 699 0026 00BF     		.align	2
+ 700              	.L58:
+ 701 0028 00000240 		.word	1073872896
+ 702              		.cfi_endproc
+ 703              	.LFE140:
+ 705              		.section	.text.GC9A01A_SleepMode,"ax",%progbits
+ 706              		.align	1
+ 707              		.global	GC9A01A_SleepMode
+ 708              		.syntax unified
+ 709              		.thumb
+ 710              		.thumb_func
+ 712              	GC9A01A_SleepMode:
+ 713              	.LVL70:
+ 714              	.LFB141:
+ 118:Core/Src/gc9a01a.c **** 	if (Mode)
+ 715              		.loc 1 118 38 is_stmt 1 view -0
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccg2kW7X.s 			page 22
+
+
+ 716              		.cfi_startproc
+ 717              		@ args = 0, pretend = 0, frame = 0
+ 718              		@ frame_needed = 0, uses_anonymous_args = 0
+ 118:Core/Src/gc9a01a.c **** 	if (Mode)
+ 719              		.loc 1 118 38 is_stmt 0 view .LVU157
+ 720 0000 08B5     		push	{r3, lr}
+ 721              		.cfi_def_cfa_offset 8
+ 722              		.cfi_offset 3, -8
+ 723              		.cfi_offset 14, -4
+ 119:Core/Src/gc9a01a.c **** 		SendCmd(Cmd_SLPIN);
+ 724              		.loc 1 119 2 is_stmt 1 view .LVU158
+ 119:Core/Src/gc9a01a.c **** 		SendCmd(Cmd_SLPIN);
+ 725              		.loc 1 119 5 is_stmt 0 view .LVU159
+ 726 0002 38B1     		cbz	r0, .L61
+ 120:Core/Src/gc9a01a.c **** 	else
+ 727              		.loc 1 120 3 is_stmt 1 view .LVU160
+ 728 0004 1020     		movs	r0, #16
+ 729              	.LVL71:
+ 120:Core/Src/gc9a01a.c **** 	else
+ 730              		.loc 1 120 3 is_stmt 0 view .LVU161
+ 731 0006 FFF7FEFF 		bl	SendCmd
+ 732              	.LVL72:
+ 733              	.L62:
+ 124:Core/Src/gc9a01a.c **** }
+ 734              		.loc 1 124 2 is_stmt 1 view .LVU162
+ 735 000a 4FF4FA70 		mov	r0, #500
+ 736 000e FFF7FEFF 		bl	HAL_Delay
+ 737              	.LVL73:
+ 125:Core/Src/gc9a01a.c **** 
+ 738              		.loc 1 125 1 is_stmt 0 view .LVU163
+ 739 0012 08BD     		pop	{r3, pc}
+ 740              	.LVL74:
+ 741              	.L61:
+ 122:Core/Src/gc9a01a.c **** 
+ 742              		.loc 1 122 3 is_stmt 1 view .LVU164
+ 743 0014 1120     		movs	r0, #17
+ 744              	.LVL75:
+ 122:Core/Src/gc9a01a.c **** 
+ 745              		.loc 1 122 3 is_stmt 0 view .LVU165
+ 746 0016 FFF7FEFF 		bl	SendCmd
+ 747              	.LVL76:
+ 748 001a F6E7     		b	.L62
+ 749              		.cfi_endproc
+ 750              	.LFE141:
+ 752              		.section	.text.GC9A01A_InversionMode,"ax",%progbits
+ 753              		.align	1
+ 754              		.global	GC9A01A_InversionMode
+ 755              		.syntax unified
+ 756              		.thumb
+ 757              		.thumb_func
+ 759              	GC9A01A_InversionMode:
+ 760              	.LVL77:
+ 761              	.LFB142:
+ 127:Core/Src/gc9a01a.c **** 	if (Mode)
+ 762              		.loc 1 127 42 is_stmt 1 view -0
+ 763              		.cfi_startproc
+ 764              		@ args = 0, pretend = 0, frame = 0
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccg2kW7X.s 			page 23
+
+
+ 765              		@ frame_needed = 0, uses_anonymous_args = 0
+ 127:Core/Src/gc9a01a.c **** 	if (Mode)
+ 766              		.loc 1 127 42 is_stmt 0 view .LVU167
+ 767 0000 08B5     		push	{r3, lr}
+ 768              		.cfi_def_cfa_offset 8
+ 769              		.cfi_offset 3, -8
+ 770              		.cfi_offset 14, -4
+ 128:Core/Src/gc9a01a.c **** 		SendCmd(Cmd_INVON);
+ 771              		.loc 1 128 2 is_stmt 1 view .LVU168
+ 128:Core/Src/gc9a01a.c **** 		SendCmd(Cmd_INVON);
+ 772              		.loc 1 128 5 is_stmt 0 view .LVU169
+ 773 0002 18B1     		cbz	r0, .L65
+ 129:Core/Src/gc9a01a.c **** 	else
+ 774              		.loc 1 129 3 is_stmt 1 view .LVU170
+ 775 0004 2120     		movs	r0, #33
+ 776              	.LVL78:
+ 129:Core/Src/gc9a01a.c **** 	else
+ 777              		.loc 1 129 3 is_stmt 0 view .LVU171
+ 778 0006 FFF7FEFF 		bl	SendCmd
+ 779              	.LVL79:
+ 780              	.L64:
+ 132:Core/Src/gc9a01a.c **** 
+ 781              		.loc 1 132 1 view .LVU172
+ 782 000a 08BD     		pop	{r3, pc}
+ 783              	.LVL80:
+ 784              	.L65:
+ 131:Core/Src/gc9a01a.c **** }
+ 785              		.loc 1 131 3 is_stmt 1 view .LVU173
+ 786 000c 2020     		movs	r0, #32
+ 787              	.LVL81:
+ 131:Core/Src/gc9a01a.c **** }
+ 788              		.loc 1 131 3 is_stmt 0 view .LVU174
+ 789 000e FFF7FEFF 		bl	SendCmd
+ 790              	.LVL82:
+ 132:Core/Src/gc9a01a.c **** 
+ 791              		.loc 1 132 1 view .LVU175
+ 792 0012 FAE7     		b	.L64
+ 793              		.cfi_endproc
+ 794              	.LFE142:
+ 796              		.section	.text.GC9A01A_DisplayPower,"ax",%progbits
+ 797              		.align	1
+ 798              		.global	GC9A01A_DisplayPower
+ 799              		.syntax unified
+ 800              		.thumb
+ 801              		.thumb_func
+ 803              	GC9A01A_DisplayPower:
+ 804              	.LVL83:
+ 805              	.LFB143:
+ 134:Core/Src/gc9a01a.c **** 	if (On)
+ 806              		.loc 1 134 39 is_stmt 1 view -0
+ 807              		.cfi_startproc
+ 808              		@ args = 0, pretend = 0, frame = 0
+ 809              		@ frame_needed = 0, uses_anonymous_args = 0
+ 134:Core/Src/gc9a01a.c **** 	if (On)
+ 810              		.loc 1 134 39 is_stmt 0 view .LVU177
+ 811 0000 08B5     		push	{r3, lr}
+ 812              		.cfi_def_cfa_offset 8
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccg2kW7X.s 			page 24
+
+
+ 813              		.cfi_offset 3, -8
+ 814              		.cfi_offset 14, -4
+ 135:Core/Src/gc9a01a.c **** 		SendCmd(Cmd_DISPON);
+ 815              		.loc 1 135 2 is_stmt 1 view .LVU178
+ 135:Core/Src/gc9a01a.c **** 		SendCmd(Cmd_DISPON);
+ 816              		.loc 1 135 5 is_stmt 0 view .LVU179
+ 817 0002 18B1     		cbz	r0, .L69
+ 136:Core/Src/gc9a01a.c **** 	else
+ 818              		.loc 1 136 3 is_stmt 1 view .LVU180
+ 819 0004 2920     		movs	r0, #41
+ 820              	.LVL84:
+ 136:Core/Src/gc9a01a.c **** 	else
+ 821              		.loc 1 136 3 is_stmt 0 view .LVU181
+ 822 0006 FFF7FEFF 		bl	SendCmd
+ 823              	.LVL85:
+ 824              	.L68:
+ 139:Core/Src/gc9a01a.c **** 
+ 825              		.loc 1 139 1 view .LVU182
+ 826 000a 08BD     		pop	{r3, pc}
+ 827              	.LVL86:
+ 828              	.L69:
+ 138:Core/Src/gc9a01a.c **** }
+ 829              		.loc 1 138 3 is_stmt 1 view .LVU183
+ 830 000c 2820     		movs	r0, #40
+ 831              	.LVL87:
+ 138:Core/Src/gc9a01a.c **** }
+ 832              		.loc 1 138 3 is_stmt 0 view .LVU184
+ 833 000e FFF7FEFF 		bl	SendCmd
+ 834              	.LVL88:
+ 139:Core/Src/gc9a01a.c **** 
+ 835              		.loc 1 139 1 view .LVU185
+ 836 0012 FAE7     		b	.L68
+ 837              		.cfi_endproc
+ 838              	.LFE143:
+ 840              		.section	.text.GC9A01A_SetWindow,"ax",%progbits
+ 841              		.align	1
+ 842              		.global	GC9A01A_SetWindow
+ 843              		.syntax unified
+ 844              		.thumb
+ 845              		.thumb_func
+ 847              	GC9A01A_SetWindow:
+ 848              	.LVL89:
+ 849              	.LFB146:
+ 173:Core/Src/gc9a01a.c **** 	ColumnSet(x0, x1);
+ 850              		.loc 1 173 72 is_stmt 1 view -0
+ 851              		.cfi_startproc
+ 852              		@ args = 0, pretend = 0, frame = 0
+ 853              		@ frame_needed = 0, uses_anonymous_args = 0
+ 173:Core/Src/gc9a01a.c **** 	ColumnSet(x0, x1);
+ 854              		.loc 1 173 72 is_stmt 0 view .LVU187
+ 855 0000 38B5     		push	{r3, r4, r5, lr}
+ 856              		.cfi_def_cfa_offset 16
+ 857              		.cfi_offset 3, -16
+ 858              		.cfi_offset 4, -12
+ 859              		.cfi_offset 5, -8
+ 860              		.cfi_offset 14, -4
+ 861 0002 0C46     		mov	r4, r1
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccg2kW7X.s 			page 25
+
+
+ 862 0004 1D46     		mov	r5, r3
+ 174:Core/Src/gc9a01a.c **** 	RowSet(y0, y1);
+ 863              		.loc 1 174 2 is_stmt 1 view .LVU188
+ 864 0006 1146     		mov	r1, r2
+ 865              	.LVL90:
+ 174:Core/Src/gc9a01a.c **** 	RowSet(y0, y1);
+ 866              		.loc 1 174 2 is_stmt 0 view .LVU189
+ 867 0008 FFF7FEFF 		bl	ColumnSet
+ 868              	.LVL91:
+ 175:Core/Src/gc9a01a.c **** 
+ 869              		.loc 1 175 2 is_stmt 1 view .LVU190
+ 870 000c 2946     		mov	r1, r5
+ 871 000e 2046     		mov	r0, r4
+ 872 0010 FFF7FEFF 		bl	RowSet
+ 873              	.LVL92:
+ 177:Core/Src/gc9a01a.c **** }
+ 874              		.loc 1 177 2 view .LVU191
+ 875 0014 2C20     		movs	r0, #44
+ 876 0016 FFF7FEFF 		bl	SendCmd
+ 877              	.LVL93:
+ 178:Core/Src/gc9a01a.c **** 
+ 878              		.loc 1 178 1 is_stmt 0 view .LVU192
+ 879 001a 38BD     		pop	{r3, r4, r5, pc}
+ 178:Core/Src/gc9a01a.c **** 
+ 880              		.loc 1 178 1 view .LVU193
+ 881              		.cfi_endproc
+ 882              	.LFE146:
+ 884              		.section	.text.GC9A01A_SetBL,"ax",%progbits
+ 885              		.align	1
+ 886              		.global	GC9A01A_SetBL
+ 887              		.syntax unified
+ 888              		.thumb
+ 889              		.thumb_func
+ 891              	GC9A01A_SetBL:
+ 892              	.LVL94:
+ 893              	.LFB149:
+ 230:Core/Src/gc9a01a.c **** 	if (Value > 100)
+ 894              		.loc 1 230 35 is_stmt 1 view -0
+ 895              		.cfi_startproc
+ 896              		@ args = 0, pretend = 0, frame = 0
+ 897              		@ frame_needed = 0, uses_anonymous_args = 0
+ 230:Core/Src/gc9a01a.c **** 	if (Value > 100)
+ 898              		.loc 1 230 35 is_stmt 0 view .LVU195
+ 899 0000 08B5     		push	{r3, lr}
+ 900              		.cfi_def_cfa_offset 8
+ 901              		.cfi_offset 3, -8
+ 902              		.cfi_offset 14, -4
+ 231:Core/Src/gc9a01a.c **** 		Value = 100;
+ 903              		.loc 1 231 2 is_stmt 1 view .LVU196
+ 231:Core/Src/gc9a01a.c **** 		Value = 100;
+ 904              		.loc 1 231 5 is_stmt 0 view .LVU197
+ 905 0002 6428     		cmp	r0, #100
+ 906 0004 00D8     		bhi	.L75
+ 239:Core/Src/gc9a01a.c ****     BLK_HIGH();
+ 907              		.loc 1 239 3 is_stmt 1 view .LVU198
+ 239:Core/Src/gc9a01a.c ****     BLK_HIGH();
+ 908              		.loc 1 239 6 is_stmt 0 view .LVU199
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccg2kW7X.s 			page 26
+
+
+ 909 0006 28B1     		cbz	r0, .L76
+ 910              	.L75:
+ 911              	.LVL95:
+ 240:Core/Src/gc9a01a.c ****   else
+ 912              		.loc 1 240 5 is_stmt 1 view .LVU200
+ 913 0008 0122     		movs	r2, #1
+ 914 000a 0221     		movs	r1, #2
+ 915 000c 0448     		ldr	r0, .L79
+ 916 000e FFF7FEFF 		bl	HAL_GPIO_WritePin
+ 917              	.LVL96:
+ 918              	.L74:
+ 244:Core/Src/gc9a01a.c **** 
+ 919              		.loc 1 244 1 is_stmt 0 view .LVU201
+ 920 0012 08BD     		pop	{r3, pc}
+ 921              	.LVL97:
+ 922              	.L76:
+ 242:Core/Src/gc9a01a.c **** #endif
+ 923              		.loc 1 242 5 is_stmt 1 view .LVU202
+ 924 0014 0022     		movs	r2, #0
+ 925 0016 0221     		movs	r1, #2
+ 926 0018 0148     		ldr	r0, .L79
+ 927              	.LVL98:
+ 242:Core/Src/gc9a01a.c **** #endif
+ 928              		.loc 1 242 5 is_stmt 0 view .LVU203
+ 929 001a FFF7FEFF 		bl	HAL_GPIO_WritePin
+ 930              	.LVL99:
+ 244:Core/Src/gc9a01a.c **** 
+ 931              		.loc 1 244 1 view .LVU204
+ 932 001e F8E7     		b	.L74
+ 933              	.L80:
+ 934              		.align	2
+ 935              	.L79:
+ 936 0020 00000240 		.word	1073872896
+ 937              		.cfi_endproc
+ 938              	.LFE149:
+ 940              		.section	.text.GC9A01A_DrawPixel,"ax",%progbits
+ 941              		.align	1
+ 942              		.global	GC9A01A_DrawPixel
+ 943              		.syntax unified
+ 944              		.thumb
+ 945              		.thumb_func
+ 947              	GC9A01A_DrawPixel:
+ 948              	.LVL100:
+ 949              	.LFB150:
+ 285:Core/Src/gc9a01a.c **** 	if ((x < 0) || (x >= GC9A01A_Width) || (y < 0) || (y >= GC9A01A_Height))
+ 950              		.loc 1 285 62 is_stmt 1 view -0
+ 951              		.cfi_startproc
+ 952              		@ args = 0, pretend = 0, frame = 8
+ 953              		@ frame_needed = 0, uses_anonymous_args = 0
+ 285:Core/Src/gc9a01a.c **** 	if ((x < 0) || (x >= GC9A01A_Width) || (y < 0) || (y >= GC9A01A_Height))
+ 954              		.loc 1 285 62 is_stmt 0 view .LVU206
+ 955 0000 30B5     		push	{r4, r5, lr}
+ 956              		.cfi_def_cfa_offset 12
+ 957              		.cfi_offset 4, -12
+ 958              		.cfi_offset 5, -8
+ 959              		.cfi_offset 14, -4
+ 960 0002 83B0     		sub	sp, sp, #12
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccg2kW7X.s 			page 27
+
+
+ 961              		.cfi_def_cfa_offset 24
+ 962 0004 ADF80620 		strh	r2, [sp, #6]	@ movhi
+ 286:Core/Src/gc9a01a.c **** 		return;
+ 963              		.loc 1 286 2 is_stmt 1 view .LVU207
+ 286:Core/Src/gc9a01a.c **** 		return;
+ 964              		.loc 1 286 14 is_stmt 0 view .LVU208
+ 965 0008 83B2     		uxth	r3, r0
+ 286:Core/Src/gc9a01a.c **** 		return;
+ 966              		.loc 1 286 5 view .LVU209
+ 967 000a EF2B     		cmp	r3, #239
+ 968 000c 05D8     		bhi	.L81
+ 969 000e 0546     		mov	r5, r0
+ 970 0010 0C46     		mov	r4, r1
+ 286:Core/Src/gc9a01a.c **** 		return;
+ 971              		.loc 1 286 38 discriminator 1 view .LVU210
+ 972 0012 0029     		cmp	r1, #0
+ 973 0014 01DB     		blt	.L81
+ 286:Core/Src/gc9a01a.c **** 		return;
+ 974              		.loc 1 286 49 discriminator 2 view .LVU211
+ 975 0016 EF29     		cmp	r1, #239
+ 976 0018 01DD     		ble	.L84
+ 977              	.LVL101:
+ 978              	.L81:
+ 292:Core/Src/gc9a01a.c **** 
+ 979              		.loc 1 292 1 view .LVU212
+ 980 001a 03B0     		add	sp, sp, #12
+ 981              		.cfi_remember_state
+ 982              		.cfi_def_cfa_offset 12
+ 983              		@ sp needed
+ 984 001c 30BD     		pop	{r4, r5, pc}
+ 985              	.LVL102:
+ 986              	.L84:
+ 987              		.cfi_restore_state
+ 289:Core/Src/gc9a01a.c **** 
+ 988              		.loc 1 289 2 is_stmt 1 view .LVU213
+ 989 001e 0DF10600 		add	r0, sp, #6
+ 990              	.LVL103:
+ 289:Core/Src/gc9a01a.c **** 
+ 991              		.loc 1 289 2 is_stmt 0 view .LVU214
+ 992 0022 FFF7FEFF 		bl	SwapBytes
+ 993              	.LVL104:
+ 291:Core/Src/gc9a01a.c **** }
+ 994              		.loc 1 291 2 is_stmt 1 view .LVU215
+ 291:Core/Src/gc9a01a.c **** }
+ 995              		.loc 1 291 15 is_stmt 0 view .LVU216
+ 996 0026 C4EB0414 		rsb	r4, r4, r4, lsl #4
+ 997              	.LVL105:
+ 291:Core/Src/gc9a01a.c **** }
+ 998              		.loc 1 291 31 view .LVU217
+ 999 002a 05EB0415 		add	r5, r5, r4, lsl #4
+ 1000              	.LVL106:
+ 291:Core/Src/gc9a01a.c **** }
+ 1001              		.loc 1 291 36 view .LVU218
+ 1002 002e 034B     		ldr	r3, .L85
+ 1003 0030 BDF80620 		ldrh	r2, [sp, #6]
+ 1004 0034 23F81520 		strh	r2, [r3, r5, lsl #1]	@ movhi
+ 1005 0038 EFE7     		b	.L81
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccg2kW7X.s 			page 28
+
+
+ 1006              	.L86:
+ 1007 003a 00BF     		.align	2
+ 1008              	.L85:
+ 1009 003c 00000000 		.word	ScreenBuff
+ 1010              		.cfi_endproc
+ 1011              	.LFE150:
+ 1013              		.section	.text.GC9A01A_GetPixel,"ax",%progbits
+ 1014              		.align	1
+ 1015              		.global	GC9A01A_GetPixel
+ 1016              		.syntax unified
+ 1017              		.thumb
+ 1018              		.thumb_func
+ 1020              	GC9A01A_GetPixel:
+ 1021              	.LVL107:
+ 1022              	.LFB151:
+ 294:Core/Src/gc9a01a.c **** 	if ((x < 0) || (x >= GC9A01A_Width) || (y < 0) || (y >= GC9A01A_Height))
+ 1023              		.loc 1 294 49 is_stmt 1 view -0
+ 1024              		.cfi_startproc
+ 1025              		@ args = 0, pretend = 0, frame = 8
+ 1026              		@ frame_needed = 0, uses_anonymous_args = 0
+ 295:Core/Src/gc9a01a.c **** 		return 0;
+ 1027              		.loc 1 295 2 view .LVU220
+ 295:Core/Src/gc9a01a.c **** 		return 0;
+ 1028              		.loc 1 295 14 is_stmt 0 view .LVU221
+ 1029 0000 83B2     		uxth	r3, r0
+ 295:Core/Src/gc9a01a.c **** 		return 0;
+ 1030              		.loc 1 295 5 view .LVU222
+ 1031 0002 EF2B     		cmp	r3, #239
+ 1032 0004 19D8     		bhi	.L89
+ 295:Core/Src/gc9a01a.c **** 		return 0;
+ 1033              		.loc 1 295 38 discriminator 1 view .LVU223
+ 1034 0006 0029     		cmp	r1, #0
+ 1035 0008 19DB     		blt	.L90
+ 295:Core/Src/gc9a01a.c **** 		return 0;
+ 1036              		.loc 1 295 49 discriminator 2 view .LVU224
+ 1037 000a EF29     		cmp	r1, #239
+ 1038 000c 01DD     		ble	.L96
+ 296:Core/Src/gc9a01a.c **** 
+ 1039              		.loc 1 296 10 view .LVU225
+ 1040 000e 0020     		movs	r0, #0
+ 1041              	.LVL108:
+ 301:Core/Src/gc9a01a.c **** 
+ 1042              		.loc 1 301 1 view .LVU226
+ 1043 0010 7047     		bx	lr
+ 1044              	.LVL109:
+ 1045              	.L96:
+ 294:Core/Src/gc9a01a.c **** 	if ((x < 0) || (x >= GC9A01A_Width) || (y < 0) || (y >= GC9A01A_Height))
+ 1046              		.loc 1 294 49 view .LVU227
+ 1047 0012 00B5     		push	{lr}
+ 1048              		.cfi_def_cfa_offset 4
+ 1049              		.cfi_offset 14, -4
+ 1050 0014 83B0     		sub	sp, sp, #12
+ 1051              		.cfi_def_cfa_offset 16
+ 298:Core/Src/gc9a01a.c **** 	SwapBytes(&color);
+ 1052              		.loc 1 298 2 is_stmt 1 view .LVU228
+ 298:Core/Src/gc9a01a.c **** 	SwapBytes(&color);
+ 1053              		.loc 1 298 32 is_stmt 0 view .LVU229
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccg2kW7X.s 			page 29
+
+
+ 1054 0016 C1EB0111 		rsb	r1, r1, r1, lsl #4
+ 1055              	.LVL110:
+ 298:Core/Src/gc9a01a.c **** 	SwapBytes(&color);
+ 1056              		.loc 1 298 48 view .LVU230
+ 1057 001a 00EB0110 		add	r0, r0, r1, lsl #4
+ 1058              	.LVL111:
+ 298:Core/Src/gc9a01a.c **** 	SwapBytes(&color);
+ 1059              		.loc 1 298 29 view .LVU231
+ 1060 001e 094B     		ldr	r3, .L97
+ 1061              	.LVL112:
+ 298:Core/Src/gc9a01a.c **** 	SwapBytes(&color);
+ 1062              		.loc 1 298 29 view .LVU232
+ 1063 0020 33F81030 		ldrh	r3, [r3, r0, lsl #1]
+ 298:Core/Src/gc9a01a.c **** 	SwapBytes(&color);
+ 1064              		.loc 1 298 11 view .LVU233
+ 1065 0024 ADF80630 		strh	r3, [sp, #6]	@ movhi
+ 299:Core/Src/gc9a01a.c **** 	return color;
+ 1066              		.loc 1 299 2 is_stmt 1 view .LVU234
+ 1067 0028 0DF10600 		add	r0, sp, #6
+ 1068 002c FFF7FEFF 		bl	SwapBytes
+ 1069              	.LVL113:
+ 300:Core/Src/gc9a01a.c **** }
+ 1070              		.loc 1 300 2 view .LVU235
+ 300:Core/Src/gc9a01a.c **** }
+ 1071              		.loc 1 300 9 is_stmt 0 view .LVU236
+ 1072 0030 BDF80600 		ldrh	r0, [sp, #6]
+ 301:Core/Src/gc9a01a.c **** 
+ 1073              		.loc 1 301 1 view .LVU237
+ 1074 0034 03B0     		add	sp, sp, #12
+ 1075              		.cfi_def_cfa_offset 4
+ 1076              		@ sp needed
+ 1077 0036 5DF804FB 		ldr	pc, [sp], #4
+ 1078              	.LVL114:
+ 1079              	.L89:
+ 1080              		.cfi_def_cfa_offset 0
+ 1081              		.cfi_restore 14
+ 296:Core/Src/gc9a01a.c **** 
+ 1082              		.loc 1 296 10 view .LVU238
+ 1083 003a 0020     		movs	r0, #0
+ 1084              	.LVL115:
+ 296:Core/Src/gc9a01a.c **** 
+ 1085              		.loc 1 296 10 view .LVU239
+ 1086 003c 7047     		bx	lr
+ 1087              	.LVL116:
+ 1088              	.L90:
+ 296:Core/Src/gc9a01a.c **** 
+ 1089              		.loc 1 296 10 view .LVU240
+ 1090 003e 0020     		movs	r0, #0
+ 1091              	.LVL117:
+ 296:Core/Src/gc9a01a.c **** 
+ 1092              		.loc 1 296 10 view .LVU241
+ 1093 0040 7047     		bx	lr
+ 1094              	.L98:
+ 1095 0042 00BF     		.align	2
+ 1096              	.L97:
+ 1097 0044 00000000 		.word	ScreenBuff
+ 1098              		.cfi_endproc
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccg2kW7X.s 			page 30
+
+
+ 1099              	.LFE151:
+ 1101              		.section	.text.GC9A01A_FillRect,"ax",%progbits
+ 1102              		.align	1
+ 1103              		.global	GC9A01A_FillRect
+ 1104              		.syntax unified
+ 1105              		.thumb
+ 1106              		.thumb_func
+ 1108              	GC9A01A_FillRect:
+ 1109              	.LVL118:
+ 1110              	.LFB152:
+ 304:Core/Src/gc9a01a.c **** 	if ((w <= 0) || (h <= 0) || (x >= GC9A01A_Width) || (y >= GC9A01A_Height))
+ 1111              		.loc 1 304 19 is_stmt 1 view -0
+ 1112              		.cfi_startproc
+ 1113              		@ args = 4, pretend = 0, frame = 0
+ 1114              		@ frame_needed = 0, uses_anonymous_args = 0
+ 304:Core/Src/gc9a01a.c **** 	if ((w <= 0) || (h <= 0) || (x >= GC9A01A_Width) || (y >= GC9A01A_Height))
+ 1115              		.loc 1 304 19 is_stmt 0 view .LVU243
+ 1116 0000 F8B5     		push	{r3, r4, r5, r6, r7, lr}
+ 1117              		.cfi_def_cfa_offset 24
+ 1118              		.cfi_offset 3, -24
+ 1119              		.cfi_offset 4, -20
+ 1120              		.cfi_offset 5, -16
+ 1121              		.cfi_offset 6, -12
+ 1122              		.cfi_offset 7, -8
+ 1123              		.cfi_offset 14, -4
+ 305:Core/Src/gc9a01a.c **** 		return;
+ 1124              		.loc 1 305 2 is_stmt 1 view .LVU244
+ 305:Core/Src/gc9a01a.c **** 		return;
+ 1125              		.loc 1 305 5 is_stmt 0 view .LVU245
+ 1126 0002 141E     		subs	r4, r2, #0
+ 1127 0004 43DD     		ble	.L99
+ 1128 0006 1F46     		mov	r7, r3
+ 305:Core/Src/gc9a01a.c **** 		return;
+ 1129              		.loc 1 305 15 discriminator 1 view .LVU246
+ 1130 0008 002B     		cmp	r3, #0
+ 1131 000a 40DD     		ble	.L99
+ 305:Core/Src/gc9a01a.c **** 		return;
+ 1132              		.loc 1 305 27 discriminator 2 view .LVU247
+ 1133 000c EF28     		cmp	r0, #239
+ 1134 000e 3EDC     		bgt	.L99
+ 305:Core/Src/gc9a01a.c **** 		return;
+ 1135              		.loc 1 305 51 discriminator 3 view .LVU248
+ 1136 0010 EF29     		cmp	r1, #239
+ 1137 0012 3CDC     		bgt	.L99
+ 308:Core/Src/gc9a01a.c **** 		w += x;
+ 1138              		.loc 1 308 2 is_stmt 1 view .LVU249
+ 308:Core/Src/gc9a01a.c **** 		w += x;
+ 1139              		.loc 1 308 5 is_stmt 0 view .LVU250
+ 1140 0014 0028     		cmp	r0, #0
+ 1141 0016 19DB     		blt	.L110
+ 1142              	.LVL119:
+ 1143              	.L101:
+ 312:Core/Src/gc9a01a.c **** 		h += y;
+ 1144              		.loc 1 312 2 is_stmt 1 view .LVU251
+ 312:Core/Src/gc9a01a.c **** 		h += y;
+ 1145              		.loc 1 312 5 is_stmt 0 view .LVU252
+ 1146 0018 0029     		cmp	r1, #0
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccg2kW7X.s 			page 31
+
+
+ 1147 001a 1BDB     		blt	.L111
+ 1148              	.LVL120:
+ 1149              	.L102:
+ 317:Core/Src/gc9a01a.c **** 		return;
+ 1150              		.loc 1 317 2 is_stmt 1 view .LVU253
+ 317:Core/Src/gc9a01a.c **** 		return;
+ 1151              		.loc 1 317 5 is_stmt 0 view .LVU254
+ 1152 001c 002C     		cmp	r4, #0
+ 1153 001e 36DD     		ble	.L99
+ 317:Core/Src/gc9a01a.c **** 		return;
+ 1154              		.loc 1 317 15 discriminator 1 view .LVU255
+ 1155 0020 002F     		cmp	r7, #0
+ 1156 0022 34DD     		ble	.L99
+ 320:Core/Src/gc9a01a.c **** 		w = GC9A01A_Width - x;
+ 1157              		.loc 1 320 2 is_stmt 1 view .LVU256
+ 320:Core/Src/gc9a01a.c **** 		w = GC9A01A_Width - x;
+ 1158              		.loc 1 320 9 is_stmt 0 view .LVU257
+ 1159 0024 0546     		mov	r5, r0
+ 1160 0026 2318     		adds	r3, r4, r0
+ 320:Core/Src/gc9a01a.c **** 		w = GC9A01A_Width - x;
+ 1161              		.loc 1 320 5 view .LVU258
+ 1162 0028 F02B     		cmp	r3, #240
+ 1163 002a 02DD     		ble	.L103
+ 321:Core/Src/gc9a01a.c **** 	if ((y + h) > GC9A01A_Height)
+ 1164              		.loc 1 321 3 is_stmt 1 view .LVU259
+ 321:Core/Src/gc9a01a.c **** 	if ((y + h) > GC9A01A_Height)
+ 1165              		.loc 1 321 21 is_stmt 0 view .LVU260
+ 1166 002c C0F1F000 		rsb	r0, r0, #240
+ 1167              	.LVL121:
+ 321:Core/Src/gc9a01a.c **** 	if ((y + h) > GC9A01A_Height)
+ 1168              		.loc 1 321 5 view .LVU261
+ 1169 0030 04B2     		sxth	r4, r0
+ 1170              	.LVL122:
+ 1171              	.L103:
+ 322:Core/Src/gc9a01a.c **** 		h = GC9A01A_Height - y;
+ 1172              		.loc 1 322 2 is_stmt 1 view .LVU262
+ 322:Core/Src/gc9a01a.c **** 		h = GC9A01A_Height - y;
+ 1173              		.loc 1 322 9 is_stmt 0 view .LVU263
+ 1174 0032 0E46     		mov	r6, r1
+ 1175 0034 7B18     		adds	r3, r7, r1
+ 322:Core/Src/gc9a01a.c **** 		h = GC9A01A_Height - y;
+ 1176              		.loc 1 322 5 view .LVU264
+ 1177 0036 F02B     		cmp	r3, #240
+ 1178 0038 02DD     		ble	.L104
+ 323:Core/Src/gc9a01a.c **** 
+ 1179              		.loc 1 323 3 is_stmt 1 view .LVU265
+ 323:Core/Src/gc9a01a.c **** 
+ 1180              		.loc 1 323 22 is_stmt 0 view .LVU266
+ 1181 003a C1F1F001 		rsb	r1, r1, #240
+ 1182              	.LVL123:
+ 323:Core/Src/gc9a01a.c **** 
+ 1183              		.loc 1 323 5 view .LVU267
+ 1184 003e 0FB2     		sxth	r7, r1
+ 1185              	.LVL124:
+ 1186              	.L104:
+ 325:Core/Src/gc9a01a.c **** 
+ 1187              		.loc 1 325 2 is_stmt 1 view .LVU268
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccg2kW7X.s 			page 32
+
+
+ 1188 0040 06A8     		add	r0, sp, #24
+ 1189              	.LVL125:
+ 325:Core/Src/gc9a01a.c **** 
+ 1190              		.loc 1 325 2 is_stmt 0 view .LVU269
+ 1191 0042 FFF7FEFF 		bl	SwapBytes
+ 1192              	.LVL126:
+ 327:Core/Src/gc9a01a.c **** 		for (uint16_t col = 0; col < w; col++)
+ 1193              		.loc 1 327 2 is_stmt 1 view .LVU270
+ 1194              	.LBB4:
+ 327:Core/Src/gc9a01a.c **** 		for (uint16_t col = 0; col < w; col++)
+ 1195              		.loc 1 327 7 view .LVU271
+ 327:Core/Src/gc9a01a.c **** 		for (uint16_t col = 0; col < w; col++)
+ 1196              		.loc 1 327 16 is_stmt 0 view .LVU272
+ 1197 0046 4FF0000E 		mov	lr, #0
+ 327:Core/Src/gc9a01a.c **** 		for (uint16_t col = 0; col < w; col++)
+ 1198              		.loc 1 327 2 view .LVU273
+ 1199 004a 1BE0     		b	.L105
+ 1200              	.LVL127:
+ 1201              	.L110:
+ 327:Core/Src/gc9a01a.c **** 		for (uint16_t col = 0; col < w; col++)
+ 1202              		.loc 1 327 2 view .LVU274
+ 1203              	.LBE4:
+ 309:Core/Src/gc9a01a.c **** 		x = 0;
+ 1204              		.loc 1 309 3 is_stmt 1 view .LVU275
+ 309:Core/Src/gc9a01a.c **** 		x = 0;
+ 1205              		.loc 1 309 5 is_stmt 0 view .LVU276
+ 1206 004c 2044     		add	r0, r0, r4
+ 1207              	.LVL128:
+ 309:Core/Src/gc9a01a.c **** 		x = 0;
+ 1208              		.loc 1 309 5 view .LVU277
+ 1209 004e 04B2     		sxth	r4, r0
+ 1210              	.LVL129:
+ 310:Core/Src/gc9a01a.c **** 	}
+ 1211              		.loc 1 310 3 is_stmt 1 view .LVU278
+ 310:Core/Src/gc9a01a.c **** 	}
+ 1212              		.loc 1 310 5 is_stmt 0 view .LVU279
+ 1213 0050 0020     		movs	r0, #0
+ 1214 0052 E1E7     		b	.L101
+ 1215              	.LVL130:
+ 1216              	.L111:
+ 313:Core/Src/gc9a01a.c **** 		y = 0;
+ 1217              		.loc 1 313 3 is_stmt 1 view .LVU280
+ 313:Core/Src/gc9a01a.c **** 		y = 0;
+ 1218              		.loc 1 313 5 is_stmt 0 view .LVU281
+ 1219 0054 3944     		add	r1, r1, r7
+ 1220              	.LVL131:
+ 313:Core/Src/gc9a01a.c **** 		y = 0;
+ 1221              		.loc 1 313 5 view .LVU282
+ 1222 0056 0FB2     		sxth	r7, r1
+ 1223              	.LVL132:
+ 314:Core/Src/gc9a01a.c **** 	}
+ 1224              		.loc 1 314 3 is_stmt 1 view .LVU283
+ 314:Core/Src/gc9a01a.c **** 	}
+ 1225              		.loc 1 314 5 is_stmt 0 view .LVU284
+ 1226 0058 0021     		movs	r1, #0
+ 1227 005a DFE7     		b	.L102
+ 1228              	.LVL133:
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccg2kW7X.s 			page 33
+
+
+ 1229              	.L106:
+ 1230              	.LBB7:
+ 1231              	.LBB5:
+ 330:Core/Src/gc9a01a.c **** 	}
+ 1232              		.loc 1 330 4 is_stmt 1 view .LVU285
+ 330:Core/Src/gc9a01a.c **** 	}
+ 1233              		.loc 1 330 18 is_stmt 0 view .LVU286
+ 1234 005c 06EB0C01 		add	r1, r6, ip
+ 330:Core/Src/gc9a01a.c **** 	}
+ 1235              		.loc 1 330 25 view .LVU287
+ 1236 0060 C1EB0111 		rsb	r1, r1, r1, lsl #4
+ 330:Core/Src/gc9a01a.c **** 	}
+ 1237              		.loc 1 330 41 view .LVU288
+ 1238 0064 05EB0111 		add	r1, r5, r1, lsl #4
+ 330:Core/Src/gc9a01a.c **** 	}
+ 1239              		.loc 1 330 45 view .LVU289
+ 1240 0068 1944     		add	r1, r1, r3
+ 330:Core/Src/gc9a01a.c **** 	}
+ 1241              		.loc 1 330 52 view .LVU290
+ 1242 006a 094A     		ldr	r2, .L112
+ 1243 006c BDF81800 		ldrh	r0, [sp, #24]
+ 1244 0070 22F81100 		strh	r0, [r2, r1, lsl #1]	@ movhi
+ 328:Core/Src/gc9a01a.c **** 			//GC9A01A_DrawPixel(col, row, color);
+ 1245              		.loc 1 328 38 is_stmt 1 discriminator 3 view .LVU291
+ 1246 0074 0133     		adds	r3, r3, #1
+ 1247              	.LVL134:
+ 328:Core/Src/gc9a01a.c **** 			//GC9A01A_DrawPixel(col, row, color);
+ 1248              		.loc 1 328 38 is_stmt 0 discriminator 3 view .LVU292
+ 1249 0076 9BB2     		uxth	r3, r3
+ 1250              	.LVL135:
+ 1251              	.L107:
+ 328:Core/Src/gc9a01a.c **** 			//GC9A01A_DrawPixel(col, row, color);
+ 1252              		.loc 1 328 30 is_stmt 1 discriminator 1 view .LVU293
+ 1253 0078 A342     		cmp	r3, r4
+ 1254 007a EFDB     		blt	.L106
+ 1255              	.LBE5:
+ 327:Core/Src/gc9a01a.c **** 		for (uint16_t col = 0; col < w; col++)
+ 1256              		.loc 1 327 37 discriminator 2 view .LVU294
+ 1257 007c 0EF1010E 		add	lr, lr, #1
+ 1258              	.LVL136:
+ 327:Core/Src/gc9a01a.c **** 		for (uint16_t col = 0; col < w; col++)
+ 1259              		.loc 1 327 37 is_stmt 0 discriminator 2 view .LVU295
+ 1260 0080 1FFA8EFE 		uxth	lr, lr
+ 1261              	.LVL137:
+ 1262              	.L105:
+ 327:Core/Src/gc9a01a.c **** 		for (uint16_t col = 0; col < w; col++)
+ 1263              		.loc 1 327 29 is_stmt 1 discriminator 1 view .LVU296
+ 1264 0084 F446     		mov	ip, lr
+ 1265 0086 BE45     		cmp	lr, r7
+ 1266 0088 01DA     		bge	.L99
+ 1267              	.LBB6:
+ 328:Core/Src/gc9a01a.c **** 			//GC9A01A_DrawPixel(col, row, color);
+ 1268              		.loc 1 328 17 is_stmt 0 view .LVU297
+ 1269 008a 0023     		movs	r3, #0
+ 1270 008c F4E7     		b	.L107
+ 1271              	.LVL138:
+ 1272              	.L99:
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccg2kW7X.s 			page 34
+
+
+ 328:Core/Src/gc9a01a.c **** 			//GC9A01A_DrawPixel(col, row, color);
+ 1273              		.loc 1 328 17 view .LVU298
+ 1274              	.LBE6:
+ 1275              	.LBE7:
+ 332:Core/Src/gc9a01a.c **** 
+ 1276              		.loc 1 332 1 view .LVU299
+ 1277 008e F8BD     		pop	{r3, r4, r5, r6, r7, pc}
+ 1278              	.L113:
+ 1279              		.align	2
+ 1280              	.L112:
+ 1281 0090 00000000 		.word	ScreenBuff
+ 1282              		.cfi_endproc
+ 1283              	.LFE152:
+ 1285              		.section	.text.GC9A01A_Update,"ax",%progbits
+ 1286              		.align	1
+ 1287              		.global	GC9A01A_Update
+ 1288              		.syntax unified
+ 1289              		.thumb
+ 1290              		.thumb_func
+ 1292              	GC9A01A_Update:
+ 1293              	.LFB154:
+ 340:Core/Src/gc9a01a.c **** 	GC9A01A_SetWindow(0, 0, GC9A01A_Width - 1, GC9A01A_Height - 1);
+ 1294              		.loc 1 340 23 is_stmt 1 view -0
+ 1295              		.cfi_startproc
+ 1296              		@ args = 0, pretend = 0, frame = 0
+ 1297              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1298 0000 00B5     		push	{lr}
+ 1299              		.cfi_def_cfa_offset 4
+ 1300              		.cfi_offset 14, -4
+ 1301 0002 83B0     		sub	sp, sp, #12
+ 1302              		.cfi_def_cfa_offset 16
+ 341:Core/Src/gc9a01a.c **** 
+ 1303              		.loc 1 341 2 view .LVU301
+ 1304 0004 EF23     		movs	r3, #239
+ 1305 0006 1A46     		mov	r2, r3
+ 1306 0008 0021     		movs	r1, #0
+ 1307 000a 0846     		mov	r0, r1
+ 1308 000c FFF7FEFF 		bl	GC9A01A_SetWindow
+ 1309              	.LVL139:
+ 343:Core/Src/gc9a01a.c **** 
+ 1310              		.loc 1 343 2 view .LVU302
+ 1311 0010 0122     		movs	r2, #1
+ 1312 0012 1021     		movs	r1, #16
+ 1313 0014 0748     		ldr	r0, .L116
+ 1314 0016 FFF7FEFF 		bl	HAL_GPIO_WritePin
+ 1315              	.LVL140:
+ 343:Core/Src/gc9a01a.c **** 
+ 1316              		.loc 1 343 21 discriminator 1 view .LVU303
+ 345:Core/Src/gc9a01a.c **** 	SPI_send_dma(GC9A01A_SPI_periph, 0, (uint8_t*) ScreenBuff, len, SendPart2);
+ 1317              		.loc 1 345 2 view .LVU304
+ 346:Core/Src/gc9a01a.c **** }
+ 1318              		.loc 1 346 2 view .LVU305
+ 1319 001a 074B     		ldr	r3, .L116+4
+ 1320 001c 0093     		str	r3, [sp]
+ 1321 001e 4FF46143 		mov	r3, #57600
+ 1322 0022 064A     		ldr	r2, .L116+8
+ 1323 0024 0021     		movs	r1, #0
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccg2kW7X.s 			page 35
+
+
+ 1324 0026 0648     		ldr	r0, .L116+12
+ 1325 0028 FFF7FEFF 		bl	SPI_send_dma
+ 1326              	.LVL141:
+ 347:Core/Src/gc9a01a.c **** 
+ 1327              		.loc 1 347 1 is_stmt 0 view .LVU306
+ 1328 002c 03B0     		add	sp, sp, #12
+ 1329              		.cfi_def_cfa_offset 4
+ 1330              		@ sp needed
+ 1331 002e 5DF804FB 		ldr	pc, [sp], #4
+ 1332              	.L117:
+ 1333 0032 00BF     		.align	2
+ 1334              	.L116:
+ 1335 0034 00080240 		.word	1073874944
+ 1336 0038 00000000 		.word	SendPart2
+ 1337 003c 00000000 		.word	ScreenBuff
+ 1338 0040 00300140 		.word	1073819648
+ 1339              		.cfi_endproc
+ 1340              	.LFE154:
+ 1342              		.section	.text.GC9A01A_GetWidth,"ax",%progbits
+ 1343              		.align	1
+ 1344              		.global	GC9A01A_GetWidth
+ 1345              		.syntax unified
+ 1346              		.thumb
+ 1347              		.thumb_func
+ 1349              	GC9A01A_GetWidth:
+ 1350              	.LFB156:
+ 392:Core/Src/gc9a01a.c **** //==============================================================================
+ 393:Core/Src/gc9a01a.c **** 
+ 394:Core/Src/gc9a01a.c **** uint16_t GC9A01A_GetWidth() {
+ 1351              		.loc 1 394 29 is_stmt 1 view -0
+ 1352              		.cfi_startproc
+ 1353              		@ args = 0, pretend = 0, frame = 0
+ 1354              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1355              		@ link register save eliminated.
+ 395:Core/Src/gc9a01a.c **** 	return GC9A01A_Width;
+ 1356              		.loc 1 395 2 view .LVU308
+ 396:Core/Src/gc9a01a.c **** }
+ 1357              		.loc 1 396 1 is_stmt 0 view .LVU309
+ 1358 0000 F020     		movs	r0, #240
+ 1359 0002 7047     		bx	lr
+ 1360              		.cfi_endproc
+ 1361              	.LFE156:
+ 1363              		.section	.text.GC9A01A_GetHeight,"ax",%progbits
+ 1364              		.align	1
+ 1365              		.global	GC9A01A_GetHeight
+ 1366              		.syntax unified
+ 1367              		.thumb
+ 1368              		.thumb_func
+ 1370              	GC9A01A_GetHeight:
+ 1371              	.LFB157:
+ 397:Core/Src/gc9a01a.c **** 
+ 398:Core/Src/gc9a01a.c **** uint16_t GC9A01A_GetHeight() {
+ 1372              		.loc 1 398 30 is_stmt 1 view -0
+ 1373              		.cfi_startproc
+ 1374              		@ args = 0, pretend = 0, frame = 0
+ 1375              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1376              		@ link register save eliminated.
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccg2kW7X.s 			page 36
+
+
+ 399:Core/Src/gc9a01a.c **** 	return GC9A01A_Height;
+ 1377              		.loc 1 399 2 view .LVU311
+ 400:Core/Src/gc9a01a.c **** }
+ 1378              		.loc 1 400 1 is_stmt 0 view .LVU312
+ 1379 0000 F020     		movs	r0, #240
+ 1380 0002 7047     		bx	lr
+ 1381              		.cfi_endproc
+ 1382              	.LFE157:
+ 1384              		.section	.text.GC9A01A_Init,"ax",%progbits
+ 1385              		.align	1
+ 1386              		.global	GC9A01A_Init
+ 1387              		.syntax unified
+ 1388              		.thumb
+ 1389              		.thumb_func
+ 1391              	GC9A01A_Init:
+ 1392              	.LFB158:
+ 401:Core/Src/gc9a01a.c **** 
+ 402:Core/Src/gc9a01a.c **** //==============================================================================
+ 403:Core/Src/gc9a01a.c **** 
+ 404:Core/Src/gc9a01a.c **** //==============================================================================
+ 405:Core/Src/gc9a01a.c **** void GC9A01A_Init() {
+ 1393              		.loc 1 405 21 is_stmt 1 view -0
+ 1394              		.cfi_startproc
+ 1395              		@ args = 0, pretend = 0, frame = 0
+ 1396              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1397 0000 10B5     		push	{r4, lr}
+ 1398              		.cfi_def_cfa_offset 8
+ 1399              		.cfi_offset 4, -8
+ 1400              		.cfi_offset 14, -4
+ 1401 0002 82B0     		sub	sp, sp, #8
+ 1402              		.cfi_def_cfa_offset 16
+ 406:Core/Src/gc9a01a.c **** 	GC9A01A_X_Start = 0;
+ 1403              		.loc 1 406 2 view .LVU314
+ 1404              		.loc 1 406 18 is_stmt 0 view .LVU315
+ 1405 0004 0024     		movs	r4, #0
+ 1406 0006 FD4B     		ldr	r3, .L122
+ 1407 0008 1C70     		strb	r4, [r3]
+ 407:Core/Src/gc9a01a.c **** 	GC9A01A_Y_Start = 0;
+ 1408              		.loc 1 407 2 is_stmt 1 view .LVU316
+ 1409              		.loc 1 407 18 is_stmt 0 view .LVU317
+ 1410 000a FD4B     		ldr	r3, .L122+4
+ 1411 000c 1C70     		strb	r4, [r3]
+ 408:Core/Src/gc9a01a.c **** 
+ 409:Core/Src/gc9a01a.c **** 	GPIO_init();
+ 1412              		.loc 1 409 2 is_stmt 1 view .LVU318
+ 1413 000e FFF7FEFF 		bl	GPIO_init
+ 1414              	.LVL142:
+ 410:Core/Src/gc9a01a.c **** 	spim_init(GC9A01A_SPI_periph, 1);
+ 1415              		.loc 1 410 2 view .LVU319
+ 1416 0012 0121     		movs	r1, #1
+ 1417 0014 FB48     		ldr	r0, .L122+8
+ 1418 0016 FFF7FEFF 		bl	spim_init
+ 1419              	.LVL143:
+ 411:Core/Src/gc9a01a.c **** 
+ 412:Core/Src/gc9a01a.c **** 	GC9A01A_HardReset();
+ 1420              		.loc 1 412 2 view .LVU320
+ 1421 001a FFF7FEFF 		bl	GC9A01A_HardReset
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccg2kW7X.s 			page 37
+
+
+ 1422              	.LVL144:
+ 413:Core/Src/gc9a01a.c **** 
+ 414:Core/Src/gc9a01a.c **** 	SendCmd(Cmd_InnerReg2Enable);
+ 1423              		.loc 1 414 2 view .LVU321
+ 1424 001e EF20     		movs	r0, #239
+ 1425 0020 FFF7FEFF 		bl	SendCmd
+ 1426              	.LVL145:
+ 415:Core/Src/gc9a01a.c **** 	SendCmd(0xEB);        // ?
+ 1427              		.loc 1 415 2 view .LVU322
+ 1428 0024 EB20     		movs	r0, #235
+ 1429 0026 FFF7FEFF 		bl	SendCmd
+ 1430              	.LVL146:
+ 416:Core/Src/gc9a01a.c **** 	SendData(0x14);
+ 1431              		.loc 1 416 2 view .LVU323
+ 1432 002a 1420     		movs	r0, #20
+ 1433 002c FFF7FEFF 		bl	SendData
+ 1434              	.LVL147:
+ 417:Core/Src/gc9a01a.c **** 
+ 418:Core/Src/gc9a01a.c **** 	SendCmd(Cmd_InnerReg1Enable);
+ 1435              		.loc 1 418 2 view .LVU324
+ 1436 0030 FE20     		movs	r0, #254
+ 1437 0032 FFF7FEFF 		bl	SendCmd
+ 1438              	.LVL148:
+ 419:Core/Src/gc9a01a.c **** 	SendCmd(Cmd_InnerReg2Enable);
+ 1439              		.loc 1 419 2 view .LVU325
+ 1440 0036 EF20     		movs	r0, #239
+ 1441 0038 FFF7FEFF 		bl	SendCmd
+ 1442              	.LVL149:
+ 420:Core/Src/gc9a01a.c **** 
+ 421:Core/Src/gc9a01a.c **** 	SendCmd(0xEB);        // ?
+ 1443              		.loc 1 421 2 view .LVU326
+ 1444 003c EB20     		movs	r0, #235
+ 1445 003e FFF7FEFF 		bl	SendCmd
+ 1446              	.LVL150:
+ 422:Core/Src/gc9a01a.c **** 	SendData(0x14);       // ?
+ 1447              		.loc 1 422 2 view .LVU327
+ 1448 0042 1420     		movs	r0, #20
+ 1449 0044 FFF7FEFF 		bl	SendData
+ 1450              	.LVL151:
+ 423:Core/Src/gc9a01a.c **** 
+ 424:Core/Src/gc9a01a.c **** 	SendCmd(0x84);        // ?
+ 1451              		.loc 1 424 2 view .LVU328
+ 1452 0048 8420     		movs	r0, #132
+ 1453 004a FFF7FEFF 		bl	SendCmd
+ 1454              	.LVL152:
+ 425:Core/Src/gc9a01a.c **** 	SendData(0x40);
+ 1455              		.loc 1 425 2 view .LVU329
+ 1456 004e 4020     		movs	r0, #64
+ 1457 0050 FFF7FEFF 		bl	SendData
+ 1458              	.LVL153:
+ 426:Core/Src/gc9a01a.c **** 
+ 427:Core/Src/gc9a01a.c **** 	SendCmd(0x85);        // ?
+ 1459              		.loc 1 427 2 view .LVU330
+ 1460 0054 8520     		movs	r0, #133
+ 1461 0056 FFF7FEFF 		bl	SendCmd
+ 1462              	.LVL154:
+ 428:Core/Src/gc9a01a.c **** 	SendData(0xFF);
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccg2kW7X.s 			page 38
+
+
+ 1463              		.loc 1 428 2 view .LVU331
+ 1464 005a FF20     		movs	r0, #255
+ 1465 005c FFF7FEFF 		bl	SendData
+ 1466              	.LVL155:
+ 429:Core/Src/gc9a01a.c **** 
+ 430:Core/Src/gc9a01a.c **** 	SendCmd(0x86);        // ?
+ 1467              		.loc 1 430 2 view .LVU332
+ 1468 0060 8620     		movs	r0, #134
+ 1469 0062 FFF7FEFF 		bl	SendCmd
+ 1470              	.LVL156:
+ 431:Core/Src/gc9a01a.c **** 	SendData(0xFF);
+ 1471              		.loc 1 431 2 view .LVU333
+ 1472 0066 FF20     		movs	r0, #255
+ 1473 0068 FFF7FEFF 		bl	SendData
+ 1474              	.LVL157:
+ 432:Core/Src/gc9a01a.c **** 
+ 433:Core/Src/gc9a01a.c **** 	SendCmd(0x87);        // ?
+ 1475              		.loc 1 433 2 view .LVU334
+ 1476 006c 8720     		movs	r0, #135
+ 1477 006e FFF7FEFF 		bl	SendCmd
+ 1478              	.LVL158:
+ 434:Core/Src/gc9a01a.c **** 	SendData(0xFF);
+ 1479              		.loc 1 434 2 view .LVU335
+ 1480 0072 FF20     		movs	r0, #255
+ 1481 0074 FFF7FEFF 		bl	SendData
+ 1482              	.LVL159:
+ 435:Core/Src/gc9a01a.c **** 
+ 436:Core/Src/gc9a01a.c **** 	SendCmd(0x88);        // ?
+ 1483              		.loc 1 436 2 view .LVU336
+ 1484 0078 8820     		movs	r0, #136
+ 1485 007a FFF7FEFF 		bl	SendCmd
+ 1486              	.LVL160:
+ 437:Core/Src/gc9a01a.c **** 	SendData(0x0A);
+ 1487              		.loc 1 437 2 view .LVU337
+ 1488 007e 0A20     		movs	r0, #10
+ 1489 0080 FFF7FEFF 		bl	SendData
+ 1490              	.LVL161:
+ 438:Core/Src/gc9a01a.c **** 
+ 439:Core/Src/gc9a01a.c **** 	SendCmd(0x89);        // ?
+ 1491              		.loc 1 439 2 view .LVU338
+ 1492 0084 8920     		movs	r0, #137
+ 1493 0086 FFF7FEFF 		bl	SendCmd
+ 1494              	.LVL162:
+ 440:Core/Src/gc9a01a.c **** 	SendData(0x21);
+ 1495              		.loc 1 440 2 view .LVU339
+ 1496 008a 2120     		movs	r0, #33
+ 1497 008c FFF7FEFF 		bl	SendData
+ 1498              	.LVL163:
+ 441:Core/Src/gc9a01a.c **** 
+ 442:Core/Src/gc9a01a.c **** 	SendCmd(0x8A);        // ?
+ 1499              		.loc 1 442 2 view .LVU340
+ 1500 0090 8A20     		movs	r0, #138
+ 1501 0092 FFF7FEFF 		bl	SendCmd
+ 1502              	.LVL164:
+ 443:Core/Src/gc9a01a.c **** 	SendData(0x00);
+ 1503              		.loc 1 443 2 view .LVU341
+ 1504 0096 2046     		mov	r0, r4
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccg2kW7X.s 			page 39
+
+
+ 1505 0098 FFF7FEFF 		bl	SendData
+ 1506              	.LVL165:
+ 444:Core/Src/gc9a01a.c **** 
+ 445:Core/Src/gc9a01a.c **** 	SendCmd(0x8B);        // ?
+ 1507              		.loc 1 445 2 view .LVU342
+ 1508 009c 8B20     		movs	r0, #139
+ 1509 009e FFF7FEFF 		bl	SendCmd
+ 1510              	.LVL166:
+ 446:Core/Src/gc9a01a.c **** 	SendData(0x80);
+ 1511              		.loc 1 446 2 view .LVU343
+ 1512 00a2 8020     		movs	r0, #128
+ 1513 00a4 FFF7FEFF 		bl	SendData
+ 1514              	.LVL167:
+ 447:Core/Src/gc9a01a.c **** 
+ 448:Core/Src/gc9a01a.c **** 	SendCmd(0x8C);        // ?
+ 1515              		.loc 1 448 2 view .LVU344
+ 1516 00a8 8C20     		movs	r0, #140
+ 1517 00aa FFF7FEFF 		bl	SendCmd
+ 1518              	.LVL168:
+ 449:Core/Src/gc9a01a.c **** 	SendData(0x01);
+ 1519              		.loc 1 449 2 view .LVU345
+ 1520 00ae 0120     		movs	r0, #1
+ 1521 00b0 FFF7FEFF 		bl	SendData
+ 1522              	.LVL169:
+ 450:Core/Src/gc9a01a.c **** 
+ 451:Core/Src/gc9a01a.c **** 	SendCmd(0x8D);        // ?
+ 1523              		.loc 1 451 2 view .LVU346
+ 1524 00b4 8D20     		movs	r0, #141
+ 1525 00b6 FFF7FEFF 		bl	SendCmd
+ 1526              	.LVL170:
+ 452:Core/Src/gc9a01a.c **** 	SendData(0x01);
+ 1527              		.loc 1 452 2 view .LVU347
+ 1528 00ba 0120     		movs	r0, #1
+ 1529 00bc FFF7FEFF 		bl	SendData
+ 1530              	.LVL171:
+ 453:Core/Src/gc9a01a.c **** 
+ 454:Core/Src/gc9a01a.c **** 	SendCmd(0x8E);        // ?
+ 1531              		.loc 1 454 2 view .LVU348
+ 1532 00c0 8E20     		movs	r0, #142
+ 1533 00c2 FFF7FEFF 		bl	SendCmd
+ 1534              	.LVL172:
+ 455:Core/Src/gc9a01a.c **** 	SendData(0xFF);
+ 1535              		.loc 1 455 2 view .LVU349
+ 1536 00c6 FF20     		movs	r0, #255
+ 1537 00c8 FFF7FEFF 		bl	SendData
+ 1538              	.LVL173:
+ 456:Core/Src/gc9a01a.c **** 
+ 457:Core/Src/gc9a01a.c **** 	SendCmd(0x8F);        // ?
+ 1539              		.loc 1 457 2 view .LVU350
+ 1540 00cc 8F20     		movs	r0, #143
+ 1541 00ce FFF7FEFF 		bl	SendCmd
+ 1542              	.LVL174:
+ 458:Core/Src/gc9a01a.c **** 	SendData(0xFF);
+ 1543              		.loc 1 458 2 view .LVU351
+ 1544 00d2 FF20     		movs	r0, #255
+ 1545 00d4 FFF7FEFF 		bl	SendData
+ 1546              	.LVL175:
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccg2kW7X.s 			page 40
+
+
+ 459:Core/Src/gc9a01a.c **** 
+ 460:Core/Src/gc9a01a.c **** 	SendCmd(Cmd_DisplayFunctionControl);
+ 1547              		.loc 1 460 2 view .LVU352
+ 1548 00d8 B620     		movs	r0, #182
+ 1549 00da FFF7FEFF 		bl	SendCmd
+ 1550              	.LVL176:
+ 461:Core/Src/gc9a01a.c **** 	SendData(0x00);
+ 1551              		.loc 1 461 2 view .LVU353
+ 1552 00de 2046     		mov	r0, r4
+ 1553 00e0 FFF7FEFF 		bl	SendData
+ 1554              	.LVL177:
+ 462:Core/Src/gc9a01a.c **** 	SendData(0x20); // Scan direction S360 -> S1
+ 1555              		.loc 1 462 2 view .LVU354
+ 1556 00e4 2020     		movs	r0, #32
+ 1557 00e6 FFF7FEFF 		bl	SendData
+ 1558              	.LVL178:
+ 463:Core/Src/gc9a01a.c **** 
+ 464:Core/Src/gc9a01a.c **** 	MemAccessModeSet(0, 0, 0, 1);
+ 1559              		.loc 1 464 2 view .LVU355
+ 1560 00ea 0123     		movs	r3, #1
+ 1561 00ec 2246     		mov	r2, r4
+ 1562 00ee 2146     		mov	r1, r4
+ 1563 00f0 2046     		mov	r0, r4
+ 1564 00f2 FFF7FEFF 		bl	MemAccessModeSet
+ 1565              	.LVL179:
+ 465:Core/Src/gc9a01a.c **** 	ColorModeSet(ColorMode_MCU_16bit);
+ 1566              		.loc 1 465 2 view .LVU356
+ 1567 00f6 0520     		movs	r0, #5
+ 1568 00f8 FFF7FEFF 		bl	ColorModeSet
+ 1569              	.LVL180:
+ 466:Core/Src/gc9a01a.c **** 
+ 467:Core/Src/gc9a01a.c **** 	SendCmd(0x90);        // ?
+ 1570              		.loc 1 467 2 view .LVU357
+ 1571 00fc 9020     		movs	r0, #144
+ 1572 00fe FFF7FEFF 		bl	SendCmd
+ 1573              	.LVL181:
+ 468:Core/Src/gc9a01a.c **** 	SendData(0x08);
+ 1574              		.loc 1 468 2 view .LVU358
+ 1575 0102 0820     		movs	r0, #8
+ 1576 0104 FFF7FEFF 		bl	SendData
+ 1577              	.LVL182:
+ 469:Core/Src/gc9a01a.c **** 	SendData(0x08);
+ 1578              		.loc 1 469 2 view .LVU359
+ 1579 0108 0820     		movs	r0, #8
+ 1580 010a FFF7FEFF 		bl	SendData
+ 1581              	.LVL183:
+ 470:Core/Src/gc9a01a.c **** 	SendData(0x08);
+ 1582              		.loc 1 470 2 view .LVU360
+ 1583 010e 0820     		movs	r0, #8
+ 1584 0110 FFF7FEFF 		bl	SendData
+ 1585              	.LVL184:
+ 471:Core/Src/gc9a01a.c **** 	SendData(0x08);
+ 1586              		.loc 1 471 2 view .LVU361
+ 1587 0114 0820     		movs	r0, #8
+ 1588 0116 FFF7FEFF 		bl	SendData
+ 1589              	.LVL185:
+ 472:Core/Src/gc9a01a.c **** 
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccg2kW7X.s 			page 41
+
+
+ 473:Core/Src/gc9a01a.c **** 	SendCmd(0xBD);        // ?
+ 1590              		.loc 1 473 2 view .LVU362
+ 1591 011a BD20     		movs	r0, #189
+ 1592 011c FFF7FEFF 		bl	SendCmd
+ 1593              	.LVL186:
+ 474:Core/Src/gc9a01a.c **** 	SendData(0x06);
+ 1594              		.loc 1 474 2 view .LVU363
+ 1595 0120 0620     		movs	r0, #6
+ 1596 0122 FFF7FEFF 		bl	SendData
+ 1597              	.LVL187:
+ 475:Core/Src/gc9a01a.c **** 
+ 476:Core/Src/gc9a01a.c **** 	SendCmd(0xBC);        // ?
+ 1598              		.loc 1 476 2 view .LVU364
+ 1599 0126 BC20     		movs	r0, #188
+ 1600 0128 FFF7FEFF 		bl	SendCmd
+ 1601              	.LVL188:
+ 477:Core/Src/gc9a01a.c **** 	SendData(0x00);
+ 1602              		.loc 1 477 2 view .LVU365
+ 1603 012c 2046     		mov	r0, r4
+ 1604 012e FFF7FEFF 		bl	SendData
+ 1605              	.LVL189:
+ 478:Core/Src/gc9a01a.c **** 
+ 479:Core/Src/gc9a01a.c **** 	SendCmd(0xFF);        // ?
+ 1606              		.loc 1 479 2 view .LVU366
+ 1607 0132 FF20     		movs	r0, #255
+ 1608 0134 FFF7FEFF 		bl	SendCmd
+ 1609              	.LVL190:
+ 480:Core/Src/gc9a01a.c **** 	SendData(0x60);
+ 1610              		.loc 1 480 2 view .LVU367
+ 1611 0138 6020     		movs	r0, #96
+ 1612 013a FFF7FEFF 		bl	SendData
+ 1613              	.LVL191:
+ 481:Core/Src/gc9a01a.c **** 	SendData(0x01);
+ 1614              		.loc 1 481 2 view .LVU368
+ 1615 013e 0120     		movs	r0, #1
+ 1616 0140 FFF7FEFF 		bl	SendData
+ 1617              	.LVL192:
+ 482:Core/Src/gc9a01a.c **** 	SendData(0x04);
+ 1618              		.loc 1 482 2 view .LVU369
+ 1619 0144 0420     		movs	r0, #4
+ 1620 0146 FFF7FEFF 		bl	SendData
+ 1621              	.LVL193:
+ 483:Core/Src/gc9a01a.c **** 
+ 484:Core/Src/gc9a01a.c **** 	SendCmd(Cmd_PWCTR2);  // Power control 2
+ 1622              		.loc 1 484 2 view .LVU370
+ 1623 014a C320     		movs	r0, #195
+ 1624 014c FFF7FEFF 		bl	SendCmd
+ 1625              	.LVL194:
+ 485:Core/Src/gc9a01a.c **** 	SendData(0x13);       // 5.18 V
+ 1626              		.loc 1 485 2 view .LVU371
+ 1627 0150 1320     		movs	r0, #19
+ 1628 0152 FFF7FEFF 		bl	SendData
+ 1629              	.LVL195:
+ 486:Core/Src/gc9a01a.c **** 	SendCmd(Cmd_PWCTR3);  // Power control 3
+ 1630              		.loc 1 486 2 view .LVU372
+ 1631 0156 C420     		movs	r0, #196
+ 1632 0158 FFF7FEFF 		bl	SendCmd
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccg2kW7X.s 			page 42
+
+
+ 1633              	.LVL196:
+ 487:Core/Src/gc9a01a.c **** 	SendData(0x13);       // VREG2A = -3.82 V, VREG2B = 0.68 V
+ 1634              		.loc 1 487 2 view .LVU373
+ 1635 015c 1320     		movs	r0, #19
+ 1636 015e FFF7FEFF 		bl	SendData
+ 1637              	.LVL197:
+ 488:Core/Src/gc9a01a.c **** 	SendCmd(Cmd_PWCTR4);  // Power control 4
+ 1638              		.loc 1 488 2 view .LVU374
+ 1639 0162 C920     		movs	r0, #201
+ 1640 0164 FFF7FEFF 		bl	SendCmd
+ 1641              	.LVL198:
+ 489:Core/Src/gc9a01a.c **** 	SendData(0x22);       // VREG2A = 5.88 V, VREG2B = -2.88 V
+ 1642              		.loc 1 489 2 view .LVU375
+ 1643 0168 2220     		movs	r0, #34
+ 1644 016a FFF7FEFF 		bl	SendData
+ 1645              	.LVL199:
+ 490:Core/Src/gc9a01a.c **** 
+ 491:Core/Src/gc9a01a.c **** 	SendCmd(0xBE);        // ?
+ 1646              		.loc 1 491 2 view .LVU376
+ 1647 016e BE20     		movs	r0, #190
+ 1648 0170 FFF7FEFF 		bl	SendCmd
+ 1649              	.LVL200:
+ 492:Core/Src/gc9a01a.c **** 	SendData(0x11);
+ 1650              		.loc 1 492 2 view .LVU377
+ 1651 0174 1120     		movs	r0, #17
+ 1652 0176 FFF7FEFF 		bl	SendData
+ 1653              	.LVL201:
+ 493:Core/Src/gc9a01a.c **** 
+ 494:Core/Src/gc9a01a.c **** 	SendCmd(0xE1);        // ?
+ 1654              		.loc 1 494 2 view .LVU378
+ 1655 017a E120     		movs	r0, #225
+ 1656 017c FFF7FEFF 		bl	SendCmd
+ 1657              	.LVL202:
+ 495:Core/Src/gc9a01a.c **** 	SendData(0x10);
+ 1658              		.loc 1 495 2 view .LVU379
+ 1659 0180 1020     		movs	r0, #16
+ 1660 0182 FFF7FEFF 		bl	SendData
+ 1661              	.LVL203:
+ 496:Core/Src/gc9a01a.c **** 	SendData(0x0E);
+ 1662              		.loc 1 496 2 view .LVU380
+ 1663 0186 0E20     		movs	r0, #14
+ 1664 0188 FFF7FEFF 		bl	SendData
+ 1665              	.LVL204:
+ 497:Core/Src/gc9a01a.c **** 
+ 498:Core/Src/gc9a01a.c **** 	SendCmd(0xDF);        // ?
+ 1666              		.loc 1 498 2 view .LVU381
+ 1667 018c DF20     		movs	r0, #223
+ 1668 018e FFF7FEFF 		bl	SendCmd
+ 1669              	.LVL205:
+ 499:Core/Src/gc9a01a.c **** 	SendData(0x21);
+ 1670              		.loc 1 499 2 view .LVU382
+ 1671 0192 2120     		movs	r0, #33
+ 1672 0194 FFF7FEFF 		bl	SendData
+ 1673              	.LVL206:
+ 500:Core/Src/gc9a01a.c **** 	SendData(0x0c);
+ 1674              		.loc 1 500 2 view .LVU383
+ 1675 0198 0C20     		movs	r0, #12
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccg2kW7X.s 			page 43
+
+
+ 1676 019a FFF7FEFF 		bl	SendData
+ 1677              	.LVL207:
+ 501:Core/Src/gc9a01a.c **** 	SendData(0x02);
+ 1678              		.loc 1 501 2 view .LVU384
+ 1679 019e 0220     		movs	r0, #2
+ 1680 01a0 FFF7FEFF 		bl	SendData
+ 1681              	.LVL208:
+ 502:Core/Src/gc9a01a.c **** 
+ 503:Core/Src/gc9a01a.c **** 	SendCmd(Cmd_GAMMA1);
+ 1682              		.loc 1 503 2 view .LVU385
+ 1683 01a4 F020     		movs	r0, #240
+ 1684 01a6 FFF7FEFF 		bl	SendCmd
+ 1685              	.LVL209:
+ 504:Core/Src/gc9a01a.c **** 	SendData(0x45);
+ 1686              		.loc 1 504 2 view .LVU386
+ 1687 01aa 4520     		movs	r0, #69
+ 1688 01ac FFF7FEFF 		bl	SendData
+ 1689              	.LVL210:
+ 505:Core/Src/gc9a01a.c **** 	SendData(0x09);
+ 1690              		.loc 1 505 2 view .LVU387
+ 1691 01b0 0920     		movs	r0, #9
+ 1692 01b2 FFF7FEFF 		bl	SendData
+ 1693              	.LVL211:
+ 506:Core/Src/gc9a01a.c **** 	SendData(0x08);
+ 1694              		.loc 1 506 2 view .LVU388
+ 1695 01b6 0820     		movs	r0, #8
+ 1696 01b8 FFF7FEFF 		bl	SendData
+ 1697              	.LVL212:
+ 507:Core/Src/gc9a01a.c **** 	SendData(0x08);
+ 1698              		.loc 1 507 2 view .LVU389
+ 1699 01bc 0820     		movs	r0, #8
+ 1700 01be FFF7FEFF 		bl	SendData
+ 1701              	.LVL213:
+ 508:Core/Src/gc9a01a.c **** 	SendData(0x26);
+ 1702              		.loc 1 508 2 view .LVU390
+ 1703 01c2 2620     		movs	r0, #38
+ 1704 01c4 FFF7FEFF 		bl	SendData
+ 1705              	.LVL214:
+ 509:Core/Src/gc9a01a.c **** 	SendData(0x2A);
+ 1706              		.loc 1 509 2 view .LVU391
+ 1707 01c8 2A20     		movs	r0, #42
+ 1708 01ca FFF7FEFF 		bl	SendData
+ 1709              	.LVL215:
+ 510:Core/Src/gc9a01a.c **** 
+ 511:Core/Src/gc9a01a.c **** 	SendCmd(Cmd_GAMMA2);
+ 1710              		.loc 1 511 2 view .LVU392
+ 1711 01ce F120     		movs	r0, #241
+ 1712 01d0 FFF7FEFF 		bl	SendCmd
+ 1713              	.LVL216:
+ 512:Core/Src/gc9a01a.c **** 	SendData(0x43);
+ 1714              		.loc 1 512 2 view .LVU393
+ 1715 01d4 4320     		movs	r0, #67
+ 1716 01d6 FFF7FEFF 		bl	SendData
+ 1717              	.LVL217:
+ 513:Core/Src/gc9a01a.c **** 	SendData(0x70);
+ 1718              		.loc 1 513 2 view .LVU394
+ 1719 01da 7020     		movs	r0, #112
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccg2kW7X.s 			page 44
+
+
+ 1720 01dc FFF7FEFF 		bl	SendData
+ 1721              	.LVL218:
+ 514:Core/Src/gc9a01a.c **** 	SendData(0x72);
+ 1722              		.loc 1 514 2 view .LVU395
+ 1723 01e0 7220     		movs	r0, #114
+ 1724 01e2 FFF7FEFF 		bl	SendData
+ 1725              	.LVL219:
+ 515:Core/Src/gc9a01a.c **** 	SendData(0x36);
+ 1726              		.loc 1 515 2 view .LVU396
+ 1727 01e6 3620     		movs	r0, #54
+ 1728 01e8 FFF7FEFF 		bl	SendData
+ 1729              	.LVL220:
+ 516:Core/Src/gc9a01a.c **** 	SendData(0x37);
+ 1730              		.loc 1 516 2 view .LVU397
+ 1731 01ec 3720     		movs	r0, #55
+ 1732 01ee FFF7FEFF 		bl	SendData
+ 1733              	.LVL221:
+ 517:Core/Src/gc9a01a.c **** 	SendData(0x6F);
+ 1734              		.loc 1 517 2 view .LVU398
+ 1735 01f2 6F20     		movs	r0, #111
+ 1736 01f4 FFF7FEFF 		bl	SendData
+ 1737              	.LVL222:
+ 518:Core/Src/gc9a01a.c **** 
+ 519:Core/Src/gc9a01a.c **** 	SendCmd(Cmd_GAMMA3);
+ 1738              		.loc 1 519 2 view .LVU399
+ 1739 01f8 F220     		movs	r0, #242
+ 1740 01fa FFF7FEFF 		bl	SendCmd
+ 1741              	.LVL223:
+ 520:Core/Src/gc9a01a.c **** 	SendData(0x45);
+ 1742              		.loc 1 520 2 view .LVU400
+ 1743 01fe 4520     		movs	r0, #69
+ 1744 0200 FFF7FEFF 		bl	SendData
+ 1745              	.LVL224:
+ 521:Core/Src/gc9a01a.c **** 	SendData(0x09);
+ 1746              		.loc 1 521 2 view .LVU401
+ 1747 0204 0920     		movs	r0, #9
+ 1748 0206 FFF7FEFF 		bl	SendData
+ 1749              	.LVL225:
+ 522:Core/Src/gc9a01a.c **** 	SendData(0x08);
+ 1750              		.loc 1 522 2 view .LVU402
+ 1751 020a 0820     		movs	r0, #8
+ 1752 020c FFF7FEFF 		bl	SendData
+ 1753              	.LVL226:
+ 523:Core/Src/gc9a01a.c **** 	SendData(0x08);
+ 1754              		.loc 1 523 2 view .LVU403
+ 1755 0210 0820     		movs	r0, #8
+ 1756 0212 FFF7FEFF 		bl	SendData
+ 1757              	.LVL227:
+ 524:Core/Src/gc9a01a.c **** 	SendData(0x26);
+ 1758              		.loc 1 524 2 view .LVU404
+ 1759 0216 2620     		movs	r0, #38
+ 1760 0218 FFF7FEFF 		bl	SendData
+ 1761              	.LVL228:
+ 525:Core/Src/gc9a01a.c **** 	SendData(0x2A);
+ 1762              		.loc 1 525 2 view .LVU405
+ 1763 021c 2A20     		movs	r0, #42
+ 1764 021e FFF7FEFF 		bl	SendData
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccg2kW7X.s 			page 45
+
+
+ 1765              	.LVL229:
+ 526:Core/Src/gc9a01a.c **** 
+ 527:Core/Src/gc9a01a.c **** 	SendCmd(Cmd_GAMMA4);
+ 1766              		.loc 1 527 2 view .LVU406
+ 1767 0222 F320     		movs	r0, #243
+ 1768 0224 FFF7FEFF 		bl	SendCmd
+ 1769              	.LVL230:
+ 528:Core/Src/gc9a01a.c **** 	SendData(0x43);
+ 1770              		.loc 1 528 2 view .LVU407
+ 1771 0228 4320     		movs	r0, #67
+ 1772 022a FFF7FEFF 		bl	SendData
+ 1773              	.LVL231:
+ 529:Core/Src/gc9a01a.c **** 	SendData(0x70);
+ 1774              		.loc 1 529 2 view .LVU408
+ 1775 022e 7020     		movs	r0, #112
+ 1776 0230 FFF7FEFF 		bl	SendData
+ 1777              	.LVL232:
+ 530:Core/Src/gc9a01a.c **** 	SendData(0x72);
+ 1778              		.loc 1 530 2 view .LVU409
+ 1779 0234 7220     		movs	r0, #114
+ 1780 0236 FFF7FEFF 		bl	SendData
+ 1781              	.LVL233:
+ 531:Core/Src/gc9a01a.c **** 	SendData(0x36);
+ 1782              		.loc 1 531 2 view .LVU410
+ 1783 023a 3620     		movs	r0, #54
+ 1784 023c FFF7FEFF 		bl	SendData
+ 1785              	.LVL234:
+ 532:Core/Src/gc9a01a.c **** 	SendData(0x37);
+ 1786              		.loc 1 532 2 view .LVU411
+ 1787 0240 3720     		movs	r0, #55
+ 1788 0242 FFF7FEFF 		bl	SendData
+ 1789              	.LVL235:
+ 533:Core/Src/gc9a01a.c **** 	SendData(0x6F);
+ 1790              		.loc 1 533 2 view .LVU412
+ 1791 0246 6F20     		movs	r0, #111
+ 1792 0248 FFF7FEFF 		bl	SendData
+ 1793              	.LVL236:
+ 534:Core/Src/gc9a01a.c **** 
+ 535:Core/Src/gc9a01a.c **** 	SendCmd(0xED);        // ?
+ 1794              		.loc 1 535 2 view .LVU413
+ 1795 024c ED20     		movs	r0, #237
+ 1796 024e FFF7FEFF 		bl	SendCmd
+ 1797              	.LVL237:
+ 536:Core/Src/gc9a01a.c **** 	SendData(0x1B);
+ 1798              		.loc 1 536 2 view .LVU414
+ 1799 0252 1B20     		movs	r0, #27
+ 1800 0254 FFF7FEFF 		bl	SendData
+ 1801              	.LVL238:
+ 537:Core/Src/gc9a01a.c **** 	SendData(0x0B);
+ 1802              		.loc 1 537 2 view .LVU415
+ 1803 0258 0B20     		movs	r0, #11
+ 1804 025a FFF7FEFF 		bl	SendData
+ 1805              	.LVL239:
+ 538:Core/Src/gc9a01a.c **** 
+ 539:Core/Src/gc9a01a.c **** 	SendCmd(0xAE);        // ?
+ 1806              		.loc 1 539 2 view .LVU416
+ 1807 025e AE20     		movs	r0, #174
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccg2kW7X.s 			page 46
+
+
+ 1808 0260 FFF7FEFF 		bl	SendCmd
+ 1809              	.LVL240:
+ 540:Core/Src/gc9a01a.c **** 	SendData(0x77);
+ 1810              		.loc 1 540 2 view .LVU417
+ 1811 0264 7720     		movs	r0, #119
+ 1812 0266 FFF7FEFF 		bl	SendData
+ 1813              	.LVL241:
+ 541:Core/Src/gc9a01a.c **** 
+ 542:Core/Src/gc9a01a.c **** 	SendCmd(0xCD);        // ?
+ 1814              		.loc 1 542 2 view .LVU418
+ 1815 026a CD20     		movs	r0, #205
+ 1816 026c FFF7FEFF 		bl	SendCmd
+ 1817              	.LVL242:
+ 543:Core/Src/gc9a01a.c **** 	SendData(0x63);
+ 1818              		.loc 1 543 2 view .LVU419
+ 1819 0270 6320     		movs	r0, #99
+ 1820 0272 FFF7FEFF 		bl	SendData
+ 1821              	.LVL243:
+ 544:Core/Src/gc9a01a.c **** 
+ 545:Core/Src/gc9a01a.c **** 	SendCmd(0x70);        // ?
+ 1822              		.loc 1 545 2 view .LVU420
+ 1823 0276 7020     		movs	r0, #112
+ 1824 0278 FFF7FEFF 		bl	SendCmd
+ 1825              	.LVL244:
+ 546:Core/Src/gc9a01a.c **** 	SendData(0x07);
+ 1826              		.loc 1 546 2 view .LVU421
+ 1827 027c 0720     		movs	r0, #7
+ 1828 027e FFF7FEFF 		bl	SendData
+ 1829              	.LVL245:
+ 547:Core/Src/gc9a01a.c **** 	SendData(0x07);
+ 1830              		.loc 1 547 2 view .LVU422
+ 1831 0282 0720     		movs	r0, #7
+ 1832 0284 FFF7FEFF 		bl	SendData
+ 1833              	.LVL246:
+ 548:Core/Src/gc9a01a.c **** 	SendData(0x04);
+ 1834              		.loc 1 548 2 view .LVU423
+ 1835 0288 0420     		movs	r0, #4
+ 1836 028a FFF7FEFF 		bl	SendData
+ 1837              	.LVL247:
+ 549:Core/Src/gc9a01a.c **** 	SendData(0x0E);
+ 1838              		.loc 1 549 2 view .LVU424
+ 1839 028e 0E20     		movs	r0, #14
+ 1840 0290 FFF7FEFF 		bl	SendData
+ 1841              	.LVL248:
+ 550:Core/Src/gc9a01a.c **** 	SendData(0x0F);
+ 1842              		.loc 1 550 2 view .LVU425
+ 1843 0294 0F20     		movs	r0, #15
+ 1844 0296 FFF7FEFF 		bl	SendData
+ 1845              	.LVL249:
+ 551:Core/Src/gc9a01a.c **** 	SendData(0x09);
+ 1846              		.loc 1 551 2 view .LVU426
+ 1847 029a 0920     		movs	r0, #9
+ 1848 029c FFF7FEFF 		bl	SendData
+ 1849              	.LVL250:
+ 552:Core/Src/gc9a01a.c **** 	SendData(0x07);
+ 1850              		.loc 1 552 2 view .LVU427
+ 1851 02a0 0720     		movs	r0, #7
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccg2kW7X.s 			page 47
+
+
+ 1852 02a2 FFF7FEFF 		bl	SendData
+ 1853              	.LVL251:
+ 553:Core/Src/gc9a01a.c **** 	SendData(0x08);
+ 1854              		.loc 1 553 2 view .LVU428
+ 1855 02a6 0820     		movs	r0, #8
+ 1856 02a8 FFF7FEFF 		bl	SendData
+ 1857              	.LVL252:
+ 554:Core/Src/gc9a01a.c **** 	SendData(0x03);
+ 1858              		.loc 1 554 2 view .LVU429
+ 1859 02ac 0320     		movs	r0, #3
+ 1860 02ae FFF7FEFF 		bl	SendData
+ 1861              	.LVL253:
+ 555:Core/Src/gc9a01a.c **** 
+ 556:Core/Src/gc9a01a.c **** 	SendCmd(Cmd_FRAMERATE);       // Frame rate
+ 1862              		.loc 1 556 2 view .LVU430
+ 1863 02b2 E820     		movs	r0, #232
+ 1864 02b4 FFF7FEFF 		bl	SendCmd
+ 1865              	.LVL254:
+ 557:Core/Src/gc9a01a.c **** 	SendData(0x34);         // 4 dot inversion
+ 1866              		.loc 1 557 2 view .LVU431
+ 1867 02b8 3420     		movs	r0, #52
+ 1868 02ba FFF7FEFF 		bl	SendData
+ 1869              	.LVL255:
+ 558:Core/Src/gc9a01a.c **** 
+ 559:Core/Src/gc9a01a.c **** 	SendCmd(0x62);        // ?
+ 1870              		.loc 1 559 2 view .LVU432
+ 1871 02be 6220     		movs	r0, #98
+ 1872 02c0 FFF7FEFF 		bl	SendCmd
+ 1873              	.LVL256:
+ 560:Core/Src/gc9a01a.c **** 	SendData(0x18);
+ 1874              		.loc 1 560 2 view .LVU433
+ 1875 02c4 1820     		movs	r0, #24
+ 1876 02c6 FFF7FEFF 		bl	SendData
+ 1877              	.LVL257:
+ 561:Core/Src/gc9a01a.c **** 	SendData(0x0D);
+ 1878              		.loc 1 561 2 view .LVU434
+ 1879 02ca 0D20     		movs	r0, #13
+ 1880 02cc FFF7FEFF 		bl	SendData
+ 1881              	.LVL258:
+ 562:Core/Src/gc9a01a.c **** 	SendData(0x71);
+ 1882              		.loc 1 562 2 view .LVU435
+ 1883 02d0 7120     		movs	r0, #113
+ 1884 02d2 FFF7FEFF 		bl	SendData
+ 1885              	.LVL259:
+ 563:Core/Src/gc9a01a.c **** 	SendData(0xED);
+ 1886              		.loc 1 563 2 view .LVU436
+ 1887 02d6 ED20     		movs	r0, #237
+ 1888 02d8 FFF7FEFF 		bl	SendData
+ 1889              	.LVL260:
+ 564:Core/Src/gc9a01a.c **** 	SendData(0x70);
+ 1890              		.loc 1 564 2 view .LVU437
+ 1891 02dc 7020     		movs	r0, #112
+ 1892 02de FFF7FEFF 		bl	SendData
+ 1893              	.LVL261:
+ 565:Core/Src/gc9a01a.c **** 	SendData(0x70);
+ 1894              		.loc 1 565 2 view .LVU438
+ 1895 02e2 7020     		movs	r0, #112
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccg2kW7X.s 			page 48
+
+
+ 1896 02e4 FFF7FEFF 		bl	SendData
+ 1897              	.LVL262:
+ 566:Core/Src/gc9a01a.c **** 	SendData(0x18);
+ 1898              		.loc 1 566 2 view .LVU439
+ 1899 02e8 1820     		movs	r0, #24
+ 1900 02ea FFF7FEFF 		bl	SendData
+ 1901              	.LVL263:
+ 567:Core/Src/gc9a01a.c **** 	SendData(0x0F);
+ 1902              		.loc 1 567 2 view .LVU440
+ 1903 02ee 0F20     		movs	r0, #15
+ 1904 02f0 FFF7FEFF 		bl	SendData
+ 1905              	.LVL264:
+ 568:Core/Src/gc9a01a.c **** 	SendData(0x71);
+ 1906              		.loc 1 568 2 view .LVU441
+ 1907 02f4 7120     		movs	r0, #113
+ 1908 02f6 FFF7FEFF 		bl	SendData
+ 1909              	.LVL265:
+ 569:Core/Src/gc9a01a.c **** 	SendData(0xEF);
+ 1910              		.loc 1 569 2 view .LVU442
+ 1911 02fa EF20     		movs	r0, #239
+ 1912 02fc FFF7FEFF 		bl	SendData
+ 1913              	.LVL266:
+ 570:Core/Src/gc9a01a.c **** 	SendData(0x70);
+ 1914              		.loc 1 570 2 view .LVU443
+ 1915 0300 7020     		movs	r0, #112
+ 1916 0302 FFF7FEFF 		bl	SendData
+ 1917              	.LVL267:
+ 571:Core/Src/gc9a01a.c **** 	SendData(0x70);
+ 1918              		.loc 1 571 2 view .LVU444
+ 1919 0306 7020     		movs	r0, #112
+ 1920 0308 FFF7FEFF 		bl	SendData
+ 1921              	.LVL268:
+ 572:Core/Src/gc9a01a.c **** 
+ 573:Core/Src/gc9a01a.c **** 	SendCmd(0x63);        // ?
+ 1922              		.loc 1 573 2 view .LVU445
+ 1923 030c 6320     		movs	r0, #99
+ 1924 030e FFF7FEFF 		bl	SendCmd
+ 1925              	.LVL269:
+ 574:Core/Src/gc9a01a.c **** 	SendData(0x18);
+ 1926              		.loc 1 574 2 view .LVU446
+ 1927 0312 1820     		movs	r0, #24
+ 1928 0314 FFF7FEFF 		bl	SendData
+ 1929              	.LVL270:
+ 575:Core/Src/gc9a01a.c **** 	SendData(0x11);
+ 1930              		.loc 1 575 2 view .LVU447
+ 1931 0318 1120     		movs	r0, #17
+ 1932 031a FFF7FEFF 		bl	SendData
+ 1933              	.LVL271:
+ 576:Core/Src/gc9a01a.c **** 	SendData(0x71);
+ 1934              		.loc 1 576 2 view .LVU448
+ 1935 031e 7120     		movs	r0, #113
+ 1936 0320 FFF7FEFF 		bl	SendData
+ 1937              	.LVL272:
+ 577:Core/Src/gc9a01a.c **** 	SendData(0xF1);
+ 1938              		.loc 1 577 2 view .LVU449
+ 1939 0324 F120     		movs	r0, #241
+ 1940 0326 FFF7FEFF 		bl	SendData
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccg2kW7X.s 			page 49
+
+
+ 1941              	.LVL273:
+ 578:Core/Src/gc9a01a.c **** 	SendData(0x70);
+ 1942              		.loc 1 578 2 view .LVU450
+ 1943 032a 7020     		movs	r0, #112
+ 1944 032c FFF7FEFF 		bl	SendData
+ 1945              	.LVL274:
+ 579:Core/Src/gc9a01a.c **** 	SendData(0x70);
+ 1946              		.loc 1 579 2 view .LVU451
+ 1947 0330 7020     		movs	r0, #112
+ 1948 0332 FFF7FEFF 		bl	SendData
+ 1949              	.LVL275:
+ 580:Core/Src/gc9a01a.c **** 	SendData(0x18);
+ 1950              		.loc 1 580 2 view .LVU452
+ 1951 0336 1820     		movs	r0, #24
+ 1952 0338 FFF7FEFF 		bl	SendData
+ 1953              	.LVL276:
+ 581:Core/Src/gc9a01a.c **** 	SendData(0x13);
+ 1954              		.loc 1 581 2 view .LVU453
+ 1955 033c 1320     		movs	r0, #19
+ 1956 033e FFF7FEFF 		bl	SendData
+ 1957              	.LVL277:
+ 582:Core/Src/gc9a01a.c **** 	SendData(0x71);
+ 1958              		.loc 1 582 2 view .LVU454
+ 1959 0342 7120     		movs	r0, #113
+ 1960 0344 FFF7FEFF 		bl	SendData
+ 1961              	.LVL278:
+ 583:Core/Src/gc9a01a.c **** 	SendData(0xF3);
+ 1962              		.loc 1 583 2 view .LVU455
+ 1963 0348 F320     		movs	r0, #243
+ 1964 034a FFF7FEFF 		bl	SendData
+ 1965              	.LVL279:
+ 584:Core/Src/gc9a01a.c **** 	SendData(0x70);
+ 1966              		.loc 1 584 2 view .LVU456
+ 1967 034e 7020     		movs	r0, #112
+ 1968 0350 FFF7FEFF 		bl	SendData
+ 1969              	.LVL280:
+ 585:Core/Src/gc9a01a.c **** 	SendData(0x70);
+ 1970              		.loc 1 585 2 view .LVU457
+ 1971 0354 7020     		movs	r0, #112
+ 1972 0356 FFF7FEFF 		bl	SendData
+ 1973              	.LVL281:
+ 586:Core/Src/gc9a01a.c **** 
+ 587:Core/Src/gc9a01a.c **** 	SendCmd(0x64);        // ?
+ 1974              		.loc 1 587 2 view .LVU458
+ 1975 035a 6420     		movs	r0, #100
+ 1976 035c FFF7FEFF 		bl	SendCmd
+ 1977              	.LVL282:
+ 588:Core/Src/gc9a01a.c **** 	SendData(0x28);
+ 1978              		.loc 1 588 2 view .LVU459
+ 1979 0360 2820     		movs	r0, #40
+ 1980 0362 FFF7FEFF 		bl	SendData
+ 1981              	.LVL283:
+ 589:Core/Src/gc9a01a.c **** 	SendData(0x29);
+ 1982              		.loc 1 589 2 view .LVU460
+ 1983 0366 2920     		movs	r0, #41
+ 1984 0368 FFF7FEFF 		bl	SendData
+ 1985              	.LVL284:
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccg2kW7X.s 			page 50
+
+
+ 590:Core/Src/gc9a01a.c **** 	SendData(0xF1);
+ 1986              		.loc 1 590 2 view .LVU461
+ 1987 036c F120     		movs	r0, #241
+ 1988 036e FFF7FEFF 		bl	SendData
+ 1989              	.LVL285:
+ 591:Core/Src/gc9a01a.c **** 	SendData(0x01);
+ 1990              		.loc 1 591 2 view .LVU462
+ 1991 0372 0120     		movs	r0, #1
+ 1992 0374 FFF7FEFF 		bl	SendData
+ 1993              	.LVL286:
+ 592:Core/Src/gc9a01a.c **** 	SendData(0xF1);
+ 1994              		.loc 1 592 2 view .LVU463
+ 1995 0378 F120     		movs	r0, #241
+ 1996 037a FFF7FEFF 		bl	SendData
+ 1997              	.LVL287:
+ 593:Core/Src/gc9a01a.c **** 	SendData(0x00);
+ 1998              		.loc 1 593 2 view .LVU464
+ 1999 037e 2046     		mov	r0, r4
+ 2000 0380 FFF7FEFF 		bl	SendData
+ 2001              	.LVL288:
+ 594:Core/Src/gc9a01a.c **** 	SendData(0x07);
+ 2002              		.loc 1 594 2 view .LVU465
+ 2003 0384 0720     		movs	r0, #7
+ 2004 0386 FFF7FEFF 		bl	SendData
+ 2005              	.LVL289:
+ 595:Core/Src/gc9a01a.c **** 
+ 596:Core/Src/gc9a01a.c **** 	SendCmd(0x66);        // ?
+ 2006              		.loc 1 596 2 view .LVU466
+ 2007 038a 6620     		movs	r0, #102
+ 2008 038c FFF7FEFF 		bl	SendCmd
+ 2009              	.LVL290:
+ 597:Core/Src/gc9a01a.c **** 	SendData(0x3C);
+ 2010              		.loc 1 597 2 view .LVU467
+ 2011 0390 3C20     		movs	r0, #60
+ 2012 0392 FFF7FEFF 		bl	SendData
+ 2013              	.LVL291:
+ 598:Core/Src/gc9a01a.c **** 	SendData(0x00);
+ 2014              		.loc 1 598 2 view .LVU468
+ 2015 0396 2046     		mov	r0, r4
+ 2016 0398 FFF7FEFF 		bl	SendData
+ 2017              	.LVL292:
+ 599:Core/Src/gc9a01a.c **** 	SendData(0xCD);
+ 2018              		.loc 1 599 2 view .LVU469
+ 2019 039c CD20     		movs	r0, #205
+ 2020 039e FFF7FEFF 		bl	SendData
+ 2021              	.LVL293:
+ 600:Core/Src/gc9a01a.c **** 	SendData(0x67);
+ 2022              		.loc 1 600 2 view .LVU470
+ 2023 03a2 6720     		movs	r0, #103
+ 2024 03a4 FFF7FEFF 		bl	SendData
+ 2025              	.LVL294:
+ 601:Core/Src/gc9a01a.c **** 	SendData(0x45);
+ 2026              		.loc 1 601 2 view .LVU471
+ 2027 03a8 4520     		movs	r0, #69
+ 2028 03aa FFF7FEFF 		bl	SendData
+ 2029              	.LVL295:
+ 602:Core/Src/gc9a01a.c **** 	SendData(0x45);
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccg2kW7X.s 			page 51
+
+
+ 2030              		.loc 1 602 2 view .LVU472
+ 2031 03ae 4520     		movs	r0, #69
+ 2032 03b0 FFF7FEFF 		bl	SendData
+ 2033              	.LVL296:
+ 603:Core/Src/gc9a01a.c **** 	SendData(0x10);
+ 2034              		.loc 1 603 2 view .LVU473
+ 2035 03b4 1020     		movs	r0, #16
+ 2036 03b6 FFF7FEFF 		bl	SendData
+ 2037              	.LVL297:
+ 604:Core/Src/gc9a01a.c **** 	SendData(0x00);
+ 2038              		.loc 1 604 2 view .LVU474
+ 2039 03ba 2046     		mov	r0, r4
+ 2040 03bc FFF7FEFF 		bl	SendData
+ 2041              	.LVL298:
+ 605:Core/Src/gc9a01a.c **** 	SendData(0x00);
+ 2042              		.loc 1 605 2 view .LVU475
+ 2043 03c0 2046     		mov	r0, r4
+ 2044 03c2 FFF7FEFF 		bl	SendData
+ 2045              	.LVL299:
+ 606:Core/Src/gc9a01a.c **** 	SendData(0x00);
+ 2046              		.loc 1 606 2 view .LVU476
+ 2047 03c6 2046     		mov	r0, r4
+ 2048 03c8 FFF7FEFF 		bl	SendData
+ 2049              	.LVL300:
+ 607:Core/Src/gc9a01a.c **** 
+ 608:Core/Src/gc9a01a.c **** 	SendCmd(0x67);        // ?
+ 2050              		.loc 1 608 2 view .LVU477
+ 2051 03cc 6720     		movs	r0, #103
+ 2052 03ce FFF7FEFF 		bl	SendCmd
+ 2053              	.LVL301:
+ 609:Core/Src/gc9a01a.c **** 	SendData(0x00);
+ 2054              		.loc 1 609 2 view .LVU478
+ 2055 03d2 2046     		mov	r0, r4
+ 2056 03d4 FFF7FEFF 		bl	SendData
+ 2057              	.LVL302:
+ 610:Core/Src/gc9a01a.c **** 	SendData(0x3C);
+ 2058              		.loc 1 610 2 view .LVU479
+ 2059 03d8 3C20     		movs	r0, #60
+ 2060 03da FFF7FEFF 		bl	SendData
+ 2061              	.LVL303:
+ 611:Core/Src/gc9a01a.c **** 	SendData(0x00);
+ 2062              		.loc 1 611 2 view .LVU480
+ 2063 03de 2046     		mov	r0, r4
+ 2064 03e0 FFF7FEFF 		bl	SendData
+ 2065              	.LVL304:
+ 612:Core/Src/gc9a01a.c **** 	SendData(0x00);
+ 2066              		.loc 1 612 2 view .LVU481
+ 2067 03e4 2046     		mov	r0, r4
+ 2068 03e6 FFF7FEFF 		bl	SendData
+ 2069              	.LVL305:
+ 613:Core/Src/gc9a01a.c **** 	SendData(0x00);
+ 2070              		.loc 1 613 2 view .LVU482
+ 2071 03ea 2046     		mov	r0, r4
+ 2072 03ec FFF7FEFF 		bl	SendData
+ 2073              	.LVL306:
+ 614:Core/Src/gc9a01a.c **** 	SendData(0x01);
+ 2074              		.loc 1 614 2 view .LVU483
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccg2kW7X.s 			page 52
+
+
+ 2075 03f0 0120     		movs	r0, #1
+ 2076 03f2 FFF7FEFF 		bl	SendData
+ 2077              	.LVL307:
+ 615:Core/Src/gc9a01a.c **** 	SendData(0x54);
+ 2078              		.loc 1 615 2 view .LVU484
+ 2079 03f6 5420     		movs	r0, #84
+ 2080 03f8 06E0     		b	.L123
+ 2081              	.L124:
+ 2082 03fa 00BF     		.align	2
+ 2083              	.L122:
+ 2084 03fc 00000000 		.word	GC9A01A_X_Start
+ 2085 0400 00000000 		.word	GC9A01A_Y_Start
+ 2086 0404 00300140 		.word	1073819648
+ 2087              	.L123:
+ 2088 0408 FFF7FEFF 		bl	SendData
+ 2089              	.LVL308:
+ 616:Core/Src/gc9a01a.c **** 	SendData(0x10);
+ 2090              		.loc 1 616 2 view .LVU485
+ 2091 040c 1020     		movs	r0, #16
+ 2092 040e FFF7FEFF 		bl	SendData
+ 2093              	.LVL309:
+ 617:Core/Src/gc9a01a.c **** 	SendData(0x32);
+ 2094              		.loc 1 617 2 view .LVU486
+ 2095 0412 3220     		movs	r0, #50
+ 2096 0414 FFF7FEFF 		bl	SendData
+ 2097              	.LVL310:
+ 618:Core/Src/gc9a01a.c **** 	SendData(0x98);
+ 2098              		.loc 1 618 2 view .LVU487
+ 2099 0418 9820     		movs	r0, #152
+ 2100 041a FFF7FEFF 		bl	SendData
+ 2101              	.LVL311:
+ 619:Core/Src/gc9a01a.c **** 
+ 620:Core/Src/gc9a01a.c **** 	SendCmd(0x74);        // ?
+ 2102              		.loc 1 620 2 view .LVU488
+ 2103 041e 7420     		movs	r0, #116
+ 2104 0420 FFF7FEFF 		bl	SendCmd
+ 2105              	.LVL312:
+ 621:Core/Src/gc9a01a.c **** 	SendData(0x10);
+ 2106              		.loc 1 621 2 view .LVU489
+ 2107 0424 1020     		movs	r0, #16
+ 2108 0426 FFF7FEFF 		bl	SendData
+ 2109              	.LVL313:
+ 622:Core/Src/gc9a01a.c **** 	SendData(0x85);
+ 2110              		.loc 1 622 2 view .LVU490
+ 2111 042a 8520     		movs	r0, #133
+ 2112 042c FFF7FEFF 		bl	SendData
+ 2113              	.LVL314:
+ 623:Core/Src/gc9a01a.c **** 	SendData(0x80);
+ 2114              		.loc 1 623 2 view .LVU491
+ 2115 0430 8020     		movs	r0, #128
+ 2116 0432 FFF7FEFF 		bl	SendData
+ 2117              	.LVL315:
+ 624:Core/Src/gc9a01a.c **** 	SendData(0x00);
+ 2118              		.loc 1 624 2 view .LVU492
+ 2119 0436 2046     		mov	r0, r4
+ 2120 0438 FFF7FEFF 		bl	SendData
+ 2121              	.LVL316:
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccg2kW7X.s 			page 53
+
+
+ 625:Core/Src/gc9a01a.c **** 	SendData(0x00);
+ 2122              		.loc 1 625 2 view .LVU493
+ 2123 043c 2046     		mov	r0, r4
+ 2124 043e FFF7FEFF 		bl	SendData
+ 2125              	.LVL317:
+ 626:Core/Src/gc9a01a.c **** 	SendData(0x4E);
+ 2126              		.loc 1 626 2 view .LVU494
+ 2127 0442 4E20     		movs	r0, #78
+ 2128 0444 FFF7FEFF 		bl	SendData
+ 2129              	.LVL318:
+ 627:Core/Src/gc9a01a.c **** 	SendData(0x00);
+ 2130              		.loc 1 627 2 view .LVU495
+ 2131 0448 2046     		mov	r0, r4
+ 2132 044a FFF7FEFF 		bl	SendData
+ 2133              	.LVL319:
+ 628:Core/Src/gc9a01a.c **** 
+ 629:Core/Src/gc9a01a.c **** 	SendCmd(0x98);        // ?
+ 2134              		.loc 1 629 2 view .LVU496
+ 2135 044e 9820     		movs	r0, #152
+ 2136 0450 FFF7FEFF 		bl	SendCmd
+ 2137              	.LVL320:
+ 630:Core/Src/gc9a01a.c **** 	SendData(0x3e);
+ 2138              		.loc 1 630 2 view .LVU497
+ 2139 0454 3E20     		movs	r0, #62
+ 2140 0456 FFF7FEFF 		bl	SendData
+ 2141              	.LVL321:
+ 631:Core/Src/gc9a01a.c **** 	SendData(0x07);
+ 2142              		.loc 1 631 2 view .LVU498
+ 2143 045a 0720     		movs	r0, #7
+ 2144 045c FFF7FEFF 		bl	SendData
+ 2145              	.LVL322:
+ 632:Core/Src/gc9a01a.c **** 
+ 633:Core/Src/gc9a01a.c **** 	SendCmd(Cmd_TEON); // Tearing effect line on
+ 2146              		.loc 1 633 2 view .LVU499
+ 2147 0460 3520     		movs	r0, #53
+ 2148 0462 FFF7FEFF 		bl	SendCmd
+ 2149              	.LVL323:
+ 634:Core/Src/gc9a01a.c **** 
+ 635:Core/Src/gc9a01a.c **** 	GC9A01A_InversionMode(1);
+ 2150              		.loc 1 635 2 view .LVU500
+ 2151 0466 0120     		movs	r0, #1
+ 2152 0468 FFF7FEFF 		bl	GC9A01A_InversionMode
+ 2153              	.LVL324:
+ 636:Core/Src/gc9a01a.c **** 	GC9A01A_SleepMode(0);
+ 2154              		.loc 1 636 2 view .LVU501
+ 2155 046c 2046     		mov	r0, r4
+ 2156 046e FFF7FEFF 		bl	GC9A01A_SleepMode
+ 2157              	.LVL325:
+ 637:Core/Src/gc9a01a.c **** 
+ 638:Core/Src/gc9a01a.c **** 	HAL_Delay(120);
+ 2158              		.loc 1 638 2 view .LVU502
+ 2159 0472 7820     		movs	r0, #120
+ 2160 0474 FFF7FEFF 		bl	HAL_Delay
+ 2161              	.LVL326:
+ 639:Core/Src/gc9a01a.c **** 	GC9A01A_DisplayPower(1);
+ 2162              		.loc 1 639 2 view .LVU503
+ 2163 0478 0120     		movs	r0, #1
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccg2kW7X.s 			page 54
+
+
+ 2164 047a FFF7FEFF 		bl	GC9A01A_DisplayPower
+ 2165              	.LVL327:
+ 640:Core/Src/gc9a01a.c **** 	HAL_Delay(20);
+ 2166              		.loc 1 640 2 view .LVU504
+ 2167 047e 1420     		movs	r0, #20
+ 2168 0480 FFF7FEFF 		bl	HAL_Delay
+ 2169              	.LVL328:
+ 641:Core/Src/gc9a01a.c **** 
+ 642:Core/Src/gc9a01a.c **** 	GC9A01A_FillRect(0, 0, GC9A01A_Width, GC9A01A_Height, BLACK);
+ 2170              		.loc 1 642 2 view .LVU505
+ 2171 0484 0094     		str	r4, [sp]
+ 2172 0486 F023     		movs	r3, #240
+ 2173 0488 1A46     		mov	r2, r3
+ 2174 048a 2146     		mov	r1, r4
+ 2175 048c 2046     		mov	r0, r4
+ 2176 048e FFF7FEFF 		bl	GC9A01A_FillRect
+ 2177              	.LVL329:
+ 643:Core/Src/gc9a01a.c **** 	GC9A01A_Update();
+ 2178              		.loc 1 643 2 view .LVU506
+ 2179 0492 FFF7FEFF 		bl	GC9A01A_Update
+ 2180              	.LVL330:
+ 644:Core/Src/gc9a01a.c **** 	HAL_Delay(20);
+ 2181              		.loc 1 644 2 view .LVU507
+ 2182 0496 1420     		movs	r0, #20
+ 2183 0498 FFF7FEFF 		bl	HAL_Delay
+ 2184              	.LVL331:
+ 645:Core/Src/gc9a01a.c **** 
+ 646:Core/Src/gc9a01a.c **** 	GC9A01A_SetBL(100);
+ 2185              		.loc 1 646 2 view .LVU508
+ 2186 049c 6420     		movs	r0, #100
+ 2187 049e FFF7FEFF 		bl	GC9A01A_SetBL
+ 2188              	.LVL332:
+ 647:Core/Src/gc9a01a.c **** }
+ 2189              		.loc 1 647 1 is_stmt 0 view .LVU509
+ 2190 04a2 02B0     		add	sp, sp, #8
+ 2191              		.cfi_def_cfa_offset 8
+ 2192              		@ sp needed
+ 2193 04a4 10BD     		pop	{r4, pc}
+ 2194              		.cfi_endproc
+ 2195              	.LFE158:
+ 2197 04a6 00BF     		.section	.bss.ScreenBuff,"aw",%nobits
+ 2198              		.align	2
+ 2201              	ScreenBuff:
+ 2202 0000 00000000 		.space	115200
+ 2202      00000000 
+ 2202      00000000 
+ 2202      00000000 
+ 2202      00000000 
+ 2203              		.global	GC9A01A_Y_Start
+ 2204              		.section	.bss.GC9A01A_Y_Start,"aw",%nobits
+ 2207              	GC9A01A_Y_Start:
+ 2208 0000 00       		.space	1
+ 2209              		.global	GC9A01A_X_Start
+ 2210              		.section	.bss.GC9A01A_X_Start,"aw",%nobits
+ 2213              	GC9A01A_X_Start:
+ 2214 0000 00       		.space	1
+ 2215              		.text
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccg2kW7X.s 			page 55
+
+
+ 2216              	.Letext0:
+ 2217              		.file 2 "C:/Users/kroko/AppData/Roaming/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-to
+ 2218              		.file 3 "C:/Users/kroko/AppData/Roaming/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-to
+ 2219              		.file 4 "Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f413xx.h"
+ 2220              		.file 5 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h"
+ 2221              		.file 6 "Core/Inc/gpio.h"
+ 2222              		.file 7 "Core/Inc/spim.h"
+ 2223              		.file 8 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h"
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccg2kW7X.s 			page 56
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 gc9a01a.c
+C:\Users\kroko\AppData\Local\Temp\ccg2kW7X.s:21     .text.SwapBytes:00000000 $t
+C:\Users\kroko\AppData\Local\Temp\ccg2kW7X.s:26     .text.SwapBytes:00000000 SwapBytes
+C:\Users\kroko\AppData\Local\Temp\ccg2kW7X.s:50     .text.SendPart2:00000000 $t
+C:\Users\kroko\AppData\Local\Temp\ccg2kW7X.s:56     .text.SendPart2:00000000 SendPart2
+C:\Users\kroko\AppData\Local\Temp\ccg2kW7X.s:85     .text.SendPart2:0000001c $d
+C:\Users\kroko\AppData\Local\Temp\ccg2kW7X.s:2201   .bss.ScreenBuff:00000000 ScreenBuff
+C:\Users\kroko\AppData\Local\Temp\ccg2kW7X.s:91     .text.GPIO_init:00000000 $t
+C:\Users\kroko\AppData\Local\Temp\ccg2kW7X.s:96     .text.GPIO_init:00000000 GPIO_init
+C:\Users\kroko\AppData\Local\Temp\ccg2kW7X.s:222    .text.GPIO_init:000000a0 $d
+C:\Users\kroko\AppData\Local\Temp\ccg2kW7X.s:229    .text.SendCmd:00000000 $t
+C:\Users\kroko\AppData\Local\Temp\ccg2kW7X.s:235    .text.SendCmd:00000000 SendCmd
+C:\Users\kroko\AppData\Local\Temp\ccg2kW7X.s:274    .text.SendCmd:00000028 $d
+C:\Users\kroko\AppData\Local\Temp\ccg2kW7X.s:280    .text.SendData:00000000 $t
+C:\Users\kroko\AppData\Local\Temp\ccg2kW7X.s:286    .text.SendData:00000000 SendData
+C:\Users\kroko\AppData\Local\Temp\ccg2kW7X.s:325    .text.SendData:00000028 $d
+C:\Users\kroko\AppData\Local\Temp\ccg2kW7X.s:331    .text.ColumnSet:00000000 $t
+C:\Users\kroko\AppData\Local\Temp\ccg2kW7X.s:336    .text.ColumnSet:00000000 ColumnSet
+C:\Users\kroko\AppData\Local\Temp\ccg2kW7X.s:402    .text.ColumnSet:00000038 $d
+C:\Users\kroko\AppData\Local\Temp\ccg2kW7X.s:2213   .bss.GC9A01A_X_Start:00000000 GC9A01A_X_Start
+C:\Users\kroko\AppData\Local\Temp\ccg2kW7X.s:407    .text.RowSet:00000000 $t
+C:\Users\kroko\AppData\Local\Temp\ccg2kW7X.s:412    .text.RowSet:00000000 RowSet
+C:\Users\kroko\AppData\Local\Temp\ccg2kW7X.s:478    .text.RowSet:00000038 $d
+C:\Users\kroko\AppData\Local\Temp\ccg2kW7X.s:2207   .bss.GC9A01A_Y_Start:00000000 GC9A01A_Y_Start
+C:\Users\kroko\AppData\Local\Temp\ccg2kW7X.s:483    .text.MemAccessModeSet:00000000 $t
+C:\Users\kroko\AppData\Local\Temp\ccg2kW7X.s:488    .text.MemAccessModeSet:00000000 MemAccessModeSet
+C:\Users\kroko\AppData\Local\Temp\ccg2kW7X.s:521    .text.MemAccessModeSet:0000001a $d
+C:\Users\kroko\AppData\Local\Temp\ccg2kW7X.s:529    .text.MemAccessModeSet:00000022 $t
+C:\Users\kroko\AppData\Local\Temp\ccg2kW7X.s:624    .text.ColorModeSet:00000000 $t
+C:\Users\kroko\AppData\Local\Temp\ccg2kW7X.s:629    .text.ColorModeSet:00000000 ColorModeSet
+C:\Users\kroko\AppData\Local\Temp\ccg2kW7X.s:659    .text.GC9A01A_HardReset:00000000 $t
+C:\Users\kroko\AppData\Local\Temp\ccg2kW7X.s:665    .text.GC9A01A_HardReset:00000000 GC9A01A_HardReset
+C:\Users\kroko\AppData\Local\Temp\ccg2kW7X.s:701    .text.GC9A01A_HardReset:00000028 $d
+C:\Users\kroko\AppData\Local\Temp\ccg2kW7X.s:706    .text.GC9A01A_SleepMode:00000000 $t
+C:\Users\kroko\AppData\Local\Temp\ccg2kW7X.s:712    .text.GC9A01A_SleepMode:00000000 GC9A01A_SleepMode
+C:\Users\kroko\AppData\Local\Temp\ccg2kW7X.s:753    .text.GC9A01A_InversionMode:00000000 $t
+C:\Users\kroko\AppData\Local\Temp\ccg2kW7X.s:759    .text.GC9A01A_InversionMode:00000000 GC9A01A_InversionMode
+C:\Users\kroko\AppData\Local\Temp\ccg2kW7X.s:797    .text.GC9A01A_DisplayPower:00000000 $t
+C:\Users\kroko\AppData\Local\Temp\ccg2kW7X.s:803    .text.GC9A01A_DisplayPower:00000000 GC9A01A_DisplayPower
+C:\Users\kroko\AppData\Local\Temp\ccg2kW7X.s:841    .text.GC9A01A_SetWindow:00000000 $t
+C:\Users\kroko\AppData\Local\Temp\ccg2kW7X.s:847    .text.GC9A01A_SetWindow:00000000 GC9A01A_SetWindow
+C:\Users\kroko\AppData\Local\Temp\ccg2kW7X.s:885    .text.GC9A01A_SetBL:00000000 $t
+C:\Users\kroko\AppData\Local\Temp\ccg2kW7X.s:891    .text.GC9A01A_SetBL:00000000 GC9A01A_SetBL
+C:\Users\kroko\AppData\Local\Temp\ccg2kW7X.s:936    .text.GC9A01A_SetBL:00000020 $d
+C:\Users\kroko\AppData\Local\Temp\ccg2kW7X.s:941    .text.GC9A01A_DrawPixel:00000000 $t
+C:\Users\kroko\AppData\Local\Temp\ccg2kW7X.s:947    .text.GC9A01A_DrawPixel:00000000 GC9A01A_DrawPixel
+C:\Users\kroko\AppData\Local\Temp\ccg2kW7X.s:1009   .text.GC9A01A_DrawPixel:0000003c $d
+C:\Users\kroko\AppData\Local\Temp\ccg2kW7X.s:1014   .text.GC9A01A_GetPixel:00000000 $t
+C:\Users\kroko\AppData\Local\Temp\ccg2kW7X.s:1020   .text.GC9A01A_GetPixel:00000000 GC9A01A_GetPixel
+C:\Users\kroko\AppData\Local\Temp\ccg2kW7X.s:1097   .text.GC9A01A_GetPixel:00000044 $d
+C:\Users\kroko\AppData\Local\Temp\ccg2kW7X.s:1102   .text.GC9A01A_FillRect:00000000 $t
+C:\Users\kroko\AppData\Local\Temp\ccg2kW7X.s:1108   .text.GC9A01A_FillRect:00000000 GC9A01A_FillRect
+C:\Users\kroko\AppData\Local\Temp\ccg2kW7X.s:1281   .text.GC9A01A_FillRect:00000090 $d
+C:\Users\kroko\AppData\Local\Temp\ccg2kW7X.s:1286   .text.GC9A01A_Update:00000000 $t
+C:\Users\kroko\AppData\Local\Temp\ccg2kW7X.s:1292   .text.GC9A01A_Update:00000000 GC9A01A_Update
+C:\Users\kroko\AppData\Local\Temp\ccg2kW7X.s:1335   .text.GC9A01A_Update:00000034 $d
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccg2kW7X.s 			page 57
+
+
+C:\Users\kroko\AppData\Local\Temp\ccg2kW7X.s:1343   .text.GC9A01A_GetWidth:00000000 $t
+C:\Users\kroko\AppData\Local\Temp\ccg2kW7X.s:1349   .text.GC9A01A_GetWidth:00000000 GC9A01A_GetWidth
+C:\Users\kroko\AppData\Local\Temp\ccg2kW7X.s:1364   .text.GC9A01A_GetHeight:00000000 $t
+C:\Users\kroko\AppData\Local\Temp\ccg2kW7X.s:1370   .text.GC9A01A_GetHeight:00000000 GC9A01A_GetHeight
+C:\Users\kroko\AppData\Local\Temp\ccg2kW7X.s:1385   .text.GC9A01A_Init:00000000 $t
+C:\Users\kroko\AppData\Local\Temp\ccg2kW7X.s:1391   .text.GC9A01A_Init:00000000 GC9A01A_Init
+C:\Users\kroko\AppData\Local\Temp\ccg2kW7X.s:2084   .text.GC9A01A_Init:000003fc $d
+C:\Users\kroko\AppData\Local\Temp\ccg2kW7X.s:2088   .text.GC9A01A_Init:00000408 $t
+C:\Users\kroko\AppData\Local\Temp\ccg2kW7X.s:2198   .bss.ScreenBuff:00000000 $d
+C:\Users\kroko\AppData\Local\Temp\ccg2kW7X.s:2208   .bss.GC9A01A_Y_Start:00000000 $d
+C:\Users\kroko\AppData\Local\Temp\ccg2kW7X.s:2214   .bss.GC9A01A_X_Start:00000000 $d
+
+UNDEFINED SYMBOLS
+SPI_send_dma
+gpio_PortClockStart
+HAL_GPIO_Init
+HAL_GPIO_WritePin
+SPI_send
+HAL_Delay
+spim_init

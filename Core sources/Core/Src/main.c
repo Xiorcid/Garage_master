@@ -188,6 +188,8 @@ bool isRTCTimeSync = false;
 
 bool longPressFlag = false;
 
+bool showMainScreen = true;
+
 const char *tele2_apn = "internet.tele2.lv";
 const char *lmt_apn = "internet.lmt.lv";
 const char *bite_apn = "internet";
@@ -310,7 +312,7 @@ int main(void)
       HAL_UART_Receive_DMA(deviceList[dev_num].uart, deviceList[dev_num].rx_buff, 10);
     }
     else{
-      if (!allDeviceIsUnIn){
+      if (!allDeviceIsUnIn && !showMainScreen){
         Dispaly_Data(&deviceList[dev_num]);
         if(transmitMode == TRANSMIT_MODE_GET){
           if(deviceList[dev_num].deviceMode != TYPE_SET_ONLY){
@@ -333,12 +335,10 @@ int main(void)
         
       }else{
         Draw_Main_Screen();
-        Draw_NavBar(0, -1);
+        Draw_NavBar(act_dev_cnt, -1);
         //Draw_Easter();
       }
     }
-
-    
 
     // DEVICE INITIALIZATION START
     if (HAL_GetTick()-dev_init_timeout>1000 && state == STATE_INIT){
@@ -456,7 +456,7 @@ int main(void)
     // DEVICE INITIALIZATION END
 
     // AUTO SCREEN SCROLL START
-    if (HAL_GetTick()-screen_disp_time>5000 && screen_scroll_mode == SCROLL_MODE_AUTO && !allDeviceIsUnIn){
+    if (HAL_GetTick()-screen_disp_time>5000 && screen_scroll_mode == SCROLL_MODE_AUTO && !allDeviceIsUnIn && !showMainScreen){
       if(state != STATE_INIT){
         findNextInDev(true);
       }
@@ -487,7 +487,7 @@ int main(void)
           }
         }
         // TEST
-        if(TP.gesture_id == 0x0C && !longPressFlag && deviceList[dev_num].deviceMode != TYPE_TEL_ONLY){
+        if(TP.gesture_id == 0x0C && !longPressFlag && deviceList[dev_num].deviceMode != TYPE_TEL_ONLY && !showMainScreen){
           longPressFlag = true;
           // EDIT VALUE START
 
@@ -515,12 +515,18 @@ int main(void)
 
         // SCROLL START
         if(TP.gesture_id == 0x03 && deviceList[dev_num].deviceDisplayMode != MODE_EDIT){ // LEFT
-          findNextInDev(true);
+          if (showMainScreen){showMainScreen=false; dev_num = act_dev_list[0];}
+          else if (dev_num == act_dev_list[act_dev_cnt-1]){showMainScreen=true;}
+          else{findNextInDev(true);}
+
+          
           // Show_Message("LEFT", 500);
           screen_disp_time = HAL_GetTick();
         }
         if(TP.gesture_id == 0x04 && deviceList[dev_num].deviceDisplayMode != MODE_EDIT){ // RIGHT
-          findNextInDev(false);
+          if (showMainScreen){showMainScreen=false; dev_num = act_dev_list[act_dev_cnt-1];}
+          else if(dev_num == act_dev_list[0]){showMainScreen=true;}
+          else{findNextInDev(false);}
           // Show_Message("RIGHT", 500);
           screen_disp_time = HAL_GetTick();
         }

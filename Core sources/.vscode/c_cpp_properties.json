@@ -16,7 +16,7 @@
         "STM32F413xx",
         "USE_HAL_DRIVER"
       ],
-      "compilerPath": "C:\\USERS\\KROKO\\APPDATA\\ROAMING\\CODE\\USER\\GLOBALSTORAGE\\BMD.STM32-FOR-VSCODE\\@XPACK-DEV-TOOLS\\ARM-NONE-EABI-GCC\\13.3.1-1.1.1\\.CONTENT\\BIN\\ARM-NONE-EABI-GCC.EXE"
+      "compilerPath": "C:\\Program Files (x86)\\Arm GNU Toolchain arm-none-eabi\\14.2 rel1\\bin\\arm-none-eabi-gcc.EXE"
     }
   ],
   "version": 4

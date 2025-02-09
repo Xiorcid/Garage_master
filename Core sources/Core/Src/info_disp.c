@@ -67,13 +67,14 @@ static void GetBlueRedPalette(uint16_t steps, sRGB888 *pBuff, uint8_t type) {
 	}
 }
 
-void Draw_BMP(int16_t x, int16_t y, const uint16_t *map, int8_t w, int8_t h, bool isPNG){
-	for (int i = 0; i < w; i++){
-		for (int j = 0; j < h; j++){
-			if (isPNG && map[j*w+i] == 0x0000){
+void Draw_BMP(int16_t x, int16_t y, int8_t w, int8_t h, const uint16_t map[h][w], bool isPNG){
+	for (int i = 0; i < h; i++){
+		for (int j = 0; j < w; j++){
+			if (isPNG && map[i][j] == 0x0000){
 				continue;
 			}
-			dispcolor_DrawPixel(x+i, y+j, map[j*w+i]);
+			uint16_t color = map[i][j];
+			dispcolor_DrawPixel(x+j, y+i, color);
 		}
 	}
 }
@@ -187,10 +188,10 @@ void Dispaly_Data(Device *dev) {
 	}
 
 	if (!isOn){
-		Draw_BMP(78, 78, bitmap_off_84x84, 84, 84, 1);
+		Draw_BMP(78, 78, 84, 84, bitmap_off_84x84, 1);
 		//Draw_BMP(78, 78, skynet_100x64, 100, 64, 1);
 	} else {
-		Draw_BMP(78, 78, bitmap_on_84x84, 84, 84, 1);
+		Draw_BMP(78, 78, 84, 84, bitmap_on_84x84, 1);
 	}
 
 	Update_Messages();
@@ -244,7 +245,7 @@ bool Add_Message(char *message){
 void Draw_Easter(){
 	HAL_Delay(30);
 	dispcolor_FillScreen(BLACK);
-	Draw_BMP(70, 50, skynet_100x64, 100, 64, 1);
+	Draw_BMP(70, 50, 100, 64, skynet_100x64, 1);
 	dispcolor_DrawString(10, 125, FONTID_16F, "The machines rose from the \n\rashes of the nuclear fire.", WHITE);
 	Update_Messages();
 	dispcolor_Update();
@@ -275,7 +276,7 @@ void Draw_NavBar(uint8_t devs, int8_t cur_dev){
 	uint8_t y_pos = 190;
 	uint8_t x_pos = 105;
 	if(cur_dev != -1){
-		Draw_BMP(x_pos, y_pos, home_inact_10x10, 10, 10, true);
+		Draw_BMP(x_pos, y_pos, 10, 10,  home_inact_10x10, true);
 		for(uint8_t dev = 0; dev < devs; dev++){
 			if(dev == cur_dev){
 				dispcolor_FillCircle(x_pos+15+10*dev, y_pos+5, 3, WHITE);
@@ -284,7 +285,7 @@ void Draw_NavBar(uint8_t devs, int8_t cur_dev){
 			dispcolor_FillCircle(x_pos+15+10*dev, y_pos+5, 3, GRAY);
 		}
 	}else{
-		Draw_BMP(x_pos, y_pos, home_act_10x10, 10, 10, true);
+		Draw_BMP(x_pos, y_pos, 10, 10,  home_act_10x10, true);
 		for(uint8_t dev = 0; dev < devs; dev++){
 			dispcolor_FillCircle(x_pos+15+10*dev, y_pos+5, 3, GRAY);
 		}
@@ -362,7 +363,7 @@ void Show_SD_Warning(){
 	while(HAL_GetTick() - tmr < 1000){
 		HAL_Delay(30);
 		dispcolor_FillScreen(BLACK);
-		Draw_BMP(78, 78, sd_warn_84x84, 84, 84, 1);
+		Draw_BMP(78, 78, 84, 84, sd_warn_84x84, 1);
 		dispcolor_Update();
 		// IWDG RESET START
 		if (HAL_IWDG_Refresh(&hiwdg) != HAL_OK)
@@ -378,7 +379,7 @@ void Show_RTC_Warning(){
 	while(HAL_GetTick() - tmr < 1000){
 		HAL_Delay(30);
 		dispcolor_FillScreen(BLACK);
-		Draw_BMP(78, 78, rtc_warning_84x84, 84, 84, 1);
+		Draw_BMP(78, 78, 84, 84, rtc_warning_84x84, 1);
 		dispcolor_Update();
 		// IWDG RESET START
 		if (HAL_IWDG_Refresh(&hiwdg) != HAL_OK)

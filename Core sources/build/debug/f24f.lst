@@ -1,0 +1,878 @@
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccl0nVYG.s 			page 1
+
+
+   1              		.cpu cortex-m4
+   2              		.arch armv7e-m
+   3              		.fpu fpv4-sp-d16
+   4              		.eabi_attribute 27, 1
+   5              		.eabi_attribute 28, 1
+   6              		.eabi_attribute 20, 1
+   7              		.eabi_attribute 21, 1
+   8              		.eabi_attribute 23, 3
+   9              		.eabi_attribute 24, 1
+  10              		.eabi_attribute 25, 1
+  11              		.eabi_attribute 26, 1
+  12              		.eabi_attribute 30, 1
+  13              		.eabi_attribute 34, 1
+  14              		.eabi_attribute 18, 4
+  15              		.file	"f24f.c"
+  16              		.text
+  17              	.Ltext0:
+  18              		.cfi_sections	.debug_frame
+  19              		.file 1 "Core/Src/f24f.c"
+  20              		.section	.text.f24f_GetCharTable,"ax",%progbits
+  21              		.align	1
+  22              		.global	f24f_GetCharTable
+  23              		.syntax unified
+  24              		.thumb
+  25              		.thumb_func
+  27              	f24f_GetCharTable:
+  28              	.LVL0:
+  29              	.LFB3:
+   1:Core/Src/f24f.c **** #include "font.h"
+   2:Core/Src/f24f.c **** #include "f24f.h"
+   3:Core/Src/f24f.c **** 
+   4:Core/Src/f24f.c **** const uint8_t f24f_table[f24f_NOFCHARS][48 + 2] = {       
+   5:Core/Src/f24f.c ****   // 0x30
+   6:Core/Src/f24f.c ****   {
+   7:Core/Src/f24f.c ****     12,
+   8:Core/Src/f24f.c ****     f24_FLOAT_HEIGHT,
+   9:Core/Src/f24f.c ****     ________,________,
+  10:Core/Src/f24f.c ****     ________,________,
+  11:Core/Src/f24f.c ****     ________,________,
+  12:Core/Src/f24f.c ****     ________,________,
+  13:Core/Src/f24f.c ****     ____XXXX,________,
+  14:Core/Src/f24f.c ****     __XXXXXX,XX______,
+  15:Core/Src/f24f.c ****     __XXX__X,XX______,
+  16:Core/Src/f24f.c ****     _XXX____,XXX_____,
+  17:Core/Src/f24f.c ****     _XXX____,XXX_____,
+  18:Core/Src/f24f.c ****     _XXX____,XXX_____,
+  19:Core/Src/f24f.c ****     _XXX____,XXX_____,
+  20:Core/Src/f24f.c ****     _XXX____,XXX_____,
+  21:Core/Src/f24f.c ****     _XXX____,XXX_____,
+  22:Core/Src/f24f.c ****     _XXX____,XXX_____,
+  23:Core/Src/f24f.c ****     _XXX____,XXX_____,
+  24:Core/Src/f24f.c ****     _XXX____,XXX_____,
+  25:Core/Src/f24f.c ****     __XXX__X,XX______,
+  26:Core/Src/f24f.c ****     __XXXXXX,XX______,
+  27:Core/Src/f24f.c ****     ____XXXX,________,
+  28:Core/Src/f24f.c ****     ________,________,
+  29:Core/Src/f24f.c ****     ________,________,
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccl0nVYG.s 			page 2
+
+
+  30:Core/Src/f24f.c ****     ________,________,
+  31:Core/Src/f24f.c ****     ________,________,
+  32:Core/Src/f24f.c ****     ________,________}
+  33:Core/Src/f24f.c ****   // 0x31
+  34:Core/Src/f24f.c ****   ,{
+  35:Core/Src/f24f.c ****     10,
+  36:Core/Src/f24f.c ****     f24_FLOAT_HEIGHT,
+  37:Core/Src/f24f.c ****     ________,________,
+  38:Core/Src/f24f.c ****     ________,________,
+  39:Core/Src/f24f.c ****     ________,________,
+  40:Core/Src/f24f.c ****     ________,________,
+  41:Core/Src/f24f.c ****     ______XX,X_______,
+  42:Core/Src/f24f.c ****     ______XX,X_______,
+  43:Core/Src/f24f.c ****     _____XXX,X_______,
+  44:Core/Src/f24f.c ****     ___XXXXX,X_______,
+  45:Core/Src/f24f.c ****     __XXXXXX,X_______,
+  46:Core/Src/f24f.c ****     __XXX_XX,X_______,
+  47:Core/Src/f24f.c ****     __X___XX,X_______,
+  48:Core/Src/f24f.c ****     ______XX,X_______,
+  49:Core/Src/f24f.c ****     ______XX,X_______,
+  50:Core/Src/f24f.c ****     ______XX,X_______,
+  51:Core/Src/f24f.c ****     ______XX,X_______,
+  52:Core/Src/f24f.c ****     ______XX,X_______,
+  53:Core/Src/f24f.c ****     ______XX,X_______,
+  54:Core/Src/f24f.c ****     ______XX,X_______,
+  55:Core/Src/f24f.c ****     ______XX,X_______,
+  56:Core/Src/f24f.c ****     ________,________,
+  57:Core/Src/f24f.c ****     ________,________,
+  58:Core/Src/f24f.c ****     ________,________,
+  59:Core/Src/f24f.c ****     ________,________,
+  60:Core/Src/f24f.c ****     ________,________}
+  61:Core/Src/f24f.c ****   // 0x32
+  62:Core/Src/f24f.c ****   ,{
+  63:Core/Src/f24f.c ****     12,
+  64:Core/Src/f24f.c ****     f24_FLOAT_HEIGHT,
+  65:Core/Src/f24f.c ****     ________,________,
+  66:Core/Src/f24f.c ****     ________,________,
+  67:Core/Src/f24f.c ****     ________,________,
+  68:Core/Src/f24f.c ****     ________,________,
+  69:Core/Src/f24f.c ****     ___XXXXX,X_______,
+  70:Core/Src/f24f.c ****     __XXXXXX,XX______,
+  71:Core/Src/f24f.c ****     _XXXX__X,XXX_____,
+  72:Core/Src/f24f.c ****     _XXX____,XXX_____,
+  73:Core/Src/f24f.c ****     ________,XXX_____,
+  74:Core/Src/f24f.c ****     ________,XXX_____,
+  75:Core/Src/f24f.c ****     _______X,XX______,
+  76:Core/Src/f24f.c ****     ______XX,XX______,
+  77:Core/Src/f24f.c ****     _____XXX,X_______,
+  78:Core/Src/f24f.c ****     ____XXXX,________,
+  79:Core/Src/f24f.c ****     ___XXXX_,________,
+  80:Core/Src/f24f.c ****     ___XXX__,________,
+  81:Core/Src/f24f.c ****     __XXX___,________,
+  82:Core/Src/f24f.c ****     _XXXXXXX,XXX_____,
+  83:Core/Src/f24f.c ****     _XXXXXXX,XXX_____,
+  84:Core/Src/f24f.c ****     ________,________,
+  85:Core/Src/f24f.c ****     ________,________,
+  86:Core/Src/f24f.c ****     ________,________,
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccl0nVYG.s 			page 3
+
+
+  87:Core/Src/f24f.c ****     ________,________,
+  88:Core/Src/f24f.c ****     ________,________}
+  89:Core/Src/f24f.c ****   // 0x33
+  90:Core/Src/f24f.c ****   ,{
+  91:Core/Src/f24f.c ****     12,
+  92:Core/Src/f24f.c ****     f24_FLOAT_HEIGHT,
+  93:Core/Src/f24f.c ****     ________,________,
+  94:Core/Src/f24f.c ****     ________,________,
+  95:Core/Src/f24f.c ****     ________,________,
+  96:Core/Src/f24f.c ****     ________,________,
+  97:Core/Src/f24f.c ****     ___XXXXX,________,
+  98:Core/Src/f24f.c ****     __XXXXXX,X_______,
+  99:Core/Src/f24f.c ****     _XXX___X,XX______,
+ 100:Core/Src/f24f.c ****     _XXX___X,XX______,
+ 101:Core/Src/f24f.c ****     _______X,XX______,
+ 102:Core/Src/f24f.c ****     ______XX,XX______,
+ 103:Core/Src/f24f.c ****     ____XXXX,X_______,
+ 104:Core/Src/f24f.c ****     ____XXXX,X_______,
+ 105:Core/Src/f24f.c ****     _______X,XX______,
+ 106:Core/Src/f24f.c ****     ________,XXX_____,
+ 107:Core/Src/f24f.c ****     ________,XXX_____,
+ 108:Core/Src/f24f.c ****     _XXX____,XXX_____,
+ 109:Core/Src/f24f.c ****     _XXXX__X,XX______,
+ 110:Core/Src/f24f.c ****     __XXXXXX,XX______,
+ 111:Core/Src/f24f.c ****     ___XXXXX,________,
+ 112:Core/Src/f24f.c ****     ________,________,
+ 113:Core/Src/f24f.c ****     ________,________,
+ 114:Core/Src/f24f.c ****     ________,________,
+ 115:Core/Src/f24f.c ****     ________,________,
+ 116:Core/Src/f24f.c ****     ________,________}
+ 117:Core/Src/f24f.c ****   // 0x34
+ 118:Core/Src/f24f.c ****   ,{
+ 119:Core/Src/f24f.c ****     12,
+ 120:Core/Src/f24f.c ****     f24_FLOAT_HEIGHT,
+ 121:Core/Src/f24f.c ****     ________,________,
+ 122:Core/Src/f24f.c ****     ________,________,
+ 123:Core/Src/f24f.c ****     ________,________,
+ 124:Core/Src/f24f.c ****     ________,________,
+ 125:Core/Src/f24f.c ****     ______XX,X_______,
+ 126:Core/Src/f24f.c ****     _____XXX,X_______,
+ 127:Core/Src/f24f.c ****     _____XXX,X_______,
+ 128:Core/Src/f24f.c ****     ____XXXX,X_______,
+ 129:Core/Src/f24f.c ****     ____XXXX,X_______,
+ 130:Core/Src/f24f.c ****     ___XX_XX,X_______,
+ 131:Core/Src/f24f.c ****     __XX__XX,X_______,
+ 132:Core/Src/f24f.c ****     __XX__XX,X_______,
+ 133:Core/Src/f24f.c ****     _XX___XX,X_______,
+ 134:Core/Src/f24f.c ****     XX____XX,X_______,
+ 135:Core/Src/f24f.c ****     XXXXXXXX,XXX_____,
+ 136:Core/Src/f24f.c ****     XXXXXXXX,XXX_____,
+ 137:Core/Src/f24f.c ****     ______XX,X_______,
+ 138:Core/Src/f24f.c ****     ______XX,X_______,
+ 139:Core/Src/f24f.c ****     ______XX,X_______,
+ 140:Core/Src/f24f.c ****     ________,________,
+ 141:Core/Src/f24f.c ****     ________,________,
+ 142:Core/Src/f24f.c ****     ________,________,
+ 143:Core/Src/f24f.c ****     ________,________,
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccl0nVYG.s 			page 4
+
+
+ 144:Core/Src/f24f.c ****     ________,________}
+ 145:Core/Src/f24f.c ****   // 0x35
+ 146:Core/Src/f24f.c ****   ,{
+ 147:Core/Src/f24f.c ****     12,
+ 148:Core/Src/f24f.c ****     f24_FLOAT_HEIGHT,
+ 149:Core/Src/f24f.c ****     ________,________,
+ 150:Core/Src/f24f.c ****     ________,________,
+ 151:Core/Src/f24f.c ****     ________,________,
+ 152:Core/Src/f24f.c ****     ________,________,
+ 153:Core/Src/f24f.c ****     ___XXXXX,XX______,
+ 154:Core/Src/f24f.c ****     ___XXXXX,XX______,
+ 155:Core/Src/f24f.c ****     __XXX___,________,
+ 156:Core/Src/f24f.c ****     __XXX___,________,
+ 157:Core/Src/f24f.c ****     __XXX___,________,
+ 158:Core/Src/f24f.c ****     __XXXXXX,X_______,
+ 159:Core/Src/f24f.c ****     _XXXXXXX,XX______,
+ 160:Core/Src/f24f.c ****     _XXX___X,XXX_____,
+ 161:Core/Src/f24f.c ****     ________,XXX_____,
+ 162:Core/Src/f24f.c ****     ________,XXX_____,
+ 163:Core/Src/f24f.c ****     ________,XXX_____,
+ 164:Core/Src/f24f.c ****     _XXX____,XXX_____,
+ 165:Core/Src/f24f.c ****     _XXXX__X,XX______,
+ 166:Core/Src/f24f.c ****     __XXXXXX,XX______,
+ 167:Core/Src/f24f.c ****     ___XXXXX,________,
+ 168:Core/Src/f24f.c ****     ________,________,
+ 169:Core/Src/f24f.c ****     ________,________,
+ 170:Core/Src/f24f.c ****     ________,________,
+ 171:Core/Src/f24f.c ****     ________,________,
+ 172:Core/Src/f24f.c ****     ________,________}
+ 173:Core/Src/f24f.c ****   // 0x36
+ 174:Core/Src/f24f.c ****   ,{
+ 175:Core/Src/f24f.c ****     12,
+ 176:Core/Src/f24f.c ****     f24_FLOAT_HEIGHT,
+ 177:Core/Src/f24f.c ****     ________,________,
+ 178:Core/Src/f24f.c ****     ________,________,
+ 179:Core/Src/f24f.c ****     ________,________,
+ 180:Core/Src/f24f.c ****     ________,________,
+ 181:Core/Src/f24f.c ****     ____XXXX,X_______,
+ 182:Core/Src/f24f.c ****     __XXXXXX,XX______,
+ 183:Core/Src/f24f.c ****     __XXX__X,XXX_____,
+ 184:Core/Src/f24f.c ****     _XXX____,X_______,
+ 185:Core/Src/f24f.c ****     _XXX____,________,
+ 186:Core/Src/f24f.c ****     _XXX_XXX,X_______,
+ 187:Core/Src/f24f.c ****     _XXXXXXX,XX______,
+ 188:Core/Src/f24f.c ****     _XXXX__X,XX______,
+ 189:Core/Src/f24f.c ****     _XXX____,XXX_____,
+ 190:Core/Src/f24f.c ****     _XXX____,XXX_____,
+ 191:Core/Src/f24f.c ****     _XXX____,XXX_____,
+ 192:Core/Src/f24f.c ****     _XXX____,XXX_____,
+ 193:Core/Src/f24f.c ****     __XXX__X,XX______,
+ 194:Core/Src/f24f.c ****     __XXXXXX,XX______,
+ 195:Core/Src/f24f.c ****     ____XXXX,________,
+ 196:Core/Src/f24f.c ****     ________,________,
+ 197:Core/Src/f24f.c ****     ________,________,
+ 198:Core/Src/f24f.c ****     ________,________,
+ 199:Core/Src/f24f.c ****     ________,________,
+ 200:Core/Src/f24f.c ****     ________,________}
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccl0nVYG.s 			page 5
+
+
+ 201:Core/Src/f24f.c ****   // 0x37
+ 202:Core/Src/f24f.c ****   ,{
+ 203:Core/Src/f24f.c ****     12,
+ 204:Core/Src/f24f.c ****     f24_FLOAT_HEIGHT,
+ 205:Core/Src/f24f.c ****     ________,________,
+ 206:Core/Src/f24f.c ****     ________,________,
+ 207:Core/Src/f24f.c ****     ________,________,
+ 208:Core/Src/f24f.c ****     ________,________,
+ 209:Core/Src/f24f.c ****     _XXXXXXX,XXX_____,
+ 210:Core/Src/f24f.c ****     _XXXXXXX,XXX_____,
+ 211:Core/Src/f24f.c ****     ________,XXX_____,
+ 212:Core/Src/f24f.c ****     _______X,XX______,
+ 213:Core/Src/f24f.c ****     ______XX,X_______,
+ 214:Core/Src/f24f.c ****     ______XX,X_______,
+ 215:Core/Src/f24f.c ****     _____XXX,________,
+ 216:Core/Src/f24f.c ****     _____XXX,________,
+ 217:Core/Src/f24f.c ****     ____XXX_,________,
+ 218:Core/Src/f24f.c ****     ____XXX_,________,
+ 219:Core/Src/f24f.c ****     ____XXX_,________,
+ 220:Core/Src/f24f.c ****     ___XXX__,________,
+ 221:Core/Src/f24f.c ****     ___XXX__,________,
+ 222:Core/Src/f24f.c ****     ___XXX__,________,
+ 223:Core/Src/f24f.c ****     ___XXX__,________,
+ 224:Core/Src/f24f.c ****     ________,________,
+ 225:Core/Src/f24f.c ****     ________,________,
+ 226:Core/Src/f24f.c ****     ________,________,
+ 227:Core/Src/f24f.c ****     ________,________,
+ 228:Core/Src/f24f.c ****     ________,________}
+ 229:Core/Src/f24f.c ****   // 0x38
+ 230:Core/Src/f24f.c ****   ,{
+ 231:Core/Src/f24f.c ****     12,
+ 232:Core/Src/f24f.c ****     f24_FLOAT_HEIGHT,
+ 233:Core/Src/f24f.c ****     ________,________,
+ 234:Core/Src/f24f.c ****     ________,________,
+ 235:Core/Src/f24f.c ****     ________,________,
+ 236:Core/Src/f24f.c ****     ________,________,
+ 237:Core/Src/f24f.c ****     ___XXXXX,X_______,
+ 238:Core/Src/f24f.c ****     __XXXXXX,XX______,
+ 239:Core/Src/f24f.c ****     _XXXX__X,XXX_____,
+ 240:Core/Src/f24f.c ****     _XXX____,XXX_____,
+ 241:Core/Src/f24f.c ****     _XXX____,XXX_____,
+ 242:Core/Src/f24f.c ****     __XXX__X,XX______,
+ 243:Core/Src/f24f.c ****     ___XXXXX,X_______,
+ 244:Core/Src/f24f.c ****     ___XXXXX,X_______,
+ 245:Core/Src/f24f.c ****     __XXX__X,XX______,
+ 246:Core/Src/f24f.c ****     _XXX____,XXX_____,
+ 247:Core/Src/f24f.c ****     _XXX____,XXX_____,
+ 248:Core/Src/f24f.c ****     _XXX____,XXX_____,
+ 249:Core/Src/f24f.c ****     _XXXX__X,XXX_____,
+ 250:Core/Src/f24f.c ****     __XXXXXX,XX______,
+ 251:Core/Src/f24f.c ****     ___XXXXX,X_______,
+ 252:Core/Src/f24f.c ****     ________,________,
+ 253:Core/Src/f24f.c ****     ________,________,
+ 254:Core/Src/f24f.c ****     ________,________,
+ 255:Core/Src/f24f.c ****     ________,________,
+ 256:Core/Src/f24f.c ****     ________,________}
+ 257:Core/Src/f24f.c ****   // 0x39
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccl0nVYG.s 			page 6
+
+
+ 258:Core/Src/f24f.c ****   ,{
+ 259:Core/Src/f24f.c ****     12,
+ 260:Core/Src/f24f.c ****     f24_FLOAT_HEIGHT,
+ 261:Core/Src/f24f.c ****     ________,________,
+ 262:Core/Src/f24f.c ****     ________,________,
+ 263:Core/Src/f24f.c ****     ________,________,
+ 264:Core/Src/f24f.c ****     ________,________,
+ 265:Core/Src/f24f.c ****     ____XXXX,________,
+ 266:Core/Src/f24f.c ****     __XXXXXX,XX______,
+ 267:Core/Src/f24f.c ****     __XXX__X,XX______,
+ 268:Core/Src/f24f.c ****     _XXX____,XXX_____,
+ 269:Core/Src/f24f.c ****     _XXX____,XXX_____,
+ 270:Core/Src/f24f.c ****     _XXX____,XXX_____,
+ 271:Core/Src/f24f.c ****     _XXX____,XXX_____,
+ 272:Core/Src/f24f.c ****     __XXX__X,XXX_____,
+ 273:Core/Src/f24f.c ****     __XXXXXX,XXX_____,
+ 274:Core/Src/f24f.c ****     ___XXXX_,XXX_____,
+ 275:Core/Src/f24f.c ****     ________,XXX_____,
+ 276:Core/Src/f24f.c ****     __XX____,XXX_____,
+ 277:Core/Src/f24f.c ****     _XXXX__X,XX______,
+ 278:Core/Src/f24f.c ****     __XXXXXX,XX______,
+ 279:Core/Src/f24f.c ****     ___XXXXX,________,
+ 280:Core/Src/f24f.c ****     ________,________,
+ 281:Core/Src/f24f.c ****     ________,________,
+ 282:Core/Src/f24f.c ****     ________,________,
+ 283:Core/Src/f24f.c ****     ________,________,
+ 284:Core/Src/f24f.c ****     ________,________}
+ 285:Core/Src/f24f.c **** };
+ 286:Core/Src/f24f.c **** 
+ 287:Core/Src/f24f.c **** const uint8_t f24f_table2[48 + 2] =
+ 288:Core/Src/f24f.c **** // 0x20
+ 289:Core/Src/f24f.c **** {
+ 290:Core/Src/f24f.c ****   9,
+ 291:Core/Src/f24f.c ****   f24_FLOAT_HEIGHT,
+ 292:Core/Src/f24f.c ****   ________,________,
+ 293:Core/Src/f24f.c ****   ________,________,
+ 294:Core/Src/f24f.c ****   ________,________,
+ 295:Core/Src/f24f.c ****   ________,________,
+ 296:Core/Src/f24f.c ****   ________,________,
+ 297:Core/Src/f24f.c ****   ________,________,
+ 298:Core/Src/f24f.c ****   ________,________,
+ 299:Core/Src/f24f.c ****   ________,________,
+ 300:Core/Src/f24f.c ****   ________,________,
+ 301:Core/Src/f24f.c ****   ________,________,
+ 302:Core/Src/f24f.c ****   ________,________,
+ 303:Core/Src/f24f.c ****   ________,________,
+ 304:Core/Src/f24f.c ****   ________,________,
+ 305:Core/Src/f24f.c ****   ________,________,
+ 306:Core/Src/f24f.c ****   ________,________,
+ 307:Core/Src/f24f.c ****   ________,________,
+ 308:Core/Src/f24f.c ****   ________,________,
+ 309:Core/Src/f24f.c ****   ________,________,
+ 310:Core/Src/f24f.c ****   ________,________,
+ 311:Core/Src/f24f.c ****   ________,________,
+ 312:Core/Src/f24f.c ****   ________,________,
+ 313:Core/Src/f24f.c ****   ________,________,
+ 314:Core/Src/f24f.c ****   ________,________,
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccl0nVYG.s 			page 7
+
+
+ 315:Core/Src/f24f.c ****   ________,________
+ 316:Core/Src/f24f.c **** };
+ 317:Core/Src/f24f.c **** 
+ 318:Core/Src/f24f.c **** const uint8_t f24f_table3[48 + 2] =
+ 319:Core/Src/f24f.c **** // 0x2E
+ 320:Core/Src/f24f.c **** {
+ 321:Core/Src/f24f.c ****   7,
+ 322:Core/Src/f24f.c ****   f24_FLOAT_HEIGHT,
+ 323:Core/Src/f24f.c ****   ________,________,
+ 324:Core/Src/f24f.c ****   ________,________,
+ 325:Core/Src/f24f.c ****   ________,________,
+ 326:Core/Src/f24f.c ****   ________,________,
+ 327:Core/Src/f24f.c ****   ________,________,
+ 328:Core/Src/f24f.c ****   ________,________,
+ 329:Core/Src/f24f.c ****   ________,________,
+ 330:Core/Src/f24f.c ****   ________,________,
+ 331:Core/Src/f24f.c ****   ________,________,
+ 332:Core/Src/f24f.c ****   ________,________,
+ 333:Core/Src/f24f.c ****   ________,________,
+ 334:Core/Src/f24f.c ****   ________,________,
+ 335:Core/Src/f24f.c ****   ________,________,
+ 336:Core/Src/f24f.c ****   ________,________,
+ 337:Core/Src/f24f.c ****   ________,________,
+ 338:Core/Src/f24f.c ****   __XXX___,________,
+ 339:Core/Src/f24f.c ****   _XXXXX__,________,
+ 340:Core/Src/f24f.c ****   _XXXXX__,________,
+ 341:Core/Src/f24f.c ****   __XXX___,________,
+ 342:Core/Src/f24f.c ****   ________,________,
+ 343:Core/Src/f24f.c ****   ________,________,
+ 344:Core/Src/f24f.c ****   ________,________,
+ 345:Core/Src/f24f.c ****   ________,________,
+ 346:Core/Src/f24f.c ****   ________,________
+ 347:Core/Src/f24f.c **** };
+ 348:Core/Src/f24f.c **** 
+ 349:Core/Src/f24f.c **** const uint8_t f24f_table4[48 + 2] =
+ 350:Core/Src/f24f.c **** // 0xB0
+ 351:Core/Src/f24f.c **** {
+ 352:Core/Src/f24f.c ****   12,
+ 353:Core/Src/f24f.c ****   f24_FLOAT_HEIGHT,
+ 354:Core/Src/f24f.c ****   ________,________,
+ 355:Core/Src/f24f.c ****   ________,________,
+ 356:Core/Src/f24f.c ****   ________,________,
+ 357:Core/Src/f24f.c ****   ________,________,
+ 358:Core/Src/f24f.c ****   ____XXXX,________,
+ 359:Core/Src/f24f.c ****   __XXXXXX,XX______,
+ 360:Core/Src/f24f.c ****   __XXX__X,XX______,
+ 361:Core/Src/f24f.c ****   _XXX____,XXX_____,
+ 362:Core/Src/f24f.c ****   _XXX____,XXX_____,
+ 363:Core/Src/f24f.c ****   _XXX____,XXX_____,
+ 364:Core/Src/f24f.c ****   __XXX__X,XX______,
+ 365:Core/Src/f24f.c ****   __XXXXXX,XX______,
+ 366:Core/Src/f24f.c ****   ____XXXX,________,
+ 367:Core/Src/f24f.c ****   ________,________,
+ 368:Core/Src/f24f.c ****   ________,________,
+ 369:Core/Src/f24f.c ****   ________,________,
+ 370:Core/Src/f24f.c ****   ________,________,
+ 371:Core/Src/f24f.c ****   ________,________,
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccl0nVYG.s 			page 8
+
+
+ 372:Core/Src/f24f.c ****   ________,________,
+ 373:Core/Src/f24f.c ****   ________,________,
+ 374:Core/Src/f24f.c ****   ________,________,
+ 375:Core/Src/f24f.c ****   ________,________,
+ 376:Core/Src/f24f.c ****   ________,________,
+ 377:Core/Src/f24f.c ****   ________,________
+ 378:Core/Src/f24f.c **** };
+ 379:Core/Src/f24f.c **** 
+ 380:Core/Src/f24f.c **** const uint8_t f24f_table5[64 + 2] =
+ 381:Core/Src/f24f.c **** // 0x25
+ 382:Core/Src/f24f.c **** {
+ 383:Core/Src/f24f.c ****   15,
+ 384:Core/Src/f24f.c ****   f24_FLOAT_HEIGHT,
+ 385:Core/Src/f24f.c ****   ________,________,
+ 386:Core/Src/f24f.c ****   ________,________,
+ 387:Core/Src/f24f.c ****   __XXXX__,____XX__,
+ 388:Core/Src/f24f.c ****   _XX__XX_,___XX___,
+ 389:Core/Src/f24f.c ****   XX____XX,___XX___,
+ 390:Core/Src/f24f.c ****   XX____XX,__XX____,
+ 391:Core/Src/f24f.c ****   XX____XX,__XX____,
+ 392:Core/Src/f24f.c ****   XX____XX,_XX_____,
+ 393:Core/Src/f24f.c ****   _XX__XX_,_XX_____,
+ 394:Core/Src/f24f.c ****   __XXXX__,XX______,
+ 395:Core/Src/f24f.c ****   ________,XX______,
+ 396:Core/Src/f24f.c ****   _______X,X_______,
+ 397:Core/Src/f24f.c ****   _______X,X_______,
+ 398:Core/Src/f24f.c ****   ______XX,________,
+ 399:Core/Src/f24f.c ****   ______XX,__XXX___,
+ 400:Core/Src/f24f.c ****   _____XX_,_XX_XX__,
+ 401:Core/Src/f24f.c ****   _____XX_,XX___XX_,
+ 402:Core/Src/f24f.c ****   ____XX__,XX___XX_,
+ 403:Core/Src/f24f.c ****   ____XX__,XX___XX_,
+ 404:Core/Src/f24f.c ****   ___XX___,XX___XX_,
+ 405:Core/Src/f24f.c ****   ___XX___,_XX_XX__,
+ 406:Core/Src/f24f.c ****   __XX____,__XXX___,
+ 407:Core/Src/f24f.c ****   ________,________,
+ 408:Core/Src/f24f.c ****   ________,________
+ 409:Core/Src/f24f.c **** };
+ 410:Core/Src/f24f.c **** 
+ 411:Core/Src/f24f.c **** //==============================================================================
+ 412:Core/Src/f24f.c **** uint8_t *f24f_GetCharTable(char Char)
+ 413:Core/Src/f24f.c **** {
+  30              		.loc 1 413 1 view -0
+  31              		.cfi_startproc
+  32              		@ args = 0, pretend = 0, frame = 0
+  33              		@ frame_needed = 0, uses_anonymous_args = 0
+  34              		@ link register save eliminated.
+ 414:Core/Src/f24f.c **** 	// ������ �����
+ 415:Core/Src/f24f.c **** 	if ((Char >= 0x30) && (Char <= 0x39))
+  35              		.loc 1 415 2 view .LVU1
+  36 0000 3928     		cmp	r0, #57
+  37 0002 16D8     		bhi	.L2
+  38 0004 2028     		cmp	r0, #32
+  39 0006 22D3     		bcc	.L9
+  40 0008 A0F12003 		sub	r3, r0, #32
+  41 000c 192B     		cmp	r3, #25
+  42 000e 0ED8     		bhi	.L4
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccl0nVYG.s 			page 9
+
+
+  43 0010 DFE803F0 		tbb	[pc, r3]
+  44              	.L6:
+  45 0014 1F       		.byte	(.L10-.L6)/2
+  46 0015 0D       		.byte	(.L4-.L6)/2
+  47 0016 0D       		.byte	(.L4-.L6)/2
+  48 0017 0D       		.byte	(.L4-.L6)/2
+  49 0018 0D       		.byte	(.L4-.L6)/2
+  50 0019 1B       		.byte	(.L8-.L6)/2
+  51 001a 0D       		.byte	(.L4-.L6)/2
+  52 001b 0D       		.byte	(.L4-.L6)/2
+  53 001c 0D       		.byte	(.L4-.L6)/2
+  54 001d 0D       		.byte	(.L4-.L6)/2
+  55 001e 0D       		.byte	(.L4-.L6)/2
+  56 001f 0D       		.byte	(.L4-.L6)/2
+  57 0020 0D       		.byte	(.L4-.L6)/2
+  58 0021 0D       		.byte	(.L4-.L6)/2
+  59 0022 19       		.byte	(.L7-.L6)/2
+  60 0023 0D       		.byte	(.L4-.L6)/2
+  61 0024 13       		.byte	(.L5-.L6)/2
+  62 0025 13       		.byte	(.L5-.L6)/2
+  63 0026 13       		.byte	(.L5-.L6)/2
+  64 0027 13       		.byte	(.L5-.L6)/2
+  65 0028 13       		.byte	(.L5-.L6)/2
+  66 0029 13       		.byte	(.L5-.L6)/2
+  67 002a 13       		.byte	(.L5-.L6)/2
+  68 002b 13       		.byte	(.L5-.L6)/2
+  69 002c 13       		.byte	(.L5-.L6)/2
+  70 002d 13       		.byte	(.L5-.L6)/2
+  71              		.p2align 1
+  72              	.L4:
+ 416:Core/Src/f24f.c **** 	    return (uint8_t *)(&f24f_table[Char - 0x30][0]);
+ 417:Core/Src/f24f.c **** 	if (Char == 0x20)
+ 418:Core/Src/f24f.c **** 		return (uint8_t *) f24f_table2;
+ 419:Core/Src/f24f.c **** 	if (Char == 0x2E)
+ 420:Core/Src/f24f.c **** 		return (uint8_t *) f24f_table3;
+ 421:Core/Src/f24f.c **** 	if (Char == 0xB0)
+ 422:Core/Src/f24f.c **** 		return (uint8_t *) f24f_table4;
+ 423:Core/Src/f24f.c ****   if (Char == 0x25)
+ 424:Core/Src/f24f.c **** 	  return (uint8_t *) f24f_table5;
+  73              		.loc 1 424 11 is_stmt 0 view .LVU2
+  74 002e 0020     		movs	r0, #0
+  75              	.LVL1:
+  76              		.loc 1 424 11 view .LVU3
+  77 0030 7047     		bx	lr
+  78              	.LVL2:
+  79              	.L2:
+  80              		.loc 1 424 11 view .LVU4
+  81 0032 B028     		cmp	r0, #176
+  82 0034 0FD1     		bne	.L11
+ 422:Core/Src/f24f.c ****   if (Char == 0x25)
+  83              		.loc 1 422 10 view .LVU5
+  84 0036 0948     		ldr	r0, .L12
+  85              	.LVL3:
+ 422:Core/Src/f24f.c ****   if (Char == 0x25)
+  86              		.loc 1 422 10 view .LVU6
+  87 0038 7047     		bx	lr
+  88              	.LVL4:
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccl0nVYG.s 			page 10
+
+
+  89              	.L5:
+ 416:Core/Src/f24f.c **** 	    return (uint8_t *)(&f24f_table[Char - 0x30][0]);
+  90              		.loc 1 416 6 is_stmt 1 view .LVU7
+ 416:Core/Src/f24f.c **** 	    return (uint8_t *)(&f24f_table[Char - 0x30][0]);
+  91              		.loc 1 416 42 is_stmt 0 view .LVU8
+  92 003a 3038     		subs	r0, r0, #48
+  93              	.LVL5:
+ 416:Core/Src/f24f.c **** 	    return (uint8_t *)(&f24f_table[Char - 0x30][0]);
+  94              		.loc 1 416 13 view .LVU9
+  95 003c 3222     		movs	r2, #50
+  96 003e 084B     		ldr	r3, .L12+4
+  97 0040 02FB0030 		mla	r0, r2, r0, r3
+  98 0044 7047     		bx	lr
+  99              	.LVL6:
+ 100              	.L7:
+ 420:Core/Src/f24f.c **** 	if (Char == 0xB0)
+ 101              		.loc 1 420 3 is_stmt 1 view .LVU10
+ 420:Core/Src/f24f.c **** 	if (Char == 0xB0)
+ 102              		.loc 1 420 10 is_stmt 0 view .LVU11
+ 103 0046 0748     		ldr	r0, .L12+8
+ 104              	.LVL7:
+ 420:Core/Src/f24f.c **** 	if (Char == 0xB0)
+ 105              		.loc 1 420 10 view .LVU12
+ 106 0048 7047     		bx	lr
+ 107              	.LVL8:
+ 108              	.L8:
+ 109              		.loc 1 424 4 is_stmt 1 view .LVU13
+ 110              		.loc 1 424 11 is_stmt 0 view .LVU14
+ 111 004a 0748     		ldr	r0, .L12+12
+ 112              	.LVL9:
+ 113              		.loc 1 424 11 view .LVU15
+ 114 004c 7047     		bx	lr
+ 115              	.LVL10:
+ 116              	.L9:
+ 117              		.loc 1 424 11 view .LVU16
+ 118 004e 0020     		movs	r0, #0
+ 119              	.LVL11:
+ 120              		.loc 1 424 11 view .LVU17
+ 121 0050 7047     		bx	lr
+ 122              	.LVL12:
+ 123              	.L10:
+ 418:Core/Src/f24f.c **** 	if (Char == 0x2E)
+ 124              		.loc 1 418 10 view .LVU18
+ 125 0052 0648     		ldr	r0, .L12+16
+ 126              	.LVL13:
+ 418:Core/Src/f24f.c **** 	if (Char == 0x2E)
+ 127              		.loc 1 418 10 view .LVU19
+ 128 0054 7047     		bx	lr
+ 129              	.LVL14:
+ 130              	.L11:
+ 131              		.loc 1 424 11 view .LVU20
+ 132 0056 0020     		movs	r0, #0
+ 133              	.LVL15:
+ 425:Core/Src/f24f.c **** 
+ 426:Core/Src/f24f.c **** 	return 0;
+ 427:Core/Src/f24f.c **** }
+ 134              		.loc 1 427 1 view .LVU21
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccl0nVYG.s 			page 11
+
+
+ 135 0058 7047     		bx	lr
+ 136              	.L13:
+ 137 005a 00BF     		.align	2
+ 138              	.L12:
+ 139 005c 00000000 		.word	f24f_table4
+ 140 0060 00000000 		.word	f24f_table
+ 141 0064 00000000 		.word	f24f_table3
+ 142 0068 00000000 		.word	f24f_table5
+ 143 006c 00000000 		.word	f24f_table2
+ 144              		.cfi_endproc
+ 145              	.LFE3:
+ 147              		.global	f24f_table5
+ 148              		.section	.rodata.f24f_table5,"a"
+ 149              		.align	2
+ 152              	f24f_table5:
+ 153 0000 0F180000 		.ascii	"\017\030\000\000\000\000<\014f\030\303\030\3030\303"
+ 153      00003C0C 
+ 153      6618C318 
+ 153      C330C3
+ 154 000f 30C36066 		.ascii	"0\303`f`<\300\000\300\001\200\001\200\003\000\0038\006"
+ 154      603CC000 
+ 154      C0018001 
+ 154      80030003 
+ 154      3806
+ 155 0021 6C06C60C 		.ascii	"l\006\306\014\306\014\306\030\306\030l08\000\000\000"
+ 155      C60CC618 
+ 155      C6186C30 
+ 155      38000000 
+ 156 0031 0000     		.ascii	"\000\000"
+ 157 0033 00000000 		.space	15
+ 157      00000000 
+ 157      00000000 
+ 157      000000
+ 158              		.global	f24f_table4
+ 159              		.section	.rodata.f24f_table4,"a"
+ 160              		.align	2
+ 163              	f24f_table4:
+ 164 0000 0C180000 		.ascii	"\014\030\000\000\000\000\000\000\000\000\017\000?\300"
+ 164      00000000 
+ 164      00000F00 
+ 164      3FC0
+ 165 000e 39C070E0 		.ascii	"9\300p\340p\340p\3409\300?\300\017\000\000\000\000\000"
+ 165      70E070E0 
+ 165      39C03FC0 
+ 165      0F000000 
+ 165      0000
+ 166 0020 00000000 		.ascii	"\000\000\000\000\000\000\000\000\000\000\000\000\000"
+ 166      00000000 
+ 166      00000000 
+ 166      00
+ 167 002d 00000000 		.ascii	"\000\000\000\000\000"
+ 167      00
+ 168              		.global	f24f_table3
+ 169              		.section	.rodata.f24f_table3,"a"
+ 170              		.align	2
+ 173              	f24f_table3:
+ 174 0000 07180000 		.ascii	"\007\030\000\000\000\000\000\000\000\000\000\000\000"
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccl0nVYG.s 			page 12
+
+
+ 174      00000000 
+ 174      00000000 
+ 174      00
+ 175 000d 00000000 		.ascii	"\000\000\000\000\000\000\000\000\000\000\000\000\000"
+ 175      00000000 
+ 175      00000000 
+ 175      00
+ 176 001a 00000000 		.ascii	"\000\000\000\000\000\0008\000|\000|\0008\000\000\000"
+ 176      00003800 
+ 176      7C007C00 
+ 176      38000000 
+ 177 002a 00000000 		.ascii	"\000\000\000\000\000\000\000\000"
+ 177      00000000 
+ 178              		.global	f24f_table2
+ 179              		.section	.rodata.f24f_table2,"a"
+ 180              		.align	2
+ 183              	f24f_table2:
+ 184 0000 09180000 		.ascii	"\011\030\000\000\000\000\000\000\000\000\000\000\000"
+ 184      00000000 
+ 184      00000000 
+ 184      00
+ 185 000d 00000000 		.ascii	"\000\000\000\000\000\000\000\000\000\000\000\000\000"
+ 185      00000000 
+ 185      00000000 
+ 185      00
+ 186 001a 00000000 		.ascii	"\000\000\000\000\000\000\000\000\000\000\000\000\000"
+ 186      00000000 
+ 186      00000000 
+ 186      00
+ 187 0027 00000000 		.ascii	"\000\000\000\000\000\000\000\000\000\000\000"
+ 187      00000000 
+ 187      000000
+ 188              		.global	f24f_table
+ 189              		.section	.rodata.f24f_table,"a"
+ 190              		.align	2
+ 193              	f24f_table:
+ 194 0000 0C180000 		.ascii	"\014\030\000\000\000\000\000\000\000\000\017\000?\300"
+ 194      00000000 
+ 194      00000F00 
+ 194      3FC0
+ 195 000e 39C070E0 		.ascii	"9\300p\340p\340p\340p\340p\340p\340p\340p\340p\3409"
+ 195      70E070E0 
+ 195      70E070E0 
+ 195      70E070E0 
+ 195      70E070E0 
+ 196 0023 C03FC00F 		.ascii	"\300?\300\017\000\000\000\000\000\000\000\000\000\000"
+ 196      00000000 
+ 196      00000000 
+ 196      0000
+ 197 0031 00       		.ascii	"\000"
+ 198 0032 0A180000 		.ascii	"\012\030\000\000\000\000\000\000\000\000\003\200\003"
+ 198      00000000 
+ 198      00000380 
+ 198      03
+ 199 003f 8007801F 		.ascii	"\200\007\200\037\200?\200;\200#\200\003\200\003\200"
+ 199      803F803B 
+ 199      80238003 
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccl0nVYG.s 			page 13
+
+
+ 199      800380
+ 200 004e 03800380 		.ascii	"\003\200\003\200\003\200\003\200\003\200\003\200\000"
+ 200      03800380 
+ 200      03800380 
+ 200      00
+ 201 005b 00000000 		.ascii	"\000\000\000\000\000\000\000\000\000"
+ 201      00000000 
+ 201      00
+ 202 0064 0C180000 		.ascii	"\014\030\000\000\000\000\000\000\000\000\037\200?\300"
+ 202      00000000 
+ 202      00001F80 
+ 202      3FC0
+ 203 0072 79E070E0 		.ascii	"y\340p\340\000\340\000\340\001\300\003\300\007\200\017"
+ 203      00E000E0 
+ 203      01C003C0 
+ 203      07800F
+ 204 0081 001E001C 		.ascii	"\000\036\000\034\0008\000\177\340\177\340\000\000\000"
+ 204      0038007F 
+ 204      E07FE000 
+ 204      0000
+ 205 008f 00000000 		.ascii	"\000\000\000\000\000\000\000"
+ 205      000000
+ 206 0096 0C180000 		.ascii	"\014\030\000\000\000\000\000\000\000\000\037\000?\200"
+ 206      00000000 
+ 206      00001F00 
+ 206      3F80
+ 207 00a4 71C071C0 		.ascii	"q\300q\300\001\300\003\300\017\200\017\200\001\300\000"
+ 207      01C003C0 
+ 207      0F800F80 
+ 207      01C000
+ 208 00b3 E000E070 		.ascii	"\340\000\340p\340y\300?\300\037\000\000\000\000\000"
+ 208      E079C03F 
+ 208      C01F0000 
+ 208      000000
+ 209 00c2 00000000 		.ascii	"\000\000\000\000\000\000"
+ 209      0000
+ 210 00c8 0C180000 		.ascii	"\014\030\000\000\000\000\000\000\000\000\003\200\007"
+ 210      00000000 
+ 210      00000380 
+ 210      07
+ 211 00d5 8007800F 		.ascii	"\200\007\200\017\200\017\200\033\2003\2003\200c\200"
+ 211      800F801B 
+ 211      80338033 
+ 211      806380
+ 212 00e4 C380FFE0 		.ascii	"\303\200\377\340\377\340\003\200\003\200\003\200\000"
+ 212      FFE00380 
+ 212      03800380 
+ 212      00
+ 213 00f1 00000000 		.ascii	"\000\000\000\000\000\000\000\000\000"
+ 213      00000000 
+ 213      00
+ 214 00fa 0C180000 		.ascii	"\014\030\000\000\000\000\000\000\000\000\037\300\037"
+ 214      00000000 
+ 214      00001FC0 
+ 214      1F
+ 215 0107 C0380038 		.ascii	"\3008\0008\0008\000?\200\177\300q\340\000\340\000\340"
+ 215      0038003F 
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccl0nVYG.s 			page 14
+
+
+ 215      807FC071 
+ 215      E000E000 
+ 215      E0
+ 216 0118 00E070E0 		.ascii	"\000\340p\340y\300?\300\037\000\000\000\000\000\000"
+ 216      79C03FC0 
+ 216      1F000000 
+ 216      000000
+ 217 0127 00000000 		.ascii	"\000\000\000\000\000"
+ 217      00
+ 218 012c 0C180000 		.ascii	"\014\030\000\000\000\000\000\000\000\000\017\200?\300"
+ 218      00000000 
+ 218      00000F80 
+ 218      3FC0
+ 219 013a 39E07080 		.ascii	"9\340p\200p\000w\200\177\300y\300p\340p\340p\340p\340"
+ 219      70007780 
+ 219      7FC079C0 
+ 219      70E070E0 
+ 219      70E070E0 
+ 220 014e 39C03FC0 		.ascii	"9\300?\300\017\000\000\000\000\000\000\000\000\000\000"
+ 220      0F000000 
+ 220      00000000 
+ 220      000000
+ 221 015d 00       		.ascii	"\000"
+ 222 015e 0C180000 		.ascii	"\014\030\000\000\000\000\000\000\000\000\177\340\177"
+ 222      00000000 
+ 222      00007FE0 
+ 222      7F
+ 223 016b E000E001 		.ascii	"\340\000\340\001\300\003\200\003\200\007\000\007\000"
+ 223      C0038003 
+ 223      80070007 
+ 223      00
+ 224 0178 0E000E00 		.ascii	"\016\000\016\000\016\000\034\000\034\000\034\000\034"
+ 224      0E001C00 
+ 224      1C001C00 
+ 224      1C
+ 225 0185 00000000 		.ascii	"\000\000\000\000\000\000\000\000\000\000\000"
+ 225      00000000 
+ 225      000000
+ 226 0190 0C180000 		.ascii	"\014\030\000\000\000\000\000\000\000\000\037\200?\300"
+ 226      00000000 
+ 226      00001F80 
+ 226      3FC0
+ 227 019e 79E070E0 		.ascii	"y\340p\340p\3409\300\037\200\037\2009\300p\340p\340"
+ 227      70E039C0 
+ 227      1F801F80 
+ 227      39C070E0 
+ 227      70E0
+ 228 01b0 70E079E0 		.ascii	"p\340y\340?\300\037\200\000\000\000\000\000\000\000"
+ 228      3FC01F80 
+ 228      00000000 
+ 228      000000
+ 229 01bf 000000   		.ascii	"\000\000\000"
+ 230 01c2 0C180000 		.ascii	"\014\030\000\000\000\000\000\000\000\000\017\000?\300"
+ 230      00000000 
+ 230      00000F00 
+ 230      3FC0
+ 231 01d0 39C070E0 		.ascii	"9\300p\340p\340p\340p\3409\340?\340\036\340\000\340"
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccl0nVYG.s 			page 15
+
+
+ 231      70E070E0 
+ 231      70E039E0 
+ 231      3FE01EE0 
+ 231      00E0
+ 232 01e2 30E079C0 		.ascii	"0\340y\300?\300\037\000\000\000\000\000\000\000\000"
+ 232      3FC01F00 
+ 232      00000000 
+ 232      000000
+ 233 01f1 000000   		.ascii	"\000\000\000"
+ 234              		.text
+ 235              	.Letext0:
+ 236              		.file 2 "C:/Users/kroko/AppData/Roaming/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-to
+ 237              		.file 3 "C:/Users/kroko/AppData/Roaming/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-to
+ARM GAS  C:\Users\kroko\AppData\Local\Temp\ccl0nVYG.s 			page 16
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 f24f.c
+C:\Users\kroko\AppData\Local\Temp\ccl0nVYG.s:21     .text.f24f_GetCharTable:00000000 $t
+C:\Users\kroko\AppData\Local\Temp\ccl0nVYG.s:27     .text.f24f_GetCharTable:00000000 f24f_GetCharTable
+C:\Users\kroko\AppData\Local\Temp\ccl0nVYG.s:45     .text.f24f_GetCharTable:00000014 $d
+C:\Users\kroko\AppData\Local\Temp\ccl0nVYG.s:71     .text.f24f_GetCharTable:0000002e $t
+C:\Users\kroko\AppData\Local\Temp\ccl0nVYG.s:139    .text.f24f_GetCharTable:0000005c $d
+C:\Users\kroko\AppData\Local\Temp\ccl0nVYG.s:163    .rodata.f24f_table4:00000000 f24f_table4
+C:\Users\kroko\AppData\Local\Temp\ccl0nVYG.s:193    .rodata.f24f_table:00000000 f24f_table
+C:\Users\kroko\AppData\Local\Temp\ccl0nVYG.s:173    .rodata.f24f_table3:00000000 f24f_table3
+C:\Users\kroko\AppData\Local\Temp\ccl0nVYG.s:152    .rodata.f24f_table5:00000000 f24f_table5
+C:\Users\kroko\AppData\Local\Temp\ccl0nVYG.s:183    .rodata.f24f_table2:00000000 f24f_table2
+C:\Users\kroko\AppData\Local\Temp\ccl0nVYG.s:149    .rodata.f24f_table5:00000000 $d
+C:\Users\kroko\AppData\Local\Temp\ccl0nVYG.s:160    .rodata.f24f_table4:00000000 $d
+C:\Users\kroko\AppData\Local\Temp\ccl0nVYG.s:170    .rodata.f24f_table3:00000000 $d
+C:\Users\kroko\AppData\Local\Temp\ccl0nVYG.s:180    .rodata.f24f_table2:00000000 $d
+C:\Users\kroko\AppData\Local\Temp\ccl0nVYG.s:190    .rodata.f24f_table:00000000 $d
+
+NO UNDEFINED SYMBOLS
